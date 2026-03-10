@@ -8,7 +8,6 @@ const commentSchema = z.object({
   email: z.string().email().optional(),
   postId: z.string().optional(),
   videoId: z.string().optional(),
-  musicId: z.string().optional(),
 });
 
 export async function GET(request: NextRequest) {
@@ -16,16 +15,14 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const postId = searchParams.get('postId');
     const videoId = searchParams.get('videoId');
-    const musicId = searchParams.get('musicId');
 
-    if (!postId && !videoId && !musicId) {
-      return NextResponse.json({ error: 'Missing postId, videoId, or musicId' }, { status: 400 });
+    if (!postId && !videoId) {
+      return NextResponse.json({ error: 'Missing postId or videoId' }, { status: 400 });
     }
 
     const where: any = { approved: true };
     if (postId) where.postId = parseInt(postId);
     if (videoId) where.videoId = parseInt(videoId);
-    if (musicId) where.musicId = parseInt(musicId);
 
     const comments = await prisma.comment.findMany({
       where,
@@ -53,9 +50,9 @@ export async function POST(request: NextRequest) {
     console.log('Validated data:', validatedData);
 
     // Check if at least one ID is provided
-    if (!validatedData.postId && !validatedData.videoId && !validatedData.musicId) {
+    if (!validatedData.postId && !validatedData.videoId) {
       console.log('No ID provided');
-      return NextResponse.json({ error: 'Must provide postId, videoId, or musicId' }, { status: 400 });
+      return NextResponse.json({ error: 'Must provide postId or videoId' }, { status: 400 });
     }
 
     // For now, auto-approve comments, but in production you might want moderation
@@ -66,8 +63,7 @@ export async function POST(request: NextRequest) {
         email: validatedData.email,
         postId: validatedData.postId ? parseInt(validatedData.postId) : null,
         videoId: validatedData.videoId ? parseInt(validatedData.videoId) : null,
-        musicId: validatedData.musicId ? parseInt(validatedData.musicId) : null,
-        approved: true, // Change to false for moderation
+        approved: false, // Require moderation for political site
       },
     });
     console.log('Comment created:', comment);

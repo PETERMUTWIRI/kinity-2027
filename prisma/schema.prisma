@@ -7,86 +7,120 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// ==========================================
+// KINITY 2027 - PRESIDENTIAL CAMPAIGN SCHEMA
+// ==========================================
+
+// News/Press Releases - Transformed from Blog Posts
 model Post {
-  id          Int       @id @default(autoincrement())
-  title       String    @db.VarChar(255)
-  slug        String    @unique
-  content     String
-  excerpt     String?   @db.VarChar(500)
-  category    String    @db.VarChar(100)
-  cover       String?   @db.VarChar(500)
-  published   Boolean   @default(true)
-  publishedAt DateTime?
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
-  author      String?   @db.VarChar(255)
-  deletedAt   DateTime? @db.Timestamp(6)
-  metaTitle   String?   @db.VarChar(100)
-  metaDesc    String?   @db.VarChar(160)
-  ogImage     String?   @db.VarChar(500)
-  comments    Comment[]
+  id            Int       @id @default(autoincrement())
+  title         String    @db.VarChar(255)
+  slug          String    @unique
+  content       String    // HTML content from CKEditor
+  excerpt       String?   @db.VarChar(500)
+  category      String    @db.VarChar(100) // News, Press Release, Event Recap, Statement
+  cover         String?   @db.VarChar(500) // ImgBB URL
+  published     Boolean   @default(true)
+  publishedAt   DateTime?
+  featured      Boolean   @default(false) // Featured on homepage
+  featuredQuote String?   @db.Text // Pull quote for highlighting
+  isPressRelease Boolean @default(false)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  author        String?   @db.VarChar(255)
+  deletedAt     DateTime? @db.Timestamp(6)
+  
+  // SEO Fields
+  metaTitle     String?   @db.VarChar(100)
+  metaDesc      String?   @db.VarChar(160)
+  ogImage       String?   @db.VarChar(500)
+  
+  // Relations
+  comments      Comment[]
 
   @@unique([slug, deletedAt])
   @@index([slug])
   @@index([category])
   @@index([publishedAt])
+  @@index([featured])
   @@index([deletedAt])
   @@index([published, deletedAt])
 }
 
+// Rallies/Town Halls - Transformed from Events
 model Event {
-  id               Int              @id @default(autoincrement())
-  title            String           @db.VarChar(255)
-  slug             String           @unique
-  description      String?
-  category         String           @db.VarChar(50)
-  cover            String?          @db.VarChar(500)
-  location         String           @db.VarChar(255)
-  startDate        DateTime
-  endDate          DateTime?
-  createdAt        DateTime         @default(now())
-  updatedAt        DateTime         @updatedAt
-  author           String?          @db.VarChar(255)
-  deletedAt        DateTime?        @db.Timestamp(6)
-  metaTitle        String?          @db.VarChar(100)
-  metaDesc         String?          @db.VarChar(160)
-  ogImage          String?          @db.VarChar(500)
-  venue            String?          @db.VarChar(255)
-  address          String?
-  registrationLink String?          @db.VarChar(500)
-  maxAttendees     Int?
-  isFree           Boolean?         @default(true)
-  ticketPrice      String?          @db.VarChar(50)
-  gallery          Json?
-  content          String?
-  excerpt          String?
-  ticketPriceCents Int?
-  stripeProductId  String?          @db.VarChar(255)
-  stripePriceId    String?          @db.VarChar(255)
-  registrationType RegistrationType @default(native)
-  registrations    Registration[]
+  id                Int              @id @default(autoincrement())
+  title             String           @db.VarChar(255)
+  slug              String           @unique
+  description       String?          @db.Text // Full HTML description
+  category          String           @db.VarChar(50) // Rally, Town Hall, Meeting, Fundraiser
+  cover             String?          @db.VarChar(500) // ImgBB URL
+  location          String           @db.VarChar(255) // County/City
+  county            String?          @db.VarChar(100) // Specific Kenyan county
+  venue             String?          @db.VarChar(255) // Specific venue name
+  address           String?          @db.Text // Full address
+  startDate         DateTime
+  endDate           DateTime?
+  
+  // RSVP Management
+  isPublic          Boolean          @default(true) // Public vs private event
+  securityLevel     String           @default("open") // open, verified, invite-only
+  rsvpRequired      Boolean          @default(true)
+  rsvpDeadline      DateTime?
+  maxAttendees      Int?             // Capacity limit
+  
+  // Legacy fields for backward compatibility (can be removed after migration)
+  isFree            Boolean?         @default(true)
+  ticketPrice       String?          @db.VarChar(50)
+  ticketPriceCents  Int?
+  registrationLink  String?          @db.VarChar(500)
+  
+  // Donation (suggested, not required)
+  suggestedDonation Int?             // In cents/KES
+  
+  // Timestamps
+  createdAt         DateTime         @default(now())
+  updatedAt         DateTime         @updatedAt
+  author            String?          @db.VarChar(255)
+  deletedAt         DateTime?        @db.Timestamp(6)
+  
+  // SEO Fields
+  metaTitle         String?          @db.VarChar(100)
+  metaDesc          String?          @db.VarChar(160)
+  ogImage           String?          @db.VarChar(500)
+  
+  // Gallery
+  gallery           Json?            // Array of ImgBB URLs
+  
+  // Relations
+  registrations     RSVP[]
 
   @@unique([slug, deletedAt])
   @@index([slug])
   @@index([category])
   @@index([startDate])
+  @@index([county])
   @@index([deletedAt])
-  @@index([author])
-  @@index([isFree])
+  @@index([isPublic])
 }
 
+// User Admin (via Neon Auth)
 model User {
   id        String   @id @default(cuid())
   email     String   @unique
   name      String?
-  role      String   @default("user")
+  role      String   @default("user") // admin, editor, volunteer_coordinator
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
+// Newsletter Subscribers - Movement Supporters
 model NewsletterSubscriber {
   id             Int       @id @default(autoincrement())
   email          String    @unique
+  name           String?   @db.VarChar(255)
+  phone          String?   @db.VarChar(50)
+  county         String?   @db.VarChar(100)
   subscribed     Boolean   @default(true)
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
@@ -94,59 +128,75 @@ model NewsletterSubscriber {
 
   @@index([email])
   @@index([subscribed])
+  @@index([county])
 }
 
+// Video Gallery - Speeches, Rally Footage, Interviews
 model Video {
   id          Int       @id @default(autoincrement())
   title       String    @db.VarChar(255)
-  description String?
+  description String?   @db.Text
   youtubeId   String    @db.VarChar(50)
-  category    String    @db.VarChar(100)
-  thumbnail   String?   @db.VarChar(500)
+  category    String    @db.VarChar(100) // Speech, Rally, Interview, Ad, Statement
+  thumbnail   String?   @db.VarChar(500) // ImgBB URL or YouTube thumbnail
   published   Boolean   @default(true)
+  featured    Boolean   @default(false)
   order       Int       @default(0)
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
   comments    Comment[]
+
+  @@index([category])
+  @@index([featured])
+  @@index([order])
+  @@index([published])
 }
 
-model Registration {
-  id              Int      @id @default(autoincrement())
-  eventId         Int
-  email           String   @db.VarChar(255)
-  name            String   @db.VarChar(255)
-  stripeSessionId String?  @db.VarChar(255)
-  amountPaid      Int?
-  status          String   @default("pending")
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-  ticketCode      String?  @unique @db.VarChar(20)
-  event           Event    @relation(fields: [eventId], references: [id])
+// RSVP - Event Attendance (was Registration)
+model RSVP {
+  id          Int      @id @default(autoincrement())
+  eventId     Int
+  email       String   @db.VarChar(255)
+  name        String   @db.VarChar(255)
+  phone       String?  @db.VarChar(50)
+  county      String?  @db.VarChar(100)
+  
+  // Verification
+  idNumber    String?  @db.VarChar(50) // For security at verified events
+  verified    Boolean  @default(false)
+  
+  // Status
+  status      String   @default("confirmed") // confirmed, cancelled, attended, no-show
+  
+  // Timestamps
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations
+  event       Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
 
   @@index([eventId])
   @@index([email])
   @@index([status])
-  @@index([ticketCode])
+  @@index([county])
 }
 
-model Music {
+// Gallery Categories - Photo Albums (was Music)
+model GalleryCategory {
   id                 Int       @id @default(autoincrement())
   title              String    @db.VarChar(255)
   slug               String    @unique @db.VarChar(255)
-  description        String?
-  category           String    @default("Single") @db.VarChar(100)
-  youtubeUrl         String    @db.VarChar(500)
-  youtubeId          String    @db.VarChar(50)
-  thumbnail          String?   @db.VarChar(500)
-  useCustomThumbnail Boolean   @default(false)
+  description        String?   @db.Text
+  category           String    @default("Rallies") @db.VarChar(100)
+                      // Rallies, Community, Behind the Scenes, Press, County Tours
+  coverImage         String?   @db.VarChar(500) // ImgBB URL
   published          Boolean   @default(true)
   order              Int       @default(0)
   createdAt          DateTime  @default(now())
-  updatedAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
   deletedAt          DateTime? @db.Timestamp(6)
-  comments           Comment[]
 
-  @@unique([slug, deletedAt], map: "Music_slug_deletedAt_unique")
+  @@unique([slug, deletedAt], map: "GalleryCategory_slug_deletedAt_unique")
   @@index([category])
   @@index([deletedAt])
   @@index([order])
@@ -154,65 +204,250 @@ model Music {
   @@index([slug])
 }
 
+// Comments - Supporter Engagement (MODERATED by default)
 model Comment {
   id        Int      @id @default(autoincrement())
-  content   String
-  author    String?
-  email     String?
+  content   String   @db.Text
+  author    String?  @db.VarChar(255)
+  email     String?  @db.VarChar(255)
+  
+  // Polymorphic relations
   postId    Int?
   videoId   Int?
-  musicId   Int?
-  approved  Boolean  @default(true)
+  
+  // Moderation (CRITICAL for political site)
+  approved  Boolean  @default(false) // Requires admin approval
+  reviewedAt DateTime?
+  reviewedBy String?  @db.VarChar(255) // Admin who approved
+  
   createdAt DateTime @default(now())
-  music     Music?   @relation(fields: [musicId], references: [id], onDelete: Cascade)
+  
+  // Relations
   post      Post?    @relation(fields: [postId], references: [id], onDelete: Cascade)
   video     Video?   @relation(fields: [videoId], references: [id], onDelete: Cascade)
 
   @@index([postId])
   @@index([videoId])
-  @@index([musicId])
   @@index([approved])
+  @@index([createdAt])
 }
 
-model Product {
-  id              Int        @id @default(autoincrement())
-  title           String     @db.VarChar(255)
-  description     String?
-  price           Decimal    @db.Decimal(10, 2)
-  category        String     @db.VarChar(100)
-  image           String?    @db.VarChar(500)
-  published       Boolean    @default(true)
-  order           Int        @default(0)
-  createdAt       DateTime   @default(now())
-  updatedAt       DateTime   @default(now()) @updatedAt
-  stripeProductId String?    @db.VarChar(255)
-  stripePriceId   String?    @db.VarChar(255)
-  purchases       Purchase[]
+// ==========================================
+// NEW MODELS FOR POLITICAL CAMPAIGN
+// ==========================================
 
-  @@index([category])
+// Volunteers - Ground Game Management
+model Volunteer {
+  id          String   @id @default(uuid())
+  name        String   @db.VarChar(255)
+  email       String   @unique @db.VarChar(255)
+  phone       String?  @db.VarChar(50)
+  
+  // Location
+  county      String   @db.VarChar(100) // Kenyan county for organizing
+  constituency String? @db.VarChar(100)
+  ward        String?  @db.VarChar(100)
+  
+  // Role & Skills
+  role        String   @db.VarChar(100) 
+    // Canvassing, Event Staff, Digital, Phone Banking, Driver, Security, Medical
+  skills      String?  @db.Text // Additional skills/qualifications
+  availability String? @db.Text // Weekends, Weekdays, Evenings
+  
+  // Message & Status
+  message     String?  @db.Text // Why they want to volunteer
+  status      String   @default("pending") // pending, active, inactive, rejected
+  
+  // Admin notes
+  notes       String?  @db.Text
+  assignedTo  String?  @db.VarChar(255) // Staff member managing this volunteer
+  
+  // Timestamps
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([county])
+  @@index([status])
+  @@index([role])
+  @@index([createdAt])
+}
+
+// Endorsements - Social Proof
+model Endorsement {
+  id          String   @id @default(uuid())
+  name        String   @db.VarChar(255)
+  title       String   @db.VarChar(255) // "Community Leader", "Business Owner", "Youth Leader"
+  organization String? @db.VarChar(255) // Organization they represent
+  quote       String   @db.Text // Endorsement quote
+  photo       String?  @db.VarChar(500) // ImgBB URL
+  
+  // Location
+  county      String   @db.VarChar(100)
+  
+  // Display
+  featured    Boolean  @default(false) // Show on homepage
+  order       Int      @default(0)
+  published   Boolean  @default(false) // Admin approval required
+  
+  // Timestamps
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([county])
+  @@index([featured])
   @@index([published])
   @@index([order])
 }
 
-model Purchase {
-  id              Int      @id @default(autoincrement())
-  productId       Int
-  customerEmail   String?
-  customerName    String?
-  amount          Int
-  stripeSessionId String   @unique
-  status          String   @default("completed")
-  createdAt       DateTime @default(now())
-  product         Product  @relation(fields: [productId], references: [id])
+// Manifesto Pillars - Policy Positions
+model ManifestoPillar {
+  id          String   @id @default(uuid())
+  title       String   @db.VarChar(255) // "Economic Transformation", "Zero Corruption"
+  subtitle    String?  @db.VarChar(255) // Short tagline
+  icon        String   @db.VarChar(100) // Lucide icon name
+  
+  // Content
+  summary     String   @db.Text // Short paragraph for cards
+  details     String   @db.Text // Full policy description (CKEditor HTML)
+  keyPoints   Json?    // Array of bullet points ["Point 1", "Point 2"]
+  
+  // Display
+  order       Int      // Display order
+  color       String   @db.VarChar(50) // Pillar accent color (blue, red, purple, etc.)
+  published   Boolean  @default(false)
+  featured    Boolean  @default(false) // Show on homepage
+  
+  // Media
+  image       String?  @db.VarChar(500) // ImgBB URL
+  
+  // Timestamps
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 
-  @@index([productId])
-  @@index([stripeSessionId])
-  @@index([createdAt])
+  @@index([order])
+  @@index([published])
+  @@index([featured])
 }
 
-enum RegistrationType {
-  native
-  external
-  email
-  none
+// Donation Tiers - Impact-based Giving (was Product)
+model DonationTier {
+  id              Int        @id @default(autoincrement())
+  title           String     @db.VarChar(255) // "Supporter", "Patriot", "Champion"
+  description     String?    @db.Text
+  
+  // Impact messaging
+  impactDescription String   @db.Text // "Your 1,000 KES provides 10 rally banners"
+  impactMetric    String?    @db.VarChar(255) // "10 banners", "5 meals for volunteers"
+  
+  // Pricing
+  amountKES       Int        // Amount in Kenyan Shillings
+  amountUSD       Int?       // Amount in USD for international donors
+  
+  // Display
+  category        String     @db.VarChar(100) // Individual, Corporate, International
+  image           String?    @db.VarChar(500) // ImgBB URL
+  published       Boolean    @default(true)
+  featured        Boolean    @default(false)
+  order           Int        @default(0)
+  
+  // Stripe integration (commented for now)
+  // stripeProductId String?   @db.VarChar(255)
+  // stripePriceId   String?   @db.VarChar(255)
+  
+  // Timestamps
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+  
+  // Relations
+  contributions   Contribution[]
+
+  @@index([category])
+  @@index([published])
+  @@index([order])
+  @@index([featured])
+}
+
+// Contributions - Donation Records (was Purchase)
+model Contribution {
+  id              String   @id @default(uuid())
+  
+  // Donor info
+  donorName       String   @db.VarChar(255)
+  donorEmail      String   @db.VarChar(255)
+  donorPhone      String?  @db.VarChar(50)
+  
+  // Location
+  county          String?  @db.VarChar(100)
+  country         String   @default("Kenya") @db.VarChar(100)
+  
+  // Donation details
+  donationTierId  Int
+  amount          Int      // In smallest currency unit (cents/KES)
+  currency        String   @default("KES") @db.VarChar(3)
+  isAnonymous     Boolean  @default(false)
+  message         String?  @db.Text // Encouragement message
+  
+  // Payment tracking (M-Pesa / Stripe)
+  paymentMethod   String   @db.VarChar(50) // MPesa, Card, Bank, Crypto, Cash
+  transactionId   String?  @db.VarChar(255) // M-Pesa code or Stripe ID
+  phoneNumber     String?  @db.VarChar(50) // For M-Pesa
+  
+  // Compliance
+  nationality     String?  @db.VarChar(100) // "Kenyan" / "Other" (foreign donation rules)
+  idNumber        String?  @db.VarChar(50) // For large donations compliance
+  
+  // Status
+  status          String   @default("pending") // pending, completed, failed, refunded
+  
+  // Timestamps
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  // Relations
+  donationTier    DonationTier @relation(fields: [donationTierId], references: [id])
+
+  @@index([donationTierId])
+  @@index([status])
+  @@index([createdAt])
+  @@index([county])
+  @@index([transactionId])
+}
+
+// Media Kit Assets - For Press
+model MediaAsset {
+  id          String   @id @default(uuid())
+  title       String   @db.VarChar(255)
+  description String?  @db.Text
+  type        String   @db.VarChar(50) // Photo, Video, Document, Logo, Bio
+  category    String   @db.VarChar(100) // Press Kit, Headshots, Rally Photos, B-Roll
+  url         String   @db.VarChar(500) // Download URL (ImgBB or other)
+  fileSize    String?  @db.VarChar(50)
+  dimensions  String?  @db.VarChar(50) // For images
+  downloadCount Int    @default(0)
+  published   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([type])
+  @@index([category])
+  @@index([published])
+}
+
+// Campaign Statistics (for dashboard)
+model CampaignStat {
+  id              String   @id @default(uuid())
+  date            DateTime @default(now())
+  
+  // Metrics
+  volunteerCount  Int      @default(0)
+  totalContributions Int   @default(0)
+  totalContributionAmount Int @default(0)
+  subscriberCount Int      @default(0)
+  eventRSVPCount  Int      @default(0)
+  websiteVisits   Int      @default(0)
+  
+  // County breakdown (stored as JSON)
+  countyBreakdown Json?
+  
+  @@index([date])
 }

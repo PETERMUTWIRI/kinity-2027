@@ -1,35 +1,38 @@
+// Ticket and code generation utilities
+
 /**
- * Generate a unique ticket code
- * Format: XXX-XXXX-XXXX (e.g., NIH-7A3F-9K2M)
- * Uses a mix of letters and numbers for readability
+ * Generate a unique ticket code for RSVPs
+ * Format: KIN-XXXXX (5 alphanumeric characters)
  */
 export function generateTicketCode(): string {
-  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // Excludes I, O, 0, 1 to avoid confusion
-  const segments = [3, 4, 4];
-  
-  return segments
-    .map(length => {
-      let result = '';
-      for (let i = 0; i < length; i++) {
-        result += chars.charAt(Math.floor(Math.random() * chars.length));
-      }
-      return result;
-    })
-    .join('-');
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // Excluded similar looking characters
+  let code = 'KIN-';
+  for (let i = 0; i < 5; i++) {
+    code += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return code;
 }
 
 /**
- * Format a ticket code for display
- * Adds NIH- prefix for branding
+ * Generate a contribution reference number
+ * Format: KIN-YYYYMMDD-XXXX
  */
-export function formatTicketCode(code: string): string {
-  if (code.startsWith('NIH-')) return code;
-  return `NIH-${code}`;
+export function generateContributionRef(): string {
+  const date = new Date();
+  const dateStr = date.toISOString().slice(0, 10).replace(/-/g, '');
+  const random = Math.random().toString(36).substring(2, 6).toUpperCase();
+  return `KIN-${dateStr}-${random}`;
 }
 
 /**
- * Parse a ticket code (remove NIH- prefix if present)
+ * Generate a volunteer ID
+ * Format: VOL-XXXXXX
  */
-export function parseTicketCode(code: string): string {
-  return code.replace(/^NIH-/, '');
+export function generateVolunteerId(): string {
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  let id = 'VOL-';
+  for (let i = 0; i < 6; i++) {
+    id += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return id;
 }

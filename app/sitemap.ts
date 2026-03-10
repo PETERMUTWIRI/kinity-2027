@@ -1,35 +1,41 @@
 import { MetadataRoute } from 'next';
 import { prisma } from '@/lib/prisma';
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://www.staramillion.com';
+  const baseUrl = 'https://www.kinity2027.com';
   
   // Static pages
   const staticPages = [
     { path: '', priority: 1.0, changeFrequency: 'daily' as const },
-    { path: '/music', priority: 0.9, changeFrequency: 'weekly' as const },
-    { path: '/videos', priority: 0.9, changeFrequency: 'weekly' as const },
+    { path: '/our-story', priority: 0.9, changeFrequency: 'monthly' as const },
+    { path: '/vision-2027', priority: 0.9, changeFrequency: 'weekly' as const },
+    { path: '/on-the-ground', priority: 0.9, changeFrequency: 'daily' as const },
     { path: '/events', priority: 0.9, changeFrequency: 'daily' as const },
-    { path: '/about', priority: 0.8, changeFrequency: 'monthly' as const },
-    { path: '/blog', priority: 0.8, changeFrequency: 'daily' as const },
+    { path: '/gallery', priority: 0.8, changeFrequency: 'weekly' as const },
+    { path: '/videos', priority: 0.8, changeFrequency: 'weekly' as const },
+    { path: '/press', priority: 0.7, changeFrequency: 'weekly' as const },
     { path: '/contact', priority: 0.7, changeFrequency: 'monthly' as const },
+    { path: '/join-us', priority: 0.9, changeFrequency: 'monthly' as const },
+    { path: '/support', priority: 0.9, changeFrequency: 'monthly' as const },
     { path: '/privacy', priority: 0.3, changeFrequency: 'yearly' as const },
     { path: '/terms', priority: 0.3, changeFrequency: 'yearly' as const },
-    { path: '/accessibility', priority: 0.3, changeFrequency: 'yearly' as const },
   ];
 
   // Dynamic pages - Events
   let events: { slug: string; updatedAt: Date }[] = [];
   try {
     events = await prisma.event.findMany({
-      where: { deletedAt: null },
+      where: { deletedAt: null, isPublic: true },
       select: { slug: true, updatedAt: true },
     });
   } catch (e) {
     console.error('Error fetching events for sitemap:', e);
   }
 
-  // Dynamic pages - Blog Posts
+  // Dynamic pages - Posts (News/Press Releases)
   let posts: { slug: string; updatedAt: Date }[] = [];
   try {
     posts = await prisma.post.findMany({
@@ -40,15 +46,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error('Error fetching posts for sitemap:', e);
   }
 
-  // Dynamic pages - Music
-  let music: { slug: string; updatedAt: Date }[] = [];
+  // Dynamic pages - Gallery Categories
+  let galleries: { slug: string; updatedAt: Date }[] = [];
   try {
-    music = await prisma.music.findMany({
+    galleries = await prisma.galleryCategory.findMany({
       where: { deletedAt: null, published: true },
       select: { slug: true, updatedAt: true },
     });
   } catch (e) {
-    console.error('Error fetching music for sitemap:', e);
+    console.error('Error fetching galleries for sitemap:', e);
   }
 
   // Dynamic pages - Videos
@@ -81,18 +87,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     })),
 
-    // Blog Posts
+    // Posts (News/Press Releases)
     ...posts.map((post) => ({
-      url: `${baseUrl}/blog/${post.slug}`,
+      url: `${baseUrl}/on-the-ground/${post.slug}`,
       lastModified: post.updatedAt,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     })),
 
-    // Music
-    ...music.map((m) => ({
-      url: `${baseUrl}/music/${m.slug}`,
-      lastModified: m.updatedAt,
+    // Gallery Categories
+    ...galleries.map((gallery) => ({
+      url: `${baseUrl}/gallery/${gallery.slug}`,
+      lastModified: gallery.updatedAt,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     })),

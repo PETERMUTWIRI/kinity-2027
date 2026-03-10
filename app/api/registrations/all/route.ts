@@ -6,7 +6,7 @@ export async function GET(req: NextRequest) {
   try {
     console.log('GET /api/registrations/all - Fetching all registrations');
     
-    const registrations = await prisma.registration.findMany({
+    const registrations = await prisma.rSVP.findMany({
       include: {
         event: {
           select: {

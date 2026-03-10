@@ -126,38 +126,26 @@ export async function GET(req: NextRequest) {
       include: {
         registrations: {
           where: {
-            status: { in: ['pending', 'completed'] },
+            status: { in: ['confirmed', 'verified'] },
           },
           select: {
             id: true,
             status: true,
-            amountPaid: true,
           },
         },
       },
     });
 
-    // Add registration stats to each event
+    // Add RSVP stats to each event
     const eventsWithStats = events.map(e => ({
       ...e,
-      registrationCount: e.registrations.length,
+      rsvpCount: e.registrations.length,
       spotsLeft: e.maxAttendees 
         ? e.maxAttendees - e.registrations.length
         : null,
-      isSoldOut: e.maxAttendees 
+      isFull: e.maxAttendees 
         ? e.registrations.length >= e.maxAttendees 
         : false,
-      // Ticket sales metadata
-      ticketSales: includeStats ? {
-        totalRevenue: e.registrations.reduce((sum, r) => {
-          return r.status === 'completed' ? sum + (r.amountPaid || 0) : sum;
-        }, 0),
-        pendingRevenue: e.registrations.reduce((sum, r) => {
-          return r.status === 'pending' ? sum + (r.amountPaid || 0) : sum;
-        }, 0),
-        completedCount: e.registrations.filter(r => r.status === 'completed').length,
-        pendingCount: e.registrations.filter(r => r.status === 'pending').length,
-      } : undefined,
     }));
 
     return NextResponse.json(eventsWithStats);

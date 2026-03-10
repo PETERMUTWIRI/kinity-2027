@@ -1,9 +1,24 @@
-// app/admin/DashboardContent.tsx - STARLET MUSIC ADMIN DASHBOARD
+// app/admin/DashboardContent.tsx - KINITY 2027 CAMPAIGN DASHBOARD
 'use client';
 
 import useSWR from 'swr';
 import Link from 'next/link';
-import { FaEdit, FaTrash, FaPlus, FaCalendar, FaFileAlt, FaPen, FaVideo, FaTicketAlt, FaMusic, FaDollarSign, FaCompactDisc } from 'react-icons/fa';
+import { 
+  FaEdit, 
+  FaTrash, 
+  FaPlus, 
+  FaCalendarAlt, 
+  FaNewspaper, 
+  FaVideo, 
+  FaHeart, 
+  FaUsers,
+  FaHandshake,
+  FaEnvelope,
+  FaFlag,
+  FaArrowRight,
+  FaEye,
+  FaChartLine,
+} from 'react-icons/fa';
 
 /* ---------- types ---------- */
 interface Post {
@@ -13,6 +28,7 @@ interface Post {
   publishedAt: string;
   cover?: string;
   published?: boolean;
+  isPressRelease?: boolean;
 }
 
 interface Event {
@@ -22,6 +38,7 @@ interface Event {
   startDate: string;
   cover?: string;
   location?: string;
+  county?: string;
 }
 
 interface Video {
@@ -35,39 +52,39 @@ interface Video {
   createdAt: string;
 }
 
-interface Music {
-  id: number;
-  title: string;
-  category: string;
-  youtubeId: string;
-  thumbnail?: string;
-  published: boolean;
-  order: number;
-  createdAt: string;
-}
-
-interface Product {
-  id: number;
-  title: string;
-  category: string;
-  price: number;
-  image?: string;
-  published: boolean;
-  createdAt: string;
-}
-
-interface Registration {
-  id: number;
-  eventId: number;
+interface Volunteer {
+  id: string;
   name: string;
   email: string;
-  amountPaid: number;
-  status: 'pending' | 'completed' | 'refunded' | 'expired';
+  county: string;
+  role: string;
+  status: string;
   createdAt: string;
-  ticketCode: string | null;
-  event: {
-    title: string;
-  } | null;
+}
+
+interface DonationTier {
+  id: number;
+  title: string;
+  amountKES: number;
+  category: string;
+  published: boolean;
+}
+
+interface Contribution {
+  id: string;
+  donorName: string;
+  amount: number;
+  currency: string;
+  status: string;
+  createdAt: string;
+}
+
+interface NewsletterSubscriber {
+  id: number;
+  email: string;
+  county?: string;
+  subscribed: boolean;
+  createdAt: string;
 }
 
 // Safe fetcher that returns empty array on error
@@ -79,7 +96,6 @@ const fetcher = async (url: string) => {
       return [];
     }
     const data = await res.json();
-    // Ensure we return an array
     return Array.isArray(data) ? data : [];
   } catch (error) {
     console.error(`Fetch error for ${url}:`, error);
@@ -91,9 +107,10 @@ export default function DashboardContent() {
   const { data: posts, mutate: mutatePosts } = useSWR<Post[]>('/api/blog', fetcher);
   const { data: events, mutate: mutateEvents } = useSWR<Event[]>('/api/events', fetcher);
   const { data: videos, mutate: mutateVideos } = useSWR<Video[]>('/api/videos', fetcher);
-  const { data: music, mutate: mutateMusic } = useSWR<Music[]>('/api/music', fetcher);
-  const { data: products, mutate: mutateProducts } = useSWR<Product[]>('/api/products', fetcher);
-  const { data: registrations } = useSWR<Registration[]>('/api/registrations/all', fetcher);
+  const { data: volunteers } = useSWR<Volunteer[]>('/api/volunteers', fetcher);
+  const { data: donationTiers } = useSWR<DonationTier[]>('/api/donation-tiers', fetcher);
+  const { data: contributions } = useSWR<Contribution[]>('/api/contributions', fetcher);
+  const { data: subscribers } = useSWR<NewsletterSubscriber[]>('/api/newsletter?all=true', fetcher);
 
   const deletePost = async (id: number) => {
     if (!confirm('Delete this post?')) return;
@@ -113,23 +130,15 @@ export default function DashboardContent() {
     mutateVideos(videos?.filter((v) => v.id !== id) ?? [], false);
   };
 
-  const deleteMusic = async (id: number) => {
-    if (!confirm('Delete this music entry?')) return;
-    await fetch(`/api/music?id=${id}`, { method: 'DELETE' });
-    mutateMusic(music?.filter((m) => m.id !== id) ?? [], false);
-  };
-
-  const deleteProduct = async (id: number) => {
-    if (!confirm('Delete this product?')) return;
-    await fetch(`/api/products/${id}`, { method: 'DELETE' });
-    mutateProducts(products?.filter((p) => p.id !== id) ?? [], false);
-  };
-
   /* ---------- computed stats ---------- */
-  const totalRevenue = (registrations
-    ?.filter(r => r.status === 'completed')
-    .reduce((sum, r) => sum + (r.amountPaid || 0), 0) || 0) / 100;
-
+  const totalContributions = contributions?.reduce((sum, c) => 
+    c.status === 'completed' ? sum + c.amount : sum, 0) || 0;
+  
+  const totalVolunteers = volunteers?.length || 0;
+  const activeVolunteers = volunteers?.filter(v => v.status === 'active').length || 0;
+  
+  const totalSubscribers = subscribers?.filter(s => s.subscribed).length || 0;
+  
   const upcomingEvents = events
     ?.filter(e => new Date(e.startDate) > new Date())
     .sort((a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime()) || [];
@@ -137,139 +146,154 @@ export default function DashboardContent() {
   const recentVideos = videos
     ?.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()) || [];
 
-  const recentMusic = music
-    ?.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()) || [];
-
-  const recentProducts = products
-    ?.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()) || [];
-
-  const recentRegistrations = registrations
-    ?.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+  const pendingVolunteers = volunteers
+    ?.filter(v => v.status === 'pending')
+    .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
     .slice(0, 5) || [];
 
   /* ---------- skeleton while loading ---------- */
-  if (!posts || !events || !videos || !music || !products || !registrations)
+  if (!posts || !events || !videos || !volunteers || !subscribers) {
     return (
-      <div className="max-w-7xl mx-auto p-8">
-        <div className="h-10 bg-slate-700 rounded mb-8 animate-pulse" />
-        <div className="grid md:grid-cols-5 gap-6 mb-10">
+      <div className="max-w-7xl mx-auto">
+        <div className="h-10 bg-slate-800 rounded mb-8 animate-pulse w-1/3" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           {[...Array(4)].map((_, i) => (
-            <div key={i} className="h-24 bg-slate-700 rounded animate-pulse" />
-          ))}
-        </div>
-        <div className="grid md:grid-cols-2 gap-8">
-          {[...Array(4)].map((_, i) => (
-            <div key={i} className="bg-slate-800 rounded-2xl shadow p-6 h-64 border border-white/10">
-              <div className="h-6 bg-slate-700 rounded mb-4 animate-pulse" />
-              <div className="space-y-3">
-                {[...Array(4)].map((_, j) => (
-                  <div key={j} className="h-12 bg-slate-700 rounded animate-pulse" />
-                ))}
-              </div>
-            </div>
+            <div key={i} className="h-32 bg-slate-800 rounded-xl animate-pulse" />
           ))}
         </div>
       </div>
     );
+  }
 
   /* ---------- dashboard ---------- */
   return (
-    <div className="max-w-7xl mx-auto p-4 md:p-8">
+    <div className="max-w-7xl mx-auto">
+      {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 gap-4">
-        <h1 className="text-2xl sm:text-3xl font-black text-white flex items-center gap-3">
-          <FaMusic className="text-blue-600" /> Ray Armillion Music Admin
-        </h1>
-        <div className="text-sm text-gray-400">
-          {new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-black text-white flex items-center gap-3">
+            <FaFlag className="text-[#0074D9]" /> Campaign Dashboard
+          </h1>
+          <p className="text-slate-400 mt-1">
+            Track the movement&apos;s progress across all 47 counties
+          </p>
+        </div>
+        <div className="text-sm text-slate-400">
+          {new Date().toLocaleDateString('en-KE', { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+          })}
         </div>
       </div>
 
       {/* KPI CARDS */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 mb-8 md:mb-10">
-        <MetricCard label="Blog Posts" value={posts.length} icon={<FaPen />} href="/admin/blog/list" color="blue" />
-        <MetricCard label="Events" value={events.length} icon={<FaCalendar />} href="/admin/events/list" color="green" />
-        <MetricCard label="Videos" value={videos.length} icon={<FaVideo />} href="/admin/videos/list" color="purple" />
-        <MetricCard label="Registrations" value={registrations.length} icon={<FaTicketAlt />} href="/admin/registrations" color="orange" />
-        <MetricCard label="Music" value={music.length} icon={<FaCompactDisc />} href="/admin/music/list" color="red" />
-        <MetricCard label="Products" value={products?.length || 0} icon={<FaDollarSign />} href="/admin/merchandise" color="orange" />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <MetricCard 
+          label="Total Volunteers" 
+          value={totalVolunteers} 
+          subValue={`${activeVolunteers} active`}
+          icon={<FaHandshake />} 
+          href="/admin/volunteers" 
+          color="blue" 
+        />
+        <MetricCard 
+          label="Email Subscribers" 
+          value={totalSubscribers} 
+          icon={<FaEnvelope />} 
+          href="/admin/subscribers" 
+          color="purple" 
+        />
+        <MetricCard 
+          label="Contributions" 
+          value={`KES ${(totalContributions / 100).toLocaleString()}`}
+          icon={<FaHeart />} 
+          href="/admin/donations" 
+          color="red" 
+        />
+        <MetricCard 
+          label="Upcoming Events" 
+          value={upcomingEvents.length} 
+          icon={<FaCalendarAlt />} 
+          href="/admin/events" 
+          color="green" 
+        />
       </div>
 
       {/* Quick Stats Row */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-10">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         <QuickStatCard 
-          label="Total Revenue" 
-          value={`$${totalRevenue.toFixed(2)}`} 
-          icon={<FaDollarSign />}
-          trend="From completed registrations"
-          color="green"
-        />
-        <QuickStatCard 
-          label="Upcoming Events" 
-          value={upcomingEvents.length} 
-          icon={<FaCalendar />}
-          trend={`Next: ${upcomingEvents[0]?.title || 'None'}`}
+          label="Press Releases" 
+          value={posts?.filter(p => p.isPressRelease).length || 0} 
+          icon={<FaNewspaper />}
           color="blue"
         />
         <QuickStatCard 
-          label="Published Videos" 
-          value={videos.filter(v => v.published).length} 
+          label="Videos" 
+          value={videos?.filter(v => v.published).length || 0} 
           icon={<FaVideo />}
-          trend={`${videos.filter(v => !v.published).length} drafts`}
           color="purple"
         />
         <QuickStatCard 
-          label="Music Tracks" 
-          value={music.filter(m => m.published).length} 
-          icon={<FaMusic />}
-          trend={`${music.filter(m => !m.published).length} drafts`}
+          label="Pending Volunteers" 
+          value={volunteers?.filter(v => v.status === 'pending').length || 0} 
+          icon={<FaUsers />}
+          color="orange"
+        />
+        <QuickStatCard 
+          label="Donation Tiers" 
+          value={donationTiers?.length || 0} 
+          icon={<FaHeart />}
           color="red"
         />
       </div>
 
       {/* CONTENT GRID */}
-      <div className="grid md:grid-cols-2 gap-4 md:gap-8">
-        {/* BLOG SECTION */}
+      <div className="grid md:grid-cols-2 gap-6">
+        {/* RECENT POSTS */}
         <SectionCard
-          title="Recent Blog Posts"
-          href="/admin/blog/list"
-          onNew="/admin/blog"
-          items={posts.slice(0, 5)}
+          title="Recent Posts"
+          href="/admin/posts"
+          onNew="/admin/posts/new"
+          items={posts?.slice(0, 5) || []}
           render={(p) => (
             <ItemRow
               id={p.id}
               title={p.title}
-              subtitle={`${p.category} • ${new Date(p.publishedAt).toLocaleDateString()}`}
+              subtitle={`${p.category} • ${new Date(p.publishedAt).toLocaleDateString('en-KE')}`}
               cover={p.cover}
-              editLink={`/admin/blog?id=${p.id}`}
+              editLink={`/admin/posts/${p.id}`}
               onDelete={() => deletePost(p.id)}
-              status={p.published === false ? 'Draft' : undefined}
+              status={p.published === false ? 'Draft' : p.isPressRelease ? 'Press' : undefined}
+              statusColor={p.isPressRelease ? 'purple' : undefined}
             />
           )}
         />
 
-        {/* EVENTS SECTION */}
+        {/* UPCOMING EVENTS */}
         <SectionCard
           title="Upcoming Events"
-          href="/admin/events/list"
-          onNew="/admin/events"
+          href="/admin/events"
+          onNew="/admin/events/new"
           items={upcomingEvents.slice(0, 5)}
           render={(e) => (
             <ItemRow
               id={e.id}
               title={e.title}
-              subtitle={`${new Date(e.startDate).toLocaleDateString()} • ${e.location || 'TBA'}`}
+              subtitle={`${new Date(e.startDate).toLocaleDateString('en-KE')} • ${e.county || e.location}`}
               cover={e.cover}
-              editLink={`/admin/events?id=${e.id}`}
+              editLink={`/admin/events/${e.id}`}
               onDelete={() => deleteEvent(e.id)}
             />
           )}
         />
 
-        {/* VIDEOS SECTION */}
+        {/* RECENT VIDEOS */}
         <SectionCard
           title="Recent Videos"
-          href="/admin/videos/list"
-          onNew="/admin/videos"
+          href="/admin/videos"
+          onNew="/admin/videos/new"
           items={recentVideos.slice(0, 5)}
           render={(v) => (
             <ItemRow
@@ -277,102 +301,60 @@ export default function DashboardContent() {
               title={v.title}
               subtitle={`${v.category} • Order: ${v.order}`}
               cover={v.thumbnail}
-              editLink={`/admin/videos?id=${v.id}`}
+              editLink={`/admin/videos/${v.id}`}
               onDelete={() => deleteVideo(v.id)}
               status={v.published ? undefined : 'Draft'}
             />
           )}
         />
 
-        {/* MUSIC SECTION */}
-        <SectionCard
-          title="Recent Music"
-          href="/admin/music/list"
-          onNew="/admin/music"
-          items={recentMusic.slice(0, 5)}
-          render={(m) => (
-            <ItemRow
-              id={m.id}
-              title={m.title}
-              subtitle={`${m.category} • Order: ${m.order}`}
-              cover={m.thumbnail}
-              editLink={`/admin/music?id=${m.id}`}
-              onDelete={() => deleteMusic(m.id)}
-              status={m.published ? undefined : 'Draft'}
-            />
-          )}
-        />
-
-        {/* MERCHANDISE SECTION */}
-        <SectionCard
-          title="Recent Products"
-          href="/admin/merchandise"
-          onNew="/admin/merchandise"
-          items={recentProducts.slice(0, 5)}
-          render={(p) => (
-            <ItemRow
-              id={p.id}
-              title={p.title}
-              subtitle={`${p.category} • $${p.price}`}
-              cover={p.image}
-              editLink={`/admin/merchandise?id=${p.id}`}
-              onDelete={() => deleteProduct(p.id)}
-              status={p.published ? undefined : 'Draft'}
-            />
-          )}
-        />
-
-        {/* REGISTRATIONS SECTION */}
-        <div className="bg-slate-800 rounded-2xl shadow p-4 md:p-6 border border-white/10">
+        {/* PENDING VOLUNTEERS */}
+        <div className="bg-slate-800 rounded-2xl shadow-lg p-6 border border-slate-700">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-black text-white">Recent Registrations</h2>
-            <Link href="/admin/registrations" className="text-blue-600 hover:text-blue-800 text-sm font-bold flex items-center gap-1">
-              <FaTicketAlt /> View All
+            <div className="flex items-center gap-2">
+              <FaUsers className="w-5 h-5 text-orange-500" />
+              <h2 className="text-xl font-bold text-white">Pending Volunteers</h2>
+            </div>
+            <Link href="/admin/volunteers" className="text-[#0074D9] hover:text-[#005CB0] text-sm font-bold flex items-center gap-1">
+              <FaEye /> View All
             </Link>
           </div>
-          <div className="space-y-2 md:space-y-3 max-h-96 overflow-y-auto pr-2">
-            {recentRegistrations.length ? (
-              recentRegistrations.map((r) => (
-                <div key={r.id} className="flex items-center gap-2 md:gap-4 p-2 md:p-3 bg-gray-50 rounded-lg border hover:bg-gray-100 transition">
+          <div className="space-y-3 max-h-80 overflow-y-auto pr-2">
+            {pendingVolunteers.length ? (
+              pendingVolunteers.map((v) => (
+                <div key={v.id} className="flex items-center gap-4 p-3 bg-slate-700/50 rounded-lg border border-slate-600 hover:border-orange-500/50 transition">
+                  <div className="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center flex-shrink-0">
+                    <FaHandshake className="w-5 h-5 text-orange-400" />
+                  </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-semibold text-sm truncate">{r.name}</p>
-                    <p className="text-xs text-gray-400 truncate">{r.event?.title || `Event #${r.eventId}`}</p>
+                    <p className="font-semibold text-white text-sm truncate">{v.name}</p>
+                    <p className="text-xs text-slate-400">{v.county} • {v.role}</p>
                   </div>
-                  <div className="flex flex-col items-end gap-1 flex-shrink-0">
-                    <p className={`text-sm font-semibold ${r.status === 'completed' ? 'text-green-600' : 'text-gray-600'}`}>
-                      ${(r.amountPaid ?? 0).toFixed(2)}
-                    </p>
-                    <span className={`text-xs px-1 md:px-2 py-0.5 rounded-full ${
-                      r.status === 'completed' ? 'bg-green-100 text-green-800' :
-                      r.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
-                      r.status === 'refunded' ? 'bg-blue-100 text-blue-800' :
-                      'bg-red-100 text-red-800'
-                    }`}>
-                      {r.status}
-                    </span>
-                  </div>
+                  <Link 
+                    href={`/admin/volunteers/${v.id}`}
+                    className="text-xs px-3 py-1 rounded-full bg-orange-500/20 text-orange-400 hover:bg-orange-500 hover:text-white transition"
+                  >
+                    Review
+                  </Link>
                 </div>
               ))
             ) : (
-              <p className="text-sm text-gray-400">No registrations yet</p>
+              <p className="text-sm text-slate-400 text-center py-8">No pending volunteers</p>
             )}
-          </div>
-          <div className="mt-4 pt-4 border-t">
-            <Link href="/admin/registrations" className="text-sm text-blue-600 hover:underline font-semibold">View all registrations →</Link>
           </div>
         </div>
       </div>
 
       {/* Quick Actions */}
-      <div className="mt-8 md:mt-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl shadow p-4 md:p-6">
-        <h2 className="text-xl font-black text-white mb-4">Quick Actions</h2>
-        <div className="flex flex-wrap gap-3 md:gap-4">
-          <QuickActionButton href="/admin/blog" icon={<FaFileAlt />} label="New Blog Post" />
-          <QuickActionButton href="/admin/events" icon={<FaCalendar />} label="New Event" />
-          <QuickActionButton href="/admin/videos" icon={<FaVideo />} label="Add Video" />
-          <QuickActionButton href="/admin/registrations" icon={<FaTicketAlt />} label="View Registrations" />
-          <QuickActionButton href="/admin/music" icon={<FaMusic />} label="Add Music" />
-          <QuickActionButton href="/admin/merchandise" icon={<FaCompactDisc />} label="Add Product" />
+      <div className="mt-8 bg-gradient-to-r from-[#0074D9] to-[#6B2C91] rounded-2xl shadow-lg p-6">
+        <h2 className="text-xl font-bold text-white mb-4">Quick Actions</h2>
+        <div className="flex flex-wrap gap-3">
+          <QuickActionButton href="/admin/posts/new" icon={<FaNewspaper />} label="New Post" />
+          <QuickActionButton href="/admin/events/new" icon={<FaCalendarAlt />} label="New Event" />
+          <QuickActionButton href="/admin/videos/new" icon={<FaVideo />} label="Add Video" />
+          <QuickActionButton href="/admin/volunteers" icon={<FaUsers />} label="Review Volunteers" />
+          <QuickActionButton href="/admin/manifesto/new" icon={<FaFlag />} label="Add Pillar" />
+          <QuickActionButton href="/admin/donations" icon={<FaHeart />} label="View Donations" />
         </div>
       </div>
     </div>
@@ -380,47 +362,79 @@ export default function DashboardContent() {
 }
 
 /* ---------- re-usable components ---------- */
-function MetricCard({ label, value, icon, href, color = 'blue' }: { label: string; value: string | number; icon: React.ReactNode; href: string; color?: 'blue' | 'green' | 'purple' | 'orange' | 'red' }) {
+
+function MetricCard({ 
+  label, 
+  value, 
+  subValue,
+  icon, 
+  href, 
+  color = 'blue' 
+}: { 
+  label: string; 
+  value: string | number; 
+  subValue?: string;
+  icon: React.ReactNode; 
+  href: string; 
+  color?: 'blue' | 'green' | 'purple' | 'orange' | 'red'; 
+}) {
   const colorClasses = {
-    blue: 'group-hover:text-blue-600',
-    green: 'group-hover:text-green-600',
-    purple: 'group-hover:text-purple-600',
-    orange: 'group-hover:text-orange-600',
-    red: 'group-hover:text-red-600',
+    blue: 'from-blue-600 to-blue-700 hover:shadow-blue-500/25',
+    green: 'from-green-600 to-green-700 hover:shadow-green-500/25',
+    purple: 'from-purple-600 to-purple-700 hover:shadow-purple-500/25',
+    orange: 'from-orange-600 to-orange-700 hover:shadow-orange-500/25',
+    red: 'from-red-600 to-red-700 hover:shadow-red-500/25',
   };
   
   return (
-    <Link href={href} className="group bg-slate-800 rounded-2xl shadow p-4 md:p-6 hover:shadow-xl transition border border-white/10">
-      <div className="flex items-center justify-between">
+    <Link 
+      href={href} 
+      className={`group block bg-gradient-to-br ${colorClasses[color]} rounded-2xl p-6 transition-all duration-300 hover:shadow-xl`}
+    >
+      <div className="flex items-start justify-between">
         <div>
-          <p className="text-sm text-gray-400">{label}</p>
-          <p className="text-3xl font-black text-white mt-1">{value}</p>
+          <p className="text-white/70 text-sm font-medium">{label}</p>
+          <p className="text-3xl font-bold text-white mt-1">{value}</p>
+          {subValue && (
+            <p className="text-white/60 text-xs mt-1">{subValue}</p>
+          )}
         </div>
-        <div className={`text-3xl text-gray-400 transition ${colorClasses[color]}`}>{icon}</div>
+        <div className="text-white/30 text-3xl group-hover:scale-110 transition-transform">
+          {icon}
+        </div>
       </div>
     </Link>
   );
 }
 
-function QuickStatCard({ label, value, icon, trend, color = 'blue' }: { label: string; value: string | number; icon: React.ReactNode; trend: string; color?: 'blue' | 'green' | 'purple' | 'orange' | 'red' }) {
+function QuickStatCard({ 
+  label, 
+  value, 
+  icon, 
+  color = 'blue' 
+}: { 
+  label: string; 
+  value: string | number; 
+  icon: React.ReactNode; 
+  color?: 'blue' | 'green' | 'purple' | 'orange' | 'red'; 
+}) {
   const colorClasses = {
-    blue: 'text-blue-600 bg-blue-50',
-    green: 'text-green-600 bg-green-50',
-    purple: 'text-purple-600 bg-purple-50',
-    orange: 'text-orange-600 bg-orange-50',
-    red: 'text-red-600 bg-red-50',
+    blue: 'text-blue-500 bg-blue-500/10',
+    green: 'text-green-500 bg-green-500/10',
+    purple: 'text-purple-500 bg-purple-500/10',
+    orange: 'text-orange-500 bg-orange-500/10',
+    red: 'text-red-500 bg-red-500/10',
   };
   
   return (
-    <div className="bg-slate-800 rounded-2xl shadow p-4 md:p-6 border border-white/10">
-      <div className="flex items-center gap-4">
-        <div className={`p-3 rounded-xl ${colorClasses[color]}`}>
+    <div className="bg-slate-800 rounded-xl p-4 border border-slate-700">
+      <div className="flex items-center gap-3">
+        <div className={`p-2 rounded-lg ${colorClasses[color]}`}>
           {icon}
         </div>
         <div>
-          <p className="text-sm text-gray-400">{label}</p>
-          <p className="text-2xl font-black text-white">{value}</p>
-          <p className="text-xs text-gray-400 mt-1">{trend}</p>
+          <p className="text-slate-400 text-xs">{label}</p>
+          <p className="text-xl font-bold text-white">{value}</p>
         </div>
       </div>
     </div>
@@ -441,45 +455,76 @@ function SectionCard<T>({
   render: (item: T) => React.ReactNode;
 }) {
   return (
-    <div className="bg-slate-800 rounded-2xl shadow p-4 md:p-6 border border-white/10">
+    <div className="bg-slate-800 rounded-2xl shadow-lg p-6 border border-slate-700">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-black text-white">{title}</h2>
-        <Link href={onNew} className="text-blue-600 hover:text-blue-800 text-sm font-bold flex items-center gap-1">
+        <h2 className="text-xl font-bold text-white">{title}</h2>
+        <Link href={onNew} className="text-[#0074D9] hover:text-[#005CB0] text-sm font-bold flex items-center gap-1">
           <FaPlus /> New
         </Link>
       </div>
-      <div className="space-y-2 md:space-y-3 max-h-96 overflow-y-auto pr-2">
+      <div className="space-y-3 max-h-80 overflow-y-auto pr-2">
         {items.length ? (
           items.map(render)
         ) : (
-          <p className="text-sm text-gray-400">No items yet</p>
+          <p className="text-sm text-slate-400 text-center py-8">No items yet</p>
         )}
       </div>
-      <div className="mt-4 border-t pt-4">
-        <Link href={href} className="text-sm text-blue-600 hover:underline font-semibold">View all →</Link>
+      <div className="mt-4 pt-4 border-t border-slate-700">
+        <Link href={href} className="text-sm text-[#0074D9] hover:text-[#005CB0] font-semibold flex items-center gap-1">
+          View all <FaArrowRight className="w-3 h-3" />
+        </Link>
       </div>
     </div>
   );
 }
 
-function ItemRow({ id, title, subtitle, cover, editLink, onDelete, status }: { id: number; title: string; subtitle: string; cover?: string; editLink: string; onDelete: () => void; status?: string }) {
+function ItemRow({ 
+  id, 
+  title, 
+  subtitle, 
+  cover, 
+  editLink, 
+  onDelete, 
+  status,
+  statusColor = 'gray'
+}: { 
+  id: number; 
+  title: string; 
+  subtitle: string; 
+  cover?: string; 
+  editLink: string; 
+  onDelete: () => void; 
+  status?: string;
+  statusColor?: 'gray' | 'purple';
+}) {
+  const statusColors = {
+    gray: 'bg-slate-600 text-slate-200',
+    purple: 'bg-purple-600 text-purple-100',
+  };
+
   return (
-    <div className="flex items-center gap-2 md:gap-4 p-2 md:p-3 bg-gray-50 rounded-lg border group hover:bg-gray-100 transition">
-      {cover && <img src={cover} alt="" className="w-10 h-10 md:w-12 md:h-12 object-cover rounded flex-shrink-0" />}
+    <div className="flex items-center gap-3 p-3 bg-slate-700/50 rounded-lg border border-slate-600 hover:border-slate-500 transition group">
+      {cover ? (
+        <img src={cover} alt="" className="w-12 h-12 object-cover rounded-lg flex-shrink-0" />
+      ) : (
+        <div className="w-12 h-12 bg-slate-600 rounded-lg flex items-center justify-center flex-shrink-0">
+          <FaNewspaper className="w-5 h-5 text-slate-400" />
+        </div>
+      )}
       <div className="flex-1 min-w-0">
-        <p className="font-semibold text-sm truncate">{title}</p>
-        <p className="text-xs text-gray-400 truncate">{subtitle}</p>
+        <p className="font-semibold text-white text-sm truncate">{title}</p>
+        <p className="text-xs text-slate-400 truncate">{subtitle}</p>
       </div>
       {status && (
-        <span className="text-xs px-1 md:px-2 py-0.5 rounded-full bg-gray-200 text-gray-700 flex-shrink-0">
+        <span className={`text-xs px-2 py-1 rounded-full flex-shrink-0 ${statusColors[statusColor]}`}>
           {status}
         </span>
       )}
-      <div className="flex gap-1 md:gap-2 opacity-0 group-hover:opacity-100 transition flex-shrink-0">
-        <Link href={editLink} className="text-blue-600 hover:text-blue-800 p-1" title="Edit">
+      <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition flex-shrink-0">
+        <Link href={editLink} className="text-[#0074D9] hover:text-[#005CB0] p-2" title="Edit">
           <FaEdit />
         </Link>
-        <button onClick={onDelete} className="text-red-600 hover:text-red-800 p-1" title="Delete">
+        <button onClick={onDelete} className="text-red-400 hover:text-red-300 p-2" title="Delete">
           <FaTrash />
         </button>
       </div>

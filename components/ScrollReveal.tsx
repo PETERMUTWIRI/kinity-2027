@@ -1,7 +1,12 @@
 'use client';
 
 import { motion, useInView, Variants } from 'framer-motion';
-import { useRef, ReactNode, useEffect, useState } from 'react';
+import { useRef, ReactNode } from 'react';
+
+// ==========================================
+// SCROLL REVEAL ANIMATION COMPONENT
+// For elegant content reveal on scroll
+// ==========================================
 
 interface ScrollRevealProps {
   children: ReactNode;
@@ -10,48 +15,7 @@ interface ScrollRevealProps {
   direction?: 'up' | 'down' | 'left' | 'right' | 'none';
   duration?: number;
   once?: boolean;
-}
-
-const directionVariants: Record<string, Variants> = {
-  up: {
-    hidden: { opacity: 0, y: 60 },
-    visible: { opacity: 1, y: 0 },
-  },
-  down: {
-    hidden: { opacity: 0, y: -60 },
-    visible: { opacity: 1, y: 0 },
-  },
-  left: {
-    hidden: { opacity: 0, x: -60 },
-    visible: { opacity: 1, x: 0 },
-  },
-  right: {
-    hidden: { opacity: 0, x: 60 },
-    visible: { opacity: 1, x: 0 },
-  },
-  none: {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  },
-};
-
-// Hook to detect reduced motion preference
-function useReducedMotion(): boolean {
-  const [reducedMotion, setReducedMotion] = useState(false);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setReducedMotion(mediaQuery.matches);
-
-    const handleChange = (e: MediaQueryListEvent) => {
-      setReducedMotion(e.matches);
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, []);
-
-  return reducedMotion;
+  amount?: number;
 }
 
 export default function ScrollReveal({
@@ -59,25 +23,46 @@ export default function ScrollReveal({
   className = '',
   delay = 0,
   direction = 'up',
-  duration = 0.6,
+  duration = 0.5,
   once = true,
+  amount = 0.2,
 }: ScrollRevealProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once, margin: '-100px' });
-  const reducedMotion = useReducedMotion();
+  const isInView = useInView(ref, { once, amount });
 
-  // If reduced motion is preferred, just fade in without movement
-  const variants = reducedMotion 
-    ? { hidden: { opacity: 0 }, visible: { opacity: 1 } }
-    : directionVariants[direction];
+  const getInitialPosition = () => {
+    switch (direction) {
+      case 'up':
+        return { y: 40, x: 0 };
+      case 'down':
+        return { y: -40, x: 0 };
+      case 'left':
+        return { y: 0, x: 40 };
+      case 'right':
+        return { y: 0, x: -40 };
+      case 'none':
+        return { y: 0, x: 0 };
+      default:
+        return { y: 40, x: 0 };
+    }
+  };
 
-  const transition = reducedMotion
-    ? { duration: 0.2, delay: 0 }
-    : {
+  const variants: Variants = {
+    hidden: {
+      opacity: 0,
+      ...getInitialPosition(),
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      x: 0,
+      transition: {
         duration,
         delay,
-        ease: [0.22, 1, 0.36, 1] as const, // Custom easing for premium feel
-      };
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
 
   return (
     <motion.div
@@ -85,7 +70,6 @@ export default function ScrollReveal({
       initial="hidden"
       animate={isInView ? 'visible' : 'hidden'}
       variants={variants}
-      transition={transition}
       className={className}
     >
       {children}
@@ -93,7 +77,7 @@ export default function ScrollReveal({
   );
 }
 
-// Stagger Container for child animations
+// Staggered children animation wrapper
 interface StaggerContainerProps {
   children: ReactNode;
   className?: string;
@@ -106,24 +90,24 @@ export function StaggerContainer({
   staggerDelay = 0.1,
 }: StaggerContainerProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-  const reducedMotion = useReducedMotion();
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
-  const transition = reducedMotion
-    ? { staggerChildren: 0 }
-    : { staggerChildren: staggerDelay };
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: staggerDelay,
+      },
+    },
+  };
 
   return (
     <motion.div
       ref={ref}
       initial="hidden"
       animate={isInView ? 'visible' : 'hidden'}
-      variants={{
-        hidden: {},
-        visible: {
-          transition,
-        },
-      }}
+      variants={containerVariants}
       className={className}
     >
       {children}
@@ -131,102 +115,72 @@ export function StaggerContainer({
   );
 }
 
-// Stagger Item for use inside StaggerContainer
+// Individual stagger item
 interface StaggerItemProps {
   children: ReactNode;
   className?: string;
-  direction?: 'up' | 'down' | 'left' | 'right' | 'none';
 }
 
-export function StaggerItem({
-  children,
-  className = '',
-  direction = 'up',
-}: StaggerItemProps) {
-  const reducedMotion = useReducedMotion();
-
-  const variants = reducedMotion
-    ? { hidden: { opacity: 0 }, visible: { opacity: 1 } }
-    : directionVariants[direction];
-
-  const transition = reducedMotion
-    ? { duration: 0.2 }
-    : { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const };
+export function StaggerItem({ children, className = '' }: StaggerItemProps) {
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
 
   return (
-    <motion.div
-      variants={variants}
-      transition={transition}
-      className={className}
-    >
+    <motion.div variants={itemVariants} className={className}>
       {children}
     </motion.div>
   );
 }
 
-// Fade In variant
+// Fade in only (no movement)
 export function FadeIn({
   children,
   className = '',
   delay = 0,
-}: {
-  children: ReactNode;
-  className?: string;
-  delay?: number;
-}) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-50px' });
-  const reducedMotion = useReducedMotion();
-
-  const transition = reducedMotion
-    ? { duration: 0.2, delay: 0 }
-    : { duration: 0.8, delay, ease: 'easeOut' as const };
-
+  duration = 0.5,
+}: Omit<ScrollRevealProps, 'direction'>) {
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0 }}
-      animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-      transition={transition}
+    <ScrollReveal
+      direction="none"
       className={className}
+      delay={delay}
+      duration={duration}
     >
       {children}
-    </motion.div>
+    </ScrollReveal>
   );
 }
 
-// Scale In variant
-export function ScaleIn({
-  children,
-  className = '',
-  delay = 0,
-}: {
+// Scale reveal animation
+interface ScaleRevealProps {
   children: ReactNode;
   className?: string;
   delay?: number;
-}) {
+}
+
+export function ScaleReveal({ children, className = '', delay = 0 }: ScaleRevealProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-50px' });
-  const reducedMotion = useReducedMotion();
-
-  const animate = reducedMotion
-    ? { opacity: 1 }
-    : { opacity: 1, scale: 1 };
-
-  const initial = reducedMotion
-    ? { opacity: 0 }
-    : { opacity: 0, scale: 0.9 };
-
-  const transition = reducedMotion
-    ? { duration: 0.2, delay: 0 }
-    : { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] as const };
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
     <motion.div
       ref={ref}
-      initial={initial}
-      animate={isInView ? animate : initial}
-      transition={transition}
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+      transition={{
+        duration: 0.5,
+        delay,
+        ease: [0.25, 0.1, 0.25, 1],
+      }}
       className={className}
     >
       {children}

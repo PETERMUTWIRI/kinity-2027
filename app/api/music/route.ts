@@ -53,7 +53,7 @@ export async function GET(req: NextRequest) {
 
     // Get single music by ID
     if (id) {
-      const music = await prisma.music.findUnique({
+      const music = await prisma.galleryCategory.findUnique({
         where: { id: Number(id), deletedAt: null },
       });
 
@@ -68,7 +68,7 @@ export async function GET(req: NextRequest) {
     const where: any = { deletedAt: null };
     if (category && category !== 'All') where.category = category;
 
-    const music = await prisma.music.findMany({
+    const music = await prisma.galleryCategory.findMany({
       where,
       orderBy: [{ order: 'asc' }, { createdAt: 'desc' }],
     });
@@ -111,7 +111,7 @@ export async function POST(req: NextRequest) {
     const body = musicSchema.parse(raw);
     const slug = slugify(body.title) + '-' + Date.now();
 
-    const music = await prisma.music.create({
+    const music = await prisma.galleryCategory.create({
       data: {
         ...body,
         slug,
@@ -165,7 +165,7 @@ export async function PUT(req: NextRequest) {
     const updateSchema = musicSchema.partial();
     const body = updateSchema.parse(raw);
 
-    const updated = await prisma.music.update({
+    const updated = await prisma.galleryCategory.update({
       where: { id },
       data: body,
     });
@@ -197,7 +197,7 @@ export async function DELETE(req: NextRequest) {
       return NextResponse.json({ error: 'ID required' }, { status: 400 });
     }
 
-    await prisma.music.update({
+    await prisma.galleryCategory.update({
       where: { id },
       data: { deletedAt: new Date() },
     });
