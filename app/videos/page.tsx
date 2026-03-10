@@ -1,7 +1,7 @@
 import VideosClient from './VideosClient';
 import { prisma } from '@/lib/prisma';
 import type { Metadata } from 'next';
-import { MusicGroupSchema } from '@/components/StructuredData';
+
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;

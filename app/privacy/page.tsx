@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { BreadcrumbSchema } from '@/components/StructuredData';
+
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | Ray Armillion',

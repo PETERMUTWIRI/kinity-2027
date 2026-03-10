@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import { MusicGroupSchema, BreadcrumbSchema } from '@/components/StructuredData';
 import AboutContent from './AboutContent';
 
 export const metadata: Metadata = {
