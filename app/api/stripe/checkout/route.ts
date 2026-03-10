@@ -1,0 +1,250 @@
+// app/api/stripe/checkout/route.ts - Stripe checkout for event tickets
+import { NextRequest, NextResponse } from 'next/server';
+import { prisma } from '@/lib/prisma';
+import { stripe, isStripeConfigured } from '@/lib/stripe';
+import { generateTicketCode } from '@/lib/tickets';
+
+/* ---------- types ---------- */
+interface CheckoutRequest {
+  eventId: string;
+  email: string;
+  name: string;
+}
+
+/* ---------- POST ---------- */
+export async function POST(req: NextRequest) {
+  try {
+    // Check if Stripe is configured
+    if (!isStripeConfigured()) {
+      return NextResponse.json(
+        { error: 'Payment service not configured' },
+        { status: 503 }
+      );
+    }
+
+    const body: CheckoutRequest = await req.json();
+    const { eventId, email, name } = body;
+
+    // Validate required fields
+    if (!eventId || !email || !name) {
+      return NextResponse.json(
+        { error: 'Missing required fields: eventId, email, name' },
+        { status: 400 }
+      );
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { error: 'Invalid email format' },
+        { status: 400 }
+      );
+    }
+
+    // Convert eventId to number
+    const eventIdNum = Number(eventId);
+    if (isNaN(eventIdNum)) {
+      return NextResponse.json(
+        { error: 'Invalid eventId' },
+        { status: 400 }
+      );
+    }
+
+    // Fetch the event
+    const event = await prisma.event.findUnique({
+      where: { id: eventIdNum, deletedAt: null },
+    });
+
+    if (!event) {
+      return NextResponse.json(
+        { error: 'Event not found' },
+        { status: 404 }
+      );
+    }
+
+    // Check if registration is still open
+    if (event.startDate && new Date(event.startDate) < new Date()) {
+      return NextResponse.json(
+        { error: 'Registration is closed for this event' },
+        { status: 400 }
+      );
+    }
+
+    // Check max attendees
+    if (event.maxAttendees) {
+      const registrationCount = await prisma.registration.count({
+        where: { 
+          eventId: eventIdNum, 
+          status: { in: ['pending', 'completed'] } 
+        },
+      });
+      
+      if (registrationCount >= event.maxAttendees) {
+        return NextResponse.json(
+          { error: 'Event is sold out' },
+          { status: 400 }
+        );
+      }
+    }
+
+    const isFreeEvent = event.isFree || !event.ticketPriceCents || event.ticketPriceCents === 0;
+    const priceInCents = event.ticketPriceCents || 0;
+
+    // For free events, create registration immediately without Stripe
+    if (isFreeEvent) {
+      // Generate unique ticket code
+      let ticketCode = generateTicketCode();
+      let isUnique = false;
+      let attempts = 0;
+      
+      // Ensure ticket code is unique
+      while (!isUnique && attempts < 10) {
+        const existing = await prisma.registration.findUnique({
+          where: { ticketCode },
+        });
+        if (!existing) {
+          isUnique = true;
+        } else {
+          ticketCode = generateTicketCode();
+          attempts++;
+        }
+      }
+
+      const registration = await prisma.registration.create({
+        data: {
+          eventId: eventIdNum,
+          email,
+          name,
+          amountPaid: 0,
+          status: 'completed',
+          ticketCode,
+        },
+      });
+
+      return NextResponse.json({
+        success: true,
+        isFree: true,
+        registrationId: registration.id,
+        ticketCode: registration.ticketCode,
+        message: 'Registration successful for free event',
+      });
+    }
+
+    // For paid events, create Stripe checkout session
+    // Get base URL from request headers (works without env var)
+    const protocol = req.headers.get('x-forwarded-proto') || 'https';
+    const host = req.headers.get('host') || req.headers.get('x-forwarded-host');
+    const baseUrl = host ? `${protocol}://${host}` : (process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000');
+
+    // Create or retrieve Stripe price
+    let stripePriceId = event.stripePriceId;
+    
+    if (!stripePriceId) {
+      // Create a new Stripe price for this event
+      const stripePrice = await stripe.prices.create({
+        unit_amount: priceInCents,
+        currency: 'usd',
+        product_data: {
+          name: event.title,
+        },
+      });
+      stripePriceId = stripePrice.id;
+
+      // Update event with Stripe price ID
+      await prisma.event.update({
+        where: { id: eventIdNum },
+        data: { 
+          stripePriceId,
+          stripeProductId: stripePrice.product as string,
+        },
+      });
+    }
+
+    // Generate unique ticket code (will be activated after payment)
+    let ticketCode = generateTicketCode();
+    let isUnique = false;
+    let attempts = 0;
+    
+    // Ensure ticket code is unique
+    while (!isUnique && attempts < 10) {
+      const existing = await prisma.registration.findUnique({
+        where: { ticketCode },
+      });
+      if (!existing) {
+        isUnique = true;
+      } else {
+        ticketCode = generateTicketCode();
+        attempts++;
+      }
+    }
+
+    // Create pending registration
+    const registration = await prisma.registration.create({
+      data: {
+        eventId: eventIdNum,
+        email,
+        name,
+        amountPaid: priceInCents,
+        status: 'pending',
+        ticketCode,
+      },
+    });
+
+    // Create Stripe checkout session
+    const checkoutSession = await stripe.checkout.sessions.create({
+      customer_email: email,
+      line_items: [
+        {
+          price: stripePriceId,
+          quantity: 1,
+        },
+      ],
+      mode: 'payment',
+      success_url: `${baseUrl}/events/${event.slug}/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${baseUrl}/events/${event.slug}/cancel`,
+      metadata: {
+        registrationId: String(registration.id),
+        eventId: String(eventIdNum),
+        customerEmail: email,
+        customerName: name,
+      },
+    });
+
+    // Update registration with Stripe session ID
+    await prisma.registration.update({
+      where: { id: registration.id },
+      data: { stripeSessionId: checkoutSession.id },
+    });
+
+    console.log('Stripe checkout session created:', checkoutSession.id);
+
+    return NextResponse.json({
+      success: true,
+      isFree: false,
+      checkoutUrl: checkoutSession.url,
+      registrationId: registration.id,
+    });
+  } catch (error) {
+    console.error('POST /api/stripe/checkout error:', error);
+    
+    if (error instanceof Error && error.message.includes('STRIPE_SECRET_KEY')) {
+      return NextResponse.json(
+        { error: 'Payment service not configured', message: 'Stripe is not set up' },
+        { status: 503 }
+      );
+    }
+    
+    if (error instanceof Error && error.message.includes('stripe')) {
+      return NextResponse.json(
+        { error: 'Payment service error', message: error.message },
+        { status: 502 }
+      );
+    }
+    
+    return NextResponse.json(
+      { error: 'Failed to create checkout session' },
+      { status: 500 }
+    );
+  }
+}
