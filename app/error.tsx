@@ -2,10 +2,9 @@
 
 import { useEffect } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { FaHome, FaRedo, FaExclamationTriangle } from 'react-icons/fa';
+import { FaExclamationTriangle, FaHome, FaRedo } from 'react-icons/fa';
 
-export default function Error({
+export default function ErrorPage({
   error,
   reset,
 }: {
@@ -13,107 +12,49 @@ export default function Error({
   reset: () => void;
 }) {
   useEffect(() => {
-    // Log error to monitoring service
-    console.error('Application error:', error);
+    console.error('Page error:', error);
   }, [error]);
 
   return (
-    <div className="min-h-screen bg-slate-950 flex items-center justify-center px-4">
-      {/* Background Effects */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-red-600/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-orange-600/10 rounded-full blur-[120px]" />
-      </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="relative z-10 max-w-2xl mx-auto text-center"
-      >
-        {/* Error Icon */}
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className="mb-8"
-        >
-          <div className="w-24 h-24 mx-auto rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center">
-            <FaExclamationTriangle className="w-12 h-12 text-red-400" />
-          </div>
-        </motion.div>
-
-        {/* Title */}
-        <motion.h1
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="text-3xl sm:text-4xl font-bold text-white mb-4"
-        >
+    <div className="min-h-screen bg-slate-50 flex items-center justify-center px-4">
+      <div className="max-w-lg w-full text-center">
+        <div className="w-20 h-20 bg-[#E91D0E]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+          <FaExclamationTriangle className="w-10 h-10 text-[#E91D0E]" />
+        </div>
+        
+        <h1 className="font-headline text-3xl text-[#111111] mb-4">
           Something Went Wrong
-        </motion.h1>
+        </h1>
+        
+        <p className="text-slate-600 mb-8">
+          We&apos;re experiencing some technical difficulties. Please try again or return to the homepage.
+        </p>
 
-        {/* Description */}
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="text-lg text-slate-400 mb-4 max-w-md mx-auto"
-        >
-          We apologize for the inconvenience. Our team has been notified and is working to fix the issue.
-        </motion.p>
-
-        {/* Error Code (for debugging) */}
-        {error.digest && (
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.45 }}
-            className="text-sm text-slate-600 mb-8 font-mono"
-          >
-            Error ID: {error.digest}
-          </motion.p>
-        )}
-
-        {/* Action Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="flex flex-wrap justify-center gap-4"
-        >
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={reset}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all hover:scale-105"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#0074D9] text-white font-semibold hover:bg-[#005CB0] transition-colors"
           >
             <FaRedo className="w-4 h-4" />
             Try Again
           </button>
-
+          
           <Link
             href="/"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:border-white/20 transition-all"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-slate-200 text-slate-700 font-semibold hover:bg-slate-300 transition-colors"
           >
             <FaHome className="w-4 h-4" />
             Back to Home
           </Link>
-        </motion.div>
+        </div>
 
-        {/* Support Contact */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.7 }}
-          className="mt-12 pt-8 border-t border-white/10"
-        >
-          <p className="text-slate-500 text-sm">
-            Need help?{' '}
-            <Link href="/contact" className="text-purple-400 hover:text-purple-300 transition-colors">
-              Contact our support team
-            </Link>
-          </p>
-        </motion.div>
-      </motion.div>
+        {/* Show error details in development */}
+        {process.env.NODE_ENV === 'development' && (
+          <div className="mt-8 p-4 bg-red-50 rounded-lg text-left">
+            <p className="text-red-600 text-sm font-mono">{error.message}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

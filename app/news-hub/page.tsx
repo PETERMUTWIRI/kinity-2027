@@ -21,14 +21,21 @@ export default async function NewsHubPage({
 }) {
   const category = searchParams.category || 'All';
   
-  const posts = await prisma.post.findMany({
-    where: {
-      published: true,
-      deletedAt: null,
-      ...(category !== 'All' && { category }),
-    },
-    orderBy: { publishedAt: 'desc' },
-  });
+  // Safe query with fallback
+  let posts: any[] = [];
+  try {
+    posts = await prisma.post.findMany({
+      where: {
+        published: true,
+        deletedAt: null,
+        ...(category !== 'All' && { category }),
+      },
+      orderBy: { publishedAt: 'desc' },
+    });
+  } catch (error) {
+    console.warn('Database not available, showing empty state');
+    posts = [];
+  }
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -118,8 +125,10 @@ export default async function NewsHubPage({
         ) : (
           <div className="text-center py-16">
             <FaNewspaper className="w-16 h-16 text-slate-300 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-slate-700 mb-2">No posts yet</h3>
-            <p className="text-slate-500">Check back soon for updates!</p>
+            <h3 className="text-xl font-semibold text-slate-700 mb-2">News Coming Soon</h3>
+            <p className="text-slate-500 max-w-md mx-auto">
+              Our news section is being prepared. Check back soon for campaign updates, press releases, and event coverage.
+            </p>
           </div>
         )}
       </div>
