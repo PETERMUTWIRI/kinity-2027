@@ -73,131 +73,182 @@ export default function HomePage() {
     <div className="relative min-h-screen overflow-hidden">
       
       {/* ==========================================
-          HERO SECTION - Full Screen Impact
+          HERO SECTION - Split Layout with Images
           ========================================== */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-slate-950">
+        {/* Background Image - Rally Crowd */}
         <div className="absolute inset-0 z-0">
-          {/* Placeholder for rally crowd image */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0074D9]/90 via-[#0074D9]/70 to-[#E6F2FC]/90" />
-          {/* Uncomment when you have the rally image:
           <Image
-            src="/images/hero-rally.jpg"
-            alt="Dr. Isaac Newton Kinity with supporters"
+            src="/images/rally.jpeg"
+            alt="Dr. Isaac Newton Kinity with supporters at rally"
             fill
             className="object-cover"
             priority
             quality={90}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0074D9]/80 via-[#0074D9]/50 to-[#E6F2FC]/90" />
-          */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0074D9]/95 via-[#0074D9]/80 to-[#0074D9]/60" />
         </div>
 
         {/* Decorative Elements */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          {/* Animated gradient orbs */}
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#6B2C91]/20 rounded-full blur-[120px] animate-pulse" />
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#E91D0E]/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#0074D9]/10 rounded-full blur-[150px]" />
         </div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
-          <div className="space-y-8">
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex"
-            >
-              <span className="px-6 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white font-medium text-sm tracking-wide">
-                <span className="text-[#E91D0E] font-bold">2027</span> Presidential Campaign
-              </span>
-            </motion.div>
-
-            {/* Main Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-y-4"
-            >
-              <span className="block font-slogan text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#E91D0E] tracking-tight drop-shadow-lg">
-                KENYA&apos;S HOPE
-              </span>
-              <span className="block font-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white drop-shadow-md">
-                DR. ISAAC NEWTON KINITY
-              </span>
-            </motion.h1>
-
-            {/* Subheadline */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto font-light italic"
-            >
-              The Incoming President 2027 — Committed to the Service of Kenyans
-            </motion.p>
-
-            {/* Key Message */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="max-w-2xl mx-auto"
-            >
-              <p className="text-lg text-white/80 border-l-4 border-[#E91D0E] pl-6 text-left">
-                No Recycling of Corrupt Politicians. A new era of leadership built on integrity, 
-                economic transformation, and unwavering commitment to every Kenyan.
-              </p>
-            </motion.div>
-
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
-            >
-              <Link
-                href="/join-us"
-                className="group inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#E91D0E] text-white font-bold text-lg hover:bg-[#BA170C] transition-all duration-300 hover:shadow-xl hover:shadow-[#E91D0E]/30 hover:-translate-y-1"
+        {/* Hero Content - Split Layout */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-0">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center min-h-[80vh]">
+            
+            {/* LEFT: Text Content */}
+            <div className="space-y-8 text-center lg:text-left">
+              {/* Badge */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="inline-flex"
               >
-                <FaHandshake className="w-5 h-5" />
-                Join the Movement
-                <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                href="/vision-2027"
-                className="group inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-white text-[#0074D9] font-bold text-lg hover:bg-slate-50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-              >
-                <FaFlag className="w-5 h-5" />
-                Read the Vision
-              </Link>
-            </motion.div>
+                <span className="px-6 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white font-medium text-sm tracking-wide">
+                  <span className="text-[#E91D0E] font-bold">2027</span> Presidential Campaign
+                </span>
+              </motion.div>
 
-            {/* Stats Bar */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="pt-12"
-            >
-              <div className="inline-flex flex-wrap justify-center gap-8 md:gap-12 bg-white/10 backdrop-blur-md rounded-2xl px-8 py-6 border border-white/20">
-                {[
-                  { value: '47', label: 'Counties', suffix: '+' },
-                  { value: '50', label: 'Million Kenyans', suffix: 'M+' },
-                  { value: '1', label: 'Vision', suffix: '' },
-                ].map((stat, i) => (
-                  <div key={i} className="text-center">
-                    <div className="text-3xl md:text-4xl font-bold text-white">
-                      {stat.value}<span className="text-[#E91D0E]">{stat.suffix}</span>
+              {/* Main Headline */}
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="space-y-4"
+              >
+                <span className="block font-slogan text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#E91D0E] tracking-tight drop-shadow-lg">
+                  KENYA&apos;S HOPE
+                </span>
+                <span className="block font-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white drop-shadow-md">
+                  DR. ISAAC NEWTON KINITY
+                </span>
+              </motion.h1>
+
+              {/* Subheadline */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="text-xl md:text-2xl text-white/90 max-w-xl font-light italic"
+              >
+                The Incoming President 2027 — Committed to the Service of Kenyans
+              </motion.p>
+
+              {/* Key Message */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="max-w-lg"
+              >
+                <p className="text-lg text-white/80 border-l-4 border-[#E91D0E] pl-6 text-left">
+                  No Recycling of Corrupt Politicians. A new era of leadership built on integrity, 
+                  economic transformation, and unwavering commitment to every Kenyan.
+                </p>
+              </motion.div>
+
+              {/* CTA Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 pt-4"
+              >
+                <Link
+                  href="/join-us"
+                  className="group inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#E91D0E] text-white font-bold text-lg hover:bg-[#BA170C] transition-all duration-300 hover:shadow-xl hover:shadow-[#E91D0E]/30 hover:-translate-y-1"
+                >
+                  <FaHandshake className="w-5 h-5" />
+                  Join the Movement
+                  <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link
+                  href="/about"
+                  className="group inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-white text-[#0074D9] font-bold text-lg hover:bg-slate-50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                >
+                  <FaFlag className="w-5 h-5" />
+                  Learn More
+                </Link>
+              </motion.div>
+
+              {/* Stats Bar */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                className="pt-8"
+              >
+                <div className="inline-flex flex-wrap justify-center lg:justify-start gap-8 md:gap-12 bg-white/10 backdrop-blur-md rounded-2xl px-8 py-6 border border-white/20">
+                  {[
+                    { value: '47', label: 'Counties', suffix: '+' },
+                    { value: '50', label: 'Million Kenyans', suffix: 'M+' },
+                    { value: '1', label: 'Vision', suffix: '' },
+                  ].map((stat, i) => (
+                    <div key={i} className="text-center">
+                      <div className="text-3xl md:text-4xl font-bold text-white">
+                        {stat.value}<span className="text-[#E91D0E]">{stat.suffix}</span>
+                      </div>
+                      <div className="text-sm text-white/70">{stat.label}</div>
                     </div>
-                    <div className="text-sm text-white/70">{stat.label}</div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+
+            {/* RIGHT: Dr. Kinity Portrait */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="relative hidden lg:block"
+            >
+              <div className="relative aspect-[3/4] max-w-md mx-auto">
+                {/* Glow Effect */}
+                <div className="absolute -inset-4 bg-gradient-to-br from-[#E91D0E]/30 via-[#6B2C91]/30 to-[#0074D9]/30 rounded-3xl blur-2xl" />
+                
+                {/* Image Container */}
+                <div className="relative w-full h-full rounded-3xl overflow-hidden border-4 border-white/20 shadow-2xl">
+                  <Image
+                    src="/images/president.jpeg"
+                    alt="Dr. Isaac Newton Kinity - Presidential Candidate"
+                    fill
+                    className="object-cover object-top"
+                    priority
+                    quality={95}
+                  />
+                  
+                  {/* Subtle Gradient Overlay at Bottom */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0074D9]/40 via-transparent to-transparent" />
+                </div>
+
+                {/* Floating Badge */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1, duration: 0.5 }}
+                  className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl px-6 py-4 border border-slate-100"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#E91D0E] to-[#BA170C] flex items-center justify-center">
+                      <FaFlag className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-slate-500">Presidential</p>
+                      <p className="text-lg font-bold text-[#111111]">Candidate 2027</p>
+                    </div>
                   </div>
-                ))}
+                </motion.div>
+
+                {/* Decorative Ring */}
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+                  className="absolute -inset-8 border-2 border-dashed border-white/20 rounded-3xl pointer-events-none"
+                />
               </div>
             </motion.div>
           </div>
@@ -352,23 +403,13 @@ export default function HomePage() {
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-[#0074D9] to-[#6B2C91] rounded-3xl opacity-20 blur-2xl" />
                 <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
-                  {/* Placeholder for Dr. Kinity portrait */}
-                  <div className="w-full h-full bg-gradient-to-br from-[#0074D9] to-[#005CB0] flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-white/20 flex items-center justify-center text-5xl">
-                        👤
-                      </div>
-                      <p className="text-lg opacity-80">Dr. Isaac Newton Kinity</p>
-                    </div>
-                  </div>
-                  {/* Uncomment when you have the image:
                   <Image
-                    src="/images/dr-kinity-portrait.jpg"
-                    alt="Dr. Isaac Newton Kinity"
+                    src="/images/kinity-connection.jpeg"
+                    alt="Dr. Isaac Newton Kinity connecting with community"
                     fill
                     className="object-cover"
                   />
-                  */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0074D9]/40 via-transparent to-transparent" />
                 </div>
                 
                 {/* Experience badge */}
