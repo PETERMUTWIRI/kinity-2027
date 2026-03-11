@@ -8,7 +8,7 @@ datasource db {
 }
 
 // ==========================================
-// KINITY 2027 - PRESIDENTIAL CAMPAIGN SCHEMA
+// KIKIMO FOUNDATION SCHEMA
 // ==========================================
 
 // News/Press Releases - Transformed from Blog Posts

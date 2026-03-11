@@ -41,12 +41,12 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   // Core title template
   title: {
-    default: "Dr. Isaac Newton Kinity | Kenya's Hope 2027",
-    template: "%s | Dr. Isaac Newton Kinity 2027",
+    default: "Kikimo Foundation",
+    template: "%s | Kikimo Foundation",
   },
   
   // Primary description
-  description: "Dr. Isaac Newton Kinity - The Incoming President of Kenya 2027. Committed to the service of Kenyans. Join the movement for economic transformation, zero corruption, and a brighter future for all Kenyans.",
+  description: "Kikimo Foundation - Empowering communities and transforming lives through service and dedication.",
   
   // Keywords for search engines
   keywords: [

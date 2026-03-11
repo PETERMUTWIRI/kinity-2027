@@ -1,4 +1,4 @@
-// Utility functions for Kinity 2027 Campaign
+// Utility functions for Kikimo Foundation
 
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";

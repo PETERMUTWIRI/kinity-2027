@@ -16,7 +16,7 @@ import { prisma } from '@/lib/prisma';
 import ScrollReveal from '@/components/ScrollReveal';
 
 // ==========================================
-// KINITY 2027 - HOMEPAGE
+// KIKIMO FOUNDATION - HOMEPAGE
 // The Movement Begins
 // ==========================================
 

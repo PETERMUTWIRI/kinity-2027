@@ -25,7 +25,7 @@ import {
 } from 'react-icons/fa';
 
 // ==========================================
-// KINITY 2027 - PRESIDENTIAL NAVIGATION
+// Kikimo Foundation - PRESIDENTIAL NAVIGATION
 // ==========================================
 
 const navLinks = [
@@ -45,10 +45,10 @@ const ctaLinks = [
 ];
 
 const socialLinks = [
-  { icon: FaFacebook, href: 'https://facebook.com/Kinity2027', label: 'Facebook', color: '#1877F2' },
-  { icon: FaTwitter, href: 'https://twitter.com/Kinity2027', label: 'Twitter', color: '#1DA1F2' },
-  { icon: FaInstagram, href: 'https://instagram.com/Kinity2027', label: 'Instagram', color: '#E4405F' },
-  { icon: FaYoutube, href: 'https://youtube.com/@Kinity2027', label: 'YouTube', color: '#FF0000' },
+  { icon: FaFacebook, href: 'https://facebook.com/kikimofoundation', label: 'Facebook', color: '#1877F2' },
+  { icon: FaTwitter, href: 'https://twitter.com/kikimofoundation', label: 'Twitter', color: '#1DA1F2' },
+  { icon: FaInstagram, href: 'https://instagram.com/kikimofoundation', label: 'Instagram', color: '#E4405F' },
+  { icon: FaYoutube, href: 'https://youtube.com/@kikimofoundation', label: 'YouTube', color: '#FF0000' },
 ];
 
 export default function Navbar() {
@@ -115,7 +115,7 @@ export default function Navbar() {
                 <p className={`font-slogan text-lg leading-tight transition-colors duration-300 ${
                   isScrolled ? 'text-[#E91D0E]' : 'text-[#E91D0E]'
                 }`}>
-                  KINITY 2027
+                  Kikimo Foundation
                 </p>
                 <p className={`text-xs transition-colors duration-300 ${
                   isScrolled ? 'text-slate-600' : 'text-slate-700'
@@ -234,7 +234,7 @@ export default function Navbar() {
               <div className="p-6 border-b border-slate-100">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-slogan text-xl text-[#E91D0E]">KINITY 2027</p>
+                    <p className="font-slogan text-xl text-[#E91D0E]">Kikimo Foundation</p>
                     <p className="text-xs text-slate-500">Kenya&apos;s Hope</p>
                   </div>
                   <button

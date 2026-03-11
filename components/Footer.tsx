@@ -15,8 +15,8 @@ import {
 } from 'react-icons/fa';
 
 // ==========================================
-// KINITY 2027 - FOOTER
-// Presidential Campaign Footer
+// KIKIMO FOUNDATION - FOOTER
+// Nonprofit Foundation Footer
 // ==========================================
 
 const footerLinks = {
@@ -89,7 +89,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-6">
-              <span className="font-slogan text-3xl text-[#E91D0E]">KINITY 2027</span>
+              <span className="font-slogan text-3xl text-[#E91D0E]">KIKIMO FOUNDATION</span>
             </Link>
             <p className="text-slate-400 mb-6 max-w-sm">
               Kenya&apos;s Hope. A movement for economic transformation, zero corruption, 
@@ -99,11 +99,11 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="space-y-3">
               <a 
-                href="mailto:info@kinity2027.com" 
+                href="mailto:contact@kikimofoundation.org" 
                 className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors"
               >
                 <FaEnvelope className="w-5 h-5 text-[#0074D9]" />
-                info@kinity2027.com
+                contact@kikimofoundation.org
               </a>
               <a 
                 href="tel:+254XXXXXXXXX" 

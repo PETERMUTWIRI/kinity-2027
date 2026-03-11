@@ -17,7 +17,7 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: 'https://www.staramillion.com/sitemap.xml',
-    host: 'https://www.staramillion.com',
+    sitemap: 'https://www.kikimofoundation.org/sitemap.xml',
+    host: 'https://www.kikimofoundation.org',
   };
 }

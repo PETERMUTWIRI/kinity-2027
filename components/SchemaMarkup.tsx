@@ -15,7 +15,7 @@ export function BreadcrumbSchema({ items }: { items: BreadcrumbItem[] }) {
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}${item.path}`,
+      item: `${process.env.NEXT_PUBLIC_APP_URL || 'https://www.kikimofoundation.org'}${item.path}`,
     })),
   };
 
@@ -31,19 +31,15 @@ export function BreadcrumbSchema({ items }: { items: BreadcrumbItem[] }) {
 export function MusicGroupSchema() {
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'MusicGroup',
-    name: 'Ray Armillion',
-    description: 'Kenyan-American gospel artist and performer',
-    url: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
-    genre: ['Gospel', 'Christian', 'World Music'],
-    sameAs: [
-      'https://www.youtube.com/channel/UCBoBfckNNdCS7joUqClADbA',
-    ],
+    '@type': 'Organization',
+    name: 'Kikimo Foundation',
+    description: 'Empowering communities through education, health, and sustainable development',
+    url: process.env.NEXT_PUBLIC_APP_URL || 'https://www.kikimofoundation.org',
   };
 
   return (
     <Script
-      id="music-group-schema"
+      id="organization-schema"
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
@@ -54,11 +50,11 @@ export function WebSiteSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Ray Armillion',
-    url: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
+    name: 'Kikimo Foundation',
+    url: process.env.NEXT_PUBLIC_APP_URL || 'https://www.kikimofoundation.org',
     potentialAction: {
       '@type': 'SearchAction',
-      target: `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/search?q={search_term_string}`,
+      target: `${process.env.NEXT_PUBLIC_APP_URL || 'https://www.kikimofoundation.org'}/search?q={search_term_string}`,
       'query-input': 'required name=search_term_string',
     },
   };

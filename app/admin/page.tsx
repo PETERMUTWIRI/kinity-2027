@@ -1,4 +1,4 @@
-// app/admin/page.tsx - KINITY 2027 ADMIN DASHBOARD
+// app/admin/page.tsx - KIKIMO FOUNDATION ADMIN DASHBOARD
 import { Suspense } from 'react';
 import DashboardContent from './DashboardContent';
 

@@ -23,7 +23,7 @@ import {
 } from 'react-icons/fa';
 
 // ==========================================
-// ADMIN LAYOUT - KINITY 2027 CAMPAIGN
+// ADMIN LAYOUT - Kikimo Foundation
 // ==========================================
 
 const adminNavLinks = [
@@ -84,7 +84,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 <span className="text-white font-bold text-lg">K</span>
               </div>
               <div>
-                <h1 className="text-white font-slogan text-lg leading-tight">KINITY 2027</h1>
+                <h1 className="text-white font-slogan text-lg leading-tight">Kikimo Foundation</h1>
                 <p className="text-slate-400 text-xs">Admin Panel</p>
               </div>
             </Link>

@@ -5,7 +5,7 @@ import { prisma } from '@/lib/prisma';
 export const dynamic = 'force-dynamic';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://www.kinity2027.com';
+  const baseUrl = 'https://www.kikimofoundation.org';
   
   // Static pages
   const staticPages = [

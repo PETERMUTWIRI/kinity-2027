@@ -3,25 +3,25 @@ import AboutContent from './AboutContent';
 import { BreadcrumbSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'About | Dr. Isaac Newton Kinity',
-  description: 'Learn about Dr. Isaac Newton Kinity - the 2027 presidential candidate committed to transforming Kenya through integrity, economic development, and service to all Kenyans.',
-  keywords: ['Isaac Newton Kinity', 'Kinity 2027', 'Kenya president', 'presidential candidate', 'Kenya politics', 'integrity', 'economic transformation'],
+  title: 'About | Kikimo Foundation',
+  description: 'Learn about Dr. Isaac Newton Kinity and the Kikimo Foundation\'s mission to transform Kenya through integrity, economic development, and service to all Kenyans.',
+  keywords: ['Isaac Newton Kinity', 'Kikimo Foundation', 'Kenya', 'foundation', 'charity', 'integrity', 'economic transformation'],
   openGraph: {
-    title: 'About Dr. Isaac Newton Kinity | Kenya\'s Hope 2027',
-    description: 'Meet the 2027 presidential candidate committed to the service of Kenyans. No recycling of corrupt politicians.',
+    title: 'About Dr. Isaac Newton Kinity | Kikimo Foundation',
+    description: 'Learn about Dr. Isaac Newton Kinity and the Kikimo Foundation\'s mission to transform Kenya.',
     images: [
       {
         url: '/images/about/dr-kinity.jpg',
         width: 1200,
         height: 630,
-        alt: 'Dr. Isaac Newton Kinity - Presidential Candidate 2027',
+        alt: 'Dr. Isaac Newton Kinity - Kikimo Foundation',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Dr. Isaac Newton Kinity | Kenya\'s Hope 2027',
-    description: 'Meet the 2027 presidential candidate committed to the service of Kenyans.',
+    title: 'About Dr. Isaac Newton Kinity | Kikimo Foundation',
+    description: 'Learn about Dr. Isaac Newton Kinity and the Kikimo Foundation\'s mission to transform Kenya.',
     images: ['/images/about/dr-kinity.jpg'],
   },
   alternates: {

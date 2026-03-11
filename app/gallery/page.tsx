@@ -8,7 +8,7 @@ import { FaImages, FaFolder } from 'react-icons/fa';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Gallery | Kinity 2027',
+  title: 'Gallery | Kikimo Foundation',
   description: 'Campaign photos, rally images, and behind-the-scenes moments.',
 };
 

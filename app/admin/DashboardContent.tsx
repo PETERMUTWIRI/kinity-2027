@@ -1,4 +1,4 @@
-// app/admin/DashboardContent.tsx - KINITY 2027 CAMPAIGN DASHBOARD
+// app/admin/DashboardContent.tsx - KIKIMO FOUNDATION CAMPAIGN DASHBOARD
 'use client';
 
 import useSWR from 'swr';
