@@ -1,28 +1,28 @@
 import { Metadata } from 'next';
 import AboutContent from './AboutContent';
-import { MusicGroupSchema, BreadcrumbSchema } from '@/components/SchemaMarkup';
+import { BreadcrumbSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'About | Ray Armillion',
-  description: 'Discover the inspiring journey of Ray Armillion - from Kenyan refugee to cancer survivor to celebrated gospel artist. Learn about her Maasai heritage, her music, and her mission to inspire through performance.',
-  keywords: ['Ray Armillion', 'about', 'biography', 'Kenyan artist', 'gospel singer', 'cancer survivor', 'refugee story', 'Maasai heritage'],
+  title: 'About | Dr. Isaac Newton Kinity',
+  description: 'Learn about Dr. Isaac Newton Kinity - the 2027 presidential candidate committed to transforming Kenya through integrity, economic development, and service to all Kenyans.',
+  keywords: ['Isaac Newton Kinity', 'Kinity 2027', 'Kenya president', 'presidential candidate', 'Kenya politics', 'integrity', 'economic transformation'],
   openGraph: {
-    title: 'About Ray Armillion | Official Biography',
-    description: 'From refugee to cancer survivor to celebrated performer. Discover the inspiring journey of Kenyan-American gospel artist Ray Armillion.',
+    title: 'About Dr. Isaac Newton Kinity | Kenya\'s Hope 2027',
+    description: 'Meet the 2027 presidential candidate committed to the service of Kenyans. No recycling of corrupt politicians.',
     images: [
       {
-        url: '/images/about/Rahab.jpeg',
+        url: '/images/about/dr-kinity.jpg',
         width: 1200,
         height: 630,
-        alt: 'Ray Armillion - Kenyan Gospel Artist',
+        alt: 'Dr. Isaac Newton Kinity - Presidential Candidate 2027',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Ray Armillion | Official Biography',
-    description: 'From refugee to cancer survivor to celebrated performer.',
-    images: ['/images/about/Rahab.jpeg'],
+    title: 'About Dr. Isaac Newton Kinity | Kenya\'s Hope 2027',
+    description: 'Meet the 2027 presidential candidate committed to the service of Kenyans.',
+    images: ['/images/about/dr-kinity.jpg'],
   },
   alternates: {
     canonical: '/about',
@@ -32,7 +32,6 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <MusicGroupSchema />
       <BreadcrumbSchema
         items={[
           { name: 'Home', path: '/' },
