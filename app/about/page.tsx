@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import AboutContent from './AboutContent';
+import { MusicGroupSchema, BreadcrumbSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
   title: 'About | Ray Armillion',

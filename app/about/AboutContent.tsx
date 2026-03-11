@@ -15,7 +15,6 @@ import {
   FaFlag
 } from 'react-icons/fa';
 import ScrollReveal from '@/components/ScrollReveal';
-import HomepageBookingSection from '../HomepageBookingSection';
 
 const journeyMilestones = [
   {
@@ -341,8 +340,6 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* Booking Section - Same as Homepage */}
-      <HomepageBookingSection />
     </div>
   );
 }

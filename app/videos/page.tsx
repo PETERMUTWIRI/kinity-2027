@@ -1,6 +1,7 @@
 import VideosClient from './VideosClient';
 import { prisma } from '@/lib/prisma';
 import type { Metadata } from 'next';
+import { MusicGroupSchema } from '@/components/SchemaMarkup';
 
 
 export const dynamic = 'force-dynamic';
