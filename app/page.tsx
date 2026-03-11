@@ -12,7 +12,6 @@ import {
   FaChevronDown,
   FaNewspaper,
 } from 'react-icons/fa';
-import { prisma } from '@/lib/prisma';
 import ScrollReveal from '@/components/ScrollReveal';
 
 // ==========================================
@@ -20,50 +19,54 @@ import ScrollReveal from '@/components/ScrollReveal';
 // The Movement Begins
 // ==========================================
 
-// Force dynamic rendering for fresh data
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
+// Static generation with revalidation
+export const revalidate = 60;
 
-// Fetch data for homepage
-async function getFeaturedContent() {
-  try {
-    // Get upcoming events
-    const upcomingEvents = await prisma.event.findMany({
-      where: { 
-        deletedAt: null,
-        startDate: { gte: new Date() },
-        isPublic: true,
-      },
-      orderBy: { startDate: 'asc' },
-      take: 3,
-    });
+// Hardcoded manifesto pillars for reliability
+const pillars = [
+  {
+    id: '1',
+    title: 'Economic Transformation',
+    subtitle: 'Creating jobs and prosperity',
+    summary: 'Creating jobs, supporting local businesses, and building a self-reliant economy that works for every Kenyan.',
+    icon: '💼',
+    color: '#0074D9',
+    featured: true,
+  },
+  {
+    id: '2',
+    title: 'Zero Corruption',
+    subtitle: 'Uncompromising stance against graft',
+    summary: 'Uncompromising stance against corruption. Transparent governance and accountability at every level.',
+    icon: '🛡️',
+    color: '#E91D0E',
+    featured: true,
+  },
+  {
+    id: '3',
+    title: 'Universal Healthcare',
+    subtitle: 'Quality healthcare accessible to all',
+    summary: 'Quality healthcare accessible to all Kenyans. Modern facilities and well-equipped medical professionals.',
+    icon: '🏥',
+    color: '#6B2C91',
+    featured: true,
+  },
+  {
+    id: '4',
+    title: 'Education Revolution',
+    subtitle: 'World-class education for our children',
+    summary: 'World-class education system that prepares our youth for the challenges and opportunities of tomorrow.',
+    icon: '🎓',
+    color: '#0074D9',
+    featured: true,
+  },
+];
 
-    // Get latest news/posts
-    const latestPosts = await prisma.post.findMany({
-      where: {
-        published: true,
-        deletedAt: null,
-      },
-      orderBy: { publishedAt: 'desc' },
-      take: 3,
-    });
+// Fallback data
+const upcomingEvents: any[] = [];
+const latestPosts: any[] = [];
 
-    // Get manifesto pillars
-    const pillars = await prisma.manifestoPillar.findMany({
-      where: { published: true },
-      orderBy: { order: 'asc' },
-      take: 4,
-    });
-
-    return { upcomingEvents, latestPosts, pillars };
-  } catch (error) {
-    console.error('Error fetching homepage data:', error);
-    return { upcomingEvents: [], latestPosts: [], pillars: [] };
-  }
-}
-
-export default async function HomePage() {
-  const { upcomingEvents, latestPosts, pillars } = await getFeaturedContent();
+export default function HomePage() {
 
   return (
     <div className="relative min-h-screen overflow-hidden">
