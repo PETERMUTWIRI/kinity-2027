@@ -1,27 +1,27 @@
 import { Metadata } from 'next';
 import ContactContent from './ContactContent';
-import { MusicGroupSchema, BreadcrumbSchema } from '@/components/SchemaMarkup';
+import { BreadcrumbSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'Contact | Ray Armillion',
-  description: 'Get in touch with Ray Armillion for booking inquiries, event collaborations, media requests, or general questions. Connect via WhatsApp, email, or phone.',
-  keywords: ['Ray Armillion', 'contact', 'booking', 'inquiry', 'gospel artist booking', 'event collaboration', 'media contact'],
+  title: 'Contact | Dr. Isaac Newton Kinity',
+  description: 'Get in touch with Dr. Isaac Newton Kinity for volunteering, campaign events, media inquiries, or general questions. Join the 2027 presidential campaign for a better Kenya.',
+  keywords: ['Dr. Isaac Newton Kinity', 'contact', 'Kenya 2027', 'presidential campaign', 'volunteer', 'political events', 'media contact', 'Kinity 2027'],
   openGraph: {
-    title: 'Contact Ray Armillion | Booking & Inquiries',
-    description: 'Book Ray Armillion for your event, collaboration, or media appearance. Quick response via WhatsApp.',
+    title: 'Contact Dr. Isaac Newton Kinity | 2027 Presidential Campaign',
+    description: 'Connect with Dr. Isaac Newton Kinity for volunteering, campaign events, or media inquiries. Join us in shaping Kenya\'s future.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Contact Ray Armillion',
+        alt: 'Contact Dr. Isaac Newton Kinity',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact Ray Armillion | Booking & Inquiries',
-    description: 'Book Ray Armillion for your event. Quick response via WhatsApp.',
+    title: 'Contact Dr. Isaac Newton Kinity | 2027 Presidential Campaign',
+    description: 'Connect with Dr. Isaac Newton Kinity for volunteering, campaign events, or media inquiries.',
     images: ['/og-image.jpg'],
   },
   alternates: {
@@ -32,7 +32,6 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <MusicGroupSchema />
       <BreadcrumbSchema
         items={[
           { name: 'Home', path: '/' },

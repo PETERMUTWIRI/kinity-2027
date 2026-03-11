@@ -4,11 +4,11 @@ import { BreadcrumbSchema } from '@/components/SchemaMarkup';
 
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | Ray Armillion',
-  description: 'Read the Terms of Service for using the Ray Armillion Music website. Guidelines for ticket purchases, merchandise, and content usage.',
-  keywords: ['terms of service', 'terms and conditions', 'user agreement', 'legal'],
+  title: 'Terms of Service | Kinity 2027',
+  description: 'Read the Terms of Service for using the Kinity 2027 Campaign website. Guidelines for donations, event registrations, and volunteer participation.',
+  keywords: ['terms of service', 'terms and conditions', 'user agreement', 'legal', 'political campaign'],
   alternates: {
-    canonical: 'https://staramillion.com/terms',
+    canonical: '/terms',
   },
   robots: {
     index: true,
@@ -43,80 +43,80 @@ export default function TermsOfServicePage() {
             <div className="prose prose-lg max-w-none text-brand-text/80">
               
               <p className="text-xl text-brand-text/70 mb-8">
-                Welcome to Ray Armillion Music (staramillion.com). By accessing or using our website, 
+                Welcome to Kinity 2027 Campaign. By accessing or using our website, 
                 you agree to be bound by these Terms of Service. Please read them carefully 
                 before using our services.
               </p>
 
               <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">1. Introduction</h2>
               <p className="mb-4">
-                These Terms of Service govern your use of the Ray Armillion Music website and all 
-                related services, including music streaming, ticket purchases for live events, 
-                merchandise sales, and fan community features. By accessing or using our website, 
+                These Terms of Service govern your use of the Kinity 2027 Campaign website and all 
+                related services, including volunteer signups, event registrations, 
+                donation processing, and community engagement features. By accessing or using our website, 
                 you agree to comply with these terms.
               </p>
 
               <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">2. Use of Website</h2>
               <p className="mb-4">
-                Ray Armillion Music provides a platform for fans to:
+                Kinity 2027 Campaign provides a platform for supporters to:
               </p>
               <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li>Stream and preview music tracks and albums</li>
-                <li>Watch music videos and behind-the-scenes content</li>
-                <li>Purchase tickets for concerts, tours, and special events</li>
-                <li>Buy official merchandise including apparel and accessories</li>
-                <li>Subscribe to newsletters for updates on new releases and tour dates</li>
-                <li>Engage with community features including comments and fan submissions</li>
+                <li>Learn about campaign policies, events, and news updates</li>
+                <li>Sign up as volunteers for campaign activities and events</li>
+                <li>Register to attend rallies, town halls, and campaign events</li>
+                <li>Make donations to support the campaign</li>
+                <li>Subscribe to newsletters for campaign updates</li>
+                <li>Engage with community features including comments and supporter submissions</li>
               </ul>
               <p className="mb-4">
                 You agree to use our website only for lawful purposes and in a way that does not 
                 infringe the rights of others or restrict their use and enjoyment of the site.
               </p>
 
-              <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">3. Ticket Purchases</h2>
+              <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">3. Event Registrations</h2>
               <p className="mb-4">
-                When purchasing tickets through Ray Armillion Music:
+                When registering for events through Kinity 2027 Campaign:
               </p>
               <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li>All ticket sales are processed securely through our payment provider Stripe</li>
-                <li>Tickets are typically non-refundable unless an event is cancelled</li>
-                <li>In the event of a cancellation, refunds will be issued to the original payment method</li>
-                <li>Rescheduled events will honor original tickets for the new date</li>
-                <li>Ticket transfers must comply with the venue&apos;s policies</li>
-                <li>We reserve the right to cancel orders suspected of scalping or fraudulent activity</li>
+                <li>Event registrations are processed securely through our systems</li>
+                <li>Admission is free for most campaign events unless otherwise noted</li>
+                <li>In the event of cancellation or rescheduling, registered attendees will be notified via email</li>
+                <li>Seating or entry may be subject to venue capacity limits</li>
+                <li>We reserve the right to deny entry for safety or security reasons</li>
+                <li>Registration information may be used for campaign communications</li>
               </ul>
 
               <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">4. Intellectual Property</h2>
               <p className="mb-4">
-                All content on this website, including but not limited to music, videos, images, 
-                logos, lyrics, and artwork, is the exclusive property of Ray Armillion Music or its 
+                All content on this website, including but not limited to text, images, videos, 
+                logos, campaign materials, and design elements, is the exclusive property of Kinity 2027 Campaign or its 
                 licensors and is protected by copyright, trademark, and other intellectual property laws.
               </p>
               <p className="mb-4">
                 You may:
               </p>
               <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li>Stream music and videos for personal, non-commercial use</li>
+                <li>View and share campaign content for personal, non-commercial use</li>
                 <li>Share links to our content on social media</li>
-                <li>Download purchased music files for personal listening</li>
+                <li>Download campaign materials for personal use or authorized distribution</li>
               </ul>
               <p className="mb-4">
                 You may not:
               </p>
               <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li>Reproduce, distribute, or publicly perform any music without authorization</li>
-                <li>Use our content for commercial purposes without written permission</li>
+                <li>Reproduce, distribute, or publicly display campaign materials for commercial purposes without authorization</li>
+                <li>Use campaign content to imply endorsement of unauthorized products or services</li>
                 <li>Remove or alter any copyright notices or watermarks</li>
-                <li>Create derivative works from our music, videos, or artwork without permission</li>
-                <li>Upload our content to unauthorized streaming or file-sharing platforms</li>
+                <li>Create derivative works from campaign materials without permission</li>
+                <li>Use campaign content in a manner that misrepresents the campaign&apos;s positions</li>
               </ul>
 
               <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">5. User Content</h2>
               <p className="mb-4">
-                By submitting content to our website (including comments, fan art, and messages):
+                By submitting content to our website (including comments, volunteer applications, and messages):
               </p>
               <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li>You grant Ray Armillion Music a non-exclusive, royalty-free license to use, display, 
+                <li>You grant Kinity 2027 Campaign a non-exclusive, royalty-free license to use, display, 
                     and share your content</li>
                 <li>You confirm that your content does not infringe on any third-party rights</li>
                 <li>We reserve the right to remove any content that violates these terms or is 
@@ -124,12 +124,13 @@ export default function TermsOfServicePage() {
                 <li>Harassment, hate speech, and spam will not be tolerated</li>
               </ul>
 
-              <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">6. Merchandise</h2>
+              <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">6. Donations</h2>
               <p className="mb-4">
-                All merchandise sales are subject to availability. We reserve the right to limit 
-                quantities and discontinue products at any time. Shipping times are estimates and 
-                may vary based on location. Defective or damaged items may be returned within 30 
-                days for a replacement or refund.
+                All donations are processed securely through our payment providers. Donations are 
+                subject to applicable campaign finance laws and regulations. We reserve the right 
+                to return donations that exceed legal limits or violate campaign finance rules. 
+                Donors must be U.S. citizens or permanent residents and must be at least 18 years old. 
+                Donations are not tax-deductible as charitable contributions for federal income tax purposes.
               </p>
 
               <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">7. Disclaimer of Warranties</h2>
@@ -141,7 +142,7 @@ export default function TermsOfServicePage() {
 
               <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">8. Limitation of Liability</h2>
               <p className="mb-4">
-                To the fullest extent permitted by law, Ray Armillion Music shall not be liable for any 
+                To the fullest extent permitted by law, Kinity 2027 Campaign shall not be liable for any 
                 indirect, incidental, special, consequential, or punitive damages arising out of 
                 or relating to your use of the website, even if we have been advised of the 
                 possibility of such damages.
@@ -159,9 +160,9 @@ export default function TermsOfServicePage() {
                 If you have any questions about these Terms of Service, please contact us:
               </p>
               <div className="bg-white rounded-xl p-6 mt-4 shadow-sm">
-                <p className="mb-1"><strong>Ray Armillion Music</strong></p>
-                <p className="mb-1">Email: <a href="mailto:legal@staramillion.com" className="text-brand-dark hover:underline">legal@staramillion.com</a></p>
-                <p className="mb-1">Management: <a href="mailto:booking@staramillion.com" className="text-brand-dark hover:underline">booking@staramillion.com</a></p>
+                <p className="mb-1"><strong>Kinity 2027 Campaign</strong></p>
+                <p className="mb-1">Email: <a href="mailto:contact@kinity2027.org" className="text-brand-dark hover:underline">contact@kinity2027.org</a></p>
+                <p className="mb-1">General Inquiries: <a href="mailto:contact@kinity2027.org" className="text-brand-dark hover:underline">contact@kinity2027.org</a></p>
               </div>
 
               <p className="mt-8 text-sm text-brand-text/50">

@@ -4,11 +4,11 @@ import { BreadcrumbSchema } from '@/components/SchemaMarkup';
 
 
 export const metadata: Metadata = {
-  title: 'Accessibility Statement | Ray Armillion',
-  description: 'Our commitment to making music and digital content accessible to everyone. Learn about our WCAG 2.1 Level AA compliance and accessibility features.',
+  title: 'Accessibility Statement | Kinity 2027',
+  description: 'Our commitment to making political campaign content accessible to everyone. Learn about our WCAG 2.1 Level AA compliance and accessibility features.',
   keywords: ['accessibility', 'WCAG', 'screen reader', 'keyboard navigation', 'inclusive design', 'disability access'],
   alternates: {
-    canonical: 'https://staramillion.com/accessibility',
+    canonical: 'https://kinity2027.org/accessibility',
   },
   robots: {
     index: true,
@@ -32,7 +32,7 @@ export default function AccessibilityPage() {
               Accessibility Statement
             </h1>
             <p className="text-brand-text/70">
-              Our commitment to making music accessible to everyone
+              Our commitment to making campaign information accessible to everyone
             </p>
           </div>
         </section>
@@ -43,17 +43,17 @@ export default function AccessibilityPage() {
             <div className="prose prose-lg max-w-none text-brand-text/80">
               
               <p className="text-xl text-brand-text/70 mb-8">
-                Ray Armillion Music is committed to ensuring digital accessibility for people with 
-                disabilities. We believe that music should be accessible to everyone, and we 
+                Kinity 2027 Campaign is committed to ensuring digital accessibility for people with 
+                disabilities. We believe that civic engagement should be accessible to everyone, and we 
                 continually work to improve the user experience for all visitors to our website.
               </p>
 
               <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">Our Commitment</h2>
               <p className="mb-4">
-                We are dedicated to creating an inclusive digital experience that allows all fans 
-                to engage with our music, videos, events, and merchandise. Whether you are using 
+                We are dedicated to creating an inclusive digital experience that allows all supporters 
+                to engage with our campaign platform, events, news, and volunteer opportunities. Whether you are using 
                 assistive technologies or have specific accessibility needs, we want you to be able 
-                to enjoy everything Ray Armillion Music has to offer.
+                to participate fully in the Kinity 2027 Campaign.
               </p>
 
               <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">Conformance Status</h2>
@@ -68,9 +68,9 @@ export default function AccessibilityPage() {
                 <li>Level AAA (highest)</li>
               </ul>
               <p className="mb-4">
-                Ray Armillion Music strives to conform to <strong>WCAG 2.1 Level AA</strong> standards. 
+                Kinity 2027 Campaign strives to conform to <strong>WCAG 2.1 Level AA</strong> standards. 
                 We are continuously working to improve the accessibility of our website to ensure 
-                all fans can access our content.
+                all supporters can access our content.
               </p>
 
               <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">Accessibility Features</h2>
@@ -81,13 +81,13 @@ export default function AccessibilityPage() {
                 <li>Visible focus indicators to show your current position</li>
                 <li>Logical tab order for intuitive navigation</li>
                 <li>Skip links to bypass repetitive content</li>
-                <li>Keyboard-accessible music and video players</li>
+                <li>Keyboard-accessible media players</li>
               </ul>
 
               <h3 className="text-xl font-semibold text-brand-text mt-8 mb-3">Screen Reader Support</h3>
               <ul className="list-disc pl-6 mb-6 space-y-2">
                 <li>Semantic HTML structure for clear content organization</li>
-                <li>Descriptive alt text for images and album artwork</li>
+                <li>Descriptive alt text for images and campaign materials</li>
                 <li>ARIA labels for interactive elements</li>
                 <li>Announcements for dynamic content updates</li>
                 <li>Proper heading hierarchy for easy navigation</li>
@@ -105,7 +105,7 @@ export default function AccessibilityPage() {
               <h3 className="text-xl font-semibold text-brand-text mt-8 mb-3">Multimedia Accessibility</h3>
               <ul className="list-disc pl-6 mb-6 space-y-2">
                 <li>Closed captions for video content where possible</li>
-                <li>Lyrics provided for music tracks</li>
+                <li>Transcripts for speeches and campaign announcements</li>
                 <li>Transcripts for audio interviews and podcasts</li>
                 <li>Audio descriptions for visual content when applicable</li>
                 <li>Controls to pause, stop, or adjust volume</li>
@@ -132,7 +132,7 @@ export default function AccessibilityPage() {
               <div className="bg-white rounded-xl p-6 mb-6 shadow-sm">
                 <h3 className="font-semibold text-brand-text mb-2">Third-Party Content</h3>
                 <p className="text-sm text-brand-text/70">
-                  Some embedded content from third-party platforms (such as external music players 
+                  Some embedded content from third-party platforms (such as external video players 
                   or social media feeds) may not fully meet our accessibility standards. We work 
                   with these providers and advocate for improved accessibility.
                 </p>
@@ -154,8 +154,8 @@ export default function AccessibilityPage() {
               </p>
               
               <div className="bg-white rounded-xl p-6 mb-6 shadow-sm">
-                <p className="mb-1"><strong>Email:</strong> <a href="mailto:accessibility@staramillion.com" className="text-brand-dark hover:underline">accessibility@staramillion.com</a></p>
-                <p className="mb-1"><strong>General Contact:</strong> <a href="mailto:booking@staramillion.com" className="text-brand-dark hover:underline">booking@staramillion.com</a></p>
+                <p className="mb-1"><strong>Email:</strong> <a href="mailto:contact@kinity2027.org" className="text-brand-dark hover:underline">contact@kinity2027.org</a></p>
+                <p className="mb-1"><strong>General Contact:</strong> <a href="mailto:contact@kinity2027.org" className="text-brand-dark hover:underline">contact@kinity2027.org</a></p>
               </div>
 
               <p className="mb-4">
@@ -200,8 +200,8 @@ export default function AccessibilityPage() {
 
               <div className="bg-brand-primary/10 rounded-xl p-6 mt-12 border border-brand-primary/20">
                 <p className="text-brand-text font-medium">
-                  Music is for everyone. We are committed to making our website and digital 
-                  content accessible to all fans, regardless of ability or technology.
+                  Democracy is for everyone. We are committed to making our website and digital 
+                  content accessible to all supporters, regardless of ability or technology.
                 </p>
               </div>
 

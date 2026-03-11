@@ -4,11 +4,11 @@ import { BreadcrumbSchema } from '@/components/SchemaMarkup';
 
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Ray Armillion',
-  description: 'Learn how Ray Armillion Music collects, uses, and protects your personal information. Our commitment to your privacy and data security.',
-  keywords: ['privacy policy', 'data protection', 'GDPR', 'personal information', 'cookies'],
+  title: 'Privacy Policy | Kinity 2027',
+  description: 'Learn how the Kinity 2027 Campaign collects, uses, and protects your personal information. Our commitment to your privacy and data security.',
+  keywords: ['privacy policy', 'data protection', 'GDPR', 'personal information', 'cookies', 'political campaign'],
   alternates: {
-    canonical: 'https://staramillion.com/privacy',
+    canonical: 'https://kinity2027.org/privacy',
   },
   robots: {
     index: true,
@@ -43,9 +43,9 @@ export default function PrivacyPolicyPage() {
             <div className="prose prose-lg max-w-none text-brand-text/80">
               
               <p className="text-xl text-brand-text/70 mb-8">
-                Ray Armillion Music is committed to protecting your privacy. This Privacy Policy explains 
+                The Kinity 2027 Campaign is committed to protecting your privacy. This Privacy Policy explains 
                 how we collect, use, and safeguard your personal information when you visit our 
-                website, purchase tickets, buy merchandise, or subscribe to our newsletter.
+                website, make donations, sign up to volunteer, register for events, or subscribe to our newsletter.
               </p>
 
               <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">1. Information We Collect</h2>
@@ -55,17 +55,18 @@ export default function PrivacyPolicyPage() {
                 We collect personal information that you voluntarily provide when you:
               </p>
               <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li>Purchase tickets for events (name, email address)</li>
+                <li>Make a donation (name, email address, billing address, employer/occupation information as required by law)</li>
+                <li>Sign up to volunteer (name, email address, phone number, skills/interests)</li>
                 <li>Subscribe to our newsletter (email address, name optional)</li>
-                <li>Buy merchandise (name, email, shipping address)</li>
+                <li>Register for campaign events (name, email, contact information)</li>
                 <li>Contact us via email or contact forms</li>
-                <li>Comment on blog posts or community features</li>
+                <li>Sign petitions or pledge to vote</li>
               </ul>
 
               <h3 className="text-xl font-semibold text-brand-text mt-8 mb-3">Payment Information</h3>
               <p className="mb-4">
-                All payment processing is handled securely by Stripe, our third-party payment 
-                processor. We do not store your credit card information on our servers. Stripe 
+                All payment processing is handled securely by our third-party payment 
+                processor. We do not store your credit card information on our servers. Our payment processor 
                 processes your payment details in accordance with their own privacy policy and 
                 security standards (PCI DSS compliant).
               </p>
@@ -79,7 +80,7 @@ export default function PrivacyPolicyPage() {
                 <li>Device information and operating system</li>
                 <li>Pages visited and time spent on site</li>
                 <li>Referring website or search terms</li>
-                <li>Music streaming preferences and playlist interactions</li>
+                <li>Campaign content interactions and engagement</li>
               </ul>
 
               <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">2. How We Use Your Information</h2>
@@ -87,12 +88,12 @@ export default function PrivacyPolicyPage() {
                 We use the information we collect to:
               </p>
               <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li>Process and confirm ticket purchases and merchandise orders</li>
-                <li>Send event notifications and tour date announcements</li>
-                <li>Deliver our newsletter with updates on new music and releases</li>
-                <li>Respond to your inquiries and provide customer support</li>
+                <li>Process and confirm donations and contributions</li>
+                <li>Send campaign updates, event notifications, and volunteer opportunities</li>
+                <li>Deliver our newsletter with news about the campaign and policy updates</li>
+                <li>Respond to your inquiries and provide support</li>
                 <li>Improve our website and personalize your experience</li>
-                <li>Comply with legal obligations</li>
+                <li>Comply with legal obligations, including campaign finance reporting</li>
               </ul>
 
               <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">3. Data Sharing and Third Parties</h2>
@@ -103,10 +104,10 @@ export default function PrivacyPolicyPage() {
                 We may share your information only with:
               </p>
               <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li><strong>Stripe:</strong> For secure payment processing (PCI DSS compliant)</li>
-                <li><strong>Email Service Providers:</strong> To deliver newsletters and event notifications</li>
+                <li><strong>Payment Processors:</strong> For secure donation processing (PCI DSS compliant)</li>
+                <li><strong>Email Service Providers:</strong> To deliver newsletters and campaign communications</li>
                 <li><strong>Analytics Services:</strong> To understand website usage and improve our services</li>
-                <li><strong>Legal Authorities:</strong> When required by law or to protect our rights</li>
+                <li><strong>Legal Authorities:</strong> When required by law, such as for campaign finance reporting, or to protect our rights</li>
               </ul>
 
               <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">4. Cookies and Tracking</h2>
@@ -117,7 +118,7 @@ export default function PrivacyPolicyPage() {
                 <li><strong>Essential Cookies:</strong> Required for basic site functionality</li>
                 <li><strong>Preference Cookies:</strong> Remember your settings and preferences</li>
                 <li><strong>Analytics Cookies:</strong> Help us understand how visitors interact with our site</li>
-                <li><strong>Marketing Cookies:</strong> Used to deliver relevant promotional content</li>
+                <li><strong>Marketing Cookies:</strong> Used to deliver relevant campaign content</li>
               </ul>
               <p className="mb-4">
                 You can control cookies through your browser settings. Disabling certain cookies 
@@ -139,19 +140,20 @@ export default function PrivacyPolicyPage() {
                 <li>Access the personal information we hold about you</li>
                 <li>Request correction of inaccurate or incomplete information</li>
                 <li>Request deletion of your personal data (subject to legal requirements)</li>
-                <li>Unsubscribe from newsletters at any time via the unsubscribe link</li>
+                <li>Unsubscribe from communications at any time via the unsubscribe link</li>
                 <li>Object to certain types of data processing</li>
                 <li>Request a copy of your data in a portable format</li>
               </ul>
               <p className="mb-4">
-                To exercise these rights, please contact us at <a href="mailto:privacy@staramillion.com" className="text-brand-dark hover:underline">privacy@staramillion.com</a>.
+                To exercise these rights, please contact us at <a href="mailto:contact@kinity2027.org" className="text-brand-dark hover:underline">contact@kinity2027.org</a>.
               </p>
 
               <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">7. Data Retention</h2>
               <p className="mb-4">
                 We retain your personal information only for as long as necessary to fulfill the 
                 purposes for which it was collected, including legal, accounting, or reporting 
-                requirements. Newsletter subscriber data is retained until you unsubscribe.
+                requirements. Newsletter subscriber data is retained until you unsubscribe. 
+                Donation records may be retained longer to comply with campaign finance laws.
               </p>
 
               <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">8. Children&apos;s Privacy</h2>
@@ -174,9 +176,9 @@ export default function PrivacyPolicyPage() {
                 practices, please contact us:
               </p>
               <div className="bg-white rounded-xl p-6 mt-4 shadow-sm">
-                <p className="mb-1"><strong>Ray Armillion Music</strong></p>
-                <p className="mb-1">Email: <a href="mailto:privacy@staramillion.com" className="text-brand-dark hover:underline">privacy@staramillion.com</a></p>
-                <p>Management: <a href="mailto:booking@staramillion.com" className="text-brand-dark hover:underline">booking@staramillion.com</a></p>
+                <p className="mb-1"><strong>Kinity 2027 Campaign</strong></p>
+                <p className="mb-1">Email: <a href="mailto:contact@kinity2027.org" className="text-brand-dark hover:underline">contact@kinity2027.org</a></p>
+                <p>General Inquiries: <a href="mailto:contact@kinity2027.org" className="text-brand-dark hover:underline">contact@kinity2027.org</a></p>
               </div>
 
             </div>

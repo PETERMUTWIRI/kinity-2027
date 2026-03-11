@@ -1,37 +1,36 @@
 import VideosClient from './VideosClient';
 import { prisma } from '@/lib/prisma';
 import type { Metadata } from 'next';
-import { MusicGroupSchema } from '@/components/SchemaMarkup';
 
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Videos | Ray Armillion',
-  description: 'Watch official music videos, live performances, behind-the-scenes footage, and worship sessions from Ray Armillion on YouTube.',
-  keywords: ['music videos', 'live performances', 'youtube', 'behind the scenes', 'worship videos', 'gospel videos'],
+  title: 'Videos | Dr. Isaac Newton Kinity',
+  description: 'Watch campaign videos, speeches, rallies, interviews, and behind-the-scenes footage from Dr. Isaac Newton Kinity\'s 2027 presidential campaign.',
+  keywords: ['campaign videos', 'speeches', 'rallies', 'Kenya politics', 'presidential campaign', 'interviews', 'youtube', 'political events'],
   openGraph: {
-    title: 'Videos | Ray Armillion',
-    description: 'Watch official music videos, live performances, and behind-the-scenes footage.',
+    title: 'Videos | Dr. Isaac Newton Kinity',
+    description: 'Watch campaign videos, speeches, rallies, and interviews from the 2027 presidential campaign.',
     type: 'video.other',
-    url: 'https://www.staramillion.com/videos',
+    url: 'https://www.kinity2027.com/videos',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Ray Armillion Videos',
+        alt: 'Dr. Isaac Newton Kinity Campaign Videos',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Videos | Ray Armillion',
-    description: 'Watch official music videos and live performances.',
+    title: 'Videos | Dr. Isaac Newton Kinity',
+    description: 'Watch campaign videos, speeches, and rallies from the 2027 presidential campaign.',
   },
   alternates: {
-    canonical: 'https://www.staramillion.com/videos',
+    canonical: 'https://www.kinity2027.com/videos',
   },
 };
 
@@ -65,9 +64,6 @@ export default async function VideosPage() {
   const videos = await getVideos();
   
   return (
-    <>
-      <MusicGroupSchema />
-      <VideosClient initialVideos={videos} />
-    </>
+    <VideosClient initialVideos={videos} />
   );
 }
