@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -19,8 +21,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 // The Movement Begins
 // ==========================================
 
-// Static generation with revalidation
-export const revalidate = 60;
+// Client-side rendered page
 
 // Hardcoded manifesto pillars for reliability
 const pillars = [
