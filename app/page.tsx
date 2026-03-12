@@ -26,7 +26,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 // Hardcoded manifesto pillars for reliability
 const pillars = [
   {
-    id: '1',
+    id: 'economic-transformation',
     title: 'Economic Transformation',
     subtitle: 'Creating jobs and prosperity',
     summary: 'Creating jobs, supporting local businesses, and building a self-reliant economy that works for every Kenyan.',
@@ -35,7 +35,7 @@ const pillars = [
     featured: true,
   },
   {
-    id: '2',
+    id: 'zero-corruption',
     title: 'Zero Corruption',
     subtitle: 'Uncompromising stance against graft',
     summary: 'Uncompromising stance against corruption. Transparent governance and accountability at every level.',
@@ -44,7 +44,7 @@ const pillars = [
     featured: true,
   },
   {
-    id: '3',
+    id: 'universal-healthcare',
     title: 'Universal Healthcare',
     subtitle: 'Quality healthcare accessible to all',
     summary: 'Quality healthcare accessible to all Kenyans. Modern facilities and well-equipped medical professionals.',
@@ -53,7 +53,7 @@ const pillars = [
     featured: true,
   },
   {
-    id: '4',
+    id: 'education-revolution',
     title: 'Education Revolution',
     subtitle: 'World-class education for our children',
     summary: 'World-class education system that prepares our youth for the challenges and opportunities of tomorrow.',
@@ -233,8 +233,14 @@ export default function HomePage() {
                   className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl px-6 py-4 border border-slate-100"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#E91D0E] to-[#BA170C] flex items-center justify-center">
-                      <FaFlag className="w-6 h-6 text-white" />
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#E91D0E] to-[#BA170C] flex items-center justify-center overflow-hidden">
+                      <Image
+                        src="/images/kenya-flag.png"
+                        alt="Kenya Flag"
+                        width={36}
+                        height={24}
+                        className="object-cover rounded-sm"
+                      />
                     </div>
                     <div>
                       <p className="text-xs text-slate-500">Presidential</p>
@@ -333,24 +339,28 @@ export default function HomePage() {
               <>
                 {[
                   { 
+                    id: 'economic-transformation',
                     title: 'Economic Transformation', 
                     desc: 'Creating jobs, supporting local businesses, and building a self-reliant economy that works for every Kenyan.',
                     color: '#0074D9',
                     icon: '💼'
                   },
                   { 
+                    id: 'zero-corruption',
                     title: 'Zero Corruption', 
                     desc: 'Uncompromising stance against corruption. Transparent governance and accountability at every level.',
                     color: '#E91D0E',
                     icon: '🛡️'
                   },
                   { 
+                    id: 'universal-healthcare',
                     title: 'Universal Healthcare', 
                     desc: 'Quality healthcare accessible to all Kenyans. Modern facilities and well-equipped medical professionals.',
                     color: '#6B2C91',
                     icon: '🏥'
                   },
                   { 
+                    id: 'education-revolution',
                     title: 'Education Revolution', 
                     desc: 'World-class education system that prepares our youth for the challenges and opportunities of tomorrow.',
                     color: '#0074D9',
@@ -358,7 +368,7 @@ export default function HomePage() {
                   },
                 ].map((pillar, index) => (
                   <ScrollReveal key={index} delay={index * 0.1}>
-                    <Link href="/vision-2027" className="group">
+                    <Link href={`/about#${pillar.id}`} className="group">
                       <div className="card-presidential h-full p-6">
                         <div 
                           className="w-14 h-14 rounded-xl flex items-center justify-center text-2xl mb-4 transition-transform duration-300 group-hover:scale-110"
