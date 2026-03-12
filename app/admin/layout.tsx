@@ -1,6 +1,7 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import { authClient } from '@/lib/auth/client';
+import { useRouter, usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { 
@@ -36,30 +37,24 @@ const adminNavLinks = [
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
+  const pathname = usePathname();
   const [isLoading, setIsLoading] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [user, setUser] = useState<any>(null);
 
   useEffect(() => {
-    // Check authentication status via API
+    // Check authentication status using Neon Auth client
     const checkAuth = async () => {
       try {
-        const response = await fetch('/api/auth', {
-          credentials: 'include',
-        });
-        
-        if (response.ok) {
-          const data = await response.json();
-          if (data.authenticated) {
-            setIsAuthenticated(true);
-            setUser(data.user);
-          } else {
-            router.replace('/auth/sign-in');
-          }
-        } else {
-          // Not authenticated
+        const session = await authClient.getSession();
+        if (!session) {
+          // No session, redirect to sign in
           router.replace('/auth/sign-in');
+        } else {
+          setIsAuthenticated(true);
+          // @ts-ignore - Neon Auth session type has user property
+          setUser(session?.data?.user || session?.user || null);
         }
       } catch (error) {
         console.error('Auth check error:', error);
@@ -135,11 +130,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <button
             onClick={async () => {
               try {
-                await fetch('/api/auth/signout', { method: 'POST', credentials: 'include' });
-              } catch (e) {
-                // Ignore error
+                await authClient.signOut();
+                window.location.href = '/auth/sign-in';
+              } catch (error) {
+                console.error('Sign out error:', error);
+                window.location.href = '/auth/sign-in';
               }
-              window.location.href = '/auth/sign-in';
             }}
             className="flex items-center gap-3 w-full px-4 py-3 rounded-lg text-slate-400 hover:text-red-400 hover:bg-red-400/10 transition-all duration-200"
           >
@@ -186,7 +182,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               {/* User Avatar */}
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#0074D9] to-[#6B2C91] flex items-center justify-center">
                 <span className="text-white font-semibold">
-                  {user?.name?.[0] || user?.email?.[0] || 'A'}
+                  {user?.name?.[0] || user?.email?.[0] || 'K'}
                 </span>
               </div>
             </div>
