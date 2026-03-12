@@ -96,8 +96,9 @@ export default function HomePage() {
         </div>
 
         {/* Hero Content - Split Layout */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-0">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center min-h-[80vh]">
+        {/* pt-24 accounts for fixed navbar (top bar + main nav = ~96px) */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 lg:pt-28 lg:pb-0">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center min-h-[calc(100vh-7rem)] lg:min-h-[calc(100vh-8rem)]">
             
             {/* LEFT: Text Content */}
             <div className="space-y-8 text-center lg:text-left">
