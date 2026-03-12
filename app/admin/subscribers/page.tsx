@@ -1,8 +1,13 @@
 'use client';
 
 import { FaEnvelope, FaPlus, FaDownload } from 'react-icons/fa';
+import ProtectedAdminPage from '@/components/ProtectedAdminPage';
 
-export default function SubscribersPage() {
+// ==========================================
+// SUBSCRIBERS PAGE - Protected
+// ==========================================
+
+function SubscribersContent() {
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -52,5 +57,13 @@ export default function SubscribersPage() {
         </button>
       </div>
     </div>
+  );
+}
+
+export default function SubscribersPage() {
+  return (
+    <ProtectedAdminPage>
+      <SubscribersContent />
+    </ProtectedAdminPage>
   );
 }

@@ -1,8 +1,13 @@
 'use client';
 
 import { FaHandshake, FaPlus, FaDownload } from 'react-icons/fa';
+import ProtectedAdminPage from '@/components/ProtectedAdminPage';
 
-export default function VolunteersPage() {
+// ==========================================
+// VOLUNTEERS PAGE - Protected
+// ==========================================
+
+function VolunteersContent() {
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -56,5 +61,13 @@ export default function VolunteersPage() {
         </button>
       </div>
     </div>
+  );
+}
+
+export default function VolunteersPage() {
+  return (
+    <ProtectedAdminPage>
+      <VolunteersContent />
+    </ProtectedAdminPage>
   );
 }

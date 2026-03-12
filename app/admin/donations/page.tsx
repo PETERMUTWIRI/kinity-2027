@@ -1,8 +1,13 @@
 'use client';
 
 import { FaHeart, FaDownload } from 'react-icons/fa';
+import ProtectedAdminPage from '@/components/ProtectedAdminPage';
 
-export default function DonationsPage() {
+// ==========================================
+// DONATIONS PAGE - Protected
+// ==========================================
+
+function DonationsContent() {
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -42,5 +47,13 @@ export default function DonationsPage() {
         <p className="text-slate-400">Donations will appear here when supporters contribute to the campaign.</p>
       </div>
     </div>
+  );
+}
+
+export default function DonationsPage() {
+  return (
+    <ProtectedAdminPage>
+      <DonationsContent />
+    </ProtectedAdminPage>
   );
 }

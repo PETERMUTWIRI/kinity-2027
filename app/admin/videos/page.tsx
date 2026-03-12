@@ -1,12 +1,14 @@
 // app/admin/videos/page.tsx - VIDEO MANAGEMENT EDITOR
 'use client';
 
+import ProtectedAdminPage from '@/components/ProtectedAdminPage';
+
 import { useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { FaSave, FaArrowLeft, FaVideo, FaImage, FaGlobe, FaYoutube, FaEye, FaEyeSlash } from 'react-icons/fa';
 import Link from 'next/link';
 
-export default function AdminVideosPage() {
+function AdminVideosPageInternal() {
   return (
     <Suspense fallback={<div className="p-8">Loading editor...</div>}>
       <VideoEditor />
@@ -360,5 +362,15 @@ function VideoEditor() {
         )}
       </div>
     </div>
+  );
+}
+
+
+// Export wrapped with protection
+export default function AdminVideosPage() {
+  return (
+    <ProtectedAdminPage>
+      <AdminVideosPageInternal />
+    </ProtectedAdminPage>
   );
 }

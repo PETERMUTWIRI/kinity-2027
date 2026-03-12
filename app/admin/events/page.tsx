@@ -1,12 +1,14 @@
 // app/admin/events/page.tsx - ENTERPRISE EVENT EDITOR (mirrors blog)
 'use client';
 
+import ProtectedAdminPage from '@/components/ProtectedAdminPage';
+
 import { useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { FaSave, FaArrowLeft, FaCalendar, FaClock, FaMapMarkerAlt, FaImage, FaGlobe, FaPlus, FaTrash } from 'react-icons/fa';
 import Link from 'next/link';
 
-export default function AdminEventsPage() {
+function AdminEventsPageInternal() {
   return (
     <Suspense fallback={<div className="p-8">Loading editor...</div>}>
       <EventEditor />
@@ -520,4 +522,13 @@ async function handleImageUpload(e: React.ChangeEvent<HTMLInputElement>, field: 
   } catch (error) {
     alert('Failed to upload image');
   }
+}
+
+// Export wrapped with protection
+export default function AdminEventsPage() {
+  return (
+    <ProtectedAdminPage>
+      <AdminEventsPageInternal />
+    </ProtectedAdminPage>
+  );
 }

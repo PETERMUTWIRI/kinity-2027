@@ -1,8 +1,13 @@
 'use client';
 
 import { FaImages, FaPlus, FaUpload } from 'react-icons/fa';
+import ProtectedAdminPage from '@/components/ProtectedAdminPage';
 
-export default function GalleryPage() {
+// ==========================================
+// GALLERY PAGE - Protected
+// ==========================================
+
+function GalleryContent() {
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -50,5 +55,13 @@ export default function GalleryPage() {
         </button>
       </div>
     </div>
+  );
+}
+
+export default function GalleryPage() {
+  return (
+    <ProtectedAdminPage>
+      <GalleryContent />
+    </ProtectedAdminPage>
   );
 }

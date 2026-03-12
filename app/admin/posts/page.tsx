@@ -1,6 +1,8 @@
 // app/admin/posts/page.tsx - Post Editor (News/Press Releases)
 'use client';
 
+import ProtectedAdminPage from '@/components/ProtectedAdminPage';
+
 import { useState, useEffect } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
@@ -19,7 +21,7 @@ const ClassicEditor = dynamic(
 
 const categories = ['News', 'Press Release', 'Event Recap', 'Statement'];
 
-export default function PostEditorPage() {
+function PostEditorPageInternal() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const postId = searchParams.get('id');
@@ -286,5 +288,15 @@ export default function PostEditorPage() {
         </div>
       </form>
     </div>
+  );
+}
+
+
+// Export wrapped with protection
+export default function PostEditorPage() {
+  return (
+    <ProtectedAdminPage>
+      <PostEditorPageInternal />
+    </ProtectedAdminPage>
   );
 }

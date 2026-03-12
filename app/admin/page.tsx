@@ -1,12 +1,20 @@
-// app/admin/page.tsx - KIKIMO FOUNDATION ADMIN DASHBOARD
+'use client';
+
 import { Suspense } from 'react';
 import DashboardContent from './DashboardContent';
+import ProtectedAdminPage from '@/components/ProtectedAdminPage';
+
+// ==========================================
+// ADMIN DASHBOARD - Protected
+// ==========================================
 
 export default function AdminDashboard() {
   return (
-    <Suspense fallback={<DashboardSkeleton />}>
-      <DashboardContent />
-    </Suspense>
+    <ProtectedAdminPage>
+      <Suspense fallback={<DashboardSkeleton />}>
+        <DashboardContent />
+      </Suspense>
+    </ProtectedAdminPage>
   );
 }
 

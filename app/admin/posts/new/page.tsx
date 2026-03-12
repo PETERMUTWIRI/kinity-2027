@@ -3,8 +3,13 @@
 import { useState } from 'react';
 import { FaArrowLeft, FaSave, FaImage } from 'react-icons/fa';
 import Link from 'next/link';
+import ProtectedAdminPage from '@/components/ProtectedAdminPage';
 
-export default function NewPostPage() {
+// ==========================================
+// NEW POST PAGE - Protected
+// ==========================================
+
+function NewPostContent() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -109,5 +114,13 @@ export default function NewPostPage() {
         </div>
       </form>
     </div>
+  );
+}
+
+export default function NewPostPage() {
+  return (
+    <ProtectedAdminPage>
+      <NewPostContent />
+    </ProtectedAdminPage>
   );
 }

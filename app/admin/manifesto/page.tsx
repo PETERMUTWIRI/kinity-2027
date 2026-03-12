@@ -2,6 +2,7 @@
 
 import { FaFlag, FaEdit, FaEye } from 'react-icons/fa';
 import Link from 'next/link';
+import ProtectedAdminPage from '@/components/ProtectedAdminPage';
 
 const manifestoPillars = [
   {
@@ -30,7 +31,11 @@ const manifestoPillars = [
   },
 ];
 
-export default function ManifestoPage() {
+// ==========================================
+// MANIFESTO PAGE - Protected
+// ==========================================
+
+function ManifestoContent() {
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -92,5 +97,13 @@ export default function ManifestoPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function ManifestoPage() {
+  return (
+    <ProtectedAdminPage>
+      <ManifestoContent />
+    </ProtectedAdminPage>
   );
 }
