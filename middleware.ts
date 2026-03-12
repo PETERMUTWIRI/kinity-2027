@@ -2,58 +2,34 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 // ==========================================
-// AUTH MIDDLEWARE - Protects admin routes only
+// AUTH MIDDLEWARE - Protects admin routes
 // ==========================================
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   
-  // Only protect admin routes (not auth routes)
+  // Only check admin routes
   if (pathname.startsWith('/admin')) {
     
-    // List of possible auth cookie names
-    const cookieNames = [
-      'neon-session',
-      'better-auth.session',
-      'better-auth',
-      'session',
-      'auth-token',
-    ];
+    // Get all cookies
+    const cookies = request.cookies.getAll();
     
-    let hasSession = false;
+    // Check if any session/auth cookie exists
+    const hasSession = cookies.some(cookie => {
+      const name = cookie.name.toLowerCase();
+      return name.includes('session') || name.includes('auth') || name.includes('token');
+    });
     
-    // Check for known auth cookies
-    for (const name of cookieNames) {
-      const cookie = request.cookies.get(name);
-      if (cookie?.value) {
-        hasSession = true;
-        break;
-      }
-    }
-    
-    // Also check any cookie containing session/auth keywords
-    if (!hasSession) {
-      const allCookies = request.cookies.getAll();
-      for (const cookie of allCookies) {
-        const name = cookie.name.toLowerCase();
-        if (name.includes('session') || name.includes('auth') || name.includes('token')) {
-          hasSession = true;
-          break;
-        }
-      }
-    }
-    
-    // No session = redirect to sign in
+    // No session = redirect to login
     if (!hasSession) {
       return NextResponse.redirect(new URL('/auth/sign-in', request.url));
     }
   }
   
-  // Allow all other requests (including /auth/*)
+  // Allow request to continue
   return NextResponse.next();
 }
 
-// Only apply to admin routes
 export const config = {
   matcher: ['/admin/:path*'],
 };

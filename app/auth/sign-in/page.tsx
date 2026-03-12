@@ -5,37 +5,8 @@ import { AuthView, NeonAuthUIProvider } from '@neondatabase/auth/react/ui';
 import { authClient } from '@/lib/auth/client';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
 
 export default function SignInPage() {
-  const [isChecking, setIsChecking] = useState(true);
-
-  useEffect(() => {
-    // Check if already logged in
-    const checkAuth = async () => {
-      try {
-        const session = await authClient.getSession();
-        if (session) {
-          // Already logged in, go to admin
-          window.location.href = '/admin';
-        }
-      } catch (err) {
-        console.error('Auth check error:', err);
-      } finally {
-        setIsChecking(false);
-      }
-    };
-    checkAuth();
-  }, []);
-
-  if (isChecking) {
-    return (
-      <div className="min-h-screen bg-slate-950 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#0074D9]" />
-      </div>
-    );
-  }
-
   return (
     <NeonAuthUIProvider 
       authClient={authClient as any}
