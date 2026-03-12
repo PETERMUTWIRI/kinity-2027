@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import { 
   FaBars, 
   FaTimes,
@@ -13,10 +14,12 @@ import {
   FaYoutube,
   FaHandshake,
   FaHeart,
+  FaChevronRight,
 } from 'react-icons/fa';
 
 // ==========================================
-// Kikimo Foundation - ENTERPRISE NAVIGATION
+// Kikimo Foundation - MODERN NAVIGATION
+// Smart scroll behavior with logo integration
 // ==========================================
 
 const navLinks = [
@@ -37,200 +40,350 @@ const socialLinks = [
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isTopBarVisible, setIsTopBarVisible] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+  
+  const { scrollY } = useScroll();
+  
+  // Track scroll direction for top bar hide/show
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() ?? 0;
+    
+    // Show/hide top bar based on scroll direction
+    if (latest > previous && latest > 100) {
+      setIsTopBarVisible(false);
+    } else {
+      setIsTopBarVisible(true);
+    }
+    
+    // Add background blur when scrolled
+    setIsScrolled(latest > 20);
+  });
 
   // Close mobile menu on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [pathname]);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <>
-      {/* Main Navbar - Solid White Background */}
+      {/* Main Navbar Container */}
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.5, ease: 'easeOut' }}
-        className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md border-b border-slate-200"
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className="fixed top-0 left-0 right-0 z-50"
       >
-        {/* Top Bar - Campaign Slogan */}
-        <div className="bg-gradient-to-r from-[#0074D9] via-[#6B2C91] to-[#0074D9]">
+        {/* Top Bar - Campaign Slogan (Hide on scroll down) */}
+        <motion.div
+          initial={false}
+          animate={{ 
+            height: isTopBarVisible ? 'auto' : 0,
+            opacity: isTopBarVisible ? 1 : 0,
+          }}
+          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          className="bg-gradient-to-r from-[#0074D9] via-[#6B2C91] to-[#0074D9] overflow-hidden"
+        >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-center text-white text-sm py-2 font-medium tracking-wide">
-              <span className="font-slogan">KENYA&apos;S HOPE</span> — 
-              <span className="ml-2">Committed to the Service of Kenyans</span>
-            </p>
-          </div>
-        </div>
-
-        {/* Main Navigation Bar */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-12 h-12 rounded-xl overflow-hidden ring-2 ring-[#0074D9]/20">
-                <div className="w-full h-full flex items-center justify-center font-bold text-xl bg-gradient-to-br from-[#0074D9] to-[#005CB0] text-white">
-                  K
-                </div>
-              </div>
-              <div className="hidden sm:block">
-                <p className="font-slogan text-lg leading-tight text-[#E91D0E]">
-                  Kikimo Foundation
-                </p>
-                <p className="text-xs text-slate-600">
-                  The Incoming President
-                </p>
-              </div>
-            </Link>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className={`px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg ${
-                    pathname === link.href 
-                      ? 'text-[#0074D9] bg-[#0074D9]/10' 
-                      : 'text-slate-700 hover:text-[#0074D9] hover:bg-slate-100'
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </nav>
-
-            {/* CTA Buttons */}
-            <div className="hidden lg:flex items-center gap-3">
-              <Link 
-                href="/join-us"
-                className="px-5 py-2 rounded-lg bg-[#E91D0E] text-white text-sm font-semibold hover:bg-[#BA170C] transition-all duration-300 hover:shadow-lg hover:shadow-[#E91D0E]/30"
-              >
-                Join Us
-              </Link>
-              <Link 
-                href="/support"
-                className="px-5 py-2 rounded-lg bg-[#0074D9] text-white text-sm font-semibold hover:bg-[#005CB0] transition-all duration-300"
-              >
-                Support
-              </Link>
+            <div className="flex items-center justify-between py-2">
+              {/* Left - Slogan */}
+              <p className="flex-1 text-center text-white text-sm font-medium tracking-wide">
+                <span className="font-slogan">KENYA&apos;S HOPE</span> — 
+                <span className="ml-2 opacity-90">Committed to the Service of Kenyans</span>
+              </p>
             </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden w-10 h-10 rounded-lg flex items-center justify-center bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all"
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen ? <FaTimes className="w-5 h-5" /> : <FaBars className="w-5 h-5" />}
-            </button>
           </div>
-        </div>
+        </motion.div>
+
+        {/* Main Navigation Bar - Always visible with glass effect when scrolled */}
+        <motion.div
+          initial={false}
+          animate={{
+            backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 1)',
+            backdropFilter: isScrolled ? 'blur(20px)' : 'blur(0px)',
+          }}
+          transition={{ duration: 0.3 }}
+          className={`border-b transition-colors duration-300 ${
+            isScrolled ? 'border-slate-200/80 shadow-lg shadow-slate-900/5' : 'border-slate-200'
+          }`}
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between h-16 lg:h-20">
+              {/* Logo with Image */}
+              <Link href="/" className="flex items-center gap-3 group">
+                <motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="relative w-12 h-12 lg:w-14 lg:h-14 rounded-xl overflow-hidden shadow-md ring-2 ring-[#0074D9]/10 group-hover:ring-[#0074D9]/30 transition-all duration-300"
+                >
+                  <Image
+                    src="/kikimo-logo.jpeg"
+                    alt="Kikimo Foundation"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </motion.div>
+                <div className="hidden sm:block">
+                  <motion.p 
+                    className="font-slogan text-lg lg:text-xl leading-tight text-[#E91D0E] group-hover:text-[#0074D9] transition-colors duration-300"
+                  >
+                    Kikimo Foundation
+                  </motion.p>
+                  <p className="text-xs text-slate-500 font-medium tracking-wide">
+                    The Incoming President 2027
+                  </p>
+                </div>
+              </Link>
+
+              {/* Desktop Navigation - Modern Pills */}
+              <nav className="hidden lg:flex items-center gap-1">
+                {navLinks.map((link, index) => (
+                  <motion.div
+                    key={link.name}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.05 + 0.2 }}
+                  >
+                    <Link
+                      href={link.href}
+                      className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full ${
+                        pathname === link.href 
+                          ? 'text-[#0074D9]' 
+                          : 'text-slate-600 hover:text-[#0074D9]'
+                      }`}
+                    >
+                      {pathname === link.href && (
+                        <motion.span
+                          layoutId="activeNav"
+                          className="absolute inset-0 bg-[#0074D9]/10 rounded-full"
+                          transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                        />
+                      )}
+                      <span className="relative z-10">{link.name}</span>
+                    </Link>
+                  </motion.div>
+                ))}
+              </nav>
+
+              {/* CTA Buttons - Modern Style */}
+              <div className="hidden lg:flex items-center gap-3">
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <Link 
+                    href="/join-us"
+                    className="group px-5 py-2.5 rounded-full bg-gradient-to-r from-[#E91D0E] to-[#c4180c] text-white text-sm font-semibold shadow-md shadow-[#E91D0E]/20 hover:shadow-lg hover:shadow-[#E91D0E]/30 transition-all duration-300 hover:-translate-y-0.5"
+                  >
+                    <span className="flex items-center gap-2">
+                      Join Us
+                      <FaChevronRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                    </span>
+                  </Link>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.5 }}
+                >
+                  <Link 
+                    href="/support"
+                    className="px-5 py-2.5 rounded-full border-2 border-[#0074D9] text-[#0074D9] text-sm font-semibold hover:bg-[#0074D9] hover:text-white transition-all duration-300"
+                  >
+                    Support
+                  </Link>
+                </motion.div>
+              </div>
+
+              {/* Mobile Menu Button - Modern Style */}
+              <motion.button
+                whileTap={{ scale: 0.9 }}
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="lg:hidden w-11 h-11 rounded-full flex items-center justify-center bg-slate-100 text-slate-700 hover:bg-[#0074D9] hover:text-white transition-all duration-300"
+                aria-label="Toggle menu"
+              >
+                <AnimatePresence mode="wait">
+                  {isMobileMenuOpen ? (
+                    <motion.div
+                      key="close"
+                      initial={{ rotate: -90, opacity: 0 }}
+                      animate={{ rotate: 0, opacity: 1 }}
+                      exit={{ rotate: 90, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <FaTimes className="w-5 h-5" />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="menu"
+                      initial={{ rotate: 90, opacity: 0 }}
+                      animate={{ rotate: 0, opacity: 1 }}
+                      exit={{ rotate: -90, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <FaBars className="w-5 h-5" />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.button>
+            </div>
+          </div>
+        </motion.div>
       </motion.header>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Full Screen Modern Design */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>
-            {/* Backdrop */}
+            {/* Backdrop with blur */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden"
+              className="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-40 lg:hidden"
             />
 
-            {/* Menu Panel */}
+            {/* Menu Panel - Slide from right */}
             <motion.div
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-80 bg-white z-50 lg:hidden shadow-2xl"
+              transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+              className="fixed top-0 right-0 bottom-0 w-full sm:w-96 bg-white z-50 lg:hidden"
             >
-              {/* Header */}
+              {/* Header with Logo */}
               <div className="p-6 border-b border-slate-100">
                 <div className="flex items-center justify-between">
-                  <div>
-                    <p className="font-slogan text-xl text-[#E91D0E]">Kikimo Foundation</p>
-                    <p className="text-xs text-slate-500">Kenya&apos;s Hope</p>
-                  </div>
-                  <button
+                  <Link href="/" className="flex items-center gap-3" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="relative w-12 h-12 rounded-xl overflow-hidden shadow-md">
+                      <Image
+                        src="/kikimo-logo.jpeg"
+                        alt="Kikimo Foundation"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div>
+                      <p className="font-slogan text-lg text-[#E91D0E]">Kikimo Foundation</p>
+                      <p className="text-xs text-slate-500">Kenya&apos;s Hope 2027</p>
+                    </div>
+                  </Link>
+                  <motion.button
+                    whileTap={{ scale: 0.9 }}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center text-slate-700 hover:bg-slate-200 transition-colors"
+                    className="w-11 h-11 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 hover:bg-[#0074D9] hover:text-white transition-all duration-300"
                   >
                     <FaTimes className="w-5 h-5" />
-                  </button>
+                  </motion.button>
                 </div>
               </div>
 
               {/* Navigation Links */}
-              <nav className="p-4 space-y-1">
+              <nav className="p-6 space-y-2">
                 {navLinks.map((link, index) => (
                   <motion.div
                     key={link.name}
-                    initial={{ opacity: 0, x: 20 }}
+                    initial={{ opacity: 0, x: 30 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.05 }}
+                    transition={{ delay: index * 0.05 + 0.1 }}
                   >
                     <Link
                       href={link.href}
-                      className={`flex items-center px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`flex items-center justify-between px-5 py-4 rounded-2xl text-base font-medium transition-all duration-300 ${
                         pathname === link.href
-                          ? 'bg-gradient-to-r from-[#0074D9] to-[#005CB0] text-white shadow-md'
+                          ? 'bg-gradient-to-r from-[#0074D9] to-[#6B2C91] text-white shadow-lg shadow-[#0074D9]/25'
                           : 'text-slate-700 hover:bg-slate-100 hover:text-[#0074D9]'
                       }`}
                     >
                       {link.name}
+                      <FaChevronRight className={`w-4 h-4 ${pathname === link.href ? 'opacity-100' : 'opacity-0'}`} />
                     </Link>
                   </motion.div>
                 ))}
               </nav>
 
               {/* CTA Section */}
-              <div className="p-4 border-t border-slate-100">
-                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3 px-4">Get Involved</p>
-                <div className="space-y-2">
-                  <Link
-                    href="/join-us"
-                    className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#E91D0E] text-white font-semibold hover:bg-[#BA170C] transition-colors"
+              <div className="px-6 py-4">
+                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4 px-2">Get Involved</p>
+                <div className="space-y-3">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
                   >
-                    <FaHandshake className="w-5 h-5" />
-                    Join the Movement
-                  </Link>
-                  <Link
-                    href="/support"
-                    className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#0074D9] text-white font-semibold hover:bg-[#005CB0] transition-colors"
+                    <Link
+                      href="/join-us"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="flex items-center justify-center gap-3 w-full py-4 rounded-2xl bg-gradient-to-r from-[#E91D0E] to-[#c4180c] text-white font-semibold shadow-lg shadow-[#E91D0E]/25 hover:shadow-xl hover:shadow-[#E91D0E]/30 transition-all duration-300"
+                    >
+                      <FaHandshake className="w-5 h-5" />
+                      Join the Movement
+                    </Link>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 }}
                   >
-                    <FaHeart className="w-5 h-5" />
-                    Support the Vision
-                  </Link>
+                    <Link
+                      href="/support"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="flex items-center justify-center gap-3 w-full py-4 rounded-2xl border-2 border-[#0074D9] text-[#0074D9] font-semibold hover:bg-[#0074D9] hover:text-white transition-all duration-300"
+                    >
+                      <FaHeart className="w-5 h-5" />
+                      Support the Vision
+                    </Link>
+                  </motion.div>
                 </div>
               </div>
 
               {/* Social Links */}
-              <div className="p-4 border-t border-slate-100">
-                <div className="flex justify-center gap-3">
-                  {socialLinks.map((social) => (
-                    <a
+              <div className="px-6 py-4 mt-auto">
+                <div className="flex justify-center gap-4">
+                  {socialLinks.map((social, index) => (
+                    <motion.a
                       key={social.label}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={social.label}
-                      className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#0074D9] hover:text-white transition-all duration-300"
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.5 + index * 0.05 }}
+                      whileHover={{ scale: 1.1, y: -2 }}
+                      className="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#0074D9] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
                     >
-                      <social.icon className="w-4 h-4" />
-                    </a>
+                      <social.icon className="w-5 h-5" />
+                    </motion.a>
                   ))}
                 </div>
               </div>
 
               {/* Footer */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-r from-[#0074D9]/5 to-[#6B2C91]/5 border-t border-slate-100">
-                <p className="text-center text-xs text-slate-500">
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-r from-[#0074D9]/5 to-[#6B2C91]/5 border-t border-slate-100">
+                <p className="text-center text-sm text-slate-500">
                   Committed to the Service of Kenyans
+                </p>
+                <p className="text-center text-xs text-slate-400 mt-1">
+                  © 2025 Kikimo Foundation
                 </p>
               </div>
             </motion.div>

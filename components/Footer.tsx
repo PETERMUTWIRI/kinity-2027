@@ -1,6 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { 
   FaFacebook, 
   FaTwitter, 
@@ -15,8 +17,8 @@ import {
 } from 'react-icons/fa';
 
 // ==========================================
-// KIKIMO FOUNDATION - FOOTER
-// Nonprofit Foundation Footer
+// KIKIMO FOUNDATION - PROFESSIONAL FOOTER
+// Modern nonprofit footer with logo
 // ==========================================
 
 const footerLinks = {
@@ -49,6 +51,8 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-[#111111] text-white">
       {/* CTA Banner */}
@@ -66,7 +70,7 @@ export default function Footer() {
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href="/join-us"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#E91D0E] text-white font-bold hover:bg-[#BA170C] transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#E91D0E] text-white font-bold hover:bg-[#BA170C] transition-all duration-300 hover:shadow-lg hover:shadow-[#E91D0E]/30"
               >
                 <FaHandshake className="w-5 h-5" />
                 Join Us
@@ -86,12 +90,28 @@ export default function Footer() {
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
-          {/* Brand Column */}
+          {/* Brand Column with Logo */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-block mb-6">
-              <span className="font-slogan text-3xl text-[#E91D0E]">KIKIMO FOUNDATION</span>
+            <Link href="/" className="inline-flex items-center gap-4 mb-6 group">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="relative w-16 h-16 rounded-2xl overflow-hidden shadow-lg ring-2 ring-white/10 group-hover:ring-[#0074D9]/50 transition-all duration-300"
+              >
+                <Image
+                  src="/kikimo-logo.jpeg"
+                  alt="Kikimo Foundation"
+                  fill
+                  className="object-cover"
+                />
+              </motion.div>
+              <div>
+                <span className="font-slogan text-2xl text-[#E91D0E] group-hover:text-white transition-colors block">
+                  KIKIMO FOUNDATION
+                </span>
+                <span className="text-sm text-slate-400">Kenya&apos;s Hope 2027</span>
+              </div>
             </Link>
-            <p className="text-slate-400 mb-6 max-w-sm">
+            <p className="text-slate-400 mb-6 max-w-sm leading-relaxed">
               Kenya&apos;s Hope. A movement for economic transformation, zero corruption, 
               and a brighter future for all Kenyans. Committed to the service of Kenyans.
             </p>
@@ -120,17 +140,21 @@ export default function Footer() {
 
             {/* Social Links */}
             <div className="flex gap-3 mt-6">
-              {socialLinks.map((social) => (
-                <a
+              {socialLinks.map((social, index) => (
+                <motion.a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.1, y: -2 }}
                   className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#0074D9] transition-all duration-300"
                 >
                   <social.icon className="w-5 h-5" />
-                </a>
+                </motion.a>
               ))}
             </div>
           </div>
@@ -200,13 +224,12 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
+      {/* Bottom Bar - Professional Copyright */}
       <div className="border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-slate-500 text-sm text-center md:text-left">
-              &copy; {new Date().getFullYear()} Dr. Isaac Newton Kinity Campaign. 
-              All rights reserved. Kenya&apos;s Hope 2027.
+              &copy; {currentYear} Kikimo Foundation. All rights reserved.
             </p>
             <p className="text-slate-600 text-sm flex items-center gap-2">
               Made with <FaHeart className="w-4 h-4 text-[#E91D0E]" /> for Kenya
