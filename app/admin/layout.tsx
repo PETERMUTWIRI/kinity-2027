@@ -48,38 +48,47 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       try {
         const session = await authClient.getSession();
         if (!session) {
-          router.replace('/auth/sign-in');
-        } else {
-          setIsAuthenticated(true);
-          // @ts-ignore - session data structure
-          setUser(session.data?.user || session.user || null);
+          // No session - redirect to sign in immediately
+          window.location.href = '/auth/sign-in';
+          return;
         }
+        // Has session - allow access
+        setIsAuthenticated(true);
+        // @ts-ignore - session data structure
+        setUser(session.data?.user || session.user || null);
+        setIsLoading(false);
       } catch (error) {
         console.error('Auth check error:', error);
-        router.replace('/auth/sign-in');
-      } finally {
-        setIsLoading(false);
+        // Error checking auth - redirect to sign in
+        window.location.href = '/auth/sign-in';
       }
     };
 
     checkAuth();
-  }, [router]);
+  }, []);
 
-  // Show loading state
+  // Show loading state while checking auth
   if (isLoading) {
     return (
       <div className="min-h-screen bg-slate-950 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#0074D9] mx-auto mb-4" />
-          <p className="text-slate-400">Loading Admin Dashboard...</p>
+          <p className="text-slate-400">Checking authentication...</p>
         </div>
       </div>
     );
   }
 
-  // If not authenticated, don't render anything (redirect will happen)
+  // If not authenticated, show nothing (redirect happening)
   if (!isAuthenticated) {
-    return null;
+    return (
+      <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#0074D9] mx-auto mb-4" />
+          <p className="text-slate-400">Redirecting to login...</p>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -129,11 +138,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             onClick={async () => {
               try {
                 await authClient.signOut();
-                window.location.href = '/auth/sign-in';
               } catch (error) {
                 console.error('Sign out error:', error);
-                window.location.href = '/auth/sign-in';
               }
+              window.location.href = '/auth/sign-in';
             }}
             className="flex items-center gap-3 w-full px-4 py-3 rounded-lg text-slate-400 hover:text-red-400 hover:bg-red-400/10 transition-all duration-200"
           >
