@@ -10,16 +10,14 @@ import { useEffect, useState } from 'react';
 export default function SignUpPage() {
   const [isChecking, setIsChecking] = useState(true);
 
-  // Check if already logged in
   useEffect(() => {
+    // Check if already logged in
     const checkAuth = async () => {
       try {
         const session = await authClient.getSession();
         if (session) {
-          // Already logged in, redirect to admin
-          console.log('Already logged in, redirecting...');
+          // Already logged in, go to admin
           window.location.href = '/admin';
-          return;
         }
       } catch (err) {
         console.error('Auth check error:', err);
@@ -30,22 +28,10 @@ export default function SignUpPage() {
     checkAuth();
   }, []);
 
-  // Handle successful sign up
-  const handleAuthSuccess = () => {
-    console.log('Sign up successful, going to admin...');
-    // Small delay to let cookies set, then redirect
-    setTimeout(() => {
-      window.location.href = '/admin';
-    }, 500);
-  };
-
   if (isChecking) {
     return (
       <div className="min-h-screen bg-slate-950 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#0074D9] mx-auto mb-4" />
-          <p className="text-slate-400">Loading...</p>
-        </div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#0074D9]" />
       </div>
     );
   }
@@ -74,18 +60,7 @@ export default function SignUpPage() {
           <div className="bg-white rounded-2xl shadow-xl p-8">
             <h1 className="text-2xl font-bold text-gray-900 text-center mb-6">Sign Up</h1>
             
-            {/* Wrap AuthView with success handler */}
-            <div onClick={() => {
-              // Check for successful auth after a delay
-              setTimeout(async () => {
-                const session = await authClient.getSession();
-                if (session) {
-                  handleAuthSuccess();
-                }
-              }, 2000);
-            }}>
-              <AuthView path="sign-up" />
-            </div>
+            <AuthView path="sign-up" />
 
             <p className="text-center mt-6 text-sm text-gray-600">
               Already have an account?{' '}
