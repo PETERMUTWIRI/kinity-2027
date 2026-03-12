@@ -17,6 +17,11 @@ import {
   FaCheckCircle,
   FaGlobe,
   FaBalanceScale,
+  FaAward,
+  FaFistRaised,
+  FaMicrophone,
+  FaUniversity,
+  FaFileContract,
 } from 'react-icons/fa';
 import ScrollReveal from '@/components/ScrollReveal';
 import Link from 'next/link';
@@ -151,6 +156,57 @@ const detailedPillars = [
   },
 ];
 
+const traitDetails = [
+  {
+    id: 'integrity',
+    title: 'Integrity',
+    description: 'Uncompromising moral principles',
+    content: 'Dr. Kinity has demonstrated unwavering integrity throughout his 40+ years of public service. Even when his life was in danger, he refused to compromise on his principles. He has consistently spoken truth to power, calling out corruption regardless of who was in office—from the Moi era to the current administration.',
+    highlights: [
+      'Refused to bow to political pressure during the Moi era',
+      'Consistently criticized corruption across all administrations',
+      'Pledged to resign if corruption is not eliminated in 2 years',
+      'Never compromised on workers\' rights and fair treatment',
+    ],
+  },
+  {
+    id: 'experience',
+    title: 'Experience',
+    description: 'Decades of hands-on leadership',
+    content: 'With over four decades of activism, union leadership, and governance advocacy, Dr. Kinity brings unparalleled experience. He has fought for workers at the grassroots level, represented Kenya at international forums, and survived the darkest periods of political oppression.',
+    highlights: [
+      'Led Kenya Civil Servants Union as Secretary-General',
+      'Advocated at International Anti-Corruption Conferences',
+      'Traveled worldwide promoting good governance for Kenya',
+      'Survived assassination attempts and continued the fight',
+    ],
+  },
+  {
+    id: 'vision',
+    title: 'Vision',
+    description: 'Clear roadmap for Kenya\'s future',
+    content: 'Dr. Kinity\'s vision is built on four transformative pillars: Economic Transformation, Zero Corruption, Universal Healthcare, and Education Revolution. This is not empty rhetoric—each pillar has specific, measurable targets and actionable policies to restore Kenya\'s dignity.',
+    highlights: [
+      '40% cost of living reduction within 2 years',
+      'Elimination of corruption or voluntary resignation',
+      'Universal healthcare coverage for all Kenyans',
+      'World-class free education with STEM and digital focus',
+    ],
+  },
+  {
+    id: 'commitment',
+    title: 'Commitment',
+    description: 'Sacrifice for the Kenyan people',
+    content: 'Dr. Kinity\'s commitment to Kenya is not just words—it is written in sacrifice. He has been poisoned, survived brain surgery, lived in exile, and continued fighting for Kenyans for over 40 years. His commitment is to serve or die trying, never to enrich himself.',
+    highlights: [
+      'Poisoned in 1998 for opposing the Moi regime',
+      'Endured brain surgery and partial paralysis',
+      'Lived in exile but never stopped advocating for Kenya',
+      'Called to run by the people, not political machinery',
+    ],
+  },
+];
+
 export default function AboutContent() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-white">
@@ -162,17 +218,17 @@ export default function AboutContent() {
             <ScrollReveal>
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-[#0074D9] to-[#6B2C91] rounded-3xl opacity-20 blur-2xl" />
-                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-[#0074D9] to-[#005CB0]">
-                  {/* Placeholder for Dr. Kinity portrait */}
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-white/20 flex items-center justify-center text-6xl">
-                        👤
-                      </div>
-                      <p className="text-xl font-semibold">Dr. Isaac Newton Kinity</p>
-                      <p className="text-white/70 mt-2">Presidential Candidate 2027</p>
-                    </div>
-                  </div>
+                <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                  <Image
+                    src="/images/president.jpeg"
+                    alt="Dr. Isaac Newton Kinity - Presidential Candidate"
+                    fill
+                    className="object-cover object-top"
+                    priority
+                    quality={95}
+                  />
+                  {/* Subtle Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0074D9]/30 via-transparent to-transparent" />
                 </div>
                 
                 {/* Experience badge */}
@@ -228,19 +284,18 @@ export default function AboutContent() {
                 </div>
               </ScrollReveal>
 
-              {/* Key traits */}
+              {/* Key traits - Blue Links */}
               <ScrollReveal delay={0.3}>
-                <div className="grid grid-cols-2 gap-4">
-                  {[
-                    { label: 'Integrity', icon: '🛡️' },
-                    { label: 'Experience', icon: '💼' },
-                    { label: 'Vision', icon: '👁️' },
-                    { label: 'Commitment', icon: '🤝' },
-                  ].map((trait, i) => (
-                    <div key={i} className="flex items-center gap-3 p-3 rounded-lg bg-slate-50">
-                      <span className="text-2xl">{trait.icon}</span>
-                      <span className="font-semibold text-slate-700">{trait.label}</span>
-                    </div>
+                <div className="flex flex-wrap gap-3">
+                  {traitDetails.map((trait) => (
+                    <a
+                      key={trait.id}
+                      href={`#why-dr-kinity`}
+                      className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0074D9]/10 text-[#0074D9] font-semibold text-sm hover:bg-[#0074D9] hover:text-white transition-all duration-300"
+                    >
+                      {trait.title}
+                      <FaArrowRight className="w-3 h-3 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
+                    </a>
                   ))}
                 </div>
               </ScrollReveal>
@@ -386,11 +441,14 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* Key Achievements */}
-      <section className="py-24 bg-[#111111] text-white">
+      {/* Why Dr. Kinity - Detailed Section */}
+      <section id="why-dr-kinity" className="py-24 bg-[#111111] text-white scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="inline-block px-4 py-1 rounded-full bg-[#E91D0E]/20 text-[#E91D0E] font-semibold text-sm mb-4">
+                Why Choose Kinity?
+              </span>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 Why <span className="text-[#E91D0E]">Dr. Kinity?</span>
               </h2>
@@ -400,10 +458,11 @@ export default function AboutContent() {
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Key Achievements Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
             {keyAchievements.map((item, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
-                <div className="text-center">
+                <div className="text-center p-6 bg-white/5 rounded-2xl border border-white/10 hover:border-[#0074D9]/50 transition-colors">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#0074D9]/20 flex items-center justify-center">
                     <item.icon className="w-8 h-8 text-[#0074D9]" />
                   </div>
@@ -414,26 +473,149 @@ export default function AboutContent() {
             ))}
           </div>
 
-          {/* Additional Highlights */}
+          {/* Detailed Trait Sections */}
+          <div className="space-y-16 mb-20">
+            {traitDetails.map((trait, index) => (
+              <ScrollReveal key={trait.id} delay={index * 0.1}>
+                <div id={trait.id} className="grid md:grid-cols-2 gap-8 items-center">
+                  <div className={index % 2 === 1 ? 'md:order-2' : ''}>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0074D9]/20 text-[#0074D9] font-semibold text-sm mb-4">
+                      <FaAward className="w-4 h-4" />
+                      {trait.title}
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-4">{trait.description}</h3>
+                    <p className="text-white/70 leading-relaxed mb-6">{trait.content}</p>
+                    <ul className="space-y-2">
+                      {trait.highlights.map((highlight, i) => (
+                        <li key={i} className="flex items-center gap-2 text-sm text-white/60">
+                          <FaCheckCircle className="w-4 h-4 text-[#0074D9] flex-shrink-0" />
+                          {highlight}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className={`bg-white/5 rounded-2xl p-8 border border-white/10 ${index % 2 === 1 ? 'md:order-1' : ''}`}>
+                    <div className="grid grid-cols-2 gap-4">
+                      {trait.highlights.map((highlight, i) => (
+                        <div key={i} className="p-4 bg-white/5 rounded-xl">
+                          <div className="w-8 h-8 rounded-full bg-[#0074D9]/20 flex items-center justify-center mb-2">
+                            <span className="text-[#0074D9] font-bold text-sm">{i + 1}</span>
+                          </div>
+                          <p className="text-xs text-white/70 leading-tight">{highlight}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                {index < traitDetails.length - 1 && (
+                  <div className="mt-16 border-b border-white/10" />
+                )}
+              </ScrollReveal>
+            ))}
+          </div>
+
+          {/* Additional Highlights - Expanded */}
           <ScrollReveal delay={0.4}>
-            <div className="mt-16 grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* International Advocacy - Expanded */}
               <div className="bg-white/5 rounded-2xl p-8 border border-white/10">
-                <FaGlobe className="w-8 h-8 text-[#0074D9] mb-4" />
-                <h3 className="text-xl font-bold mb-3">International Advocacy</h3>
-                <p className="text-white/70 text-sm leading-relaxed">
-                  While in exile, Dr. Kinity traveled widely advocating for political reform and good governance 
-                  in Kenya through international forums including the International Anti-Corruption Conferences. 
-                  He has spoken at Yale University and other international platforms.
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-[#0074D9]/20 flex items-center justify-center">
+                    <FaGlobe className="w-6 h-6 text-[#0074D9]" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold">International Advocacy</h3>
+                    <p className="text-sm text-white/50">Global voice for Kenya</p>
+                  </div>
+                </div>
+                
+                <p className="text-white/70 text-sm leading-relaxed mb-6">
+                  While in exile, Dr. Kinity transformed his personal tragedy into a global mission. 
+                  He traveled to numerous countries, speaking at prestigious institutions and international 
+                  forums to shine a light on Kenya&apos;s governance challenges.
                 </p>
+
+                <div className="space-y-4 mb-6">
+                  <div className="flex items-start gap-3 p-3 bg-white/5 rounded-xl">
+                    <FaUniversity className="w-5 h-5 text-[#0074D9] mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold text-sm">Yale University Medical Treatment</h4>
+                      <p className="text-xs text-white/50">Received extensive treatment at Yale New Haven Hospital in Connecticut following the 1998 poisoning incident</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 bg-white/5 rounded-xl">
+                    <FaMicrophone className="w-5 h-5 text-[#0074D9] mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold text-sm">International Anti-Corruption Conferences</h4>
+                      <p className="text-xs text-white/50">Regular speaker at global anti-corruption forums advocating for Kenya</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 bg-white/5 rounded-xl">
+                    <FaFileContract className="w-5 h-5 text-[#0074D9] mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold text-sm">Trade Union Advocacy</h4>
+                      <p className="text-xs text-white/50">Continued fighting for workers&apos; rights through international labor forums</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-4 bg-gradient-to-r from-[#0074D9]/20 to-transparent rounded-xl border-l-2 border-[#0074D9]">
+                  <p className="text-sm text-white/80 italic">
+                    &ldquo;Even from thousands of miles away, my heart never left Kenya. I used every platform 
+                    available to fight for the Kenya we all deserve.&rdquo;
+                  </p>
+                </div>
               </div>
+
+              {/* People's Choice - Expanded */}
               <div className="bg-white/5 rounded-2xl p-8 border border-white/10">
-                <FaUsers className="w-8 h-8 text-[#E91D0E] mb-4" />
-                <h3 className="text-xl font-bold mb-3">The People&apos;s Choice</h3>
-                <p className="text-white/70 text-sm leading-relaxed">
-                  Dr. Kinity&apos;s decision to run followed more than two and a half years of appeals from Kenyan 
-                  youths, elderly citizens, and groups across all 47 counties urging him to offer leadership. 
-                  This grassroots call represents a desire for reform and accountable leadership.
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-[#E91D0E]/20 flex items-center justify-center">
+                    <FaUsers className="w-6 h-6 text-[#E91D0E]" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold">The People&apos;s Choice</h3>
+                    <p className="text-sm text-white/50">Called by the people, not politicians</p>
+                  </div>
+                </div>
+                
+                <p className="text-white/70 text-sm leading-relaxed mb-6">
+                  Unlike traditional politicians who emerge through party coalitions, Dr. Kinity&apos;s 
+                  candidacy was born from a genuine grassroots movement. For over two and a half years, 
+                  Kenyans from all walks of life urged him to run.
                 </p>
+
+                <div className="space-y-4 mb-6">
+                  <div className="flex items-start gap-3 p-3 bg-white/5 rounded-xl">
+                    <FaFistRaised className="w-5 h-5 text-[#E91D0E] mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold text-sm">Youth Movement</h4>
+                      <p className="text-xs text-white/50">Young Kenyans desperate for change led the call for his leadership</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 bg-white/5 rounded-xl">
+                    <FaHeart className="w-5 h-5 text-[#E91D0E] mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold text-sm">Elderly Citizens</h4>
+                      <p className="text-xs text-white/50">Senior citizens who remember his early activism supported his candidacy</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 bg-white/5 rounded-xl">
+                    <FaLandmark className="w-5 h-5 text-[#E91D0E] mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold text-sm">All 47 Counties</h4>
+                      <p className="text-xs text-white/50">Appeals came from across the entire nation, transcending tribal lines</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-4 bg-gradient-to-r from-[#E91D0E]/20 to-transparent rounded-xl border-l-2 border-[#E91D0E]">
+                  <p className="text-sm text-white/80 italic">
+                    &ldquo;Initially, the requests surprised me because presidential candidates in Kenya 
+                    have historically emerged through party coalitions rather than direct encouragement 
+                    from ordinary citizens.&rdquo;
+                  </p>
+                </div>
               </div>
             </div>
           </ScrollReveal>

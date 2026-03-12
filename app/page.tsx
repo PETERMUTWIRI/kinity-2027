@@ -308,7 +308,7 @@ export default function HomePage() {
             {pillars.length > 0 ? (
               pillars.map((pillar, index) => (
                 <ScrollReveal key={pillar.id} delay={index * 0.1}>
-                  <Link href="/vision-2027" className="group">
+                  <Link href={`/about#${pillar.id}`} className="group">
                     <div className="card-presidential h-full p-6 hover:border-[#0074D9]/30">
                       {/* Icon placeholder */}
                       <div 
@@ -456,22 +456,26 @@ export default function HomePage() {
                 </div>
                 
                 {/* Key traits */}
-                <div className="grid grid-cols-2 gap-4 pt-4">
+                <div className="flex flex-wrap gap-3 pt-4">
                   {[
-                    { label: 'Integrity', icon: '🛡️' },
-                    { label: 'Experience', icon: '💼' },
-                    { label: 'Vision', icon: '👁️' },
-                    { label: 'Commitment', icon: '🤝' },
+                    { label: 'Integrity', href: '/about#why-dr-kinity' },
+                    { label: 'Experience', href: '/about#why-dr-kinity' },
+                    { label: 'Vision', href: '/about#vision-2027' },
+                    { label: 'Commitment', href: '/about#why-dr-kinity' },
                   ].map((trait, i) => (
-                    <div key={i} className="flex items-center gap-3 p-3 rounded-lg bg-slate-50">
-                      <span className="text-2xl">{trait.icon}</span>
-                      <span className="font-semibold text-slate-700">{trait.label}</span>
-                    </div>
+                    <Link
+                      key={i}
+                      href={trait.href}
+                      className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0074D9]/10 text-[#0074D9] font-semibold text-sm hover:bg-[#0074D9] hover:text-white transition-all duration-300"
+                    >
+                      {trait.label}
+                      <FaArrowRight className="w-3 h-3 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
+                    </Link>
                   ))}
                 </div>
 
                 <Link
-                  href="/our-story"
+                  href="/about"
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#0074D9] text-white font-bold hover:bg-[#005CB0] transition-all duration-300 hover:shadow-lg hover:shadow-[#0074D9]/30"
                 >
                   Read Full Story
