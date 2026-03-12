@@ -1,4 +1,3 @@
-// lib/auth/server.ts   (rename file if you want, or keep old name)
 import { neonAuth } from '@neondatabase/auth/next/server';
 import { NextRequest, NextResponse } from 'next/server';
 

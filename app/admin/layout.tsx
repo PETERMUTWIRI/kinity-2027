@@ -1,7 +1,7 @@
 'use client';
 
 import { authClient } from '@/lib/auth/client';
-import { useRouter, usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { 
@@ -37,7 +37,6 @@ const adminNavLinks = [
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
-  const pathname = usePathname();
   const [isLoading, setIsLoading] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -49,12 +48,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       try {
         const session = await authClient.getSession();
         if (!session) {
-          // No session, redirect to sign in
           router.replace('/auth/sign-in');
         } else {
           setIsAuthenticated(true);
-          // @ts-ignore - Neon Auth session type has user property
-          setUser(session?.data?.user || session?.user || null);
+          // @ts-ignore - session data structure
+          setUser(session.data?.user || session.user || null);
         }
       } catch (error) {
         console.error('Auth check error:', error);
