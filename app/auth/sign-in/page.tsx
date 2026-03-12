@@ -17,7 +17,8 @@ export default function SignInPage() {
         const session = await authClient.getSession();
         if (session) {
           // Already logged in, redirect to admin
-          window.location.replace('/admin');
+          console.log('Already logged in, redirecting...');
+          window.location.href = '/admin';
           return;
         }
       } catch (err) {
@@ -28,6 +29,15 @@ export default function SignInPage() {
     };
     checkAuth();
   }, []);
+
+  // Handle successful sign in
+  const handleAuthSuccess = () => {
+    console.log('Sign in successful, going to admin...');
+    // Small delay to let cookies set, then redirect
+    setTimeout(() => {
+      window.location.href = '/admin';
+    }, 500);
+  };
 
   if (isChecking) {
     return (
@@ -64,7 +74,18 @@ export default function SignInPage() {
           <div className="bg-white rounded-2xl shadow-xl p-8">
             <h1 className="text-2xl font-bold text-gray-900 text-center mb-6">Sign In</h1>
             
-            <AuthView path="sign-in" />
+            {/* Wrap AuthView with success handler */}
+            <div onClick={() => {
+              // Check for successful auth after a delay
+              setTimeout(async () => {
+                const session = await authClient.getSession();
+                if (session) {
+                  handleAuthSuccess();
+                }
+              }, 2000);
+            }}>
+              <AuthView path="sign-in" />
+            </div>
 
             <p className="text-center mt-6 text-sm text-gray-600">
               Don&apos;t have an account?{' '}
