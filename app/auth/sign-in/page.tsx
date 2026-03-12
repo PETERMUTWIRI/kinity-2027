@@ -5,8 +5,41 @@ import { AuthView, NeonAuthUIProvider } from '@neondatabase/auth/react/ui';
 import { authClient } from '@/lib/auth/client';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 export default function SignInPage() {
+  const [isChecking, setIsChecking] = useState(true);
+
+  // Check if already logged in
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const session = await authClient.getSession();
+        if (session) {
+          // Already logged in, redirect to admin
+          window.location.replace('/admin');
+          return;
+        }
+      } catch (err) {
+        console.error('Auth check error:', err);
+      } finally {
+        setIsChecking(false);
+      }
+    };
+    checkAuth();
+  }, []);
+
+  if (isChecking) {
+    return (
+      <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#0074D9] mx-auto mb-4" />
+          <p className="text-slate-400">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <NeonAuthUIProvider 
       authClient={authClient as any}
@@ -27,20 +60,18 @@ export default function SignInPage() {
             </Link>
           </div>
 
-          {/* White Card for Auth Form */}
+          {/* Auth Card */}
           <div className="bg-white rounded-2xl shadow-xl p-8">
-            <h1 className="text-2xl font-bold text-gray-900 text-center mb-6">
-              Admin Login
-            </h1>
+            <h1 className="text-2xl font-bold text-gray-900 text-center mb-6">Sign In</h1>
             
             <AuthView path="sign-in" />
-            
-            <div className="mt-6 text-center text-sm">
-              <span className="text-gray-600">Don&apos;t have an account? </span>
+
+            <p className="text-center mt-6 text-sm text-gray-600">
+              Don&apos;t have an account?{' '}
               <Link href="/auth/sign-up" className="text-[#0074D9] font-semibold hover:underline">
                 Sign up
               </Link>
-            </div>
+            </p>
           </div>
 
           <div className="text-center mt-6">
