@@ -143,9 +143,6 @@ export default function Navbar() {
                   >
                     Kikimo Foundation
                   </motion.p>
-                  <p className="text-xs text-slate-500 font-medium tracking-wide">
-                    The Incoming President 2027
-                  </p>
                 </div>
               </Link>
 
@@ -188,12 +185,10 @@ export default function Navbar() {
                 >
                   <Link 
                     href="/join-us"
-                    className="group px-5 py-2.5 rounded-full bg-gradient-to-r from-[#E91D0E] to-[#c4180c] text-white text-sm font-semibold shadow-md shadow-[#E91D0E]/20 hover:shadow-lg hover:shadow-[#E91D0E]/30 transition-all duration-300 hover:-translate-y-0.5"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#E91D0E] to-[#c4180c] text-white text-sm font-semibold shadow-md shadow-[#E91D0E]/20 hover:shadow-lg hover:shadow-[#E91D0E]/30 transition-all duration-300 hover:-translate-y-0.5"
                   >
-                    <span className="flex items-center gap-2">
-                      Join Us
-                      <FaChevronRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
-                    </span>
+                    Join Us
+                    <FaChevronRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                   </Link>
                 </motion.div>
                 <motion.div
@@ -282,7 +277,6 @@ export default function Navbar() {
                     </div>
                     <div>
                       <p className="font-slogan text-lg text-[#E91D0E]">Kikimo Foundation</p>
-                      <p className="text-xs text-slate-500">Kenya&apos;s Hope 2027</p>
                     </div>
                   </Link>
                   <motion.button

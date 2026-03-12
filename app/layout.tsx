@@ -254,8 +254,8 @@ export default function RootLayout({
         {/* Navigation */}
         <Navbar />
         
-        {/* Main content with transition */}
-        <main className="relative z-10 pt-[120px] lg:pt-[140px]">
+        {/* Main content with transition - tight coupling with navbar */}
+        <main className="relative z-10">
           <PageTransition>
             {children}
           </PageTransition>
