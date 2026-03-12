@@ -101,17 +101,7 @@ export default function HomePage() {
             
             {/* LEFT: Text Content */}
             <div className="space-y-8 text-center lg:text-left">
-              {/* Badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="inline-flex"
-              >
-                <span className="px-6 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white font-medium text-sm tracking-wide">
-                  <span className="text-[#E91D0E] font-bold">2027</span> Presidential Campaign
-                </span>
-              </motion.div>
+              
 
               {/* Main Headline */}
               <motion.h1
