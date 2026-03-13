@@ -195,9 +195,9 @@ export default function HomePage() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="relative hidden lg:block"
+              className="relative block"
             >
-              <div className="relative aspect-[3/4] max-w-md mx-auto">
+              <div className="relative aspect-[3/4] max-w-xs sm:max-w-sm md:max-w-md mx-auto">
                 {/* Glow Effect */}
                 <div className="absolute -inset-4 bg-gradient-to-br from-[#E91D0E]/30 via-[#6B2C91]/30 to-[#0074D9]/30 rounded-3xl blur-2xl" />
                 

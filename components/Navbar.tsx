@@ -137,9 +137,9 @@ export default function Navbar() {
                     priority
                   />
                 </motion.div>
-                <div className="hidden sm:block">
+                <div className="block">
                   <motion.p 
-                    className="font-slogan text-lg lg:text-xl leading-tight text-[#E91D0E] group-hover:text-[#0074D9] transition-colors duration-300"
+                    className="font-slogan text-base sm:text-lg lg:text-xl leading-tight text-[#E91D0E] group-hover:text-[#0074D9] transition-colors duration-300"
                   >
                     Kikimo Foundation
                   </motion.p>
