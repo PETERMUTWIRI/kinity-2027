@@ -292,8 +292,8 @@ export default function DashboardContent() {
         {/* RECENT VIDEOS */}
         <SectionCard
           title="Recent Videos"
-          href="/admin/videos"
-          onNew="/admin/videos/new"
+          href="/admin/videos/list"
+          onNew="/admin/videos"
           items={recentVideos.slice(0, 5)}
           render={(v) => (
             <ItemRow
@@ -301,7 +301,7 @@ export default function DashboardContent() {
               title={v.title}
               subtitle={`${v.category} • Order: ${v.order}`}
               cover={v.thumbnail}
-              editLink={`/admin/videos/${v.id}`}
+              editLink={`/admin/videos?id=${v.id}`}
               onDelete={() => deleteVideo(v.id)}
               status={v.published ? undefined : 'Draft'}
             />
@@ -351,7 +351,7 @@ export default function DashboardContent() {
         <div className="flex flex-wrap gap-3">
           <QuickActionButton href="/admin/posts/edit" icon={<FaNewspaper />} label="New Post" />
           <QuickActionButton href="/admin/events/new" icon={<FaCalendarAlt />} label="New Event" />
-          <QuickActionButton href="/admin/videos/new" icon={<FaVideo />} label="Add Video" />
+          <QuickActionButton href="/admin/videos" icon={<FaVideo />} label="Add Video" />
           <QuickActionButton href="/admin/volunteers" icon={<FaUsers />} label="Review Volunteers" />
           <QuickActionButton href="/admin/manifesto/new" icon={<FaFlag />} label="Add Pillar" />
           <QuickActionButton href="/admin/donations" icon={<FaHeart />} label="View Donations" />

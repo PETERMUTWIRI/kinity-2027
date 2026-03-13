@@ -27,7 +27,7 @@ const navLinks = [
   { name: 'About', href: '/about' },
   { name: 'News Hub', href: '/news-hub' },
   { name: 'Events', href: '/events' },
-  { name: 'Gallery', href: '/gallery' },
+  { name: 'Media Center', href: '/gallery' },
   { name: 'Contact', href: '/contact' },
 ];
 

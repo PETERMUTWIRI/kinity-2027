@@ -26,7 +26,7 @@ function VideoEditor() {
     title: '',
     description: '',
     youtubeId: '',
-    category: 'Music Video' as 'Music Video' | 'Live Performance' | 'Behind the Scenes' | 'Interview' | 'Lyric Video',
+    category: 'Speech' as 'Speech' | 'Rally' | 'Interview' | 'Statement' | 'Live Event' | 'Advertisement' | 'Documentary',
     thumbnail: '',
     published: true,
     order: 0,
@@ -214,11 +214,13 @@ function VideoEditor() {
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">Category</label>
               <select name="category" value={form.category} onChange={handleChange} className="w-full px-4 py-3 border rounded-lg bg-white text-gray-900" disabled={isLoading}>
-                <option value="Music Video">Music Video</option>
-                <option value="Live Performance">Live Performance</option>
-                <option value="Behind the Scenes">Behind the Scenes</option>
+                <option value="Speech">Speech</option>
+                <option value="Rally">Rally / Town Hall</option>
                 <option value="Interview">Interview</option>
-                <option value="Lyric Video">Lyric Video</option>
+                <option value="Statement">Official Statement</option>
+                <option value="Live Event">Live Event</option>
+                <option value="Advertisement">Campaign Ad</option>
+                <option value="Documentary">Documentary</option>
               </select>
             </div>
 
