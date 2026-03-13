@@ -9,7 +9,7 @@ const videoSchema = z.object({
   title: z.string().min(1, 'Title is required'),
   description: z.string().optional(),
   youtubeId: z.string().min(1, 'YouTube ID is required'),
-  category: z.enum(['Music Video', 'Live Performance', 'Interview', 'Behind the Scenes', 'Other']),
+  category: z.enum(['Speech', 'Rally', 'Interview', 'Statement', 'Live Event', 'Advertisement', 'Documentary']),
   thumbnail: z.string().optional(),
   published: z.boolean().default(true),
   order: z.number().int().default(0),

@@ -13,6 +13,10 @@ export const metadata: Metadata = {
   description: 'Photos, videos, speeches, interviews, and campaign moments.',
 };
 
+interface Props {
+  searchParams: Promise<{ tab?: string }>;
+}
+
 // Video Card Component
 function VideoCard({ video }: { video: any }) {
   return (
@@ -220,8 +224,11 @@ async function VideosTab() {
     return (
       <div className="text-center py-16">
         <FaVideo className="w-16 h-16 text-slate-700 mx-auto mb-4" />
-        <h3 className="text-xl font-semibold text-white mb-2">Videos Coming Soon</h3>
-        <p className="text-slate-400">Speeches, interviews, and campaign videos will be added here.</p>
+        <h3 className="text-xl font-semibold text-white mb-2">No Videos Yet</h3>
+        <p className="text-slate-400 mb-4">Campaign videos will appear here once added from the admin panel.</p>
+        <p className="text-slate-500 text-sm">
+          Make sure videos are marked as &quot;Published&quot; in the admin to show here.
+        </p>
       </div>
     );
   }
@@ -235,13 +242,43 @@ async function VideosTab() {
   );
 }
 
+// Tab Navigation Component (Client Component wrapper not needed, just using correct Link)
+function TabNavigation({ activeTab }: { activeTab: string }) {
+  return (
+    <div className="flex gap-1 -mb-px">
+      <Link
+        href="/gallery?tab=photos"
+        className={`flex items-center gap-2 px-6 py-4 text-sm font-medium border-b-2 transition-colors ${
+          activeTab === 'photos'
+            ? 'border-[#0074D9] text-[#0074D9]'
+            : 'border-transparent text-slate-400 hover:text-white hover:border-slate-700'
+        }`}
+      >
+        <FaImages className="w-4 h-4" />
+        Photos
+      </Link>
+      <Link
+        href="/gallery?tab=videos"
+        className={`flex items-center gap-2 px-6 py-4 text-sm font-medium border-b-2 transition-colors ${
+          activeTab === 'videos'
+            ? 'border-[#0074D9] text-[#0074D9]'
+            : 'border-transparent text-slate-400 hover:text-white hover:border-slate-700'
+        }`}
+      >
+        <FaVideo className="w-4 h-4" />
+        Videos
+      </Link>
+    </div>
+  );
+}
+
 // Main Page Component
 export default async function MediaCenterPage({
   searchParams,
-}: {
-  searchParams: { tab?: string };
-}) {
-  const activeTab = searchParams.tab || 'photos';
+}: Props) {
+  // Await searchParams as it's now a Promise in Next.js 15
+  const params = await searchParams;
+  const activeTab = params.tab || 'photos';
 
   return (
     <div className="min-h-screen bg-slate-950">
@@ -260,30 +297,7 @@ export default async function MediaCenterPage({
       {/* Tabs Navigation */}
       <div className="sticky top-16 z-30 bg-slate-900/95 backdrop-blur border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex gap-1 -mb-px">
-            <Link
-              href="/gallery?tab=photos"
-              className={`flex items-center gap-2 px-6 py-4 text-sm font-medium border-b-2 transition-colors ${
-                activeTab === 'photos'
-                  ? 'border-[#0074D9] text-[#0074D9]'
-                  : 'border-transparent text-slate-400 hover:text-white hover:border-slate-700'
-              }`}
-            >
-              <FaImages className="w-4 h-4" />
-              Photos
-            </Link>
-            <Link
-              href="/gallery?tab=videos"
-              className={`flex items-center gap-2 px-6 py-4 text-sm font-medium border-b-2 transition-colors ${
-                activeTab === 'videos'
-                  ? 'border-[#0074D9] text-[#0074D9]'
-                  : 'border-transparent text-slate-400 hover:text-white hover:border-slate-700'
-              }`}
-            >
-              <FaVideo className="w-4 h-4" />
-              Videos
-            </Link>
-          </div>
+          <TabNavigation activeTab={activeTab} />
         </div>
       </div>
 
