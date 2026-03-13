@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { 
   FaArrowRight, 
   FaUsers, 
@@ -21,7 +22,17 @@ import ScrollReveal from '@/components/ScrollReveal';
 // The Movement Begins
 // ==========================================
 
-// Client-side rendered page
+interface Post {
+  id: number;
+  title: string;
+  slug: string;
+  excerpt: string | null;
+  content: string;
+  category: string;
+  cover: string | null;
+  publishedAt: string | null;
+  createdAt: string;
+}
 
 // Hardcoded manifesto pillars for reliability
 const pillars = [
@@ -65,9 +76,28 @@ const pillars = [
 
 // Fallback data
 const upcomingEvents: any[] = [];
-const latestPosts: any[] = [];
 
 export default function HomePage() {
+  const [latestPosts, setLatestPosts] = useState<Post[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  // Fetch latest posts
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const res = await fetch('/api/blog?limit=3');
+        const data = await res.json();
+        // Handle both formats: { posts: [...] } or [...]
+        const posts = data.posts || data || [];
+        setLatestPosts(posts.slice(0, 3));
+      } catch (err) {
+        console.error('Error fetching posts:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchPosts();
+  }, []);
 
   return (
     <div className="relative min-h-screen overflow-hidden">
@@ -479,7 +509,7 @@ export default function HomePage() {
       </section>
 
       {/* ==========================================
-          LATEST NEWS SECTION
+          LATEST NEWS SECTION - REAL POSTS
           ========================================== */}
       <section className="section-padding bg-white">
         <div className="container-presidential">
@@ -488,14 +518,14 @@ export default function HomePage() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
               <div>
                 <span className="inline-block px-4 py-1 rounded-full bg-[#6B2C91]/10 text-[#6B2C91] font-semibold text-sm mb-4">
-                  On The Ground
+                  Latest Updates
                 </span>
                 <h2 className="font-headline text-4xl md:text-5xl text-[#111111]">
-                  Latest <span className="text-[#0074D9]">Updates</span>
+                  From the <span className="text-[#0074D9]">News Hub</span>
                 </h2>
               </div>
               <Link
-                href="/on-the-ground"
+                href="/news-hub"
                 className="inline-flex items-center gap-2 text-[#0074D9] font-semibold hover:text-[#005CB0] transition-colors"
               >
                 View All News
@@ -504,12 +534,27 @@ export default function HomePage() {
             </div>
           </ScrollReveal>
 
-          {/* News Grid */}
+          {/* News Grid - Shows 3 Actual Posts */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {latestPosts.length > 0 ? (
+            {loading ? (
+              // Loading skeleton
+              <>
+                {[1, 2, 3].map((i) => (
+                  <div key={i} className="card-presidential overflow-hidden h-full animate-pulse">
+                    <div className="aspect-video bg-slate-200" />
+                    <div className="p-6 space-y-3">
+                      <div className="h-4 bg-slate-200 rounded w-1/3" />
+                      <div className="h-6 bg-slate-200 rounded" />
+                      <div className="h-4 bg-slate-200 rounded w-3/4" />
+                    </div>
+                  </div>
+                ))}
+              </>
+            ) : latestPosts.length > 0 ? (
+              // Real posts from API
               latestPosts.map((post, index) => (
                 <ScrollReveal key={post.id} delay={index * 0.1}>
-                  <Link href={`/on-the-ground/${post.slug}`} className="group">
+                  <Link href={`/news-hub/${post.slug}`} className="group">
                     <article className="card-presidential overflow-hidden h-full">
                       {/* Image */}
                       <div className="relative aspect-video overflow-hidden">
@@ -553,53 +598,12 @@ export default function HomePage() {
                 </ScrollReveal>
               ))
             ) : (
-              // Fallback content
-              <>
-                {[
-                  { 
-                    title: 'Historic Rally Draws Thousands in Nairobi',
-                    category: 'Event Recap',
-                    date: 'March 10, 2025',
-                    excerpt: 'Dr. Kinity addresses a massive crowd at Uhuru Park, outlining his vision for economic transformation and zero tolerance for corruption.'
-                  },
-                  { 
-                    title: 'Meeting with County Leaders',
-                    category: 'News',
-                    date: 'March 8, 2025',
-                    excerpt: 'Productive discussions with governors and county officials on devolution and resource allocation to grassroots communities.'
-                  },
-                  { 
-                    title: 'Youth Employment Initiative Launched',
-                    category: 'Policy',
-                    date: 'March 5, 2025',
-                    excerpt: 'New program aims to create 1 million jobs for young Kenyans through technology and entrepreneurship support.'
-                  },
-                ].map((news, index) => (
-                  <ScrollReveal key={index} delay={index * 0.1}>
-                    <Link href="/on-the-ground" className="group">
-                      <article className="card-presidential overflow-hidden h-full">
-                        <div className="relative aspect-video overflow-hidden">
-                          <div className="w-full h-full bg-gradient-to-br from-[#0074D9] to-[#6B2C91] flex items-center justify-center">
-                            <FaNewspaper className="w-12 h-12 text-white/50" />
-                          </div>
-                          <div className="absolute top-4 left-4">
-                            <span className="px-3 py-1 rounded-full bg-[#E91D0E] text-white text-xs font-bold">
-                              {news.category}
-                            </span>
-                          </div>
-                        </div>
-                        <div className="p-6">
-                          <p className="text-sm text-slate-500 mb-2">{news.date}</p>
-                          <h3 className="font-headline text-xl text-[#111111] mb-3 group-hover:text-[#0074D9] transition-colors">
-                            {news.title}
-                          </h3>
-                          <p className="text-slate-600 text-sm">{news.excerpt}</p>
-                        </div>
-                      </article>
-                    </Link>
-                  </ScrollReveal>
-                ))}
-              </>
+              // Fallback if no posts
+              <div className="col-span-3 text-center py-12">
+                <FaNewspaper className="w-16 h-16 text-slate-300 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-slate-700 mb-2">No articles yet</h3>
+                <p className="text-slate-500">Check back soon for the latest updates from the campaign.</p>
+              </div>
             )}
           </div>
         </div>
