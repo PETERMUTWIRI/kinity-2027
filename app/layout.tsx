@@ -39,11 +39,14 @@ const oswald = Oswald({
 // ==========================================
 
 export const metadata: Metadata = {
-  // Core title template
+  // Core title template - Shows in browser tab with favicon
   title: {
     default: "Kikimo Foundation",
     template: "%s | Kikimo Foundation",
   },
+  
+  // Application name for installed PWA
+  applicationName: "Kikimo Foundation",
   
   // Primary description
   description: "Kikimo Foundation - Empowering communities and transforming lives through service and dedication.",
@@ -85,11 +88,19 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   
-  // Icons
+  // Icons - Using Kikimo Foundation Logo
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: [
+      { url: '/kikimo-logo.jpeg', sizes: '32x32', type: 'image/jpeg' },
+      { url: '/kikimo-logo.jpeg', sizes: '16x16', type: 'image/jpeg' },
+    ],
+    shortcut: '/kikimo-logo.jpeg',
+    apple: [
+      { url: '/kikimo-logo.jpeg', sizes: '180x180', type: 'image/jpeg' },
+    ],
+    other: [
+      { rel: 'apple-touch-icon-precomposed', url: '/kikimo-logo.jpeg' },
+    ],
   },
   
   // Open Graph - Social sharing
