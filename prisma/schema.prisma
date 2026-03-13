@@ -16,10 +16,13 @@ model Post {
   id            Int       @id @default(autoincrement())
   title         String    @db.VarChar(255)
   slug          String    @unique
+  subtitle      String?   @db.VarChar(500) // Secondary headline
   content       String    // HTML content from CKEditor
   excerpt       String?   @db.VarChar(500)
   category      String    @db.VarChar(100) // News, Press Release, Event Recap, Statement
   cover         String?   @db.VarChar(500) // ImgBB URL
+  coverCaption  String?   @db.Text // Cover image caption
+  coverPhotographer String? @db.VarChar(255) // Cover image photographer credit
   published     Boolean   @default(true)
   publishedAt   DateTime?
   featured      Boolean   @default(false) // Featured on homepage
@@ -28,12 +31,25 @@ model Post {
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
   author        String?   @db.VarChar(255)
+  authorTitle   String?   @db.VarChar(255) // Author's title/position
   deletedAt     DateTime? @db.Timestamp(6)
   
   // SEO Fields
   metaTitle     String?   @db.VarChar(100)
   metaDesc      String?   @db.VarChar(160)
   ogImage       String?   @db.VarChar(500)
+  
+  // Article Metadata
+  readingTime   Int?      @default(0) // Estimated reading time in minutes
+  wordCount     Int?      @default(0)
+  tags          String[]  // Array of tags/keywords
+  
+  // Location (for local news)
+  location      String?   @db.VarChar(255) // News location
+  county        String?   @db.VarChar(100) // Kenyan county
+  
+  // Inline Images (stored as JSON for flexibility)
+  inlineImages  Json?     // Array of {url, caption, photographer, align}
   
   // Relations
   comments      Comment[]
@@ -45,6 +61,8 @@ model Post {
   @@index([featured])
   @@index([deletedAt])
   @@index([published, deletedAt])
+  @@index([county])
+  @@index([tags])
 }
 
 // Rallies/Town Halls - Transformed from Events

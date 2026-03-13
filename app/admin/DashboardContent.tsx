@@ -255,7 +255,7 @@ export default function DashboardContent() {
         <SectionCard
           title="Recent Posts"
           href="/admin/posts"
-          onNew="/admin/posts/new"
+          onNew="/admin/posts/edit"
           items={posts?.slice(0, 5) || []}
           render={(p) => (
             <ItemRow
@@ -263,7 +263,7 @@ export default function DashboardContent() {
               title={p.title}
               subtitle={`${p.category} • ${new Date(p.publishedAt).toLocaleDateString('en-KE')}`}
               cover={p.cover}
-              editLink={`/admin/posts/${p.id}`}
+              editLink={`/admin/posts/edit?id=${p.id}`}
               onDelete={() => deletePost(p.id)}
               status={p.published === false ? 'Draft' : p.isPressRelease ? 'Press' : undefined}
               statusColor={p.isPressRelease ? 'purple' : undefined}
@@ -349,7 +349,7 @@ export default function DashboardContent() {
       <div className="mt-8 bg-gradient-to-r from-[#0074D9] to-[#6B2C91] rounded-2xl shadow-lg p-6">
         <h2 className="text-xl font-bold text-white mb-4">Quick Actions</h2>
         <div className="flex flex-wrap gap-3">
-          <QuickActionButton href="/admin/posts/new" icon={<FaNewspaper />} label="New Post" />
+          <QuickActionButton href="/admin/posts/edit" icon={<FaNewspaper />} label="New Post" />
           <QuickActionButton href="/admin/events/new" icon={<FaCalendarAlt />} label="New Event" />
           <QuickActionButton href="/admin/videos/new" icon={<FaVideo />} label="Add Video" />
           <QuickActionButton href="/admin/volunteers" icon={<FaUsers />} label="Review Volunteers" />
