@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { prisma } from '@/lib/prisma';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaImages, FaFolder, FaVideo, FaPlay, FaYoutube } from 'react-icons/fa';
+import { FaImages, FaVideo, FaPlay, FaYoutube, FaCamera, FaMapMarkerAlt, FaCalendar } from 'react-icons/fa';
 import { Suspense } from 'react';
 
 export const dynamic = 'force-dynamic';
@@ -16,13 +16,19 @@ export const metadata: Metadata = {
 // Video Card Component
 function VideoCard({ video }: { video: any }) {
   return (
-    <div className="group relative aspect-video rounded-2xl overflow-hidden bg-slate-900 cursor-pointer">
+    <a 
+      href={`https://youtube.com/watch?v=${video.youtubeId}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group relative aspect-video rounded-2xl overflow-hidden bg-slate-900 cursor-pointer block"
+    >
       {/* Thumbnail */}
       <Image
         src={video.thumbnail || `https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
         alt={video.title}
         fill
         className="object-cover transition-transform duration-500 group-hover:scale-110"
+        unoptimized
       />
       
       {/* Overlay */}
@@ -35,48 +41,91 @@ function VideoCard({ video }: { video: any }) {
         </div>
       </div>
       
-      {/* Duration badge (placeholder) */}
-      <div className="absolute top-4 right-4 px-2 py-1 bg-black/70 rounded text-white text-xs font-medium">
-        <FaYoutube className="inline w-3 h-3 mr-1 text-red-500" />
-        Watch
+      {/* Category badge */}
+      <div className="absolute top-4 left-4 px-3 py-1 bg-[#E91D0E] text-white text-xs font-bold rounded-full">
+        {video.category}
       </div>
       
       {/* Content */}
       <div className="absolute bottom-0 left-0 right-0 p-5">
-        <div className="flex items-center gap-2 text-white/60 text-sm mb-2">
-          <FaVideo className="w-4 h-4" />
-          {video.category}
-        </div>
         <h3 className="font-headline text-lg text-white group-hover:text-[#0074D9] transition-colors line-clamp-2">
           {video.title}
         </h3>
+        <p className="text-white/60 text-sm mt-1">
+          Watch on YouTube
+        </p>
+      </div>
+    </a>
+  );
+}
+
+// Photo Card Component
+function PhotoCard({ image }: { image: any }) {
+  return (
+    <div className="group relative aspect-square rounded-2xl overflow-hidden bg-slate-800 cursor-pointer">
+      <Image
+        src={image.url}
+        alt={image.title || 'Campaign photo'}
+        fill
+        className="object-cover transition-transform duration-500 group-hover:scale-110"
+        unoptimized
+      />
+      
+      {/* Overlay on hover */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+      
+      {/* Info on hover */}
+      <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform">
+        {image.photographer && (
+          <p className="text-white/80 text-sm flex items-center gap-1 mb-1">
+            <FaCamera className="w-3 h-3" />
+            {image.photographer}
+          </p>
+        )}
+        {(image.location || image.county) && (
+          <p className="text-white/60 text-xs flex items-center gap-1">
+            <FaMapMarkerAlt className="w-3 h-3" />
+            {[image.location, image.county].filter(Boolean).join(', ')}
+          </p>
+        )}
+        {image.eventDate && (
+          <p className="text-white/60 text-xs flex items-center gap-1 mt-1">
+            <FaCalendar className="w-3 h-3" />
+            {new Date(image.eventDate).toLocaleDateString('en-KE', {
+              day: 'numeric',
+              month: 'short',
+              year: 'numeric'
+            })}
+          </p>
+        )}
       </div>
       
-      {/* Clickable link */}
+      {/* Click to view full image */}
       <a 
-        href={`https://youtube.com/watch?v=${video.youtubeId}`}
+        href={image.url}
         target="_blank"
         rel="noopener noreferrer"
         className="absolute inset-0"
-        aria-label={`Watch ${video.title}`}
+        aria-label="View full image"
       />
     </div>
   );
 }
 
-// Photo Album Card Component
-function AlbumCard({ category }: { category: any }) {
+// Album Card Component
+function AlbumCard({ album }: { album: any }) {
   return (
     <Link 
-      href={`/gallery/${category.slug}`}
-      className="group relative aspect-[4/3] rounded-2xl overflow-hidden"
+      href={`/gallery/album/${album.slug}`}
+      className="group relative aspect-[4/3] rounded-2xl overflow-hidden block"
     >
-      {category.coverImage ? (
+      {album.coverImage ? (
         <Image
-          src={category.coverImage}
-          alt={category.title}
+          src={album.coverImage}
+          alt={album.title}
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-110"
+          unoptimized
         />
       ) : (
         <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center">
@@ -85,26 +134,37 @@ function AlbumCard({ category }: { category: any }) {
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 p-6">
-        <div className="flex items-center gap-2 text-white/60 text-sm mb-2">
-          <FaFolder className="w-4 h-4" />
-          {category.category}
-        </div>
+        <span className="inline-block px-2 py-1 bg-[#0074D9]/80 text-white text-xs rounded mb-2">
+          {album._count?.images || 0} photos
+        </span>
         <h3 className="font-headline text-xl text-white group-hover:text-[#0074D9] transition-colors">
-          {category.title}
+          {album.title}
         </h3>
       </div>
     </Link>
   );
 }
 
-// Tab Content Components
+// Photos Tab with Albums and Images
 async function PhotosTab() {
-  const categories = await prisma.galleryCategory.findMany({
-    where: { published: true, deletedAt: null },
-    orderBy: { order: 'asc' },
-  });
+  const [albums, recentImages] = await Promise.all([
+    prisma.galleryCategory.findMany({
+      where: { published: true, deletedAt: null },
+      orderBy: { order: 'asc' },
+      include: {
+        _count: { select: { images: true } }
+      }
+    }),
+    prisma.galleryImage.findMany({
+      where: { published: true, deletedAt: null },
+      orderBy: { createdAt: 'desc' },
+      take: 12,
+    })
+  ]);
 
-  if (categories.length === 0) {
+  const hasContent = albums.length > 0 || recentImages.length > 0;
+
+  if (!hasContent) {
     return (
       <div className="text-center py-16">
         <FaImages className="w-16 h-16 text-slate-700 mx-auto mb-4" />
@@ -115,14 +175,41 @@ async function PhotosTab() {
   }
 
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {categories.map((category) => (
-        <AlbumCard key={category.id} category={category} />
-      ))}
+    <div className="space-y-12">
+      {/* Albums Section */}
+      {albums.length > 0 && (
+        <section>
+          <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+            <FaImages className="text-[#0074D9]" />
+            Photo Albums
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {albums.map((album) => (
+              <AlbumCard key={album.id} album={album} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Recent Images Section */}
+      {recentImages.length > 0 && (
+        <section>
+          <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+            <FaCamera className="text-[#0074D9]" />
+            Recent Photos
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {recentImages.map((image) => (
+              <PhotoCard key={image.id} image={image} />
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }
 
+// Videos Tab
 async function VideosTab() {
   const videos = await prisma.video.findMany({
     where: { published: true },
@@ -140,7 +227,7 @@ async function VideosTab() {
   }
 
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {videos.map((video) => (
         <VideoCard key={video.id} video={video} />
       ))}

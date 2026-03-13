@@ -199,7 +199,7 @@ model RSVP {
   @@index([county])
 }
 
-// Gallery Categories - Photo Albums (was Music)
+// Gallery Categories - Photo Albums
 model GalleryCategory {
   id                 Int       @id @default(autoincrement())
   title              String    @db.VarChar(255)
@@ -213,6 +213,9 @@ model GalleryCategory {
   createdAt          DateTime  @default(now())
   updatedAt          DateTime  @updatedAt
   deletedAt          DateTime? @db.Timestamp(6)
+  
+  // Relations
+  images             GalleryImage[]
 
   @@unique([slug, deletedAt], map: "GalleryCategory_slug_deletedAt_unique")
   @@index([category])
@@ -220,6 +223,47 @@ model GalleryCategory {
   @@index([order])
   @@index([published])
   @@index([slug])
+}
+
+// Gallery Images - Individual photos with metadata
+model GalleryImage {
+  id                 Int       @id @default(autoincrement())
+  title              String?   @db.VarChar(255)
+  url                String    @db.VarChar(500) // ImgBB URL
+  
+  // Album/Category relation
+  albumId            Int?
+  album              GalleryCategory? @relation(fields: [albumId], references: [id], onDelete: SetNull)
+  
+  // Metadata for filtering
+  photographer       String?   @db.VarChar(255)
+  location           String?   @db.VarChar(255) // Specific place
+  county             String?   @db.VarChar(100) // Kenyan county
+  eventDate          DateTime? // When the photo was taken
+  
+  // Display options
+  featured           Boolean   @default(false)
+  published          Boolean   @default(true)
+  order              Int       @default(0)
+  
+  // Tags for additional filtering
+  tags               String[]  // Array of tags
+  
+  // Timestamps
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  deletedAt          DateTime? @db.Timestamp(6)
+
+  @@index([albumId])
+  @@index([photographer])
+  @@index([location])
+  @@index([county])
+  @@index([eventDate])
+  @@index([tags])
+  @@index([featured])
+  @@index([published])
+  @@index([deletedAt])
+  @@index([createdAt])
 }
 
 // Comments - Supporter Engagement (MODERATED by default)
