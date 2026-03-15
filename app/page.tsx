@@ -909,13 +909,33 @@ export default function HomePage() {
       </section>
 
       {/* ==========================================
-          CALL TO ACTION SECTION
+          CALL TO ACTION SECTION - with Video Background
           ========================================== */}
-      <section className="section-padding bg-[#111111] text-white relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#0074D9]/10 rounded-full blur-3xl" />
+      <section className="section-padding bg-[#111111] text-white relative overflow-hidden min-h-[600px]">
+        {/* YouTube Video Background */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden">
+          <iframe
+            src="https://www.youtube.com/embed/BqPibiAzqIk?autoplay=1&mute=1&loop=1&playlist=BqPibiAzqIk&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&start=0"
+            title="Kinity Campaign Movement"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            className="absolute w-full h-full"
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              width: '100vw',
+              height: '100vh',
+              transform: 'translate(-50%, -50%) scale(1.3)',
+              pointerEvents: 'none',
+            }}
+          />
         </div>
+        
+        {/* Dark Glass Overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80 backdrop-blur-[2px]" />
+        
+        {/* Additional subtle gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0074D9]/20 via-transparent to-[#6B2C91]/20" />
 
         <div className="container-presidential relative z-10">
           <div className="max-w-4xl mx-auto text-center">
