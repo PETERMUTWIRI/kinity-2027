@@ -15,6 +15,7 @@ import {
   FaHandshake,
   FaArrowRight,
 } from 'react-icons/fa';
+import ElectionCountdown from './ElectionCountdown';
 
 // ==========================================
 // KIKIMO FOUNDATION - PROFESSIONAL FOOTER
@@ -55,18 +56,26 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#111111] text-white">
-      {/* CTA Banner */}
+      {/* CTA Banner with Countdown */}
       <div className="bg-gradient-to-r from-[#0074D9] to-[#6B2C91]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-center md:text-left">
-              <h3 className="font-slogan text-2xl md:text-3xl mb-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+            {/* Left - Countdown */}
+            <div className="flex-shrink-0">
+              <ElectionCountdown variant="footer" />
+            </div>
+            
+            {/* Center - CTA Text */}
+            <div className="text-center lg:text-left lg:flex-1">
+              <h3 className="font-slogan text-2xl md:text-3xl mb-2 text-white">
                 READY TO JOIN THE MOVEMENT?
               </h3>
-              <p className="text-white/80">
+              <p className="text-white/80 max-w-md mx-auto lg:mx-0">
                 Be part of the change Kenya needs. Volunteer, donate, or spread the word.
               </p>
             </div>
+            
+            {/* Right - Buttons */}
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href="/join-us"

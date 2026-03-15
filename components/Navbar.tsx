@@ -16,6 +16,7 @@ import {
   FaHeart,
   FaChevronRight,
 } from 'react-icons/fa';
+import ElectionCountdown from './ElectionCountdown';
 
 // ==========================================
 // Kikimo Foundation - MODERN NAVIGATION
@@ -87,7 +88,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="fixed top-0 left-0 right-0 z-50"
       >
-        {/* Top Bar - Campaign Slogan (Hide on scroll down) */}
+        {/* Top Bar - Countdown + Campaign Slogan (Hide on scroll down) */}
         <motion.div
           initial={false}
           animate={{ 
@@ -98,12 +99,24 @@ export default function Navbar() {
           className="bg-gradient-to-r from-[#0074D9] via-[#6B2C91] to-[#0074D9] overflow-hidden"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between py-2">
-              {/* Left - Slogan */}
-              <p className="flex-1 text-center text-white text-sm font-medium tracking-wide">
+            <div className="flex items-center justify-between py-2 gap-4">
+              {/* Left - Countdown Timer */}
+              <div className="flex-shrink-0">
+                <ElectionCountdown variant="navbar" />
+              </div>
+              
+              {/* Center - Slogan */}
+              <p className="flex-1 text-center text-white text-sm font-medium tracking-wide hidden md:block">
                 <span className="font-slogan">KENYA&apos;S HOPE</span> — 
                 <span className="ml-2 opacity-90">Committed to the Service of Kenyans</span>
               </p>
+              
+              {/* Right - Social Proof or Call to Action */}
+              <div className="flex-shrink-0 hidden sm:block">
+                <span className="text-xs text-white/70">
+                  August 9, 2027
+                </span>
+              </div>
             </div>
           </div>
         </motion.div>

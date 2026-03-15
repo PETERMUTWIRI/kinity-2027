@@ -98,12 +98,18 @@ const pillars = [
 // Fallback data
 const upcomingEvents: any[] = [];
 
+const IMAGES_PER_PAGE = 12;
+
 export default function HomePage() {
   const [latestPosts, setLatestPosts] = useState<Post[]>([]);
   const [latestImages, setLatestImages] = useState<GalleryImage[]>([]);
   const [latestVideos, setLatestVideos] = useState<Video[]>([]);
   const [loading, setLoading] = useState(true);
   const [mediaLoading, setMediaLoading] = useState(true);
+  const [loadingMoreImages, setLoadingMoreImages] = useState(false);
+  const [imagesPage, setImagesPage] = useState(1);
+  const [hasMoreImages, setHasMoreImages] = useState(true);
+  const [totalImages, setTotalImages] = useState(0);
 
   // Fetch latest posts
   useEffect(() => {
@@ -127,11 +133,13 @@ export default function HomePage() {
   useEffect(() => {
     const fetchMedia = async () => {
       try {
-        // Fetch images
-        const imagesRes = await fetch('/api/gallery/images?limit=12');
+        // Fetch images (first page)
+        const imagesRes = await fetch(`/api/gallery/images?limit=${IMAGES_PER_PAGE}&page=1`);
         const imagesData = await imagesRes.json();
         const images = imagesData.images || imagesData || [];
-        setLatestImages(images.slice(0, 12));
+        setLatestImages(images);
+        setTotalImages(imagesData.total || images.length);
+        setHasMoreImages(images.length >= IMAGES_PER_PAGE);
 
         // Fetch videos
         const videosRes = await fetch('/api/videos?limit=3');
@@ -146,6 +154,31 @@ export default function HomePage() {
     };
     fetchMedia();
   }, []);
+
+  // Load more images
+  const loadMoreImages = async () => {
+    if (loadingMoreImages) return;
+    setLoadingMoreImages(true);
+    const nextPage = imagesPage + 1;
+    
+    try {
+      const res = await fetch(`/api/gallery/images?limit=${IMAGES_PER_PAGE}&page=${nextPage}`);
+      const data = await res.json();
+      const newImages = data.images || data || [];
+      
+      if (newImages.length > 0) {
+        setLatestImages(prev => [...prev, ...newImages]);
+        setImagesPage(nextPage);
+        setHasMoreImages(newImages.length >= IMAGES_PER_PAGE);
+      } else {
+        setHasMoreImages(false);
+      }
+    } catch (err) {
+      console.error('Error loading more images:', err);
+    } finally {
+      setLoadingMoreImages(false);
+    }
+  };
 
   return (
     <div className="relative min-h-screen overflow-hidden">
@@ -746,6 +779,48 @@ export default function HomePage() {
                 <div className="text-center py-12 bg-white/5 rounded-2xl">
                   <FaImages className="w-12 h-12 text-white/30 mx-auto mb-3" />
                   <p className="text-white/60">No photos available yet</p>
+                </div>
+              )}
+              
+              {/* Load More Button */}
+              {!mediaLoading && hasMoreImages && (
+                <div className="mt-6 text-center">
+                  <button
+                    onClick={loadMoreImages}
+                    disabled={loadingMoreImages}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 disabled:bg-white/5 disabled:cursor-not-allowed transition-all duration-300 text-white font-medium"
+                  >
+                    {loadingMoreImages ? (
+                      <>
+                        <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                        Loading...
+                      </>
+                    ) : (
+                      <>
+                        <FaImages className="w-4 h-4" />
+                        Load More Photos
+                        <span className="text-white/60 text-sm">
+                          ({latestImages.length} of {totalImages})
+                        </span>
+                      </>
+                    )}
+                  </button>
+                </div>
+              )}
+              
+              {/* Show count when all loaded */}
+              {!mediaLoading && !hasMoreImages && latestImages.length > 0 && (
+                <div className="mt-6 text-center">
+                  <p className="text-white/50 text-sm">
+                    Showing all {latestImages.length} photos
+                  </p>
+                  <Link
+                    href="/gallery"
+                    className="inline-flex items-center gap-2 mt-3 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300 text-white font-medium text-sm"
+                  >
+                    <FaExternalLinkAlt className="w-4 h-4" />
+                    Visit Full Gallery
+                  </Link>
                 </div>
               )}
             </div>

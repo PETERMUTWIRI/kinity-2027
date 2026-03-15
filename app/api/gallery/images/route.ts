@@ -13,6 +13,7 @@ export async function GET(req: NextRequest) {
     const county = searchParams.get('county');
     const featured = searchParams.get('featured');
     const limit = searchParams.get('limit') ? parseInt(searchParams.get('limit')!) : undefined;
+    const page = searchParams.get('page') ? parseInt(searchParams.get('page')!) : 1;
 
     const where: any = {
       deletedAt: null,
@@ -24,6 +25,9 @@ export async function GET(req: NextRequest) {
     if (location) where.location = location;
     if (county) where.county = county;
     if (featured === 'true') where.featured = true;
+
+    // Get total count for pagination
+    const total = await prisma.galleryImage.count({ where });
 
     const images = await prisma.galleryImage.findMany({
       where,
@@ -37,9 +41,10 @@ export async function GET(req: NextRequest) {
         { createdAt: 'desc' }
       ],
       take: limit,
+      skip: page && limit ? (page - 1) * limit : undefined,
     });
 
-    return NextResponse.json(images);
+    return NextResponse.json({ images, total });
   } catch (error) {
     console.error('GET /api/gallery/images error:', error);
     return NextResponse.json({ error: 'Failed to fetch images' }, { status: 500 });
