@@ -14,6 +14,10 @@ import {
   FaPlay,
   FaChevronDown,
   FaNewspaper,
+  FaImages,
+  FaVideo,
+  FaCamera,
+  FaExternalLinkAlt,
 } from 'react-icons/fa';
 import ScrollReveal from '@/components/ScrollReveal';
 
@@ -32,6 +36,23 @@ interface Post {
   cover: string | null;
   publishedAt: string | null;
   createdAt: string;
+}
+
+interface GalleryImage {
+  id: number;
+  url: string;
+  title: string | null;
+  photographer: string | null;
+  location: string | null;
+  county: string | null;
+}
+
+interface Video {
+  id: number;
+  title: string;
+  youtubeId: string;
+  category: string;
+  thumbnail: string | null;
 }
 
 // Hardcoded manifesto pillars for reliability
@@ -79,7 +100,10 @@ const upcomingEvents: any[] = [];
 
 export default function HomePage() {
   const [latestPosts, setLatestPosts] = useState<Post[]>([]);
+  const [latestImages, setLatestImages] = useState<GalleryImage[]>([]);
+  const [latestVideos, setLatestVideos] = useState<Video[]>([]);
   const [loading, setLoading] = useState(true);
+  const [mediaLoading, setMediaLoading] = useState(true);
 
   // Fetch latest posts
   useEffect(() => {
@@ -97,6 +121,30 @@ export default function HomePage() {
       }
     };
     fetchPosts();
+  }, []);
+
+  // Fetch latest media (images and videos)
+  useEffect(() => {
+    const fetchMedia = async () => {
+      try {
+        // Fetch images
+        const imagesRes = await fetch('/api/gallery/images?limit=12');
+        const imagesData = await imagesRes.json();
+        const images = imagesData.images || imagesData || [];
+        setLatestImages(images.slice(0, 12));
+
+        // Fetch videos
+        const videosRes = await fetch('/api/videos?limit=3');
+        const videosData = await videosRes.json();
+        const videos = videosData.videos || videosData || [];
+        setLatestVideos(videos.slice(0, 3));
+      } catch (err) {
+        console.error('Error fetching media:', err);
+      } finally {
+        setMediaLoading(false);
+      }
+    };
+    fetchMedia();
   }, []);
 
   return (
@@ -610,7 +658,7 @@ export default function HomePage() {
       </section>
 
       {/* ==========================================
-          UPCOMING EVENTS SECTION
+          MEDIA SHOWCASE SECTION
           ========================================== */}
       <section className="section-padding bg-gradient-to-br from-[#0074D9] to-[#005CB0] text-white relative overflow-hidden">
         {/* Background decoration */}
@@ -625,139 +673,162 @@ export default function HomePage() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
               <div>
                 <span className="inline-block px-4 py-1 rounded-full bg-white/20 text-white font-semibold text-sm mb-4">
-                  Upcoming
+                  Media Center
                 </span>
                 <h2 className="font-headline text-4xl md:text-5xl">
-                  Join Us <span className="text-white/80">On The Trail</span>
+                  Latest <span className="text-white/80">From The Trail</span>
                 </h2>
               </div>
               <Link
-                href="/events"
+                href="/gallery"
                 className="inline-flex items-center gap-2 text-white font-semibold hover:text-white/80 transition-colors"
               >
-                View All Events
+                View All Media
                 <FaArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </ScrollReveal>
 
-          {/* Events List */}
-          <div className="space-y-4">
-            {upcomingEvents.length > 0 ? (
-              upcomingEvents.map((event, index) => (
-                <ScrollReveal key={event.id} delay={index * 0.1}>
-                  <Link href={`/events/${event.slug}`} className="group">
-                    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                      <div className="flex flex-col md:flex-row md:items-center gap-6">
-                        {/* Date */}
-                        <div className="flex-shrink-0 text-center md:text-left">
-                          <div className="inline-flex md:flex-col items-center md:items-start gap-2 md:gap-0">
-                            <span className="text-3xl md:text-4xl font-bold text-[#E91D0E]">
-                              {new Date(event.startDate).getDate()}
-                            </span>
-                            <span className="text-lg md:text-sm text-white/80 uppercase">
-                              {new Date(event.startDate).toLocaleDateString('en-KE', { month: 'short' })}
-                            </span>
+          {/* Media Grid - 3/4 Images + 1/4 Videos */}
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+            {/* Left: Images (3/4 width on desktop) */}
+            <div className="lg:w-3/4">
+              <ScrollReveal>
+                <div className="flex items-center gap-2 mb-4">
+                  <FaImages className="w-5 h-5 text-white/80" />
+                  <h3 className="text-lg font-semibold text-white/90">Latest Photos</h3>
+                </div>
+              </ScrollReveal>
+              
+              {mediaLoading ? (
+                // Loading skeleton for images
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                  {[...Array(12)].map((_, i) => (
+                    <div key={i} className="aspect-square bg-white/10 rounded-xl animate-pulse" />
+                  ))}
+                </div>
+              ) : latestImages.length > 0 ? (
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                  {latestImages.map((image, index) => (
+                    <ScrollReveal key={image.id} delay={index * 0.05}>
+                      <Link 
+                        href="/gallery"
+                        className="group relative aspect-square rounded-xl overflow-hidden block bg-white/10"
+                      >
+                        <Image
+                          src={image.url}
+                          alt={image.title || 'Campaign photo'}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-110"
+                          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                        />
+                        {/* Hover overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        {/* Camera icon on hover */}
+                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                            <FaCamera className="w-5 h-5 text-white" />
                           </div>
                         </div>
-
-                        {/* Content */}
-                        <div className="flex-grow">
-                          <div className="flex items-center gap-2 mb-2">
-                            <span className="px-3 py-1 rounded-full bg-[#E91D0E] text-white text-xs font-bold">
-                              {event.category}
-                            </span>
-                            <span className="text-white/60 text-sm flex items-center gap-1">
-                              <FaCalendarAlt className="w-3 h-3" />
-                              {event.county || event.location}
-                            </span>
+                        {/* Location tag if available */}
+                        {(image.location || image.county) && (
+                          <div className="absolute bottom-2 left-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p className="text-white text-xs truncate">
+                              {[image.location, image.county].filter(Boolean).join(', ')}
+                            </p>
                           </div>
-                          <h3 className="font-headline text-xl md:text-2xl group-hover:text-white/90 transition-colors">
-                            {event.title}
-                          </h3>
-                          {event.venue && (
-                            <p className="text-white/70 text-sm mt-1">{event.venue}</p>
-                          )}
-                        </div>
+                        )}
+                      </Link>
+                    </ScrollReveal>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center py-12 bg-white/5 rounded-2xl">
+                  <FaImages className="w-12 h-12 text-white/30 mx-auto mb-3" />
+                  <p className="text-white/60">No photos available yet</p>
+                </div>
+              )}
+            </div>
 
-                        {/* CTA */}
-                        <div className="flex-shrink-0">
-                          <span className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-[#0074D9] font-semibold group-hover:bg-[#E91D0E] group-hover:text-white transition-all duration-300">
-                            RSVP
-                            <FaArrowRight className="w-4 h-4" />
-                          </span>
+            {/* Right: Videos (1/4 width on desktop) */}
+            <div className="lg:w-1/4">
+              <ScrollReveal>
+                <div className="flex items-center gap-2 mb-4">
+                  <FaVideo className="w-5 h-5 text-white/80" />
+                  <h3 className="text-lg font-semibold text-white/90">Latest Videos</h3>
+                </div>
+              </ScrollReveal>
+              
+              {mediaLoading ? (
+                // Loading skeleton for videos
+                <div className="space-y-4">
+                  {[...Array(3)].map((_, i) => (
+                    <div key={i} className="aspect-video bg-white/10 rounded-xl animate-pulse" />
+                  ))}
+                </div>
+              ) : latestVideos.length > 0 ? (
+                <div className="flex flex-row lg:flex-col gap-4 overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0">
+                  {latestVideos.map((video, index) => (
+                    <ScrollReveal key={video.id} delay={index * 0.1}>
+                      <a
+                        href={`https://youtube.com/watch?v=${video.youtubeId}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group relative aspect-video lg:aspect-video rounded-xl overflow-hidden block bg-white/10 flex-shrink-0 w-48 sm:w-56 lg:w-full"
+                      >
+                        <Image
+                          src={video.thumbnail || `https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg`}
+                          alt={video.title}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-110"
+                          sizes="(max-width: 1024px) 200px, 25vw"
+                          unoptimized
+                        />
+                        {/* Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                        
+                        {/* Play button */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="w-10 h-10 bg-[#E91D0E]/90 rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform shadow-lg">
+                            <FaPlay className="w-4 h-4 text-white ml-0.5" />
+                          </div>
                         </div>
-                      </div>
-                    </div>
+                        
+                        {/* Category badge */}
+                        <div className="absolute top-2 left-2 px-2 py-0.5 bg-[#E91D0E] text-white text-xs font-bold rounded">
+                          {video.category}
+                        </div>
+                        
+                        {/* Title */}
+                        <div className="absolute bottom-0 left-0 right-0 p-3">
+                          <h4 className="text-white text-sm font-medium line-clamp-2 group-hover:text-white/90 transition-colors">
+                            {video.title}
+                          </h4>
+                        </div>
+                      </a>
+                    </ScrollReveal>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center py-12 bg-white/5 rounded-2xl">
+                  <FaVideo className="w-12 h-12 text-white/30 mx-auto mb-3" />
+                  <p className="text-white/60">No videos available yet</p>
+                </div>
+              )}
+
+              {/* View all videos link */}
+              {!mediaLoading && latestVideos.length > 0 && (
+                <ScrollReveal delay={0.3}>
+                  <Link
+                    href="/gallery?tab=videos"
+                    className="mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300 text-white font-medium text-sm"
+                  >
+                    <FaExternalLinkAlt className="w-4 h-4" />
+                    View All Videos
                   </Link>
                 </ScrollReveal>
-              ))
-            ) : (
-              // Fallback content
-              <>
-                {[
-                  { 
-                    title: 'Nairobi County Rally', 
-                    date: '2025-03-15', 
-                    county: 'Nairobi',
-                    category: 'Rally',
-                    venue: 'Uhuru Park'
-                  },
-                  { 
-                    title: 'Central Region Town Hall', 
-                    date: '2025-03-22', 
-                    county: 'Kiambu',
-                    category: 'Town Hall',
-                    venue: 'Kiambu Stadium'
-                  },
-                  { 
-                    title: 'Western Kenya Campaign Launch', 
-                    date: '2025-03-29', 
-                    county: 'Kakamega',
-                    category: 'Campaign Launch',
-                    venue: 'Bukhungu Stadium'
-                  },
-                ].map((event, index) => (
-                  <ScrollReveal key={index} delay={index * 0.1}>
-                    <Link href="/events" className="group">
-                      <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                        <div className="flex flex-col md:flex-row md:items-center gap-6">
-                          <div className="flex-shrink-0 text-center md:text-left">
-                            <div className="inline-flex md:flex-col items-center md:items-start gap-2 md:gap-0">
-                              <span className="text-3xl md:text-4xl font-bold text-[#E91D0E]">
-                                {new Date(event.date).getDate()}
-                              </span>
-                              <span className="text-lg md:text-sm text-white/80 uppercase">
-                                {new Date(event.date).toLocaleDateString('en-KE', { month: 'short' })}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="flex-grow">
-                            <div className="flex items-center gap-2 mb-2">
-                              <span className="px-3 py-1 rounded-full bg-[#E91D0E] text-white text-xs font-bold">
-                                {event.category}
-                              </span>
-                              <span className="text-white/60 text-sm flex items-center gap-1">
-                                <FaCalendarAlt className="w-3 h-3" />
-                                {event.county}
-                              </span>
-                            </div>
-                            <h3 className="font-headline text-xl md:text-2xl">{event.title}</h3>
-                            <p className="text-white/70 text-sm mt-1">{event.venue}</p>
-                          </div>
-                          <div className="flex-shrink-0">
-                            <span className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-[#0074D9] font-semibold group-hover:bg-[#E91D0E] group-hover:text-white transition-all duration-300">
-                              RSVP
-                              <FaArrowRight className="w-4 h-4" />
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
-                  </ScrollReveal>
-                ))}
-              </>
-            )}
+              )}
+            </div>
           </div>
         </div>
       </section>

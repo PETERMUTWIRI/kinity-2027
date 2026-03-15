@@ -22,6 +22,7 @@ export async function GET(req: NextRequest) {
     const id = searchParams.get('id');
     const category = searchParams.get('category');
     const published = searchParams.get('published');
+    const limit = searchParams.get('limit') ? parseInt(searchParams.get('limit')!) : undefined;
 
     // Get single video by ID
     if (id) {
@@ -47,9 +48,11 @@ export async function GET(req: NextRequest) {
     const videos = await prisma.video.findMany({ 
       where, 
       orderBy: [
+        { featured: 'desc' },
         { order: 'asc' },
         { createdAt: 'desc' }
-      ] 
+      ],
+      take: limit,
     });
     
     return NextResponse.json(videos);
