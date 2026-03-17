@@ -184,20 +184,20 @@ export default function HomePage() {
     <div className="relative min-h-screen overflow-hidden">
       
       {/* ==========================================
-          HERO SECTION - Clean & Mobile Optimized
+          HERO SECTION - Blue to White Gradient
           ========================================== */}
-      <section className="relative min-h-[85vh] lg:min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#0074D9] via-[#0074D9] to-[#005CB0]">
+      <section className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-[#0074D9] via-[#0074D9]/95 via-60% to-white">
         
-        {/* Decorative Elements */}
+        {/* Decorative Elements - Subtle for blue-to-white transition */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#6B2C91]/30 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/3" />
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#E91D0E]/20 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/4" />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#6B2C91]/20 rounded-full blur-[120px] -translate-y-1/4 translate-x-1/4" />
+          <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-[#E91D0E]/10 rounded-full blur-[100px] -translate-x-1/4" />
           {/* Subtle pattern overlay */}
-          <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #0074D9 1px, transparent 0)', backgroundSize: '32px 32px' }} />
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 lg:pt-32 lg:pb-20">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 lg:pt-32 lg:pb-24">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             
             {/* LEFT: Text Content */}
@@ -208,13 +208,13 @@ export default function HomePage() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
-                className="lg:hidden flex justify-center mb-4"
+                className="lg:hidden flex justify-center mb-6"
               >
                 <div className="relative">
                   {/* Glow */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#E91D0E]/40 to-[#6B2C91]/40 rounded-full blur-xl scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-white/10 rounded-full blur-2xl scale-125" />
                   {/* Circular Image */}
-                  <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-white/30 shadow-2xl">
+                  <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden border-4 border-white shadow-2xl">
                     <Image
                       src="/images/president.jpeg"
                       alt="Dr. Isaac Newton Kinity"
@@ -224,13 +224,13 @@ export default function HomePage() {
                     />
                   </div>
                   {/* Badge */}
-                  <div className="absolute -bottom-2 -right-2 bg-white rounded-full p-2 shadow-lg">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#E91D0E] to-[#BA170C] flex items-center justify-center overflow-hidden">
+                  <div className="absolute -bottom-1 -right-1 bg-white rounded-full p-2 shadow-xl">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#E91D0E] to-[#BA170C] flex items-center justify-center overflow-hidden">
                       <Image
                         src="/images/kenya-flag.png"
                         alt="Kenya"
-                        width={20}
-                        height={14}
+                        width={24}
+                        height={16}
                         className="object-cover rounded-sm"
                       />
                     </div>
@@ -243,12 +243,12 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className="space-y-2"
+                className="space-y-3"
               >
-                <span className="block font-slogan text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#E91D0E] tracking-tight drop-shadow-lg">
-                  KENYA&apos;S HOPE
+                <span className="block font-slogan text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white tracking-tight drop-shadow-lg">
+                  KENYA&apos;S <span className="text-[#E91D0E]">HOPE</span>
                 </span>
-                <span className="block font-headline text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white drop-shadow-md">
+                <span className="block font-headline text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white/95 drop-shadow-md">
                   DR. ISAAC NEWTON KINITY
                 </span>
               </motion.h1>
@@ -258,7 +258,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-lg md:text-xl lg:text-2xl text-white/90 max-w-xl mx-auto lg:mx-0 font-light"
+                className="text-lg md:text-xl lg:text-2xl text-white max-w-xl mx-auto lg:mx-0 font-medium"
               >
                 The Incoming President 2027 — Committed to the Service of Kenyans
               </motion.p>
@@ -270,7 +270,7 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="max-w-lg mx-auto lg:mx-0"
               >
-                <p className="text-base md:text-lg text-white/85 border-l-4 border-[#E91D0E] pl-4 text-left">
+                <p className="text-base md:text-lg text-white/95 border-l-4 border-[#E91D0E] pl-4 text-left leading-relaxed">
                   No Recycling of Corrupt Politicians. A new era of leadership built on integrity, 
                   economic transformation, and unwavering commitment to every Kenyan.
                 </p>
@@ -300,24 +300,24 @@ export default function HomePage() {
                 </Link>
               </motion.div>
 
-              {/* Stats Bar - Compact on mobile */}
+              {/* Stats Bar - Clean white card style */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
                 className="pt-6"
               >
-                <div className="inline-flex flex-wrap justify-center lg:justify-start gap-6 md:gap-10 bg-white/10 backdrop-blur-md rounded-2xl px-6 py-4 md:px-8 md:py-5 border border-white/20">
+                <div className="inline-flex flex-wrap justify-center lg:justify-start gap-6 md:gap-10 bg-white rounded-2xl px-6 py-4 md:px-8 md:py-5 shadow-xl shadow-blue-900/20">
                   {[
                     { value: '47', label: 'Counties', suffix: '+' },
                     { value: '50', label: 'Million Kenyans', suffix: 'M+' },
                     { value: '1', label: 'Vision', suffix: '' },
                   ].map((stat, i) => (
                     <div key={i} className="text-center">
-                      <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
+                      <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0074D9]">
                         {stat.value}<span className="text-[#E91D0E]">{stat.suffix}</span>
                       </div>
-                      <div className="text-xs md:text-sm text-white/70">{stat.label}</div>
+                      <div className="text-xs md:text-sm text-slate-600 font-medium">{stat.label}</div>
                     </div>
                   ))}
                 </div>
@@ -332,11 +332,11 @@ export default function HomePage() {
               className="hidden lg:block relative order-1 lg:order-2"
             >
               <div className="relative aspect-[3/4] max-w-sm xl:max-w-md mx-auto">
-                {/* Glow Effect */}
-                <div className="absolute -inset-4 bg-gradient-to-br from-[#E91D0E]/30 via-[#6B2C91]/30 to-[#0074D9]/30 rounded-3xl blur-2xl" />
+                {/* Glow Effect - White glow for blue gradient */}
+                <div className="absolute -inset-4 bg-gradient-to-br from-white/40 via-white/20 to-transparent rounded-3xl blur-2xl" />
                 
                 {/* Image Container */}
-                <div className="relative w-full h-full rounded-3xl overflow-hidden border-4 border-white/20 shadow-2xl">
+                <div className="relative w-full h-full rounded-3xl overflow-hidden border-4 border-white shadow-2xl">
                   <Image
                     src="/images/president.jpeg"
                     alt="Dr. Isaac Newton Kinity - Presidential Candidate"
@@ -345,9 +345,6 @@ export default function HomePage() {
                     priority
                     quality={95}
                   />
-                  
-                  {/* Subtle Gradient Overlay at Bottom */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0074D9]/40 via-transparent to-transparent" />
                 </div>
 
                 {/* Floating Badge */}
@@ -374,34 +371,34 @@ export default function HomePage() {
                   </div>
                 </motion.div>
 
-                {/* Decorative Ring */}
+                {/* Decorative Ring - White */}
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-                  className="absolute -inset-8 border-2 border-dashed border-white/20 rounded-3xl pointer-events-none"
+                  className="absolute -inset-8 border-2 border-dashed border-white/40 rounded-3xl pointer-events-none"
                 />
               </div>
             </motion.div>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator - Positioned on white gradient area */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
         >
           <a 
             href="#vision" 
-            className="flex flex-col items-center gap-1 text-white/60 hover:text-white transition-colors cursor-pointer"
+            className="flex flex-col items-center gap-2 text-slate-500 hover:text-[#0074D9] transition-colors cursor-pointer bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg"
           >
-            <span className="text-xs tracking-widest uppercase">Discover More</span>
+            <span className="text-xs tracking-widest uppercase font-medium">Discover More</span>
             <motion.div
               animate={{ y: [0, 6, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
             >
-              <FaChevronDown className="w-4 h-4" />
+              <FaChevronDown className="w-5 h-5" />
             </motion.div>
           </a>
         </motion.div>
