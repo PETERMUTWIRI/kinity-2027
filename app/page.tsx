@@ -711,13 +711,13 @@ export default function HomePage() {
       </section>
 
       {/* ==========================================
-          MEDIA SHOWCASE SECTION
+          MEDIA SHOWCASE SECTION - White to Blue Gradient
           ========================================== */}
-      <section className="section-padding bg-gradient-to-br from-[#0074D9] to-[#005CB0] text-white relative overflow-hidden">
-        {/* Background decoration */}
+      <section className="section-padding bg-gradient-to-b from-white via-white via-30% to-[#0074D9] relative overflow-hidden">
+        {/* Background decoration - subtle blue accents on white */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#E91D0E]/10 rounded-full blur-3xl" />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0074D9]/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/3 left-0 w-[400px] h-[400px] bg-[#E91D0E]/5 rounded-full blur-3xl" />
         </div>
 
         <div className="container-presidential relative z-10">
@@ -725,16 +725,16 @@ export default function HomePage() {
           <ScrollReveal>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
               <div>
-                <span className="inline-block px-4 py-1 rounded-full bg-white/20 text-white font-semibold text-sm mb-4">
+                <span className="inline-block px-4 py-1 rounded-full bg-[#0074D9]/10 text-[#0074D9] font-semibold text-sm mb-4">
                   Media Center
                 </span>
-                <h2 className="font-headline text-4xl md:text-5xl">
-                  Latest <span className="text-white/80">From The Trail</span>
+                <h2 className="font-headline text-4xl md:text-5xl text-[#111111]">
+                  Latest <span className="text-[#0074D9]">From The Trail</span>
                 </h2>
               </div>
               <Link
                 href="/gallery"
-                className="inline-flex items-center gap-2 text-white font-semibold hover:text-white/80 transition-colors"
+                className="inline-flex items-center gap-2 text-[#0074D9] font-semibold hover:text-[#005CB0] transition-colors"
               >
                 View All Media
                 <FaArrowRight className="w-4 h-4" />
@@ -748,8 +748,8 @@ export default function HomePage() {
             <div className="lg:w-3/4">
               <ScrollReveal>
                 <div className="flex items-center gap-2 mb-4">
-                  <FaImages className="w-5 h-5 text-white/80" />
-                  <h3 className="text-lg font-semibold text-white/90">Latest Photos</h3>
+                  <FaImages className="w-5 h-5 text-[#0074D9]" />
+                  <h3 className="text-lg font-semibold text-[#111111]">Latest Photos</h3>
                 </div>
               </ScrollReveal>
               
@@ -757,7 +757,7 @@ export default function HomePage() {
                 // Loading skeleton for images
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
                   {[...Array(12)].map((_, i) => (
-                    <div key={i} className="aspect-square bg-white/10 rounded-xl animate-pulse" />
+                    <div key={i} className="aspect-square bg-slate-200 rounded-xl animate-pulse" />
                   ))}
                 </div>
               ) : latestImages.length > 0 ? (
@@ -766,7 +766,7 @@ export default function HomePage() {
                     <ScrollReveal key={image.id} delay={index * 0.05}>
                       <Link 
                         href="/gallery"
-                        className="group relative aspect-square rounded-xl overflow-hidden block bg-white/10"
+                        className="group relative aspect-square rounded-xl overflow-hidden block bg-slate-100 shadow-lg"
                       >
                         <Image
                           src={image.url}
@@ -796,9 +796,9 @@ export default function HomePage() {
                   ))}
                 </div>
               ) : (
-                <div className="text-center py-12 bg-white/5 rounded-2xl">
-                  <FaImages className="w-12 h-12 text-white/30 mx-auto mb-3" />
-                  <p className="text-white/60">No photos available yet</p>
+                <div className="text-center py-12 bg-slate-100 rounded-2xl">
+                  <FaImages className="w-12 h-12 text-slate-300 mx-auto mb-3" />
+                  <p className="text-slate-500">No photos available yet</p>
                 </div>
               )}
               
@@ -808,7 +808,7 @@ export default function HomePage() {
                   <button
                     onClick={loadMoreImages}
                     disabled={loadingMoreImages}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 disabled:bg-white/5 disabled:cursor-not-allowed transition-all duration-300 text-white font-medium"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0074D9] hover:bg-[#005CB0] disabled:bg-slate-300 disabled:cursor-not-allowed transition-all duration-300 text-white font-medium shadow-lg"
                   >
                     {loadingMoreImages ? (
                       <>
@@ -849,8 +849,8 @@ export default function HomePage() {
             <div className="lg:w-1/4">
               <ScrollReveal>
                 <div className="flex items-center gap-2 mb-4">
-                  <FaVideo className="w-5 h-5 text-white/80" />
-                  <h3 className="text-lg font-semibold text-white/90">Latest Videos</h3>
+                  <FaVideo className="w-5 h-5 text-[#0074D9]" />
+                  <h3 className="text-lg font-semibold text-[#111111]">Latest Videos</h3>
                 </div>
               </ScrollReveal>
               
@@ -858,7 +858,7 @@ export default function HomePage() {
                 // Loading skeleton for videos
                 <div className="space-y-4">
                   {[...Array(3)].map((_, i) => (
-                    <div key={i} className="aspect-video bg-white/10 rounded-xl animate-pulse" />
+                    <div key={i} className="aspect-video bg-slate-200 rounded-xl animate-pulse" />
                   ))}
                 </div>
               ) : latestVideos.length > 0 ? (
@@ -905,9 +905,9 @@ export default function HomePage() {
                   ))}
                 </div>
               ) : (
-                <div className="text-center py-12 bg-white/5 rounded-2xl">
-                  <FaVideo className="w-12 h-12 text-white/30 mx-auto mb-3" />
-                  <p className="text-white/60">No videos available yet</p>
+                <div className="text-center py-12 bg-slate-100 rounded-2xl">
+                  <FaVideo className="w-12 h-12 text-slate-300 mx-auto mb-3" />
+                  <p className="text-slate-500">No videos available yet</p>
                 </div>
               )}
 
@@ -916,7 +916,7 @@ export default function HomePage() {
                 <ScrollReveal delay={0.3}>
                   <Link
                     href="/gallery?tab=videos"
-                    className="mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300 text-white font-medium text-sm"
+                    className="mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#0074D9] hover:bg-[#005CB0] transition-all duration-300 text-white font-medium text-sm shadow-md"
                   >
                     <FaExternalLinkAlt className="w-4 h-4" />
                     View All Videos
