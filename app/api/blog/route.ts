@@ -19,7 +19,11 @@ const postSchema = z.object({
     'County News', 'National', 'International', 'Business'
   ]),
   cover: z.preprocess(
-    (val) => (!val || val === '' ? null : val),
+    (val) => {
+      if (!val || val === '') return null;
+      // Encode spaces in URL to prevent validation errors
+      return String(val).replace(/ /g, '%20');
+    },
     z.string().url().optional().nullable()
   ),
   coverCaption: z.string().optional().nullable(),
@@ -35,7 +39,11 @@ const postSchema = z.object({
   metaTitle: z.string().max(100).optional().nullable(),
   metaDesc: z.string().max(160).optional().nullable(),
   ogImage: z.preprocess(
-    (val) => (!val || val === '' ? null : val),
+    (val) => {
+      if (!val || val === '') return null;
+      // Encode spaces in URL to prevent validation errors
+      return String(val).replace(/ /g, '%20');
+    },
     z.string().url().optional().nullable()
   ),
   wordCount: z.number().default(0),

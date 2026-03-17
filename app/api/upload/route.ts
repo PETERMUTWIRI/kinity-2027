@@ -31,7 +31,11 @@ export async function POST(req: Request) {
       throw new Error(data.error?.message || 'Upload failed');
     }
 
-    return NextResponse.json({ url: data.data.url });
+    // Ensure URL is properly encoded (handles spaces/special chars in filenames)
+    const rawUrl = data.data.url;
+    const encodedUrl = rawUrl.replace(/ /g, '%20');
+    
+    return NextResponse.json({ url: encodedUrl });
   } catch (error) {
     console.error('Upload error:', error);
     return NextResponse.json({ error: 'Upload failed' }, { status: 500 });
