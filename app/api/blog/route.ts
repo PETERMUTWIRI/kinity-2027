@@ -18,7 +18,10 @@ const postSchema = z.object({
     'Press Release', 'Event Recap', 'Statement', 'Interview',
     'County News', 'National', 'International', 'Business'
   ]),
-  cover: z.string().url().optional().nullable(),
+  cover: z.preprocess(
+    (val) => (!val || val === '' ? null : val),
+    z.string().url().optional().nullable()
+  ),
   coverCaption: z.string().optional().nullable(),
   coverPhotographer: z.string().optional().nullable(),
   author: z.string().optional().nullable(),
@@ -31,7 +34,10 @@ const postSchema = z.object({
   county: z.string().optional().nullable(),
   metaTitle: z.string().max(100).optional().nullable(),
   metaDesc: z.string().max(160).optional().nullable(),
-  ogImage: z.string().url().optional().nullable(),
+  ogImage: z.preprocess(
+    (val) => (!val || val === '' ? null : val),
+    z.string().url().optional().nullable()
+  ),
   wordCount: z.number().default(0),
   readingTime: z.number().default(0),
   inlineImages: z.array(z.any()).default([]),
