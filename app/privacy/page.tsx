@@ -5,7 +5,7 @@ import { BreadcrumbSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | Isaac Kinity',
-  description: 'Learn how the Isaac Kinity Campaign collects, uses, and protects your personal information. Our commitment to your privacy and data security.'
+  description: 'Learn how the Isaac Kinity Campaign collects, uses, and protects your personal information. Our commitment to your privacy and data security.',
   keywords: ['privacy policy', 'data protection', 'GDPR', 'personal information', 'cookies', 'political campaign'],
   alternates: {
     canonical: 'https://www.isaackinity.net/privacy',

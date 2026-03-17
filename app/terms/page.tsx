@@ -5,7 +5,7 @@ import { BreadcrumbSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
   title: 'Terms of Service | Isaac Kinity',
-  description: 'Read the Terms of Service for using the Isaac Kinity Campaign website. Guidelines for donations, event registrations, and volunteer participation.'
+  description: 'Read the Terms of Service for using the Isaac Kinity Campaign website. Guidelines for donations, event registrations, and volunteer participation.',
   keywords: ['terms of service', 'terms and conditions', 'user agreement', 'legal', 'political campaign'],
   alternates: {
     canonical: '/terms',

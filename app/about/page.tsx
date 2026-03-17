@@ -4,7 +4,7 @@ import { BreadcrumbSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
   title: 'About | Isaac Kinity',
-  description: 'Learn about Dr. Isaac Newton Kinity and his mission to transform Kenya through integrity, economic development, and service to all Kenyans.'
+  description: 'Learn about Dr. Isaac Newton Kinity and his mission to transform Kenya through integrity, economic development, and service to all Kenyans.',
   keywords: ['Isaac Newton Kinity', 'Isaac Kinity', 'Kenya', 'presidential campaign', 'integrity', 'economic transformation'],
   openGraph: {
     title: 'About Dr. Isaac Newton Kinity | Isaac Kinity',
