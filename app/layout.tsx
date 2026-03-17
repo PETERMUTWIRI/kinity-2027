@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Playfair_Display, Oswald } from 'next/font/google';
 import './globals.css';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import ConditionalLayout from '../components/ConditionalLayout';
 import PageTransition from '@/components/PageTransition';
 import BackToTop from '@/components/BackToTop';
 
@@ -262,18 +261,12 @@ export default function RootLayout({
         {/* Mesh gradient background overlay */}
         <div className="fixed inset-0 bg-gradient-mesh pointer-events-none z-0" />
         
-        {/* Navigation */}
-        <Navbar />
-        
-        {/* Main content - tight coupling with navbar */}
-        <main className="relative z-10">
+        {/* Conditional Layout - hides navbar/footer on admin routes */}
+        <ConditionalLayout>
           <PageTransition>
             {children}
           </PageTransition>
-        </main>
-        
-        {/* Footer */}
-        <Footer />
+        </ConditionalLayout>
         
         {/* Back to top button */}
         <BackToTop />
