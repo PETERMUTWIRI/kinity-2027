@@ -15,7 +15,7 @@ export function BreadcrumbSchema({ items }: { items: BreadcrumbItem[] }) {
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: `${process.env.NEXT_PUBLIC_APP_URL || 'https://www.kikimofoundation.org'}${item.path}`,
+      item: `${process.env.NEXT_PUBLIC_APP_URL || 'https://www.isaackinity.net'}${item.path}`,
     })),
   };
 
@@ -32,9 +32,9 @@ export function MusicGroupSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Kikimo Foundation',
+    name: 'Isaac Kinity',
     description: 'Empowering communities through education, health, and sustainable development',
-    url: process.env.NEXT_PUBLIC_APP_URL || 'https://www.kikimofoundation.org',
+    url: process.env.NEXT_PUBLIC_APP_URL || 'https://www.isaackinity.net',
   };
 
   return (
@@ -50,11 +50,11 @@ export function WebSiteSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Kikimo Foundation',
-    url: process.env.NEXT_PUBLIC_APP_URL || 'https://www.kikimofoundation.org',
+    name: 'Isaac Kinity',
+    url: process.env.NEXT_PUBLIC_APP_URL || 'https://www.isaackinity.net',
     potentialAction: {
       '@type': 'SearchAction',
-      target: `${process.env.NEXT_PUBLIC_APP_URL || 'https://www.kikimofoundation.org'}/search?q={search_term_string}`,
+      target: `${process.env.NEXT_PUBLIC_APP_URL || 'https://www.isaackinity.net'}/search?q={search_term_string}`,
       'query-input': 'required name=search_term_string',
     },
   };

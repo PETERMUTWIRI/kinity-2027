@@ -273,7 +273,7 @@ export default function AboutContent() {
                   <p>
                     Forced into exile, Dr. Kinity continued his advocacy through international platforms including the 
                     International Anti-Corruption Conferences. As Chairperson of the <strong>Kikimo Foundation for 
-                    Corruption and Poverty Eradication</strong>, he has consistently argued that corruption, misuse of 
+                    Corruption and Poverty Eradication (NGO)</strong>, he has consistently argued that corruption, misuse of 
                     state authority, and hostility toward independent businesses undermine growth and widen inequality.
                   </p>
                   <p className="border-l-4 border-[#E91D0E] pl-6 italic text-slate-500">

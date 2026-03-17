@@ -75,7 +75,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               <span className="text-white font-bold">K</span>
             </div>
             <div>
-              <h1 className="text-white font-slogan text-lg">Kikimo</h1>
+              <h1 className="text-white font-slogan text-lg">Isaac Kinity</h1>
               <p className="text-slate-400 text-xs">Admin</p>
             </div>
           </Link>

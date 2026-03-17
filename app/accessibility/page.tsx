@@ -4,11 +4,11 @@ import { BreadcrumbSchema } from '@/components/SchemaMarkup';
 
 
 export const metadata: Metadata = {
-  title: 'Accessibility Statement | Kikimo Foundation',
+  title: 'Accessibility Statement | Isaac Kinity',
   description: 'Our commitment to making political campaign content accessible to everyone. Learn about our WCAG 2.1 Level AA compliance and accessibility features.',
   keywords: ['accessibility', 'WCAG', 'screen reader', 'keyboard navigation', 'inclusive design', 'disability access'],
   alternates: {
-    canonical: 'https://www.kikimofoundation.org/accessibility',
+    canonical: 'https://www.isaackinity.net/accessibility',
   },
   robots: {
     index: true,
@@ -43,7 +43,7 @@ export default function AccessibilityPage() {
             <div className="prose prose-lg max-w-none text-brand-text/80">
               
               <p className="text-xl text-brand-text/70 mb-8">
-                Kikimo Foundation Campaign is committed to ensuring digital accessibility for people with 
+                Isaac Kinity Campaign is committed to ensuring digital accessibility for people with 
                 disabilities. We believe that civic engagement should be accessible to everyone, and we 
                 continually work to improve the user experience for all visitors to our website.
               </p>
@@ -53,7 +53,7 @@ export default function AccessibilityPage() {
                 We are dedicated to creating an inclusive digital experience that allows all supporters 
                 to engage with our campaign platform, events, news, and volunteer opportunities. Whether you are using 
                 assistive technologies or have specific accessibility needs, we want you to be able 
-                to participate fully in the Kikimo Foundation Campaign.
+                to participate fully in the Isaac Kinity Campaign.
               </p>
 
               <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">Conformance Status</h2>
@@ -68,7 +68,7 @@ export default function AccessibilityPage() {
                 <li>Level AAA (highest)</li>
               </ul>
               <p className="mb-4">
-                Kikimo Foundation Campaign strives to conform to <strong>WCAG 2.1 Level AA</strong> standards. 
+                Isaac Kinity Campaign strives to conform to <strong>WCAG 2.1 Level AA</strong> standards. 
                 We are continuously working to improve the accessibility of our website to ensure 
                 all supporters can access our content.
               </p>
@@ -154,8 +154,8 @@ export default function AccessibilityPage() {
               </p>
               
               <div className="bg-white rounded-xl p-6 mb-6 shadow-sm">
-                <p className="mb-1"><strong>Email:</strong> <a href="mailto:contact@www.kikimofoundation.org" className="text-brand-dark hover:underline">contact@www.kikimofoundation.org</a></p>
-                <p className="mb-1"><strong>General Contact:</strong> <a href="mailto:contact@www.kikimofoundation.org" className="text-brand-dark hover:underline">contact@www.kikimofoundation.org</a></p>
+                <p className="mb-1"><strong>Email:</strong> <a href="mailto:contact@isaackinity.net" className="text-brand-dark hover:underline">contact@isaackinity.net</a></p>
+                <p className="mb-1"><strong>General Contact:</strong> <a href="mailto:contact@isaackinity.net" className="text-brand-dark hover:underline">contact@isaackinity.net</a></p>
               </div>
 
               <p className="mb-4">

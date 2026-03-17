@@ -9,7 +9,7 @@ import { Suspense } from 'react';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Media Center | Kikimo Foundation',
+  title: 'Media Center | Isaac Kinity',
   description: 'Photos, videos, speeches, interviews, and campaign moments.',
 };
 

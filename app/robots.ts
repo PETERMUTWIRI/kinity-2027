@@ -17,7 +17,7 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: 'https://www.kikimofoundation.org/sitemap.xml',
-    host: 'https://www.kikimofoundation.org',
+    sitemap: 'https://www.isaackinity.net/sitemap.xml',
+    host: 'https://www.isaackinity.net',
   };
 }

@@ -45,7 +45,7 @@ const config: Config = {
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         
-        // KIKIMO FOUNDATION BRAND COLORS - Presidential Campaign Palette
+        // ISAAC KINITY BRAND COLORS - Presidential Campaign Palette
         kinity: {
           // Primary Trust Blue - Stability, presidential authority
           blue: {
@@ -106,7 +106,7 @@ const config: Config = {
       backgroundImage: {
         // Presidential gradients
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-kikimo': 'linear-gradient(135deg, #0074D9 0%, #FFFFFF 100%)',
+        'gradient-kinity': 'linear-gradient(135deg, #0074D9 0%, #FFFFFF 100%)',
         'gradient-hero': 'linear-gradient(180deg, #0074D9 0%, #E6F2FC 50%, #FFFFFF 100%)',
         'gradient-dark': 'linear-gradient(135deg, #111111 0%, #1F2937 100%)',
         'gradient-purple': 'linear-gradient(135deg, #6B2C91 0%, #552374 100%)',

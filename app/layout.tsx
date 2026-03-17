@@ -41,15 +41,15 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   // Core title template - Shows in browser tab with favicon
   title: {
-    default: "Kikimo Foundation",
-    template: "%s | Kikimo Foundation",
+    default: "Isaac Kinity",
+    template: "%s | Isaac Kinity",
   },
   
   // Application name for installed PWA
-  applicationName: "Kikimo Foundation",
+  applicationName: "Isaac Kinity",
   
   // Primary description
-  description: "Kikimo Foundation - Empowering communities and transforming lives through service and dedication.",
+  description: "Isaac Kinity - Empowering communities and transforming lives through service and dedication.",
   
   // Keywords for search engines
   keywords: [
@@ -81,14 +81,14 @@ export const metadata: Metadata = {
   },
   
   // Canonical URL base
-  metadataBase: new URL('https://www.kikimofoundation.org'),
+  metadataBase: new URL('https://www.isaackinity.net'),
   
   // Alternates
   alternates: {
     canonical: '/',
   },
   
-  // Icons - Using Kikimo Foundation Logo
+  // Icons - Using Isaac Kinity Logo
   icons: {
     icon: [
       { url: '/kikimo-logo.jpeg', sizes: '32x32', type: 'image/jpeg' },
@@ -107,7 +107,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Dr. Isaac Newton Kinity | Kenya's Hope 2027",
     description: "Join the movement for a better Kenya. Dr. Isaac Newton Kinity - Committed to the service of Kenyans. The Incoming President 2027.",
-    url: 'https://www.kikimofoundation.org',
+    url: 'https://www.isaackinity.net',
     siteName: "Dr. Isaac Newton Kinity 2027",
     locale: 'en_KE',
     type: 'website',
@@ -155,7 +155,7 @@ export const metadata: Metadata = {
   // Additional metadata
   other: {
     'og:country-name': 'Kenya',
-    'og:email': 'info@kikimofoundation.org',
+    'og:email': 'info@isaackinity.net',
     'og:phone_number': '+254 XXX XXX XXX',
     ' political-party': "Independent",
     'campaign-slogan': "Kenya's Hope",
@@ -212,8 +212,8 @@ export default function RootLayout({
               name: 'Dr. Isaac Newton Kinity',
               alternateName: 'Kinity',
               description: "Presidential Candidate Kenya 2027. Committed to the service of Kenyans.",
-              url: 'https://www.kikimofoundation.org',
-              image: 'https://www.kikimofoundation.org/dr-kinity-profile.jpg',
+              url: 'https://www.isaackinity.net',
+              image: 'https://www.isaackinity.net/dr-kinity-profile.jpg',
               jobTitle: 'Presidential Candidate',
               worksFor: {
                 '@type': 'Organization',
@@ -241,8 +241,8 @@ export default function RootLayout({
               '@type': 'Organization',
               name: "Kinity 2027 Campaign",
               alternateName: "Kenya's Hope",
-              url: 'https://www.kikimofoundation.org',
-              logo: 'https://www.kikimofoundation.org/logo.png',
+              url: 'https://www.isaackinity.net',
+              logo: 'https://www.isaackinity.net/logo.png',
               description: "Official campaign organization for Dr. Isaac Newton Kinity's 2027 presidential bid.",
               foundingDate: '2024',
               politicalParty: 'Independent',

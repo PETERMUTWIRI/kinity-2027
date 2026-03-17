@@ -19,7 +19,7 @@ import {
 import ElectionCountdown from './ElectionCountdown';
 
 // ==========================================
-// Kikimo Foundation - MODERN NAVIGATION
+// Isaac Kinity - MODERN NAVIGATION
 // Smart scroll behavior with logo integration
 // ==========================================
 
@@ -33,10 +33,10 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { icon: FaFacebook, href: 'https://facebook.com/kikimofoundation', label: 'Facebook', color: '#1877F2' },
-  { icon: FaTwitter, href: 'https://twitter.com/kikimofoundation', label: 'Twitter', color: '#1DA1F2' },
-  { icon: FaInstagram, href: 'https://instagram.com/kikimofoundation', label: 'Instagram', color: '#E4405F' },
-  { icon: FaYoutube, href: 'https://youtube.com/@kikimofoundation', label: 'YouTube', color: '#FF0000' },
+  { icon: FaFacebook, href: 'https://facebook.com/isaackinity', label: 'Facebook', color: '#1877F2' },
+  { icon: FaTwitter, href: 'https://twitter.com/isaackinity', label: 'Twitter', color: '#1DA1F2' },
+  { icon: FaInstagram, href: 'https://instagram.com/isaackinity', label: 'Instagram', color: '#E4405F' },
+  { icon: FaYoutube, href: 'https://youtube.com/@isaackinity', label: 'YouTube', color: '#FF0000' },
 ];
 
 export default function Navbar() {
@@ -144,7 +144,7 @@ export default function Navbar() {
                 >
                   <Image
                     src="/kikimo-logo.jpeg"
-                    alt="Kikimo Foundation"
+                    alt="Isaac Kinity"
                     fill
                     className="object-cover"
                     priority
@@ -154,7 +154,7 @@ export default function Navbar() {
                   <motion.p 
                     className="font-slogan text-base sm:text-lg lg:text-xl leading-tight text-[#E91D0E] group-hover:text-[#0074D9] transition-colors duration-300"
                   >
-                    Kikimo Foundation
+                    Isaac Kinity
                   </motion.p>
                 </div>
               </Link>
@@ -283,13 +283,13 @@ export default function Navbar() {
                     <div className="relative w-12 h-12 rounded-xl overflow-hidden shadow-md">
                       <Image
                         src="/kikimo-logo.jpeg"
-                        alt="Kikimo Foundation"
+                        alt="Isaac Kinity"
                         fill
                         className="object-cover"
                       />
                     </div>
                     <div>
-                      <p className="font-slogan text-lg text-[#E91D0E]">Kikimo Foundation</p>
+                      <p className="font-slogan text-lg text-[#E91D0E]">Isaac Kinity</p>
                     </div>
                   </Link>
                   <motion.button
@@ -390,7 +390,7 @@ export default function Navbar() {
                   Committed to the Service of Kenyans
                 </p>
                 <p className="text-center text-xs text-slate-400 mt-1">
-                  © 2025 Kikimo Foundation
+                  © 2025 Isaac Kinity
                 </p>
               </div>
             </motion.div>

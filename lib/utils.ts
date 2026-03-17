@@ -1,4 +1,4 @@
-// Utility functions for Kikimo Foundation
+// Utility functions for Isaac Kinity
 
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";

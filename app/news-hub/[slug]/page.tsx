@@ -191,7 +191,7 @@ export default async function NewsArticlePage({ params }: Props) {
   }
 
   // Get full URL for sharing
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://kikimo.foundation';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.isaackinity.net';
   const articleUrl = `${baseUrl}/news-hub/${post.slug}`;
 
   return (

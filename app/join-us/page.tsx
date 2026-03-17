@@ -428,7 +428,7 @@ export default function JoinUsPage() {
                     className="w-5 h-5 rounded border-slate-600 bg-slate-800 text-[#0074D9] focus:ring-[#0074D9] mt-0.5"
                   />
                   <span className="text-slate-400 text-sm">
-                    I agree to volunteer my time and effort to support the Kikimo Foundation campaign. 
+                    I agree to volunteer my time and effort to support the Isaac Kinity campaign. 
                     I understand that this is a voluntary position and I commit to representing the 
                     campaign with integrity and respect. *
                   </span>

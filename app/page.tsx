@@ -22,7 +22,7 @@ import {
 import ScrollReveal from '@/components/ScrollReveal';
 
 // ==========================================
-// KIKIMO FOUNDATION - HOMEPAGE
+// ISAAC KINITY - HOMEPAGE
 // The Movement Begins
 // ==========================================
 

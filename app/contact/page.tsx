@@ -5,7 +5,7 @@ import { BreadcrumbSchema } from '@/components/SchemaMarkup';
 export const metadata: Metadata = {
   title: 'Contact | Dr. Isaac Newton Kinity',
   description: 'Get in touch with Dr. Isaac Newton Kinity for volunteering, campaign events, media inquiries, or general questions. Join the 2027 presidential campaign for a better Kenya.',
-  keywords: ['Dr. Isaac Newton Kinity', 'contact', 'Kenya 2027', 'presidential campaign', 'volunteer', 'political events', 'media contact', 'Kikimo Foundation'],
+  keywords: ['Dr. Isaac Newton Kinity', 'contact', 'Kenya 2027', 'presidential campaign', 'volunteer', 'political events', 'media contact', 'Isaac Kinity'],
   openGraph: {
     title: 'Contact Dr. Isaac Newton Kinity | 2027 Presidential Campaign',
     description: 'Connect with Dr. Isaac Newton Kinity for volunteering, campaign events, or media inquiries. Join us in shaping Kenya\'s future.',
