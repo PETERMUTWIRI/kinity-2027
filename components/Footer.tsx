@@ -107,7 +107,7 @@ export default function Footer() {
                 className="relative w-16 h-16 rounded-2xl overflow-hidden shadow-lg ring-2 ring-white/10 group-hover:ring-[#0074D9]/50 transition-all duration-300"
               >
                 <Image
-                  src="/kikimo-logo.jpeg"
+                  src="/isaac_kinity-logo.jpeg"
                   alt="Isaac Kinity"
                   fill
                   className="object-cover"

@@ -143,8 +143,8 @@ export default function Navbar() {
                   className="relative w-12 h-12 lg:w-14 lg:h-14 rounded-xl overflow-hidden shadow-md ring-2 ring-[#0074D9]/10 group-hover:ring-[#0074D9]/30 transition-all duration-300"
                 >
                   <Image
-                    src="/kikimo-logo.jpeg"
-                    alt="Isaac Kinity"
+                    src="/isaac_kinity-logo.jpeg"
+                    alt="Isaac Kinity Logo"
                     fill
                     className="object-cover"
                     priority
@@ -282,8 +282,8 @@ export default function Navbar() {
                   <Link href="/" className="flex items-center gap-3" onClick={() => setIsMobileMenuOpen(false)}>
                     <div className="relative w-12 h-12 rounded-xl overflow-hidden shadow-md">
                       <Image
-                        src="/kikimo-logo.jpeg"
-                        alt="Isaac Kinity"
+                        src="/isaac_kinity-logo.jpeg"
+                        alt="Isaac Kinity Logo"
                         fill
                         className="object-cover"
                       />

@@ -88,18 +88,18 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   
-  // Icons - Using Isaac Kinity Logo
+  // Icons - Using Isaac Kinity Logo (isaac_kinity-logo.jpeg)
   icons: {
     icon: [
-      { url: '/kikimo-logo.jpeg', sizes: '32x32', type: 'image/jpeg' },
-      { url: '/kikimo-logo.jpeg', sizes: '16x16', type: 'image/jpeg' },
+      { url: '/isaac_kinity-logo.jpeg', sizes: '32x32', type: 'image/jpeg' },
+      { url: '/isaac_kinity-logo.jpeg', sizes: '16x16', type: 'image/jpeg' },
     ],
-    shortcut: '/kikimo-logo.jpeg',
+    shortcut: '/isaac_kinity-logo.jpeg',
     apple: [
-      { url: '/kikimo-logo.jpeg', sizes: '180x180', type: 'image/jpeg' },
+      { url: '/isaac_kinity-logo.jpeg', sizes: '180x180', type: 'image/jpeg' },
     ],
     other: [
-      { rel: 'apple-touch-icon-precomposed', url: '/kikimo-logo.jpeg' },
+      { rel: 'apple-touch-icon-precomposed', url: '/isaac_kinity-logo.jpeg' },
     ],
   },
   

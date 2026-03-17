@@ -109,6 +109,7 @@ function RichTextEditor({
 }) {
   const editorRef = useRef<HTMLDivElement>(null);
   const [activeFormats, setActiveFormats] = useState<string[]>([]);
+  const savedSelectionRef = useRef<Range | null>(null);
 
   const execCommand = (command: string, value: string | undefined = undefined) => {
     document.execCommand(command, false, value);
@@ -124,6 +125,31 @@ function RichTextEditor({
     if (document.queryCommandState('italic')) formats.push('italic');
     if (document.queryCommandState('underline')) formats.push('underline');
     setActiveFormats(formats);
+  };
+
+  // Save the current cursor/selection position
+  const saveSelection = () => {
+    const selection = window.getSelection();
+    if (selection && selection.rangeCount > 0) {
+      savedSelectionRef.current = selection.getRangeAt(0);
+    }
+  };
+
+  // Restore the saved selection
+  const restoreSelection = () => {
+    if (savedSelectionRef.current && editorRef.current) {
+      const selection = window.getSelection();
+      if (selection) {
+        selection.removeAllRanges();
+        selection.addRange(savedSelectionRef.current);
+      }
+    }
+  };
+
+  // Handle image insert with cursor position
+  const handleImageInsert = () => {
+    saveSelection();
+    onImageInsert();
   };
 
   useEffect(() => {
@@ -221,7 +247,7 @@ function RichTextEditor({
         <div className="flex items-center gap-1 px-2">
           <ToolbarButton 
             icon={FaImage} 
-            onClick={onImageInsert} 
+            onClick={handleImageInsert} 
             title="Insert Image with Caption" 
           />
         </div>
@@ -698,7 +724,7 @@ function NewsEditorInternal() {
     }
   };
 
-  // Handle inserting inline image into content
+  // Handle inserting inline image into content at cursor position
   const handleInsertImage = (image: InlineImage) => {
     setInlineImages([...inlineImages, image]);
     
@@ -722,7 +748,19 @@ function NewsEditorInternal() {
       </figure>
     `;
 
-    setFormData(prev => ({ ...prev, content: prev.content + imageHtml }));
+    // Try to insert at cursor position in the editor
+    const editor = document.querySelector('[contentEditable="true"]') as HTMLElement;
+    if (editor && document.queryCommandSupported('insertHTML')) {
+      // Focus the editor first
+      editor.focus();
+      // Insert the HTML at cursor position
+      document.execCommand('insertHTML', false, imageHtml);
+      // Update the form data with the new content
+      setFormData(prev => ({ ...prev, content: editor.innerHTML }));
+    } else {
+      // Fallback: append to end if execCommand not supported
+      setFormData(prev => ({ ...prev, content: prev.content + imageHtml }));
+    }
   };
 
   // Add tag
@@ -784,19 +822,23 @@ function NewsEditorInternal() {
           router.push('/admin/posts?success=' + encodeURIComponent(action));
         }, 1500);
       } else {
-        const error = await res.json();
+        const errorData = await res.json().catch(() => ({ error: 'Unknown error occurred' }));
+        console.error('Save failed:', errorData);
+        const errorMessage = errorData.details 
+          ? `${errorData.error}: ${errorData.details.map((d: any) => d.message).join(', ')}`
+          : errorData.error || `Failed to save post (Status: ${res.status})`;
         setNotification({
           type: 'error',
-          message: error.error || 'Failed to save post'
+          message: errorMessage
         });
+        setIsSaving(false);
       }
     } catch (err) {
       console.error('Save error:', err);
       setNotification({
         type: 'error',
-        message: 'Failed to save post. Please try again.'
+        message: 'Failed to save post. Please check your connection and try again.'
       });
-    } finally {
       setIsSaving(false);
     }
   };

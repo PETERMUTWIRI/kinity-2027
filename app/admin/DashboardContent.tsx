@@ -96,7 +96,10 @@ const fetcher = async (url: string) => {
       return [];
     }
     const data = await res.json();
-    return Array.isArray(data) ? data : [];
+    // Handle both array responses and { posts, pagination } object
+    if (Array.isArray(data)) return data;
+    if (data.posts && Array.isArray(data.posts)) return data.posts;
+    return [];
   } catch (error) {
     console.error(`Fetch error for ${url}:`, error);
     return [];
