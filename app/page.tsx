@@ -23,7 +23,7 @@ import TiltCard from '@/components/TiltCard';
 import { EconomicIcon, AntiCorruptionIcon, HealthcareIcon, EducationIcon } from '@/components/PillarIcons';
 import SocialProof from '@/components/SocialProof';
 
-import HeroImageCarousel from '@/components/HeroImageCarousel';
+
 
 // ==========================================
 // NATIONAL VISION PARTY - HOMEPAGE
@@ -318,7 +318,7 @@ export default function HomePage() {
             {/* LEFT: Text Content */}
             <div className="space-y-4 text-center lg:text-left order-2 lg:order-1">
               
-              {/* Mobile: Compact circular carousel above headline */}
+              {/* Mobile: Static portrait image */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
                 animate={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -328,16 +328,14 @@ export default function HomePage() {
                 <div className="relative">
                   {/* Glow */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-white/10 rounded-full blur-2xl scale-125 animate-pulse" />
-                  {/* Circular Carousel */}
+                  {/* Static Image */}
                   <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-white shadow-2xl">
-                    <HeroImageCarousel
-                      images={[
-                        { src: '/images/president.jpeg', alt: 'Dr. Isaac Newton Kinity - Presidential Candidate' },
-                        { src: '/images/kinity-1.jpeg', alt: 'Dr. Kinity at Rally' },
-                        { src: '/images/kinity-2.jpeg', alt: 'Dr. Kinity with Community' },
-                      ]}
-                      interval={5000}
-                      transitionDuration={1200}
+                    <Image
+                      src="/images/president.jpeg"
+                      alt="Dr. Isaac Newton Kinity - Presidential Candidate"
+                      fill
+                      className="object-cover"
+                      priority
                     />
                   </div>
                   {/* Badge */}
@@ -502,21 +500,18 @@ export default function HomePage() {
                   className="absolute -inset-4 bg-gradient-to-br from-white/50 via-white/30 to-transparent rounded-3xl blur-2xl" 
                 />
                 
-                {/* Image Carousel Container with hover lift */}
+                {/* Static Image Container with hover lift */}
                 <motion.div 
-                  whileHover={{ scale: 1.02, rotateY: 5 }}
+                  whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300 }}
                   className="relative w-full h-full rounded-3xl overflow-hidden border-4 border-white shadow-2xl"
-                  style={{ transformStyle: "preserve-3d", perspective: 1000 }}
                 >
-                  <HeroImageCarousel
-                    images={[
-                      { src: '/images/president.jpeg', alt: 'Dr. Isaac Newton Kinity - Presidential Candidate' },
-                      { src: '/images/kinity-1.jpeg', alt: 'Dr. Kinity at Rally' },
-                      { src: '/images/kinity-2.jpeg', alt: 'Dr. Kinity with Community' },
-                    ]}
-                    interval={5000}
-                    transitionDuration={1200}
+                  <Image
+                    src="/images/president.jpeg"
+                    alt="Dr. Isaac Newton Kinity - Presidential Candidate"
+                    fill
+                    className="object-cover"
+                    priority
                   />
                 </motion.div>
 
