@@ -22,6 +22,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import TiltCard from '@/components/TiltCard';
 import { EconomicIcon, AntiCorruptionIcon, HealthcareIcon, EducationIcon } from '@/components/PillarIcons';
 import SocialProof from '@/components/SocialProof';
+import HeroCanvas from '@/components/HeroCanvas';
 
 
 
@@ -188,131 +189,20 @@ export default function HomePage() {
     <div className="relative min-h-screen overflow-hidden">
       
       {/* ==========================================
-          HERO SECTION - Dynamic Animated Background
+          HERO SECTION - Presidential Kenyan Coat of Arms Canvas
           ========================================== */}
       <section className="relative min-h-auto overflow-hidden">
-        {/* Animated Gradient Mesh Background */}
-        <div className="absolute inset-0 z-0">
-          {/* Base gradient - blue at top */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0074D9] via-[#0074D9] to-[#0074D9]" />
-          
-          {/* Animated gradient orbs - Canva style */}
-          <motion.div
-            className="absolute -top-20 -right-20 w-[700px] h-[700px] bg-[#E91D0E]/25 rounded-full blur-[100px]"
-            animate={{
-              x: [0, 80, 0, -40, 0],
-              y: [0, -60, 40, 0, 0],
-              scale: [1, 1.2, 0.9, 1.1, 1],
-            }}
-            transition={{
-              duration: 15,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute top-1/3 -left-32 w-[600px] h-[600px] bg-[#6B2C91]/35 rounded-full blur-[90px]"
-            animate={{
-              x: [0, -60, 0, 80, 0],
-              y: [0, 40, -80, 0, 0],
-              scale: [1, 0.8, 1.3, 1, 1],
-            }}
-            transition={{
-              duration: 18,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-white/15 rounded-full blur-[80px]"
-            animate={{
-              x: [0, 50, -50, 0],
-              y: [0, -30, 30, 0],
-              scale: [1, 1.4, 1],
-            }}
-            transition={{
-              duration: 12,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute top-20 left-1/3 w-[400px] h-[400px] bg-[#0074D9]/40 rounded-full blur-[70px]"
-            animate={{
-              x: [0, -40, 60, 0],
-              y: [0, 60, -40, 0],
-              scale: [1, 1.2, 0.8, 1],
-            }}
-            transition={{
-              duration: 14,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          
-          {/* Animated wave overlay */}
-          <div className="absolute inset-0 opacity-30">
-            <svg className="absolute w-full h-full" preserveAspectRatio="none">
-              <motion.path
-                d="M0,50 Q250,30 500,50 T1000,50 L1000,100 L0,100 Z"
-                fill="url(#waveGradient1)"
-                animate={{
-                  d: [
-                    "M0,50 Q250,30 500,50 T1000,50 L1000,100 L0,100 Z",
-                    "M0,50 Q250,70 500,50 T1000,50 L1000,100 L0,100 Z",
-                    "M0,50 Q250,30 500,50 T1000,50 L1000,100 L0,100 Z",
-                  ]
-                }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              />
-              <defs>
-                <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="rgba(255,255,255,0.1)" />
-                  <stop offset="100%" stopColor="rgba(255,255,255,0)" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-          
-          {/* Floating particles */}
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-white/40 rounded-full"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                y: [0, -100, 0],
-                opacity: [0, 1, 0],
-                scale: [0, 1, 0],
-              }}
-              transition={{
-                duration: 4 + Math.random() * 4,
-                repeat: Infinity,
-                delay: Math.random() * 4,
-                ease: "easeInOut",
-              }}
-            />
-          ))}
-          
-          {/* Gradient fade to white at bottom */}
-          <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-white via-white/80 to-transparent" />
-          
-          {/* Grid pattern overlay */}
-          <div className="absolute inset-0 opacity-[0.03]" style={{ 
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px)`,
-            backgroundSize: '80px 80px'
-          }} />
-        </div>
+        {/* Base gradient */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#0074D9] via-[#0074D9] to-[#0074D9]" />
+        
+        {/* Kenyan Coat of Arms Canvas Animation */}
+        <HeroCanvas />
+        
+        {/* Gradient fade to white at bottom for smooth transition */}
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-white via-white/80 to-transparent z-10" />
 
         {/* Hero Content - Optimized spacing, no blank space */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-8 lg:pt-28 lg:pb-12">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-8 sm:pt-32 lg:pt-28 lg:pb-12">
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center">
             
             {/* LEFT: Text Content */}
@@ -328,8 +218,8 @@ export default function HomePage() {
                 <div className="relative">
                   {/* Glow */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-white/10 rounded-full blur-2xl scale-125 animate-pulse" />
-                  {/* Static Image */}
-                  <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+                  {/* Static Image - Enlarged for mobile */}
+                  <div className="relative w-40 h-40 sm:w-44 sm:h-44 rounded-full overflow-hidden border-4 border-white shadow-2xl">
                     <Image
                       src="/images/president.jpeg"
                       alt="Dr. Isaac Newton Kinity - Presidential Candidate"
