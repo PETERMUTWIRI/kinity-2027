@@ -257,7 +257,7 @@ export default function HomePage() {
               >
                 {/* Name - Primary Focus with character animation */}
                 <motion.h1 
-                  className="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-white tracking-tight"
+                  className="font-headline text-[clamp(1.5rem,5vw,3.5rem)] text-white tracking-tight whitespace-nowrap"
                 >
                   <span className="inline-block overflow-hidden">
                     {"Dr. Isaac Newton Kinity".split("").map((char, i) => (
