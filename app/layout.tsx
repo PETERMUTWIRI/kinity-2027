@@ -112,7 +112,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/isaac_kinity-logo.jpeg',
         width: 1200,
         height: 630,
         alt: 'Dr. Isaac Newton Kinity - Kenya\'s Hope 2027',
@@ -125,7 +125,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Dr. Isaac Newton Kinity | Kenya's Hope 2027",
     description: "Join the movement for a better Kenya. Dr. Isaac Newton Kinity - Committed to the service of Kenyans.",
-    images: ['/og-image.jpg'],
+    images: ['/isaac_kinity-logo.jpeg'],
     creator: '@Kinity2027',
     site: '@Kinity2027',
   },
@@ -199,7 +199,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.youtube.com" />
         
         {/* Preload critical assets */}
-        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        {/* Font preloading removed - using next/font/google instead */}
         
         {/* Structured Data - JSON-LD */}
         <script

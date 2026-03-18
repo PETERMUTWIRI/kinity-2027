@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: 'https://www.isaackinity.net/videos',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/isaac_kinity-logo.jpeg',
         width: 1200,
         height: 630,
         alt: 'Dr. Isaac Newton Kinity Campaign Videos',
