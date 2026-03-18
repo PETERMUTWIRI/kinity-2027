@@ -20,6 +20,10 @@ import {
   FaExternalLinkAlt,
 } from 'react-icons/fa';
 import ScrollReveal from '@/components/ScrollReveal';
+import TiltCard from '@/components/TiltCard';
+import { EconomicIcon, AntiCorruptionIcon, HealthcareIcon, EducationIcon } from '@/components/PillarIcons';
+import SocialProof from '@/components/SocialProof';
+import NewsletterCTA from '@/components/NewsletterCTA';
 
 // ==========================================
 // ISAAC KINITY - HOMEPAGE
@@ -62,7 +66,7 @@ const pillars = [
     title: 'Economic Transformation',
     subtitle: 'Creating jobs and prosperity',
     summary: 'Creating jobs, supporting local businesses, and building a self-reliant economy that works for every Kenyan.',
-    icon: '💼',
+    Icon: EconomicIcon,
     color: '#0074D9',
     featured: true,
   },
@@ -71,7 +75,7 @@ const pillars = [
     title: 'Zero Corruption',
     subtitle: 'Uncompromising stance against graft',
     summary: 'Uncompromising stance against corruption. Transparent governance and accountability at every level.',
-    icon: '🛡️',
+    Icon: AntiCorruptionIcon,
     color: '#E91D0E',
     featured: true,
   },
@@ -80,7 +84,7 @@ const pillars = [
     title: 'Universal Healthcare',
     subtitle: 'Quality healthcare accessible to all',
     summary: 'Quality healthcare accessible to all Kenyans. Modern facilities and well-equipped medical professionals.',
-    icon: '🏥',
+    Icon: HealthcareIcon,
     color: '#6B2C91',
     featured: true,
   },
@@ -89,7 +93,7 @@ const pillars = [
     title: 'Education Revolution',
     subtitle: 'World-class education for our children',
     summary: 'World-class education system that prepares our youth for the challenges and opportunities of tomorrow.',
-    icon: '🎓',
+    Icon: EducationIcon,
     color: '#0074D9',
     featured: true,
   },
@@ -184,16 +188,58 @@ export default function HomePage() {
     <div className="relative min-h-screen overflow-hidden">
       
       {/* ==========================================
-          HERO SECTION - Blue to White Gradient
+          HERO SECTION - Animated Gradient Mesh
           ========================================== */}
-      <section className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-[#0074D9] via-[#0074D9]/95 via-60% to-white">
-        
-        {/* Decorative Elements - Subtle for blue-to-white transition */}
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#6B2C91]/20 rounded-full blur-[120px] -translate-y-1/4 translate-x-1/4" />
-          <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-[#E91D0E]/10 rounded-full blur-[100px] -translate-x-1/4" />
-          {/* Subtle pattern overlay */}
-          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #0074D9 1px, transparent 0)', backgroundSize: '32px 32px' }} />
+      <section className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden">
+        {/* Animated Gradient Mesh Background */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0074D9] via-[#0074D9] to-[#6B2C91]" />
+          
+          {/* Animated orbs */}
+          <motion.div
+            className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-[#E91D0E]/30 rounded-full blur-[120px]"
+            animate={{
+              x: [0, 50, 0],
+              y: [0, -30, 0],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-[#6B2C91]/40 rounded-full blur-[100px]"
+            animate={{
+              x: [0, -40, 0],
+              y: [0, 40, 0],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/10 rounded-full blur-[150px]"
+            animate={{
+              scale: [1, 1.3, 1],
+              opacity: [0.1, 0.2, 0.1],
+            }}
+            transition={{
+              duration: 12,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          
+          {/* Grid pattern overlay */}
+          <div className="absolute inset-0 opacity-[0.05]" style={{ 
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+            backgroundSize: '60px 60px'
+          }} />
         </div>
 
         {/* Hero Content */}
@@ -382,7 +428,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Scroll Indicator - Positioned on white gradient area */}
+        {/* Scroll Indicator - Premium glass effect */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -391,7 +437,7 @@ export default function HomePage() {
         >
           <a 
             href="#vision" 
-            className="flex flex-col items-center gap-2 text-slate-500 hover:text-[#0074D9] transition-colors cursor-pointer bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg"
+            className="flex flex-col items-center gap-2 text-white/80 hover:text-white transition-colors cursor-pointer bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20 hover:bg-white/20"
           >
             <span className="text-xs tracking-widest uppercase font-medium">Discover More</span>
             <motion.div
@@ -425,34 +471,51 @@ export default function HomePage() {
             </div>
           </ScrollReveal>
 
-          {/* Pillars Grid */}
+          {/* Pillars Grid - With 3D Tilt Cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {pillars.length > 0 ? (
               pillars.map((pillar, index) => (
                 <ScrollReveal key={pillar.id} delay={index * 0.1}>
-                  <Link href={`/about#${pillar.id}`} className="group">
-                    <div className="card-presidential h-full p-6 hover:border-[#0074D9]/30">
-                      {/* Icon placeholder */}
-                      <div 
-                        className="w-14 h-14 rounded-xl flex items-center justify-center text-2xl mb-4 transition-transform duration-300 group-hover:scale-110"
-                        style={{ 
-                          backgroundColor: `${pillar.color}20`,
-                          color: pillar.color 
-                        }}
-                      >
-                        {pillar.icon || '★'}
+                  <Link href={`/about#${pillar.id}`} className="group block h-full">
+                    <TiltCard className="h-full" borderColor={pillar.color}>
+                      <div className="h-full p-6">
+                        {/* Professional SVG Icon */}
+                        <div 
+                          className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
+                          style={{ 
+                            backgroundColor: `${pillar.color}15`,
+                            color: pillar.color 
+                          }}
+                        >
+                          <pillar.Icon className="w-7 h-7" />
+                        </div>
+                        
+                        {/* Progress indicator */}
+                        <div className="flex items-center gap-2 mb-3">
+                          <div className="flex-1 h-1 bg-slate-100 rounded-full overflow-hidden">
+                            <motion.div 
+                              className="h-full rounded-full"
+                              style={{ backgroundColor: pillar.color }}
+                              initial={{ width: 0 }}
+                              whileInView={{ width: '75%' }}
+                              transition={{ duration: 1, delay: index * 0.2 }}
+                            />
+                          </div>
+                          <span className="text-xs font-semibold" style={{ color: pillar.color }}>75%</span>
+                        </div>
+                        
+                        <h3 className="font-headline text-xl text-[#111111] mb-2 group-hover:text-[#0074D9] transition-colors">
+                          {pillar.title}
+                        </h3>
+                        <p className="text-slate-600 text-sm line-clamp-3">
+                          {pillar.summary}
+                        </p>
+                        <div className="mt-4 flex items-center gap-2 text-[#0074D9] font-semibold text-sm">
+                          Learn more
+                          <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </div>
                       </div>
-                      <h3 className="font-headline text-xl text-[#111111] mb-2 group-hover:text-[#0074D9] transition-colors">
-                        {pillar.title}
-                      </h3>
-                      <p className="text-slate-600 text-sm line-clamp-3">
-                        {pillar.summary}
-                      </p>
-                      <div className="mt-4 flex items-center gap-2 text-[#0074D9] font-semibold text-sm">
-                        Learn more
-                        <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </div>
-                    </div>
+                    </TiltCard>
                   </Link>
                 </ScrollReveal>
               ))
@@ -465,53 +528,55 @@ export default function HomePage() {
                     title: 'Economic Transformation', 
                     desc: 'Creating jobs, supporting local businesses, and building a self-reliant economy that works for every Kenyan.',
                     color: '#0074D9',
-                    icon: '💼'
+                    Icon: EconomicIcon
                   },
                   { 
                     id: 'zero-corruption',
                     title: 'Zero Corruption', 
                     desc: 'Uncompromising stance against corruption. Transparent governance and accountability at every level.',
                     color: '#E91D0E',
-                    icon: '🛡️'
+                    Icon: AntiCorruptionIcon
                   },
                   { 
                     id: 'universal-healthcare',
                     title: 'Universal Healthcare', 
                     desc: 'Quality healthcare accessible to all Kenyans. Modern facilities and well-equipped medical professionals.',
                     color: '#6B2C91',
-                    icon: '🏥'
+                    Icon: HealthcareIcon
                   },
                   { 
                     id: 'education-revolution',
                     title: 'Education Revolution', 
                     desc: 'World-class education system that prepares our youth for the challenges and opportunities of tomorrow.',
                     color: '#0074D9',
-                    icon: '🎓'
+                    Icon: EducationIcon
                   },
                 ].map((pillar, index) => (
                   <ScrollReveal key={index} delay={index * 0.1}>
-                    <Link href={`/about#${pillar.id}`} className="group">
-                      <div className="card-presidential h-full p-6">
-                        <div 
-                          className="w-14 h-14 rounded-xl flex items-center justify-center text-2xl mb-4 transition-transform duration-300 group-hover:scale-110"
-                          style={{ 
-                            backgroundColor: `${pillar.color}20`,
-                            color: pillar.color 
-                          }}
-                        >
-                          {pillar.icon}
-                        </div>
-                        <h3 className="font-headline text-xl text-[#111111] mb-2 group-hover:text-[#0074D9] transition-colors">
-                          {pillar.title}
-                        </h3>
-                        <p className="text-slate-600 text-sm">
-                          {pillar.desc}
-                        </p>
-                        <div className="mt-4 flex items-center gap-2 text-[#0074D9] font-semibold text-sm">
+                    <Link href={`/about#${pillar.id}`} className="group block h-full">
+                      <TiltCard className="h-full" borderColor={pillar.color}>
+                        <div className="h-full p-6">
+                          <div 
+                            className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
+                            style={{ 
+                              backgroundColor: `${pillar.color}15`,
+                              color: pillar.color 
+                            }}
+                          >
+                            <pillar.Icon className="w-7 h-7" />
+                          </div>
+                          <h3 className="font-headline text-xl text-[#111111] mb-2 group-hover:text-[#0074D9] transition-colors">
+                            {pillar.title}
+                          </h3>
+                          <p className="text-slate-600 text-sm">
+                            {pillar.desc}
+                          </p>
+                          <div className="mt-4 flex items-center gap-2 text-[#0074D9] font-semibold text-sm">
                           Learn more
                           <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </div>
-                      </div>
+                        </div>
+                      </TiltCard>
                     </Link>
                   </ScrollReveal>
                 ))}
@@ -927,6 +992,16 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ==========================================
+          SOCIAL PROOF SECTION - Endorsements & Stats
+          ========================================== */}
+      <SocialProof />
+
+      {/* ==========================================
+          NEWSLETTER SIGNUP SECTION
+          ========================================== */}
+      <NewsletterCTA />
 
       {/* ==========================================
           CALL TO ACTION SECTION - with Video Background

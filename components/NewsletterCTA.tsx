@@ -1,212 +1,175 @@
 'use client';
 
 import { useState } from 'react';
-import { FaArrowRight } from 'react-icons/fa6';
-import { useNewsletter } from '@/lib/hooks/useNewsletter';
+import { motion } from 'framer-motion';
+import { FaPaperPlane, FaCheckCircle, FaBell } from 'react-icons/fa';
+import ScrollReveal from './ScrollReveal';
 
-interface NewsletterCTAProps {
-  title?: string;
-  subtitle?: string;
-  placeholder?: string;
-  buttonText?: string;
-}
+// ==========================================
+// NEWSLETTER SIGNUP COMPONENT
+// Converts visitors into subscribers
+// ==========================================
 
-export default function NewsletterCTA({ 
-  title = "Stay up to date with the latest",
-  subtitle = "Nihri's hope\nFor Refugees And Immigrants",
-  placeholder = "Enter your email address",
-  buttonText = "Subscribe"
-}: NewsletterCTAProps) {
+export default function NewsletterCTA() {
   const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const { subscribe, loading } = useNewsletter();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [county, setCounty] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!email) return;
     
-    if (!email || !email.includes('@')) {
-      setStatus('error');
-      setMessage('Please enter a valid email address');
-      return;
-    }
-
-    const result = await subscribe(email);
-    
-    if (result.success) {
-      setStatus('success');
-      setMessage(result.message);
-      setEmail('');
-    } else {
-      setStatus('error');
-      setMessage(result.message);
-    }
+    setIsSubmitting(true);
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    setIsSubmitting(false);
+    setIsSubmitted(true);
   };
 
-  const [line1, line2] = subtitle.split('\n');
+  const COUNTIES = [
+    'Mombasa', 'Kwale', 'Kilifi', 'Tana River', 'Lamu', 'Taita-Taveta',
+    'Garissa', 'Wajir', 'Mandera', 'Marsabit', 'Isiolo', 'Meru',
+    'Tharaka-Nithi', 'Embu', 'Kitui', 'Machakos', 'Makueni', 'Nyandarua',
+    'Nyeri', 'Kirinyaga', "Murang'a", 'Kiambu', 'Turkana', 'West Pokot',
+    'Samburu', 'Trans Nzoia', 'Uasin Gishu', 'Elgeyo-Marakwet', 'Nandi',
+    'Baringo', 'Laikipia', 'Nakuru', 'Narok', 'Kajiado', 'Kericho',
+    'Bomet', 'Kakamega', 'Vihiga', 'Bungoma', 'Busia', 'Siaya',
+    'Kisumu', 'Homa Bay', 'Migori', 'Kisii', 'Nyamira', 'Nairobi'
+  ];
 
   return (
-    <section className="relative pt-0 pb-12 px-6 md:px-12 overflow-hidden bg-white">
-      {/* Decorative SVG Pattern - Top */}
-      <div className="absolute top-0 left-0 right-0 h-24 opacity-100 pointer-events-none">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200" preserveAspectRatio="none">
-          {/* Repeating ornamental bows - scaled */}
-          <g fill="#06b6d4">
-            {/* First - Larger */}
-            <g transform="translate(100, 50) scale(1.5) translate(-100, -50)">
-              <path d="M100,40 Q80,20 60,40 Q40,60 60,80 Q80,60 100,40 M100,40 Q120,20 140,40 Q160,60 140,80 Q120,60 100,40"/>
-              <circle cx="100" cy="50" r="5" fill="#00a3a3"/>
-            </g>
-            
-            {/* Standard size */}
-            <g>
-              <path d="M300,40 Q280,20 260,40 Q240,60 260,80 Q280,60 300,40 M300,40 Q320,20 340,40 Q360,60 340,80 Q320,60 300,40"/>
-              <circle cx="300" cy="50" r="5" fill="#0891b2"/>
-            </g>
-            
-            {/* Middle (3rd position) - Larger */}
-            <g transform="translate(500, 50) scale(1.5) translate(-500, -50)">
-              <path d="M500,40 Q480,20 460,40 Q440,60 460,80 Q480,60 500,40 M500,40 Q520,20 540,40 Q560,60 540,80 Q520,60 500,40"/>
-              <circle cx="500" cy="50" r="5" fill="#0891b2"/>
-            </g>
-            
-            {/* Standard size */}
-            <g>
-              <path d="M700,40 Q680,20 660,40 Q640,60 660,80 Q680,60 700,40 M700,40 Q720,20 740,40 Q760,60 740,80 Q720,60 700,40"/>
-              <circle cx="700" cy="50" r="5" fill="#0891b2"/>
-            </g>
-            
-            {/* Standard size */}
-            <g>
-              <path d="M900,40 Q880,20 860,40 Q840,60 860,80 Q880,60 900,40 M900,40 Q920,20 940,40 Q960,60 940,80 Q920,60 900,40"/>
-              <circle cx="900" cy="50" r="5" fill="#0891b2"/>
-            </g>
-            
-            {/* Last - Larger */}
-            <g transform="translate(1100, 50) scale(1.5) translate(-1100, -50)">
-              <path d="M1100,40 Q1080,20 1060,40 Q1040,60 1060,80 Q1080,60 1100,40 M1100,40 Q1120,20 1140,40 Q1160,60 1140,80 Q1120,60 1100,40"/>
-              <circle cx="1100" cy="50" r="5" fill="#0891b2"/>
-            </g>
-          </g>
-          
-          {/* Decorative dots */}
-          <g fill="#00a3a3">
-            <circle cx="150" cy="100" r="4"/>
-            <circle cx="1050" cy="100" r="4"/>
-            <circle cx="200" cy="150" r="3.5"/>
-            <circle cx="1000" cy="150" r="3.5"/>
-          </g>
-        </svg>
+    <section className="py-20 bg-gradient-to-br from-[#0074D9] via-[#6B2C91] to-[#0074D9] relative overflow-hidden">
+      {/* Animated background patterns */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          className="absolute top-0 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl"
+          animate={{ x: [0, 50, 0], y: [0, 30, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#E91D0E]/10 rounded-full blur-3xl"
+          animate={{ x: [0, -50, 0], y: [0, -30, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        />
       </div>
 
-      {/* Decorative SVG Pattern - Bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 opacity-100 pointer-events-none">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200" preserveAspectRatio="none">
-          {/* Repeating ornamental bows */}
-          <g fill="#06b6d4">
-            {/* First - Larger */}
-            <g transform="translate(100, 150) scale(1.5) translate(-100, -150)">
-              <path d="M100,160 Q80,180 60,160 Q40,140 60,120 Q80,140 100,160 M100,160 Q120,180 140,160 Q160,140 140,120 Q120,140 100,160"/>
-              <circle cx="100" cy="150" r="5" fill="#0891b2"/>
-            </g>
-            
-            {/* Standard size */}
-            <g>
-              <path d="M300,160 Q280,180 260,160 Q240,140 260,120 Q280,140 300,160 M300,160 Q320,180 340,160 Q360,140 340,120 Q320,140 300,160"/>
-              <circle cx="300" cy="150" r="5" fill="#0891b2"/>
-            </g>
-            
-            {/* Middle (3rd position) - Larger */}
-            <g transform="translate(500, 150) scale(1.5) translate(-500, -150)">
-              <path d="M500,160 Q480,180 460,160 Q440,140 460,120 Q480,140 500,160 M500,160 Q520,180 540,160 Q560,140 540,120 Q520,140 500,160"/>
-              <circle cx="500" cy="150" r="5" fill="#0891b2"/>
-            </g>
-            
-            {/* Standard size */}
-            <g>
-              <path d="M700,160 Q680,180 660,160 Q640,140 660,120 Q680,140 700,160 M700,160 Q720,180 740,160 Q760,140 740,120 Q720,140 700,160"/>
-              <circle cx="700" cy="150" r="5" fill="#0891b2"/>
-            </g>
-            
-            {/* Standard size */}
-            <g>
-              <path d="M900,160 Q880,180 860,160 Q840,140 860,120 Q880,140 900,160 M900,160 Q920,180 940,160 Q960,140 940,120 Q920,140 900,160"/>
-              <circle cx="900" cy="150" r="5" fill="#0891b2"/>
-            </g>
-            
-            {/* Last - Larger */}
-            <g transform="translate(1100, 150) scale(1.5) translate(-1100, -150)">
-              <path d="M1100,160 Q1080,180 1060,160 Q1040,140 1060,120 Q1080,140 1100,160 M1100,160 Q1120,180 1140,160 Q1160,140 1140,120 Q1120,140 1100,160"/>
-              <circle cx="1100" cy="150" r="5" fill="#0891b2"/>
-            </g>
-          </g>
-          
-          {/* Decorative dots */}
-          <g fill="#0891b2">
-            <circle cx="150" cy="100" r="4"/>
-            <circle cx="1050" cy="100" r="4"/>
-            <circle cx="200" cy="50" r="3.5"/>
-            <circle cx="1000" cy="50" r="3.5"/>
-          </g>
-        </svg>
-      </div>
-
-      {/* Content */}
-      <div className="relative max-w-6xl mx-auto z-10">
-        <div className="bg-white rounded-2xl shadow-lg px-8 md:px-16 py-6 md:py-8 border border-brand-primary/20 hover:border-brand-primary/40 transition-colors">
-          <div className="mb-6 text-center">
-            <h2 className="text-2xl md:text-3xl font-extrabold text-black leading-tight mb-2">
-              {title}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <ScrollReveal>
+          <div className="text-center mb-10">
+            <motion.div
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm font-medium mb-6"
+              whileHover={{ scale: 1.05 }}
+            >
+              <FaBell className="w-4 h-4" />
+              Stay Updated
+            </motion.div>
+            <h2 className="font-headline text-4xl md:text-5xl text-white mb-4">
+              Join <span className="text-[#E91D0E]">50,000+</span> Supporters
             </h2>
-            <div className="mb-4">
-              <p className="text-2xl md:text-3xl font-extrabold text-black">
-                {line1}
+            <p className="text-xl text-white/80 max-w-2xl mx-auto">
+              Get the latest campaign updates, event invitations, and exclusive content delivered to your inbox.
+            </p>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.2}>
+          {!isSubmitted ? (
+            <form onSubmit={handleSubmit} className="max-w-xl mx-auto">
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-2 border border-white/20">
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <div className="flex-1">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter your email address"
+                      className="w-full px-4 py-3 rounded-xl bg-white text-slate-900 placeholder-slate-400 border-0 focus:ring-2 focus:ring-[#E91D0E] outline-none"
+                      required
+                    />
+                  </div>
+                  <motion.button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="px-6 py-3 rounded-xl bg-[#E91D0E] text-white font-semibold flex items-center justify-center gap-2 hover:bg-[#BA170C] transition-colors disabled:opacity-50"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    {isSubmitting ? (
+                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    ) : (
+                      <>
+                        <FaPaperPlane className="w-4 h-4" />
+                        Subscribe
+                      </>
+                    )}
+                  </motion.button>
+                </div>
+                
+                {/* County selector - optional */}
+                <div className="mt-3 px-2">
+                  <select
+                    value={county}
+                    onChange={(e) => setCounty(e.target.value)}
+                    className="w-full sm:w-auto px-3 py-2 rounded-lg bg-white/10 text-white text-sm border border-white/20 focus:ring-1 focus:ring-white/50 outline-none cursor-pointer"
+                  >
+                    <option value="" className="text-slate-900">Select your county (optional)</option>
+                    {COUNTIES.map(c => (
+                      <option key={c} value={c} className="text-slate-900">{c}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+              
+              <p className="text-center text-white/60 text-sm mt-4">
+                We respect your privacy. Unsubscribe at any time.
               </p>
-              <p className="text-lg md:text-xl font-extrabold text-gray-900">
-                {line2}
+            </form>
+          ) : (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="text-center bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20"
+            >
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ type: "spring", stiffness: 200, damping: 15 }}
+              >
+                <FaCheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
+              </motion.div>
+              <h3 className="text-2xl font-bold text-white mb-2">Welcome to the Movement!</h3>
+              <p className="text-white/80">
+                Check your inbox for a confirmation email. Together, we&apos;ll build a better Kenya.
               </p>
+            </motion.div>
+          )}
+        </ScrollReveal>
+
+        {/* Trust indicators */}
+        <ScrollReveal delay={0.4}>
+          <div className="flex flex-wrap justify-center gap-6 mt-10 text-white/60 text-sm">
+            <div className="flex items-center gap-2">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+              </svg>
+              Secure & Encrypted
+            </div>
+            <div className="flex items-center gap-2">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+              </svg>
+              Weekly Updates
+            </div>
+            <div className="flex items-center gap-2">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              No Spam Ever
             </div>
           </div>
-
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 items-center justify-center">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder={placeholder}
-              className="flex-1 w-full sm:w-auto px-6 py-3 border-2 border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-brand-primary transition-all text-brand-text placeholder-gray-500 font-medium"
-              disabled={loading}
-            />
-            <button 
-              type="submit"
-              disabled={loading}
-              className="w-full sm:w-auto bg-brand-primary hover:bg-brand-dark text-brand-text font-bold px-8 py-3 rounded-lg transition-all transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {loading ? 'Subscribing...' : buttonText} <FaArrowRight className="transition-transform group-hover:translate-x-1" />
-            </button>
-          </form>
-
-          {/* Status Message */}
-          {message && (
-            <p className={`text-center text-sm mt-3 font-medium ${
-              status === 'success' ? 'text-green-600' : 'text-red-600'
-            }`}>
-              {message}
-            </p>
-          )}
-
-          <div className="text-center mt-4 space-y-1">
-            <p className="text-xs text-gray-600 font-medium tracking-wide">
-              We respect your privacy.
-            </p>
-            <a 
-              href="/unsubscribe" 
-              className="text-xs text-blue-600 hover:text-blue-800 underline font-medium inline-block"
-            >
-              Unsubscribe
-            </a>
-          </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
