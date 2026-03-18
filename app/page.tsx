@@ -611,11 +611,11 @@ export default function HomePage() {
                               className="h-full rounded-full"
                               style={{ backgroundColor: pillar.color }}
                               initial={{ width: 0 }}
-                              whileInView={{ width: '75%' }}
+                              whileInView={{ width: '100%' }}
                               transition={{ duration: 1, delay: index * 0.2 }}
                             />
                           </div>
-                          <span className="text-xs font-semibold" style={{ color: pillar.color }}>75%</span>
+                          <span className="text-xs font-semibold" style={{ color: pillar.color }}>100%</span>
                         </div>
                         
                         <h3 className="font-headline text-xl text-[#111111] mb-2 group-hover:text-[#0074D9] transition-colors">
