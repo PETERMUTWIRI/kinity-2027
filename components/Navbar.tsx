@@ -136,11 +136,11 @@ export default function Navbar() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16 lg:h-20">
               {/* Logo with Image */}
-              <Link href="/" className="flex items-center gap-3 group">
+              <Link href="/" className="flex items-center gap-2 sm:gap-3 group">
                 <motion.div 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="relative w-12 h-12 lg:w-14 lg:h-14 rounded-xl overflow-hidden shadow-md ring-2 ring-[#0074D9]/10 group-hover:ring-[#0074D9]/30 transition-all duration-300"
+                  className="relative w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-xl overflow-hidden shadow-md ring-2 ring-[#0074D9]/10 group-hover:ring-[#0074D9]/30 transition-all duration-300 flex-shrink-0"
                 >
                   <Image
                     src="/isaac_kinity-logo.jpeg"
@@ -150,14 +150,13 @@ export default function Navbar() {
                     priority
                   />
                 </motion.div>
-                <div className="block">
+                <div className="block min-w-0">
                   <motion.p 
-                    className="font-slogan text-sm sm:text-base lg:text-xl leading-tight text-[#E91D0E] group-hover:text-[#0074D9] transition-colors duration-300"
+                    className="font-slogan text-[10px] xs:text-xs sm:text-base lg:text-xl leading-tight text-[#E91D0E] group-hover:text-[#0074D9] transition-colors duration-300 whitespace-nowrap"
                   >
-                    <span className="hidden sm:inline">National Vision Party</span>
-                    <span className="sm:hidden">NVP</span>
+                    National Vision Party
                   </motion.p>
-                  <p className="text-xs text-slate-500 hidden lg:block">Kenya&apos;s Hope 2027</p>
+                  <p className="text-[9px] xs:text-xs text-slate-500 hidden sm:block">Kenya&apos;s Hope 2027</p>
                 </div>
               </Link>
 

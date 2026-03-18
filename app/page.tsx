@@ -12,7 +12,6 @@ import {
   FaHandshake,
   FaCalendarAlt,
   FaPlay,
-  FaChevronDown,
   FaNewspaper,
   FaImages,
   FaVideo,
@@ -24,6 +23,7 @@ import TiltCard from '@/components/TiltCard';
 import { EconomicIcon, AntiCorruptionIcon, HealthcareIcon, EducationIcon } from '@/components/PillarIcons';
 import SocialProof from '@/components/SocialProof';
 import NewsletterCTA from '@/components/NewsletterCTA';
+import HeroImageCarousel from '@/components/HeroImageCarousel';
 
 // ==========================================
 // NATIONAL VISION PARTY - HOMEPAGE
@@ -249,7 +249,7 @@ export default function HomePage() {
             {/* LEFT: Text Content */}
             <div className="space-y-6 text-center lg:text-left order-2 lg:order-1">
               
-              {/* Mobile: Compact circular image above headline */}
+              {/* Mobile: Compact circular carousel above headline */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -259,14 +259,16 @@ export default function HomePage() {
                 <div className="relative">
                   {/* Glow */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-white/10 rounded-full blur-2xl scale-125" />
-                  {/* Circular Image */}
+                  {/* Circular Carousel */}
                   <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden border-4 border-white shadow-2xl">
-                    <Image
-                      src="/images/president.jpeg"
-                      alt="Dr. Isaac Newton Kinity"
-                      fill
-                      className="object-cover object-top"
-                      priority
+                    <HeroImageCarousel
+                      images={[
+                        { src: '/images/president.jpeg', alt: 'Dr. Isaac Newton Kinity - Presidential Candidate' },
+                        { src: '/images/kinity-1.jpeg', alt: 'Dr. Kinity at Rally' },
+                        { src: '/images/kinity-2.jpeg', alt: 'Dr. Kinity with Community' },
+                      ]}
+                      interval={6000}
+                      transitionDuration={1500}
                     />
                   </div>
                   {/* Badge */}
@@ -381,15 +383,16 @@ export default function HomePage() {
                 {/* Glow Effect - White glow for blue gradient */}
                 <div className="absolute -inset-4 bg-gradient-to-br from-white/40 via-white/20 to-transparent rounded-3xl blur-2xl" />
                 
-                {/* Image Container */}
+                {/* Image Carousel Container */}
                 <div className="relative w-full h-full rounded-3xl overflow-hidden border-4 border-white shadow-2xl">
-                  <Image
-                    src="/images/president.jpeg"
-                    alt="Dr. Isaac Newton Kinity - Presidential Candidate"
-                    fill
-                    className="object-cover object-top"
-                    priority
-                    quality={95}
+                  <HeroImageCarousel
+                    images={[
+                      { src: '/images/president.jpeg', alt: 'Dr. Isaac Newton Kinity - Presidential Candidate' },
+                      { src: '/images/kinity-1.jpeg', alt: 'Dr. Kinity at Rally' },
+                      { src: '/images/kinity-2.jpeg', alt: 'Dr. Kinity with Community' },
+                    ]}
+                    interval={6000}
+                    transitionDuration={1500}
                   />
                 </div>
 
