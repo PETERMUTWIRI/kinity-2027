@@ -132,23 +132,6 @@ model User {
   updatedAt DateTime @updatedAt
 }
 
-// Newsletter Subscribers - Movement Supporters
-model NewsletterSubscriber {
-  id             Int       @id @default(autoincrement())
-  email          String    @unique
-  name           String?   @db.VarChar(255)
-  phone          String?   @db.VarChar(50)
-  county         String?   @db.VarChar(100)
-  subscribed     Boolean   @default(true)
-  createdAt      DateTime  @default(now())
-  updatedAt      DateTime  @updatedAt
-  unsubscribedAt DateTime?
-
-  @@index([email])
-  @@index([subscribed])
-  @@index([county])
-}
-
 // Video Gallery - Speeches, Rally Footage, Interviews
 model Video {
   id          Int       @id @default(autoincrement())

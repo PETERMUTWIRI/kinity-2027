@@ -152,11 +152,12 @@ export default function Navbar() {
                 </motion.div>
                 <div className="block min-w-0">
                   <motion.p 
-                    className="font-slogan text-[10px] xs:text-xs sm:text-base lg:text-xl leading-tight text-[#E91D0E] group-hover:text-[#0074D9] transition-colors duration-300 whitespace-nowrap"
+                    className="font-headline text-[11px] xs:text-sm sm:text-base lg:text-xl leading-tight text-[#E91D0E] group-hover:text-[#0074D9] transition-colors duration-300 whitespace-nowrap tracking-wide"
+                    style={{ fontWeight: 800 }}
                   >
                     National Vision Party
                   </motion.p>
-                  <p className="text-[9px] xs:text-xs text-slate-500 hidden sm:block">Kenya&apos;s Hope 2027</p>
+                  <p className="text-[9px] xs:text-xs text-slate-500 hidden sm:block font-medium tracking-wider uppercase">Kenya&apos;s Hope 2027</p>
                 </div>
               </Link>
 

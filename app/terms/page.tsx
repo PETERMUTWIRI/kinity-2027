@@ -65,7 +65,6 @@ export default function TermsOfServicePage() {
                 <li>Sign up as volunteers for campaign activities and events</li>
                 <li>Register to attend rallies, town halls, and campaign events</li>
                 <li>Make donations to support the campaign</li>
-                <li>Subscribe to newsletters for campaign updates</li>
                 <li>Engage with community features including comments and supporter submissions</li>
               </ul>
               <p className="mb-4">

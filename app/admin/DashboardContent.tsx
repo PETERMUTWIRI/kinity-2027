@@ -79,13 +79,6 @@ interface Contribution {
   createdAt: string;
 }
 
-interface NewsletterSubscriber {
-  id: number;
-  email: string;
-  county?: string;
-  subscribed: boolean;
-  createdAt: string;
-}
 
 // Safe fetcher that returns empty array on error
 const fetcher = async (url: string) => {
@@ -113,7 +106,6 @@ export default function DashboardContent() {
   const { data: volunteers } = useSWR<Volunteer[]>('/api/volunteers', fetcher);
   const { data: donationTiers } = useSWR<DonationTier[]>('/api/donation-tiers', fetcher);
   const { data: contributions } = useSWR<Contribution[]>('/api/contributions', fetcher);
-  const { data: subscribers } = useSWR<NewsletterSubscriber[]>('/api/newsletter?all=true', fetcher);
 
   const deletePost = async (id: number) => {
     if (!confirm('Delete this post?')) return;
@@ -140,8 +132,6 @@ export default function DashboardContent() {
   const totalVolunteers = volunteers?.length || 0;
   const activeVolunteers = volunteers?.filter(v => v.status === 'active').length || 0;
   
-  const totalSubscribers = subscribers?.filter(s => s.subscribed).length || 0;
-  
   const upcomingEvents = events
     ?.filter(e => new Date(e.startDate) > new Date())
     .sort((a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime()) || [];
@@ -155,7 +145,7 @@ export default function DashboardContent() {
     .slice(0, 5) || [];
 
   /* ---------- skeleton while loading ---------- */
-  if (!posts || !events || !videos || !volunteers || !subscribers) {
+  if (!posts || !events || !videos || !volunteers) {
     return (
       <div className="max-w-7xl mx-auto">
         <div className="h-10 bg-slate-800 rounded mb-8 animate-pulse w-1/3" />
@@ -200,13 +190,6 @@ export default function DashboardContent() {
           icon={<FaHandshake />} 
           href="/admin/volunteers" 
           color="blue" 
-        />
-        <MetricCard 
-          label="Email Subscribers" 
-          value={totalSubscribers} 
-          icon={<FaEnvelope />} 
-          href="/admin/subscribers" 
-          color="purple" 
         />
         <MetricCard 
           label="Contributions" 

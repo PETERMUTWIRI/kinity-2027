@@ -22,7 +22,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import TiltCard from '@/components/TiltCard';
 import { EconomicIcon, AntiCorruptionIcon, HealthcareIcon, EducationIcon } from '@/components/PillarIcons';
 import SocialProof from '@/components/SocialProof';
-import NewsletterCTA from '@/components/NewsletterCTA';
+
 import HeroImageCarousel from '@/components/HeroImageCarousel';
 
 // ==========================================
@@ -188,45 +188,47 @@ export default function HomePage() {
     <div className="relative min-h-screen overflow-hidden">
       
       {/* ==========================================
-          HERO SECTION - Animated Gradient Mesh
+          HERO SECTION - Dynamic Animated Background
           ========================================== */}
-      <section className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-auto overflow-hidden">
         {/* Animated Gradient Mesh Background */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0074D9] via-[#0074D9] to-[#6B2C91]" />
+          {/* Base gradient - blue at top */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0074D9] via-[#0074D9] to-[#0074D9]" />
           
-          {/* Animated orbs */}
+          {/* Animated gradient orbs - Canva style */}
           <motion.div
-            className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-[#E91D0E]/30 rounded-full blur-[120px]"
+            className="absolute -top-20 -right-20 w-[700px] h-[700px] bg-[#E91D0E]/25 rounded-full blur-[100px]"
             animate={{
-              x: [0, 50, 0],
-              y: [0, -30, 0],
-              scale: [1, 1.1, 1],
+              x: [0, 80, 0, -40, 0],
+              y: [0, -60, 40, 0, 0],
+              scale: [1, 1.2, 0.9, 1.1, 1],
             }}
             transition={{
-              duration: 8,
+              duration: 15,
               repeat: Infinity,
               ease: "easeInOut",
             }}
           />
           <motion.div
-            className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-[#6B2C91]/40 rounded-full blur-[100px]"
+            className="absolute top-1/3 -left-32 w-[600px] h-[600px] bg-[#6B2C91]/35 rounded-full blur-[90px]"
             animate={{
-              x: [0, -40, 0],
-              y: [0, 40, 0],
-              scale: [1, 1.2, 1],
+              x: [0, -60, 0, 80, 0],
+              y: [0, 40, -80, 0, 0],
+              scale: [1, 0.8, 1.3, 1, 1],
             }}
             transition={{
-              duration: 10,
+              duration: 18,
               repeat: Infinity,
               ease: "easeInOut",
             }}
           />
           <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/10 rounded-full blur-[150px]"
+            className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-white/15 rounded-full blur-[80px]"
             animate={{
-              scale: [1, 1.3, 1],
-              opacity: [0.1, 0.2, 0.1],
+              x: [0, 50, -50, 0],
+              y: [0, -30, 30, 0],
+              scale: [1, 1.4, 1],
             }}
             transition={{
               duration: 12,
@@ -234,139 +236,249 @@ export default function HomePage() {
               ease: "easeInOut",
             }}
           />
+          <motion.div
+            className="absolute top-20 left-1/3 w-[400px] h-[400px] bg-[#0074D9]/40 rounded-full blur-[70px]"
+            animate={{
+              x: [0, -40, 60, 0],
+              y: [0, 60, -40, 0],
+              scale: [1, 1.2, 0.8, 1],
+            }}
+            transition={{
+              duration: 14,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          
+          {/* Animated wave overlay */}
+          <div className="absolute inset-0 opacity-30">
+            <svg className="absolute w-full h-full" preserveAspectRatio="none">
+              <motion.path
+                d="M0,50 Q250,30 500,50 T1000,50 L1000,100 L0,100 Z"
+                fill="url(#waveGradient1)"
+                animate={{
+                  d: [
+                    "M0,50 Q250,30 500,50 T1000,50 L1000,100 L0,100 Z",
+                    "M0,50 Q250,70 500,50 T1000,50 L1000,100 L0,100 Z",
+                    "M0,50 Q250,30 500,50 T1000,50 L1000,100 L0,100 Z",
+                  ]
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+              <defs>
+                <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="rgba(255,255,255,0.1)" />
+                  <stop offset="100%" stopColor="rgba(255,255,255,0)" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          
+          {/* Floating particles */}
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-white/40 rounded-full"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                y: [0, -100, 0],
+                opacity: [0, 1, 0],
+                scale: [0, 1, 0],
+              }}
+              transition={{
+                duration: 4 + Math.random() * 4,
+                repeat: Infinity,
+                delay: Math.random() * 4,
+                ease: "easeInOut",
+              }}
+            />
+          ))}
+          
+          {/* Gradient fade to white at bottom */}
+          <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-white via-white/80 to-transparent" />
           
           {/* Grid pattern overlay */}
-          <div className="absolute inset-0 opacity-[0.05]" style={{ 
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-            backgroundSize: '60px 60px'
+          <div className="absolute inset-0 opacity-[0.03]" style={{ 
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px)`,
+            backgroundSize: '80px 80px'
           }} />
         </div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 lg:pt-32 lg:pb-24">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        {/* Hero Content - Optimized spacing, no blank space */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-8 lg:pt-28 lg:pb-12">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center">
             
             {/* LEFT: Text Content */}
-            <div className="space-y-6 text-center lg:text-left order-2 lg:order-1">
+            <div className="space-y-4 text-center lg:text-left order-2 lg:order-1">
               
               {/* Mobile: Compact circular carousel above headline */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-                className="lg:hidden flex justify-center mb-6"
+                initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+                animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+                className="lg:hidden flex justify-center mb-4"
               >
                 <div className="relative">
                   {/* Glow */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-white/10 rounded-full blur-2xl scale-125" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-white/10 rounded-full blur-2xl scale-125 animate-pulse" />
                   {/* Circular Carousel */}
-                  <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+                  <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-white shadow-2xl">
                     <HeroImageCarousel
                       images={[
                         { src: '/images/president.jpeg', alt: 'Dr. Isaac Newton Kinity - Presidential Candidate' },
                         { src: '/images/kinity-1.jpeg', alt: 'Dr. Kinity at Rally' },
                         { src: '/images/kinity-2.jpeg', alt: 'Dr. Kinity with Community' },
                       ]}
-                      interval={6000}
-                      transitionDuration={1500}
+                      interval={5000}
+                      transitionDuration={1200}
                     />
                   </div>
                   {/* Badge */}
-                  <div className="absolute -bottom-1 -right-1 bg-white rounded-full p-2 shadow-xl">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#E91D0E] to-[#BA170C] flex items-center justify-center overflow-hidden">
+                  <motion.div 
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
+                    className="absolute -bottom-1 -right-1 bg-white rounded-full p-2 shadow-xl"
+                  >
+                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#E91D0E] to-[#BA170C] flex items-center justify-center overflow-hidden">
                       <Image
                         src="/images/kenya-flag.png"
                         alt="Kenya"
-                        width={24}
-                        height={16}
+                        width={22}
+                        height={14}
                         className="object-cover rounded-sm"
                       />
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
               </motion.div>
 
-              {/* Main Headline */}
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
-                className="space-y-3"
+              {/* Main Headline - Enhanced with text animations */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="space-y-1"
               >
-                <span className="block font-slogan text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white tracking-tight drop-shadow-lg">
-                  KENYA&apos;S <span className="text-[#E91D0E]">HOPE</span>
-                </span>
-                <span className="block font-headline text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white/95 drop-shadow-md">
-                  DR. ISAAC NEWTON KINITY
-                </span>
-              </motion.h1>
+                {/* Name - Primary Focus with character animation */}
+                <motion.h1 
+                  className="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-white tracking-tight"
+                >
+                  <span className="inline-block overflow-hidden">
+                    {"Dr. Isaac Newton Kinity".split("").map((char, i) => (
+                      <motion.span
+                        key={i}
+                        initial={{ y: 40, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{
+                          duration: 0.4,
+                          delay: 0.1 + i * 0.03,
+                          ease: [0.22, 1, 0.36, 1],
+                        }}
+                        className="inline-block drop-shadow-lg"
+                        style={{ whiteSpace: char === " " ? "pre" : "normal" }}
+                      >
+                        {char}
+                      </motion.span>
+                    ))}
+                  </span>
+                </motion.h1>
+                
+                {/* Role - Secondary with gradient text effect */}
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                >
+                  <span className="block font-slogan text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-wider">
+                    <span className="bg-gradient-to-r from-[#E91D0E] via-[#ff6b5b] to-[#E91D0E] bg-clip-text text-transparent animate-pulse">
+                      PRESIDENTIAL CANDIDATE 2027
+                    </span>
+                  </span>
+                </motion.div>
+              </motion.div>
 
-              {/* Subheadline */}
+              {/* Tagline - Supporting with fade up */}
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-lg md:text-xl lg:text-2xl text-white max-w-xl mx-auto lg:mx-0 font-medium"
+                transition={{ duration: 0.6, delay: 1 }}
+                className="text-base md:text-lg text-white/90 max-w-xl mx-auto lg:mx-0 font-medium italic"
               >
-                The Incoming President 2027 — Committed to the Service of Kenyans
+                Committed to the Service of Kenyans
               </motion.p>
 
-              {/* Key Message */}
+              {/* Key Message - Highlight with slide in */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 1.1 }}
                 className="max-w-lg mx-auto lg:mx-0"
               >
-                <p className="text-base md:text-lg text-white/95 border-l-4 border-[#E91D0E] pl-4 text-left leading-relaxed">
+                <p className="text-sm md:text-base text-white/90 border-l-4 border-[#E91D0E] pl-4 text-left leading-relaxed bg-white/5 backdrop-blur-sm rounded-r-lg py-2">
                   No Recycling of Corrupt Politicians. A new era of leadership built on integrity, 
                   economic transformation, and unwavering commitment to every Kenyan.
                 </p>
               </motion.div>
 
-              {/* CTA Buttons */}
+              {/* CTA Buttons with hover effects */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
+                transition={{ duration: 0.6, delay: 1.2 }}
                 className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3 pt-2"
               >
                 <Link
                   href="/join-us"
-                  className="group inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-xl bg-[#E91D0E] text-white font-bold text-base md:text-lg hover:bg-[#BA170C] transition-all duration-300 hover:shadow-xl hover:shadow-[#E91D0E]/30 hover:-translate-y-1 w-full sm:w-auto justify-center"
+                  className="group relative inline-flex items-center gap-2 px-6 py-3 md:px-7 md:py-3.5 rounded-xl bg-[#E91D0E] text-white font-bold text-base md:text-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-[#E91D0E]/40 hover:-translate-y-1 w-full sm:w-auto justify-center"
                 >
-                  <FaHandshake className="w-5 h-5" />
-                  Join the Movement
-                  <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  {/* Shine effect */}
+                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                  <FaHandshake className="w-5 h-5 relative z-10" />
+                  <span className="relative z-10">Join the Movement</span>
+                  <FaArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   href="/about"
-                  className="group inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-xl bg-white text-[#0074D9] font-bold text-base md:text-lg hover:bg-slate-50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 w-full sm:w-auto justify-center"
+                  className="group inline-flex items-center gap-2 px-6 py-3 md:px-7 md:py-3.5 rounded-xl bg-white text-[#0074D9] font-bold text-base md:text-lg hover:bg-slate-50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 w-full sm:w-auto justify-center"
                 >
-                  <FaFlag className="w-5 h-5" />
+                  <FaFlag className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                   Learn More
                 </Link>
               </motion.div>
 
-              {/* Stats Bar - Clean white card style */}
+              {/* Stats Bar - Compact with stagger animation */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.7 }}
-                className="pt-6"
+                transition={{ duration: 0.6, delay: 1.3 }}
+                className="pt-4"
               >
-                <div className="inline-flex flex-wrap justify-center lg:justify-start gap-6 md:gap-10 bg-white rounded-2xl px-6 py-4 md:px-8 md:py-5 shadow-xl shadow-blue-900/20">
+                <div className="inline-flex flex-wrap justify-center lg:justify-start gap-4 md:gap-6 bg-white rounded-xl px-5 py-3 shadow-xl shadow-blue-900/20">
                   {[
                     { value: '47', label: 'Counties', suffix: '+' },
                     { value: '50', label: 'Million Kenyans', suffix: 'M+' },
                     { value: '1', label: 'Vision', suffix: '' },
                   ].map((stat, i) => (
-                    <div key={i} className="text-center">
-                      <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0074D9]">
+                    <motion.div 
+                      key={i} 
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 1.4 + i * 0.1, type: "spring" }}
+                      className="text-center"
+                    >
+                      <div className="text-xl md:text-2xl lg:text-3xl font-bold text-[#0074D9]">
                         {stat.value}<span className="text-[#E91D0E]">{stat.suffix}</span>
                       </div>
-                      <div className="text-xs md:text-sm text-slate-600 font-medium">{stat.label}</div>
-                    </div>
+                      <div className="text-xs text-slate-600 font-medium">{stat.label}</div>
+                    </motion.div>
                   ))}
                 </div>
               </motion.div>
@@ -374,69 +486,93 @@ export default function HomePage() {
 
             {/* RIGHT: Dr. Kinity Portrait - Hidden on mobile, shown on lg+ */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.4, type: "spring", stiffness: 80 }}
               className="hidden lg:block relative order-1 lg:order-2"
             >
-              <div className="relative aspect-[3/4] max-w-sm xl:max-w-md mx-auto">
-                {/* Glow Effect - White glow for blue gradient */}
-                <div className="absolute -inset-4 bg-gradient-to-br from-white/40 via-white/20 to-transparent rounded-3xl blur-2xl" />
+              <div className="relative aspect-[3/4] max-w-xs xl:max-w-sm mx-auto">
+                {/* Animated Glow Effect */}
+                <motion.div 
+                  animate={{ 
+                    opacity: [0.4, 0.7, 0.4],
+                    scale: [1, 1.05, 1],
+                  }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -inset-4 bg-gradient-to-br from-white/50 via-white/30 to-transparent rounded-3xl blur-2xl" 
+                />
                 
-                {/* Image Carousel Container */}
-                <div className="relative w-full h-full rounded-3xl overflow-hidden border-4 border-white shadow-2xl">
+                {/* Image Carousel Container with hover lift */}
+                <motion.div 
+                  whileHover={{ scale: 1.02, rotateY: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="relative w-full h-full rounded-3xl overflow-hidden border-4 border-white shadow-2xl"
+                  style={{ transformStyle: "preserve-3d", perspective: 1000 }}
+                >
                   <HeroImageCarousel
                     images={[
                       { src: '/images/president.jpeg', alt: 'Dr. Isaac Newton Kinity - Presidential Candidate' },
                       { src: '/images/kinity-1.jpeg', alt: 'Dr. Kinity at Rally' },
                       { src: '/images/kinity-2.jpeg', alt: 'Dr. Kinity with Community' },
                     ]}
-                    interval={6000}
-                    transitionDuration={1500}
+                    interval={5000}
+                    transitionDuration={1200}
                   />
-                </div>
+                </motion.div>
 
-                {/* Floating Badge */}
+                {/* Floating Badge with bounce */}
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8, duration: 0.5 }}
-                  className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl px-5 py-3 border border-slate-100"
+                  initial={{ opacity: 0, y: 30, scale: 0.8 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ delay: 1, type: "spring", stiffness: 200, damping: 15 }}
+                  whileHover={{ scale: 1.05 }}
+                  className="absolute -bottom-3 -left-3 bg-white rounded-2xl shadow-xl px-4 py-2.5 border border-slate-100"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#E91D0E] to-[#BA170C] flex items-center justify-center overflow-hidden">
+                  <div className="flex items-center gap-2.5">
+                    <motion.div 
+                      animate={{ rotate: [0, 10, -10, 0] }}
+                      transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                      className="w-9 h-9 rounded-full bg-gradient-to-br from-[#E91D0E] to-[#BA170C] flex items-center justify-center overflow-hidden"
+                    >
                       <Image
                         src="/images/kenya-flag.png"
                         alt="Kenya Flag"
-                        width={28}
-                        height={20}
+                        width={24}
+                        height={18}
                         className="object-cover rounded-sm"
                       />
-                    </div>
+                    </motion.div>
                     <div>
-                      <p className="text-xs text-slate-500">Presidential</p>
-                      <p className="text-base font-bold text-[#111111]">Candidate 2027</p>
+                      <p className="text-[10px] text-slate-500 leading-tight">Presidential</p>
+                      <p className="text-sm font-bold text-[#111111] leading-tight">Candidate 2027</p>
                     </div>
                   </div>
                 </motion.div>
 
-                {/* Decorative Ring - White */}
+                {/* Decorative Rings - Animated */}
                 <motion.div
                   animate={{ rotate: 360 }}
-                  transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-                  className="absolute -inset-8 border-2 border-dashed border-white/40 rounded-3xl pointer-events-none"
+                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                  className="absolute -inset-6 border-2 border-dashed border-white/30 rounded-3xl pointer-events-none"
+                />
+                <motion.div
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                  className="absolute -inset-10 border border-white/20 rounded-[2rem] pointer-events-none"
                 />
               </div>
             </motion.div>
           </div>
         </div>
-
+        
+        {/* Bottom spacing for gradient transition */}
+        <div className="relative z-10 h-16" />
       </section>
 
       {/* ==========================================
           VISION SECTION - Policy Pillars
           ========================================== */}
-      <section id="vision" className="section-padding bg-white relative">
+      <section id="vision" className="pt-8 pb-16 md:pt-12 md:pb-24 lg:pt-16 lg:pb-32 px-4 sm:px-6 lg:px-8 bg-white relative">
         <div className="container-presidential">
           {/* Section Header */}
           <ScrollReveal>
@@ -981,10 +1117,7 @@ export default function HomePage() {
           ========================================== */}
       <SocialProof />
 
-      {/* ==========================================
-          NEWSLETTER SIGNUP SECTION
-          ========================================== */}
-      <NewsletterCTA />
+
 
       {/* ==========================================
           CALL TO ACTION SECTION - with Video Background

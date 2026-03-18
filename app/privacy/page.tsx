@@ -45,7 +45,7 @@ export default function PrivacyPolicyPage() {
               <p className="text-xl text-brand-text/70 mb-8">
                 The National Vision Party is committed to protecting your privacy. This Privacy Policy explains 
                 how we collect, use, and safeguard your personal information when you visit our 
-                website, make donations, sign up to volunteer, register for events, or subscribe to our newsletter.
+                website, make donations, sign up to volunteer, or register for events.
               </p>
 
               <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">1. Information We Collect</h2>
@@ -57,7 +57,6 @@ export default function PrivacyPolicyPage() {
               <ul className="list-disc pl-6 mb-6 space-y-2">
                 <li>Make a donation (name, email address, billing address, employer/occupation information as required by law)</li>
                 <li>Sign up to volunteer (name, email address, phone number, skills/interests)</li>
-                <li>Subscribe to our newsletter (email address, name optional)</li>
                 <li>Register for campaign events (name, email, contact information)</li>
                 <li>Contact us via email or contact forms</li>
                 <li>Sign petitions or pledge to vote</li>
@@ -90,7 +89,6 @@ export default function PrivacyPolicyPage() {
               <ul className="list-disc pl-6 mb-6 space-y-2">
                 <li>Process and confirm donations and contributions</li>
                 <li>Send campaign updates, event notifications, and volunteer opportunities</li>
-                <li>Deliver our newsletter with news about the campaign and policy updates</li>
                 <li>Respond to your inquiries and provide support</li>
                 <li>Improve our website and personalize your experience</li>
                 <li>Comply with legal obligations, including campaign finance reporting</li>
@@ -105,7 +103,6 @@ export default function PrivacyPolicyPage() {
               </p>
               <ul className="list-disc pl-6 mb-6 space-y-2">
                 <li><strong>Payment Processors:</strong> For secure donation processing (PCI DSS compliant)</li>
-                <li><strong>Email Service Providers:</strong> To deliver newsletters and campaign communications</li>
                 <li><strong>Analytics Services:</strong> To understand website usage and improve our services</li>
                 <li><strong>Legal Authorities:</strong> When required by law, such as for campaign finance reporting, or to protect our rights</li>
               </ul>
@@ -152,7 +149,7 @@ export default function PrivacyPolicyPage() {
               <p className="mb-4">
                 We retain your personal information only for as long as necessary to fulfill the 
                 purposes for which it was collected, including legal, accounting, or reporting 
-                requirements. Newsletter subscriber data is retained until you unsubscribe. 
+                requirements. 
                 Donation records may be retained longer to comply with campaign finance laws.
               </p>
 

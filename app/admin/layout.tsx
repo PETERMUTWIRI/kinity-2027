@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { 
   FaHome, FaNewspaper, FaCalendarAlt, FaVideo, FaImages, 
-  FaHeart, FaEnvelope, FaFlag, FaSignOutAlt, FaBars, FaTimes, FaHandshake,
+  FaHeart, FaFlag, FaSignOutAlt, FaBars, FaTimes, FaHandshake,
 } from 'react-icons/fa';
 
 const adminNavLinks = [
@@ -17,7 +17,6 @@ const adminNavLinks = [
   { name: 'Gallery', href: '/admin/gallery', icon: FaImages },
   { name: 'Donations', href: '/admin/donations', icon: FaHeart },
   { name: 'Volunteers', href: '/admin/volunteers', icon: FaHandshake },
-  { name: 'Subscribers', href: '/admin/subscribers', icon: FaEnvelope },
   { name: 'Manifesto', href: '/admin/manifesto', icon: FaFlag },
 ];
 
