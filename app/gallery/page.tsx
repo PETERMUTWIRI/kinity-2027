@@ -9,7 +9,7 @@ import { Suspense } from 'react';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Media Center | Isaac Kinity',
+  title: 'Media Center | National Vision Party',
   description: 'Photos, videos, speeches, interviews, and campaign moments.',
 };
 

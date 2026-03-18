@@ -26,8 +26,8 @@ import SocialProof from '@/components/SocialProof';
 import NewsletterCTA from '@/components/NewsletterCTA';
 
 // ==========================================
-// ISAAC KINITY - HOMEPAGE
-// The Movement Begins
+// NATIONAL VISION PARTY - HOMEPAGE
+// Kenya's Hope 2027
 // ==========================================
 
 interface Post {
@@ -1011,7 +1011,7 @@ export default function HomePage() {
         <div className="absolute inset-0 w-full h-full overflow-hidden">
           <iframe
             src="https://www.youtube.com/embed/BqPibiAzqIk?autoplay=1&mute=1&loop=1&playlist=BqPibiAzqIk&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&start=0"
-            title="Kinity Campaign Movement"
+            title="National Vision Party Campaign Movement"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             className="absolute w-full h-full"
             style={{

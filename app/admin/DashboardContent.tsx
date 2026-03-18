@@ -1,4 +1,4 @@
-// app/admin/DashboardContent.tsx - ISAAC KINITY CAMPAIGN DASHBOARD
+// app/admin/DashboardContent.tsx - NATIONAL VISION PARTY DASHBOARD
 'use client';
 
 import useSWR from 'swr';

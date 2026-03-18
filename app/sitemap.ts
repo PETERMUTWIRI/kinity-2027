@@ -5,7 +5,7 @@ import { prisma } from '@/lib/prisma';
 export const dynamic = 'force-dynamic';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://www.isaackinity.net';
+  const baseUrl = 'https://www.nationalvisionparty.com';
   
   // Static pages
   const staticPages = [

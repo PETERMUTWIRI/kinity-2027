@@ -18,10 +18,10 @@ export default function SignUpPage() {
           <div className="text-center mb-8">
             <Link href="/" className="inline-flex items-center gap-3">
               <div className="relative w-14 h-14 rounded-xl overflow-hidden shadow-lg ring-2 ring-[#0074D9]/30">
-                <Image src="/isaac_kinity-logo.jpeg" alt="Isaac Kinity" fill className="object-cover" />
+                <Image src="/isaac_kinity-logo.jpeg" alt="National Vision Party" fill className="object-cover" />
               </div>
               <div className="text-left">
-                <p className="font-slogan text-xl text-[#E91D0E]">Isaac Kinity</p>
+                <p className="font-slogan text-xl text-[#E91D0E]">National Vision Party</p>
                 <p className="text-xs text-slate-400">Admin Portal</p>
               </div>
             </Link>

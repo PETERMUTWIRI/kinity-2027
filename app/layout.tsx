@@ -6,7 +6,7 @@ import PageTransition from '@/components/PageTransition';
 import BackToTop from '@/components/BackToTop';
 
 // ==========================================
-// KINITY 2027 - PRESIDENTIAL CAMPAIGN
+// NATIONAL VISION PARTY - PRESIDENTIAL CAMPAIGN
 // Root Layout with SEO Optimization
 // ==========================================
 
@@ -40,21 +40,21 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   // Core title template - Shows in browser tab with favicon
   title: {
-    default: "Isaac Kinity",
-    template: "%s | Isaac Kinity",
+    default: "National Vision Party",
+    template: "%s | National Vision Party",
   },
   
   // Application name for installed PWA
-  applicationName: "Isaac Kinity",
+  applicationName: "National Vision Party",
   
   // Primary description
-  description: "Isaac Kinity - Empowering communities and transforming lives through service and dedication.",
+  description: "National Vision Party - Kenya's Hope 2027. Empowering communities and transforming lives through service and dedication.",
   
   // Keywords for search engines
   keywords: [
     'Isaac Newton Kinity',
     'Dr Kinity',
-    'Kinity 2027',
+    'National Vision Party',
     'Kenya President 2027',
     'Kenya\'s Hope',
     'Kenyan Politics',
@@ -68,9 +68,9 @@ export const metadata: Metadata = {
   ],
   
   // Authors and ownership
-  authors: [{ name: "Dr. Isaac Newton Kinity Campaign" }],
-  creator: "Dr. Isaac Newton Kinity",
-  publisher: "Kinity 2027 Campaign",
+  authors: [{ name: "National Vision Party" }],
+  creator: "National Vision Party",
+  publisher: "National Vision Party",
   
   // Format detection
   formatDetection: {
@@ -80,14 +80,14 @@ export const metadata: Metadata = {
   },
   
   // Canonical URL base
-  metadataBase: new URL('https://www.isaackinity.net'),
+  metadataBase: new URL('https://www.nationalvisionparty.com'),
   
   // Alternates
   alternates: {
     canonical: '/',
   },
   
-  // Icons - Using Isaac Kinity Logo (isaac_kinity-logo.jpeg)
+  // Icons - Using National Vision Party Logo (isaac_kinity-logo.jpeg)
   icons: {
     icon: [
       { url: '/isaac_kinity-logo.jpeg', sizes: '32x32', type: 'image/jpeg' },
@@ -104,10 +104,10 @@ export const metadata: Metadata = {
   
   // Open Graph - Social sharing
   openGraph: {
-    title: "Dr. Isaac Newton Kinity | Kenya's Hope 2027",
-    description: "Join the movement for a better Kenya. Dr. Isaac Newton Kinity - Committed to the service of Kenyans. The Incoming President 2027.",
-    url: 'https://www.isaackinity.net',
-    siteName: "Dr. Isaac Newton Kinity 2027",
+    title: "National Vision Party | Kenya's Hope 2027",
+    description: "Join the movement for a better Kenya. National Vision Party - Committed to the service of Kenyans. Kenya's Hope 2027.",
+    url: 'https://www.nationalvisionparty.com',
+    siteName: "National Vision Party 2027",
     locale: 'en_KE',
     type: 'website',
     images: [
@@ -123,11 +123,11 @@ export const metadata: Metadata = {
   // Twitter Cards
   twitter: {
     card: 'summary_large_image',
-    title: "Dr. Isaac Newton Kinity | Kenya's Hope 2027",
-    description: "Join the movement for a better Kenya. Dr. Isaac Newton Kinity - Committed to the service of Kenyans.",
+    title: "National Vision Party | Kenya's Hope 2027",
+    description: "Join the movement for a better Kenya. National Vision Party - Committed to the service of Kenyans.",
     images: ['/isaac_kinity-logo.jpeg'],
-    creator: '@Kinity2027',
-    site: '@Kinity2027',
+    creator: '@NVP_Kenya',
+    site: '@NVP_Kenya',
   },
   
   // Robots
@@ -154,9 +154,9 @@ export const metadata: Metadata = {
   // Additional metadata
   other: {
     'og:country-name': 'Kenya',
-    'og:email': 'info@isaackinity.net',
+    'og:email': 'info@nationalvisionparty.com',
     'og:phone_number': '+254 XXX XXX XXX',
-    ' political-party': "Independent",
+    'political-party': "National Vision Party",
     'campaign-slogan': "Kenya's Hope",
     'election-year': '2027',
   },
@@ -208,24 +208,24 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Person',
-              name: 'Dr. Isaac Newton Kinity',
+              name: 'Dr. Isaac Newton Kinity - National Vision Party',
               alternateName: 'Kinity',
               description: "Presidential Candidate Kenya 2027. Committed to the service of Kenyans.",
-              url: 'https://www.isaackinity.net',
-              image: 'https://www.isaackinity.net/dr-kinity-profile.jpg',
+              url: 'https://www.nationalvisionparty.com',
+              image: 'https://www.nationalvisionparty.com/dr-kinity-profile.jpg',
               jobTitle: 'Presidential Candidate',
               worksFor: {
                 '@type': 'Organization',
-                name: "Kinity 2027 Campaign",
+                name: "National Vision Party",
               },
               address: {
                 '@type': 'PostalAddress',
                 addressCountry: 'KE',
               },
               sameAs: [
-                'https://twitter.com/Kinity2027',
-                'https://facebook.com/Kinity2027',
-                'https://instagram.com/Kinity2027',
+                'https://twitter.com/NVP_Kenya',
+                'https://facebook.com/NationalVisionParty',
+                'https://instagram.com/NationalVisionParty',
               ],
             }),
           }}
@@ -238,17 +238,17 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
-              name: "Kinity 2027 Campaign",
+              name: "National Vision Party",
               alternateName: "Kenya's Hope",
-              url: 'https://www.isaackinity.net',
-              logo: 'https://www.isaackinity.net/logo.png',
+              url: 'https://www.nationalvisionparty.com',
+              logo: 'https://www.nationalvisionparty.com/logo.png',
               description: "Official campaign organization for Dr. Isaac Newton Kinity's 2027 presidential bid.",
               foundingDate: '2024',
               politicalParty: 'Independent',
               slogan: "Kenya's Hope - Committed to the Service of Kenyans",
               sameAs: [
-                'https://twitter.com/Kinity2027',
-                'https://facebook.com/Kinity2027',
+                'https://twitter.com/NVP_Kenya',
+                'https://facebook.com/NationalVisionParty',
               ],
             }),
           }}

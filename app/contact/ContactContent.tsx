@@ -46,34 +46,34 @@ const CAMPAIGN_CONTACTS = {
     description: 'For urgent incidents, security concerns, and immediate campaign matters',
   },
   general: {
-    email: 'info@isaackinity.net',
+    email: 'info@nationalvisionparty.com',
     whatsapp: '+254 711 000 000',
     phone: '+254 711 000 000',
     hours: 'Mon - Fri: 8:00 AM - 6:00 PM EAT',
   },
   media: {
-    email: 'press@isaackinity.net',
+    email: 'press@nationalvisionparty.com',
     whatsapp: '+254 722 000 000',
     phone: '+254 722 000 000',
     label: 'Media Relations',
   },
   volunteer: {
-    email: 'volunteer@isaackinity.net',
+    email: 'volunteer@nationalvisionparty.com',
     phone: '+254 733 000 000',
   },
   events: {
-    email: 'events@isaackinity.net',
+    email: 'events@nationalvisionparty.com',
     phone: '+254 744 000 000',
   },
   policy: {
-    email: 'policy@isaackinity.net',
+    email: 'policy@nationalvisionparty.com',
   },
   donations: {
-    email: 'donations@isaackinity.net',
+    email: 'donations@nationalvisionparty.com',
     phone: '+254 755 000 000',
   },
   corruption: {
-    email: 'integrity@isaackinity.net',
+    email: 'integrity@nationalvisionparty.com',
     whatsapp: '+254 766 000 000',
     anonymous: true,
     label: 'Anti-Corruption Hotline',
@@ -321,10 +321,10 @@ export default function ContactContent() {
   };
 
   const socialLinks = [
-    { icon: FaFacebook, href: 'https://facebook.com/Kinity2027', label: 'Facebook', color: 'hover:bg-blue-600', followers: '50K+' },
-    { icon: FaTwitter, href: 'https://twitter.com/Kinity2027', label: 'Twitter', color: 'hover:bg-sky-500', followers: '35K+' },
-    { icon: FaInstagram, href: 'https://instagram.com/Kinity2027', label: 'Instagram', color: 'hover:bg-pink-600', followers: '45K+' },
-    { icon: FaYoutube, href: 'https://youtube.com/@Kinity2027', label: 'YouTube', color: 'hover:bg-red-600', followers: '20K+' },
+    { icon: FaFacebook, href: 'https://facebook.com/NationalVisionParty', label: 'Facebook', color: 'hover:bg-blue-600', followers: '50K+' },
+    { icon: FaTwitter, href: 'https://twitter.com/NVP_Kenya', label: 'Twitter', color: 'hover:bg-sky-500', followers: '35K+' },
+    { icon: FaInstagram, href: 'https://instagram.com/NationalVisionParty', label: 'Instagram', color: 'hover:bg-pink-600', followers: '45K+' },
+    { icon: FaYoutube, href: 'https://youtube.com/@NationalVisionParty', label: 'YouTube', color: 'hover:bg-red-600', followers: '20K+' },
   ];
 
   return (
@@ -695,7 +695,7 @@ export default function ContactContent() {
                       <div className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center">
                         <FaEnvelope className="w-5 h-5 text-[#0074D9]" />
                       </div>
-                      <span>{selectedCounty.toLowerCase().replace(/\s+/g, '.')}@isaackinity.net</span>
+                      <span>{selectedCounty.toLowerCase().replace(/\s+/g, '.')}@nationalvisionparty.com</span>
                     </div>
                     <div className="flex items-center gap-3 text-slate-600">
                       <div className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center">

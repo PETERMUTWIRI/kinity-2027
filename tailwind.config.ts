@@ -45,7 +45,7 @@ const config: Config = {
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         
-        // ISAAC KINITY BRAND COLORS - Presidential Campaign Palette
+        // NATIONAL VISION PARTY BRAND COLORS - Presidential Campaign Palette
         kinity: {
           // Primary Trust Blue - Stability, presidential authority
           blue: {

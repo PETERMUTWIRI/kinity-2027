@@ -559,7 +559,7 @@ export default function SupportPage() {
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between">
                     <span className="text-slate-400">Account Name:</span>
-                    <span className="text-white font-mono">Isaac Kinity Campaign</span>
+                    <span className="text-white font-mono">National Vision Party</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-400">Bank:</span>
@@ -575,7 +575,7 @@ export default function SupportPage() {
                   </div>
                 </div>
                 <p className="text-xs text-slate-500 mt-4">
-                  For international transfers. Email receipt to donations@isaackinity.net
+                  For international transfers. Email receipt to donations@nationalvisionparty.com
                 </p>
               </div>
             </ScrollReveal>

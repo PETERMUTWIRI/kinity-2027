@@ -19,7 +19,7 @@ import {
 import ElectionCountdown from './ElectionCountdown';
 
 // ==========================================
-// Isaac Kinity - MODERN NAVIGATION
+// National Vision Party - MODERN NAVIGATION
 // Smart scroll behavior with logo integration
 // ==========================================
 
@@ -33,10 +33,10 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { icon: FaFacebook, href: 'https://facebook.com/isaackinity', label: 'Facebook', color: '#1877F2' },
-  { icon: FaTwitter, href: 'https://twitter.com/isaackinity', label: 'Twitter', color: '#1DA1F2' },
-  { icon: FaInstagram, href: 'https://instagram.com/isaackinity', label: 'Instagram', color: '#E4405F' },
-  { icon: FaYoutube, href: 'https://youtube.com/@isaackinity', label: 'YouTube', color: '#FF0000' },
+  { icon: FaFacebook, href: 'https://facebook.com/NationalVisionParty', label: 'Facebook', color: '#1877F2' },
+  { icon: FaTwitter, href: 'https://twitter.com/NVP_Kenya', label: 'Twitter', color: '#1DA1F2' },
+  { icon: FaInstagram, href: 'https://instagram.com/NationalVisionParty', label: 'Instagram', color: '#E4405F' },
+  { icon: FaYoutube, href: 'https://youtube.com/@NationalVisionParty', label: 'YouTube', color: '#FF0000' },
 ];
 
 export default function Navbar() {
@@ -144,18 +144,21 @@ export default function Navbar() {
                 >
                   <Image
                     src="/isaac_kinity-logo.jpeg"
-                    alt="Isaac Kinity Logo"
+                    alt="National Vision Party Logo"
                     fill
                     className="object-cover"
                     priority
                   />
                 </motion.div>
                 <div className="block">
-                  <motion.p 
-                    className="font-slogan text-base sm:text-lg lg:text-xl leading-tight text-[#E91D0E] group-hover:text-[#0074D9] transition-colors duration-300"
-                  >
-                    Isaac Kinity
-                  </motion.p>
+                  <div className="hidden sm:block">
+                    <motion.p 
+                      className="font-slogan text-base sm:text-lg lg:text-xl leading-tight text-[#E91D0E] group-hover:text-[#0074D9] transition-colors duration-300"
+                    >
+                      National Vision Party
+                    </motion.p>
+                    <p className="text-xs text-slate-500 hidden lg:block">Kenya&apos;s Hope 2027</p>
+                  </div>
                 </div>
               </Link>
 
@@ -283,13 +286,13 @@ export default function Navbar() {
                     <div className="relative w-12 h-12 rounded-xl overflow-hidden shadow-md">
                       <Image
                         src="/isaac_kinity-logo.jpeg"
-                        alt="Isaac Kinity Logo"
+                        alt="National Vision Party Logo"
                         fill
                         className="object-cover"
                       />
                     </div>
                     <div>
-                      <p className="font-slogan text-lg text-[#E91D0E]">Isaac Kinity</p>
+                      <p className="font-slogan text-lg text-[#E91D0E]">National Vision Party</p>
                     </div>
                   </Link>
                   <motion.button
@@ -390,7 +393,7 @@ export default function Navbar() {
                   Committed to the Service of Kenyans
                 </p>
                 <p className="text-center text-xs text-slate-400 mt-1">
-                  © 2025 Isaac Kinity
+                  © 2025 National Vision Party
                 </p>
               </div>
             </motion.div>

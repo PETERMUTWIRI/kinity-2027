@@ -18,7 +18,7 @@ import {
 import ElectionCountdown from './ElectionCountdown';
 
 // ==========================================
-// ISAAC KINITY - PROFESSIONAL FOOTER
+// NATIONAL VISION PARTY - PROFESSIONAL FOOTER
 // Modern nonprofit footer with logo
 // ==========================================
 
@@ -45,10 +45,10 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: FaFacebook, href: 'https://facebook.com/Kinity2027', label: 'Facebook', color: '#1877F2' },
-  { icon: FaTwitter, href: 'https://twitter.com/Kinity2027', label: 'Twitter', color: '#1DA1F2' },
-  { icon: FaInstagram, href: 'https://instagram.com/Kinity2027', label: 'Instagram', color: '#E4405F' },
-  { icon: FaYoutube, href: 'https://youtube.com/@Kinity2027', label: 'YouTube', color: '#FF0000' },
+  { icon: FaFacebook, href: 'https://facebook.com/NationalVisionParty', label: 'Facebook', color: '#1877F2' },
+  { icon: FaTwitter, href: 'https://twitter.com/NVP_Kenya', label: 'Twitter', color: '#1DA1F2' },
+  { icon: FaInstagram, href: 'https://instagram.com/NationalVisionParty', label: 'Instagram', color: '#E4405F' },
+  { icon: FaYoutube, href: 'https://youtube.com/@NationalVisionParty', label: 'YouTube', color: '#FF0000' },
 ];
 
 export default function Footer() {
@@ -108,14 +108,14 @@ export default function Footer() {
               >
                 <Image
                   src="/isaac_kinity-logo.jpeg"
-                  alt="Isaac Kinity"
+                  alt="National Vision Party"
                   fill
                   className="object-cover"
                 />
               </motion.div>
               <div>
                 <span className="font-slogan text-2xl text-[#E91D0E] group-hover:text-white transition-colors block">
-                  ISAAC KINITY
+                  NATIONAL VISION PARTY
                 </span>
                 <span className="text-sm text-slate-400">Kenya&apos;s Hope 2027</span>
               </div>
@@ -128,11 +128,11 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="space-y-3">
               <a 
-                href="mailto:contact@isaackinity.net" 
+                href="mailto:info@nationalvisionparty.com" 
                 className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors"
               >
                 <FaEnvelope className="w-5 h-5 text-[#0074D9]" />
-                contact@isaackinity.net
+                info@nationalvisionparty.com
               </a>
               <a 
                 href="tel:+254XXXXXXXXX" 
@@ -238,7 +238,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-slate-500 text-sm text-center md:text-left">
-              &copy; {currentYear} Isaac Kinity. All rights reserved.
+              &copy; {currentYear} National Vision Party. All rights reserved.
             </p>
             <p className="text-slate-600 text-sm flex items-center gap-2">
               Made with <FaHeart className="w-4 h-4 text-[#E91D0E]" /> for Kenya

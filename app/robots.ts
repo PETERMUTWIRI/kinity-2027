@@ -17,7 +17,7 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: 'https://www.isaackinity.net/sitemap.xml',
-    host: 'https://www.isaackinity.net',
+    sitemap: 'https://www.nationalvisionparty.com/sitemap.xml',
+    host: 'https://www.nationalvisionparty.com',
   };
 }

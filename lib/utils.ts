@@ -1,4 +1,4 @@
-// Utility functions for Isaac Kinity
+// Utility functions for National Vision Party
 
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";

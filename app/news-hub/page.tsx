@@ -8,7 +8,7 @@ import { FaCalendar, FaArrowRight, FaNewspaper } from 'react-icons/fa';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'News Hub | Isaac Kinity',
+  title: 'News Hub | National Vision Party',
   description: 'Latest news, press releases, and campaign updates from Dr. Isaac Newton Kinity.',
 };
 

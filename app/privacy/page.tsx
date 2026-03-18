@@ -4,11 +4,11 @@ import { BreadcrumbSchema } from '@/components/SchemaMarkup';
 
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Isaac Kinity',
-  description: 'Learn how the Isaac Kinity Campaign collects, uses, and protects your personal information. Our commitment to your privacy and data security.',
+  title: 'Privacy Policy | National Vision Party',
+  description: 'Learn how the National Vision Party collects, uses, and protects your personal information. Our commitment to your privacy and data security.',
   keywords: ['privacy policy', 'data protection', 'GDPR', 'personal information', 'cookies', 'political campaign'],
   alternates: {
-    canonical: 'https://www.isaackinity.net/privacy',
+    canonical: 'https://www.nationalvisionparty.com/privacy',
   },
   robots: {
     index: true,
@@ -43,7 +43,7 @@ export default function PrivacyPolicyPage() {
             <div className="prose prose-lg max-w-none text-brand-text/80">
               
               <p className="text-xl text-brand-text/70 mb-8">
-                The Isaac Kinity Campaign is committed to protecting your privacy. This Privacy Policy explains 
+                The National Vision Party is committed to protecting your privacy. This Privacy Policy explains 
                 how we collect, use, and safeguard your personal information when you visit our 
                 website, make donations, sign up to volunteer, register for events, or subscribe to our newsletter.
               </p>
@@ -145,7 +145,7 @@ export default function PrivacyPolicyPage() {
                 <li>Request a copy of your data in a portable format</li>
               </ul>
               <p className="mb-4">
-                To exercise these rights, please contact us at <a href="mailto:contact@isaackinity.net" className="text-brand-dark hover:underline">contact@isaackinity.net</a>.
+                To exercise these rights, please contact us at <a href="mailto:info@nationalvisionparty.com" className="text-brand-dark hover:underline">info@nationalvisionparty.com</a>.
               </p>
 
               <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">7. Data Retention</h2>
@@ -176,9 +176,9 @@ export default function PrivacyPolicyPage() {
                 practices, please contact us:
               </p>
               <div className="bg-white rounded-xl p-6 mt-4 shadow-sm">
-                <p className="mb-1"><strong>Isaac Kinity Campaign</strong></p>
-                <p className="mb-1">Email: <a href="mailto:contact@isaackinity.net" className="text-brand-dark hover:underline">contact@isaackinity.net</a></p>
-                <p>General Inquiries: <a href="mailto:contact@isaackinity.net" className="text-brand-dark hover:underline">contact@isaackinity.net</a></p>
+                <p className="mb-1"><strong>National Vision Party</strong></p>
+                <p className="mb-1">Email: <a href="mailto:info@nationalvisionparty.com" className="text-brand-dark hover:underline">info@nationalvisionparty.com</a></p>
+                <p>General Inquiries: <a href="mailto:info@nationalvisionparty.com" className="text-brand-dark hover:underline">info@nationalvisionparty.com</a></p>
               </div>
 
             </div>
