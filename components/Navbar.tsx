@@ -151,14 +151,13 @@ export default function Navbar() {
                   />
                 </motion.div>
                 <div className="block">
-                  <div className="hidden sm:block">
-                    <motion.p 
-                      className="font-slogan text-base sm:text-lg lg:text-xl leading-tight text-[#E91D0E] group-hover:text-[#0074D9] transition-colors duration-300"
-                    >
-                      National Vision Party
-                    </motion.p>
-                    <p className="text-xs text-slate-500 hidden lg:block">Kenya&apos;s Hope 2027</p>
-                  </div>
+                  <motion.p 
+                    className="font-slogan text-sm sm:text-base lg:text-xl leading-tight text-[#E91D0E] group-hover:text-[#0074D9] transition-colors duration-300"
+                  >
+                    <span className="hidden sm:inline">National Vision Party</span>
+                    <span className="sm:hidden">NVP</span>
+                  </motion.p>
+                  <p className="text-xs text-slate-500 hidden lg:block">Kenya&apos;s Hope 2027</p>
                 </div>
               </Link>
 
