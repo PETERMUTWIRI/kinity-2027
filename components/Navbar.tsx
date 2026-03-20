@@ -170,7 +170,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="fixed top-0 left-0 right-0 z-50"
       >
-        {/* Top Bar - Enhanced with Social Icons & Contact Info */}
+        {/* Top Bar - Blue to Red Gradient */}
         <motion.div
           initial={false}
           animate={{ 
@@ -178,19 +178,22 @@ export default function Navbar() {
             opacity: isTopBarVisible ? 1 : 0,
           }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="bg-gradient-to-r from-[#0074D9] via-[#6B2C91] to-[#0074D9] overflow-hidden"
+          className="overflow-hidden"
+          style={{
+            background: 'linear-gradient(90deg, #0074D9 0%, #0074D9 60%, #E91D0E 85%, #E91D0E 100%)',
+          }}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between py-2 gap-4">
+            <div className="flex items-center justify-between py-2 gap-2 sm:gap-4">
               {/* Left - Countdown Timer */}
               <div className="flex-shrink-0">
                 <ElectionCountdown variant="navbar" />
               </div>
               
-              {/* Center - Slogan */}
-              <p className="flex-1 text-center text-white text-sm font-medium tracking-wide hidden lg:block">
-                <span className="font-slogan">KENYA&apos;S HOPE</span> — 
-                <span className="ml-2 opacity-90">Committed to the Service of Kenyans</span>
+              {/* Center - Slogan (Visible on all screens) */}
+              <p className="flex-1 text-center text-white text-xs sm:text-sm font-medium tracking-wide truncate">
+                <span className="font-slogan">KENYA&apos;S HOPE</span>
+                <span className="hidden sm:inline ml-2 opacity-90">— Committed to the Service of Kenyans</span>
               </p>
               
               {/* Right - Social Icons & Date */}
@@ -309,12 +312,12 @@ export default function Navbar() {
                                 className="flex items-start gap-3 px-4 py-3 hover:bg-slate-50 transition-colors group"
                               >
                                 {child.icon && (
-                                  <div className="w-8 h-8 rounded-lg bg-[#0074D9]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#0074D9] transition-colors">
-                                    <child.icon className="w-4 h-4 text-[#0074D9] group-hover:text-white transition-colors" />
+                                  <div className="w-8 h-8 rounded-lg bg-[#E91D0E]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#E91D0E] transition-colors">
+                                    <child.icon className="w-4 h-4 text-[#E91D0E] group-hover:text-white transition-colors" />
                                   </div>
                                 )}
                                 <div>
-                                  <p className="font-medium text-slate-700 group-hover:text-[#0074D9] transition-colors text-sm">
+                                  <p className="font-medium text-slate-700 group-hover:text-[#E91D0E] transition-colors text-sm">
                                     {child.name}
                                   </p>
                                   {child.description && (
@@ -548,9 +551,9 @@ export default function Navbar() {
                             key={child.name}
                             href={child.href}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0074D9] transition-colors"
+                            className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-slate-600 hover:bg-slate-50 hover:text-[#E91D0E] transition-colors"
                           >
-                            {child.icon && <child.icon className="w-4 h-4" />}
+                            {child.icon && <child.icon className="w-4 h-4 text-[#E91D0E]" />}
                             {child.name}
                           </Link>
                         ))}
