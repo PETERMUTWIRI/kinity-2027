@@ -202,62 +202,66 @@ export default function HomePage() {
         <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-white via-white/80 to-transparent z-10" />
 
         {/* Hero Content - Optimized spacing, no blank space */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-8 sm:pt-32 lg:pt-28 lg:pb-12">
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 lg:pt-28 pb-2 sm:pb-6 lg:pb-12">
+          <div className="grid lg:grid-cols-2 gap-4 lg:gap-10 items-start lg:items-center">
             
-            {/* LEFT: Text Content */}
-            <div className="space-y-4 text-center lg:text-left order-2 lg:order-1">
-              
-              {/* Mobile: Static portrait image */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-                animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
-                className="lg:hidden flex justify-center mb-4"
+            {/* Mobile Hero Image - Full Width, Shorter Height */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+              className="lg:hidden -mx-4 sm:-mx-6 mb-4"
+            >
+              {/* Kenyan Flag Frame Container - Full Width Mobile */}
+              <div 
+                className="relative w-full aspect-[16/9] sm:aspect-[2/1] p-1.5 sm:p-2 overflow-hidden"
+                style={{
+                  background: 'linear-gradient(180deg, #000000 0%, #000000 25%, #FFFFFF 25%, #FFFFFF 28%, #E91D0E 28%, #E91D0E 72%, #FFFFFF 72%, #FFFFFF 75%, #006600 75%, #006600 100%)',
+                }}
               >
-                <div className="relative">
-                  {/* Glow */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-white/10 rounded-full blur-2xl scale-125 animate-pulse" />
-                  {/* Static Image - Enlarged for mobile */}
-                  <div className="relative w-40 h-40 sm:w-44 sm:h-44 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+                <div className="relative w-full h-full overflow-hidden bg-[#0074D9]/5">
+                  <Image
+                    src="/images/Dr.png"
+                    alt="Dr. Isaac Newton Kinity - Presidential Candidate"
+                    fill
+                    className="object-cover object-top"
+                    priority
+                  />
+                </div>
+                
+                {/* Badge - Positioned on image */}
+                <motion.div 
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
+                  className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 bg-white rounded-full p-1.5 sm:p-2 shadow-xl"
+                >
+                  <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-gradient-to-br from-[#E91D0E] to-[#BA170C] flex items-center justify-center overflow-hidden">
                     <Image
-                      src="/images/Dr.png"
-                      alt="Dr. Isaac Newton Kinity - Presidential Candidate"
-                      fill
-                      className="object-cover"
-                      priority
+                      src="/images/kenya-flag.png"
+                      alt="Kenya"
+                      width={18}
+                      height={12}
+                      className="object-cover rounded-sm"
                     />
                   </div>
-                  {/* Badge */}
-                  <motion.div 
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
-                    className="absolute -bottom-1 -right-1 bg-white rounded-full p-2 shadow-xl"
-                  >
-                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#E91D0E] to-[#BA170C] flex items-center justify-center overflow-hidden">
-                      <Image
-                        src="/images/kenya-flag.png"
-                        alt="Kenya"
-                        width={22}
-                        height={14}
-                        className="object-cover rounded-sm"
-                      />
-                    </div>
-                  </motion.div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* LEFT: Text Content */}
+            <div className="space-y-3 sm:space-y-4 text-center lg:text-left order-2 lg:order-1">
 
               {/* Main Headline - Enhanced with text animations */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                className="space-y-1"
+                className="space-y-0.5 sm:space-y-1"
               >
                 {/* Name - Primary Focus with warm glow */}
                 <motion.h1 
-                  className="font-headline text-[clamp(1.5rem,5vw,3.5rem)] text-white tracking-tight whitespace-nowrap drop-shadow-[0_2px_10px_rgba(253,230,138,0.3)]"
+                  className="font-headline text-xl sm:text-2xl md:text-3xl lg:text-[clamp(1.5rem,5vw,3.5rem)] text-white tracking-tight drop-shadow-[0_2px_10px_rgba(253,230,138,0.3)]"
                 >
                   <span className="inline-block overflow-hidden">
                     {"Dr. Isaac Newton Kinity".split("").map((char, i) => (
@@ -285,7 +289,7 @@ export default function HomePage() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
                 >
-                  <span className="block font-slogan text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-wider">
+                  <span className="block font-slogan text-sm sm:text-lg md:text-2xl lg:text-3xl tracking-wider">
                     <span className="bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 bg-clip-text text-transparent">
                       PRESIDENTIAL CANDIDATE 2027
                     </span>
@@ -298,7 +302,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1 }}
-                className="text-base md:text-lg text-sky-200 max-w-xl mx-auto lg:mx-0 font-medium"
+                className="text-sm sm:text-base md:text-lg text-sky-200 max-w-xl mx-auto lg:mx-0 font-medium"
               >
                 Committed to the Service of Kenyans
               </motion.p>
@@ -308,9 +312,9 @@ export default function HomePage() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 1.1 }}
-                className="max-w-lg mx-auto lg:mx-0"
+                className="max-w-lg mx-auto lg:mx-0 hidden sm:block"
               >
-                <p className="text-sm md:text-base text-amber-50/95 border-l-4 border-amber-400 pl-4 text-left leading-relaxed bg-gradient-to-r from-white/10 to-transparent backdrop-blur-sm rounded-r-lg py-2">
+                <p className="text-xs sm:text-sm md:text-base text-amber-50/95 border-l-4 border-amber-400 pl-3 sm:pl-4 text-left leading-relaxed bg-gradient-to-r from-white/10 to-transparent backdrop-blur-sm rounded-r-lg py-2">
                   No Recycling of Corrupt Politicians. A new era of leadership built on integrity, 
                   economic transformation, and unwavering commitment to every Kenyan.
                 </p>
@@ -321,22 +325,22 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.2 }}
-                className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3 pt-2"
+                className="flex flex-row items-center lg:items-start justify-center lg:justify-start gap-2 sm:gap-3 pt-2"
               >
                 <Link
                   href="/join-us"
-                  className="group relative inline-flex items-center gap-2 px-6 py-3 md:px-7 md:py-3.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold text-base md:text-lg overflow-hidden transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:-translate-y-1 w-full sm:w-auto justify-center"
+                  className="group relative inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 md:px-7 md:py-3.5 rounded-lg sm:rounded-xl bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold text-sm sm:text-base md:text-lg overflow-hidden transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:-translate-y-1 flex-1 sm:flex-none justify-center"
                 >
-                  <FaHandshake className="w-5 h-5 relative z-10" />
-                  <span className="relative z-10">Join the Movement</span>
-                  <FaArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
+                  <FaHandshake className="w-4 h-4 sm:w-5 sm:h-5 relative z-10" />
+                  <span className="relative z-10 whitespace-nowrap">Join Us</span>
+                  <FaArrowRight className="w-3 h-3 sm:w-4 sm:h-4 relative z-10 group-hover:translate-x-1 transition-transform hidden sm:block" />
                 </Link>
                 <Link
                   href="/about"
-                  className="group inline-flex items-center gap-2 px-6 py-3 md:px-7 md:py-3.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold text-base md:text-lg transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:-translate-y-1 w-full sm:w-auto justify-center"
+                  className="group inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 md:px-7 md:py-3.5 rounded-lg sm:rounded-xl bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold text-sm sm:text-base md:text-lg transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:-translate-y-1 flex-1 sm:flex-none justify-center"
                 >
-                  <FaFlag className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-                  Learn More
+                  <FaFlag className="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-12 transition-transform" />
+                  <span className="whitespace-nowrap">Learn More</span>
                 </Link>
               </motion.div>
 
@@ -345,9 +349,9 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.3 }}
-                className="pt-4"
+                className="pt-2 sm:pt-4"
               >
-                <div className="inline-flex flex-wrap justify-center lg:justify-start gap-4 md:gap-6 bg-white rounded-xl px-5 py-3 shadow-xl shadow-blue-900/20">
+                <div className="inline-flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 md:gap-6 bg-white rounded-lg sm:rounded-xl px-3 sm:px-5 py-2 sm:py-3 shadow-lg sm:shadow-xl shadow-blue-900/20">
                   {[
                     { value: '47', label: 'Counties', suffix: '+' },
                     { value: '50', label: 'Million Kenyans', suffix: 'M+' },
@@ -360,10 +364,10 @@ export default function HomePage() {
                       transition={{ delay: 1.4 + i * 0.1, type: "spring" }}
                       className="text-center"
                     >
-                      <div className="text-xl md:text-2xl lg:text-3xl font-bold text-[#0074D9]">
+                      <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#0074D9]">
                         {stat.value}<span className="text-[#E91D0E]">{stat.suffix}</span>
                       </div>
-                      <div className="text-xs text-slate-600 font-medium">{stat.label}</div>
+                      <div className="text-[10px] sm:text-xs text-slate-600 font-medium">{stat.label}</div>
                     </motion.div>
                   ))}
                 </div>
@@ -454,7 +458,7 @@ export default function HomePage() {
         </div>
         
         {/* Bottom spacing for gradient transition */}
-        <div className="relative z-10 h-16" />
+        <div className="relative z-10 h-8 sm:h-12 lg:h-16" />
       </section>
 
       {/* ==========================================
