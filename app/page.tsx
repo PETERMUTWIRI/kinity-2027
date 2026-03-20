@@ -203,7 +203,7 @@ export default function HomePage() {
         <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-white via-white/80 to-transparent z-10" />
 
         {/* Hero Content - Optimized spacing, no blank space */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 lg:pt-28 pb-2 sm:pb-6 lg:pb-12">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 lg:pt-36 pb-2 sm:pb-6 lg:pb-12">
           <div className="grid lg:grid-cols-2 gap-4 lg:gap-10 items-start lg:items-center">
             
             {/* Mobile Hero Image - Full Width, Shorter Height */}
