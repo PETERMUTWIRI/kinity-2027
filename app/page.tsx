@@ -22,7 +22,6 @@ import ScrollReveal from '@/components/ScrollReveal';
 import TiltCard from '@/components/TiltCard';
 import { EconomicIcon, AntiCorruptionIcon, HealthcareIcon, EducationIcon } from '@/components/PillarIcons';
 import SocialProof from '@/components/SocialProof';
-import Testimonials from '@/components/Testimonials';
 import HeroCanvas from '@/components/HeroCanvas';
 
 
@@ -685,11 +684,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* ==========================================
-          TESTIMONIALS SECTION
-          ========================================== */}
-      <Testimonials />
 
       {/* ==========================================
           LATEST NEWS SECTION - REAL POSTS
