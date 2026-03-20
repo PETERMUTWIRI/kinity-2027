@@ -30,10 +30,10 @@ import ElectionCountdown from './ElectionCountdown';
 
 const footerLinks = {
   ourParty: [
-    { name: 'Our Story', href: '/about' },
-    { name: 'Leadership', href: '/about#leadership' },
-    { name: 'Vision 2027', href: '/about#vision' },
-    { name: 'Manifesto', href: '/about#manifesto' },
+    { name: 'Our Story', href: '/about/our-story' },
+    { name: 'Leadership', href: '/about/leadership' },
+    { name: 'Vision 2027', href: '/about/vision-2027' },
+    { name: 'Manifesto', href: '/about/manifesto' },
   ],
   newsMedia: [
     { name: 'News Hub', href: '/news-hub' },

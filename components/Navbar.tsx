@@ -26,7 +26,7 @@ import {
   FaVideo,
   FaUsers,
   FaFlag,
-  FaDonate,
+  FaEye,
 } from 'react-icons/fa';
 import ElectionCountdown from './ElectionCountdown';
 
@@ -47,10 +47,10 @@ const navItems: NavItem[] = [
     name: 'Our Party', 
     href: '/about',
     children: [
-      { name: 'Our Story', href: '/about', description: 'The journey of Dr. Kinity', icon: FaFlag },
-      { name: 'Leadership', href: '/about#leadership', description: 'Meet the team', icon: FaUsers },
-      { name: 'Vision 2027', href: '/about#vision', description: 'Our plan for Kenya', icon: FaFlag },
-      { name: 'Manifesto', href: '/about#manifesto', description: 'Our commitments', icon: FaNewspaper },
+      { name: 'Our Story', href: '/about/our-story', description: 'The journey of Dr. Kinity', icon: FaFlag },
+      { name: 'Leadership', href: '/about/leadership', description: 'Meet the team', icon: FaUsers },
+      { name: 'Vision 2027', href: '/about/vision-2027', description: 'Our plan for Kenya', icon: FaEye },
+      { name: 'Manifesto', href: '/about/manifesto', description: 'Our commitments', icon: FaNewspaper },
     ]
   },
   { 
