@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaUser, FaEnvelope, FaPhone, FaMessageSquare, FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
+import { FaUser, FaEnvelope, FaPhone, FaCommentDots, FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
 
 interface FormData {
   name: string;
@@ -187,7 +187,7 @@ export default function ContactForm() {
             Subject
           </label>
           <div className="relative">
-            <FaMessageSquare className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+            <FaCommentDots className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
             <select
               id="subject"
               name="subject"
