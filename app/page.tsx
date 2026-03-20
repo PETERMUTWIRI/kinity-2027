@@ -255,9 +255,9 @@ export default function HomePage() {
                 transition={{ duration: 0.5 }}
                 className="space-y-1"
               >
-                {/* Name - Primary Focus with character animation */}
+                {/* Name - Primary Focus with warm glow */}
                 <motion.h1 
-                  className="font-headline text-[clamp(1.5rem,5vw,3.5rem)] text-white tracking-tight whitespace-nowrap"
+                  className="font-headline text-[clamp(1.5rem,5vw,3.5rem)] text-white tracking-tight whitespace-nowrap drop-shadow-[0_2px_10px_rgba(253,230,138,0.3)]"
                 >
                   <span className="inline-block overflow-hidden">
                     {"Dr. Isaac Newton Kinity".split("").map((char, i) => (
@@ -270,7 +270,7 @@ export default function HomePage() {
                           delay: 0.1 + i * 0.03,
                           ease: [0.22, 1, 0.36, 1],
                         }}
-                        className="inline-block drop-shadow-lg"
+                        className="inline-block"
                         style={{ whiteSpace: char === " " ? "pre" : "normal" }}
                       >
                         {char}
@@ -279,38 +279,38 @@ export default function HomePage() {
                   </span>
                 </motion.h1>
                 
-                {/* Role - Secondary with gradient text effect */}
+                {/* Role - Sunrise gradient representing "Kenya's Hope" */}
                 <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
                 >
                   <span className="block font-slogan text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-wider">
-                    <span className="bg-gradient-to-r from-[#E91D0E] via-[#ff6b5b] to-[#E91D0E] bg-clip-text text-transparent animate-pulse">
+                    <span className="bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 bg-clip-text text-transparent">
                       PRESIDENTIAL CANDIDATE 2027
                     </span>
                   </span>
                 </motion.div>
               </motion.div>
 
-              {/* Tagline - Supporting with fade up */}
+              {/* Tagline - Soft cyan for trust and clarity */}
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1 }}
-                className="text-base md:text-lg text-white/90 max-w-xl mx-auto lg:mx-0 font-medium italic"
+                className="text-base md:text-lg text-sky-200 max-w-xl mx-auto lg:mx-0 font-medium"
               >
                 Committed to the Service of Kenyans
               </motion.p>
 
-              {/* Key Message - Highlight with slide in */}
+              {/* Key Message - Cream text with accent border */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 1.1 }}
                 className="max-w-lg mx-auto lg:mx-0"
               >
-                <p className="text-sm md:text-base text-white/90 border-l-4 border-[#E91D0E] pl-4 text-left leading-relaxed bg-white/5 backdrop-blur-sm rounded-r-lg py-2">
+                <p className="text-sm md:text-base text-amber-50/95 border-l-4 border-amber-400 pl-4 text-left leading-relaxed bg-gradient-to-r from-white/10 to-transparent backdrop-blur-sm rounded-r-lg py-2">
                   No Recycling of Corrupt Politicians. A new era of leadership built on integrity, 
                   economic transformation, and unwavering commitment to every Kenyan.
                 </p>
