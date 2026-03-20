@@ -87,18 +87,18 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   
-  // Icons - Using National Vision Party Logo (isaac_kinity-logo.jpeg)
+  // Icons - Using National Vision Party Logo (nvp-party-logo.jpeg)
   icons: {
     icon: [
-      { url: '/isaac_kinity-logo.jpeg', sizes: '32x32', type: 'image/jpeg' },
-      { url: '/isaac_kinity-logo.jpeg', sizes: '16x16', type: 'image/jpeg' },
+      { url: '/nvp-party-logo.jpeg', sizes: '32x32', type: 'image/jpeg' },
+      { url: '/nvp-party-logo.jpeg', sizes: '16x16', type: 'image/jpeg' },
     ],
-    shortcut: '/isaac_kinity-logo.jpeg',
+    shortcut: '/nvp-party-logo.jpeg',
     apple: [
-      { url: '/isaac_kinity-logo.jpeg', sizes: '180x180', type: 'image/jpeg' },
+      { url: '/nvp-party-logo.jpeg', sizes: '180x180', type: 'image/jpeg' },
     ],
     other: [
-      { rel: 'apple-touch-icon-precomposed', url: '/isaac_kinity-logo.jpeg' },
+      { rel: 'apple-touch-icon-precomposed', url: '/nvp-party-logo.jpeg' },
     ],
   },
   
@@ -112,7 +112,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/isaac_kinity-logo.jpeg',
+        url: '/nvp-party-logo.jpeg',
         width: 1200,
         height: 630,
         alt: 'Dr. Isaac Newton Kinity - Kenya\'s Hope 2027',
@@ -125,7 +125,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "National Vision Party | Kenya's Hope 2027",
     description: "Join the movement for a better Kenya. National Vision Party - Committed to the service of Kenyans.",
-    images: ['/isaac_kinity-logo.jpeg'],
+    images: ['/nvp-party-logo.jpeg'],
     creator: '@NVP_Kenya',
     site: '@NVP_Kenya',
   },

@@ -221,7 +221,7 @@ export default function HomePage() {
                   {/* Static Image - Enlarged for mobile */}
                   <div className="relative w-40 h-40 sm:w-44 sm:h-44 rounded-full overflow-hidden border-4 border-white shadow-2xl">
                     <Image
-                      src="/images/president.jpeg"
+                      src="/images/Dr.png"
                       alt="Dr. Isaac Newton Kinity - Presidential Candidate"
                       fill
                       className="object-cover"
@@ -397,7 +397,7 @@ export default function HomePage() {
                   className="relative w-full h-full rounded-3xl overflow-hidden border-4 border-white shadow-2xl"
                 >
                   <Image
-                    src="/images/president.jpeg"
+                    src="/images/Dr.png"
                     alt="Dr. Isaac Newton Kinity - Presidential Candidate"
                     fill
                     className="object-cover"
@@ -605,8 +605,8 @@ export default function HomePage() {
                 <div className="absolute -inset-4 bg-gradient-to-r from-[#0074D9] to-[#6B2C91] rounded-3xl opacity-20 blur-2xl" />
                 <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/images/kinity-connection.jpeg"
-                    alt="Dr. Isaac Newton Kinity connecting with community"
+                    src="/images/president.jpeg"
+                    alt="Dr. Isaac Newton Kinity - Presidential Candidate"
                     fill
                     className="object-cover"
                   />
