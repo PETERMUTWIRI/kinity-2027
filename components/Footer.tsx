@@ -14,31 +14,41 @@ import {
   FaHeart,
   FaHandshake,
   FaArrowRight,
+  FaUsers,
+  FaCalendarAlt,
+  FaFlag,
+  FaNewspaper,
+  FaImages,
+  FaVideo,
 } from 'react-icons/fa';
 import ElectionCountdown from './ElectionCountdown';
 
 // ==========================================
-// NATIONAL VISION PARTY - PROFESSIONAL FOOTER
-// Modern nonprofit footer with logo
+// NATIONAL VISION PARTY - PATRIOTIC FOOTER
+// Kenyan flag gradient background with coat of arms
 // ==========================================
 
 const footerLinks = {
-  campaign: [
-    { name: 'Our Story', href: '/our-story' },
-    { name: 'Vision 2027', href: '/vision-2027' },
-    { name: 'On The Ground', href: '/on-the-ground' },
+  ourParty: [
+    { name: 'Our Story', href: '/about' },
+    { name: 'Leadership', href: '/about#leadership' },
+    { name: 'Vision 2027', href: '/about#vision' },
+    { name: 'Manifesto', href: '/about#manifesto' },
+  ],
+  newsMedia: [
+    { name: 'News Hub', href: '/news-hub' },
     { name: 'Events', href: '/events' },
-    { name: 'Gallery', href: '/gallery' },
+    { name: 'Photo Gallery', href: '/gallery' },
+    { name: 'Videos', href: '/videos' },
   ],
   getInvolved: [
-    { name: 'Join as Volunteer', href: '/join-us' },
-    { name: 'Support the Campaign', href: '/support' },
-    { name: 'Host an Event', href: '/contact' },
-    { name: 'Become a County Coordinator', href: '/join-us' },
+    { name: 'Join Us', href: '/join-us' },
+    { name: 'Donate', href: '/support' },
+    { name: 'Volunteer', href: '/join-us' },
+    { name: 'Contact', href: '/contact' },
   ],
   resources: [
     { name: 'Press Kit', href: '/press' },
-    { name: 'Media Inquiries', href: '/press' },
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms of Service', href: '/terms' },
   ],
@@ -55,9 +65,66 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#111111] text-white">
+    <footer className="relative text-white overflow-hidden">
+      {/* Kenyan Flag Background - Black to Flag Gradient */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: `
+            linear-gradient(135deg, 
+              #000000 0%, 
+              #000000 20%,
+              #1a1a1a 30%,
+              #000000 40%,
+              #006600 50%,
+              #006600 55%,
+              #FFFFFF 55%,
+              #FFFFFF 56%,
+              #E91D0E 56%,
+              #E91D0E 72%,
+              #FFFFFF 72%,
+              #FFFFFF 73%,
+              #006600 73%,
+              #006600 100%
+            )
+          `,
+        }}
+      />
+      
+      {/* Coat of Arms Overlay - Center Right */}
+      <div className="absolute right-[15%] top-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 opacity-20 pointer-events-none">
+        <div className="relative w-full h-full">
+          {/* Shield Shape */}
+          <svg viewBox="0 0 200 240" className="w-full h-full drop-shadow-2xl">
+            {/* Shield Background */}
+            <path 
+              d="M100 10 L180 50 L180 120 Q180 180 100 230 Q20 180 20 120 L20 50 Z" 
+              fill="none"
+              stroke="white"
+              strokeWidth="3"
+            />
+            {/* Coat of Arms Elements - Simplified */}
+            <g opacity="0.6">
+              {/* Spears Cross */}
+              <line x1="70" y1="80" x2="130" y2="160" stroke="white" strokeWidth="4" />
+              <line x1="130" y1="80" x2="70" y2="160" stroke="white" strokeWidth="4" />
+              {/* Shield Center */}
+              <ellipse cx="100" cy="120" rx="25" ry="30" fill="white" opacity="0.3" />
+              {/* Lions (stylized) */}
+              <circle cx="85" cy="110" r="8" fill="white" opacity="0.4" />
+              <circle cx="115" cy="110" r="8" fill="white" opacity="0.4" />
+            </g>
+            {/* Rooster at top */}
+            <circle cx="100" cy="45" r="12" fill="white" opacity="0.5" />
+          </svg>
+        </div>
+      </div>
+
+      {/* Dark Overlay for Better Text Readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
+
       {/* CTA Banner with Countdown */}
-      <div className="bg-gradient-to-r from-[#0074D9] to-[#6B2C91]">
+      <div className="relative bg-gradient-to-r from-[#0074D9] to-[#6B2C91]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             {/* Left - Countdown */}
@@ -97,14 +164,14 @@ export default function Footer() {
       </div>
 
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Column with Logo */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-flex items-center gap-4 mb-6 group">
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="relative w-16 h-16 rounded-2xl overflow-hidden shadow-lg ring-2 ring-white/10 group-hover:ring-[#0074D9]/50 transition-all duration-300"
+                className="relative w-16 h-16 rounded-2xl overflow-hidden shadow-lg ring-2 ring-white/20 group-hover:ring-[#0074D9]/50 transition-all duration-300"
               >
                 <Image
                   src="/nvp-party-logo.jpeg"
@@ -114,13 +181,13 @@ export default function Footer() {
                 />
               </motion.div>
               <div>
-                <span className="font-slogan text-2xl text-[#E91D0E] group-hover:text-white transition-colors block">
+                <span className="font-slogan text-2xl text-white group-hover:text-[#E91D0E] transition-colors block">
                   NATIONAL VISION PARTY
                 </span>
-                <span className="text-sm text-slate-400">Kenya&apos;s Hope 2027</span>
+                <span className="text-sm text-white/60">Kenya&apos;s Hope 2027</span>
               </div>
             </Link>
-            <p className="text-slate-400 mb-6 max-w-sm leading-relaxed">
+            <p className="text-white/70 mb-6 max-w-sm leading-relaxed">
               Kenya&apos;s Hope. A movement for economic transformation, zero corruption, 
               and a brighter future for all Kenyans. Committed to the service of Kenyans.
             </p>
@@ -129,20 +196,20 @@ export default function Footer() {
             <div className="space-y-3">
               <a 
                 href="mailto:info@nationalvisionparty.com" 
-                className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors"
+                className="flex items-center gap-3 text-white/60 hover:text-white transition-colors"
               >
-                <FaEnvelope className="w-5 h-5 text-[#0074D9]" />
+                <FaEnvelope className="w-5 h-5 text-[#E91D0E]" />
                 info@nationalvisionparty.com
               </a>
               <a 
                 href="tel:+254XXXXXXXXX" 
-                className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors"
+                className="flex items-center gap-3 text-white/60 hover:text-white transition-colors"
               >
-                <FaPhone className="w-5 h-5 text-[#0074D9]" />
+                <FaPhone className="w-5 h-5 text-[#E91D0E]" />
                 +254 XXX XXX XXX
               </a>
-              <div className="flex items-center gap-3 text-slate-400">
-                <FaMapMarkerAlt className="w-5 h-5 text-[#0074D9]" />
+              <div className="flex items-center gap-3 text-white/60">
+                <FaMapMarkerAlt className="w-5 h-5 text-[#E91D0E]" />
                 Nairobi, Kenya
               </div>
             </div>
@@ -160,7 +227,7 @@ export default function Footer() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#0074D9] transition-all duration-300"
+                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:text-white hover:bg-[#0074D9] transition-all duration-300"
                 >
                   <social.icon className="w-5 h-5" />
                 </motion.a>
@@ -168,18 +235,39 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Campaign Links */}
+          {/* Our Party Links */}
           <div>
             <h4 className="font-semibold text-white mb-4 flex items-center gap-2">
               <span className="w-1 h-4 bg-[#E91D0E] rounded-full" />
-              Campaign
+              Our Party
             </h4>
             <ul className="space-y-3">
-              {footerLinks.campaign.map((link) => (
+              {footerLinks.ourParty.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-white transition-colors flex items-center gap-2 group"
+                    className="text-white/60 hover:text-white transition-colors flex items-center gap-2 group"
+                  >
+                    <FaArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* News & Media Links */}
+          <div>
+            <h4 className="font-semibold text-white mb-4 flex items-center gap-2">
+              <span className="w-1 h-4 bg-[#0074D9] rounded-full" />
+              News & Media
+            </h4>
+            <ul className="space-y-3">
+              {footerLinks.newsMedia.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-white/60 hover:text-white transition-colors flex items-center gap-2 group"
                   >
                     <FaArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     {link.name}
@@ -192,7 +280,7 @@ export default function Footer() {
           {/* Get Involved Links */}
           <div>
             <h4 className="font-semibold text-white mb-4 flex items-center gap-2">
-              <span className="w-1 h-4 bg-[#0074D9] rounded-full" />
+              <span className="w-1 h-4 bg-[#006600] rounded-full" />
               Get Involved
             </h4>
             <ul className="space-y-3">
@@ -200,7 +288,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-white transition-colors flex items-center gap-2 group"
+                    className="text-white/60 hover:text-white transition-colors flex items-center gap-2 group"
                   >
                     <FaArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     {link.name}
@@ -208,11 +296,9 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* Resources Links */}
-          <div>
-            <h4 className="font-semibold text-white mb-4 flex items-center gap-2">
+            
+            {/* Resources Sub-section */}
+            <h4 className="font-semibold text-white mb-4 mt-8 flex items-center gap-2">
               <span className="w-1 h-4 bg-[#6B2C91] rounded-full" />
               Resources
             </h4>
@@ -221,7 +307,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-white transition-colors flex items-center gap-2 group"
+                    className="text-white/60 hover:text-white transition-colors flex items-center gap-2 group"
                   >
                     <FaArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     {link.name}
@@ -234,13 +320,13 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar - Professional Copyright */}
-      <div className="border-t border-slate-800">
+      <div className="relative border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-slate-500 text-sm text-center md:text-left">
+            <p className="text-white/50 text-sm text-center md:text-left">
               &copy; {currentYear} National Vision Party. All rights reserved.
             </p>
-            <p className="text-slate-600 text-sm flex items-center gap-2">
+            <p className="text-white/40 text-sm flex items-center gap-2">
               Made with <FaHeart className="w-4 h-4 text-[#E91D0E]" /> for Kenya
             </p>
           </div>
