@@ -390,19 +390,24 @@ export default function HomePage() {
                   className="absolute -inset-4 bg-gradient-to-br from-white/50 via-white/30 to-transparent rounded-3xl blur-2xl" 
                 />
                 
-                {/* Static Image Container with hover lift */}
+                {/* Kenyan Flag Frame Container */}
                 <motion.div 
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="relative w-full h-full rounded-2xl overflow-hidden border-4 border-white shadow-2xl bg-white/10"
+                  className="relative w-full h-full p-2 rounded-2xl shadow-2xl overflow-hidden"
+                  style={{
+                    background: 'linear-gradient(180deg, #000000 0%, #000000 25%, #FFFFFF 25%, #FFFFFF 28%, #E91D0E 28%, #E91D0E 72%, #FFFFFF 72%, #FFFFFF 75%, #006600 75%, #006600 100%)',
+                  }}
                 >
-                  <Image
-                    src="/images/Dr.png"
-                    alt="Dr. Isaac Newton Kinity - Presidential Candidate"
-                    fill
-                    className="object-contain"
-                    priority
-                  />
+                  <div className="relative w-full h-full rounded-xl overflow-hidden bg-[#0074D9]/5">
+                    <Image
+                      src="/images/Dr.png"
+                      alt="Dr. Isaac Newton Kinity - Presidential Candidate"
+                      fill
+                      className="object-contain"
+                      priority
+                    />
+                  </div>
                 </motion.div>
 
                 {/* Floating Badge with bounce */}

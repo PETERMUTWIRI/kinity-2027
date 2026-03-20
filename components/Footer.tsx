@@ -107,7 +107,7 @@ export default function Footer() {
                 className="relative w-16 h-16 rounded-2xl overflow-hidden shadow-lg ring-2 ring-white/10 group-hover:ring-[#0074D9]/50 transition-all duration-300"
               >
                 <Image
-                  src="/isaac_kinity-logo.jpeg"
+                  src="/nvp-party-logo.jpeg"
                   alt="National Vision Party"
                   fill
                   className="object-cover"
