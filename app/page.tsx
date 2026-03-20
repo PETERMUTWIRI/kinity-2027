@@ -316,7 +316,7 @@ export default function HomePage() {
                 </p>
               </motion.div>
 
-              {/* CTA Buttons with hover effects */}
+              {/* CTA Buttons with subtle glass effect */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -325,17 +325,15 @@ export default function HomePage() {
               >
                 <Link
                   href="/join-us"
-                  className="group relative inline-flex items-center gap-2 px-6 py-3 md:px-7 md:py-3.5 rounded-xl bg-[#E91D0E] text-white font-bold text-base md:text-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-[#E91D0E]/40 hover:-translate-y-1 w-full sm:w-auto justify-center"
+                  className="group relative inline-flex items-center gap-2 px-6 py-3 md:px-7 md:py-3.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold text-base md:text-lg overflow-hidden transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:-translate-y-1 w-full sm:w-auto justify-center"
                 >
-                  {/* Shine effect */}
-                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   <FaHandshake className="w-5 h-5 relative z-10" />
                   <span className="relative z-10">Join the Movement</span>
                   <FaArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   href="/about"
-                  className="group inline-flex items-center gap-2 px-6 py-3 md:px-7 md:py-3.5 rounded-xl bg-white text-[#0074D9] font-bold text-base md:text-lg hover:bg-slate-50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 w-full sm:w-auto justify-center"
+                  className="group inline-flex items-center gap-2 px-6 py-3 md:px-7 md:py-3.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold text-base md:text-lg transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:-translate-y-1 w-full sm:w-auto justify-center"
                 >
                   <FaFlag className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                   Learn More
