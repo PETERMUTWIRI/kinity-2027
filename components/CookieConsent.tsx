@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Link from 'next/link';
-import { FaCookieBite, FaXmark, FaCheck } from 'react-icons/fa6';
+import { FaCookieBite, FaTimes } from 'react-icons/fa';
 
 export default function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
@@ -12,21 +11,19 @@ export default function CookieConsent() {
     // Check if user has already consented
     const hasConsented = localStorage.getItem('cookie-consent');
     if (!hasConsented) {
-      // Delay showing the banner for better UX
-      const timer = setTimeout(() => {
-        setIsVisible(true);
-      }, 2000);
+      // Show after a short delay
+      const timer = setTimeout(() => setIsVisible(true), 2000);
       return () => clearTimeout(timer);
     }
   }, []);
 
   const handleAccept = () => {
-    localStorage.setItem('cookie-consent', 'accepted');
+    localStorage.setItem('cookie-consent', 'true');
     setIsVisible(false);
   };
 
   const handleDecline = () => {
-    localStorage.setItem('cookie-consent', 'declined');
+    localStorage.setItem('cookie-consent', 'false');
     setIsVisible(false);
   };
 
@@ -37,52 +34,46 @@ export default function CookieConsent() {
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
-          transition={{ duration: 0.4, ease: 'easeOut' }}
-          className="fixed bottom-0 left-0 right-0 z-50 bg-white shadow-2xl border-t border-gray-200"
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-slate-200 shadow-2xl"
         >
-          <div className="max-w-7xl mx-auto px-4 md:px-8 py-4 md:py-6">
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-              <div className="flex items-start gap-4 flex-1">
-                <div className="w-12 h-12 bg-brand-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
-                  <FaCookieBite className="w-6 h-6 text-brand-text" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#0074D9]/10 flex items-center justify-center flex-shrink-0">
+                  <FaCookieBite className="w-5 h-5 text-[#0074D9]" />
                 </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">
-                    We value your privacy
-                  </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                <div className="flex-1">
+                  <h3 className="font-semibold text-[#111111] mb-1">We value your privacy</h3>
+                  <p className="text-sm text-slate-600">
                     We use cookies to enhance your browsing experience, serve personalized content, 
-                    and analyze our traffic. By clicking &quot;Accept All&quot;, you consent to our use of cookies.{' '}
-                    <Link 
-                      href="/privacy" 
-                      className="text-cyan-600 hover:text-cyan-700 font-medium underline"
-                    >
+                    and analyze our traffic. By clicking &quot;Accept All&quot;, you consent to our use of cookies.
+                    <a href="/privacy" className="text-[#0074D9] hover:underline ml-1">
                       Learn more
-                    </Link>
+                    </a>
                   </p>
                 </div>
               </div>
-
-              <div className="flex items-center gap-3 w-full md:w-auto">
+              
+              <div className="flex items-center gap-2 w-full sm:w-auto">
                 <button
                   onClick={handleDecline}
-                  className="flex-1 md:flex-none px-4 py-2.5 text-sm font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-lg transition"
+                  className="flex-1 sm:flex-none px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-800 transition-colors"
                 >
-                  Decline All
+                  Decline
                 </button>
                 <button
                   onClick={handleAccept}
-                  className="flex-1 md:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition"
+                  className="flex-1 sm:flex-none px-6 py-2 bg-[#0074D9] text-white text-sm font-semibold rounded-lg hover:bg-[#005CB0] transition-colors"
                 >
-                  <FaCheck className="w-4 h-4" />
                   Accept All
                 </button>
                 <button
                   onClick={handleDecline}
-                  className="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full transition md:hidden"
+                  className="hidden sm:block p-2 text-slate-400 hover:text-slate-600 transition-colors"
                   aria-label="Close"
                 >
-                  <FaXmark className="w-4 h-4" />
+                  <FaTimes className="w-5 h-5" />
                 </button>
               </div>
             </div>

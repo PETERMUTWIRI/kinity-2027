@@ -49,6 +49,7 @@ const footerLinks = {
   ],
   resources: [
     { name: 'Press & Media', href: '/press' },
+    { name: 'FAQ', href: '/faq' },
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms of Service', href: '/terms' },
   ],

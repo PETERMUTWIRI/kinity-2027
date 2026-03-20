@@ -5,6 +5,8 @@ import { useState, useEffect, useRef } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import NewsTicker from './NewsTicker';
+import CookieConsent from './CookieConsent';
+import WhatsAppChat from './WhatsAppChat';
 
 export default function ConditionalLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -64,6 +66,8 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
         {children}
       </main>
       {!isAdminRoute && <Footer />}
+      {!isAdminRoute && <WhatsAppChat />}
+      {!isAdminRoute && <CookieConsent />}
     </>
   );
 }

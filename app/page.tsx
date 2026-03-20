@@ -22,6 +22,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import TiltCard from '@/components/TiltCard';
 import { EconomicIcon, AntiCorruptionIcon, HealthcareIcon, EducationIcon } from '@/components/PillarIcons';
 import SocialProof from '@/components/SocialProof';
+import Testimonials from '@/components/Testimonials';
 import HeroCanvas from '@/components/HeroCanvas';
 
 
@@ -261,7 +262,7 @@ export default function HomePage() {
               >
                 {/* Name - Primary Focus with warm glow */}
                 <motion.h1 
-                  className="font-headline text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white tracking-tight drop-shadow-[0_2px_10px_rgba(253,230,138,0.3)] leading-tight mb-2"
+                  className="font-headline text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[2.75rem] text-white tracking-tight drop-shadow-[0_2px_10px_rgba(253,230,138,0.3)] leading-tight mb-2 whitespace-nowrap"
                 >
                   <span className="block">
                     {"Dr. Isaac Newton Kinity".split("").map((char, i) => (
@@ -684,6 +685,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ==========================================
+          TESTIMONIALS SECTION
+          ========================================== */}
+      <Testimonials />
 
       {/* ==========================================
           LATEST NEWS SECTION - REAL POSTS
