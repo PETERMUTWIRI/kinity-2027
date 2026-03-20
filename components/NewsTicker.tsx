@@ -80,11 +80,14 @@ export default function NewsTicker({ isVisible }: NewsTickerProps) {
 
   return (
     <motion.div
-      initial={{ height: 0, opacity: 0 }}
-      animate={{ height: 'auto', opacity: 1 }}
-      exit={{ height: 0, opacity: 0 }}
-      transition={{ duration: 0.3 }}
-      className="sticky top-[88px] sm:top-[96px] lg:top-[112px] z-40 overflow-hidden"
+      initial={{ y: -40, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: -40, opacity: 0 }}
+      transition={{ 
+        duration: 0.35, 
+        ease: [0.22, 1, 0.36, 1] // Smooth easing curve
+      }}
+      className="sticky top-[88px] sm:top-[96px] lg:top-[112px] z-40 overflow-hidden will-change-transform"
       style={{
         background: 'linear-gradient(90deg, #0074D9 0%, #0074D9 60%, #E91D0E 85%, #E91D0E 100%)',
       }}
