@@ -78,6 +78,8 @@ export default function NewsTicker({ isVisible }: NewsTickerProps) {
 
   const currentNews = news[currentIndex];
 
+  if (!isVisible) return null;
+
   return (
     <motion.div
       initial={{ y: -40, opacity: 0 }}
@@ -87,15 +89,15 @@ export default function NewsTicker({ isVisible }: NewsTickerProps) {
         duration: 0.35, 
         ease: [0.22, 1, 0.36, 1] // Smooth easing curve
       }}
-      className="sticky top-[88px] sm:top-[96px] lg:top-[112px] z-40 overflow-hidden will-change-transform"
+      className="sticky top-[80px] sm:top-[88px] lg:top-[112px] z-40 overflow-hidden will-change-transform"
       style={{
         background: 'linear-gradient(90deg, #0074D9 0%, #0074D9 60%, #E91D0E 85%, #E91D0E 100%)',
       }}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-3 sm:gap-4 py-2 sm:py-2.5">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+        <div className="flex items-center gap-2 sm:gap-4 py-2 sm:py-2.5">
           
           {/* Breaking News Badge - Pulsating */}
           <div className="flex-shrink-0 flex items-center gap-2">
@@ -116,7 +118,7 @@ export default function NewsTicker({ isVisible }: NewsTickerProps) {
                 NVP
               </span>
             </motion.div>
-            <span className="hidden sm:block text-white font-bold text-xs uppercase tracking-wide">
+            <span className="hidden md:block text-white font-bold text-xs uppercase tracking-wide">
               Breaking News
             </span>
           </div>
@@ -133,7 +135,7 @@ export default function NewsTicker({ isVisible }: NewsTickerProps) {
                 className="flex items-center gap-2 sm:gap-4"
               >
                 {/* Category Tag */}
-                <span className="hidden md:inline-flex px-2 py-0.5 bg-white/20 text-white text-[10px] font-bold uppercase tracking-wider rounded">
+                <span className="hidden sm:inline-flex px-2 py-0.5 bg-white/20 text-white text-[10px] font-bold uppercase tracking-wider rounded flex-shrink-0">
                   Latest
                 </span>
                 
@@ -146,7 +148,7 @@ export default function NewsTicker({ isVisible }: NewsTickerProps) {
                 </Link>
 
                 {/* Time */}
-                <span className="hidden sm:flex items-center gap-1 text-white/70 text-xs flex-shrink-0">
+                <span className="hidden lg:flex items-center gap-1 text-white/70 text-xs flex-shrink-0">
                   <FaClock className="w-3 h-3" />
                   {formatRelativeTime(currentNews.createdAt)}
                 </span>
@@ -154,8 +156,8 @@ export default function NewsTicker({ isVisible }: NewsTickerProps) {
             </AnimatePresence>
           </div>
 
-          {/* Navigation Dots */}
-          <div className="hidden sm:flex items-center gap-1">
+          {/* Navigation Dots - Hidden on mobile */}
+          <div className="hidden md:flex items-center gap-1">
             {news.map((_, index) => (
               <button
                 key={index}
@@ -171,9 +173,9 @@ export default function NewsTicker({ isVisible }: NewsTickerProps) {
           {/* News Button */}
           <Link
             href="/news-hub"
-            className="flex-shrink-0 inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 bg-white text-[#E91D0E] text-xs sm:text-sm font-bold rounded-full hover:bg-slate-100 transition-colors"
+            className="flex-shrink-0 inline-flex items-center gap-1.5 px-2 sm:px-4 py-1.5 bg-white text-[#E91D0E] text-[10px] sm:text-sm font-bold rounded-full hover:bg-slate-100 transition-colors"
           >
-            <span className="hidden sm:inline">News</span>
+            <span>News</span>
             <FaArrowRight className="w-3 h-3" />
           </Link>
         </div>
