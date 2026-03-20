@@ -379,7 +379,7 @@ export default function HomePage() {
               transition={{ duration: 0.8, delay: 0.4, type: "spring", stiffness: 80 }}
               className="hidden lg:block relative order-1 lg:order-2"
             >
-              <div className="relative aspect-[3/4] max-w-xs xl:max-w-sm mx-auto">
+              <div className="relative aspect-[3/2] w-full max-w-lg xl:max-w-xl">
                 {/* Animated Glow Effect */}
                 <motion.div 
                   animate={{ 
@@ -394,13 +394,13 @@ export default function HomePage() {
                 <motion.div 
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="relative w-full h-full rounded-3xl overflow-hidden border-4 border-white shadow-2xl"
+                  className="relative w-full h-full rounded-2xl overflow-hidden border-4 border-white shadow-2xl bg-white/10"
                 >
                   <Image
                     src="/images/Dr.png"
                     alt="Dr. Isaac Newton Kinity - Presidential Candidate"
                     fill
-                    className="object-cover"
+                    className="object-contain"
                     priority
                   />
                 </motion.div>
