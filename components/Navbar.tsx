@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -15,20 +15,54 @@ import {
   FaHandshake,
   FaHeart,
   FaChevronRight,
+  FaChevronDown,
+  FaSearch,
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaNewspaper,
+  FaCalendarAlt,
+  FaImages,
+  FaVideo,
+  FaUsers,
+  FaFlag,
+  FaDonate,
 } from 'react-icons/fa';
 import ElectionCountdown from './ElectionCountdown';
 
 // ==========================================
-// National Vision Party - MODERN NAVIGATION
-// Smart scroll behavior with logo integration
+// National Vision Party - ROBUST NAVIGATION
+// Multi-level dropdowns, search, enhanced UX
 // ==========================================
 
-const navLinks = [
+interface NavItem {
+  name: string;
+  href: string;
+  children?: { name: string; href: string; description?: string; icon?: React.ElementType }[];
+}
+
+const navItems: NavItem[] = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'News Hub', href: '/news-hub' },
+  { 
+    name: 'About', 
+    href: '/about',
+    children: [
+      { name: 'Our Story', href: '/about', description: 'The journey of Dr. Kinity', icon: FaFlag },
+      { name: 'Leadership', href: '/about#leadership', description: 'Meet the team', icon: FaUsers },
+      { name: 'Vision 2027', href: '/about#vision', description: 'Our plan for Kenya', icon: FaFlag },
+    ]
+  },
+  { 
+    name: 'News & Media', 
+    href: '/news-hub',
+    children: [
+      { name: 'News Hub', href: '/news-hub', description: 'Latest updates', icon: FaNewspaper },
+      { name: 'Events', href: '/events', description: 'Upcoming rallies', icon: FaCalendarAlt },
+      { name: 'Photo Gallery', href: '/gallery', description: 'Campaign photos', icon: FaImages },
+      { name: 'Videos', href: '/videos', description: 'Speeches & interviews', icon: FaVideo },
+    ]
+  },
   { name: 'Events', href: '/events' },
-  { name: 'Media Center', href: '/gallery' },
   { name: 'Contact', href: '/contact' },
 ];
 
@@ -39,11 +73,25 @@ const socialLinks = [
   { icon: FaYoutube, href: 'https://youtube.com/@NationalVisionParty', label: 'YouTube', color: '#FF0000' },
 ];
 
+// Search suggestions
+const searchSuggestions = [
+  { title: 'Join the Movement', href: '/join-us' },
+  { title: 'Donate to Campaign', href: '/support' },
+  { title: 'Upcoming Events', href: '/events' },
+  { title: 'Dr. Kinity\'s Vision', href: '/about' },
+  { title: 'Latest News', href: '/news-hub' },
+];
+
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isTopBarVisible, setIsTopBarVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   const pathname = usePathname();
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const searchRef = useRef<HTMLDivElement>(null);
   
   const { scrollY } = useScroll();
   
@@ -51,21 +99,36 @@ export default function Navbar() {
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
     
-    // Show/hide top bar based on scroll direction
     if (latest > previous && latest > 100) {
       setIsTopBarVisible(false);
     } else {
       setIsTopBarVisible(true);
     }
     
-    // Add background blur when scrolled
     setIsScrolled(latest > 20);
   });
 
-  // Close mobile menu on route change
+  // Close mobile menu and dropdowns on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setActiveDropdown(null);
+    setIsSearchOpen(false);
   }, [pathname]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setActiveDropdown(null);
+      }
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setIsSearchOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -79,6 +142,14 @@ export default function Navbar() {
     };
   }, [isMobileMenuOpen]);
 
+  const handleDropdownEnter = (name: string) => {
+    setActiveDropdown(name);
+  };
+
+  const handleDropdownLeave = () => {
+    setActiveDropdown(null);
+  };
+
   return (
     <>
       {/* Main Navbar Container */}
@@ -88,7 +159,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="fixed top-0 left-0 right-0 z-50"
       >
-        {/* Top Bar - Countdown + Campaign Slogan (Hide on scroll down) */}
+        {/* Top Bar - Enhanced with Social Icons & Contact Info */}
         <motion.div
           initial={false}
           animate={{ 
@@ -106,14 +177,29 @@ export default function Navbar() {
               </div>
               
               {/* Center - Slogan */}
-              <p className="flex-1 text-center text-white text-sm font-medium tracking-wide hidden md:block">
+              <p className="flex-1 text-center text-white text-sm font-medium tracking-wide hidden lg:block">
                 <span className="font-slogan">KENYA&apos;S HOPE</span> — 
                 <span className="ml-2 opacity-90">Committed to the Service of Kenyans</span>
               </p>
               
-              {/* Right - Social Proof or Call to Action */}
-              <div className="flex-shrink-0 hidden sm:block">
-                <span className="text-xs text-white/70">
+              {/* Right - Social Icons & Date */}
+              <div className="flex-shrink-0 flex items-center gap-4">
+                {/* Social Icons */}
+                <div className="hidden sm:flex items-center gap-1">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.label}
+                      className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white/80 hover:text-white transition-all duration-200"
+                    >
+                      <social.icon className="w-4 h-4" />
+                    </a>
+                  ))}
+                </div>
+                <span className="text-xs text-white/70 hidden md:block">
                   August 9, 2027
                 </span>
               </div>
@@ -121,15 +207,15 @@ export default function Navbar() {
           </div>
         </motion.div>
 
-        {/* Main Navigation Bar - Always visible with glass effect when scrolled */}
+        {/* Main Navigation Bar */}
         <motion.div
           initial={false}
           animate={{
-            backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 1)',
+            backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.98)' : 'rgba(255, 255, 255, 1)',
             backdropFilter: isScrolled ? 'blur(20px)' : 'blur(0px)',
           }}
           transition={{ duration: 0.3 }}
-          className={`border-b transition-colors duration-300 ${
+          className={`border-b transition-all duration-300 ${
             isScrolled ? 'border-slate-200/80 shadow-lg shadow-slate-900/5' : 'border-slate-200'
           }`}
         >
@@ -161,38 +247,140 @@ export default function Navbar() {
                 </div>
               </Link>
 
-              {/* Desktop Navigation - Modern Pills */}
-              <nav className="hidden lg:flex items-center gap-1">
-                {navLinks.map((link, index) => (
+              {/* Desktop Navigation with Dropdowns */}
+              <nav className="hidden lg:flex items-center gap-1" ref={dropdownRef}>
+                {navItems.map((item, index) => (
                   <motion.div
-                    key={link.name}
+                    key={item.name}
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.05 + 0.2 }}
+                    className="relative"
+                    onMouseEnter={() => item.children && handleDropdownEnter(item.name)}
+                    onMouseLeave={handleDropdownLeave}
                   >
                     <Link
-                      href={link.href}
-                      className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full ${
-                        pathname === link.href 
+                      href={item.href}
+                      className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full flex items-center gap-1 ${
+                        pathname === item.href || pathname.startsWith(item.href + '/')
                           ? 'text-[#0074D9]' 
                           : 'text-slate-600 hover:text-[#0074D9]'
                       }`}
                     >
-                      {pathname === link.href && (
+                      {(pathname === item.href || pathname.startsWith(item.href + '/')) && (
                         <motion.span
                           layoutId="activeNav"
                           className="absolute inset-0 bg-[#0074D9]/10 rounded-full"
                           transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                         />
                       )}
-                      <span className="relative z-10">{link.name}</span>
+                      <span className="relative z-10">{item.name}</span>
+                      {item.children && (
+                        <FaChevronDown className={`w-3 h-3 relative z-10 transition-transform duration-200 ${activeDropdown === item.name ? 'rotate-180' : ''}`} />
+                      )}
                     </Link>
+
+                    {/* Dropdown Menu */}
+                    <AnimatePresence>
+                      {item.children && activeDropdown === item.name && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute top-full left-0 mt-2 w-64 bg-white rounded-2xl shadow-xl shadow-slate-900/10 border border-slate-100 overflow-hidden z-50"
+                        >
+                          <div className="py-2">
+                            {item.children.map((child, childIndex) => (
+                              <Link
+                                key={child.name}
+                                href={child.href}
+                                className="flex items-start gap-3 px-4 py-3 hover:bg-slate-50 transition-colors group"
+                              >
+                                {child.icon && (
+                                  <div className="w-8 h-8 rounded-lg bg-[#0074D9]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#0074D9] transition-colors">
+                                    <child.icon className="w-4 h-4 text-[#0074D9] group-hover:text-white transition-colors" />
+                                  </div>
+                                )}
+                                <div>
+                                  <p className="font-medium text-slate-700 group-hover:text-[#0074D9] transition-colors text-sm">
+                                    {child.name}
+                                  </p>
+                                  {child.description && (
+                                    <p className="text-xs text-slate-400 mt-0.5">{child.description}</p>
+                                  )}
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </motion.div>
                 ))}
               </nav>
 
-              {/* CTA Buttons - Modern Style */}
+              {/* Right Section: Search + CTAs */}
               <div className="hidden lg:flex items-center gap-3">
+                {/* Search Button */}
+                <div className="relative" ref={searchRef}>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => setIsSearchOpen(!isSearchOpen)}
+                    className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+                      isSearchOpen 
+                        ? 'bg-[#0074D9] text-white' 
+                        : 'bg-slate-100 text-slate-600 hover:bg-[#0074D9] hover:text-white'
+                    }`}
+                    aria-label="Search"
+                  >
+                    {isSearchOpen ? <FaTimes className="w-4 h-4" /> : <FaSearch className="w-4 h-4" />}
+                  </motion.button>
+
+                  {/* Search Dropdown */}
+                  <AnimatePresence>
+                    {isSearchOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-full right-0 mt-3 w-80 bg-white rounded-2xl shadow-xl shadow-slate-900/10 border border-slate-100 overflow-hidden z-50 p-4"
+                      >
+                        <div className="relative">
+                          <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                          <input
+                            type="text"
+                            placeholder="Search..."
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#0074D9]/20 focus:border-[#0074D9]"
+                            autoFocus
+                          />
+                        </div>
+                        <div className="mt-4">
+                          <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Quick Links</p>
+                          <div className="space-y-1">
+                            {searchSuggestions.map((suggestion) => (
+                              <Link
+                                key={suggestion.title}
+                                href={suggestion.href}
+                                onClick={() => setIsSearchOpen(false)}
+                                className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-50 transition-colors text-sm text-slate-600 hover:text-[#0074D9]"
+                              >
+                                <FaChevronRight className="w-3 h-3" />
+                                {suggestion.title}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* CTA Buttons */}
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -203,7 +391,7 @@ export default function Navbar() {
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#E91D0E] to-[#c4180c] text-white text-sm font-semibold shadow-md shadow-[#E91D0E]/20 hover:shadow-lg hover:shadow-[#E91D0E]/30 transition-all duration-300 hover:-translate-y-0.5"
                   >
                     Join Us
-                    <FaChevronRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                    <FaChevronRight className="w-3 h-3" />
                   </Link>
                 </motion.div>
                 <motion.div
@@ -215,12 +403,12 @@ export default function Navbar() {
                     href="/support"
                     className="px-5 py-2.5 rounded-full border-2 border-[#0074D9] text-[#0074D9] text-sm font-semibold hover:bg-[#0074D9] hover:text-white transition-all duration-300"
                   >
-                    Support
+                    Donate
                   </Link>
                 </motion.div>
               </div>
 
-              {/* Mobile Menu Button - Modern Style */}
+              {/* Mobile Menu Button */}
               <motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -256,11 +444,11 @@ export default function Navbar() {
         </motion.div>
       </motion.header>
 
-      {/* Mobile Menu - Full Screen Modern Design */}
+      {/* Mobile Menu - Full Screen with Search */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>
-            {/* Backdrop with blur */}
+            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -270,13 +458,13 @@ export default function Navbar() {
               className="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-40 lg:hidden"
             />
 
-            {/* Menu Panel - Slide from right */}
+            {/* Menu Panel */}
             <motion.div
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-              className="fixed top-0 right-0 bottom-0 w-full sm:w-96 bg-white z-50 lg:hidden"
+              className="fixed top-0 right-0 bottom-0 w-full sm:w-96 bg-white z-50 lg:hidden overflow-y-auto"
             >
               {/* Header with Logo */}
               <div className="p-6 border-b border-slate-100">
@@ -304,27 +492,59 @@ export default function Navbar() {
                 </div>
               </div>
 
-              {/* Navigation Links */}
-              <nav className="p-6 space-y-2">
-                {navLinks.map((link, index) => (
+              {/* Mobile Search */}
+              <div className="px-6 py-4 border-b border-slate-100">
+                <div className="relative">
+                  <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                  <input
+                    type="text"
+                    placeholder="Search..."
+                    className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#0074D9]/20 focus:border-[#0074D9]"
+                  />
+                </div>
+              </div>
+
+              {/* Navigation Links with Expandable Submenus */}
+              <nav className="p-6 space-y-1">
+                {navItems.map((item, index) => (
                   <motion.div
-                    key={link.name}
+                    key={item.name}
                     initial={{ opacity: 0, x: 30 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.05 + 0.1 }}
+                    className="border-b border-slate-50 last:border-0"
                   >
                     <Link
-                      href={link.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className={`flex items-center justify-between px-5 py-4 rounded-2xl text-base font-medium transition-all duration-300 ${
-                        pathname === link.href
+                      href={item.href}
+                      onClick={() => !item.children && setIsMobileMenuOpen(false)}
+                      className={`flex items-center justify-between px-4 py-4 rounded-xl text-base font-medium transition-all duration-300 ${
+                        pathname === item.href
                           ? 'bg-gradient-to-r from-[#0074D9] to-[#6B2C91] text-white shadow-lg shadow-[#0074D9]/25'
-                          : 'text-slate-700 hover:bg-slate-100 hover:text-[#0074D9]'
+                          : 'text-slate-700 hover:bg-slate-50 hover:text-[#0074D9]'
                       }`}
                     >
-                      {link.name}
-                      <FaChevronRight className={`w-4 h-4 ${pathname === link.href ? 'opacity-100' : 'opacity-0'}`} />
+                      {item.name}
+                      {!item.children && (
+                        <FaChevronRight className={`w-4 h-4 ${pathname === item.href ? 'opacity-100' : 'opacity-0'}`} />
+                      )}
                     </Link>
+                    
+                    {/* Mobile Submenu */}
+                    {item.children && (
+                      <div className="ml-4 mt-1 space-y-1 pb-2">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.name}
+                            href={child.href}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-slate-600 hover:bg-slate-50 hover:text-[#0074D9] transition-colors"
+                          >
+                            {child.icon && <child.icon className="w-4 h-4" />}
+                            {child.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </motion.div>
                 ))}
               </nav>
@@ -358,14 +578,32 @@ export default function Navbar() {
                       className="flex items-center justify-center gap-3 w-full py-4 rounded-2xl border-2 border-[#0074D9] text-[#0074D9] font-semibold hover:bg-[#0074D9] hover:text-white transition-all duration-300"
                     >
                       <FaHeart className="w-5 h-5" />
-                      Support the Vision
+                      Donate to Campaign
                     </Link>
                   </motion.div>
                 </div>
               </div>
 
+              {/* Contact Info */}
+              <div className="px-6 py-4 border-t border-slate-100">
+                <div className="space-y-3">
+                  <a href="tel:+254XXX" className="flex items-center gap-3 text-sm text-slate-600">
+                    <FaPhone className="w-4 h-4 text-[#0074D9]" />
+                    +254 XXX XXX XXX
+                  </a>
+                  <a href="mailto:info@nationalvisionparty.com" className="flex items-center gap-3 text-sm text-slate-600">
+                    <FaEnvelope className="w-4 h-4 text-[#0074D9]" />
+                    info@nationalvisionparty.com
+                  </a>
+                  <div className="flex items-center gap-3 text-sm text-slate-600">
+                    <FaMapMarkerAlt className="w-4 h-4 text-[#0074D9]" />
+                    Nairobi, Kenya
+                  </div>
+                </div>
+              </div>
+
               {/* Social Links */}
-              <div className="px-6 py-4 mt-auto">
+              <div className="px-6 py-4">
                 <div className="flex justify-center gap-4">
                   {socialLinks.map((social, index) => (
                     <motion.a
@@ -387,7 +625,7 @@ export default function Navbar() {
               </div>
 
               {/* Footer */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-r from-[#0074D9]/5 to-[#6B2C91]/5 border-t border-slate-100">
+              <div className="p-6 bg-gradient-to-r from-[#0074D9]/5 to-[#6B2C91]/5 border-t border-slate-100">
                 <p className="text-center text-sm text-slate-500">
                   Committed to the Service of Kenyans
                 </p>
