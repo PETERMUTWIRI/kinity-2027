@@ -44,12 +44,13 @@ interface NavItem {
 const navItems: NavItem[] = [
   { name: 'Home', href: '/' },
   { 
-    name: 'About', 
+    name: 'Our Party', 
     href: '/about',
     children: [
       { name: 'Our Story', href: '/about', description: 'The journey of Dr. Kinity', icon: FaFlag },
       { name: 'Leadership', href: '/about#leadership', description: 'Meet the team', icon: FaUsers },
       { name: 'Vision 2027', href: '/about#vision', description: 'Our plan for Kenya', icon: FaFlag },
+      { name: 'Manifesto', href: '/about#manifesto', description: 'Our commitments', icon: FaNewspaper },
     ]
   },
   { 
@@ -62,7 +63,17 @@ const navItems: NavItem[] = [
       { name: 'Videos', href: '/videos', description: 'Speeches & interviews', icon: FaVideo },
     ]
   },
-  { name: 'Events', href: '/events' },
+  { 
+    name: 'Get Involved', 
+    href: '/join-us',
+    children: [
+      { name: 'Join Us', href: '/join-us', description: 'Become a member', icon: FaHandshake },
+      { name: 'Donate', href: '/support', description: 'Support our campaign', icon: FaHeart },
+      { name: 'Volunteer', href: '/join-us', description: 'Offer your skills', icon: FaUsers },
+      { name: 'Events', href: '/events', description: 'Attend our rallies', icon: FaCalendarAlt },
+      { name: 'Contact', href: '/contact', description: 'Get in touch', icon: FaEnvelope },
+    ]
+  },
   { name: 'Contact', href: '/contact' },
 ];
 
