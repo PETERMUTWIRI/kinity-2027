@@ -80,33 +80,33 @@ export default function AboutLanding() {
                 <Link href={section.href} className="group block">
                   <motion.div
                     whileHover={{ y: -8 }}
-                    className="relative bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-2xl transition-all duration-500"
+                    className="relative h-80 rounded-3xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-2xl transition-all duration-500 group"
                   >
-                    {/* Image Section */}
-                    <div className="relative h-48 overflow-hidden">
-                      <Image
-                        src={section.image}
-                        alt={section.title}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                      
-                      {/* Icon Badge */}
-                      <div 
-                        className="absolute top-4 left-4 w-12 h-12 rounded-xl flex items-center justify-center"
-                        style={{ backgroundColor: section.color }}
-                      >
-                        <section.icon className="w-6 h-6 text-white" />
-                      </div>
+                    {/* Full Background Image */}
+                    <Image
+                      src={section.image}
+                      alt={section.title}
+                      fill
+                      className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                    />
+                    
+                    {/* White Gradient Overlay at Bottom for Text */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-white/95 to-transparent" style={{ backgroundPosition: '0 40%' }} />
+                    
+                    {/* Icon Badge - Top Left */}
+                    <div 
+                      className="absolute top-4 left-4 w-12 h-12 rounded-xl flex items-center justify-center shadow-lg z-10"
+                      style={{ backgroundColor: section.color }}
+                    >
+                      <section.icon className="w-6 h-6 text-white" />
                     </div>
 
-                    {/* Content Section */}
-                    <div className="p-6">
+                    {/* Content Section - Bottom */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
                       <h2 className="text-2xl font-bold text-[#111111] mb-3 group-hover:text-[#0074D9] transition-colors">
                         {section.title}
                       </h2>
-                      <p className="text-slate-600 mb-4 line-clamp-3">
+                      <p className="text-slate-600 mb-4 line-clamp-2">
                         {section.description}
                       </p>
                       <div className="flex items-center gap-2 font-semibold" style={{ color: section.color }}>
@@ -117,7 +117,7 @@ export default function AboutLanding() {
 
                     {/* Hover Border Effect */}
                     <div 
-                      className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-opacity-100 transition-all duration-300 pointer-events-none"
+                      className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-opacity-100 transition-all duration-300 pointer-events-none z-20"
                       style={{ borderColor: section.color }}
                     />
                   </motion.div>

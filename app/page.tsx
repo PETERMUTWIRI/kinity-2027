@@ -250,20 +250,20 @@ export default function HomePage() {
             </motion.div>
 
             {/* LEFT: Text Content */}
-            <div className="space-y-3 sm:space-y-4 text-center lg:text-left order-2 lg:order-1">
+            <div className="space-y-3 sm:space-y-4 text-center lg:text-left order-2 lg:order-1 lg:pr-4">
 
               {/* Main Headline - Enhanced with text animations */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                className="space-y-0.5 sm:space-y-1"
+                className="space-y-1 sm:space-y-2"
               >
                 {/* Name - Primary Focus with warm glow */}
                 <motion.h1 
-                  className="font-headline text-xl sm:text-2xl md:text-3xl lg:text-[clamp(1.5rem,5vw,3.5rem)] text-white tracking-tight drop-shadow-[0_2px_10px_rgba(253,230,138,0.3)]"
+                  className="font-headline text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white tracking-tight drop-shadow-[0_2px_10px_rgba(253,230,138,0.3)] leading-tight mb-2"
                 >
-                  <span className="inline-block overflow-hidden">
+                  <span className="block">
                     {"Dr. Isaac Newton Kinity".split("").map((char, i) => (
                       <motion.span
                         key={i}
