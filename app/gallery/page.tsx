@@ -1,67 +1,17 @@
-// app/gallery/page.tsx - UNIFIED MEDIA CENTER (Photos + Videos)
+// app/gallery/page.tsx - PHOTO GALLERY ONLY
 import { Metadata } from 'next';
 import { prisma } from '@/lib/prisma';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaImages, FaVideo, FaPlay, FaYoutube, FaCamera, FaMapMarkerAlt, FaCalendar } from 'react-icons/fa';
+import { FaImages, FaCamera, FaMapMarkerAlt, FaCalendar } from 'react-icons/fa';
 import { Suspense } from 'react';
 
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Media Center | National Vision Party',
-  description: 'Photos, videos, speeches, interviews, and campaign moments.',
+  title: 'Photo Gallery | National Vision Party',
+  description: 'Photos from campaign rallies, events, and moments from across Kenya.',
 };
-
-interface Props {
-  searchParams: Promise<{ tab?: string }>;
-}
-
-// Video Card Component
-function VideoCard({ video }: { video: any }) {
-  return (
-    <a 
-      href={`https://youtube.com/watch?v=${video.youtubeId}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group relative aspect-video rounded-2xl overflow-hidden bg-slate-900 cursor-pointer block"
-    >
-      {/* Thumbnail */}
-      <Image
-        src={video.thumbnail || `https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
-        alt={video.title}
-        fill
-        className="object-cover transition-transform duration-500 group-hover:scale-110"
-        unoptimized
-      />
-      
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
-      
-      {/* Play Button */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-16 h-16 bg-[#E91D0E]/90 rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform shadow-lg shadow-[#E91D0E]/30">
-          <FaPlay className="w-6 h-6 text-white ml-1" />
-        </div>
-      </div>
-      
-      {/* Category badge */}
-      <div className="absolute top-4 left-4 px-3 py-1 bg-[#E91D0E] text-white text-xs font-bold rounded-full">
-        {video.category}
-      </div>
-      
-      {/* Content */}
-      <div className="absolute bottom-0 left-0 right-0 p-5">
-        <h3 className="font-headline text-lg text-white group-hover:text-[#0074D9] transition-colors line-clamp-2">
-          {video.title}
-        </h3>
-        <p className="text-white/60 text-sm mt-1">
-          Watch on YouTube
-        </p>
-      </div>
-    </a>
-  );
-}
 
 // Photo Card Component
 function PhotoCard({ image }: { image: any }) {
@@ -149,8 +99,8 @@ function AlbumCard({ album }: { album: any }) {
   );
 }
 
-// Photos Tab with Albums and Images
-async function PhotosTab() {
+// Main Gallery Content
+async function GalleryContent() {
   const [albums, recentImages] = await Promise.all([
     prisma.galleryCategory.findMany({
       where: { published: true, deletedAt: null },
@@ -213,91 +163,19 @@ async function PhotosTab() {
   );
 }
 
-// Videos Tab
-async function VideosTab() {
-  const videos = await prisma.video.findMany({
-    where: { published: true },
-    orderBy: [{ featured: 'desc' }, { order: 'asc' }, { createdAt: 'desc' }],
-  });
-
-  if (videos.length === 0) {
-    return (
-      <div className="text-center py-16">
-        <FaVideo className="w-16 h-16 text-slate-700 mx-auto mb-4" />
-        <h3 className="text-xl font-semibold text-white mb-2">No Videos Yet</h3>
-        <p className="text-slate-400 mb-4">Campaign videos will appear here once added from the admin panel.</p>
-        <p className="text-slate-500 text-sm">
-          Make sure videos are marked as &quot;Published&quot; in the admin to show here.
-        </p>
-      </div>
-    );
-  }
-
-  return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {videos.map((video) => (
-        <VideoCard key={video.id} video={video} />
-      ))}
-    </div>
-  );
-}
-
-// Tab Navigation Component (Client Component wrapper not needed, just using correct Link)
-function TabNavigation({ activeTab }: { activeTab: string }) {
-  return (
-    <div className="flex gap-1 -mb-px">
-      <Link
-        href="/gallery?tab=photos"
-        className={`flex items-center gap-2 px-6 py-4 text-sm font-medium border-b-2 transition-colors ${
-          activeTab === 'photos'
-            ? 'border-[#0074D9] text-[#0074D9]'
-            : 'border-transparent text-slate-400 hover:text-white hover:border-slate-700'
-        }`}
-      >
-        <FaImages className="w-4 h-4" />
-        Photos
-      </Link>
-      <Link
-        href="/gallery?tab=videos"
-        className={`flex items-center gap-2 px-6 py-4 text-sm font-medium border-b-2 transition-colors ${
-          activeTab === 'videos'
-            ? 'border-[#0074D9] text-[#0074D9]'
-            : 'border-transparent text-slate-400 hover:text-white hover:border-slate-700'
-        }`}
-      >
-        <FaVideo className="w-4 h-4" />
-        Videos
-      </Link>
-    </div>
-  );
-}
-
 // Main Page Component
-export default async function MediaCenterPage({
-  searchParams,
-}: Props) {
-  // Await searchParams as it's now a Promise in Next.js 15
-  const params = await searchParams;
-  const activeTab = params.tab || 'photos';
-
+export default async function GalleryPage() {
   return (
     <div className="min-h-screen bg-slate-950">
       {/* Header */}
       <div className="bg-gradient-to-br from-[#0074D9] to-[#6B2C91] py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="font-slogan text-4xl md:text-5xl text-white mb-4">
-            MEDIA CENTER
+            PHOTO GALLERY
           </h1>
           <p className="text-white/80 text-lg max-w-2xl">
-            Explore photos, videos, speeches, interviews, and campaign moments from across Kenya.
+            Explore photos from campaign rallies, events, and moments from across Kenya.
           </p>
-        </div>
-      </div>
-
-      {/* Tabs Navigation */}
-      <div className="sticky top-16 z-30 bg-slate-900/95 backdrop-blur border-b border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <TabNavigation activeTab={activeTab} />
         </div>
       </div>
 
@@ -312,7 +190,7 @@ export default async function MediaCenterPage({
             </div>
           }
         >
-          {activeTab === 'videos' ? <VideosTab /> : <PhotosTab />}
+          <GalleryContent />
         </Suspense>
       </div>
     </div>

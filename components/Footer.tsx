@@ -48,7 +48,7 @@ const footerLinks = {
     { name: 'Contact', href: '/contact' },
   ],
   resources: [
-    { name: 'Press Kit', href: '/press' },
+    { name: 'Press & Media', href: '/press' },
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms of Service', href: '/terms' },
   ],
@@ -123,8 +123,13 @@ export default function Footer() {
       {/* Dark Overlay for Better Text Readability */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
 
-      {/* CTA Banner with Countdown */}
-      <div className="relative bg-gradient-to-r from-[#0074D9] to-[#6B2C91]">
+      {/* CTA Banner with Countdown - Blue to Red Gradient */}
+      <div 
+        className="relative"
+        style={{
+          background: 'linear-gradient(90deg, #0074D9 0%, #0074D9 60%, #E91D0E 85%, #E91D0E 100%)',
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             {/* Left - Countdown */}
@@ -137,7 +142,7 @@ export default function Footer() {
               <h3 className="font-slogan text-2xl md:text-3xl mb-2 text-white">
                 READY TO JOIN THE MOVEMENT?
               </h3>
-              <p className="text-white/80 max-w-md mx-auto lg:mx-0">
+              <p className="text-white/90 max-w-md mx-auto lg:mx-0">
                 Be part of the change Kenya needs. Volunteer, donate, or spread the word.
               </p>
             </div>
@@ -146,14 +151,14 @@ export default function Footer() {
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href="/join-us"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#E91D0E] text-white font-bold hover:bg-[#BA170C] transition-all duration-300 hover:shadow-lg hover:shadow-[#E91D0E]/30"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-[#E91D0E] font-bold hover:bg-slate-100 transition-all duration-300 shadow-lg"
               >
                 <FaHandshake className="w-5 h-5" />
                 Join Us
               </Link>
               <Link
                 href="/support"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-[#0074D9] font-bold hover:bg-slate-100 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#111111] text-white font-bold hover:bg-black transition-all duration-300"
               >
                 <FaHeart className="w-5 h-5" />
                 Donate

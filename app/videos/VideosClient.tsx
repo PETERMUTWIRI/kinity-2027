@@ -48,8 +48,8 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
         {/* YouTube Video Background */}
         <div className="absolute inset-0 w-full h-full">
           <iframe
-            src="https://www.youtube.com/embed/LWJn-p6c7IM?autoplay=1&mute=1&loop=1&playlist=LWJn-p6c7IM&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
-            title="Background Video"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&loop=1&playlist=dQw4w9WgXcQ&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+            title="BE PART OF THE MOVEMENT - Campaign Video"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             className="absolute w-full h-full object-cover"
             style={{
