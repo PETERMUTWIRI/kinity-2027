@@ -440,11 +440,25 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
         )}
       </AnimatePresence>
 
-      {/* Subscribe CTA - Dark Section */}
+      {/* Subscribe CTA - Dark Section with Video Background */}
       <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#0F172A] overflow-hidden">
+        {/* YouTube Video Background */}
+        <div className="absolute inset-0 z-0">
+          <iframe
+            src="https://www.youtube.com/embed/JL2zN5ZgD6Q?autoplay=1&mute=1&loop=1&playlist=JL2zN5ZgD6Q&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+            title="Campaign Background Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            className="absolute w-[150%] h-[150%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            style={{ pointerEvents: 'none' }}
+          />
+        </div>
+        
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-[#0F172A]/70 z-[1]" />
+        
         {/* Subtle pattern overlay */}
         <div 
-          className="absolute inset-0 opacity-5"
+          className="absolute inset-0 opacity-5 z-[2]"
           style={{
             backgroundImage: `radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)`,
             backgroundSize: '50px 50px',
@@ -452,9 +466,9 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
         />
         
         {/* Gold accent line at top */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4A017] to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4A017] to-transparent z-10" />
         
-        <div className="max-w-4xl mx-auto relative z-10">
+        <div className="max-w-4xl mx-auto relative z-[5]">
           <ScrollReveal>
             <div className="text-center">
               {/* Gold accent line */}

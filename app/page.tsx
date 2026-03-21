@@ -398,9 +398,9 @@ export default function HomePage() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4, type: "spring", stiffness: 80 }}
-              className="hidden lg:block relative order-1 lg:order-2 self-start pt-[4.5rem]"
+              className="hidden lg:block relative order-1 lg:order-2 -mt-24 xl:-mt-28"
             >
-              <div className="relative aspect-[16/10] w-[140%] -mr-[40%] xl:w-[150%] xl:-mr-[50%]">
+              <div className="relative aspect-[4/5] w-full max-w-md xl:max-w-lg ml-auto">
                 {/* Animated Glow Effect */}
                 <motion.div 
                   animate={{ 
@@ -425,7 +425,7 @@ export default function HomePage() {
                       src="/images/Dr.png"
                       alt="Dr. Isaac Newton Kinity - Presidential Candidate"
                       fill
-                      className="object-contain"
+                      className="object-cover object-top"
                       priority
                     />
                   </div>
@@ -634,7 +634,7 @@ export default function HomePage() {
         {/* Background decoration */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#1E3A8A]/5 to-transparent pointer-events-none" />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-[5]">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Image Side */}
             <ScrollReveal direction="left">
@@ -1041,12 +1041,26 @@ export default function HomePage() {
       <SocialProof />
 
       {/* ==========================================
-          CALL TO ACTION SECTION - Premium Dark
+          CALL TO ACTION SECTION - Premium Dark with Video Background
           ========================================== */}
       <section className="py-16 md:py-24 lg:py-32 bg-[#0F172A] text-white relative overflow-hidden min-h-[600px]">
+        {/* YouTube Video Background */}
+        <div className="absolute inset-0 z-0">
+          <iframe
+            src="https://www.youtube.com/embed/JL2zN5ZgD6Q?autoplay=1&mute=1&loop=1&playlist=JL2zN5ZgD6Q&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+            title="Campaign Background Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            className="absolute w-[150%] h-[150%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            style={{ pointerEvents: 'none' }}
+          />
+        </div>
+        
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-[#0F172A]/70 z-[1]" />
+        
         {/* Subtle pattern overlay */}
         <div 
-          className="absolute inset-0 opacity-5"
+          className="absolute inset-0 opacity-5 z-[2]"
           style={{
             backgroundImage: `radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)`,
             backgroundSize: '50px 50px',
@@ -1057,7 +1071,7 @@ export default function HomePage() {
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4A017] to-transparent z-10" />
         
         {/* Gradient overlays for depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1E3A8A]/30 via-transparent to-[#1E3A8A]/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1E3A8A]/30 via-transparent to-[#1E3A8A]/30 z-[2]" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
