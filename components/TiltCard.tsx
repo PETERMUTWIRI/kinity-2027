@@ -21,7 +21,7 @@ export default function TiltCard({
   className = '',
   tiltAmount = 10,
   glareEnabled = true,
-  borderColor = '#0074D9',
+  borderColor = '#1E3A8A',
 }: TiltCardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);

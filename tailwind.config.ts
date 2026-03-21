@@ -53,56 +53,69 @@ const config: Config = {
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         
-        // NATIONAL VISION PARTY BRAND COLORS - Presidential Campaign Palette
+        // NATIONAL VISION PARTY BRAND COLORS - Premium Political Palette
         kinity: {
-          // Primary Trust Blue - Stability, presidential authority
+          // Primary Deep Blue - Authority, trust, presidential dignity
           blue: {
-            DEFAULT: '#0074D9',
-            50: '#E6F2FC',
-            100: '#CCE5F9',
-            200: '#99CBF3',
-            300: '#66B1ED',
-            400: '#3397E7',
-            500: '#0074D9', // Primary
-            600: '#005CB0',
-            700: '#004588',
-            800: '#002E5B',
-            900: '#00172D',
+            DEFAULT: '#1E3A8A',
+            50: '#EEF2FF',
+            100: '#E0E7FF',
+            200: '#C7D2FE',
+            300: '#A5B4FC',
+            400: '#818CF8',
+            500: '#6366F1',
+            600: '#1E3A8A', // Primary
+            700: '#1E3A8A',
+            800: '#0F172A', // Dark base
+            900: '#0F172A',
           },
-          // Power Red - Energy, urgency, anti-corruption passion
+          // Dark Navy - Sophisticated base
+          navy: {
+            DEFAULT: '#0F172A',
+            50: '#F8FAFC',
+            100: '#F1F5F9',
+            200: '#E2E8F0',
+            300: '#CBD5E1',
+            400: '#94A3B8',
+            500: '#64748B',
+            600: '#475569',
+            700: '#334155',
+            800: '#1E293B',
+            900: '#0F172A', // Dark base
+          },
+          // Premium Gold - Excellence, prestige, premium feel
+          gold: {
+            DEFAULT: '#D4A017',
+            50: '#FDF9E7',
+            100: '#F9F0C8',
+            200: '#F3E295',
+            300: '#EDD162',
+            400: '#E6C200', // Highlight
+            500: '#D4A017', // Primary gold
+            600: '#B8860B',
+            700: '#966F0D',
+            800: '#7A5C12',
+            900: '#664C14',
+          },
+          // Power Red - Reserved for critical CTAs only
           red: {
-            DEFAULT: '#E91D0E',
-            50: '#FDE8E7',
-            100: '#FBD1CE',
-            200: '#F7A39D',
-            300: '#F3756C',
-            400: '#EF473B',
-            500: '#E91D0E', // Primary
-            600: '#BA170C',
-            700: '#8B1109',
-            800: '#5D0C06',
-            900: '#2E0603',
-          },
-          // Royal Purple - Wisdom, leadership, distinction
-          purple: {
-            DEFAULT: '#6B2C91',
-            50: '#F0E6F5',
-            100: '#E1CCEB',
-            200: '#C399D7',
-            300: '#A566C3',
-            400: '#8733AF',
-            500: '#6B2C91', // Primary
-            600: '#552374',
-            700: '#401A57',
-            800: '#2A123A',
-            900: '#15091D',
+            DEFAULT: '#DC2626',
+            50: '#FEF2F2',
+            100: '#FEE2E2',
+            200: '#FECACA',
+            300: '#FCA5A5',
+            400: '#F87171',
+            500: '#DC2626', // Primary red (limited use)
+            600: '#B91C1C',
+            700: '#991B1B',
+            800: '#7F1D1D',
+            900: '#450A0A',
           },
           // Authority colors
-          black: '#111111',
-          charcoal: '#1F2937',
-          slate: '#64748B',
           white: '#FFFFFF',
-          'off-white': '#F8FAFC',
+          slate: '#64748B',
+          charcoal: '#334155',
+          black: '#0F172A',
         },
       },
       fontFamily: {
@@ -112,22 +125,22 @@ const config: Config = {
         slogan: ['Oswald', 'Impact', 'Arial Narrow', 'sans-serif'],
       },
       backgroundImage: {
-        // Presidential gradients
+        // Presidential gradients - deep, authoritative
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-kinity': 'linear-gradient(135deg, #0074D9 0%, #FFFFFF 100%)',
-        'gradient-hero': 'linear-gradient(180deg, #0074D9 0%, #E6F2FC 50%, #FFFFFF 100%)',
-        'gradient-dark': 'linear-gradient(135deg, #111111 0%, #1F2937 100%)',
-        'gradient-purple': 'linear-gradient(135deg, #6B2C91 0%, #552374 100%)',
-        'gradient-red': 'linear-gradient(135deg, #E91D0E 0%, #BA170C 100%)',
-        'gradient-shine': 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)',
+        'gradient-kinity': 'linear-gradient(135deg, #1E3A8A 0%, #0F172A 100%)',
+        'gradient-hero': 'linear-gradient(180deg, #0F172A 0%, #1E3A8A 50%, #1E3A8A 100%)',
+        'gradient-dark': 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
+        'gradient-gold': 'linear-gradient(135deg, #D4A017 0%, #E6C200 100%)',
+        'gradient-shine': 'linear-gradient(90deg, transparent, rgba(212,160,23,0.3), transparent)',
       },
       boxShadow: {
-        'glow-blue': '0 0 30px rgba(0, 116, 217, 0.4)',
-        'glow-red': '0 0 30px rgba(233, 29, 14, 0.4)',
-        'glow-purple': '0 0 30px rgba(107, 44, 145, 0.4)',
+        'glow-blue': '0 0 30px rgba(30, 58, 138, 0.4)',
+        'glow-gold': '0 0 30px rgba(212, 160, 23, 0.4)',
+        'glow-red': '0 0 30px rgba(220, 38, 38, 0.4)',
         'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
         'card-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-        'presidential': '0 10px 40px -10px rgba(0, 116, 217, 0.3)',
+        'presidential': '0 10px 40px -10px rgba(30, 58, 138, 0.3)',
+        'gold-border': 'inset 0 2px 0 0 #D4A017',
       },
       animation: {
         'gradient': 'gradient 8s linear infinite',
@@ -152,8 +165,8 @@ const config: Config = {
           '100%': { transform: 'translateX(100%)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 20px rgba(0, 116, 217, 0.5)' },
-          '100%': { boxShadow: '0 0 40px rgba(233, 29, 14, 0.6)' },
+          '0%': { boxShadow: '0 0 20px rgba(30, 58, 138, 0.5)' },
+          '100%': { boxShadow: '0 0 40px rgba(212, 160, 23, 0.6)' },
         },
         slideUp: {
           '0%': { transform: 'translateY(20px)', opacity: '0' },
@@ -174,8 +187,8 @@ const config: Config = {
             '--tw-prose-counters': theme('colors.kinity.slate'),
             '--tw-prose-bullets': theme('colors.kinity.blue.DEFAULT'),
             '--tw-prose-hr': theme('colors.kinity.slate'),
-            '--tw-prose-quotes': theme('colors.kinity.purple.DEFAULT'),
-            '--tw-prose-quote-borders': theme('colors.kinity.purple.DEFAULT'),
+            '--tw-prose-quotes': theme('colors.kinity.gold.DEFAULT'),
+            '--tw-prose-quote-borders': theme('colors.kinity.gold.DEFAULT'),
             '--tw-prose-captions': theme('colors.kinity.slate'),
             maxWidth: 'none',
           },

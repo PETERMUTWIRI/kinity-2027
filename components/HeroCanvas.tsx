@@ -36,11 +36,11 @@ export default function HeroCanvas() {
       ctx.scale(scale, scale);
       ctx.globalAlpha = alpha;
 
-      // Shield gradient
+      // Shield gradient - Deep blue with gold accents
       const gradient = ctx.createLinearGradient(-100, -120, 100, 120);
-      gradient.addColorStop(0, 'rgba(0, 116, 217, 0.08)');
-      gradient.addColorStop(0.5, 'rgba(107, 44, 145, 0.06)');
-      gradient.addColorStop(1, 'rgba(233, 29, 14, 0.08)');
+      gradient.addColorStop(0, 'rgba(30, 58, 138, 0.12)');
+      gradient.addColorStop(0.5, 'rgba(15, 23, 42, 0.08)');
+      gradient.addColorStop(1, 'rgba(212, 160, 23, 0.06)');
 
       // Main shield shape
       ctx.beginPath();
@@ -68,11 +68,11 @@ export default function HeroCanvas() {
         ctx.stroke();
       }
 
-      // Central vertical pattern
+      // Central vertical pattern - Gold accent
       ctx.beginPath();
       ctx.moveTo(0, -100);
       ctx.lineTo(0, 120);
-      ctx.strokeStyle = 'rgba(233, 29, 14, 0.2)';
+      ctx.strokeStyle = 'rgba(212, 160, 23, 0.25)';
       ctx.lineWidth = 4;
       ctx.stroke();
 
@@ -111,13 +111,13 @@ export default function HeroCanvas() {
       ctx.lineWidth = 1;
       ctx.stroke();
 
-      // Spear decorations
+      // Spear decorations - Gold accent
       ctx.beginPath();
       ctx.moveTo(-8, -100);
       ctx.lineTo(8, -100);
       ctx.moveTo(-6, -80);
       ctx.lineTo(6, -80);
-      ctx.strokeStyle = 'rgba(233, 29, 14, 0.3)';
+      ctx.strokeStyle = 'rgba(212, 160, 23, 0.35)';
       ctx.lineWidth = 2;
       ctx.stroke();
 
@@ -144,10 +144,10 @@ export default function HeroCanvas() {
         }
         
         const gradient = ctx.createLinearGradient(0, baseY - 50, canvas.width, baseY + 50);
-        gradient.addColorStop(0, 'rgba(0, 116, 217, 0)');
-        gradient.addColorStop(0.3, `rgba(0, 116, 217, ${0.03 + i * 0.01})`);
-        gradient.addColorStop(0.7, `rgba(107, 44, 145, ${0.03 + i * 0.01})`);
-        gradient.addColorStop(1, 'rgba(233, 29, 14, 0)');
+        gradient.addColorStop(0, 'rgba(30, 58, 138, 0)');
+        gradient.addColorStop(0.3, `rgba(30, 58, 138, ${0.04 + i * 0.01})`);
+        gradient.addColorStop(0.7, `rgba(212, 160, 23, ${0.03 + i * 0.01})`);
+        gradient.addColorStop(1, 'rgba(30, 58, 138, 0)');
         
         ctx.strokeStyle = gradient;
         ctx.lineWidth = 2;

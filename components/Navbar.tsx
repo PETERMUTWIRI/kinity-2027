@@ -31,8 +31,8 @@ import {
 import ElectionCountdown from './ElectionCountdown';
 
 // ==========================================
-// National Vision Party - ROBUST NAVIGATION
-// Multi-level dropdowns, search, enhanced UX
+// National Vision Party - PREMIUM NAVIGATION
+// Authoritative, presidential design system
 // ==========================================
 
 interface NavItem {
@@ -170,7 +170,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="fixed top-0 left-0 right-0 z-50"
       >
-        {/* Top Bar - Blue to Red Gradient */}
+        {/* Top Bar - Deep Navy with Gold Accent */}
         <motion.div
           initial={false}
           animate={{ 
@@ -178,10 +178,7 @@ export default function Navbar() {
             opacity: isTopBarVisible ? 1 : 0,
           }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="overflow-hidden"
-          style={{
-            background: 'linear-gradient(90deg, #0074D9 0%, #0074D9 60%, #E91D0E 85%, #E91D0E 100%)',
-          }}
+          className="overflow-hidden bg-[#0F172A] border-b border-[#D4A017]/30"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between py-2 gap-2 sm:gap-4">
@@ -192,8 +189,8 @@ export default function Navbar() {
               
               {/* Center - Slogan (Visible on all screens) */}
               <p className="flex-1 text-center text-white text-xs sm:text-sm font-medium tracking-wide truncate">
-                <span className="font-slogan">KENYA&apos;S HOPE</span>
-                <span className="hidden sm:inline ml-2 opacity-90">— Committed to the Service of Kenyans</span>
+                <span className="font-slogan text-[#D4A017]">KENYA&apos;S HOPE</span>
+                <span className="hidden sm:inline ml-2 text-white/70">— Committed to the Service of Kenyans</span>
               </p>
               
               {/* Right - Social Icons & Date */}
@@ -207,13 +204,13 @@ export default function Navbar() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={social.label}
-                      className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white/80 hover:text-white transition-all duration-200"
+                      className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#D4A017]/20 flex items-center justify-center text-white/80 hover:text-[#D4A017] transition-all duration-200"
                     >
                       <social.icon className="w-4 h-4" />
                     </a>
                   ))}
                 </div>
-                <span className="text-xs text-white/70 hidden md:block">
+                <span className="text-xs text-white/50 hidden md:block">
                   August 9, 2027
                 </span>
               </div>
@@ -240,7 +237,7 @@ export default function Navbar() {
                 <motion.div 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="relative w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-xl overflow-hidden shadow-md ring-2 ring-[#0074D9]/10 group-hover:ring-[#0074D9]/30 transition-all duration-300 flex-shrink-0"
+                  className="relative w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-xl overflow-hidden shadow-md ring-2 ring-[#1E3A8A]/10 group-hover:ring-[#D4A017]/50 transition-all duration-300 flex-shrink-0"
                 >
                   <Image
                     src="/nvp-party-logo.jpeg"
@@ -252,12 +249,14 @@ export default function Navbar() {
                 </motion.div>
                 <div className="block min-w-0">
                   <motion.p 
-                    className="font-headline text-[11px] xs:text-sm sm:text-base lg:text-xl leading-tight text-[#E91D0E] group-hover:text-[#0074D9] transition-colors duration-300 whitespace-nowrap tracking-wide"
+                    className="font-headline text-[11px] xs:text-sm sm:text-base lg:text-xl leading-tight text-[#1E3A8A] group-hover:text-[#0F172A] transition-colors duration-300 whitespace-nowrap tracking-wide"
                     style={{ fontWeight: 800 }}
                   >
                     National Vision Party
                   </motion.p>
-                  <p className="text-[9px] xs:text-xs text-slate-500 hidden sm:block font-medium tracking-wider uppercase">Kenya&apos;s Hope 2027</p>
+                  <p className="text-[9px] xs:text-xs text-slate-500 hidden sm:block font-medium tracking-wider uppercase">
+                    <span className="text-[#D4A017]">Kenya&apos;s Hope</span> 2027
+                  </p>
                 </div>
               </Link>
 
@@ -277,14 +276,14 @@ export default function Navbar() {
                       href={item.href}
                       className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full flex items-center gap-1 ${
                         pathname === item.href || pathname.startsWith(item.href + '/')
-                          ? 'text-[#0074D9]' 
-                          : 'text-slate-600 hover:text-[#0074D9]'
+                          ? 'text-[#1E3A8A]' 
+                          : 'text-slate-600 hover:text-[#1E3A8A]'
                       }`}
                     >
                       {(pathname === item.href || pathname.startsWith(item.href + '/')) && (
                         <motion.span
                           layoutId="activeNav"
-                          className="absolute inset-0 bg-[#0074D9]/10 rounded-full"
+                          className="absolute inset-0 bg-[#1E3A8A]/10 rounded-full"
                           transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                         />
                       )}
@@ -312,12 +311,12 @@ export default function Navbar() {
                                 className="flex items-start gap-3 px-4 py-3 hover:bg-slate-50 transition-colors group"
                               >
                                 {child.icon && (
-                                  <div className="w-8 h-8 rounded-lg bg-[#E91D0E]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#E91D0E] transition-colors">
-                                    <child.icon className="w-4 h-4 text-[#E91D0E] group-hover:text-white transition-colors" />
+                                  <div className="w-8 h-8 rounded-lg bg-[#1E3A8A]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#D4A017]/20 transition-colors">
+                                    <child.icon className="w-4 h-4 text-[#1E3A8A] group-hover:text-[#D4A017] transition-colors" />
                                   </div>
                                 )}
                                 <div>
-                                  <p className="font-medium text-slate-700 group-hover:text-[#E91D0E] transition-colors text-sm">
+                                  <p className="font-medium text-slate-700 group-hover:text-[#1E3A8A] transition-colors text-sm">
                                     {child.name}
                                   </p>
                                   {child.description && (
@@ -344,8 +343,8 @@ export default function Navbar() {
                     onClick={() => setIsSearchOpen(!isSearchOpen)}
                     className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
                       isSearchOpen 
-                        ? 'bg-[#0074D9] text-white' 
-                        : 'bg-slate-100 text-slate-600 hover:bg-[#0074D9] hover:text-white'
+                        ? 'bg-[#1E3A8A] text-white' 
+                        : 'bg-slate-100 text-slate-600 hover:bg-[#1E3A8A] hover:text-white'
                     }`}
                     aria-label="Search"
                   >
@@ -369,7 +368,7 @@ export default function Navbar() {
                             placeholder="Search..."
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#0074D9]/20 focus:border-[#0074D9]"
+                            className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]/20 focus:border-[#1E3A8A]"
                             autoFocus
                           />
                         </div>
@@ -381,7 +380,7 @@ export default function Navbar() {
                                 key={suggestion.title}
                                 href={suggestion.href}
                                 onClick={() => setIsSearchOpen(false)}
-                                className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-50 transition-colors text-sm text-slate-600 hover:text-[#0074D9]"
+                                className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-50 transition-colors text-sm text-slate-600 hover:text-[#1E3A8A]"
                               >
                                 <FaChevronRight className="w-3 h-3" />
                                 {suggestion.title}
@@ -402,7 +401,7 @@ export default function Navbar() {
                 >
                   <Link 
                     href="/join-us"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#E91D0E] to-[#c4180c] text-white text-sm font-semibold shadow-md shadow-[#E91D0E]/20 hover:shadow-lg hover:shadow-[#E91D0E]/30 transition-all duration-300 hover:-translate-y-0.5"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#DC2626] text-white text-sm font-semibold shadow-md shadow-red-900/20 hover:shadow-lg hover:shadow-red-900/30 transition-all duration-300 hover:-translate-y-0.5"
                   >
                     Join Us
                     <FaChevronRight className="w-3 h-3" />
@@ -415,7 +414,7 @@ export default function Navbar() {
                 >
                   <Link 
                     href="/support"
-                    className="px-5 py-2.5 rounded-full border-2 border-[#0074D9] text-[#0074D9] text-sm font-semibold hover:bg-[#0074D9] hover:text-white transition-all duration-300"
+                    className="px-5 py-2.5 rounded-full border-2 border-[#1E3A8A] text-[#1E3A8A] text-sm font-semibold hover:bg-[#1E3A8A] hover:text-white transition-all duration-300"
                   >
                     Donate
                   </Link>
@@ -426,7 +425,7 @@ export default function Navbar() {
               <motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden w-11 h-11 rounded-full flex items-center justify-center bg-slate-100 text-slate-700 hover:bg-[#0074D9] hover:text-white transition-all duration-300"
+                className="lg:hidden w-11 h-11 rounded-full flex items-center justify-center bg-slate-100 text-slate-700 hover:bg-[#1E3A8A] hover:text-white transition-all duration-300"
                 aria-label="Toggle menu"
               >
                 <AnimatePresence mode="wait">
@@ -493,13 +492,14 @@ export default function Navbar() {
                       />
                     </div>
                     <div>
-                      <p className="font-slogan text-lg text-[#E91D0E]">National Vision Party</p>
+                      <p className="font-slogan text-lg text-[#1E3A8A]">National Vision Party</p>
+                      <p className="text-xs text-[#D4A017]">Kenya&apos;s Hope 2027</p>
                     </div>
                   </Link>
                   <motion.button
                     whileTap={{ scale: 0.9 }}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="w-11 h-11 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 hover:bg-[#0074D9] hover:text-white transition-all duration-300"
+                    className="w-11 h-11 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 hover:bg-[#1E3A8A] hover:text-white transition-all duration-300"
                   >
                     <FaTimes className="w-5 h-5" />
                   </motion.button>
@@ -513,7 +513,7 @@ export default function Navbar() {
                   <input
                     type="text"
                     placeholder="Search..."
-                    className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#0074D9]/20 focus:border-[#0074D9]"
+                    className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]/20 focus:border-[#1E3A8A]"
                   />
                 </div>
               </div>
@@ -533,8 +533,8 @@ export default function Navbar() {
                       onClick={() => !item.children && setIsMobileMenuOpen(false)}
                       className={`flex items-center justify-between px-4 py-4 rounded-xl text-base font-medium transition-all duration-300 ${
                         pathname === item.href
-                          ? 'bg-gradient-to-r from-[#0074D9] to-[#6B2C91] text-white shadow-lg shadow-[#0074D9]/25'
-                          : 'text-slate-700 hover:bg-slate-50 hover:text-[#0074D9]'
+                          ? 'bg-[#1E3A8A] text-white shadow-lg'
+                          : 'text-slate-700 hover:bg-slate-50 hover:text-[#1E3A8A]'
                       }`}
                     >
                       {item.name}
@@ -551,9 +551,9 @@ export default function Navbar() {
                             key={child.name}
                             href={child.href}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-slate-600 hover:bg-slate-50 hover:text-[#E91D0E] transition-colors"
+                            className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-slate-600 hover:bg-slate-50 hover:text-[#D4A017] transition-colors"
                           >
-                            {child.icon && <child.icon className="w-4 h-4 text-[#E91D0E]" />}
+                            {child.icon && <child.icon className="w-4 h-4 text-[#1E3A8A]" />}
                             {child.name}
                           </Link>
                         ))}
@@ -575,7 +575,7 @@ export default function Navbar() {
                     <Link
                       href="/join-us"
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="flex items-center justify-center gap-3 w-full py-4 rounded-2xl bg-gradient-to-r from-[#E91D0E] to-[#c4180c] text-white font-semibold shadow-lg shadow-[#E91D0E]/25 hover:shadow-xl hover:shadow-[#E91D0E]/30 transition-all duration-300"
+                      className="flex items-center justify-center gap-3 w-full py-4 rounded-2xl bg-[#DC2626] text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                     >
                       <FaHandshake className="w-5 h-5" />
                       Join the Movement
@@ -589,7 +589,7 @@ export default function Navbar() {
                     <Link
                       href="/support"
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="flex items-center justify-center gap-3 w-full py-4 rounded-2xl border-2 border-[#0074D9] text-[#0074D9] font-semibold hover:bg-[#0074D9] hover:text-white transition-all duration-300"
+                      className="flex items-center justify-center gap-3 w-full py-4 rounded-2xl border-2 border-[#1E3A8A] text-[#1E3A8A] font-semibold hover:bg-[#1E3A8A] hover:text-white transition-all duration-300"
                     >
                       <FaHeart className="w-5 h-5" />
                       Donate to Campaign
@@ -602,15 +602,15 @@ export default function Navbar() {
               <div className="px-6 py-4 border-t border-slate-100">
                 <div className="space-y-3">
                   <a href="tel:+254XXX" className="flex items-center gap-3 text-sm text-slate-600">
-                    <FaPhone className="w-4 h-4 text-[#0074D9]" />
+                    <FaPhone className="w-4 h-4 text-[#1E3A8A]" />
                     +254 XXX XXX XXX
                   </a>
                   <a href="mailto:info@nationalvisionparty.com" className="flex items-center gap-3 text-sm text-slate-600">
-                    <FaEnvelope className="w-4 h-4 text-[#0074D9]" />
+                    <FaEnvelope className="w-4 h-4 text-[#1E3A8A]" />
                     info@nationalvisionparty.com
                   </a>
                   <div className="flex items-center gap-3 text-sm text-slate-600">
-                    <FaMapMarkerAlt className="w-4 h-4 text-[#0074D9]" />
+                    <FaMapMarkerAlt className="w-4 h-4 text-[#1E3A8A]" />
                     Nairobi, Kenya
                   </div>
                 </div>
@@ -630,7 +630,7 @@ export default function Navbar() {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 0.5 + index * 0.05 }}
                       whileHover={{ scale: 1.1, y: -2 }}
-                      className="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#0074D9] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                      className="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#D4A017] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
                     >
                       <social.icon className="w-5 h-5" />
                     </motion.a>
@@ -639,11 +639,11 @@ export default function Navbar() {
               </div>
 
               {/* Footer */}
-              <div className="p-6 bg-gradient-to-r from-[#0074D9]/5 to-[#6B2C91]/5 border-t border-slate-100">
-                <p className="text-center text-sm text-slate-500">
+              <div className="p-6 bg-[#0F172A] border-t border-[#D4A017]/20">
+                <p className="text-center text-sm text-white/70">
                   Committed to the Service of Kenyans
                 </p>
-                <p className="text-center text-xs text-slate-400 mt-1">
+                <p className="text-center text-xs text-[#D4A017] mt-1">
                   © 2025 National Vision Party
                 </p>
               </div>

@@ -24,11 +24,9 @@ import { EconomicIcon, AntiCorruptionIcon, HealthcareIcon, EducationIcon } from 
 import SocialProof from '@/components/SocialProof';
 import HeroCanvas from '@/components/HeroCanvas';
 
-
-
 // ==========================================
-// NATIONAL VISION PARTY - HOMEPAGE
-// Kenya's Hope 2027
+// NATIONAL VISION PARTY - PREMIUM HOMEPAGE
+// Kenya's Hope 2027 - Authoritative Design
 // ==========================================
 
 interface Post {
@@ -68,7 +66,7 @@ const pillars = [
     subtitle: 'Creating jobs and prosperity',
     summary: 'Creating jobs, supporting local businesses, and building a self-reliant economy that works for every Kenyan.',
     Icon: EconomicIcon,
-    color: '#0074D9',
+    color: '#1E3A8A',
     featured: true,
   },
   {
@@ -77,7 +75,7 @@ const pillars = [
     subtitle: 'Uncompromising stance against graft',
     summary: 'Uncompromising stance against corruption. Transparent governance and accountability at every level.',
     Icon: AntiCorruptionIcon,
-    color: '#E91D0E',
+    color: '#D4A017',
     featured: true,
   },
   {
@@ -86,7 +84,7 @@ const pillars = [
     subtitle: 'Quality healthcare accessible to all',
     summary: 'Quality healthcare accessible to all Kenyans. Modern facilities and well-equipped medical professionals.',
     Icon: HealthcareIcon,
-    color: '#6B2C91',
+    color: '#1E3A8A',
     featured: true,
   },
   {
@@ -95,7 +93,7 @@ const pillars = [
     subtitle: 'World-class education for our children',
     summary: 'World-class education system that prepares our youth for the challenges and opportunities of tomorrow.',
     Icon: EducationIcon,
-    color: '#0074D9',
+    color: '#D4A017',
     featured: true,
   },
 ];
@@ -189,19 +187,31 @@ export default function HomePage() {
     <div className="relative min-h-screen overflow-hidden">
       
       {/* ==========================================
-          HERO SECTION - Presidential Kenyan Coat of Arms Canvas
+          HERO SECTION - Premium Deep Blue with Gold Accents
           ========================================== */}
       <section className="relative min-h-auto overflow-hidden">
-        {/* Base gradient */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#0074D9] via-[#0074D9] to-[#0074D9]" />
+        {/* Base gradient - Deep Navy to Blue */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#0F172A] via-[#1E3A8A] to-[#1E3A8A]" />
         
-        {/* Kenyan Coat of Arms Canvas Animation */}
+        {/* Gold accent lines */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#D4A017] via-[#E6C200] to-[#D4A017] z-20" />
+        
+        {/* Subtle pattern overlay */}
+        <div 
+          className="absolute inset-0 z-0 opacity-5"
+          style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)`,
+            backgroundSize: '50px 50px',
+          }}
+        />
+        
+        {/* Hero Canvas */}
         <HeroCanvas />
         
         {/* Gradient fade to white at bottom for smooth transition */}
         <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-white via-white/80 to-transparent z-10" />
 
-        {/* Hero Content - Optimized spacing, no blank space */}
+        {/* Hero Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 lg:pt-36 pb-2 sm:pb-6 lg:pb-12">
           <div className="grid lg:grid-cols-2 gap-4 lg:gap-10 items-start lg:items-center">
             
@@ -216,10 +226,10 @@ export default function HomePage() {
               <div 
                 className="relative w-full aspect-[16/9] sm:aspect-[2/1] p-1.5 sm:p-2 overflow-hidden"
                 style={{
-                  background: 'linear-gradient(180deg, #000000 0%, #000000 25%, #FFFFFF 25%, #FFFFFF 28%, #E91D0E 28%, #E91D0E 72%, #FFFFFF 72%, #FFFFFF 75%, #006600 75%, #006600 100%)',
+                  background: 'linear-gradient(180deg, #000000 0%, #000000 25%, #FFFFFF 25%, #FFFFFF 28%, #DC2626 28%, #DC2626 72%, #FFFFFF 72%, #FFFFFF 75%, #006600 75%, #006600 100%)',
                 }}
               >
-                <div className="relative w-full h-full overflow-hidden bg-[#0074D9]/5">
+                <div className="relative w-full h-full overflow-hidden bg-[#1E3A8A]/5">
                   <Image
                     src="/images/Dr.png"
                     alt="Dr. Isaac Newton Kinity - Presidential Candidate"
@@ -236,7 +246,7 @@ export default function HomePage() {
                   transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
                   className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 bg-white rounded-full p-1.5 sm:p-2 shadow-xl"
                 >
-                  <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-gradient-to-br from-[#E91D0E] to-[#BA170C] flex items-center justify-center overflow-hidden">
+                  <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-gradient-to-br from-[#1E3A8A] to-[#0F172A] flex items-center justify-center overflow-hidden">
                     <Image
                       src="/images/kenya-flag.png"
                       alt="Kenya"
@@ -252,16 +262,24 @@ export default function HomePage() {
             {/* LEFT: Text Content */}
             <div className="space-y-3 sm:space-y-4 text-center lg:text-left order-2 lg:order-1 lg:pr-4">
 
-              {/* Main Headline - Enhanced with text animations */}
+              {/* Gold accent line above headline */}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.6 }}
+                className="hidden lg:block w-16 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] rounded-full mb-4 origin-left"
+              />
+
+              {/* Main Headline */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
                 className="space-y-1 sm:space-y-2"
               >
-                {/* Name - Primary Focus with warm glow */}
+                {/* Name - Primary Focus */}
                 <motion.h1 
-                  className="font-headline text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[2.75rem] text-white tracking-tight drop-shadow-[0_2px_10px_rgba(253,230,138,0.3)] leading-tight mb-2 whitespace-nowrap"
+                  className="font-headline text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[2.75rem] text-white tracking-tight leading-tight mb-2 whitespace-nowrap"
                 >
                   <span className="block">
                     {"Dr. Isaac Newton Kinity".split("").map((char, i) => (
@@ -283,44 +301,42 @@ export default function HomePage() {
                   </span>
                 </motion.h1>
                 
-                {/* Role - Sunrise gradient representing "Kenya's Hope" */}
+                {/* Role - Gold accent */}
                 <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
                 >
-                  <span className="block font-slogan text-sm sm:text-lg md:text-2xl lg:text-3xl tracking-wider">
-                    <span className="bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-200 bg-clip-text text-transparent">
-                      PRESIDENTIAL CANDIDATE 2027
-                    </span>
+                  <span className="block font-slogan text-sm sm:text-lg md:text-2xl lg:text-3xl tracking-wider text-[#D4A017]">
+                    PRESIDENTIAL CANDIDATE 2027
                   </span>
                 </motion.div>
               </motion.div>
 
-              {/* Tagline - Soft cyan for trust and clarity */}
+              {/* Tagline */}
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1 }}
-                className="text-sm sm:text-base md:text-lg text-sky-200 max-w-xl mx-auto lg:mx-0 font-medium"
+                className="text-sm sm:text-base md:text-lg text-white/80 max-w-xl mx-auto lg:mx-0 font-medium"
               >
                 Committed to the Service of Kenyans
               </motion.p>
 
-              {/* Key Message - Cream text with accent border */}
+              {/* Key Message */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 1.1 }}
                 className="max-w-lg mx-auto lg:mx-0 hidden sm:block"
               >
-                <p className="text-xs sm:text-sm md:text-base text-amber-50/95 border-l-4 border-amber-400 pl-3 sm:pl-4 text-left leading-relaxed bg-gradient-to-r from-white/10 to-transparent backdrop-blur-sm rounded-r-lg py-2">
+                <p className="text-xs sm:text-sm md:text-base text-white/90 border-l-4 border-[#D4A017] pl-3 sm:pl-4 text-left leading-relaxed bg-white/5 backdrop-blur-sm rounded-r-lg py-2">
                   No Recycling of Corrupt Politicians. A new era of leadership built on integrity, 
                   economic transformation, and unwavering commitment to every Kenyan.
                 </p>
               </motion.div>
 
-              {/* CTA Buttons with subtle glass effect */}
+              {/* CTA Buttons */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -329,7 +345,7 @@ export default function HomePage() {
               >
                 <Link
                   href="/join-us"
-                  className="group relative inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 md:px-7 md:py-3.5 rounded-lg sm:rounded-xl bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold text-sm sm:text-base md:text-lg overflow-hidden transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:-translate-y-1 flex-1 sm:flex-none justify-center"
+                  className="group relative inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 md:px-7 md:py-3.5 rounded-lg sm:rounded-xl bg-[#DC2626] text-white font-semibold text-sm sm:text-base md:text-lg overflow-hidden transition-all duration-300 hover:bg-[#B91C1C] hover:-translate-y-1 flex-1 sm:flex-none justify-center shadow-lg shadow-red-900/30"
                 >
                   <FaHandshake className="w-4 h-4 sm:w-5 sm:h-5 relative z-10" />
                   <span className="relative z-10 whitespace-nowrap">Join Us</span>
@@ -337,21 +353,21 @@ export default function HomePage() {
                 </Link>
                 <Link
                   href="/about"
-                  className="group inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 md:px-7 md:py-3.5 rounded-lg sm:rounded-xl bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold text-sm sm:text-base md:text-lg transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:-translate-y-1 flex-1 sm:flex-none justify-center"
+                  className="group inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 sm:py-3 md:px-7 md:py-3.5 rounded-lg sm:rounded-xl bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold text-sm sm:text-base md:text-lg transition-all duration-300 hover:bg-white/20 hover:border-[#D4A017]/50 hover:-translate-y-1 flex-1 sm:flex-none justify-center"
                 >
-                  <FaFlag className="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-12 transition-transform" />
+                  <FaFlag className="w-4 h-4 sm:w-5 sm:h-5 group-hover:text-[#D4A017] transition-transform" />
                   <span className="whitespace-nowrap">Learn More</span>
                 </Link>
               </motion.div>
 
-              {/* Stats Bar - Compact with stagger animation */}
+              {/* Stats Bar */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.3 }}
                 className="pt-2 sm:pt-4"
               >
-                <div className="inline-flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 md:gap-6 bg-white rounded-lg sm:rounded-xl px-3 sm:px-5 py-2 sm:py-3 shadow-lg sm:shadow-xl shadow-blue-900/20">
+                <div className="inline-flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 md:gap-6 bg-white rounded-lg sm:rounded-xl px-3 sm:px-5 py-2 sm:py-3 shadow-lg sm:shadow-xl">
                   {[
                     { value: '47', label: 'Counties', suffix: '+' },
                     { value: '50', label: 'Million Kenyans', suffix: 'M+' },
@@ -364,8 +380,8 @@ export default function HomePage() {
                       transition={{ delay: 1.4 + i * 0.1, type: "spring" }}
                       className="text-center"
                     >
-                      <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#0074D9]">
-                        {stat.value}<span className="text-[#E91D0E]">{stat.suffix}</span>
+                      <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#1E3A8A]">
+                        {stat.value}<span className="text-[#D4A017]">{stat.suffix}</span>
                       </div>
                       <div className="text-[10px] sm:text-xs text-slate-600 font-medium">{stat.label}</div>
                     </motion.div>
@@ -389,7 +405,7 @@ export default function HomePage() {
                     scale: [1, 1.05, 1],
                   }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -inset-4 bg-gradient-to-br from-white/50 via-white/30 to-transparent rounded-3xl blur-2xl" 
+                  className="absolute -inset-4 bg-gradient-to-br from-[#D4A017]/30 via-white/10 to-transparent rounded-3xl blur-2xl" 
                 />
                 
                 {/* Kenyan Flag Frame Container */}
@@ -398,10 +414,10 @@ export default function HomePage() {
                   transition={{ type: "spring", stiffness: 300 }}
                   className="relative w-full h-full p-2 rounded-2xl shadow-2xl overflow-hidden"
                   style={{
-                    background: 'linear-gradient(180deg, #000000 0%, #000000 25%, #FFFFFF 25%, #FFFFFF 28%, #E91D0E 28%, #E91D0E 72%, #FFFFFF 72%, #FFFFFF 75%, #006600 75%, #006600 100%)',
+                    background: 'linear-gradient(180deg, #000000 0%, #000000 25%, #FFFFFF 25%, #FFFFFF 28%, #DC2626 28%, #DC2626 72%, #FFFFFF 72%, #FFFFFF 75%, #006600 75%, #006600 100%)',
                   }}
                 >
-                  <div className="relative w-full h-full rounded-xl overflow-hidden bg-[#0074D9]/5">
+                  <div className="relative w-full h-full rounded-xl overflow-hidden bg-[#1E3A8A]/5">
                     <Image
                       src="/images/Dr.png"
                       alt="Dr. Isaac Newton Kinity - Presidential Candidate"
@@ -412,19 +428,19 @@ export default function HomePage() {
                   </div>
                 </motion.div>
 
-                {/* Floating Badge with bounce */}
+                {/* Floating Badge with gold accent */}
                 <motion.div
                   initial={{ opacity: 0, y: 30, scale: 0.8 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ delay: 1, type: "spring", stiffness: 200, damping: 15 }}
                   whileHover={{ scale: 1.05 }}
-                  className="absolute -bottom-3 -left-3 bg-white rounded-2xl shadow-xl px-4 py-2.5 border border-slate-100"
+                  className="absolute -bottom-3 -left-3 bg-white rounded-2xl shadow-xl px-4 py-2.5 border-l-4 border-[#D4A017]"
                 >
                   <div className="flex items-center gap-2.5">
                     <motion.div 
                       animate={{ rotate: [0, 10, -10, 0] }}
                       transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-                      className="w-9 h-9 rounded-full bg-gradient-to-br from-[#E91D0E] to-[#BA170C] flex items-center justify-center overflow-hidden"
+                      className="w-9 h-9 rounded-full bg-gradient-to-br from-[#1E3A8A] to-[#0F172A] flex items-center justify-center overflow-hidden"
                     >
                       <Image
                         src="/images/kenya-flag.png"
@@ -436,21 +452,21 @@ export default function HomePage() {
                     </motion.div>
                     <div>
                       <p className="text-[10px] text-slate-500 leading-tight">Presidential</p>
-                      <p className="text-sm font-bold text-[#111111] leading-tight">Candidate 2027</p>
+                      <p className="text-sm font-bold text-[#1E3A8A] leading-tight">Candidate 2027</p>
                     </div>
                   </div>
                 </motion.div>
 
-                {/* Decorative Rings - Animated */}
+                {/* Decorative Rings - Gold accent */}
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                  className="absolute -inset-6 border-2 border-dashed border-white/30 rounded-3xl pointer-events-none"
+                  className="absolute -inset-6 border-2 border-dashed border-[#D4A017]/30 rounded-3xl pointer-events-none"
                 />
                 <motion.div
                   animate={{ rotate: -360 }}
                   transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                  className="absolute -inset-10 border border-white/20 rounded-[2rem] pointer-events-none"
+                  className="absolute -inset-10 border border-white/10 rounded-[2rem] pointer-events-none"
                 />
               </div>
             </motion.div>
@@ -465,16 +481,17 @@ export default function HomePage() {
           VISION SECTION - Policy Pillars
           ========================================== */}
       <section id="vision" className="pt-8 pb-16 md:pt-12 md:pb-24 lg:pt-16 lg:pb-32 px-4 sm:px-6 lg:px-8 bg-white relative">
-        <div className="container-presidential">
+        <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="inline-block px-4 py-1 rounded-full bg-[#0074D9]/10 text-[#0074D9] font-semibold text-sm mb-4">
+              <span className="inline-block px-4 py-1 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm mb-4">
                 Our Vision
               </span>
-              <h2 className="font-headline text-4xl md:text-5xl text-[#111111] mb-4">
-                Building a <span className="text-[#E91D0E]">Better Kenya</span>
+              <h2 className="font-headline text-4xl md:text-5xl text-[#0F172A] mb-4">
+                Building a <span className="text-[#D4A017]">Better Kenya</span>
               </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] mx-auto rounded-full mb-4" />
               <p className="text-lg text-slate-600">
                 Four pillars that will transform Kenya into a nation of prosperity, 
                 integrity, and opportunity for all.
@@ -489,7 +506,7 @@ export default function HomePage() {
                 <ScrollReveal key={pillar.id} delay={index * 0.1}>
                   <Link href={`/about#${pillar.id}`} className="group block h-full">
                     <TiltCard className="h-full" borderColor={pillar.color}>
-                      <div className="h-full p-6">
+                      <div className="h-full p-6 border-t-4" style={{ borderColor: pillar.color }}>
                         {/* Professional SVG Icon */}
                         <div 
                           className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
@@ -515,13 +532,13 @@ export default function HomePage() {
                           <span className="text-xs font-semibold" style={{ color: pillar.color }}>100%</span>
                         </div>
                         
-                        <h3 className="font-headline text-xl text-[#111111] mb-2 group-hover:text-[#0074D9] transition-colors">
+                        <h3 className="font-headline text-xl text-[#0F172A] mb-2 group-hover:text-[#1E3A8A] transition-colors">
                           {pillar.title}
                         </h3>
                         <p className="text-slate-600 text-sm line-clamp-3">
                           {pillar.summary}
                         </p>
-                        <div className="mt-4 flex items-center gap-2 text-[#0074D9] font-semibold text-sm">
+                        <div className="mt-4 flex items-center gap-2 text-[#1E3A8A] font-semibold text-sm">
                           Learn more
                           <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </div>
@@ -538,35 +555,35 @@ export default function HomePage() {
                     id: 'economic-transformation',
                     title: 'Economic Transformation', 
                     desc: 'Creating jobs, supporting local businesses, and building a self-reliant economy that works for every Kenyan.',
-                    color: '#0074D9',
+                    color: '#1E3A8A',
                     Icon: EconomicIcon
                   },
                   { 
                     id: 'zero-corruption',
                     title: 'Zero Corruption', 
                     desc: 'Uncompromising stance against corruption. Transparent governance and accountability at every level.',
-                    color: '#E91D0E',
+                    color: '#D4A017',
                     Icon: AntiCorruptionIcon
                   },
                   { 
                     id: 'universal-healthcare',
                     title: 'Universal Healthcare', 
                     desc: 'Quality healthcare accessible to all Kenyans. Modern facilities and well-equipped medical professionals.',
-                    color: '#6B2C91',
+                    color: '#1E3A8A',
                     Icon: HealthcareIcon
                   },
                   { 
                     id: 'education-revolution',
                     title: 'Education Revolution', 
                     desc: 'World-class education system that prepares our youth for the challenges and opportunities of tomorrow.',
-                    color: '#0074D9',
+                    color: '#D4A017',
                     Icon: EducationIcon
                   },
                 ].map((pillar, index) => (
                   <ScrollReveal key={index} delay={index * 0.1}>
                     <Link href={`/about#${pillar.id}`} className="group block h-full">
                       <TiltCard className="h-full" borderColor={pillar.color}>
-                        <div className="h-full p-6">
+                        <div className="h-full p-6 border-t-4" style={{ borderColor: pillar.color }}>
                           <div 
                             className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
                             style={{ 
@@ -576,13 +593,13 @@ export default function HomePage() {
                           >
                             <pillar.Icon className="w-7 h-7" />
                           </div>
-                          <h3 className="font-headline text-xl text-[#111111] mb-2 group-hover:text-[#0074D9] transition-colors">
+                          <h3 className="font-headline text-xl text-[#0F172A] mb-2 group-hover:text-[#1E3A8A] transition-colors">
                             {pillar.title}
                           </h3>
                           <p className="text-slate-600 text-sm">
                             {pillar.desc}
                           </p>
-                          <div className="mt-4 flex items-center gap-2 text-[#0074D9] font-semibold text-sm">
+                          <div className="mt-4 flex items-center gap-2 text-[#1E3A8A] font-semibold text-sm">
                           Learn more
                           <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </div>
@@ -600,16 +617,16 @@ export default function HomePage() {
       {/* ==========================================
           ABOUT TEASER SECTION
           ========================================== */}
-      <section className="section-padding bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">
+      <section className="py-16 md:py-24 lg:py-32 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">
         {/* Background decoration */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#0074D9]/5 to-transparent pointer-events-none" />
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#1E3A8A]/5 to-transparent pointer-events-none" />
         
-        <div className="container-presidential relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Image Side */}
             <ScrollReveal direction="left">
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-[#0074D9] to-[#6B2C91] rounded-3xl opacity-20 blur-2xl" />
+                <div className="absolute -inset-4 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] rounded-3xl opacity-20 blur-2xl" />
                 <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                   <Image
                     src="/images/president.jpeg"
@@ -617,13 +634,13 @@ export default function HomePage() {
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0074D9]/40 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1E3A8A]/40 via-transparent to-transparent" />
                 </div>
                 
                 {/* Experience badge */}
-                <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 border border-slate-100">
+                <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 border-t-4 border-[#D4A017]">
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-[#E91D0E]">20+</div>
+                    <div className="text-4xl font-bold text-[#1E3A8A]">20+</div>
                     <div className="text-sm text-slate-600">Years of Service</div>
                   </div>
                 </div>
@@ -633,12 +650,13 @@ export default function HomePage() {
             {/* Content Side */}
             <ScrollReveal direction="right">
               <div className="space-y-6">
-                <span className="inline-block px-4 py-1 rounded-full bg-[#E91D0E]/10 text-[#E91D0E] font-semibold text-sm">
+                <span className="inline-block px-4 py-1 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm">
                   Meet the Candidate
                 </span>
-                <h2 className="font-headline text-4xl md:text-5xl text-[#111111]">
-                  A Leader for <span className="text-[#0074D9]">All Kenyans</span>
+                <h2 className="font-headline text-4xl md:text-5xl text-[#0F172A]">
+                  A Leader for <span className="text-[#D4A017]">All Kenyans</span>
                 </h2>
+                <div className="w-16 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] rounded-full" />
                 <div className="space-y-4 text-slate-600 text-lg leading-relaxed">
                   <p>
                     Dr. Isaac Newton Kinity brings decades of experience in public service, 
@@ -664,7 +682,7 @@ export default function HomePage() {
                     <Link
                       key={i}
                       href={trait.href}
-                      className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0074D9]/10 text-[#0074D9] font-semibold text-sm hover:bg-[#0074D9] hover:text-white transition-all duration-300"
+                      className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A] font-semibold text-sm hover:bg-[#1E3A8A] hover:text-white transition-all duration-300"
                     >
                       {trait.label}
                       <FaArrowRight className="w-3 h-3 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
@@ -674,7 +692,7 @@ export default function HomePage() {
 
                 <Link
                   href="/about"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#0074D9] text-white font-bold hover:bg-[#005CB0] transition-all duration-300 hover:shadow-lg hover:shadow-[#0074D9]/30"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#1E3A8A] text-white font-bold hover:bg-[#0F172A] transition-all duration-300 hover:shadow-lg hover:shadow-[#1E3A8A]/30"
                 >
                   Read Full Story
                   <FaArrowRight className="w-4 h-4" />
@@ -688,22 +706,22 @@ export default function HomePage() {
       {/* ==========================================
           LATEST NEWS SECTION - REAL POSTS
           ========================================== */}
-      <section className="section-padding bg-white">
-        <div className="container-presidential">
+      <section className="py-16 md:py-24 lg:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <ScrollReveal>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
               <div>
-                <span className="inline-block px-4 py-1 rounded-full bg-[#6B2C91]/10 text-[#6B2C91] font-semibold text-sm mb-4">
+                <span className="inline-block px-4 py-1 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm mb-4">
                   Latest Updates
                 </span>
-                <h2 className="font-headline text-4xl md:text-5xl text-[#111111]">
-                  From the <span className="text-[#0074D9]">News Hub</span>
+                <h2 className="font-headline text-4xl md:text-5xl text-[#0F172A]">
+                  From the <span className="text-[#D4A017]">News Hub</span>
                 </h2>
               </div>
               <Link
                 href="/news-hub"
-                className="inline-flex items-center gap-2 text-[#0074D9] font-semibold hover:text-[#005CB0] transition-colors"
+                className="inline-flex items-center gap-2 text-[#1E3A8A] font-semibold hover:text-[#0F172A] transition-colors"
               >
                 View All News
                 <FaArrowRight className="w-4 h-4" />
@@ -717,7 +735,7 @@ export default function HomePage() {
               // Loading skeleton
               <>
                 {[1, 2, 3].map((i) => (
-                  <div key={i} className="card-presidential overflow-hidden h-full animate-pulse">
+                  <div key={i} className="card-premium overflow-hidden h-full animate-pulse">
                     <div className="aspect-video bg-slate-200" />
                     <div className="p-6 space-y-3">
                       <div className="h-4 bg-slate-200 rounded w-1/3" />
@@ -732,7 +750,7 @@ export default function HomePage() {
               latestPosts.map((post, index) => (
                 <ScrollReveal key={post.id} delay={index * 0.1}>
                   <Link href={`/news-hub/${post.slug}`} className="group">
-                    <article className="card-presidential overflow-hidden h-full">
+                    <article className="card-premium overflow-hidden h-full">
                       {/* Image */}
                       <div className="relative aspect-video overflow-hidden">
                         {post.cover ? (
@@ -743,12 +761,12 @@ export default function HomePage() {
                             className="object-cover transition-transform duration-500 group-hover:scale-110"
                           />
                         ) : (
-                          <div className="w-full h-full bg-gradient-to-br from-[#0074D9] to-[#6B2C91] flex items-center justify-center">
+                          <div className="w-full h-full bg-gradient-to-br from-[#1E3A8A] to-[#0F172A] flex items-center justify-center">
                             <FaNewspaper className="w-12 h-12 text-white/50" />
                           </div>
                         )}
                         <div className="absolute top-4 left-4">
-                          <span className="px-3 py-1 rounded-full bg-[#E91D0E] text-white text-xs font-bold">
+                          <span className="px-3 py-1 rounded-full bg-[#D4A017] text-white text-xs font-bold">
                             {post.category}
                           </span>
                         </div>
@@ -763,7 +781,7 @@ export default function HomePage() {
                             year: 'numeric'
                           })}
                         </p>
-                        <h3 className="font-headline text-xl text-[#111111] mb-3 group-hover:text-[#0074D9] transition-colors line-clamp-2">
+                        <h3 className="font-headline text-xl text-[#0F172A] mb-3 group-hover:text-[#1E3A8A] transition-colors line-clamp-2">
                           {post.title}
                         </h3>
                         <p className="text-slate-600 text-sm line-clamp-3">
@@ -789,28 +807,28 @@ export default function HomePage() {
       {/* ==========================================
           MEDIA SHOWCASE SECTION - White to Blue Gradient
           ========================================== */}
-      <section className="section-padding bg-gradient-to-b from-white via-white via-30% to-[#0074D9] relative overflow-hidden">
+      <section className="py-16 md:py-24 lg:py-32 bg-gradient-to-b from-white via-white via-30% to-[#1E3A8A] relative overflow-hidden">
         {/* Background decoration - subtle blue accents on white */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0074D9]/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/3 left-0 w-[400px] h-[400px] bg-[#E91D0E]/5 rounded-full blur-3xl" />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#1E3A8A]/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/3 left-0 w-[400px] h-[400px] bg-[#D4A017]/5 rounded-full blur-3xl" />
         </div>
 
-        <div className="container-presidential relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Header */}
           <ScrollReveal>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
               <div>
-                <span className="inline-block px-4 py-1 rounded-full bg-[#0074D9]/10 text-[#0074D9] font-semibold text-sm mb-4">
+                <span className="inline-block px-4 py-1 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm mb-4">
                   Media Center
                 </span>
-                <h2 className="font-headline text-4xl md:text-5xl text-[#111111]">
-                  Latest <span className="text-[#0074D9]">From The Trail</span>
+                <h2 className="font-headline text-4xl md:text-5xl text-[#0F172A]">
+                  Latest <span className="text-[#1E3A8A]">From The Trail</span>
                 </h2>
               </div>
               <Link
                 href="/gallery"
-                className="inline-flex items-center gap-2 text-[#0074D9] font-semibold hover:text-[#005CB0] transition-colors"
+                className="inline-flex items-center gap-2 text-[#1E3A8A] font-semibold hover:text-[#0F172A] transition-colors"
               >
                 View All Media
                 <FaArrowRight className="w-4 h-4" />
@@ -824,8 +842,8 @@ export default function HomePage() {
             <div className="lg:w-3/4">
               <ScrollReveal>
                 <div className="flex items-center gap-2 mb-4">
-                  <FaImages className="w-5 h-5 text-[#0074D9]" />
-                  <h3 className="text-lg font-semibold text-[#111111]">Latest Photos</h3>
+                  <FaImages className="w-5 h-5 text-[#1E3A8A]" />
+                  <h3 className="text-lg font-semibold text-[#0F172A]">Latest Photos</h3>
                 </div>
               </ScrollReveal>
               
@@ -884,7 +902,7 @@ export default function HomePage() {
                   <button
                     onClick={loadMoreImages}
                     disabled={loadingMoreImages}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0074D9] hover:bg-[#005CB0] disabled:bg-slate-300 disabled:cursor-not-allowed transition-all duration-300 text-white font-medium shadow-lg"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#1E3A8A] hover:bg-[#0F172A] disabled:bg-slate-300 disabled:cursor-not-allowed transition-all duration-300 text-white font-medium shadow-lg"
                   >
                     {loadingMoreImages ? (
                       <>
@@ -907,7 +925,7 @@ export default function HomePage() {
               {/* Show count when all loaded */}
               {!mediaLoading && !hasMoreImages && latestImages.length > 0 && (
                 <div className="mt-6 text-center">
-                  <p className="text-white/50 text-sm">
+                  <p className="text-white/70 text-sm">
                     Showing all {latestImages.length} photos
                   </p>
                   <Link
@@ -925,8 +943,8 @@ export default function HomePage() {
             <div className="lg:w-1/4">
               <ScrollReveal>
                 <div className="flex items-center gap-2 mb-4">
-                  <FaVideo className="w-5 h-5 text-[#0074D9]" />
-                  <h3 className="text-lg font-semibold text-[#111111]">Latest Videos</h3>
+                  <FaVideo className="w-5 h-5 text-[#1E3A8A]" />
+                  <h3 className="text-lg font-semibold text-[#0F172A]">Latest Videos</h3>
                 </div>
               </ScrollReveal>
               
@@ -960,13 +978,13 @@ export default function HomePage() {
                         
                         {/* Play button */}
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="w-10 h-10 bg-[#E91D0E]/90 rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform shadow-lg">
+                          <div className="w-10 h-10 bg-[#DC2626]/90 rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform shadow-lg">
                             <FaPlay className="w-4 h-4 text-white ml-0.5" />
                           </div>
                         </div>
                         
                         {/* Category badge */}
-                        <div className="absolute top-2 left-2 px-2 py-0.5 bg-[#E91D0E] text-white text-xs font-bold rounded">
+                        <div className="absolute top-2 left-2 px-2 py-0.5 bg-[#D4A017] text-white text-xs font-bold rounded">
                           {video.category}
                         </div>
                         
@@ -992,7 +1010,7 @@ export default function HomePage() {
                 <ScrollReveal delay={0.3}>
                   <Link
                     href="/gallery?tab=videos"
-                    className="mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#0074D9] hover:bg-[#005CB0] transition-all duration-300 text-white font-medium text-sm shadow-md"
+                    className="mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#1E3A8A] hover:bg-[#0F172A] transition-all duration-300 text-white font-medium text-sm shadow-md"
                   >
                     <FaExternalLinkAlt className="w-4 h-4" />
                     View All Videos
@@ -1009,42 +1027,34 @@ export default function HomePage() {
           ========================================== */}
       <SocialProof />
 
-
-
       {/* ==========================================
-          CALL TO ACTION SECTION - with Video Background
+          CALL TO ACTION SECTION - Premium Dark
           ========================================== */}
-      <section className="section-padding bg-[#111111] text-white relative overflow-hidden min-h-[600px]">
-        {/* YouTube Video Background */}
-        <div className="absolute inset-0 w-full h-full overflow-hidden">
-          <iframe
-            src="https://www.youtube.com/embed/BqPibiAzqIk?autoplay=1&mute=1&loop=1&playlist=BqPibiAzqIk&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&start=0"
-            title="National Vision Party Campaign Movement"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            className="absolute w-full h-full"
-            style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              width: '100vw',
-              height: '100vh',
-              transform: 'translate(-50%, -50%) scale(1.3)',
-              pointerEvents: 'none',
-            }}
-          />
-        </div>
+      <section className="py-16 md:py-24 lg:py-32 bg-[#0F172A] text-white relative overflow-hidden min-h-[600px]">
+        {/* Subtle pattern */}
+        <div 
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)`,
+            backgroundSize: '50px 50px',
+          }}
+        />
         
-        {/* Dark Glass Overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80 backdrop-blur-[2px]" />
+        {/* Gold accent lines */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4A017] to-transparent" />
         
-        {/* Additional subtle gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0074D9]/20 via-transparent to-[#6B2C91]/20" />
+        {/* Gradient overlays for depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1E3A8A]/20 via-transparent to-[#1E3A8A]/20" />
 
-        <div className="container-presidential relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <ScrollReveal>
+              {/* Gold accent line */}
+              <div className="w-24 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] mx-auto rounded-full mb-8" />
+              
               <h2 className="font-slogan text-4xl md:text-5xl lg:text-6xl mb-6">
-                BE PART OF THE <span className="text-[#E91D0E]">MOVEMENT</span>
+                BE PART OF THE <span className="text-[#D4A017]">MOVEMENT</span>
               </h2>
               <p className="text-xl text-white/70 mb-10 max-w-2xl mx-auto">
                 Change doesn&apos;t happen from the top down. It starts with dedicated citizens 
@@ -1060,7 +1070,7 @@ export default function HomePage() {
                   { value: '100K+', label: 'Supporters' },
                 ].map((stat, i) => (
                   <div key={i} className="text-center">
-                    <div className="text-4xl md:text-5xl font-bold text-[#0074D9]">{stat.value}</div>
+                    <div className="text-4xl md:text-5xl font-bold text-[#D4A017]">{stat.value}</div>
                     <div className="text-white/60">{stat.label}</div>
                   </div>
                 ))}
@@ -1070,16 +1080,16 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   href="/join-us"
-                  className="inline-flex items-center gap-3 px-10 py-5 rounded-xl bg-[#E91D0E] text-white font-bold text-lg hover:bg-[#BA170C] transition-all duration-300 hover:shadow-xl hover:shadow-[#E91D0E]/30"
+                  className="inline-flex items-center gap-3 px-10 py-5 rounded-xl bg-[#DC2626] text-white font-bold text-lg hover:bg-[#B91C1C] transition-all duration-300 hover:shadow-xl hover:shadow-red-900/30"
                 >
                   <FaHandshake className="w-6 h-6" />
                   Become a Volunteer
                 </Link>
                 <Link
                   href="/support"
-                  className="inline-flex items-center gap-3 px-10 py-5 rounded-xl bg-white text-[#111111] font-bold text-lg hover:bg-slate-100 transition-all duration-300"
+                  className="inline-flex items-center gap-3 px-10 py-5 rounded-xl bg-white text-[#0F172A] font-bold text-lg hover:bg-slate-100 transition-all duration-300"
                 >
-                  <FaHeart className="w-6 h-6 text-[#E91D0E]" />
+                  <FaHeart className="w-6 h-6 text-[#DC2626]" />
                   Support the Campaign
                 </Link>
               </div>

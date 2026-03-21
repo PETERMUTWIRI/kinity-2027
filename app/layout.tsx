@@ -167,7 +167,7 @@ export const metadata: Metadata = {
 // ==========================================
 
 export const viewport = {
-  themeColor: '#0074D9',
+  themeColor: '#1E3A8A',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -256,10 +256,10 @@ export default function RootLayout({
       </head>
       
       <body 
-        className={`${inter.className} antialiased bg-slate-50 text-slate-900 overscroll-none`}
+        className={`${inter.className} antialiased bg-white text-slate-900 overscroll-none`}
       >
-        {/* Mesh gradient background overlay */}
-        <div className="fixed inset-0 bg-gradient-mesh pointer-events-none z-0" />
+        {/* Clean white background */}
+        <div className="fixed inset-0 bg-white pointer-events-none z-0" />
         
         {/* Conditional Layout - hides navbar/footer on admin routes */}
         <ConditionalLayout>
