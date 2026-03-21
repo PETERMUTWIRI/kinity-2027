@@ -499,47 +499,44 @@ export default function HomePage() {
             </div>
           </ScrollReveal>
 
-          {/* Pillars Grid - With 3D Tilt Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Pillars Grid - Clean Premium Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {pillars.length > 0 ? (
               pillars.map((pillar, index) => (
                 <ScrollReveal key={pillar.id} delay={index * 0.1}>
                   <Link href={`/about#${pillar.id}`} className="group block h-full">
                     <TiltCard className="h-full" borderColor={pillar.color}>
-                      <div className="h-full p-6 border-t-4" style={{ borderColor: pillar.color }}>
-                        {/* Professional SVG Icon */}
-                        <div 
-                          className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
-                          style={{ 
-                            backgroundColor: `${pillar.color}15`,
-                            color: pillar.color 
-                          }}
-                        >
-                          <pillar.Icon className="w-7 h-7" />
-                        </div>
-                        
-                        {/* Progress indicator */}
-                        <div className="flex items-center gap-2 mb-3">
-                          <div className="flex-1 h-1 bg-slate-100 rounded-full overflow-hidden">
-                            <motion.div 
-                              className="h-full rounded-full"
-                              style={{ backgroundColor: pillar.color }}
-                              initial={{ width: 0 }}
-                              whileInView={{ width: '100%' }}
-                              transition={{ duration: 1, delay: index * 0.2 }}
-                            />
+                      <div className="h-full bg-white rounded-2xl p-5 md:p-6 shadow-md border border-slate-100 group-hover:shadow-xl group-hover:border-[#D4A017]/30 transition-all duration-300">
+                        {/* Icon with gold accent ring */}
+                        <div className="relative mb-4">
+                          <div 
+                            className="w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                            style={{ 
+                              backgroundColor: `${pillar.color}10`,
+                              color: pillar.color 
+                            }}
+                          >
+                            <pillar.Icon className="w-6 h-6 md:w-7 md:h-7" />
                           </div>
-                          <span className="text-xs font-semibold" style={{ color: pillar.color }}>100%</span>
+                          {/* Subtle gold accent dot */}
+                          <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#D4A017] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         </div>
                         
-                        <h3 className="font-headline text-xl text-[#0F172A] mb-2 group-hover:text-[#1E3A8A] transition-colors">
+                        {/* Title with subtle gold underline on mobile */}
+                        <h3 className="font-headline text-lg md:text-xl text-[#0F172A] mb-2 group-hover:text-[#1E3A8A] transition-colors">
                           {pillar.title}
                         </h3>
-                        <p className="text-slate-600 text-sm line-clamp-3">
+                        
+                        {/* Gold accent line */}
+                        <div className="w-10 h-0.5 bg-gradient-to-r from-[#D4A017] to-[#E6C200] rounded-full mb-3 opacity-60 group-hover:w-16 transition-all duration-300" />
+                        
+                        <p className="text-slate-600 text-sm leading-relaxed mb-4">
                           {pillar.summary}
                         </p>
-                        <div className="mt-4 flex items-center gap-2 text-[#1E3A8A] font-semibold text-sm">
-                          Learn more
+                        
+                        {/* Learn more link */}
+                        <div className="flex items-center gap-2 text-[#1E3A8A] font-semibold text-sm group-hover:text-[#D4A017] transition-colors">
+                          <span>Learn more</span>
                           <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </div>
                       </div>
@@ -583,26 +580,39 @@ export default function HomePage() {
                   <ScrollReveal key={index} delay={index * 0.1}>
                     <Link href={`/about#${pillar.id}`} className="group block h-full">
                       <TiltCard className="h-full" borderColor={pillar.color}>
-                        <div className="h-full p-6 border-t-4" style={{ borderColor: pillar.color }}>
-                          <div 
-                            className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
-                            style={{ 
-                              backgroundColor: `${pillar.color}15`,
-                              color: pillar.color 
-                            }}
-                          >
-                            <pillar.Icon className="w-7 h-7" />
+                        <div className="h-full bg-white rounded-2xl p-5 md:p-6 shadow-md border border-slate-100 group-hover:shadow-xl group-hover:border-[#D4A017]/30 transition-all duration-300">
+                          {/* Icon with gold accent ring */}
+                          <div className="relative mb-4">
+                            <div 
+                              className="w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                              style={{ 
+                                backgroundColor: `${pillar.color}10`,
+                                color: pillar.color 
+                              }}
+                            >
+                              <pillar.Icon className="w-6 h-6 md:w-7 md:h-7" />
+                            </div>
+                            {/* Subtle gold accent dot */}
+                            <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#D4A017] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                           </div>
-                          <h3 className="font-headline text-xl text-[#0F172A] mb-2 group-hover:text-[#1E3A8A] transition-colors">
+                          
+                          {/* Title */}
+                          <h3 className="font-headline text-lg md:text-xl text-[#0F172A] mb-2 group-hover:text-[#1E3A8A] transition-colors">
                             {pillar.title}
                           </h3>
-                          <p className="text-slate-600 text-sm">
+                          
+                          {/* Gold accent line */}
+                          <div className="w-10 h-0.5 bg-gradient-to-r from-[#D4A017] to-[#E6C200] rounded-full mb-3 opacity-60 group-hover:w-16 transition-all duration-300" />
+                          
+                          <p className="text-slate-600 text-sm leading-relaxed mb-4">
                             {pillar.desc}
                           </p>
-                          <div className="mt-4 flex items-center gap-2 text-[#1E3A8A] font-semibold text-sm">
-                          Learn more
-                          <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </div>
+                          
+                          {/* Learn more link */}
+                          <div className="flex items-center gap-2 text-[#1E3A8A] font-semibold text-sm group-hover:text-[#D4A017] transition-colors">
+                            <span>Learn more</span>
+                            <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                          </div>
                         </div>
                       </TiltCard>
                     </Link>

@@ -9,7 +9,7 @@ const commitments = [
     title: 'The 2-Year Corruption Pledge',
     description: 'Dr. Kinity pledges to launch a determined campaign to eliminate corruption within two years. Failure to achieve this goal will compel him to voluntarily resign—a testament to his commitment to accountability.',
     icon: FaFileContract,
-    color: '#E91D0E',
+    color: '#DC2626',
     points: [
       'Establish independent anti-corruption courts with fast-track prosecutions',
       'Arrest those responsible for looting billions, not just petty thieves',
@@ -22,7 +22,7 @@ const commitments = [
     title: 'Economic Transformation Guarantee',
     description: 'A commitment to cut the cost of living by 40% within two years through strategic economic reforms that protect businesses and workers alike.',
     icon: FaCheckCircle,
-    color: '#0074D9',
+    color: '#1E3A8A',
     points: [
       'End unnecessary food imports by boosting local agricultural production',
       'Ensure fair pay for all Kenyan workers, including KDF members',
@@ -35,7 +35,7 @@ const commitments = [
     title: 'Universal Healthcare Promise',
     description: 'Every Kenyan deserves access to quality healthcare without financial burden. We will implement universal healthcare through improved NHIF.',
     icon: FaHandshake,
-    color: '#6B2C91',
+    color: '#1E3A8A',
     points: [
       'Universal healthcare coverage for all Kenyans through reformed NHIF',
       'Build and equip modern healthcare facilities in every county',
@@ -48,7 +48,7 @@ const commitments = [
     title: 'Education Revolution Commitment',
     description: 'Restore completely free education for Kenyan children and revolutionize the system with digital learning and world-class standards.',
     icon: FaCalendarAlt,
-    color: '#006600',
+    color: '#D4A017',
     points: [
       'Restore completely free primary and secondary education',
       'Integrate digital learning tools in all public schools',
@@ -99,7 +99,7 @@ export default function ManifestoContent() {
       <div className="fixed top-24 left-4 z-40">
         <Link 
           href="/about"
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm shadow-md text-slate-600 hover:text-[#0074D9] transition-colors"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm shadow-md text-slate-600 hover:text-[#1E3A8A] transition-colors"
         >
           <FaArrowLeft className="w-4 h-4" />
           <span className="hidden sm:inline">Back to Our Party</span>
@@ -110,18 +110,19 @@ export default function ManifestoContent() {
       <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#006600]/10 text-[#006600] font-semibold text-sm mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm mb-6">
               Manifesto
             </span>
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#111111] mb-6">
-              Our <span className="text-[#E91D0E]">Commitment</span> to Kenya
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0F172A] mb-6">
+              Our <span className="text-[#D4A017]">Commitment</span> to Kenya
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] mx-auto rounded-full mb-6" />
             <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
               Specific, measurable, and actionable policy commitments to transform Kenya into 
               a prosperous, corruption-free nation where every citizen can thrive.
@@ -134,15 +135,15 @@ export default function ManifestoContent() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-white">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-[#111111] mb-12">
-              Four Key <span className="text-[#0074D9]">Commitments</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0F172A] mb-12">
+              Four Key <span className="text-[#D4A017]">Commitments</span>
             </h2>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-8">
             {commitments.map((commitment, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
-                <div className="bg-white rounded-3xl p-8 shadow-lg border border-slate-100 h-full">
+                <div className="bg-white rounded-3xl p-8 shadow-lg border border-slate-100 h-full hover:shadow-xl hover:border-[#D4A017]/30 transition-all duration-300">
                   <div 
                     className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
                     style={{ backgroundColor: `${commitment.color}15`, color: commitment.color }}
@@ -150,7 +151,10 @@ export default function ManifestoContent() {
                     <commitment.icon className="w-7 h-7" />
                   </div>
                   
-                  <h3 className="text-2xl font-bold text-[#111111] mb-4">
+                  {/* Gold accent line */}
+                  <div className="w-10 h-0.5 bg-gradient-to-r from-[#D4A017] to-[#E6C200] rounded-full mb-4 opacity-60" />
+                  
+                  <h3 className="text-2xl font-bold text-[#0F172A] mb-4">
                     {commitment.title}
                   </h3>
                   
@@ -180,20 +184,20 @@ export default function ManifestoContent() {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-[#111111] mb-12">
-              Implementation <span className="text-[#0074D9]">Timeline</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0F172A] mb-12">
+              Implementation <span className="text-[#D4A017]">Timeline</span>
             </h2>
           </ScrollReveal>
 
           <div className="space-y-8">
             {timeline.map((phase, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
-                <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-                  <h3 className="text-xl font-bold text-[#111111] mb-4 flex items-center gap-3">
+                <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                  <h3 className="text-xl font-bold text-[#0F172A] mb-4 flex items-center gap-3">
                     <span 
                       className="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold"
                       style={{ 
-                        backgroundColor: index === 0 ? '#E91D0E' : index === 1 ? '#0074D9' : '#006600' 
+                        backgroundColor: index === 0 ? '#DC2626' : index === 1 ? '#1E3A8A' : '#D4A017' 
                       }}
                     >
                       {index + 1}
@@ -203,7 +207,7 @@ export default function ManifestoContent() {
                   <ul className="space-y-3 ml-14">
                     {phase.actions.map((action, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <div className="w-2 h-2 rounded-full bg-[#0074D9] mt-2 flex-shrink-0" />
+                        <div className="w-2 h-2 rounded-full bg-[#1E3A8A] mt-2 flex-shrink-0" />
                         <span className="text-slate-600">{action}</span>
                       </li>
                     ))}
@@ -215,13 +219,23 @@ export default function ManifestoContent() {
         </div>
       </section>
 
-      {/* The Promise */}
-      <section className="py-16 bg-[#111111]">
+      {/* The Promise - Keep this section but update colors */}
+      <section className="py-16 bg-[#0F172A] relative overflow-hidden">
+        {/* Subtle Kenyan flag hint at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-1 flex opacity-30">
+          <div className="flex-1 bg-black" />
+          <div className="flex-1 bg-[#DC2626]" />
+          <div className="flex-1 bg-[#006600]" />
+        </div>
+        
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <FaFileContract className="w-16 h-16 text-[#E91D0E] mx-auto mb-6" />
+            {/* Gold accent line */}
+            <div className="w-24 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] mx-auto rounded-full mb-8" />
+            
+            <FaFileContract className="w-16 h-16 text-[#D4A017] mx-auto mb-6" />
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              A Promise Written in <span className="text-[#E91D0E]">Sacrifice</span>
+              A Promise Written in <span className="text-[#D4A017]">Sacrifice</span>
             </h2>
             <blockquote className="text-2xl text-white/80 italic mb-8 max-w-3xl mx-auto">
               &ldquo;These are not empty campaign promises. I have already sacrificed my health, 
@@ -229,22 +243,6 @@ export default function ManifestoContent() {
               or resign. This is my commitment to you, the people of Kenya.&rdquo;
             </blockquote>
             <p className="text-white/60 mb-10">— Dr. Isaac Newton Kinity</p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/join-us"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#E91D0E] text-white font-bold hover:bg-[#BA170C] transition-all"
-              >
-                <FaHandshake className="w-5 h-5" />
-                Support This Vision
-              </Link>
-              <Link 
-                href="/support"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-[#111111] font-bold hover:bg-slate-100 transition-all"
-              >
-                Donate to Campaign
-              </Link>
-            </div>
           </ScrollReveal>
         </div>
       </section>

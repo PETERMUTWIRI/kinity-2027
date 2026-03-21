@@ -1187,35 +1187,7 @@ export default function ContactContent() {
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <section className="py-16 bg-gradient-to-r from-[#0074D9] to-[#6B2C91] px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <ScrollReveal>
-            <h2 className="font-slogan text-3xl md:text-4xl text-white mb-4">
-              Ready to Make a Difference?
-            </h2>
-            <p className="text-white/80 mb-8 max-w-2xl mx-auto">
-              Join thousands of Kenyans who are already part of this movement for change.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="/join-us"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#E91D0E] text-white font-bold hover:bg-[#BA170C] transition-all hover:shadow-lg"
-              >
-                <FaHandshake className="w-5 h-5" />
-                Join the Movement
-              </Link>
-              <Link
-                href="/support"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-[#0074D9] font-bold hover:bg-slate-100 transition-all"
-              >
-                <FaFlag className="w-5 h-5" />
-                Support the Campaign
-              </Link>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+
     </div>
   );
 }

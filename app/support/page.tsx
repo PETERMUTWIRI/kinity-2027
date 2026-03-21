@@ -129,13 +129,13 @@ export default function SupportPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href="/" 
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#0074D9] text-white font-semibold hover:bg-[#005CB0] transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#1E3A8A] text-white font-semibold hover:bg-[#0F172A] transition-colors"
             >
               Return Home
             </a>
             <a 
               href="/join-us" 
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border-2 border-[#E91D0E] text-[#E91D0E] font-semibold hover:bg-[#E91D0E] hover:text-white transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border-2 border-[#DC2626] text-[#DC2626] font-semibold hover:bg-[#DC2626] hover:text-white transition-colors"
             >
               Join as Volunteer
             </a>
@@ -165,7 +165,7 @@ export default function SupportPage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E91D0E]/20 border border-[#E91D0E]/30 text-[#E91D0E] font-medium text-sm mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DC2626]/20 border border-[#DC2626]/30 text-[#DC2626] font-medium text-sm mb-6"
             >
               <FaHeart className="w-4 h-4" />
               Fuel the Movement
@@ -177,7 +177,7 @@ export default function SupportPage() {
               transition={{ delay: 0.1 }}
               className="font-slogan text-4xl md:text-5xl lg:text-6xl text-white mb-6"
             >
-              Support the <span className="text-[#E91D0E]">Campaign</span>
+              Support the <span className="text-[#DC2626]">Campaign</span>
             </motion.h1>
             
             <motion.p
@@ -197,15 +197,15 @@ export default function SupportPage() {
               className="flex flex-wrap justify-center gap-8 text-center"
             >
               <div>
-                <div className="text-3xl font-bold text-[#E91D0E]">KES 2.5M+</div>
+                <div className="text-3xl font-bold text-[#DC2626]">KES 2.5M+</div>
                 <div className="text-slate-500">Raised</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[#0074D9]">1,200+</div>
+                <div className="text-3xl font-bold text-[#1E3A8A]">1,200+</div>
                 <div className="text-slate-500">Donors</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[#6B2C91]">47</div>
+                <div className="text-3xl font-bold text-[#D4A017]">47</div>
                 <div className="text-slate-500">Counties</div>
               </div>
             </motion.div>
@@ -219,7 +219,7 @@ export default function SupportPage() {
           <ScrollReveal>
             <div className="text-center mb-16">
               <h2 className="font-headline text-3xl md:text-4xl text-white mb-4">
-                Your Donation <span className="text-[#E91D0E]">Matters</span>
+                Your Donation <span className="text-[#DC2626]">Matters</span>
               </h2>
               <p className="text-slate-400 max-w-2xl mx-auto">
                 See exactly how your contribution fuels our campaign for change.
@@ -230,9 +230,9 @@ export default function SupportPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {impactCards.map((card, index) => (
               <ScrollReveal key={card.amount} delay={index * 0.1}>
-                <div className="h-full p-6 rounded-2xl bg-slate-800 border border-slate-700 hover:border-[#E91D0E]/50 transition-all group">
-                  <div className="w-14 h-14 rounded-xl bg-[#E91D0E]/10 flex items-center justify-center mb-4 group-hover:bg-[#E91D0E]/20 transition-colors">
-                    <card.icon className="w-7 h-7 text-[#E91D0E]" />
+                <div className="h-full p-6 rounded-2xl bg-slate-800 border border-slate-700 hover:border-[#DC2626]/50 transition-all group">
+                  <div className="w-14 h-14 rounded-xl bg-[#DC2626]/10 flex items-center justify-center mb-4 group-hover:bg-[#DC2626]/20 transition-colors">
+                    <card.icon className="w-7 h-7 text-[#DC2626]" />
                   </div>
                   <div className="text-2xl font-bold text-white mb-2">{card.amount}</div>
                   <p className="text-slate-400 text-sm">{card.impact}</p>
@@ -251,7 +251,7 @@ export default function SupportPage() {
             <ScrollReveal>
               <div>
                 <h2 className="font-headline text-3xl text-white mb-6">
-                  Choose Your <span className="text-[#E91D0E]">Contribution</span>
+                  Choose Your <span className="text-[#DC2626]">Contribution</span>
                 </h2>
                 
                 {/* Amount Selection */}
@@ -262,12 +262,12 @@ export default function SupportPage() {
                       onClick={() => setSelectedAmount(option.amount)}
                       className={`p-4 rounded-xl border-2 transition-all ${
                         selectedAmount === option.amount
-                          ? 'border-[#E91D0E] bg-[#E91D0E]/10'
+                          ? 'border-[#DC2626] bg-[#DC2626]/10'
                           : 'border-slate-700 bg-slate-800 hover:border-slate-600'
                       }`}
                     >
                       <div className={`font-bold text-lg ${
-                        selectedAmount === option.amount ? 'text-[#E91D0E]' : 'text-white'
+                        selectedAmount === option.amount ? 'text-[#DC2626]' : 'text-white'
                       }`}>
                         {option.label}
                       </div>
@@ -287,7 +287,7 @@ export default function SupportPage() {
                       min="1"
                       value={customAmount}
                       onChange={(e) => setCustomAmount(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#E91D0E] focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#DC2626] focus:border-transparent"
                       placeholder="Enter amount"
                     />
                   </div>
@@ -326,16 +326,16 @@ export default function SupportPage() {
                       onClick={() => setPaymentMethod('card')}
                       className={`p-4 rounded-xl border-2 flex items-center gap-3 transition-all ${
                         paymentMethod === 'card'
-                          ? 'border-[#0074D9] bg-[#0074D9]/10'
+                          ? 'border-[#1E3A8A] bg-[#1E3A8A]/10'
                           : 'border-slate-700 bg-slate-800 hover:border-slate-600'
                       }`}
                     >
-                      <div className="w-10 h-10 rounded-lg bg-[#0074D9] flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-lg bg-[#1E3A8A] flex items-center justify-center">
                         <FaCreditCard className="w-5 h-5 text-white" />
                       </div>
                       <div className="text-left">
                         <div className={`font-semibold ${
-                          paymentMethod === 'card' ? 'text-[#0074D9]' : 'text-white'
+                          paymentMethod === 'card' ? 'text-[#1E3A8A]' : 'text-white'
                         }`}>
                           Card
                         </div>
@@ -370,16 +370,16 @@ export default function SupportPage() {
                       onClick={() => setPaymentMethod('bank')}
                       className={`p-4 rounded-xl border-2 flex items-center gap-3 transition-all ${
                         paymentMethod === 'bank'
-                          ? 'border-[#6B2C91] bg-[#6B2C91]/10'
+                          ? 'border-[#D4A017] bg-[#D4A017]/10'
                           : 'border-slate-700 bg-slate-800 hover:border-slate-600'
                       }`}
                     >
-                      <div className="w-10 h-10 rounded-lg bg-[#6B2C91] flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-lg bg-[#D4A017] flex items-center justify-center">
                         <FaHandHoldingUsd className="w-5 h-5 text-white" />
                       </div>
                       <div className="text-left">
                         <div className={`font-semibold ${
-                          paymentMethod === 'bank' ? 'text-[#6B2C91]' : 'text-white'
+                          paymentMethod === 'bank' ? 'text-[#D4A017]' : 'text-white'
                         }`}>
                           Bank
                         </div>
@@ -411,7 +411,7 @@ export default function SupportPage() {
             <ScrollReveal delay={0.2}>
               <form onSubmit={handleDonate} className="bg-slate-900 rounded-2xl border border-slate-800 p-8">
                 <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-                  <FaReceipt className="text-[#E91D0E]" />
+                  <FaReceipt className="text-[#DC2626]" />
                   Donor Information
                 </h3>
 
@@ -423,7 +423,7 @@ export default function SupportPage() {
                       required
                       value={formData.firstName}
                       onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#E91D0E] focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#DC2626] focus:border-transparent"
                       placeholder="John"
                     />
                   </div>
@@ -434,7 +434,7 @@ export default function SupportPage() {
                       required
                       value={formData.lastName}
                       onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#E91D0E] focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#DC2626] focus:border-transparent"
                       placeholder="Doe"
                     />
                   </div>
@@ -447,7 +447,7 @@ export default function SupportPage() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#E91D0E] focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#DC2626] focus:border-transparent"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -461,7 +461,7 @@ export default function SupportPage() {
                     required={paymentMethod === 'mpesa'}
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#E91D0E] focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#DC2626] focus:border-transparent"
                     placeholder="+254 XXX XXX XXX"
                   />
                   {paymentMethod === 'mpesa' && (
@@ -477,7 +477,7 @@ export default function SupportPage() {
                       type="checkbox"
                       checked={formData.isRecurring}
                       onChange={(e) => setFormData({ ...formData, isRecurring: e.target.checked })}
-                      className="w-5 h-5 rounded border-slate-600 bg-slate-800 text-[#E91D0E] focus:ring-[#E91D0E]"
+                      className="w-5 h-5 rounded border-slate-600 bg-slate-800 text-[#DC2626] focus:ring-[#DC2626]"
                     />
                     <span className="text-slate-300">
                       Make this a monthly recurring donation
@@ -489,7 +489,7 @@ export default function SupportPage() {
                       type="checkbox"
                       checked={formData.anonymous}
                       onChange={(e) => setFormData({ ...formData, anonymous: e.target.checked })}
-                      className="w-5 h-5 rounded border-slate-600 bg-slate-800 text-[#E91D0E] focus:ring-[#E91D0E]"
+                      className="w-5 h-5 rounded border-slate-600 bg-slate-800 text-[#DC2626] focus:ring-[#DC2626]"
                     />
                     <span className="text-slate-300">
                       Donate anonymously
@@ -505,7 +505,7 @@ export default function SupportPage() {
                     rows={3}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#E91D0E] focus:border-transparent resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#DC2626] focus:border-transparent resize-none"
                     placeholder="Leave a message of support..."
                   />
                 </div>
@@ -513,7 +513,7 @@ export default function SupportPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting || (selectedAmount === 0 && !customAmount)}
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-[#E91D0E] to-[#BA170C] text-white font-bold text-lg hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2"
+                  className="w-full py-4 rounded-xl bg-gradient-to-r from-[#DC2626] to-[#B91C1C] text-white font-bold text-lg hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
                     <>
@@ -544,7 +544,7 @@ export default function SupportPage() {
           <ScrollReveal>
             <div className="text-center mb-12">
               <h2 className="font-headline text-3xl text-white mb-4">
-                Other Ways to <span className="text-[#0074D9]">Support</span>
+                Other Ways to <span className="text-[#1E3A8A]">Support</span>
               </h2>
             </div>
           </ScrollReveal>
@@ -553,7 +553,7 @@ export default function SupportPage() {
             <ScrollReveal>
               <div className="bg-slate-800 rounded-2xl p-8 border border-slate-700">
                 <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                  <FaHandHoldingUsd className="text-[#6B2C91]" />
+                  <FaHandHoldingUsd className="text-[#D4A017]" />
                   Bank Transfer
                 </h3>
                 <div className="space-y-3 text-sm">
@@ -583,7 +583,7 @@ export default function SupportPage() {
             <ScrollReveal delay={0.1}>
               <div className="bg-slate-800 rounded-2xl p-8 border border-slate-700">
                 <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                  <FaGlobe className="text-[#0074D9]" />
+                  <FaGlobe className="text-[#1E3A8A]" />
                   International Support
                 </h3>
                 <p className="text-slate-400 text-sm mb-4">
@@ -614,7 +614,7 @@ export default function SupportPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-[#E91D0E] to-[#BA170C]">
+      <section className="py-20 bg-gradient-to-r from-[#DC2626] to-[#B91C1C]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-slogan text-3xl md:text-4xl text-white mb-4">
             Can&apos;t Donate? Volunteer!
@@ -624,7 +624,7 @@ export default function SupportPage() {
           </p>
           <a 
             href="/join-us"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-white text-[#E91D0E] font-bold text-lg hover:bg-slate-100 transition-colors shadow-lg"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-white text-[#DC2626] font-bold text-lg hover:bg-slate-100 transition-colors shadow-lg"
           >
             <FaHandshake />
             Become a Volunteer

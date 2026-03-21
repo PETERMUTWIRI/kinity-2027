@@ -11,7 +11,7 @@ const pillars = [
     title: 'Economic Transformation',
     subtitle: 'Creating Jobs & Prosperity for All',
     icon: FaChartLine,
-    color: '#0074D9',
+    color: '#1E3A8A',
     stats: [
       { value: '40%', label: 'Cost of Living Reduction' },
       { value: '1M+', label: 'New Jobs Target' },
@@ -35,7 +35,7 @@ const pillars = [
     title: 'Zero Corruption',
     subtitle: 'Uncompromising Stance Against Graft',
     icon: FaShieldAlt,
-    color: '#E91D0E',
+    color: '#D4A017',
     stats: [
       { value: '2', label: 'Years to Eliminate Corruption' },
       { value: '0', label: 'Tolerance for Graft' },
@@ -59,7 +59,7 @@ const pillars = [
     title: 'Universal Healthcare',
     subtitle: 'Quality Healthcare Accessible to All',
     icon: FaHeart,
-    color: '#6B2C91',
+    color: '#1E3A8A',
     stats: [
       { value: '100%', label: 'Healthcare Coverage' },
       { value: '47', label: 'Counties with Modern Facilities' },
@@ -83,7 +83,7 @@ const pillars = [
     title: 'Education Revolution',
     subtitle: 'World-Class Education for Our Children',
     icon: FaGraduationCap,
-    color: '#0074D9',
+    color: '#D4A017',
     stats: [
       { value: '100%', label: 'Free Primary & Secondary' },
       { value: 'STEM', label: 'Curriculum Focus' },
@@ -110,7 +110,7 @@ export default function VisionContent() {
       <div className="fixed top-24 left-4 z-40">
         <Link 
           href="/about"
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm shadow-md text-slate-600 hover:text-[#0074D9] transition-colors"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm shadow-md text-slate-600 hover:text-[#1E3A8A] transition-colors"
         >
           <FaArrowLeft className="w-4 h-4" />
           <span className="hidden sm:inline">Back to Our Party</span>
@@ -121,18 +121,19 @@ export default function VisionContent() {
       <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6B2C91]/10 text-[#6B2C91] font-semibold text-sm mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A] font-semibold text-sm mb-6">
               Vision 2027
             </span>
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#111111] mb-6">
-              Building a <span className="text-[#E91D0E]">Better Kenya</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0F172A] mb-6">
+              Building a <span className="text-[#D4A017]">Better Kenya</span>
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] mx-auto rounded-full mb-6" />
             <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
               Four transformative pillars that will restore Kenya&apos;s dignity, eliminate corruption, 
               and create prosperity for all 50 million+ Kenyans across all 47 counties.
@@ -150,7 +151,7 @@ export default function VisionContent() {
                 <a
                   key={pillar.id}
                   href={`#${pillar.id}`}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-200 text-slate-700 hover:border-[#0074D9] hover:text-[#0074D9] transition-colors text-sm font-medium"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-200 text-slate-700 hover:border-[#D4A017] hover:text-[#D4A017] transition-colors text-sm font-medium"
                 >
                   <span style={{ color: pillar.color }}>{pillar.number}</span>
                   <span>{pillar.title}</span>
@@ -181,10 +182,13 @@ export default function VisionContent() {
                         <pillar.icon className="w-7 h-7" />
                       </div>
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-bold text-[#111111] mb-2">
+                    <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-2">
                       {pillar.title}
                     </h2>
                     <p className="text-xl text-slate-500">{pillar.subtitle}</p>
+                    
+                    {/* Gold accent line */}
+                    <div className="w-16 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] rounded-full mt-4" />
                   </div>
                   
                   {/* Stats */}
@@ -205,7 +209,7 @@ export default function VisionContent() {
                   {/* Problem & Solution */}
                   <div className="space-y-6">
                     <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-                      <h3 className="font-semibold text-[#E91D0E] mb-3 flex items-center gap-2">
+                      <h3 className="font-semibold text-[#DC2626] mb-3 flex items-center gap-2">
                         <FaBalanceScale className="w-4 h-4" />
                         The Challenge
                       </h3>
@@ -213,7 +217,7 @@ export default function VisionContent() {
                     </div>
                     
                     <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-                      <h3 className="font-semibold text-[#0074D9] mb-3 flex items-center gap-2">
+                      <h3 className="font-semibold text-[#1E3A8A] mb-3 flex items-center gap-2">
                         <FaCheckCircle className="w-4 h-4" />
                         Our Solution
                       </h3>
@@ -223,7 +227,7 @@ export default function VisionContent() {
 
                   {/* Policy Points */}
                   <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-                    <h3 className="font-semibold text-[#111111] mb-4 flex items-center gap-2">
+                    <h3 className="font-semibold text-[#0F172A] mb-4 flex items-center gap-2">
                       <FaLandmark className="w-4 h-4" />
                       Key Policy Actions
                     </h3>
@@ -259,34 +263,6 @@ export default function VisionContent() {
               </div>
             </ScrollReveal>
           ))}
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-16 bg-[#111111]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Build This <span className="text-[#E91D0E]">Future?</span>
-            </h2>
-            <p className="text-lg text-white/70 mb-8">
-              Join thousands of Kenyans committed to this vision of a prosperous, corruption-free nation.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/about/manifesto"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#0074D9] text-white font-bold hover:bg-[#005CB0] transition-all"
-              >
-                Read Full Manifesto
-              </Link>
-              <Link 
-                href="/join-us"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-[#111111] font-bold hover:bg-slate-100 transition-all"
-              >
-                Join the Movement
-              </Link>
-            </div>
-          </ScrollReveal>
         </div>
       </section>
     </div>

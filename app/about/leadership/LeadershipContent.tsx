@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaArrowLeft, FaBriefcase, FaHandshake, FaHeart, FaShieldAlt, FaCheckCircle, FaGlobe, FaUsers, FaAward } from 'react-icons/fa';
+import { FaArrowLeft, FaBriefcase, FaHandshake, FaHeart, FaShieldAlt, FaCheckCircle, FaGlobe, FaAward } from 'react-icons/fa';
 import ScrollReveal from '@/components/ScrollReveal';
 
 const keyAchievements = [
@@ -86,7 +86,7 @@ export default function LeadershipContent() {
       <div className="fixed top-24 left-4 z-40">
         <Link 
           href="/about"
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm shadow-md text-slate-600 hover:text-[#0074D9] transition-colors"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm shadow-md text-slate-600 hover:text-[#1E3A8A] transition-colors"
         >
           <FaArrowLeft className="w-4 h-4" />
           <span className="hidden sm:inline">Back to Our Party</span>
@@ -97,21 +97,22 @@ export default function LeadershipContent() {
       <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E91D0E]/10 text-[#E91D0E] font-semibold text-sm mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm mb-6">
               Leadership
             </span>
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#111111] mb-6">
-              Why <span className="text-[#E91D0E]">Dr. Kinity?</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0F172A] mb-6">
+              Why <span className="text-[#D4A017]">Dr. Kinity?</span>
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] mx-auto rounded-full mb-6" />
             <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
               A proven track record of sacrifice, courage, and unwavering commitment to the Kenyan people. 
-              Four pillars define exceptional leadership for Kenya\'s future.
+              Four pillars define exceptional leadership for Kenya&apos;s future.
             </p>
           </ScrollReveal>
         </div>
@@ -121,19 +122,19 @@ export default function LeadershipContent() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-white">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
-            <h2 className="text-3xl font-bold text-center text-[#111111] mb-12">
-              Key <span className="text-[#0074D9]">Achievements</span>
+            <h2 className="text-3xl font-bold text-center text-[#0F172A] mb-12">
+              Key <span className="text-[#D4A017]">Achievements</span>
             </h2>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {keyAchievements.map((item, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
-                <div className="text-center p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:border-[#0074D9]/50 transition-colors">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#0074D9]/10 flex items-center justify-center">
-                    <item.icon className="w-8 h-8 text-[#0074D9]" />
+                <div className="text-center p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:border-[#D4A017]/50 hover:shadow-md transition-all">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#1E3A8A]/10 flex items-center justify-center">
+                    <item.icon className="w-8 h-8 text-[#1E3A8A]" />
                   </div>
-                  <h3 className="font-bold text-xl mb-2 text-[#111111]">{item.title}</h3>
+                  <h3 className="font-bold text-xl mb-2 text-[#0F172A]">{item.title}</h3>
                   <p className="text-slate-600 text-sm">{item.description}</p>
                 </div>
               </ScrollReveal>
@@ -147,9 +148,10 @@ export default function LeadershipContent() {
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#111111] mb-4">
-                The Four <span className="text-[#0074D9]">Pillars</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
+                The Four <span className="text-[#D4A017]">Pillars</span>
               </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] mx-auto rounded-full mb-4" />
               <p className="text-lg text-slate-600 max-w-2xl mx-auto">
                 These core principles have guided Dr. Kinity throughout his 40+ years of service to Kenya.
               </p>
@@ -161,16 +163,16 @@ export default function LeadershipContent() {
               <ScrollReveal key={trait.id} delay={index * 0.1}>
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                   <div className={index % 2 === 1 ? 'md:order-2' : ''}>
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0074D9]/10 text-[#0074D9] font-semibold text-sm mb-4">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm mb-4">
                       <FaAward className="w-4 h-4" />
                       {trait.title}
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-[#111111] mb-4">{trait.description}</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">{trait.description}</h3>
                     <p className="text-slate-600 leading-relaxed mb-6">{trait.content}</p>
                     <ul className="space-y-2">
                       {trait.highlights.map((highlight, i) => (
                         <li key={i} className="flex items-center gap-2 text-sm text-slate-600">
-                          <FaCheckCircle className="w-4 h-4 text-[#0074D9] flex-shrink-0" />
+                          <FaCheckCircle className="w-4 h-4 text-[#D4A017] flex-shrink-0" />
                           {highlight}
                         </li>
                       ))}
@@ -179,9 +181,9 @@ export default function LeadershipContent() {
                   <div className={`bg-slate-50 rounded-2xl p-8 ${index % 2 === 1 ? 'md:order-1' : ''}`}>
                     <div className="grid grid-cols-2 gap-4">
                       {trait.highlights.map((highlight, i) => (
-                        <div key={i} className="p-4 bg-white rounded-xl shadow-sm">
-                          <div className="w-8 h-8 rounded-full bg-[#0074D9]/10 flex items-center justify-center mb-2">
-                            <span className="text-[#0074D9] font-bold text-sm">{i + 1}</span>
+                        <div key={i} className="p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                          <div className="w-8 h-8 rounded-full bg-[#1E3A8A]/10 flex items-center justify-center mb-2">
+                            <span className="text-[#1E3A8A] font-bold text-sm">{i + 1}</span>
                           </div>
                           <p className="text-xs text-slate-600 leading-tight">{highlight}</p>
                         </div>
@@ -197,17 +199,27 @@ export default function LeadershipContent() {
       </section>
 
       {/* International Advocacy Section */}
-      <section className="py-16 bg-[#111111] text-white">
+      <section className="py-16 bg-[#0F172A] text-white relative overflow-hidden">
+        {/* Subtle Kenyan flag hint at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-1 flex opacity-30">
+          <div className="flex-1 bg-black" />
+          <div className="flex-1 bg-[#DC2626]" />
+          <div className="flex-1 bg-[#006600]" />
+        </div>
+        
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <ScrollReveal>
               <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0074D9]/20 text-[#0074D9] font-semibold text-sm">
+                {/* Gold accent line */}
+                <div className="w-16 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] rounded-full" />
+                
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A8A]/20 text-[#D4A017] font-semibold text-sm">
                   <FaGlobe className="w-4 h-4" />
                   Global Impact
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold">
-                  International <span className="text-[#0074D9]">Advocacy</span>
+                  International <span className="text-[#D4A017]">Advocacy</span>
                 </h2>
                 <p className="text-white/70 leading-relaxed">
                   While in exile, Dr. Kinity transformed his personal tragedy into a global mission. 
@@ -222,7 +234,7 @@ export default function LeadershipContent() {
                     'Kikimo Foundation Leadership',
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
-                      <FaCheckCircle className="w-5 h-5 text-[#0074D9]" />
+                      <FaCheckCircle className="w-5 h-5 text-[#D4A017]" />
                       <span className="text-white/80">{item}</span>
                     </div>
                   ))}
@@ -232,7 +244,7 @@ export default function LeadershipContent() {
 
             <ScrollReveal delay={0.2}>
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-[#0074D9] to-[#6B2C91] rounded-3xl opacity-20 blur-2xl" />
+                <div className="absolute -inset-4 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] rounded-3xl opacity-20 blur-2xl" />
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden">
                   <Image
                     src="/images/kinity-connection.jpeg"
@@ -244,32 +256,6 @@ export default function LeadershipContent() {
               </div>
             </ScrollReveal>
           </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-br from-[#0074D9] to-[#005CB0]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Support This Leadership?
-            </h2>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/join-us"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#E91D0E] text-white font-bold hover:bg-[#BA170C] transition-all"
-              >
-                <FaUsers className="w-5 h-5" />
-                Join the Movement
-              </Link>
-              <Link 
-                href="/about/vision-2027"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-[#0074D9] font-bold hover:bg-slate-100 transition-all"
-              >
-                See Our Vision
-              </Link>
-            </div>
-          </ScrollReveal>
         </div>
       </section>
     </div>

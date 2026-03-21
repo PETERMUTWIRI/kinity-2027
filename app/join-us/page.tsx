@@ -113,13 +113,13 @@ export default function JoinUsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href="/" 
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#0074D9] text-white font-semibold hover:bg-[#005CB0] transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#1E3A8A] text-white font-semibold hover:bg-[#0F172A] transition-colors"
             >
               Return Home
             </a>
             <a 
               href="/support" 
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border-2 border-[#E91D0E] text-[#E91D0E] font-semibold hover:bg-[#E91D0E] hover:text-white transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border-2 border-[#DC2626] text-[#DC2626] font-semibold hover:bg-[#DC2626] hover:text-white transition-colors"
             >
               Support the Campaign
             </a>
@@ -149,7 +149,7 @@ export default function JoinUsPage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0074D9]/20 border border-[#0074D9]/30 text-[#0074D9] font-medium text-sm mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A8A]/20 border border-[#1E3A8A]/30 text-[#1E3A8A] font-medium text-sm mb-6"
             >
               <FaHandshake className="w-4 h-4" />
               Be Part of the Change
@@ -161,7 +161,7 @@ export default function JoinUsPage() {
               transition={{ delay: 0.1 }}
               className="font-slogan text-4xl md:text-5xl lg:text-6xl text-white mb-6"
             >
-              Join the <span className="text-[#E91D0E]">Movement</span>
+              Join the <span className="text-[#DC2626]">Movement</span>
             </motion.h1>
             
             <motion.p
@@ -181,15 +181,15 @@ export default function JoinUsPage() {
               className="flex flex-wrap justify-center gap-8 text-center"
             >
               <div>
-                <div className="text-3xl font-bold text-[#0074D9]">10,000+</div>
+                <div className="text-3xl font-bold text-[#1E3A8A]">10,000+</div>
                 <div className="text-slate-500">Volunteers</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[#E91D0E]">47</div>
+                <div className="text-3xl font-bold text-[#DC2626]">47</div>
                 <div className="text-slate-500">Counties</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[#6B2C91]">2027</div>
+                <div className="text-3xl font-bold text-[#D4A017]">2027</div>
                 <div className="text-slate-500">Victory</div>
               </div>
             </motion.div>
@@ -203,7 +203,7 @@ export default function JoinUsPage() {
           <ScrollReveal>
             <div className="text-center mb-16">
               <h2 className="font-headline text-3xl md:text-4xl text-white mb-4">
-                How You Can <span className="text-[#0074D9]">Help</span>
+                How You Can <span className="text-[#1E3A8A]">Help</span>
               </h2>
               <p className="text-slate-400 max-w-2xl mx-auto">
                 We need passionate individuals in every role. Choose where your skills can make the biggest impact.
@@ -215,13 +215,13 @@ export default function JoinUsPage() {
             {volunteerRoles.map((role, index) => (
               <ScrollReveal key={role.title} delay={index * 0.1}>
                 <div 
-                  className={`h-full p-6 rounded-2xl bg-slate-800 border border-slate-700 hover:border-[#0074D9]/50 transition-all cursor-pointer group ${
-                    formData.role === role.title ? 'border-[#0074D9] ring-2 ring-[#0074D9]/20' : ''
+                  className={`h-full p-6 rounded-2xl bg-slate-800 border border-slate-700 hover:border-[#1E3A8A]/50 transition-all cursor-pointer group ${
+                    formData.role === role.title ? 'border-[#1E3A8A] ring-2 ring-[#1E3A8A]/20' : ''
                   }`}
                   onClick={() => setFormData({ ...formData, role: role.title })}
                 >
-                  <div className="w-14 h-14 rounded-xl bg-[#0074D9]/10 flex items-center justify-center mb-4 group-hover:bg-[#0074D9]/20 transition-colors">
-                    <role.icon className="w-7 h-7 text-[#0074D9]" />
+                  <div className="w-14 h-14 rounded-xl bg-[#1E3A8A]/10 flex items-center justify-center mb-4 group-hover:bg-[#1E3A8A]/20 transition-colors">
+                    <role.icon className="w-7 h-7 text-[#1E3A8A]" />
                   </div>
                   <h3 className="text-lg font-semibold text-white mb-2">{role.title}</h3>
                   <p className="text-slate-400 text-sm mb-4">{role.description}</p>
@@ -242,7 +242,7 @@ export default function JoinUsPage() {
           <ScrollReveal>
             <div className="text-center mb-12">
               <h2 className="font-headline text-3xl md:text-4xl text-white mb-4">
-                Sign Up to <span className="text-[#E91D0E]">Volunteer</span>
+                Sign Up to <span className="text-[#DC2626]">Volunteer</span>
               </h2>
               <p className="text-slate-400">
                 Fill out the form below and our team will contact you with next steps.
@@ -255,7 +255,7 @@ export default function JoinUsPage() {
               {/* Personal Information */}
               <div className="mb-8">
                 <h3 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-                  <FaUser className="text-[#0074D9]" />
+                  <FaUser className="text-[#1E3A8A]" />
                   Personal Information
                 </h3>
                 
@@ -267,7 +267,7 @@ export default function JoinUsPage() {
                       required
                       value={formData.firstName}
                       onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#0074D9] focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] focus:border-transparent"
                       placeholder="John"
                     />
                   </div>
@@ -278,7 +278,7 @@ export default function JoinUsPage() {
                       required
                       value={formData.lastName}
                       onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#0074D9] focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] focus:border-transparent"
                       placeholder="Doe"
                     />
                   </div>
@@ -294,7 +294,7 @@ export default function JoinUsPage() {
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#0074D9] focus:border-transparent"
+                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] focus:border-transparent"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -308,7 +308,7 @@ export default function JoinUsPage() {
                         required
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#0074D9] focus:border-transparent"
+                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] focus:border-transparent"
                         placeholder="+254 XXX XXX XXX"
                       />
                     </div>
@@ -319,7 +319,7 @@ export default function JoinUsPage() {
               {/* Location */}
               <div className="mb-8">
                 <h3 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-                  <FaMapMarkerAlt className="text-[#E91D0E]" />
+                  <FaMapMarkerAlt className="text-[#DC2626]" />
                   Location
                 </h3>
                 
@@ -331,7 +331,7 @@ export default function JoinUsPage() {
                         required
                         value={formData.county}
                         onChange={(e) => setFormData({ ...formData, county: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-[#0074D9] focus:border-transparent appearance-none"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] focus:border-transparent appearance-none"
                       >
                         <option value="">Select your county</option>
                         {counties.map(county => (
@@ -347,7 +347,7 @@ export default function JoinUsPage() {
                       type="text"
                       value={formData.constituency}
                       onChange={(e) => setFormData({ ...formData, constituency: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#0074D9] focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] focus:border-transparent"
                       placeholder="e.g., Kiambaa Constituency"
                     />
                   </div>
@@ -357,7 +357,7 @@ export default function JoinUsPage() {
               {/* Role & Availability */}
               <div className="mb-8">
                 <h3 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-                  <FaHandshake className="text-[#6B2C91]" />
+                  <FaHandshake className="text-[#D4A017]" />
                   Volunteer Preferences
                 </h3>
                 
@@ -367,7 +367,7 @@ export default function JoinUsPage() {
                     required
                     value={formData.role}
                     onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-[#0074D9] focus:border-transparent appearance-none"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] focus:border-transparent appearance-none"
                   >
                     <option value="">Select a role</option>
                     {volunteerRoles.map(role => (
@@ -382,7 +382,7 @@ export default function JoinUsPage() {
                     required
                     value={formData.availability}
                     onChange={(e) => setFormData({ ...formData, availability: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-[#0074D9] focus:border-transparent appearance-none"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] focus:border-transparent appearance-none"
                   >
                     <option value="">When are you available?</option>
                     <option value="weekdays">Weekdays</option>
@@ -399,7 +399,7 @@ export default function JoinUsPage() {
                     rows={3}
                     value={formData.experience}
                     onChange={(e) => setFormData({ ...formData, experience: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#0074D9] focus:border-transparent resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] focus:border-transparent resize-none"
                     placeholder="Tell us about any relevant experience..."
                   />
                 </div>
@@ -411,7 +411,7 @@ export default function JoinUsPage() {
                     rows={4}
                     value={formData.motivation}
                     onChange={(e) => setFormData({ ...formData, motivation: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#0074D9] focus:border-transparent resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] focus:border-transparent resize-none"
                     placeholder="Share your motivation for joining the movement..."
                   />
                 </div>
@@ -425,7 +425,7 @@ export default function JoinUsPage() {
                     required
                     checked={formData.agreeToTerms}
                     onChange={(e) => setFormData({ ...formData, agreeToTerms: e.target.checked })}
-                    className="w-5 h-5 rounded border-slate-600 bg-slate-800 text-[#0074D9] focus:ring-[#0074D9] mt-0.5"
+                    className="w-5 h-5 rounded border-slate-600 bg-slate-800 text-[#1E3A8A] focus:ring-[#1E3A8A] mt-0.5"
                   />
                   <span className="text-slate-400 text-sm">
                     I agree to volunteer my time and effort to support the National Vision Party campaign. 
@@ -439,7 +439,7 @@ export default function JoinUsPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-[#0074D9] to-[#6B2C91] text-white font-bold text-lg hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2"
+                className="w-full py-4 rounded-xl bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] text-white font-bold text-lg hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2"
               >
                 {isSubmitting ? (
                   <>
@@ -459,7 +459,7 @@ export default function JoinUsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-[#0074D9] to-[#6B2C91]">
+      <section className="py-20 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-slogan text-3xl md:text-4xl text-white mb-4">
             Can&apos;t Volunteer Right Now?
@@ -469,7 +469,7 @@ export default function JoinUsPage() {
           </p>
           <a 
             href="/support"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#E91D0E] text-white font-bold text-lg hover:bg-[#BA170C] transition-colors shadow-lg"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#DC2626] text-white font-bold text-lg hover:bg-[#B91C1C] transition-colors shadow-lg"
           >
             <FaHeart />
             Support the Campaign

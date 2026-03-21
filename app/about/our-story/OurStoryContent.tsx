@@ -47,7 +47,7 @@ export default function OurStoryContent() {
       <div className="fixed top-24 left-4 z-40">
         <Link 
           href="/about"
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm shadow-md text-slate-600 hover:text-[#0074D9] transition-colors"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm shadow-md text-slate-600 hover:text-[#1E3A8A] transition-colors"
         >
           <FaArrowLeft className="w-4 h-4" />
           <span className="hidden sm:inline">Back to Our Party</span>
@@ -58,18 +58,19 @@ export default function OurStoryContent() {
       <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0074D9]/10 text-[#0074D9] font-semibold text-sm mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A] font-semibold text-sm mb-6">
               Our Story
             </span>
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#111111] mb-6">
-              A Journey of <span className="text-[#E91D0E]">Sacrifice</span> & Service
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0F172A] mb-6">
+              A Journey of <span className="text-[#D4A017]">Sacrifice</span> & Service
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] mx-auto rounded-full mb-6" />
             <p className="text-xl text-slate-600 leading-relaxed mb-8">
               The remarkable story of Dr. Isaac Newton Kinity—a man who has dedicated over 40 years 
               to fighting for Kenya&apos;s workers and good governance, surviving assassination attempts, 
@@ -85,7 +86,7 @@ export default function OurStoryContent() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal>
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-[#0074D9] to-[#6B2C91] rounded-3xl opacity-20 blur-2xl" />
+                <div className="absolute -inset-4 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] rounded-3xl opacity-20 blur-2xl" />
                 <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
                   <Image
                     src="/images/president.jpeg"
@@ -100,7 +101,7 @@ export default function OurStoryContent() {
 
             <ScrollReveal delay={0.2}>
               <div className="space-y-6">
-                <blockquote className="text-2xl md:text-3xl font-medium text-[#111111] leading-relaxed border-l-4 border-[#E91D0E] pl-6">
+                <blockquote className="text-2xl md:text-3xl font-medium text-[#0F172A] leading-relaxed border-l-4 border-[#D4A017] pl-6">
                   &ldquo;I am committed to the service of Kenyans. No recycling of corrupt politicians. 
                   If entrusted with the presidency, I will eradicate corruption within two years—or 
                   voluntarily resign.&rdquo;
@@ -129,14 +130,14 @@ export default function OurStoryContent() {
       <section className="py-16 bg-gradient-to-br from-slate-50 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-[#111111] mb-12">
-              Timeline of a <span className="text-[#0074D9]">Life of Service</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0F172A] mb-12">
+              Timeline of a <span className="text-[#D4A017]">Life of Service</span>
             </h2>
           </ScrollReveal>
 
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#0074D9] via-[#E91D0E] to-[#006600]" />
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#1E3A8A] via-[#D4A017] to-[#1E3A8A]" />
 
             {/* Timeline Items */}
             <div className="space-y-8">
@@ -144,16 +145,16 @@ export default function OurStoryContent() {
                 <ScrollReveal key={index} delay={index * 0.1}>
                   <div className={`relative pl-20 ${item.highlight ? 'scale-105' : ''}`}>
                     {/* Icon */}
-                    <div className={`absolute left-4 w-8 h-8 rounded-full flex items-center justify-center ${item.highlight ? 'bg-[#E91D0E]' : 'bg-white border-2 border-[#0074D9]'}`}>
-                      <item.icon className={`w-4 h-4 ${item.highlight ? 'text-white' : 'text-[#0074D9]'}`} />
+                    <div className={`absolute left-4 w-8 h-8 rounded-full flex items-center justify-center ${item.highlight ? 'bg-[#D4A017]' : 'bg-white border-2 border-[#1E3A8A]'}`}>
+                      <item.icon className={`w-4 h-4 ${item.highlight ? 'text-white' : 'text-[#1E3A8A]'}`} />
                     </div>
 
                     {/* Content */}
-                    <div className={`p-6 rounded-2xl ${item.highlight ? 'bg-[#E91D0E]/5 border border-[#E91D0E]/20' : 'bg-white border border-slate-100'}`}>
-                      <span className={`text-sm font-bold ${item.highlight ? 'text-[#E91D0E]' : 'text-[#0074D9]'}`}>
+                    <div className={`p-6 rounded-2xl ${item.highlight ? 'bg-[#D4A017]/5 border border-[#D4A017]/20' : 'bg-white border border-slate-100'}`}>
+                      <span className={`text-sm font-bold ${item.highlight ? 'text-[#D4A017]' : 'text-[#1E3A8A]'}`}>
                         {item.year}
                       </span>
-                      <h3 className="text-xl font-bold text-[#111111] mt-1 mb-2">
+                      <h3 className="text-xl font-bold text-[#0F172A] mt-1 mb-2">
                         {item.title}
                       </h3>
                       <p className="text-slate-600">
@@ -165,34 +166,6 @@ export default function OurStoryContent() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-16 bg-[#111111]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Continue the Journey
-            </h2>
-            <p className="text-lg text-white/70 mb-8">
-              Learn more about the leadership and vision that will transform Kenya.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/about/leadership"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#0074D9] text-white font-bold hover:bg-[#005CB0] transition-all"
-              >
-                Explore Leadership
-              </Link>
-              <Link 
-                href="/about/vision-2027"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-[#111111] font-bold hover:bg-slate-100 transition-all"
-              >
-                Our Vision
-              </Link>
-            </div>
-          </ScrollReveal>
         </div>
       </section>
     </div>

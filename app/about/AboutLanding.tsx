@@ -19,8 +19,8 @@ const sections = [
     description: 'The remarkable journey of Dr. Isaac Newton Kinity—from a 20-year-old union activist opposing the Moi regime to surviving poisoning and assassination attempts, to becoming Kenya\'s hope for 2027.',
     icon: FaBookOpen,
     href: '/about/our-story',
-    color: '#0074D9',
-    image: '/images/president.jpeg',
+    color: '#1E3A8A',
+    image: '/images/kinity-podium.jpeg',
   },
   {
     id: 'leadership',
@@ -28,8 +28,8 @@ const sections = [
     description: 'Meet the man behind the movement. Discover the four pillars that define Dr. Kinity\'s leadership: Integrity, Experience, Vision, and Commitment forged over 40+ years of sacrifice.',
     icon: FaUsers,
     href: '/about/leadership',
-    color: '#E91D0E',
-    image: '/images/kinity-connection.jpeg',
+    color: '#D4A017',
+    image: '/images/Dr.png',
   },
   {
     id: 'vision-2027',
@@ -37,8 +37,8 @@ const sections = [
     description: 'Four transformative pillars that will restore Kenya\'s dignity: Economic Transformation, Zero Corruption, Universal Healthcare, and Education Revolution.',
     icon: FaEye,
     href: '/about/vision-2027',
-    color: '#6B2C91',
-    image: '/images/rally.jpeg',
+    color: '#1E3A8A',
+    image: '/images/president.jpeg',
   },
   {
     id: 'manifesto',
@@ -46,8 +46,8 @@ const sections = [
     description: 'Our detailed policy commitments to the Kenyan people. Specific, measurable actions to eliminate corruption, create jobs, provide healthcare, and transform education.',
     icon: FaFileAlt,
     href: '/about/manifesto',
-    color: '#006600',
-    image: '/images/kinity-1.jpeg',
+    color: '#D4A017',
+    image: '/images/kinity-street.jpeg',
   },
 ];
 
@@ -59,12 +59,13 @@ export default function AboutLanding() {
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0074D9]/10 text-[#0074D9] font-semibold text-sm mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm mb-6">
                 Our Party
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#111111] mb-6">
-                Building a <span className="text-[#E91D0E]">Better Kenya</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0F172A] mb-6">
+                Building a <span className="text-[#D4A017]">Better Kenya</span>
               </h1>
+              <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] mx-auto rounded-full mb-6" />
               <p className="text-lg text-slate-600 leading-relaxed">
                 The National Vision Party is a movement of Kenyans committed to ending corruption, 
                 creating prosperity, and restoring dignity to our nation. Led by Dr. Isaac Newton Kinity, 
@@ -73,53 +74,51 @@ export default function AboutLanding() {
             </div>
           </ScrollReveal>
 
-          {/* Navigation Cards */}
-          <div className="grid md:grid-cols-2 gap-8">
+          {/* Navigation Cards - Image on Top, Text Below */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {sections.map((section, index) => (
               <ScrollReveal key={section.id} delay={index * 0.1}>
-                <Link href={section.href} className="group block">
+                <Link href={section.href} className="group block h-full">
                   <motion.div
                     whileHover={{ y: -8 }}
-                    className="relative h-80 rounded-3xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-2xl transition-all duration-500 group"
+                    className="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl hover:border-[#D4A017]/30 transition-all duration-500 h-full flex flex-col"
                   >
-                    {/* Full Background Image */}
-                    <Image
-                      src={section.image}
-                      alt={section.title}
-                      fill
-                      className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
-                    />
-                    
-                    {/* White Gradient Overlay at Bottom for Text */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-white via-white/95 to-transparent" style={{ backgroundPosition: '0 40%' }} />
-                    
-                    {/* Icon Badge - Top Left */}
-                    <div 
-                      className="absolute top-4 left-4 w-12 h-12 rounded-xl flex items-center justify-center shadow-lg z-10"
-                      style={{ backgroundColor: section.color }}
-                    >
-                      <section.icon className="w-6 h-6 text-white" />
+                    {/* Image Section - Full width on top */}
+                    <div className="relative aspect-[4/3] overflow-hidden">
+                      <Image
+                        src={section.image}
+                        alt={section.title}
+                        fill
+                        className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                      />
+                      {/* Subtle gradient overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                      
+                      {/* Icon Badge - Top Left */}
+                      <div 
+                        className="absolute top-4 left-4 w-10 h-10 rounded-lg flex items-center justify-center shadow-lg z-10"
+                        style={{ backgroundColor: section.color }}
+                      >
+                        <section.icon className="w-5 h-5 text-white" />
+                      </div>
                     </div>
 
-                    {/* Content Section - Bottom */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-                      <h2 className="text-2xl font-bold text-[#111111] mb-3 group-hover:text-[#0074D9] transition-colors">
+                    {/* Content Section - Below Image */}
+                    <div className="p-5 flex flex-col flex-1">
+                      {/* Gold accent line */}
+                      <div className="w-8 h-0.5 bg-gradient-to-r from-[#D4A017] to-[#E6C200] rounded-full mb-3 opacity-60 group-hover:w-12 transition-all duration-300" />
+                      
+                      <h2 className="text-xl font-bold text-[#0F172A] mb-2 group-hover:text-[#1E3A8A] transition-colors">
                         {section.title}
                       </h2>
-                      <p className="text-slate-600 mb-4 line-clamp-2">
+                      <p className="text-slate-600 text-sm leading-relaxed mb-4 flex-1">
                         {section.description}
                       </p>
-                      <div className="flex items-center gap-2 font-semibold" style={{ color: section.color }}>
+                      <div className="flex items-center gap-2 font-semibold text-sm text-[#1E3A8A] group-hover:text-[#D4A017] transition-colors">
                         <span>Learn More</span>
                         <FaArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
                       </div>
                     </div>
-
-                    {/* Hover Border Effect */}
-                    <div 
-                      className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-opacity-100 transition-all duration-300 pointer-events-none z-20"
-                      style={{ borderColor: section.color }}
-                    />
                   </motion.div>
                 </Link>
               </ScrollReveal>
@@ -134,10 +133,10 @@ export default function AboutLanding() {
           <ScrollReveal>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { value: '40+', label: 'Years of Activism', color: '#0074D9' },
-                { value: '47', label: 'Counties Reached', color: '#E91D0E' },
-                { value: '4', label: 'Key Pillars', color: '#6B2C91' },
-                { value: '50M+', label: 'Kenyans to Serve', color: '#006600' },
+                { value: '40+', label: 'Years of Activism', color: '#1E3A8A' },
+                { value: '47', label: 'Counties Reached', color: '#D4A017' },
+                { value: '4', label: 'Key Pillars', color: '#1E3A8A' },
+                { value: '50M+', label: 'Kenyans to Serve', color: '#D4A017' },
               ].map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="text-4xl md:text-5xl font-bold mb-2" style={{ color: stat.color }}>
@@ -151,34 +150,7 @@ export default function AboutLanding() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-[#111111]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Be Part of the Change?
-            </h2>
-            <p className="text-lg text-white/70 mb-8 max-w-2xl mx-auto">
-              Join thousands of Kenyans who believe in a corruption-free, prosperous nation. 
-              Your voice matters in the 2027 elections.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/join-us"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#E91D0E] text-white font-bold hover:bg-[#BA170C] transition-all"
-              >
-                Join the Movement
-              </Link>
-              <Link 
-                href="/about/our-story"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-[#111111] font-bold hover:bg-slate-100 transition-all"
-              >
-                Read Our Story
-              </Link>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+
     </div>
   );
 }
