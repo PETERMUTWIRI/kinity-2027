@@ -398,9 +398,9 @@ export default function HomePage() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4, type: "spring", stiffness: 80 }}
-              className="hidden lg:block relative order-1 lg:order-2"
+              className="hidden lg:block relative order-1 lg:order-2 self-start pt-[4.5rem]"
             >
-              <div className="relative aspect-[3/2] w-full max-w-lg xl:max-w-xl">
+              <div className="relative aspect-[16/10] w-[140%] -mr-[40%] xl:w-[150%] xl:-mr-[50%]">
                 {/* Animated Glow Effect */}
                 <motion.div 
                   animate={{ 

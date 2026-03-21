@@ -94,35 +94,46 @@ export default function SupportPage() {
 
   if (isSuccess) {
     return (
-      <div className="min-h-screen bg-slate-950 pt-20">
-        <div className="max-w-2xl mx-auto px-4 py-20 text-center">
+      <div className="min-h-screen bg-gradient-to-b from-[#0F172A] via-[#1E3A8A] to-[#0F172A] pt-20">
+        {/* Subtle pattern overlay */}
+        <div 
+          className="fixed inset-0 opacity-5 pointer-events-none"
+          style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)`,
+            backgroundSize: '50px 50px',
+          }}
+        />
+        <div className="relative z-10 max-w-2xl mx-auto px-4 py-20 text-center">
+          {/* Gold accent line */}
+          <div className="w-24 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] mx-auto rounded-full mb-8" />
+          
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
-            className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-6"
+            className="w-20 h-20 rounded-full bg-[#D4A017]/20 flex items-center justify-center mx-auto mb-6"
           >
-            <FaCheck className="w-10 h-10 text-green-500" />
+            <FaCheck className="w-10 h-10 text-[#D4A017]" />
           </motion.div>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Thank You for Your Support!
+            Thank You for Your <span className="text-[#D4A017]">Support!</span>
           </h1>
-          <p className="text-slate-400 text-lg mb-8">
+          <p className="text-white/70 text-lg mb-8">
             Your contribution brings us one step closer to transforming Kenya. 
             A confirmation has been sent to your email.
           </p>
-          <div className="bg-slate-900 rounded-2xl p-8 mb-8">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/20">
             <div className="flex justify-between mb-4">
-              <span className="text-slate-400">Amount</span>
-              <span className="text-white font-bold">
+              <span className="text-white/60">Amount</span>
+              <span className="text-[#D4A017] font-bold">
                 KES {selectedAmount === 0 ? customAmount : selectedAmount?.toLocaleString()}
               </span>
             </div>
             <div className="flex justify-between mb-4">
-              <span className="text-slate-400">Payment Method</span>
+              <span className="text-white/60">Payment Method</span>
               <span className="text-white capitalize">{paymentMethod}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-400">Transaction ID</span>
+              <span className="text-white/60">Transaction ID</span>
               <span className="text-white font-mono">KIK{Date.now()}</span>
             </div>
           </div>
@@ -135,7 +146,7 @@ export default function SupportPage() {
             </a>
             <a 
               href="/join-us" 
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border-2 border-[#DC2626] text-[#DC2626] font-semibold hover:bg-[#DC2626] hover:text-white transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border-2 border-[#D4A017] text-[#D4A017] font-semibold hover:bg-[#D4A017] hover:text-[#0F172A] transition-colors"
             >
               Join as Volunteer
             </a>
@@ -146,26 +157,35 @@ export default function SupportPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/rally.jpeg"
-            alt="Support the campaign"
-            fill
-            className="object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/95 to-slate-950" />
-        </div>
+      <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-[#0F172A] via-[#1E3A8A] to-[#1E3A8A]">
+        {/* Subtle pattern overlay */}
+        <div 
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)`,
+            backgroundSize: '50px 50px',
+          }}
+        />
+        
+        {/* Gold accent line at top */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4A017] to-transparent" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
+            {/* Gold accent line */}
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.6 }}
+              className="w-16 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] mx-auto rounded-full mb-6"
+            />
+            
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DC2626]/20 border border-[#DC2626]/30 text-[#DC2626] font-medium text-sm mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-[#D4A017]/30 text-[#D4A017] font-medium text-sm mb-6"
             >
               <FaHeart className="w-4 h-4" />
               Fuel the Movement
@@ -177,14 +197,14 @@ export default function SupportPage() {
               transition={{ delay: 0.1 }}
               className="font-slogan text-4xl md:text-5xl lg:text-6xl text-white mb-6"
             >
-              Support the <span className="text-[#DC2626]">Campaign</span>
+              Support the <span className="text-[#D4A017]">Campaign</span>
             </motion.h1>
             
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-slate-400 mb-8"
+              className="text-xl text-white/80 mb-8"
             >
               Your contribution powers our grassroots movement across all 47 counties. 
               Every shilling brings us closer to a transformed Kenya.
@@ -197,16 +217,16 @@ export default function SupportPage() {
               className="flex flex-wrap justify-center gap-8 text-center"
             >
               <div>
-                <div className="text-3xl font-bold text-[#DC2626]">KES 2.5M+</div>
-                <div className="text-slate-500">Raised</div>
+                <div className="text-3xl font-bold text-[#D4A017]">KES 2.5M+</div>
+                <div className="text-white/60">Raised</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[#1E3A8A]">1,200+</div>
-                <div className="text-slate-500">Donors</div>
+                <div className="text-3xl font-bold text-[#D4A017]">1,200+</div>
+                <div className="text-white/60">Donors</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-[#D4A017]">47</div>
-                <div className="text-slate-500">Counties</div>
+                <div className="text-white/60">Counties</div>
               </div>
             </motion.div>
           </div>
@@ -214,14 +234,14 @@ export default function SupportPage() {
       </section>
 
       {/* Impact Section */}
-      <section className="py-20 bg-slate-900">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <h2 className="font-headline text-3xl md:text-4xl text-white mb-4">
-                Your Donation <span className="text-[#DC2626]">Matters</span>
+              <h2 className="font-headline text-3xl md:text-4xl text-[#1E3A8A] mb-4">
+                Your Donation <span className="text-[#D4A017]">Matters</span>
               </h2>
-              <p className="text-slate-400 max-w-2xl mx-auto">
+              <p className="text-slate-600 max-w-2xl mx-auto">
                 See exactly how your contribution fuels our campaign for change.
               </p>
             </div>
@@ -230,12 +250,12 @@ export default function SupportPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {impactCards.map((card, index) => (
               <ScrollReveal key={card.amount} delay={index * 0.1}>
-                <div className="h-full p-6 rounded-2xl bg-slate-800 border border-slate-700 hover:border-[#DC2626]/50 transition-all group">
-                  <div className="w-14 h-14 rounded-xl bg-[#DC2626]/10 flex items-center justify-center mb-4 group-hover:bg-[#DC2626]/20 transition-colors">
-                    <card.icon className="w-7 h-7 text-[#DC2626]" />
+                <div className="h-full p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#D4A017]/50 transition-all group">
+                  <div className="w-14 h-14 rounded-xl bg-[#D4A017]/10 flex items-center justify-center mb-4 group-hover:bg-[#D4A017]/20 transition-colors">
+                    <card.icon className="w-7 h-7 text-[#D4A017]" />
                   </div>
-                  <div className="text-2xl font-bold text-white mb-2">{card.amount}</div>
-                  <p className="text-slate-400 text-sm">{card.impact}</p>
+                  <div className="text-2xl font-bold text-[#1E3A8A] mb-2">{card.amount}</div>
+                  <p className="text-slate-600 text-sm">{card.impact}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -244,14 +264,14 @@ export default function SupportPage() {
       </section>
 
       {/* Donation Form */}
-      <section className="py-20 bg-slate-950">
+      <section className="py-20 bg-[#F8FAFC]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Left: Donation Options */}
             <ScrollReveal>
               <div>
-                <h2 className="font-headline text-3xl text-white mb-6">
-                  Choose Your <span className="text-[#DC2626]">Contribution</span>
+                <h2 className="font-headline text-3xl text-[#1E3A8A] mb-6">
+                  Choose Your <span className="text-[#D4A017]">Contribution</span>
                 </h2>
                 
                 {/* Amount Selection */}
@@ -262,12 +282,12 @@ export default function SupportPage() {
                       onClick={() => setSelectedAmount(option.amount)}
                       className={`p-4 rounded-xl border-2 transition-all ${
                         selectedAmount === option.amount
-                          ? 'border-[#DC2626] bg-[#DC2626]/10'
-                          : 'border-slate-700 bg-slate-800 hover:border-slate-600'
+                          ? 'border-[#1E3A8A] bg-[#1E3A8A]/10'
+                          : 'border-slate-200 bg-white hover:border-[#1E3A8A]/50'
                       }`}
                     >
                       <div className={`font-bold text-lg ${
-                        selectedAmount === option.amount ? 'text-[#DC2626]' : 'text-white'
+                        selectedAmount === option.amount ? 'text-[#1E3A8A]' : 'text-[#1E3A8A]'
                       }`}>
                         {option.label}
                       </div>
@@ -279,7 +299,7 @@ export default function SupportPage() {
                 {/* Custom Amount */}
                 {selectedAmount === 0 && (
                   <div className="mb-8">
-                    <label className="block text-sm font-medium text-slate-300 mb-2">
+                    <label className="block text-sm font-medium text-[#1E3A8A] mb-2">
                       Enter Custom Amount (KES)
                     </label>
                     <input
@@ -287,7 +307,7 @@ export default function SupportPage() {
                       min="1"
                       value={customAmount}
                       onChange={(e) => setCustomAmount(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#DC2626] focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-[#1E3A8A] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] focus:border-transparent"
                       placeholder="Enter amount"
                     />
                   </div>
@@ -295,7 +315,7 @@ export default function SupportPage() {
 
                 {/* Payment Methods */}
                 <div className="mb-8">
-                  <label className="block text-sm font-medium text-slate-300 mb-4">
+                  <label className="block text-sm font-medium text-[#1E3A8A] mb-4">
                     Payment Method
                   </label>
                   <div className="grid grid-cols-2 gap-4">
@@ -305,7 +325,7 @@ export default function SupportPage() {
                       className={`p-4 rounded-xl border-2 flex items-center gap-3 transition-all ${
                         paymentMethod === 'mpesa'
                           ? 'border-[#00A650] bg-[#00A650]/10'
-                          : 'border-slate-700 bg-slate-800 hover:border-slate-600'
+                          : 'border-slate-200 bg-white hover:border-slate-300'
                       }`}
                     >
                       <div className="w-10 h-10 rounded-lg bg-[#00A650] flex items-center justify-center">
@@ -313,7 +333,7 @@ export default function SupportPage() {
                       </div>
                       <div className="text-left">
                         <div className={`font-semibold ${
-                          paymentMethod === 'mpesa' ? 'text-[#00A650]' : 'text-white'
+                          paymentMethod === 'mpesa' ? 'text-[#00A650]' : 'text-[#1E3A8A]'
                         }`}>
                           M-Pesa
                         </div>
@@ -327,7 +347,7 @@ export default function SupportPage() {
                       className={`p-4 rounded-xl border-2 flex items-center gap-3 transition-all ${
                         paymentMethod === 'card'
                           ? 'border-[#1E3A8A] bg-[#1E3A8A]/10'
-                          : 'border-slate-700 bg-slate-800 hover:border-slate-600'
+                          : 'border-slate-200 bg-white hover:border-slate-300'
                       }`}
                     >
                       <div className="w-10 h-10 rounded-lg bg-[#1E3A8A] flex items-center justify-center">
@@ -335,7 +355,7 @@ export default function SupportPage() {
                       </div>
                       <div className="text-left">
                         <div className={`font-semibold ${
-                          paymentMethod === 'card' ? 'text-[#1E3A8A]' : 'text-white'
+                          paymentMethod === 'card' ? 'text-[#1E3A8A]' : 'text-[#1E3A8A]'
                         }`}>
                           Card
                         </div>
@@ -349,7 +369,7 @@ export default function SupportPage() {
                       className={`p-4 rounded-xl border-2 flex items-center gap-3 transition-all ${
                         paymentMethod === 'paypal'
                           ? 'border-[#003087] bg-[#003087]/10'
-                          : 'border-slate-700 bg-slate-800 hover:border-slate-600'
+                          : 'border-slate-200 bg-white hover:border-slate-300'
                       }`}
                     >
                       <div className="w-10 h-10 rounded-lg bg-[#003087] flex items-center justify-center">
@@ -357,7 +377,7 @@ export default function SupportPage() {
                       </div>
                       <div className="text-left">
                         <div className={`font-semibold ${
-                          paymentMethod === 'paypal' ? 'text-[#0070BA]' : 'text-white'
+                          paymentMethod === 'paypal' ? 'text-[#003087]' : 'text-[#1E3A8A]'
                         }`}>
                           PayPal
                         </div>
@@ -371,7 +391,7 @@ export default function SupportPage() {
                       className={`p-4 rounded-xl border-2 flex items-center gap-3 transition-all ${
                         paymentMethod === 'bank'
                           ? 'border-[#D4A017] bg-[#D4A017]/10'
-                          : 'border-slate-700 bg-slate-800 hover:border-slate-600'
+                          : 'border-slate-200 bg-white hover:border-slate-300'
                       }`}
                     >
                       <div className="w-10 h-10 rounded-lg bg-[#D4A017] flex items-center justify-center">
@@ -379,7 +399,7 @@ export default function SupportPage() {
                       </div>
                       <div className="text-left">
                         <div className={`font-semibold ${
-                          paymentMethod === 'bank' ? 'text-[#D4A017]' : 'text-white'
+                          paymentMethod === 'bank' ? 'text-[#D4A017]' : 'text-[#1E3A8A]'
                         }`}>
                           Bank
                         </div>
@@ -390,16 +410,16 @@ export default function SupportPage() {
                 </div>
 
                 {/* Security Note */}
-                <div className="flex items-center gap-4 p-4 rounded-xl bg-slate-800/50 border border-slate-700">
+                <div className="flex items-center gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200">
                   <div className="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center flex-shrink-0">
-                    <FaShieldAlt className="w-6 h-6 text-green-500" />
+                    <FaShieldAlt className="w-6 h-6 text-green-600" />
                   </div>
                   <div>
-                    <div className="text-white font-medium flex items-center gap-2">
-                      <FaLock className="w-4 h-4" />
+                    <div className="text-[#1E3A8A] font-medium flex items-center gap-2">
+                      <FaLock className="w-4 h-4 text-green-600" />
                       Secure Payment
                     </div>
-                    <p className="text-slate-400 text-sm">
+                    <p className="text-slate-600 text-sm">
                       Your payment is encrypted and secure. We never store your financial details.
                     </p>
                   </div>
@@ -409,51 +429,51 @@ export default function SupportPage() {
 
             {/* Right: Donor Information */}
             <ScrollReveal delay={0.2}>
-              <form onSubmit={handleDonate} className="bg-slate-900 rounded-2xl border border-slate-800 p-8">
-                <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-                  <FaReceipt className="text-[#DC2626]" />
+              <form onSubmit={handleDonate} className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
+                <h3 className="text-xl font-semibold text-[#1E3A8A] mb-6 flex items-center gap-2">
+                  <FaReceipt className="text-[#D4A017]" />
                   Donor Information
                 </h3>
 
                 <div className="grid md:grid-cols-2 gap-4 mb-4">
                   <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">First Name *</label>
+                    <label className="block text-sm font-medium text-[#1E3A8A] mb-2">First Name *</label>
                     <input
                       type="text"
                       required
                       value={formData.firstName}
                       onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#DC2626] focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-[#1E3A8A] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] focus:border-transparent"
                       placeholder="John"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">Last Name *</label>
+                    <label className="block text-sm font-medium text-[#1E3A8A] mb-2">Last Name *</label>
                     <input
                       type="text"
                       required
                       value={formData.lastName}
                       onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#DC2626] focus:border-transparent"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-[#1E3A8A] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] focus:border-transparent"
                       placeholder="Doe"
                     />
                   </div>
                 </div>
 
                 <div className="mb-4">
-                  <label className="block text-sm font-medium text-slate-300 mb-2">Email Address *</label>
+                  <label className="block text-sm font-medium text-[#1E3A8A] mb-2">Email Address *</label>
                   <input
                     type="email"
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#DC2626] focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-[#1E3A8A] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] focus:border-transparent"
                     placeholder="john@example.com"
                   />
                 </div>
 
                 <div className="mb-6">
-                  <label className="block text-sm font-medium text-slate-300 mb-2">
+                  <label className="block text-sm font-medium text-[#1E3A8A] mb-2">
                     Phone Number {paymentMethod === 'mpesa' && '*'}
                   </label>
                   <input
@@ -461,7 +481,7 @@ export default function SupportPage() {
                     required={paymentMethod === 'mpesa'}
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#DC2626] focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-[#1E3A8A] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] focus:border-transparent"
                     placeholder="+254 XXX XXX XXX"
                   />
                   {paymentMethod === 'mpesa' && (
@@ -477,9 +497,9 @@ export default function SupportPage() {
                       type="checkbox"
                       checked={formData.isRecurring}
                       onChange={(e) => setFormData({ ...formData, isRecurring: e.target.checked })}
-                      className="w-5 h-5 rounded border-slate-600 bg-slate-800 text-[#DC2626] focus:ring-[#DC2626]"
+                      className="w-5 h-5 rounded border-slate-300 bg-white text-[#1E3A8A] focus:ring-[#1E3A8A]"
                     />
-                    <span className="text-slate-300">
+                    <span className="text-slate-600">
                       Make this a monthly recurring donation
                     </span>
                   </label>
@@ -489,23 +509,23 @@ export default function SupportPage() {
                       type="checkbox"
                       checked={formData.anonymous}
                       onChange={(e) => setFormData({ ...formData, anonymous: e.target.checked })}
-                      className="w-5 h-5 rounded border-slate-600 bg-slate-800 text-[#DC2626] focus:ring-[#DC2626]"
+                      className="w-5 h-5 rounded border-slate-300 bg-white text-[#1E3A8A] focus:ring-[#1E3A8A]"
                     />
-                    <span className="text-slate-300">
+                    <span className="text-slate-600">
                       Donate anonymously
                     </span>
                   </label>
                 </div>
 
                 <div className="mb-6">
-                  <label className="block text-sm font-medium text-slate-300 mb-2">
+                  <label className="block text-sm font-medium text-[#1E3A8A] mb-2">
                     Message (Optional)
                   </label>
                   <textarea
                     rows={3}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#DC2626] focus:border-transparent resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-[#1E3A8A] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] focus:border-transparent resize-none"
                     placeholder="Leave a message of support..."
                   />
                 </div>
@@ -513,7 +533,7 @@ export default function SupportPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting || (selectedAmount === 0 && !customAmount)}
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-[#DC2626] to-[#B91C1C] text-white font-bold text-lg hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2"
+                  className="w-full py-4 rounded-xl bg-gradient-to-r from-[#1E3A8A] to-[#0F172A] text-white font-bold text-lg hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
                     <>
@@ -539,71 +559,71 @@ export default function SupportPage() {
       </section>
 
       {/* Bank Transfer Info */}
-      <section className="py-20 bg-slate-900">
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <h2 className="font-headline text-3xl text-white mb-4">
-                Other Ways to <span className="text-[#1E3A8A]">Support</span>
+              <h2 className="font-headline text-3xl text-[#1E3A8A] mb-4">
+                Other Ways to <span className="text-[#D4A017]">Support</span>
               </h2>
             </div>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-8">
             <ScrollReveal>
-              <div className="bg-slate-800 rounded-2xl p-8 border border-slate-700">
-                <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+              <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+                <h3 className="text-lg font-semibold text-[#1E3A8A] mb-4 flex items-center gap-2">
                   <FaHandHoldingUsd className="text-[#D4A017]" />
                   Bank Transfer
                 </h3>
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Account Name:</span>
-                    <span className="text-white font-mono">National Vision Party</span>
+                    <span className="text-slate-500">Account Name:</span>
+                    <span className="text-[#1E3A8A] font-mono">National Vision Party</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Bank:</span>
-                    <span className="text-white">KCB Bank Kenya</span>
+                    <span className="text-slate-500">Bank:</span>
+                    <span className="text-[#1E3A8A]">KCB Bank Kenya</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Account Number:</span>
-                    <span className="text-white font-mono">1234567890</span>
+                    <span className="text-slate-500">Account Number:</span>
+                    <span className="text-[#1E3A8A] font-mono">1234567890</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Swift Code:</span>
-                    <span className="text-white font-mono">KCBLKENX</span>
+                    <span className="text-slate-500">Swift Code:</span>
+                    <span className="text-[#1E3A8A] font-mono">KCBLKENX</span>
                   </div>
                 </div>
-                <p className="text-xs text-slate-500 mt-4">
+                <p className="text-xs text-slate-400 mt-4">
                   For international transfers. Email receipt to donations@nationalvisionparty.com
                 </p>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
-              <div className="bg-slate-800 rounded-2xl p-8 border border-slate-700">
-                <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+              <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+                <h3 className="text-lg font-semibold text-[#1E3A8A] mb-4 flex items-center gap-2">
                   <FaGlobe className="text-[#1E3A8A]" />
                   International Support
                 </h3>
-                <p className="text-slate-400 text-sm mb-4">
+                <p className="text-slate-600 text-sm mb-4">
                   Kenyans in the diaspora can support the campaign through:
                 </p>
-                <ul className="space-y-2 text-sm text-slate-300">
+                <ul className="space-y-2 text-sm text-slate-700">
                   <li className="flex items-center gap-2">
-                    <FaCheck className="w-4 h-4 text-green-500" />
+                    <FaCheck className="w-4 h-4 text-green-600" />
                     PayPal (USD, EUR, GBP)
                   </li>
                   <li className="flex items-center gap-2">
-                    <FaCheck className="w-4 h-4 text-green-500" />
+                    <FaCheck className="w-4 h-4 text-green-600" />
                     Credit/Debit Cards
                   </li>
                   <li className="flex items-center gap-2">
-                    <FaCheck className="w-4 h-4 text-green-500" />
+                    <FaCheck className="w-4 h-4 text-green-600" />
                     International Wire Transfer
                   </li>
                   <li className="flex items-center gap-2">
-                    <FaCheck className="w-4 h-4 text-green-500" />
+                    <FaCheck className="w-4 h-4 text-green-600" />
                     WorldRemit / Wise
                   </li>
                 </ul>
@@ -613,25 +633,7 @@ export default function SupportPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-[#DC2626] to-[#B91C1C]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-slogan text-3xl md:text-4xl text-white mb-4">
-            Can&apos;t Donate? Volunteer!
-          </h2>
-          <p className="text-white/80 text-lg mb-8">
-            Your time and skills are just as valuable. Join our team of dedicated volunteers.
-          </p>
-          <a 
-            href="/join-us"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-white text-[#DC2626] font-bold text-lg hover:bg-slate-100 transition-colors shadow-lg"
-          >
-            <FaHandshake />
-            Become a Volunteer
-            <FaArrowRight />
-          </a>
-        </div>
-      </section>
+
     </div>
   );
 }
