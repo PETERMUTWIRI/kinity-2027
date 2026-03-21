@@ -323,16 +323,19 @@ export default function HomePage() {
                 Committed to the Service of Kenyans
               </motion.p>
 
-              {/* Key Message */}
+              {/* Key Message - Dr. Kinity's Vision */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 1.1 }}
-                className="max-w-lg mx-auto lg:mx-0 hidden sm:block"
+                className="max-w-xl mx-auto lg:mx-0 hidden sm:block"
               >
-                <p className="text-xs sm:text-sm md:text-base text-white/90 border-l-4 border-[#D4A017] pl-3 sm:pl-4 text-left leading-relaxed bg-white/5 backdrop-blur-sm rounded-r-lg py-2">
-                  No Recycling of Corrupt Politicians. A new era of leadership built on integrity, 
-                  economic transformation, and unwavering commitment to every Kenyan.
+                <blockquote className="text-xs sm:text-sm md:text-base text-white/95 border-l-4 border-[#D4A017] pl-3 sm:pl-4 text-left leading-relaxed bg-white/5 backdrop-blur-sm rounded-r-lg py-3">
+                  &ldquo;For great heights of prosperity of Kenyan nation and for the happiness, joy, and comfort of the Kenyan people, the <span className="text-[#D4A017] font-semibold">demolition</span> of corruption and the rejection of recycling corrupt politicians into leadership positions, should be a mandatory obligation.&rdquo;
+                </blockquote>
+                <p className="text-[10px] sm:text-xs text-white/70 mt-2 pl-3 sm:pl-4">
+                  — Dr. Isaac Newton Kinity<br/>
+                  <span className="text-white/50">Counselor and Human Rights Activist | Chairman, Kikimo Foundation</span>
                 </p>
               </motion.div>
 

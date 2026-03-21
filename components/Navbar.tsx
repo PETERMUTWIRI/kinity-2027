@@ -264,7 +264,6 @@ export default function Navbar() {
                   <div className="w-6 h-1 bg-[#DC2626]" />
                   <div className="w-6 h-1 bg-[#006600] rounded-b-sm" />
                 </div>
-                </div>
               </Link>
 
               {/* Desktop Navigation with Dropdowns */}
