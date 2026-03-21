@@ -70,6 +70,13 @@ export default function Footer() {
       {/* Dark Navy Background */}
       <div className="absolute inset-0 bg-[#0F172A]" />
       
+      {/* Subtle Kenyan Flag Hint - Bottom Edge */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 flex opacity-30">
+        <div className="flex-1 bg-black" />
+        <div className="flex-1 bg-[#DC2626]" />
+        <div className="flex-1 bg-[#006600]" />
+      </div>
+      
       {/* Subtle Pattern Overlay */}
       <div 
         className="absolute inset-0 opacity-5"

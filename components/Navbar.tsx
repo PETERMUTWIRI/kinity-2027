@@ -258,6 +258,13 @@ export default function Navbar() {
                     <span className="text-[#D4A017]">Kenya&apos;s Hope</span> 2027
                   </p>
                 </div>
+                {/* Subtle Kenyan Flag */}
+                <div className="hidden md:flex flex-col justify-center ml-2 opacity-60 group-hover:opacity-100 transition-opacity">
+                  <div className="w-6 h-1 bg-black rounded-t-sm" />
+                  <div className="w-6 h-1 bg-[#DC2626]" />
+                  <div className="w-6 h-1 bg-[#006600] rounded-b-sm" />
+                </div>
+                </div>
               </Link>
 
               {/* Desktop Navigation with Dropdowns */}
