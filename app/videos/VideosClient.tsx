@@ -2,9 +2,11 @@
 
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaPlay, FaArrowUpRightFromSquare, FaXmark, FaYoutube, FaEye, FaClock } from 'react-icons/fa6';
+import { FaPlay, FaArrowUpRightFromSquare, FaXmark, FaYoutube } from 'react-icons/fa6';
+import { FaHandshake, FaHeart } from 'react-icons/fa';
 import CommentSection from '@/components/CommentSection';
 import Image from 'next/image';
+import Link from 'next/link';
 import ScrollReveal from '@/components/ScrollReveal';
 
 interface Video {
@@ -23,12 +25,11 @@ interface VideosClientProps {
   initialVideos: Video[];
 }
 
-const categories = ['All', 'Music Video', 'Live Performance', 'Behind the Scenes', 'Interview', 'Lyric Video'];
+const categories = ['All', 'Speeches', 'Rallies', 'Interviews', 'Campaign Events', 'Behind the Scenes'];
 
 export default function VideosClient({ initialVideos }: VideosClientProps) {
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
-  const [heroVideoLoaded, setHeroVideoLoaded] = useState(false);
 
   const filteredVideos = useMemo(() => {
     if (activeCategory === 'All') return initialVideos;
@@ -42,51 +43,32 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950">
-      {/* Hero Section with YouTube Background */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* YouTube Video Background */}
-        <div className="absolute inset-0 w-full h-full">
-          <iframe
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&loop=1&playlist=dQw4w9WgXcQ&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
-            title="BE PART OF THE MOVEMENT - Campaign Video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            className="absolute w-full h-full object-cover"
-            style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              width: '100vw',
-              height: '100vh',
-              transform: 'translate(-50%, -50%) scale(1.2)',
-              pointerEvents: 'none',
-            }}
-          />
-        </div>
-
-        {/* Dark Overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/70 to-slate-950" />
+    <div className="min-h-screen bg-white">
+      {/* Hero Section - Clean with Subscribe CTA */}
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#0F172A] via-[#1E3A8A] to-[#0F172A]">
+        {/* Subtle pattern overlay */}
+        <div 
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)`,
+            backgroundSize: '50px 50px',
+          }}
+        />
         
-        {/* Additional gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/30 via-transparent to-blue-900/30" />
-
-        {/* Animated Background Orbs */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-[120px] animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
-        </div>
-
+        {/* Gold accent line at top */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4A017] to-transparent" />
+        
         {/* Hero Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-16 sm:pt-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24">
           <StaggerContainer className="space-y-8">
             <StaggerItem>
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-red-400 text-sm font-medium"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-[#D4A017]/30 text-[#D4A017] text-sm font-medium"
               >
                 <FaYoutube className="w-4 h-4" />
-                Watch & Experience
+                Campaign Media Center
               </motion.span>
             </StaggerItem>
 
@@ -95,11 +77,11 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white tracking-tight"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight"
               >
-                Visual{' '}
-                <span className="bg-gradient-to-r from-red-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-                  Stories
+                Watch the{' '}
+                <span className="text-[#D4A017]">
+                  Movement
                 </span>
               </motion.h1>
             </StaggerItem>
@@ -109,11 +91,21 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed"
+                className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed"
               >
-                Official music videos, live performances, and behind-the-scenes moments. 
-                Experience the energy, the culture, and the message that moves hearts across continents.
+                Campaign speeches, rallies, interviews, and behind-the-scenes moments. 
+                Experience the vision that will transform Kenya.
               </motion.p>
+            </StaggerItem>
+
+            {/* Gold accent line */}
+            <StaggerItem>
+              <motion.div
+                initial={{ opacity: 0, scaleX: 0 }}
+                animate={{ opacity: 1, scaleX: 1 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="w-24 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] mx-auto rounded-full"
+              />
             </StaggerItem>
 
             <StaggerItem>
@@ -127,14 +119,14 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
                   href="https://www.youtube.com/channel/UCBoBfckNNdCS7joUqClADbA?sub_confirmation=1"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-red-600 text-white font-bold hover:bg-red-700 transition-all duration-300 hover:scale-105 shadow-lg shadow-red-600/25"
+                  className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#DC2626] text-white font-bold hover:bg-[#B91C1C] transition-all duration-300 hover:scale-105 shadow-lg shadow-red-900/30"
                 >
                   <FaYoutube className="w-5 h-5" />
                   Subscribe on YouTube
                 </a>
                 <button
                   onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
-                  className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white font-bold hover:bg-white/20 transition-all duration-300"
+                  className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/30 text-white font-bold hover:bg-white/20 transition-all duration-300"
                 >
                   Explore Videos
                 </button>
@@ -151,12 +143,12 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
               >
                 {[
                   { value: initialVideos.length, label: 'Videos' },
-                  { value: '500K+', label: 'Views' },
-                  { value: '50K+', label: 'Subscribers' },
-                ].map((stat, i) => (
+                  { value: '10K+', label: 'Views' },
+                  { value: '5K+', label: 'Subscribers' },
+                ].map((stat) => (
                   <div key={stat.label} className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-white">{stat.value}</div>
-                    <div className="text-sm text-slate-400">{stat.label}</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-[#D4A017]">{stat.value}</div>
+                    <div className="text-sm text-white/60">{stat.label}</div>
                   </div>
                 ))}
               </motion.div>
@@ -172,13 +164,13 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
           className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
         >
           <div className="flex flex-col items-center gap-2">
-            <span className="text-xs text-slate-400 tracking-widest uppercase">Scroll</span>
+            <span className="text-xs text-white/50 tracking-widest uppercase">Scroll</span>
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-6 h-10 rounded-full border-2 border-slate-600 flex justify-center pt-2"
+              className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center pt-2"
             >
-              <div className="w-1 h-2 bg-gradient-to-b from-red-400 to-purple-400 rounded-full" />
+              <div className="w-1 h-2 bg-gradient-to-b from-[#D4A017] to-[#E6C200] rounded-full" />
             </motion.div>
           </div>
         </motion.div>
@@ -186,12 +178,12 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
 
       {/* Featured Video Section */}
       {featuredVideo && (
-        <section className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+        <section className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-white">
           <div className="max-w-7xl mx-auto">
             <ScrollReveal>
               <div className="flex items-center gap-3 mb-8">
-                <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                <span className="text-red-400 font-semibold uppercase tracking-wider text-sm">Featured</span>
+                <span className="w-8 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] rounded-full" />
+                <span className="text-[#D4A017] font-semibold uppercase tracking-wider text-sm">Featured</span>
               </div>
             </ScrollReveal>
 
@@ -202,8 +194,8 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
                 whileHover={{ scale: 1.005 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="absolute -inset-1 bg-gradient-to-r from-red-500 via-pink-500 to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-500" />
-                <div className="relative bg-slate-900/80 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/10">
+                <div className="absolute -inset-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-500" />
+                <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100">
                   <div className="grid lg:grid-cols-2">
                     {/* Video Thumbnail */}
                     <div className="relative aspect-video lg:aspect-auto lg:h-full min-h-[300px]">
@@ -214,37 +206,37 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
                         className="object-cover"
                         sizes="(max-width: 1024px) 100vw, 50vw"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent lg:bg-gradient-to-r" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent lg:bg-gradient-to-r" />
                       
                       {/* Play Button */}
                       <div className="absolute inset-0 flex items-center justify-center">
                         <motion.div
-                          className="w-24 h-24 rounded-full bg-red-600 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform"
+                          className="w-20 h-20 rounded-full bg-[#DC2626] flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform"
                           whileHover={{ scale: 1.1 }}
                         >
-                          <FaPlay className="w-10 h-10 text-white ml-1" />
+                          <FaPlay className="w-8 h-8 text-white ml-1" />
                         </motion.div>
                       </div>
                     </div>
 
                     {/* Content Side */}
                     <div className="p-8 lg:p-12 flex flex-col justify-center">
-                      <span className="inline-block px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-sm font-medium mb-4 w-fit">
+                      <span className="inline-block px-3 py-1 rounded-full bg-[#D4A017]/10 text-[#D4A017] text-sm font-medium mb-4 w-fit border border-[#D4A017]/20">
                         {featuredVideo.category}
                       </span>
                       
-                      <h2 className="text-3xl sm:text-4xl font-black text-white mb-4 leading-tight">
+                      <h2 className="text-2xl sm:text-3xl font-bold text-[#0F172A] mb-4 leading-tight">
                         {featuredVideo.title}
                       </h2>
                       
                       {featuredVideo.description && (
-                        <p className="text-slate-400 text-lg mb-6">
+                        <p className="text-slate-600 text-lg mb-6">
                           {featuredVideo.description}
                         </p>
                       )}
 
                       <div className="flex items-center gap-4">
-                        <button className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-red-600 text-white font-semibold hover:bg-red-700 transition-all">
+                        <button className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-[#1E3A8A] text-white font-semibold hover:bg-[#0F172A] transition-all">
                           <FaPlay className="w-4 h-4" />
                           Watch Now
                         </button>
@@ -252,7 +244,7 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
                           href={`https://www.youtube.com/watch?v=${featuredVideo.youtubeId}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors"
+                          className="inline-flex items-center gap-2 text-slate-500 hover:text-[#1E3A8A] transition-colors"
                           onClick={(e) => e.stopPropagation()}
                         >
                           <FaYoutube className="w-5 h-5" />
@@ -269,7 +261,7 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
       )}
 
       {/* Category Filter */}
-      <section className="relative sticky top-0 z-40 bg-slate-950/80 backdrop-blur-xl border-b border-white/10 py-4">
+      <section className="relative sticky top-0 z-40 bg-white/95 backdrop-blur-xl border-b border-slate-100 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center">
             <div className="flex flex-wrap justify-center gap-2">
@@ -279,8 +271,8 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
                   onClick={() => setActiveCategory(category)}
                   className={`px-4 sm:px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                     activeCategory === category
-                      ? 'bg-gradient-to-r from-red-500 to-pink-600 text-white shadow-lg shadow-red-500/25'
-                      : 'bg-white/5 text-slate-400 hover:text-white hover:bg-white/10'
+                      ? 'bg-[#1E3A8A] text-white shadow-lg'
+                      : 'bg-slate-100 text-slate-600 hover:text-[#1E3A8A] hover:bg-[#1E3A8A]/10'
                   }`}
                 >
                   {category}
@@ -292,7 +284,7 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
       </section>
 
       {/* Videos Grid */}
-      <section className="relative py-16 px-4 sm:px-6 lg:px-8">
+      <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <AnimatePresence mode="wait">
             <motion.div
@@ -304,7 +296,7 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
             >
               {filteredVideos.length > 0 ? (
                 <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {filteredVideos.map((video, index) => (
+                  {filteredVideos.map((video) => (
                     <StaggerItem key={video.id}>
                       <motion.div
                         className="group h-full cursor-pointer"
@@ -312,7 +304,7 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
                         whileHover={{ y: -8 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <div className="relative h-full bg-slate-900/60 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/10 hover:border-red-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-red-500/10">
+                        <div className="relative h-full bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl hover:border-[#D4A017]/30 transition-all duration-500">
                           {/* Thumbnail */}
                           <div className="relative aspect-video overflow-hidden">
                             <Image
@@ -322,43 +314,43 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
                               className="object-cover transition-transform duration-700 group-hover:scale-110"
                               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
                             
                             {/* Play Button Overlay */}
                             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                              <div className="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center shadow-xl">
-                                <FaPlay className="w-6 h-6 text-white ml-1" />
+                              <div className="w-14 h-14 rounded-full bg-[#DC2626] flex items-center justify-center shadow-xl">
+                                <FaPlay className="w-5 h-5 text-white ml-1" />
                               </div>
                             </div>
 
                             {/* Category Badge */}
                             <div className="absolute top-4 left-4">
-                              <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-xs font-bold border border-white/20">
+                              <span className="px-3 py-1 rounded-full bg-[#1E3A8A]/90 backdrop-blur-md text-white text-xs font-bold">
                                 {video.category}
                               </span>
                             </div>
 
                             {/* YouTube Icon */}
                             <div className="absolute bottom-4 right-4">
-                              <FaYoutube className="w-8 h-8 text-red-500" />
+                              <FaYoutube className="w-8 h-8 text-[#DC2626]" />
                             </div>
                           </div>
 
                           {/* Content */}
-                          <div className="p-6">
-                            <h3 className="text-lg font-bold text-white mb-2 group-hover:text-red-400 transition-colors line-clamp-2">
+                          <div className="p-5">
+                            <h3 className="text-lg font-bold text-[#0F172A] mb-2 group-hover:text-[#1E3A8A] transition-colors line-clamp-2">
                               {video.title}
                             </h3>
                             {video.description && (
-                              <p className="text-sm text-slate-400 mb-4 line-clamp-2">
+                              <p className="text-sm text-slate-500 mb-3 line-clamp-2">
                                 {video.description}
                               </p>
                             )}
                             <div className="flex items-center justify-between">
-                              <span className="text-xs text-slate-500">
+                              <span className="text-xs text-slate-400">
                                 Watch on YouTube
                               </span>
-                              <FaArrowUpRightFromSquare className="w-4 h-4 text-slate-500 group-hover:text-red-400 transition-colors" />
+                              <FaArrowUpRightFromSquare className="w-4 h-4 text-slate-400 group-hover:text-[#1E3A8A] transition-colors" />
                             </div>
                           </div>
                         </div>
@@ -372,11 +364,11 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
                   animate={{ opacity: 1 }}
                   className="text-center py-16 sm:py-20"
                 >
-                  <div className="text-8xl mb-6">🎬</div>
-                  <h3 className="text-2xl font-bold text-white mb-3">
+                  <div className="text-6xl mb-6">🎬</div>
+                  <h3 className="text-2xl font-bold text-[#0F172A] mb-3">
                     No videos found
                   </h3>
-                  <p className="text-slate-400">
+                  <p className="text-slate-500">
                     Check back soon for new {activeCategory !== 'All' ? activeCategory.toLowerCase() : ''} content!
                   </p>
                 </motion.div>
@@ -406,7 +398,7 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
               {/* Close Button */}
               <button
                 onClick={() => setSelectedVideo(null)}
-                className="absolute -top-12 right-0 text-white hover:text-red-400 transition-colors p-2 z-10"
+                className="absolute -top-12 right-0 text-white hover:text-[#D4A017] transition-colors p-2 z-10"
                 aria-label="Close video"
               >
                 <FaXmark className="text-3xl" />
@@ -433,7 +425,7 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
                   href={`https://www.youtube.com/watch?v=${selectedVideo.youtubeId}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-red-400 hover:text-red-300 transition-colors"
+                  className="inline-flex items-center gap-2 text-[#D4A017] hover:text-[#E6C200] transition-colors"
                 >
                   <FaYoutube className="w-5 h-5" />
                   Watch on YouTube
@@ -448,33 +440,51 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
         )}
       </AnimatePresence>
 
-      {/* Subscribe CTA */}
-      <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+      {/* Subscribe CTA - Dark Section */}
+      <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#0F172A] overflow-hidden">
+        {/* Subtle pattern overlay */}
+        <div 
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)`,
+            backgroundSize: '50px 50px',
+          }}
+        />
+        
+        {/* Gold accent line at top */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4A017] to-transparent" />
+        
+        <div className="max-w-4xl mx-auto relative z-10">
           <ScrollReveal>
-            <div className="relative rounded-3xl p-8 sm:p-12 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-red-600/20 via-pink-600/20 to-purple-600/20" />
-              <div className="absolute inset-0 backdrop-blur-xl bg-slate-900/50" />
-              <div className="absolute inset-0 rounded-3xl border border-white/10" />
+            <div className="text-center">
+              {/* Gold accent line */}
+              <div className="w-24 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] mx-auto rounded-full mb-8" />
               
-              <div className="relative z-10 text-center">
-                <FaYoutube className="w-16 h-16 text-red-500 mx-auto mb-6" />
-                <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
-                  Never Miss a Video
-                </h2>
-                <p className="text-slate-400 mb-8 max-w-lg mx-auto">
-                  Subscribe to the channel for exclusive behind-the-scenes content, 
-                  live performance highlights, and new music video premieres.
-                </p>
+              <FaYoutube className="w-16 h-16 text-[#DC2626] mx-auto mb-6" />
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                Be Part of the <span className="text-[#D4A017]">Movement</span>
+              </h2>
+              <p className="text-white/70 mb-8 max-w-lg mx-auto">
+                Subscribe to our channel for campaign updates, speeches, rallies, and exclusive content. 
+                Join thousands of Kenyans following the journey to 2027.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
                   href="https://www.youtube.com/channel/UCBoBfckNNdCS7joUqClADbA?sub_confirmation=1"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-red-600 text-white font-bold hover:bg-red-700 transition-all duration-300 hover:scale-105 shadow-lg shadow-red-600/25"
+                  className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#DC2626] text-white font-bold hover:bg-[#B91C1C] transition-all duration-300 hover:scale-105 shadow-lg"
                 >
                   <FaYoutube className="w-5 h-5" />
-                  Subscribe Now
+                  Subscribe on YouTube
                 </a>
+                <Link
+                  href="/join-us"
+                  className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/30 text-white font-bold hover:bg-white/20 transition-all duration-300"
+                >
+                  <FaHandshake className="w-5 h-5" />
+                  Join the Movement
+                </Link>
               </div>
             </div>
           </ScrollReveal>

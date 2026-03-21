@@ -123,7 +123,7 @@ function VideosListPage() {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin w-8 h-8 border-2 border-[#0074D9] border-t-transparent rounded-full" />
+        <div className="animate-spin w-8 h-8 border-2 border-[#1E3A8A] border-t-transparent rounded-full" />
       </div>
     );
   }
@@ -141,7 +141,7 @@ function VideosListPage() {
           </Link>
           <div>
             <h1 className="text-2xl font-bold text-white flex items-center gap-3">
-              <FaVideo className="text-[#0074D9]" />
+              <FaVideo className="text-[#1E3A8A]" />
               Video Library
             </h1>
             <p className="text-slate-400 mt-1">
@@ -151,7 +151,7 @@ function VideosListPage() {
         </div>
         <Link
           href="/admin/videos"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-[#0074D9] text-white font-semibold rounded-xl hover:bg-[#005CB0] transition-colors"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-[#1E3A8A] text-white font-semibold rounded-xl hover:bg-[#0F172A] transition-colors"
         >
           <FaPlus />
           Add Video
@@ -197,7 +197,7 @@ function VideosListPage() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search videos by title or category..."
-              className="w-full pl-11 pr-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:border-[#0074D9] focus:outline-none"
+              className="w-full pl-11 pr-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:border-[#1E3A8A] focus:outline-none"
             />
           </div>
 
@@ -205,7 +205,7 @@ function VideosListPage() {
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:border-[#0074D9] focus:outline-none min-w-[180px]"
+            className="px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:border-[#1E3A8A] focus:outline-none min-w-[180px]"
           >
             {CATEGORIES.map(cat => (
               <option key={cat} value={cat}>{cat}</option>
@@ -225,7 +225,7 @@ function VideosListPage() {
               onClick={() => setSelectedStatus(tab.key as any)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                 selectedStatus === tab.key
-                  ? 'bg-[#0074D9] text-white'
+                  ? 'bg-[#1E3A8A] text-white'
                   : 'bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700'
               }`}
             >
@@ -246,7 +246,7 @@ function VideosListPage() {
         {searchQuery && (
           <button
             onClick={() => setSearchQuery('')}
-            className="text-sm text-[#0074D9] hover:text-[#005CB0]"
+            className="text-sm text-[#1E3A8A] hover:text-[#0F172A]"
           >
             Clear search
           </button>
@@ -286,14 +286,14 @@ function VideosListPage() {
                         </span>
                       )}
                       {video.featured && (
-                        <span className="px-2 py-1 bg-[#0074D9]/90 text-white text-xs font-medium rounded">
+                        <span className="px-2 py-1 bg-[#1E3A8A]/90 text-white text-xs font-medium rounded">
                           Featured
                         </span>
                       )}
                     </div>
                     {/* Play Icon Overlay */}
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      <div className="w-12 h-12 bg-[#E91D0E]/90 rounded-full flex items-center justify-center">
+                      <div className="w-12 h-12 bg-[#DC2626]/90 rounded-full flex items-center justify-center">
                         <FaYoutube className="w-6 h-6 text-white" />
                       </div>
                     </div>
@@ -314,7 +314,7 @@ function VideosListPage() {
                             Order: {video.order}
                           </span>
                         </div>
-                        <h3 className="text-lg font-semibold text-white group-hover:text-[#0074D9] transition-colors line-clamp-2">
+                        <h3 className="text-lg font-semibold text-white group-hover:text-[#1E3A8A] transition-colors line-clamp-2">
                           {video.title}
                         </h3>
                       </div>
@@ -355,7 +355,7 @@ function VideosListPage() {
                         </button>
                         <Link
                           href={`/admin/videos?id=${video.id}`}
-                          className="flex items-center gap-2 px-3 py-2 bg-[#0074D9]/10 text-[#0074D9] hover:bg-[#0074D9] hover:text-white rounded-lg transition-all"
+                          className="flex items-center gap-2 px-3 py-2 bg-[#1E3A8A]/10 text-[#1E3A8A] hover:bg-[#1E3A8A] hover:text-white rounded-lg transition-all"
                           title="Edit Video"
                         >
                           <FaEdit className="w-4 h-4" />
@@ -389,7 +389,7 @@ function VideosListPage() {
           {!searchQuery && (
             <Link
               href="/admin/videos"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#0074D9] text-white font-semibold rounded-xl hover:bg-[#005CB0] transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#1E3A8A] text-white font-semibold rounded-xl hover:bg-[#0F172A] transition-colors"
             >
               <FaPlus />
               Add Video

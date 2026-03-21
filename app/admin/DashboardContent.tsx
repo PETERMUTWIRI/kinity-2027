@@ -165,7 +165,7 @@ export default function DashboardContent() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-black text-white flex items-center gap-3">
-            <FaFlag className="text-[#0074D9]" /> Campaign Dashboard
+            <FaFlag className="text-[#1E3A8A]" /> Campaign Dashboard
           </h1>
           <p className="text-slate-400 mt-1">
             Track the movement&apos;s progress across all 47 counties
@@ -301,7 +301,7 @@ export default function DashboardContent() {
               <FaUsers className="w-5 h-5 text-orange-500" />
               <h2 className="text-xl font-bold text-white">Pending Volunteers</h2>
             </div>
-            <Link href="/admin/volunteers" className="text-[#0074D9] hover:text-[#005CB0] text-sm font-bold flex items-center gap-1">
+            <Link href="/admin/volunteers" className="text-[#1E3A8A] hover:text-[#0F172A] text-sm font-bold flex items-center gap-1">
               <FaEye /> View All
             </Link>
           </div>
@@ -332,7 +332,7 @@ export default function DashboardContent() {
       </div>
 
       {/* Quick Actions */}
-      <div className="mt-8 bg-gradient-to-r from-[#0074D9] to-[#6B2C91] rounded-2xl shadow-lg p-6">
+      <div className="mt-8 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] rounded-2xl shadow-lg p-6">
         <h2 className="text-xl font-bold text-white mb-4">Quick Actions</h2>
         <div className="flex flex-wrap gap-3">
           <QuickActionButton href="/admin/posts/edit" icon={<FaNewspaper />} label="New Post" />
@@ -444,7 +444,7 @@ function SectionCard<T>({
     <div className="bg-slate-800 rounded-2xl shadow-lg p-6 border border-slate-700">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-xl font-bold text-white">{title}</h2>
-        <Link href={onNew} className="text-[#0074D9] hover:text-[#005CB0] text-sm font-bold flex items-center gap-1">
+        <Link href={onNew} className="text-[#1E3A8A] hover:text-[#0F172A] text-sm font-bold flex items-center gap-1">
           <FaPlus /> New
         </Link>
       </div>
@@ -456,7 +456,7 @@ function SectionCard<T>({
         )}
       </div>
       <div className="mt-4 pt-4 border-t border-slate-700">
-        <Link href={href} className="text-sm text-[#0074D9] hover:text-[#005CB0] font-semibold flex items-center gap-1">
+        <Link href={href} className="text-sm text-[#1E3A8A] hover:text-[#0F172A] font-semibold flex items-center gap-1">
           View all <FaArrowRight className="w-3 h-3" />
         </Link>
       </div>
@@ -507,7 +507,7 @@ function ItemRow({
         </span>
       )}
       <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition flex-shrink-0">
-        <Link href={editLink} className="text-[#0074D9] hover:text-[#005CB0] p-2" title="Edit">
+        <Link href={editLink} className="text-[#1E3A8A] hover:text-[#0F172A] p-2" title="Edit">
           <FaEdit />
         </Link>
         <button onClick={onDelete} className="text-red-400 hover:text-red-300 p-2" title="Delete">

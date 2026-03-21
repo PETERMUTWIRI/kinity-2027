@@ -46,7 +46,7 @@ function NewEventContent() {
             type="text"
             required
             placeholder="Enter event title..."
-            className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#0074D9]"
+            className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]"
           />
         </div>
 
@@ -55,7 +55,7 @@ function NewEventContent() {
           <label className="block text-sm font-medium text-slate-300 mb-2">
             Event Type
           </label>
-          <select className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-[#0074D9]">
+          <select className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]">
             <option value="">Select type...</option>
             <option value="rally">Rally</option>
             <option value="town-hall">Town Hall</option>
@@ -75,7 +75,7 @@ function NewEventContent() {
             <input
               type="date"
               required
-              className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-[#0074D9]"
+              className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]"
             />
           </div>
           <div>
@@ -85,7 +85,7 @@ function NewEventContent() {
             <input
               type="time"
               required
-              className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-[#0074D9]"
+              className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]"
             />
           </div>
         </div>
@@ -97,7 +97,7 @@ function NewEventContent() {
               <FaMapMarkerAlt className="inline w-4 h-4 mr-2" />
               County *
             </label>
-            <select className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-[#0074D9]">
+            <select className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]">
               <option value="">Select county...</option>
               <option value="nairobi">Nairobi</option>
               <option value="mombasa">Mombasa</option>
@@ -114,7 +114,7 @@ function NewEventContent() {
               type="text"
               required
               placeholder="e.g., Uhuru Park"
-              className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#0074D9]"
+              className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]"
             />
           </div>
         </div>
@@ -127,7 +127,7 @@ function NewEventContent() {
           <textarea
             rows={6}
             placeholder="Describe the event..."
-            className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#0074D9] resize-none"
+            className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] resize-none"
           />
         </div>
 
@@ -136,7 +136,7 @@ function NewEventContent() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#E91D0E] text-white font-semibold hover:bg-[#BA170C] transition-colors disabled:opacity-50"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#DC2626] text-white font-semibold hover:bg-[#B91C1C] transition-colors disabled:opacity-50"
           >
             <FaSave />
             {isSubmitting ? 'Creating...' : 'Create Event'}

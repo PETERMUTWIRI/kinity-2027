@@ -135,7 +135,7 @@ const DEPARTMENTS: DepartmentContact[] = [
     description: 'Join the ground team, organize events, or help with canvassing',
     email: CAMPAIGN_CONTACTS.volunteer.email,
     phone: CAMPAIGN_CONTACTS.volunteer.phone,
-    color: 'from-[#0074D9] to-[#005CB0]',
+    color: 'from-[#1E3A8A] to-[#0F172A]',
   },
   {
     icon: FaNewspaper,
@@ -143,7 +143,7 @@ const DEPARTMENTS: DepartmentContact[] = [
     description: 'Press inquiries, interview requests, and media partnerships',
     email: CAMPAIGN_CONTACTS.media.email,
     phone: CAMPAIGN_CONTACTS.media.phone,
-    color: 'from-[#6B2C91] to-[#4a1f66]',
+    color: 'from-[#D4A017] to-[#4a1f66]',
   },
   {
     icon: FaCalendarAlt,
@@ -151,14 +151,14 @@ const DEPARTMENTS: DepartmentContact[] = [
     description: 'Host an event, request a town hall, or rally coordination',
     email: CAMPAIGN_CONTACTS.events.email,
     phone: CAMPAIGN_CONTACTS.events.phone,
-    color: 'from-[#0074D9] to-[#6B2C91]',
+    color: 'from-[#1E3A8A] to-[#D4A017]',
   },
   {
     icon: FaCommentDots,
     title: 'Policy & Issues',
     description: 'Share policy suggestions, report community issues, or policy questions',
     email: CAMPAIGN_CONTACTS.policy.email,
-    color: 'from-[#6B2C91] to-[#0074D9]',
+    color: 'from-[#D4A017] to-[#1E3A8A]',
   },
   {
     icon: FaDonate,
@@ -166,14 +166,14 @@ const DEPARTMENTS: DepartmentContact[] = [
     description: 'Financial contributions, fundraising events, and donor relations',
     email: CAMPAIGN_CONTACTS.donations.email,
     phone: CAMPAIGN_CONTACTS.donations.phone,
-    color: 'from-[#E91D0E] to-[#BA170C]',
+    color: 'from-[#DC2626] to-[#B91C1C]',
   },
   {
     icon: FaShieldAlt,
     title: 'Security & Safety',
     description: 'Security concerns, incident reports, and safety coordination',
     phone: CAMPAIGN_CONTACTS.emergency.phone,
-    color: 'from-[#E91D0E] to-[#6B2C91]',
+    color: 'from-[#DC2626] to-[#D4A017]',
     urgent: true,
   },
 ];
@@ -330,11 +330,11 @@ export default function ContactContent() {
   return (
     <div className="relative min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative pt-24 sm:pt-28 lg:pt-32 pb-16 lg:pb-20 bg-gradient-to-br from-[#0074D9] to-[#6B2C91]">
+      <section className="relative pt-24 sm:pt-28 lg:pt-32 pb-16 lg:pb-20 bg-gradient-to-br from-[#1E3A8A] to-[#D4A017]">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full opacity-5" style={{backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}} />
           <div className="absolute top-1/4 -left-20 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#E91D0E]/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#DC2626]/20 rounded-full blur-3xl" />
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -349,7 +349,7 @@ export default function ContactContent() {
                 Get In Touch
               </span>
               <h1 className="font-slogan text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-6">
-                Your Voice <span className="text-[#E91D0E]">Matters</span>
+                Your Voice <span className="text-[#DC2626]">Matters</span>
               </h1>
               <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
                 Whether it&apos;s an emergency, a suggestion, or you want to join the movement — 
@@ -365,7 +365,7 @@ export default function ContactContent() {
         <div className="max-w-7xl mx-auto">
           {/* Emergency Hotline - Prominent */}
           <ScrollReveal>
-            <div className="mb-6 bg-gradient-to-r from-[#E91D0E] to-[#BA170C] rounded-2xl p-6 shadow-xl">
+            <div className="mb-6 bg-gradient-to-r from-[#DC2626] to-[#B91C1C] rounded-2xl p-6 shadow-xl">
               <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-xl bg-white/20 flex items-center justify-center">
@@ -387,7 +387,7 @@ export default function ContactContent() {
                 <div className="flex gap-3">
                   <a
                     href={`tel:${CAMPAIGN_CONTACTS.emergency.phone.replace(/\s/g, '')}`}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-[#E91D0E] font-bold hover:bg-slate-100 transition-all"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-[#DC2626] font-bold hover:bg-slate-100 transition-all"
                   >
                     <FaPhone className="w-5 h-5" />
                     Call Now
@@ -415,8 +415,8 @@ export default function ContactContent() {
                 description: 'Join thousands across all 47 counties. Help with canvassing, events, or digital outreach.',
                 action: 'Sign Up',
                 href: '/join-us',
-                color: 'from-[#0074D9] to-[#005CB0]',
-                iconBg: 'bg-[#0074D9]',
+                color: 'from-[#1E3A8A] to-[#0F172A]',
+                iconBg: 'bg-[#1E3A8A]',
               },
               {
                 icon: FaNewspaper,
@@ -424,8 +424,8 @@ export default function ContactContent() {
                 description: 'For interview requests, press materials, and media inquiries.',
                 action: 'Contact Press',
                 href: `mailto:${CAMPAIGN_CONTACTS.media.email}`,
-                color: 'from-[#6B2C91] to-[#4a1f66]',
-                iconBg: 'bg-[#6B2C91]',
+                color: 'from-[#D4A017] to-[#4a1f66]',
+                iconBg: 'bg-[#D4A017]',
                 external: true,
               },
               {
@@ -434,8 +434,8 @@ export default function ContactContent() {
                 description: 'Connect with local coordinators for events and opportunities near you.',
                 action: 'Find Coordinator',
                 href: '#county-coordinators',
-                color: 'from-[#0074D9] to-[#6B2C91]',
-                iconBg: 'bg-gradient-to-br from-[#0074D9] to-[#6B2C91]',
+                color: 'from-[#1E3A8A] to-[#D4A017]',
+                iconBg: 'bg-gradient-to-br from-[#1E3A8A] to-[#D4A017]',
               },
               {
                 icon: FaShieldAlt,
@@ -443,8 +443,8 @@ export default function ContactContent() {
                 description: 'Zero tolerance policy. Report integrity issues anonymously.',
                 action: 'Report Now',
                 href: '#report-corruption',
-                color: 'from-[#E91D0E] to-[#BA170C]',
-                iconBg: 'bg-[#E91D0E]',
+                color: 'from-[#DC2626] to-[#B91C1C]',
+                iconBg: 'bg-[#DC2626]',
               },
             ].map((card, index) => (
               <ScrollReveal key={card.title} delay={index * 0.1}>
@@ -454,7 +454,7 @@ export default function ContactContent() {
                     <div className={`w-14 h-14 ${card.iconBg} rounded-xl flex items-center justify-center text-white mb-4`}>
                       <card.icon className="w-7 h-7" />
                     </div>
-                    <h3 className="text-xl font-bold text-[#111111] mb-2">{card.title}</h3>
+                    <h3 className="text-xl font-bold text-[#0F172A] mb-2">{card.title}</h3>
                     <p className="text-slate-600 text-sm mb-4">{card.description}</p>
                     {card.external ? (
                       <a
@@ -484,12 +484,12 @@ export default function ContactContent() {
       <section className="py-16 lg:py-20 bg-slate-50 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-12">
-            <span className="inline-block px-4 py-1 rounded-full bg-[#0074D9]/10 text-[#0074D9] font-semibold text-sm mb-4">
+            <span className="inline-block px-4 py-1 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A] font-semibold text-sm mb-4">
               <FaBuilding className="w-4 h-4 inline mr-2" />
               Visit Our Offices
             </span>
-            <h2 className="font-headline text-3xl md:text-4xl text-[#111111] mb-4">
-              Campaign <span className="text-[#0074D9]">Offices</span> Near You
+            <h2 className="font-headline text-3xl md:text-4xl text-[#0F172A] mb-4">
+              Campaign <span className="text-[#1E3A8A]">Offices</span> Near You
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
               Visit our headquarters or regional offices. Our doors are open to every Kenyan.
@@ -508,26 +508,26 @@ export default function ContactContent() {
                     transition={{ delay: index * 0.1 }}
                     className={`p-5 rounded-xl border-2 cursor-pointer transition-all ${
                       activeOffice === index 
-                        ? 'bg-white border-[#0074D9] shadow-lg' 
-                        : 'bg-white border-slate-200 hover:border-[#0074D9]/50'
+                        ? 'bg-white border-[#1E3A8A] shadow-lg' 
+                        : 'bg-white border-slate-200 hover:border-[#1E3A8A]/50'
                     }`}
                     onClick={() => setActiveOffice(index)}
                   >
                     <div className="flex items-start gap-4">
                       <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${
-                        office.type === 'headquarters' ? 'bg-[#E91D0E]/10' : 'bg-[#0074D9]/10'
+                        office.type === 'headquarters' ? 'bg-[#DC2626]/10' : 'bg-[#1E3A8A]/10'
                       }`}>
                         {office.type === 'headquarters' ? (
-                          <FaBuilding className="w-6 h-6 text-[#E91D0E]" />
+                          <FaBuilding className="w-6 h-6 text-[#DC2626]" />
                         ) : (
-                          <FaMapMarkerAlt className="w-6 h-6 text-[#0074D9]" />
+                          <FaMapMarkerAlt className="w-6 h-6 text-[#1E3A8A]" />
                         )}
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
-                          <h3 className="font-bold text-[#111111]">{office.name}</h3>
+                          <h3 className="font-bold text-[#0F172A]">{office.name}</h3>
                           {office.type === 'headquarters' && (
-                            <span className="px-2 py-0.5 bg-[#E91D0E] text-white text-xs rounded-full">
+                            <span className="px-2 py-0.5 bg-[#DC2626] text-white text-xs rounded-full">
                               HQ
                             </span>
                           )}
@@ -552,11 +552,11 @@ export default function ContactContent() {
 
             {/* Map Placeholder / Visual */}
             <ScrollReveal delay={0.2}>
-              <div className="h-full min-h-[400px] bg-gradient-to-br from-[#0074D9]/5 to-[#6B2C91]/5 rounded-2xl border-2 border-dashed border-slate-300 flex flex-col items-center justify-center p-8 text-center">
-                <div className="w-20 h-20 rounded-full bg-[#0074D9]/10 flex items-center justify-center mb-4">
-                  <FaMapMarkedAlt className="w-10 h-10 text-[#0074D9]" />
+              <div className="h-full min-h-[400px] bg-gradient-to-br from-[#1E3A8A]/5 to-[#D4A017]/5 rounded-2xl border-2 border-dashed border-slate-300 flex flex-col items-center justify-center p-8 text-center">
+                <div className="w-20 h-20 rounded-full bg-[#1E3A8A]/10 flex items-center justify-center mb-4">
+                  <FaMapMarkedAlt className="w-10 h-10 text-[#1E3A8A]" />
                 </div>
-                <h3 className="text-xl font-bold text-[#111111] mb-2">
+                <h3 className="text-xl font-bold text-[#0F172A] mb-2">
                   {OFFICES[activeOffice].name}
                 </h3>
                 <p className="text-slate-600 mb-4">{OFFICES[activeOffice].address}</p>
@@ -565,7 +565,7 @@ export default function ContactContent() {
                 </p>
                 <a
                   href={`tel:${OFFICES[activeOffice].phone.replace(/\s/g, '')}`}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0074D9] text-white font-semibold hover:bg-[#005CB0] transition-all"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#1E3A8A] text-white font-semibold hover:bg-[#0F172A] transition-all"
                 >
                   <FaPhone className="w-5 h-5" />
                   Call for Directions
@@ -580,12 +580,12 @@ export default function ContactContent() {
       <section className="py-16 lg:py-20 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-12">
-            <span className="inline-block px-4 py-1 rounded-full bg-[#6B2C91]/10 text-[#6B2C91] font-semibold text-sm mb-4">
+            <span className="inline-block px-4 py-1 rounded-full bg-[#D4A017]/10 text-[#D4A017] font-semibold text-sm mb-4">
               <FaHeadset className="w-4 h-4 inline mr-2" />
               Department Contacts
             </span>
-            <h2 className="font-headline text-3xl md:text-4xl text-[#111111] mb-4">
-              Contact the <span className="text-[#6B2C91]">Right Team</span>
+            <h2 className="font-headline text-3xl md:text-4xl text-[#0F172A] mb-4">
+              Contact the <span className="text-[#D4A017]">Right Team</span>
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
               Reach out to specific departments for faster, more relevant responses.
@@ -595,17 +595,17 @@ export default function ContactContent() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {DEPARTMENTS.map((dept, index) => (
               <ScrollReveal key={dept.title} delay={index * 0.1}>
-                <div className="group h-full p-6 bg-white rounded-2xl border border-slate-200 hover:border-[#0074D9]/30 hover:shadow-xl transition-all duration-300">
+                <div className="group h-full p-6 bg-white rounded-2xl border border-slate-200 hover:border-[#1E3A8A]/30 hover:shadow-xl transition-all duration-300">
                   <div className={`w-14 h-14 rounded-xl bg-gradient-to-r ${dept.color} flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform`}>
                     <dept.icon className="w-7 h-7" />
                   </div>
-                  <h3 className="text-lg font-bold text-[#111111] mb-2">{dept.title}</h3>
+                  <h3 className="text-lg font-bold text-[#0F172A] mb-2">{dept.title}</h3>
                   <p className="text-slate-600 text-sm mb-4">{dept.description}</p>
                   <div className="space-y-2 pt-4 border-t border-slate-100">
                     {dept.email && (
                       <a
                         href={`mailto:${dept.email}`}
-                        className="flex items-center gap-2 text-sm text-slate-600 hover:text-[#0074D9] transition-colors"
+                        className="flex items-center gap-2 text-sm text-slate-600 hover:text-[#1E3A8A] transition-colors"
                       >
                         <FaEnvelope className="w-4 h-4" />
                         {dept.email}
@@ -614,7 +614,7 @@ export default function ContactContent() {
                     {dept.phone && (
                       <a
                         href={`tel:${dept.phone.replace(/\s/g, '')}`}
-                        className="flex items-center gap-2 text-sm text-slate-600 hover:text-[#0074D9] transition-colors"
+                        className="flex items-center gap-2 text-sm text-slate-600 hover:text-[#1E3A8A] transition-colors"
                       >
                         <FaPhone className="w-4 h-4" />
                         {dept.phone}
@@ -632,12 +632,12 @@ export default function ContactContent() {
       <section id="county-coordinators" className="py-16 lg:py-20 bg-slate-50 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-12">
-            <span className="inline-block px-4 py-1 rounded-full bg-[#0074D9]/10 text-[#0074D9] font-semibold text-sm mb-4">
+            <span className="inline-block px-4 py-1 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A] font-semibold text-sm mb-4">
               <FaUserTie className="w-4 h-4 inline mr-2" />
               Local Support
             </span>
-            <h2 className="font-headline text-3xl md:text-4xl text-[#111111] mb-4">
-              Find Your <span className="text-[#0074D9]">County Coordinator</span>
+            <h2 className="font-headline text-3xl md:text-4xl text-[#0F172A] mb-4">
+              Find Your <span className="text-[#1E3A8A]">County Coordinator</span>
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
               Connect with campaign coordinators in your county for local events, volunteer opportunities, and updates.
@@ -653,7 +653,7 @@ export default function ContactContent() {
                 <select
                   value={selectedCounty}
                   onChange={(e) => handleCountyChange(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-[#111111] focus:outline-none focus:border-[#0074D9] focus:ring-2 focus:ring-[#0074D9]/20 transition-all appearance-none cursor-pointer bg-white"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-[#0F172A] focus:outline-none focus:border-[#1E3A8A] focus:ring-2 focus:ring-[#1E3A8A]/20 transition-all appearance-none cursor-pointer bg-white"
                   style={{
                     backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
                     backgroundRepeat: 'no-repeat',
@@ -675,11 +675,11 @@ export default function ContactContent() {
                   className="mt-6 p-6 bg-white rounded-2xl border border-slate-200 shadow-lg"
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#0074D9] to-[#6B2C91] flex items-center justify-center">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#1E3A8A] to-[#D4A017] flex items-center justify-center">
                       <FaUserTie className="w-7 h-7 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-[#111111]">{selectedCounty} County</h3>
+                      <h3 className="font-bold text-[#0F172A]">{selectedCounty} County</h3>
                       <p className="text-sm text-slate-500">Campaign Coordinator</p>
                     </div>
                   </div>
@@ -687,13 +687,13 @@ export default function ContactContent() {
                   <div className="space-y-3">
                     <div className="flex items-center gap-3 text-slate-600">
                       <div className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center">
-                        <FaUsers className="w-5 h-5 text-[#6B2C91]" />
+                        <FaUsers className="w-5 h-5 text-[#D4A017]" />
                       </div>
                       <span>Coordinator contact coming soon</span>
                     </div>
                     <div className="flex items-center gap-3 text-slate-600">
                       <div className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center">
-                        <FaEnvelope className="w-5 h-5 text-[#0074D9]" />
+                        <FaEnvelope className="w-5 h-5 text-[#1E3A8A]" />
                       </div>
                       <span>{selectedCounty.toLowerCase().replace(/\s+/g, '.')}@nationalvisionparty.com</span>
                     </div>
@@ -708,7 +708,7 @@ export default function ContactContent() {
                   <div className="mt-4 pt-4 border-t border-slate-200 flex gap-3">
                     <Link
                       href="/join-us"
-                      className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-[#0074D9] text-white font-semibold hover:bg-[#005CB0] transition-all"
+                      className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-[#1E3A8A] text-white font-semibold hover:bg-[#0F172A] transition-all"
                     >
                       Join Team
                       <FaExternalLinkAlt className="w-4 h-4" />
@@ -735,12 +735,12 @@ export default function ContactContent() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal>
-              <span className="inline-block px-4 py-1 rounded-full bg-[#E91D0E]/10 text-[#E91D0E] font-semibold text-sm mb-4">
+              <span className="inline-block px-4 py-1 rounded-full bg-[#DC2626]/10 text-[#DC2626] font-semibold text-sm mb-4">
                 <FaShieldAlt className="w-4 h-4 inline mr-2" />
                 Zero Tolerance Policy
               </span>
-              <h2 className="font-headline text-3xl md:text-4xl text-[#111111] mb-4">
-                Report <span className="text-[#E91D0E]">Corruption</span> or Integrity Issues
+              <h2 className="font-headline text-3xl md:text-4xl text-[#0F172A] mb-4">
+                Report <span className="text-[#DC2626]">Corruption</span> or Integrity Issues
               </h2>
               <p className="text-slate-600 mb-6">
                 Dr. Kinity is committed to a corruption-free campaign and government. 
@@ -750,11 +750,11 @@ export default function ContactContent() {
               
               <div className="space-y-4">
                 <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-xl">
-                  <div className="w-12 h-12 rounded-xl bg-[#E91D0E]/10 flex items-center justify-center flex-shrink-0">
-                    <FaEnvelope className="w-6 h-6 text-[#E91D0E]" />
+                  <div className="w-12 h-12 rounded-xl bg-[#DC2626]/10 flex items-center justify-center flex-shrink-0">
+                    <FaEnvelope className="w-6 h-6 text-[#DC2626]" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#111111]">Email Report</h4>
+                    <h4 className="font-semibold text-[#0F172A]">Email Report</h4>
                     <p className="text-slate-600 text-sm">{CAMPAIGN_CONTACTS.corruption.email}</p>
                   </div>
                 </div>
@@ -764,13 +764,13 @@ export default function ContactContent() {
                     <FaWhatsapp className="w-6 h-6 text-green-500" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#111111]">WhatsApp Hotline</h4>
+                    <h4 className="font-semibold text-[#0F172A]">WhatsApp Hotline</h4>
                     <p className="text-slate-600 text-sm">{CAMPAIGN_CONTACTS.corruption.whatsapp}</p>
                   </div>
                 </div>
 
-                <div className="p-4 bg-[#E91D0E]/5 rounded-xl border border-[#E91D0E]/20">
-                  <p className="text-sm text-[#E91D0E] font-medium">
+                <div className="p-4 bg-[#DC2626]/5 rounded-xl border border-[#DC2626]/20">
+                  <p className="text-sm text-[#DC2626] font-medium">
                     <FaExclamationTriangle className="w-4 h-4 inline mr-2" />
                     Your identity will be protected. Anonymous reports are fully supported.
                   </p>
@@ -780,7 +780,7 @@ export default function ContactContent() {
 
             <ScrollReveal delay={0.2}>
               <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-slate-200">
-                <h3 className="text-xl font-bold text-[#111111] mb-6">Submit a Report</h3>
+                <h3 className="text-xl font-bold text-[#0F172A] mb-6">Submit a Report</h3>
                 <form onSubmit={handleCorruptionSubmit} className="space-y-5">
                   {/* Anonymous Toggle */}
                   <div className="flex items-center gap-3 p-4 bg-slate-50 rounded-xl">
@@ -790,7 +790,7 @@ export default function ContactContent() {
                       name="anonymous"
                       checked={corruptionForm.anonymous}
                       onChange={handleCorruptionChange}
-                      className="w-5 h-5 rounded border-slate-300 text-[#E91D0E] focus:ring-[#E91D0E]"
+                      className="w-5 h-5 rounded border-slate-300 text-[#DC2626] focus:ring-[#DC2626]"
                     />
                     <label htmlFor="anonymous" className="text-sm font-medium text-slate-700">
                       Submit anonymously
@@ -811,7 +811,7 @@ export default function ContactContent() {
                         name="name"
                         value={corruptionForm.name}
                         onChange={handleCorruptionChange}
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 text-[#111111] focus:outline-none focus:border-[#E91D0E] focus:ring-2 focus:ring-[#E91D0E]/20 transition-all"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 text-[#0F172A] focus:outline-none focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 transition-all"
                         placeholder="Optional"
                       />
                     </motion.div>
@@ -827,7 +827,7 @@ export default function ContactContent() {
                       value={corruptionForm.county}
                       onChange={handleCorruptionChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 text-[#111111] focus:outline-none focus:border-[#E91D0E] focus:ring-2 focus:ring-[#E91D0E]/20 transition-all appearance-none cursor-pointer bg-white"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 text-[#0F172A] focus:outline-none focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 transition-all appearance-none cursor-pointer bg-white"
                       style={{
                         backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
                         backgroundRepeat: 'no-repeat',
@@ -852,7 +852,7 @@ export default function ContactContent() {
                       value={corruptionForm.incident}
                       onChange={handleCorruptionChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 text-[#111111] focus:outline-none focus:border-[#E91D0E] focus:ring-2 focus:ring-[#E91D0E]/20 transition-all appearance-none cursor-pointer bg-white"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 text-[#0F172A] focus:outline-none focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 transition-all appearance-none cursor-pointer bg-white"
                       style={{
                         backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
                         backgroundRepeat: 'no-repeat',
@@ -882,7 +882,7 @@ export default function ContactContent() {
                       required
                       rows={4}
                       placeholder="Describe what happened, when, and who was involved..."
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 text-[#111111] placeholder-slate-400 focus:outline-none focus:border-[#E91D0E] focus:ring-2 focus:ring-[#E91D0E]/20 transition-all resize-none"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 text-[#0F172A] placeholder-slate-400 focus:outline-none focus:border-[#DC2626] focus:ring-2 focus:ring-[#DC2626]/20 transition-all resize-none"
                     />
                   </div>
 
@@ -890,7 +890,7 @@ export default function ContactContent() {
                   <button
                     type="submit"
                     disabled={isSubmittingCorruption}
-                    className="w-full py-4 rounded-xl bg-gradient-to-r from-[#E91D0E] to-[#BA170C] text-white font-bold text-lg hover:shadow-lg hover:shadow-[#E91D0E]/25 transition-all duration-300 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                    className="w-full py-4 rounded-xl bg-gradient-to-r from-[#DC2626] to-[#B91C1C] text-white font-bold text-lg hover:shadow-lg hover:shadow-[#DC2626]/25 transition-all duration-300 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
                   >
                     <FaShieldAlt className="w-5 h-5" />
                     {isSubmittingCorruption ? 'Submitting...' : 'Submit Report'}
@@ -903,7 +903,7 @@ export default function ContactContent() {
       </section>
 
       {/* Social Media Section */}
-      <section className="py-16 lg:py-20 bg-gradient-to-br from-[#0074D9] to-[#6B2C91] px-4 sm:px-6">
+      <section className="py-16 lg:py-20 bg-gradient-to-br from-[#1E3A8A] to-[#D4A017] px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
             <h2 className="font-slogan text-3xl md:text-4xl text-white mb-4">
@@ -919,12 +919,12 @@ export default function ContactContent() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-3 px-6 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white hover:text-[#0074D9] transition-all"
+                  className="group flex items-center gap-3 px-6 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white hover:text-[#1E3A8A] transition-all"
                 >
                   <social.icon className="w-6 h-6" />
                   <div className="text-left">
                     <div className="font-semibold">{social.label}</div>
-                    <div className="text-xs opacity-70 group-hover:text-[#0074D9]">{social.followers} followers</div>
+                    <div className="text-xs opacity-70 group-hover:text-[#1E3A8A]">{social.followers} followers</div>
                   </div>
                 </a>
               ))}
@@ -940,11 +940,11 @@ export default function ContactContent() {
             {/* Left - Contact Info */}
             <div>
               <ScrollReveal>
-                <span className="inline-block px-4 py-1 rounded-full bg-[#E91D0E]/10 text-[#E91D0E] font-semibold text-sm mb-4">
+                <span className="inline-block px-4 py-1 rounded-full bg-[#DC2626]/10 text-[#DC2626] font-semibold text-sm mb-4">
                   General Inquiry
                 </span>
-                <h2 className="font-headline text-3xl md:text-4xl text-[#111111] mb-4">
-                  Send Us a <span className="text-[#0074D9]">Message</span>
+                <h2 className="font-headline text-3xl md:text-4xl text-[#0F172A] mb-4">
+                  Send Us a <span className="text-[#1E3A8A]">Message</span>
                 </h2>
                 <p className="text-slate-600 mb-8">
                   Have a question or suggestion? Fill out the form and our team will get back to you within 24-48 hours.
@@ -954,11 +954,11 @@ export default function ContactContent() {
               <div className="space-y-4">
                 <ScrollReveal delay={0.1}>
                   <div className="flex items-start gap-4 p-4 bg-white rounded-xl border border-slate-200">
-                    <div className="w-12 h-12 rounded-xl bg-[#0074D9]/10 flex items-center justify-center flex-shrink-0">
-                      <FaEnvelope className="w-6 h-6 text-[#0074D9]" />
+                    <div className="w-12 h-12 rounded-xl bg-[#1E3A8A]/10 flex items-center justify-center flex-shrink-0">
+                      <FaEnvelope className="w-6 h-6 text-[#1E3A8A]" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-[#111111]">Email Us</h3>
+                      <h3 className="font-semibold text-[#0F172A]">Email Us</h3>
                       <p className="text-slate-600 text-sm">{CAMPAIGN_CONTACTS.general.email}</p>
                     </div>
                   </div>
@@ -970,7 +970,7 @@ export default function ContactContent() {
                       <FaWhatsapp className="w-6 h-6 text-green-500" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-[#111111]">WhatsApp</h3>
+                      <h3 className="font-semibold text-[#0F172A]">WhatsApp</h3>
                       <p className="text-slate-600 text-sm">{CAMPAIGN_CONTACTS.general.whatsapp}</p>
                     </div>
                   </div>
@@ -978,11 +978,11 @@ export default function ContactContent() {
 
                 <ScrollReveal delay={0.3}>
                   <div className="flex items-start gap-4 p-4 bg-white rounded-xl border border-slate-200">
-                    <div className="w-12 h-12 rounded-xl bg-[#E91D0E]/10 flex items-center justify-center flex-shrink-0">
-                      <FaClock className="w-6 h-6 text-[#E91D0E]" />
+                    <div className="w-12 h-12 rounded-xl bg-[#DC2626]/10 flex items-center justify-center flex-shrink-0">
+                      <FaClock className="w-6 h-6 text-[#DC2626]" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-[#111111]">Office Hours</h3>
+                      <h3 className="font-semibold text-[#0F172A]">Office Hours</h3>
                       <p className="text-slate-600 text-sm">{CAMPAIGN_CONTACTS.general.hours}</p>
                     </div>
                   </div>
@@ -1009,7 +1009,7 @@ export default function ContactContent() {
                           onChange={handleChange}
                           required
                           placeholder="John Kamau"
-                          className="w-full px-4 py-3 rounded-xl border border-slate-200 text-[#111111] placeholder-slate-400 focus:outline-none focus:border-[#0074D9] focus:ring-2 focus:ring-[#0074D9]/20 transition-all"
+                          className="w-full px-4 py-3 rounded-xl border border-slate-200 text-[#0F172A] placeholder-slate-400 focus:outline-none focus:border-[#1E3A8A] focus:ring-2 focus:ring-[#1E3A8A]/20 transition-all"
                         />
                       </div>
                       <div>
@@ -1024,7 +1024,7 @@ export default function ContactContent() {
                           onChange={handleChange}
                           required
                           placeholder="john@example.com"
-                          className="w-full px-4 py-3 rounded-xl border border-slate-200 text-[#111111] placeholder-slate-400 focus:outline-none focus:border-[#0074D9] focus:ring-2 focus:ring-[#0074D9]/20 transition-all"
+                          className="w-full px-4 py-3 rounded-xl border border-slate-200 text-[#0F172A] placeholder-slate-400 focus:outline-none focus:border-[#1E3A8A] focus:ring-2 focus:ring-[#1E3A8A]/20 transition-all"
                         />
                       </div>
                     </div>
@@ -1042,7 +1042,7 @@ export default function ContactContent() {
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder="+254 XXX XXX XXX"
-                          className="w-full px-4 py-3 rounded-xl border border-slate-200 text-[#111111] placeholder-slate-400 focus:outline-none focus:border-[#0074D9] focus:ring-2 focus:ring-[#0074D9]/20 transition-all"
+                          className="w-full px-4 py-3 rounded-xl border border-slate-200 text-[#0F172A] placeholder-slate-400 focus:outline-none focus:border-[#1E3A8A] focus:ring-2 focus:ring-[#1E3A8A]/20 transition-all"
                         />
                       </div>
                       <div>
@@ -1054,7 +1054,7 @@ export default function ContactContent() {
                           name="county"
                           value={formData.county}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-xl border border-slate-200 text-[#111111] focus:outline-none focus:border-[#0074D9] focus:ring-2 focus:ring-[#0074D9]/20 transition-all appearance-none cursor-pointer bg-white"
+                          className="w-full px-4 py-3 rounded-xl border border-slate-200 text-[#0F172A] focus:outline-none focus:border-[#1E3A8A] focus:ring-2 focus:ring-[#1E3A8A]/20 transition-all appearance-none cursor-pointer bg-white"
                           style={{
                             backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
                             backgroundRepeat: 'no-repeat',
@@ -1081,7 +1081,7 @@ export default function ContactContent() {
                         value={formData.inquiryType}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 text-[#111111] focus:outline-none focus:border-[#0074D9] focus:ring-2 focus:ring-[#0074D9]/20 transition-all appearance-none cursor-pointer bg-white"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 text-[#0F172A] focus:outline-none focus:border-[#1E3A8A] focus:ring-2 focus:ring-[#1E3A8A]/20 transition-all appearance-none cursor-pointer bg-white"
                         style={{
                           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
                           backgroundRepeat: 'no-repeat',
@@ -1113,7 +1113,7 @@ export default function ContactContent() {
                         required
                         rows={5}
                         placeholder="Tell us how we can help..."
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 text-[#111111] placeholder-slate-400 focus:outline-none focus:border-[#0074D9] focus:ring-2 focus:ring-[#0074D9]/20 transition-all resize-none"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-200 text-[#0F172A] placeholder-slate-400 focus:outline-none focus:border-[#1E3A8A] focus:ring-2 focus:ring-[#1E3A8A]/20 transition-all resize-none"
                       />
                     </div>
 
@@ -1121,7 +1121,7 @@ export default function ContactContent() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-4 rounded-xl bg-gradient-to-r from-[#E91D0E] to-[#BA170C] text-white font-bold text-lg hover:shadow-lg hover:shadow-[#E91D0E]/25 transition-all duration-300 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                      className="w-full py-4 rounded-xl bg-gradient-to-r from-[#DC2626] to-[#B91C1C] text-white font-bold text-lg hover:shadow-lg hover:shadow-[#DC2626]/25 transition-all duration-300 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
                     >
                       <FaPaperPlane className="w-5 h-5" />
                       {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -1142,11 +1142,11 @@ export default function ContactContent() {
       <section className="py-16 lg:py-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal className="text-center mb-12">
-            <span className="inline-block px-4 py-1 rounded-full bg-[#6B2C91]/10 text-[#6B2C91] font-semibold text-sm mb-4">
+            <span className="inline-block px-4 py-1 rounded-full bg-[#D4A017]/10 text-[#D4A017] font-semibold text-sm mb-4">
               FAQ
             </span>
-            <h2 className="font-headline text-3xl md:text-4xl text-[#111111] mb-4">
-              Frequently Asked <span className="text-[#0074D9]">Questions</span>
+            <h2 className="font-headline text-3xl md:text-4xl text-[#0F172A] mb-4">
+              Frequently Asked <span className="text-[#1E3A8A]">Questions</span>
             </h2>
             <p className="text-slate-600">
               Quick answers to common questions about the campaign.
@@ -1157,15 +1157,15 @@ export default function ContactContent() {
             {FAQS.map((faq, index) => (
               <ScrollReveal key={index} delay={index * 0.05}>
                 <div 
-                  className="border border-slate-200 rounded-xl overflow-hidden hover:border-[#0074D9]/30 transition-colors"
+                  className="border border-slate-200 rounded-xl overflow-hidden hover:border-[#1E3A8A]/30 transition-colors"
                 >
                   <button
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}
                     className="w-full flex items-center justify-between p-5 text-left bg-white hover:bg-slate-50 transition-colors"
                   >
-                    <span className="font-semibold text-[#111111] pr-4">{faq.question}</span>
+                    <span className="font-semibold text-[#0F172A] pr-4">{faq.question}</span>
                     {openFaq === index ? (
-                      <FaChevronUp className="w-5 h-5 text-[#0074D9] flex-shrink-0" />
+                      <FaChevronUp className="w-5 h-5 text-[#1E3A8A] flex-shrink-0" />
                     ) : (
                       <FaChevronDown className="w-5 h-5 text-slate-400 flex-shrink-0" />
                     )}

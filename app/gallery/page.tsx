@@ -88,10 +88,10 @@ function AlbumCard({ album }: { album: any }) {
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 p-6">
-        <span className="inline-block px-2 py-1 bg-[#0074D9]/80 text-white text-xs rounded mb-2">
+        <span className="inline-block px-2 py-1 bg-[#1E3A8A]/80 text-white text-xs rounded mb-2">
           {album._count?.images || 0} photos
         </span>
-        <h3 className="font-headline text-xl text-white group-hover:text-[#0074D9] transition-colors">
+        <h3 className="font-headline text-xl text-white group-hover:text-[#1E3A8A] transition-colors">
           {album.title}
         </h3>
       </div>
@@ -134,7 +134,7 @@ async function GalleryContent() {
       {albums.length > 0 && (
         <section>
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-            <FaImages className="text-[#0074D9]" />
+            <FaImages className="text-[#1E3A8A]" />
             Photo Albums
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -149,7 +149,7 @@ async function GalleryContent() {
       {recentImages.length > 0 && (
         <section>
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-            <FaCamera className="text-[#0074D9]" />
+            <FaCamera className="text-[#1E3A8A]" />
             Recent Photos
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -168,7 +168,7 @@ export default async function GalleryPage() {
   return (
     <div className="min-h-screen bg-slate-950">
       {/* Header */}
-      <div className="bg-gradient-to-br from-[#0074D9] to-[#6B2C91] py-24">
+      <div className="bg-gradient-to-br from-[#1E3A8A] to-[#D4A017] py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="font-slogan text-4xl md:text-5xl text-white mb-4">
             PHOTO GALLERY

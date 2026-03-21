@@ -142,7 +142,7 @@ function PostsListPage() {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <FaSpinner className="w-8 h-8 animate-spin text-[#0074D9]" />
+        <FaSpinner className="w-8 h-8 animate-spin text-[#1E3A8A]" />
       </div>
     );
   }
@@ -180,7 +180,7 @@ function PostsListPage() {
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-8">
         <div>
           <h1 className="text-2xl font-bold text-white flex items-center gap-3">
-            <FaNewspaper className="text-[#0074D9]" />
+            <FaNewspaper className="text-[#1E3A8A]" />
             News Articles
           </h1>
           <p className="text-slate-400 mt-1">
@@ -189,7 +189,7 @@ function PostsListPage() {
         </div>
         <Link
           href="/admin/posts/edit"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-[#0074D9] text-white font-semibold rounded-xl hover:bg-[#005CB0] transition-colors"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-[#1E3A8A] text-white font-semibold rounded-xl hover:bg-[#0F172A] transition-colors"
         >
           <FaPlus />
           New Article
@@ -235,7 +235,7 @@ function PostsListPage() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search articles, authors, counties..."
-              className="w-full pl-11 pr-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:border-[#0074D9] focus:outline-none"
+              className="w-full pl-11 pr-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:border-[#1E3A8A] focus:outline-none"
             />
           </div>
 
@@ -245,7 +245,7 @@ function PostsListPage() {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="pl-11 pr-10 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:border-[#0074D9] focus:outline-none appearance-none cursor-pointer min-w-[180px]"
+              className="pl-11 pr-10 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:border-[#1E3A8A] focus:outline-none appearance-none cursor-pointer min-w-[180px]"
             >
               {CATEGORIES.map(cat => (
                 <option key={cat} value={cat}>{cat}</option>
@@ -267,7 +267,7 @@ function PostsListPage() {
               onClick={() => setSelectedStatus(tab.key as any)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                 selectedStatus === tab.key
-                  ? 'bg-[#0074D9] text-white'
+                  ? 'bg-[#1E3A8A] text-white'
                   : 'bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700'
               }`}
             >
@@ -288,7 +288,7 @@ function PostsListPage() {
         {searchQuery && (
           <button
             onClick={() => setSearchQuery('')}
-            className="text-sm text-[#0074D9] hover:text-[#005CB0]"
+            className="text-sm text-[#1E3A8A] hover:text-[#0F172A]"
           >
             Clear search
           </button>
@@ -328,7 +328,7 @@ function PostsListPage() {
                         </span>
                       )}
                       {post.featured && (
-                        <span className="px-2 py-1 bg-[#0074D9]/90 text-white text-xs font-medium rounded">
+                        <span className="px-2 py-1 bg-[#1E3A8A]/90 text-white text-xs font-medium rounded">
                           Featured
                         </span>
                       )}
@@ -358,7 +358,7 @@ function PostsListPage() {
                             </span>
                           )}
                         </div>
-                        <h3 className="text-lg font-semibold text-white group-hover:text-[#0074D9] transition-colors line-clamp-2">
+                        <h3 className="text-lg font-semibold text-white group-hover:text-[#1E3A8A] transition-colors line-clamp-2">
                           {post.title}
                         </h3>
                       </div>
@@ -393,7 +393,7 @@ function PostsListPage() {
                         </Link>
                         <Link
                           href={`/admin/posts/edit?id=${post.id}`}
-                          className="flex items-center gap-2 px-3 py-2 bg-[#0074D9]/10 text-[#0074D9] hover:bg-[#0074D9] hover:text-white rounded-lg transition-all"
+                          className="flex items-center gap-2 px-3 py-2 bg-[#1E3A8A]/10 text-[#1E3A8A] hover:bg-[#1E3A8A] hover:text-white rounded-lg transition-all"
                           title="Edit Article"
                         >
                           <FaEdit className="w-4 h-4" />
@@ -427,7 +427,7 @@ function PostsListPage() {
           {!searchQuery && (
             <Link
               href="/admin/posts/edit"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#0074D9] text-white font-semibold rounded-xl hover:bg-[#005CB0] transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#1E3A8A] text-white font-semibold rounded-xl hover:bg-[#0F172A] transition-colors"
             >
               <FaPlus />
               Create Article

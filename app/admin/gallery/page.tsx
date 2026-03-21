@@ -241,7 +241,7 @@ function GalleryAdminPage() {
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-8">
         <div>
           <h1 className="text-2xl font-bold text-white flex items-center gap-3">
-            <FaImages className="text-[#0074D9]" />
+            <FaImages className="text-[#1E3A8A]" />
             Gallery Management
           </h1>
           <p className="text-slate-400 mt-1">
@@ -250,7 +250,7 @@ function GalleryAdminPage() {
         </div>
         <button 
           onClick={() => setShowUploadModal(true)}
-          className="inline-flex items-center gap-2 px-6 py-3 bg-[#0074D9] text-white font-semibold rounded-xl hover:bg-[#005CB0] transition-colors"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-[#1E3A8A] text-white font-semibold rounded-xl hover:bg-[#0F172A] transition-colors"
         >
           <FaUpload className="w-4 h-4" />
           Upload Images
@@ -268,7 +268,7 @@ function GalleryAdminPage() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search images..."
-              className="w-full pl-11 pr-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:border-[#0074D9] focus:outline-none"
+              className="w-full pl-11 pr-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:border-[#1E3A8A] focus:outline-none"
             />
           </div>
           
@@ -276,7 +276,7 @@ function GalleryAdminPage() {
           <select
             value={selectedAlbum}
             onChange={(e) => setSelectedAlbum(e.target.value === 'all' ? 'all' : parseInt(e.target.value))}
-            className="px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:border-[#0074D9] focus:outline-none min-w-[180px]"
+            className="px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:border-[#1E3A8A] focus:outline-none min-w-[180px]"
           >
             <option value="all">All Albums</option>
             {albums.map(album => (
@@ -311,7 +311,7 @@ function GalleryAdminPage() {
                   <select
                     value={selectedPhotographer}
                     onChange={(e) => setSelectedPhotographer(e.target.value)}
-                    className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white text-sm focus:border-[#0074D9] focus:outline-none"
+                    className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white text-sm focus:border-[#1E3A8A] focus:outline-none"
                   >
                     <option value="all">All Photographers</option>
                     {photographers.map(p => (
@@ -326,7 +326,7 @@ function GalleryAdminPage() {
                   <select
                     value={selectedLocation}
                     onChange={(e) => setSelectedLocation(e.target.value)}
-                    className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white text-sm focus:border-[#0074D9] focus:outline-none"
+                    className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white text-sm focus:border-[#1E3A8A] focus:outline-none"
                   >
                     <option value="all">All Locations</option>
                     {locations.map(l => (
@@ -341,7 +341,7 @@ function GalleryAdminPage() {
                   <select
                     value={selectedCounty}
                     onChange={(e) => setSelectedCounty(e.target.value)}
-                    className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white text-sm focus:border-[#0074D9] focus:outline-none"
+                    className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white text-sm focus:border-[#1E3A8A] focus:outline-none"
                   >
                     <option value="all">All Counties</option>
                     {KENYAN_COUNTIES.map(c => (
@@ -358,14 +358,14 @@ function GalleryAdminPage() {
                       type="date"
                       value={dateFrom}
                       onChange={(e) => setDateFrom(e.target.value)}
-                      className="flex-1 px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white text-sm focus:border-[#0074D9] focus:outline-none"
+                      className="flex-1 px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white text-sm focus:border-[#1E3A8A] focus:outline-none"
                       placeholder="From"
                     />
                     <input
                       type="date"
                       value={dateTo}
                       onChange={(e) => setDateTo(e.target.value)}
-                      className="flex-1 px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white text-sm focus:border-[#0074D9] focus:outline-none"
+                      className="flex-1 px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white text-sm focus:border-[#1E3A8A] focus:outline-none"
                       placeholder="To"
                     />
                   </div>
@@ -384,7 +384,7 @@ function GalleryAdminPage() {
                     setDateFrom('');
                     setDateTo('');
                   }}
-                  className="text-sm text-[#0074D9] hover:text-[#005CB0]"
+                  className="text-sm text-[#1E3A8A] hover:text-[#0F172A]"
                 >
                   Clear all filters
                 </button>
@@ -430,7 +430,7 @@ function GalleryAdminPage() {
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
                   <button
                     onClick={() => setEditingImage(image)}
-                    className="p-3 bg-[#0074D9] text-white rounded-full hover:bg-[#005CB0] transition-colors"
+                    className="p-3 bg-[#1E3A8A] text-white rounded-full hover:bg-[#0F172A] transition-colors"
                     title="Edit"
                   >
                     <FaEdit className="w-4 h-4" />
@@ -447,7 +447,7 @@ function GalleryAdminPage() {
                 {/* Status Badges */}
                 <div className="absolute top-2 left-2 flex gap-1">
                   {image.featured && (
-                    <span className="px-2 py-1 bg-[#0074D9] text-white text-xs rounded">
+                    <span className="px-2 py-1 bg-[#1E3A8A] text-white text-xs rounded">
                       Featured
                     </span>
                   )}
@@ -499,7 +499,7 @@ function GalleryAdminPage() {
                     onClick={() => toggleFeatured(image)}
                     className={`flex-1 py-1.5 text-xs rounded transition-colors ${
                       image.featured 
-                        ? 'bg-[#0074D9]/20 text-[#0074D9]' 
+                        ? 'bg-[#1E3A8A]/20 text-[#1E3A8A]' 
                         : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
                     }`}
                   >
@@ -533,7 +533,7 @@ function GalleryAdminPage() {
           {!searchQuery && selectedAlbum === 'all' && (
             <button
               onClick={() => setShowUploadModal(true)}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#0074D9] text-white font-semibold rounded-xl hover:bg-[#005CB0] transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#1E3A8A] text-white font-semibold rounded-xl hover:bg-[#0F172A] transition-colors"
             >
               <FaUpload className="w-4 h-4" />
               Upload Images
@@ -560,7 +560,7 @@ function GalleryAdminPage() {
               {/* Header */}
               <div className="flex items-center justify-between p-6 border-b border-slate-800">
                 <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                  <FaUpload className="text-[#0074D9]" />
+                  <FaUpload className="text-[#1E3A8A]" />
                   Upload Images
                 </h2>
                 <button 
@@ -576,7 +576,7 @@ function GalleryAdminPage() {
               <div className="flex-1 overflow-auto p-6 space-y-6">
                 {/* File Input */}
                 <div>
-                  <label className="block border-2 border-dashed border-slate-700 rounded-xl p-8 text-center hover:border-[#0074D9]/50 transition-colors cursor-pointer">
+                  <label className="block border-2 border-dashed border-slate-700 rounded-xl p-8 text-center hover:border-[#1E3A8A]/50 transition-colors cursor-pointer">
                     <FaImages className="w-12 h-12 text-slate-600 mx-auto mb-4" />
                     <p className="text-slate-400 mb-2">
                       {uploadFiles.length > 0 
@@ -700,7 +700,7 @@ function GalleryAdminPage() {
                     </div>
                     <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
                       <div 
-                        className="h-full bg-[#0074D9] transition-all duration-300"
+                        className="h-full bg-[#1E3A8A] transition-all duration-300"
                         style={{ width: `${uploadProgress}%` }}
                       />
                     </div>
@@ -720,7 +720,7 @@ function GalleryAdminPage() {
                 <button
                   onClick={handleUpload}
                   disabled={uploadFiles.length === 0 || uploading}
-                  className="flex items-center gap-2 px-6 py-2 bg-[#0074D9] text-white rounded-lg font-medium hover:bg-[#005CB0] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex items-center gap-2 px-6 py-2 bg-[#1E3A8A] text-white rounded-lg font-medium hover:bg-[#0F172A] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {uploading ? (
                     <>
@@ -859,7 +859,7 @@ function GalleryAdminPage() {
                 </button>
                 <button
                   onClick={() => handleUpdate(editingImage)}
-                  className="flex items-center gap-2 px-6 py-2 bg-[#0074D9] text-white rounded-lg font-medium hover:bg-[#005CB0] transition-colors"
+                  className="flex items-center gap-2 px-6 py-2 bg-[#1E3A8A] text-white rounded-lg font-medium hover:bg-[#0F172A] transition-colors"
                 >
                   <FaCheck className="w-4 h-4" />
                   Save Changes

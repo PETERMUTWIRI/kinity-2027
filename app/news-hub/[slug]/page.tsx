@@ -128,7 +128,7 @@ async function ArticlesCarousel({ currentId, category }: { currentId: number; ca
         </h3>
         <Link 
           href="/news-hub"
-          className="text-[#0074D9] hover:text-[#005CB0] font-medium flex items-center gap-1"
+          className="text-[#1E3A8A] hover:text-[#0F172A] font-medium flex items-center gap-1"
         >
           View All
           <FaArrowLeft className="w-4 h-4 rotate-180" />
@@ -152,7 +152,7 @@ async function ArticlesCarousel({ currentId, category }: { currentId: number; ca
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-[#0074D9] to-[#6B2C91] flex items-center justify-center">
+                  <div className="w-full h-full bg-gradient-to-br from-[#1E3A8A] to-[#D4A017] flex items-center justify-center">
                     <span className="text-white font-bold text-lg">{article.category}</span>
                   </div>
                 )}
@@ -165,7 +165,7 @@ async function ArticlesCarousel({ currentId, category }: { currentId: number; ca
                   month: 'short',
                 })}</span>
               </div>
-              <h4 className="font-semibold text-slate-900 group-hover:text-[#0074D9] transition-colors line-clamp-2 text-sm leading-relaxed">
+              <h4 className="font-semibold text-slate-900 group-hover:text-[#1E3A8A] transition-colors line-clamp-2 text-sm leading-relaxed">
                 {article.title}
               </h4>
             </Link>
@@ -202,7 +202,7 @@ export default async function NewsArticlePage({ params }: Props) {
           <div className="flex items-center justify-between h-14">
             <Link 
               href="/news-hub"
-              className="inline-flex items-center gap-2 text-slate-600 hover:text-[#0074D9] transition-colors text-sm font-medium"
+              className="inline-flex items-center gap-2 text-slate-600 hover:text-[#1E3A8A] transition-colors text-sm font-medium"
             >
               <FaArrowLeft className="w-4 h-4" />
               Back to News
@@ -249,7 +249,7 @@ export default async function NewsArticlePage({ params }: Props) {
                 )}
               </div>
             ) : (
-              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-[#0074D9] to-[#6B2C91] flex items-center justify-center">
+              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-[#1E3A8A] to-[#D4A017] flex items-center justify-center">
                 <span className="text-white text-6xl font-bold">{(post.title || 'A').charAt(0)}</span>
               </div>
             )}
@@ -258,11 +258,11 @@ export default async function NewsArticlePage({ params }: Props) {
             <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5 space-y-4">
               {/* Category */}
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 rounded-full bg-[#E91D0E] text-white text-sm font-semibold">
+                <span className="px-3 py-1 rounded-full bg-[#DC2626] text-white text-sm font-semibold">
                   {post.category}
                 </span>
                 {post.featured && (
-                  <span className="px-3 py-1 rounded-full bg-[#0074D9] text-white text-sm font-medium">
+                  <span className="px-3 py-1 rounded-full bg-[#1E3A8A] text-white text-sm font-medium">
                     Featured
                   </span>
                 )}
@@ -275,7 +275,7 @@ export default async function NewsArticlePage({ params }: Props) {
 
               {/* Author */}
               <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#0074D9] to-[#6B2C91] flex items-center justify-center text-white font-bold text-lg">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#1E3A8A] to-[#D4A017] flex items-center justify-center text-white font-bold text-lg">
                   {(post.author || 'A').charAt(0)}
                 </div>
                 <div>
@@ -341,7 +341,7 @@ export default async function NewsArticlePage({ params }: Props) {
 
               {/* Excerpt */}
               {post.excerpt && (
-                <p className="text-lg text-slate-600 font-light italic border-l-4 border-[#0074D9] pl-4 leading-relaxed">
+                <p className="text-lg text-slate-600 font-light italic border-l-4 border-[#1E3A8A] pl-4 leading-relaxed">
                   {post.excerpt}
                 </p>
               )}
@@ -350,7 +350,7 @@ export default async function NewsArticlePage({ params }: Props) {
             {/* Article Body */}
             <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
               <div 
-                className="prose prose-lg max-w-none prose-headings:text-slate-900 prose-p:text-slate-700 prose-a:text-[#0074D9] hover:prose-a:text-[#005CB0] prose-blockquote:border-l-[#0074D9] prose-blockquote:bg-slate-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg prose-img:rounded-lg prose-figure:my-8 prose-strong:text-slate-900"
+                className="prose prose-lg max-w-none prose-headings:text-slate-900 prose-p:text-slate-700 prose-a:text-[#1E3A8A] hover:prose-a:text-[#0F172A] prose-blockquote:border-l-[#1E3A8A] prose-blockquote:bg-slate-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg prose-img:rounded-lg prose-figure:my-8 prose-strong:text-slate-900"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
 
@@ -366,7 +366,7 @@ export default async function NewsArticlePage({ params }: Props) {
                       <Link
                         key={i}
                         href={`/news-hub?tag=${encodeURIComponent(tag)}`}
-                        className="px-4 py-2 bg-slate-100 text-slate-700 text-sm rounded-full hover:bg-[#0074D9] hover:text-white transition-colors"
+                        className="px-4 py-2 bg-slate-100 text-slate-700 text-sm rounded-full hover:bg-[#1E3A8A] hover:text-white transition-colors"
                       >
                         {tag}
                       </Link>

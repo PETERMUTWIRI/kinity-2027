@@ -16,8 +16,8 @@ export default function NotFound() {
     <div className="min-h-screen bg-slate-950 flex items-center justify-center px-4">
       {/* Background Effects */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#0074D9]/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#E91D0E]/10 rounded-full blur-[120px]" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#1E3A8A]/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#DC2626]/10 rounded-full blur-[120px]" />
       </div>
 
       <motion.div
@@ -33,7 +33,7 @@ export default function NotFound() {
           transition={{ delay: 0.2, duration: 0.5 }}
           className="mb-8"
         >
-          <span className="text-8xl sm:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#0074D9] via-[#6B2C91] to-[#E91D0E]">
+          <span className="text-8xl sm:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] via-[#D4A017] to-[#DC2626]">
             404
           </span>
         </motion.div>
@@ -70,7 +70,7 @@ export default function NotFound() {
             <Link
               key={link.label}
               href={link.href}
-              className="flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:border-[#0074D9]/50 hover:bg-[#0074D9]/10 transition-all"
+              className="flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:border-[#1E3A8A]/50 hover:bg-[#1E3A8A]/10 transition-all"
             >
               <link.icon className="w-4 h-4" />
               {link.label}

@@ -21,7 +21,7 @@ function VolunteersContent() {
             <FaDownload className="w-4 h-4" />
             Export
           </button>
-          <button className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#0074D9] text-white hover:bg-[#005CB0] transition-colors">
+          <button className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#1E3A8A] text-white hover:bg-[#0F172A] transition-colors">
             <FaPlus className="w-4 h-4" />
             Add Volunteer
           </button>
@@ -55,7 +55,7 @@ function VolunteersContent() {
         </div>
         <h3 className="text-lg font-semibold text-white mb-2">No volunteers yet</h3>
         <p className="text-slate-400 mb-6">Start building your volunteer network for the campaign.</p>
-        <button className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0074D9] text-white font-semibold hover:bg-[#005CB0] transition-colors">
+        <button className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#1E3A8A] text-white font-semibold hover:bg-[#0F172A] transition-colors">
           <FaPlus className="w-4 h-4" />
           Add First Volunteer
         </button>

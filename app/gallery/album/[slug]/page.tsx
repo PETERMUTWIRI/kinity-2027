@@ -51,7 +51,7 @@ export default async function AlbumPage({ params }: Props) {
   return (
     <div className="min-h-screen bg-slate-950">
       {/* Header */}
-      <div className="bg-gradient-to-br from-[#0074D9] to-[#6B2C91] py-16">
+      <div className="bg-gradient-to-br from-[#1E3A8A] to-[#D4A017] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link 
             href="/gallery?tab=photos"

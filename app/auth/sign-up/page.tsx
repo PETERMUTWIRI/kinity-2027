@@ -17,11 +17,11 @@ export default function SignUpPage() {
           {/* Logo */}
           <div className="text-center mb-8">
             <Link href="/" className="inline-flex items-center gap-3">
-              <div className="relative w-14 h-14 rounded-xl overflow-hidden shadow-lg ring-2 ring-[#0074D9]/30">
+              <div className="relative w-14 h-14 rounded-xl overflow-hidden shadow-lg ring-2 ring-[#1E3A8A]/30">
                 <Image src="/isaac_kinity-logo.jpeg" alt="National Vision Party" fill className="object-cover" />
               </div>
               <div className="text-left">
-                <p className="font-slogan text-xl text-[#E91D0E]">National Vision Party</p>
+                <p className="font-slogan text-xl text-[#DC2626]">National Vision Party</p>
                 <p className="text-xs text-slate-400">Admin Portal</p>
               </div>
             </Link>
@@ -35,7 +35,7 @@ export default function SignUpPage() {
 
             <p className="text-center mt-6 text-sm text-gray-600">
               Already have an account?{' '}
-              <Link href="/auth/sign-in" className="text-[#0074D9] font-semibold hover:underline">
+              <Link href="/auth/sign-in" className="text-[#1E3A8A] font-semibold hover:underline">
                 Sign in
               </Link>
             </p>

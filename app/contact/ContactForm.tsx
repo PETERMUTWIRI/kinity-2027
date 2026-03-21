@@ -99,7 +99,7 @@ export default function ContactForm() {
         <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
           <FaCheckCircle className="w-10 h-10 text-green-600" />
         </div>
-        <h3 className="text-2xl font-bold text-[#111111] mb-2">Message Sent!</h3>
+        <h3 className="text-2xl font-bold text-[#0F172A] mb-2">Message Sent!</h3>
         <p className="text-slate-600">
           Thank you for reaching out. We&apos;ll get back to you within 24 hours.
         </p>
@@ -127,7 +127,7 @@ export default function ContactForm() {
               className={`w-full pl-12 pr-4 py-3 rounded-xl border-2 transition-colors ${
                 errors.name 
                   ? 'border-red-500 focus:border-red-500' 
-                  : 'border-slate-200 focus:border-[#0074D9]'
+                  : 'border-slate-200 focus:border-[#1E3A8A]'
               } focus:outline-none`}
             />
           </div>
@@ -153,7 +153,7 @@ export default function ContactForm() {
               className={`w-full pl-12 pr-4 py-3 rounded-xl border-2 transition-colors ${
                 errors.email 
                   ? 'border-red-500 focus:border-red-500' 
-                  : 'border-slate-200 focus:border-[#0074D9]'
+                  : 'border-slate-200 focus:border-[#1E3A8A]'
               } focus:outline-none`}
             />
           </div>
@@ -176,7 +176,7 @@ export default function ContactForm() {
               value={formData.phone}
               onChange={handleChange}
               placeholder="+254 XXX XXX XXX"
-              className="w-full pl-12 pr-4 py-3 rounded-xl border-2 border-slate-200 focus:border-[#0074D9] focus:outline-none transition-colors"
+              className="w-full pl-12 pr-4 py-3 rounded-xl border-2 border-slate-200 focus:border-[#1E3A8A] focus:outline-none transition-colors"
             />
           </div>
         </div>
@@ -193,7 +193,7 @@ export default function ContactForm() {
               name="subject"
               value={formData.subject}
               onChange={handleChange}
-              className="w-full pl-12 pr-4 py-3 rounded-xl border-2 border-slate-200 focus:border-[#0074D9] focus:outline-none transition-colors appearance-none bg-white"
+              className="w-full pl-12 pr-4 py-3 rounded-xl border-2 border-slate-200 focus:border-[#1E3A8A] focus:outline-none transition-colors appearance-none bg-white"
             >
               <option value="general">General Inquiry</option>
               <option value="volunteer">Volunteer</option>
@@ -220,7 +220,7 @@ export default function ContactForm() {
             className={`w-full px-4 py-3 rounded-xl border-2 transition-colors resize-none ${
               errors.message 
                 ? 'border-red-500 focus:border-red-500' 
-                : 'border-slate-200 focus:border-[#0074D9]'
+                : 'border-slate-200 focus:border-[#1E3A8A]'
             } focus:outline-none`}
           />
           {errors.message && (
@@ -232,7 +232,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full py-4 bg-gradient-to-r from-[#0074D9] to-[#6B2C91] text-white font-bold rounded-xl hover:shadow-lg hover:shadow-[#0074D9]/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          className="w-full py-4 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] text-white font-bold rounded-xl hover:shadow-lg hover:shadow-[#1E3A8A]/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         >
           {isSubmitting ? (
             <>

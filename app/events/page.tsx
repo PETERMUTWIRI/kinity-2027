@@ -37,7 +37,7 @@ export default async function EventsPage() {
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
-      <div className="bg-gradient-to-br from-[#0074D9] to-[#005CB0] py-24">
+      <div className="bg-gradient-to-br from-[#1E3A8A] to-[#0F172A] py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="font-slogan text-4xl md:text-5xl text-white mb-4">
             CAMPAIGN EVENTS
@@ -51,8 +51,8 @@ export default async function EventsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Upcoming Events */}
         <section className="mb-16">
-          <h2 className="font-headline text-2xl text-[#111111] mb-8 flex items-center gap-3">
-            <FaBullhorn className="text-[#E91D0E]" />
+          <h2 className="font-headline text-2xl text-[#0F172A] mb-8 flex items-center gap-3">
+            <FaBullhorn className="text-[#DC2626]" />
             Upcoming Events
           </h2>
           
@@ -71,12 +71,12 @@ export default async function EventsPage() {
                           className="object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                       ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-[#0074D9] to-[#6B2C91] flex items-center justify-center">
+                        <div className="w-full h-full bg-gradient-to-br from-[#1E3A8A] to-[#D4A017] flex items-center justify-center">
                           <FaBullhorn className="w-12 h-12 text-white/50" />
                         </div>
                       )}
                       <div className="absolute top-4 left-4">
-                        <span className="px-3 py-1 rounded-full bg-[#E91D0E] text-white text-xs font-bold">
+                        <span className="px-3 py-1 rounded-full bg-[#DC2626] text-white text-xs font-bold">
                           {event.category}
                         </span>
                       </div>
@@ -86,7 +86,7 @@ export default async function EventsPage() {
                     <div className="p-6">
                       <div className="flex items-center gap-4 text-slate-500 text-sm mb-3">
                         <span className="flex items-center gap-1">
-                          <FaCalendarAlt className="w-4 h-4 text-[#0074D9]" />
+                          <FaCalendarAlt className="w-4 h-4 text-[#1E3A8A]" />
                           {new Date(event.startDate).toLocaleDateString('en-KE', {
                             day: 'numeric',
                             month: 'short',
@@ -94,17 +94,17 @@ export default async function EventsPage() {
                           })}
                         </span>
                         <span className="flex items-center gap-1">
-                          <FaMapMarkerAlt className="w-4 h-4 text-[#E91D0E]" />
+                          <FaMapMarkerAlt className="w-4 h-4 text-[#DC2626]" />
                           {event.county || event.location}
                         </span>
                       </div>
-                      <h3 className="font-headline text-xl text-[#111111] mb-2 group-hover:text-[#0074D9] transition-colors">
+                      <h3 className="font-headline text-xl text-[#0F172A] mb-2 group-hover:text-[#1E3A8A] transition-colors">
                         {event.title}
                       </h3>
                       {event.venue && (
                         <p className="text-slate-600 text-sm">{event.venue}</p>
                       )}
-                      <div className="mt-4 flex items-center gap-2 text-[#0074D9] font-semibold text-sm">
+                      <div className="mt-4 flex items-center gap-2 text-[#1E3A8A] font-semibold text-sm">
                         View Details
                         <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </div>
@@ -125,7 +125,7 @@ export default async function EventsPage() {
         {/* Past Events */}
         {pastEvents.length > 0 && (
           <section>
-            <h2 className="font-headline text-2xl text-[#111111] mb-8">Past Events</h2>
+            <h2 className="font-headline text-2xl text-[#0F172A] mb-8">Past Events</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {pastEvents.map((event) => (
                 <Link key={event.id} href={`/events/${event.slug}`} className="group">
@@ -152,7 +152,7 @@ export default async function EventsPage() {
                           year: 'numeric',
                         })}
                       </p>
-                      <h3 className="font-headline text-lg text-[#111111]">{event.title}</h3>
+                      <h3 className="font-headline text-lg text-[#0F172A]">{event.title}</h3>
                     </div>
                   </article>
                 </Link>

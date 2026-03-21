@@ -57,7 +57,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     return (
       <div className="min-h-screen bg-slate-950 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#0074D9] mx-auto mb-4" />
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1E3A8A] mx-auto mb-4" />
           <p className="text-slate-400">{isLoading ? 'Checking authentication...' : 'Redirecting...'}</p>
         </div>
       </div>
@@ -70,7 +70,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <aside className={`fixed lg:static inset-y-0 left-0 z-50 w-64 bg-slate-900 border-r border-slate-800 transform transition-transform duration-300 lg:transform-none ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="h-20 flex items-center justify-between px-6 border-b border-slate-800">
           <Link href="/admin" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#0074D9] to-[#6B2C91] flex items-center justify-center">
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#1E3A8A] to-[#D4A017] flex items-center justify-center">
               <span className="text-white font-bold">K</span>
             </div>
             <div>
@@ -118,11 +118,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             </div>
 
             <div className="flex items-center gap-4">
-              <Link href="/admin/posts/new" className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-lg bg-[#0074D9] text-white text-sm font-semibold">
+              <Link href="/admin/posts/new" className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-lg bg-[#1E3A8A] text-white text-sm font-semibold">
                 <FaNewspaper className="w-4 h-4" />
                 New Post
               </Link>
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#0074D9] to-[#6B2C91] flex items-center justify-center">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#1E3A8A] to-[#D4A017] flex items-center justify-center">
                 <span className="text-white font-semibold">{user?.name?.[0] || user?.email?.[0] || 'K'}</span>
               </div>
             </div>

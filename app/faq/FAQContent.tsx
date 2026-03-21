@@ -86,7 +86,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between py-4 text-left group"
       >
-        <span className="font-semibold text-[#111111] group-hover:text-[#0074D9] transition-colors pr-4">
+        <span className="font-semibold text-[#0F172A] group-hover:text-[#1E3A8A] transition-colors pr-4">
           {question}
         </span>
         <motion.div
@@ -120,7 +120,7 @@ export default function FAQContent() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-white">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#0074D9] to-[#6B2C91]">
+      <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#1E3A8A] to-[#D4A017]">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white font-semibold text-sm mb-6">
@@ -151,8 +151,8 @@ export default function FAQContent() {
             {faqs.map((category, categoryIndex) => (
               <ScrollReveal key={category.category} delay={categoryIndex * 0.1}>
                 <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-slate-100">
-                  <h2 className="text-xl sm:text-2xl font-bold text-[#111111] mb-6 flex items-center gap-3">
-                    <div className="w-2 h-8 bg-[#E91D0E] rounded-full" />
+                  <h2 className="text-xl sm:text-2xl font-bold text-[#0F172A] mb-6 flex items-center gap-3">
+                    <div className="w-2 h-8 bg-[#DC2626] rounded-full" />
                     {category.category}
                   </h2>
                   <div className="space-y-0">
@@ -173,7 +173,7 @@ export default function FAQContent() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#E91D0E] text-white font-bold rounded-xl hover:bg-[#BA170C] transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#DC2626] text-white font-bold rounded-xl hover:bg-[#B91C1C] transition-colors"
               >
                 Contact Us
               </Link>

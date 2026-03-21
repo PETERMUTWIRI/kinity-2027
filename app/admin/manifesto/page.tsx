@@ -53,7 +53,7 @@ function ManifestoContent() {
             <FaEye className="w-4 h-4" />
             View Public Page
           </Link>
-          <button className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#0074D9] text-white hover:bg-[#005CB0] transition-colors">
+          <button className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#1E3A8A] text-white hover:bg-[#0F172A] transition-colors">
             <FaEdit className="w-4 h-4" />
             Edit Manifesto
           </button>
@@ -63,10 +63,10 @@ function ManifestoContent() {
       {/* Pillars Grid */}
       <div className="grid md:grid-cols-2 gap-6">
         {manifestoPillars.map((pillar) => (
-          <div key={pillar.id} className="bg-slate-900 rounded-xl p-6 border border-slate-800 hover:border-[#0074D9]/30 transition-colors">
+          <div key={pillar.id} className="bg-slate-900 rounded-xl p-6 border border-slate-800 hover:border-[#1E3A8A]/30 transition-colors">
             <div className="flex items-start justify-between mb-4">
-              <div className="w-12 h-12 rounded-xl bg-[#0074D9]/10 flex items-center justify-center">
-                <FaFlag className="w-6 h-6 text-[#0074D9]" />
+              <div className="w-12 h-12 rounded-xl bg-[#1E3A8A]/10 flex items-center justify-center">
+                <FaFlag className="w-6 h-6 text-[#1E3A8A]" />
               </div>
               <span className="px-3 py-1 rounded-full bg-green-900/30 text-green-400 text-xs font-medium">
                 {pillar.status}
@@ -74,7 +74,7 @@ function ManifestoContent() {
             </div>
             <h3 className="text-lg font-semibold text-white mb-2">{pillar.title}</h3>
             <p className="text-slate-400 text-sm">{pillar.description}</p>
-            <button className="mt-4 text-[#0074D9] text-sm font-medium hover:underline">
+            <button className="mt-4 text-[#1E3A8A] text-sm font-medium hover:underline">
               Edit Pillar →
             </button>
           </div>

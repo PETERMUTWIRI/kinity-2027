@@ -52,7 +52,7 @@ export default async function EventPage({ params }: PageProps) {
             priority
           />
         ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0074D9] to-[#6B2C91]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#1E3A8A] to-[#D4A017]" />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
         
@@ -65,7 +65,7 @@ export default async function EventPage({ params }: PageProps) {
               <FaArrowLeft className="w-4 h-4" />
               Back to Events
             </Link>
-            <span className="inline-block px-4 py-1 rounded-full bg-[#E91D0E] text-white text-sm font-bold mb-4">
+            <span className="inline-block px-4 py-1 rounded-full bg-[#DC2626] text-white text-sm font-bold mb-4">
               {event.category}
             </span>
             <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl text-white mb-6">
@@ -73,7 +73,7 @@ export default async function EventPage({ params }: PageProps) {
             </h1>
             <div className="flex flex-wrap items-center gap-6 text-white/90">
               <div className="flex items-center gap-2">
-                <FaCalendarAlt className="w-5 h-5 text-[#0074D9]" />
+                <FaCalendarAlt className="w-5 h-5 text-[#1E3A8A]" />
                 <span className="text-lg">{new Date(event.startDate).toLocaleDateString('en-KE', {
                   weekday: 'long',
                   day: 'numeric',
@@ -82,12 +82,12 @@ export default async function EventPage({ params }: PageProps) {
                 })}</span>
               </div>
               <div className="flex items-center gap-2">
-                <FaMapMarkerAlt className="w-5 h-5 text-[#E91D0E]" />
+                <FaMapMarkerAlt className="w-5 h-5 text-[#DC2626]" />
                 <span className="text-lg">{event.county || event.location}</span>
               </div>
               {event.venue && (
                 <div className="flex items-center gap-2">
-                  <FaBullhorn className="w-5 h-5 text-[#6B2C91]" />
+                  <FaBullhorn className="w-5 h-5 text-[#D4A017]" />
                   <span className="text-lg">{event.venue}</span>
                 </div>
               )}
@@ -112,9 +112,9 @@ export default async function EventPage({ params }: PageProps) {
 
             {/* Open to All Banner */}
             {!isPast && (
-              <div className="mt-12 p-6 bg-gradient-to-r from-[#0074D9]/20 to-[#6B2C91]/20 border border-[#0074D9]/30 rounded-2xl">
+              <div className="mt-12 p-6 bg-gradient-to-r from-[#1E3A8A]/20 to-[#D4A017]/20 border border-[#1E3A8A]/30 rounded-2xl">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#0074D9] flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-[#1E3A8A] flex items-center justify-center flex-shrink-0">
                     <FaUsers className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -133,7 +133,7 @@ export default async function EventPage({ params }: PageProps) {
               
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <FaCalendarAlt className="w-5 h-5 text-[#0074D9] mt-1" />
+                  <FaCalendarAlt className="w-5 h-5 text-[#1E3A8A] mt-1" />
                   <div>
                     <p className="text-slate-400 text-sm">Date</p>
                     <p className="text-white">{new Date(event.startDate).toLocaleDateString('en-KE', {
@@ -146,7 +146,7 @@ export default async function EventPage({ params }: PageProps) {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <FaClock className="w-5 h-5 text-[#E91D0E] mt-1" />
+                  <FaClock className="w-5 h-5 text-[#DC2626] mt-1" />
                   <div>
                     <p className="text-slate-400 text-sm">Time</p>
                     <p className="text-white">{new Date(event.startDate).toLocaleTimeString('en-KE', {
@@ -157,7 +157,7 @@ export default async function EventPage({ params }: PageProps) {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <FaMapMarkerAlt className="w-5 h-5 text-[#6B2C91] mt-1" />
+                  <FaMapMarkerAlt className="w-5 h-5 text-[#D4A017] mt-1" />
                   <div>
                     <p className="text-slate-400 text-sm">Location</p>
                     <p className="text-white">{event.venue || 'TBA'}</p>
@@ -167,7 +167,7 @@ export default async function EventPage({ params }: PageProps) {
 
                 {event.address && (
                   <div className="flex items-start gap-3">
-                    <FaBullhorn className="w-5 h-5 text-[#0074D9] mt-1" />
+                    <FaBullhorn className="w-5 h-5 text-[#1E3A8A] mt-1" />
                     <div>
                       <p className="text-slate-400 text-sm">Address</p>
                       <p className="text-white">{event.address}</p>
@@ -181,7 +181,7 @@ export default async function EventPage({ params }: PageProps) {
                 <div className="mt-8 pt-6 border-t border-slate-800">
                   <a
                     href="#"
-                    className="block w-full py-4 text-center rounded-xl bg-gradient-to-r from-[#0074D9] to-[#005CB0] text-white font-bold hover:shadow-lg hover:shadow-[#0074D9]/30 transition-all"
+                    className="block w-full py-4 text-center rounded-xl bg-gradient-to-r from-[#1E3A8A] to-[#0F172A] text-white font-bold hover:shadow-lg hover:shadow-[#1E3A8A]/30 transition-all"
                   >
                     Add to Calendar
                   </a>

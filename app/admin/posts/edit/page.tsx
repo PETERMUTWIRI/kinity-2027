@@ -89,7 +89,7 @@ const ToolbarButton = ({
     title={title}
     className={`p-2 rounded-lg transition-all duration-200 ${
       active 
-        ? 'bg-[#0074D9] text-white' 
+        ? 'bg-[#1E3A8A] text-white' 
         : 'text-slate-400 hover:text-white hover:bg-slate-700'
     } ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
   >
@@ -340,7 +340,7 @@ function ImageManagerModal({
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-slate-800">
           <h2 className="text-xl font-bold text-white flex items-center gap-2">
-            <FaCamera className="text-[#0074D9]" />
+            <FaCamera className="text-[#1E3A8A]" />
             Insert Image with Credits
           </h2>
           <button onClick={onClose} className="text-slate-400 hover:text-white">
@@ -352,7 +352,7 @@ function ImageManagerModal({
         <div className="flex-1 overflow-auto p-6">
           {/* Upload Area */}
           <div className="mb-6">
-            <label className="block border-2 border-dashed border-slate-700 rounded-xl p-8 text-center hover:border-[#0074D9]/50 transition-colors cursor-pointer">
+            <label className="block border-2 border-dashed border-slate-700 rounded-xl p-8 text-center hover:border-[#1E3A8A]/50 transition-colors cursor-pointer">
               <FaImage className="w-12 h-12 text-slate-600 mx-auto mb-4" />
               <p className="text-slate-400 mb-2">
                 {uploading ? 'Uploading...' : 'Click to upload or drag and drop'}
@@ -377,13 +377,13 @@ function ImageManagerModal({
                   onClick={() => setSelectedImage(img)}
                   className={`relative aspect-video rounded-lg overflow-hidden cursor-pointer border-2 transition-all ${
                     selectedImage?.id === img.id 
-                      ? 'border-[#0074D9] ring-2 ring-[#0074D9]/30' 
+                      ? 'border-[#1E3A8A] ring-2 ring-[#1E3A8A]/30' 
                       : 'border-slate-700 hover:border-slate-600'
                   }`}
                 >
                   <img src={img.url} alt="" className="w-full h-full object-cover" />
                   {selectedImage?.id === img.id && (
-                    <div className="absolute top-2 right-2 w-6 h-6 bg-[#0074D9] rounded-full flex items-center justify-center">
+                    <div className="absolute top-2 right-2 w-6 h-6 bg-[#1E3A8A] rounded-full flex items-center justify-center">
                       <FaCheckCircle className="w-4 h-4 text-white" />
                     </div>
                   )}
@@ -436,7 +436,7 @@ function ImageManagerModal({
                         onClick={() => setSelectedImage({...selectedImage, align})}
                         className={`flex-1 py-2 rounded-lg text-sm capitalize transition-colors ${
                           selectedImage.align === align
-                            ? 'bg-[#0074D9] text-white'
+                            ? 'bg-[#1E3A8A] text-white'
                             : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
                         }`}
                       >
@@ -461,7 +461,7 @@ function ImageManagerModal({
           <button
             onClick={handleInsert}
             disabled={!selectedImage}
-            className="px-6 py-2 rounded-lg bg-[#0074D9] text-white font-medium hover:bg-[#005CB0] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-6 py-2 rounded-lg bg-[#1E3A8A] text-white font-medium hover:bg-[#0F172A] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Insert Image
           </button>
@@ -499,7 +499,7 @@ function LivePreview({ formData, inlineImages }: { formData: PostFormData; inlin
       <div className="max-w-3xl mx-auto p-8">
         {/* Category & Meta */}
         <div className="flex items-center gap-4 mb-4">
-          <span className="px-3 py-1 bg-[#E91D0E] text-white text-sm font-semibold rounded">
+          <span className="px-3 py-1 bg-[#DC2626] text-white text-sm font-semibold rounded">
             {formData.category || 'News'}
           </span>
           <span className="text-slate-500 text-sm">
@@ -526,7 +526,7 @@ function LivePreview({ formData, inlineImages }: { formData: PostFormData; inlin
         {/* Author & Reading Time */}
         <div className="flex items-center gap-4 mb-6 pb-6 border-b border-slate-200">
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-full bg-[#0074D9] flex items-center justify-center text-white font-bold">
+            <div className="w-10 h-10 rounded-full bg-[#1E3A8A] flex items-center justify-center text-white font-bold">
               {(formData.author || 'A').charAt(0)}
             </div>
             <div>
@@ -570,7 +570,7 @@ function LivePreview({ formData, inlineImages }: { formData: PostFormData; inlin
 
         {/* Excerpt */}
         {formData.excerpt && (
-          <p className="text-lg text-slate-600 italic border-l-4 border-[#0074D9] pl-4 mb-6">
+          <p className="text-lg text-slate-600 italic border-l-4 border-[#1E3A8A] pl-4 mb-6">
             {formData.excerpt}
           </p>
         )}
@@ -846,7 +846,7 @@ function NewsEditorInternal() {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <FaSpinner className="w-8 h-8 animate-spin text-[#0074D9]" />
+        <FaSpinner className="w-8 h-8 animate-spin text-[#1E3A8A]" />
       </div>
     );
   }
@@ -889,7 +889,7 @@ function NewsEditorInternal() {
               </button>
               <div>
                 <h1 className="text-lg font-bold text-white flex items-center gap-2">
-                  <FaNewspaper className="text-[#0074D9]" />
+                  <FaNewspaper className="text-[#1E3A8A]" />
                   {postId ? 'Edit Article' : 'New Article'}
                 </h1>
                 <p className="text-xs text-slate-500">
@@ -903,7 +903,7 @@ function NewsEditorInternal() {
                 onClick={() => setShowPreview(!showPreview)}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   showPreview 
-                    ? 'bg-[#0074D9]/20 text-[#0074D9]' 
+                    ? 'bg-[#1E3A8A]/20 text-[#1E3A8A]' 
                     : 'text-slate-400 hover:text-white'
                 }`}
               >
@@ -923,7 +923,7 @@ function NewsEditorInternal() {
               <button
                 onClick={(e) => handleSubmit(e, true)}
                 disabled={isSaving}
-                className="flex items-center gap-2 px-6 py-2 rounded-lg bg-[#0074D9] text-white text-sm font-medium hover:bg-[#005CB0] transition-colors disabled:opacity-50"
+                className="flex items-center gap-2 px-6 py-2 rounded-lg bg-[#1E3A8A] text-white text-sm font-medium hover:bg-[#0F172A] transition-colors disabled:opacity-50"
               >
                 {isSaving ? <FaSpinner className="animate-spin" /> : <FaCheckCircle />}
                 Publish
@@ -946,7 +946,7 @@ function NewsEditorInternal() {
                   onClick={() => setActiveTab(tab)}
                   className={`flex-1 py-2 px-4 rounded-md text-sm font-medium capitalize transition-colors ${
                     activeTab === tab
-                      ? 'bg-[#0074D9] text-white'
+                      ? 'bg-[#1E3A8A] text-white'
                       : 'text-slate-400 hover:text-white'
                   }`}
                 >
@@ -971,7 +971,7 @@ function NewsEditorInternal() {
                     type="text"
                     value={formData.title}
                     onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                    className="w-full px-4 py-3 text-2xl font-bold bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:border-[#0074D9] focus:outline-none focus:ring-1 focus:ring-[#0074D9]"
+                    className="w-full px-4 py-3 text-2xl font-bold bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:border-[#1E3A8A] focus:outline-none focus:ring-1 focus:ring-[#1E3A8A]"
                     placeholder="Enter headline..."
                   />
                 </div>
@@ -985,7 +985,7 @@ function NewsEditorInternal() {
                     type="text"
                     value={formData.subtitle}
                     onChange={(e) => setFormData({ ...formData, subtitle: e.target.value })}
-                    className="w-full px-4 py-2 text-lg bg-slate-900 border border-slate-700 rounded-xl text-slate-300 placeholder-slate-600 focus:border-[#0074D9] focus:outline-none"
+                    className="w-full px-4 py-2 text-lg bg-slate-900 border border-slate-700 rounded-xl text-slate-300 placeholder-slate-600 focus:border-[#1E3A8A] focus:outline-none"
                     placeholder="Add a secondary headline..."
                   />
                 </div>
@@ -1023,7 +1023,7 @@ function NewsEditorInternal() {
                       />
                     </div>
                   ) : (
-                    <label className="block border-2 border-dashed border-slate-700 rounded-xl p-8 text-center hover:border-[#0074D9]/50 transition-colors cursor-pointer">
+                    <label className="block border-2 border-dashed border-slate-700 rounded-xl p-8 text-center hover:border-[#1E3A8A]/50 transition-colors cursor-pointer">
                       <FaImage className="w-10 h-10 text-slate-600 mx-auto mb-3" />
                       <p className="text-slate-400 text-sm">Click to upload cover image</p>
                       <p className="text-slate-500 text-xs mt-1">Recommended: 1200 x 630 pixels</p>
@@ -1041,7 +1041,7 @@ function NewsEditorInternal() {
                     value={formData.excerpt}
                     onChange={(e) => setFormData({ ...formData, excerpt: e.target.value })}
                     rows={3}
-                    className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:border-[#0074D9] focus:outline-none resize-none"
+                    className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:border-[#1E3A8A] focus:outline-none resize-none"
                     placeholder="Write a compelling summary..."
                   />
                   <p className="text-xs text-slate-500 mt-1">
@@ -1087,7 +1087,7 @@ function NewsEditorInternal() {
                     type="text"
                     value={formData.metaTitle}
                     onChange={(e) => setFormData({ ...formData, metaTitle: e.target.value })}
-                    className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:border-[#0074D9] focus:outline-none"
+                    className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:border-[#1E3A8A] focus:outline-none"
                     placeholder="SEO title (defaults to article title)"
                   />
                   <p className="text-xs text-slate-500 mt-1">
@@ -1104,7 +1104,7 @@ function NewsEditorInternal() {
                     value={formData.metaDesc}
                     onChange={(e) => setFormData({ ...formData, metaDesc: e.target.value })}
                     rows={3}
-                    className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:border-[#0074D9] focus:outline-none resize-none"
+                    className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:border-[#1E3A8A] focus:outline-none resize-none"
                     placeholder="SEO description (defaults to excerpt)"
                   />
                   <p className="text-xs text-slate-500 mt-1">
@@ -1130,7 +1130,7 @@ function NewsEditorInternal() {
                   ) : (
                     <button
                       onClick={() => setFormData({ ...formData, ogImage: formData.cover })}
-                      className="w-full py-3 border border-dashed border-slate-700 rounded-xl text-slate-400 hover:text-white hover:border-[#0074D9] transition-colors"
+                      className="w-full py-3 border border-dashed border-slate-700 rounded-xl text-slate-400 hover:text-white hover:border-[#1E3A8A] transition-colors"
                     >
                       Use Cover Image
                     </button>
@@ -1154,7 +1154,7 @@ function NewsEditorInternal() {
                   <select
                     value={formData.category}
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                    className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white focus:border-[#0074D9] focus:outline-none"
+                    className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white focus:border-[#1E3A8A] focus:outline-none"
                   >
                     {CATEGORIES.map((cat) => (
                       <option key={cat} value={cat}>{cat}</option>
@@ -1172,7 +1172,7 @@ function NewsEditorInternal() {
                       type="text"
                       value={formData.author}
                       onChange={(e) => setFormData({ ...formData, author: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:border-[#0074D9] focus:outline-none"
+                      className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:border-[#1E3A8A] focus:outline-none"
                       placeholder="Author name"
                     />
                   </div>
@@ -1184,7 +1184,7 @@ function NewsEditorInternal() {
                       type="text"
                       value={formData.authorTitle}
                       onChange={(e) => setFormData({ ...formData, authorTitle: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:border-[#0074D9] focus:outline-none"
+                      className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:border-[#1E3A8A] focus:outline-none"
                       placeholder="e.g. Senior Editor"
                     />
                   </div>
@@ -1200,7 +1200,7 @@ function NewsEditorInternal() {
                       type="text"
                       value={formData.location}
                       onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:border-[#0074D9] focus:outline-none"
+                      className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:border-[#1E3A8A] focus:outline-none"
                       placeholder="e.g. Nairobi"
                     />
                   </div>
@@ -1211,7 +1211,7 @@ function NewsEditorInternal() {
                     <select
                       value={formData.county}
                       onChange={(e) => setFormData({ ...formData, county: e.target.value })}
-                      className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white focus:border-[#0074D9] focus:outline-none"
+                      className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white focus:border-[#1E3A8A] focus:outline-none"
                     >
                       <option value="">Select County</option>
                       {KENYAN_COUNTIES.map((county) => (
@@ -1232,7 +1232,7 @@ function NewsEditorInternal() {
                       value={newTag}
                       onChange={(e) => setNewTag(e.target.value)}
                       onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), addTag())}
-                      className="flex-1 px-4 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-600 focus:border-[#0074D9] focus:outline-none"
+                      className="flex-1 px-4 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-600 focus:border-[#1E3A8A] focus:outline-none"
                       placeholder="Add tag and press Enter"
                     />
                     <button
@@ -1247,7 +1247,7 @@ function NewsEditorInternal() {
                     {formData.tags.map((tag, i) => (
                       <span 
                         key={i}
-                        className="inline-flex items-center gap-1 px-3 py-1 bg-[#0074D9]/20 text-[#0074D9] text-sm rounded-full"
+                        className="inline-flex items-center gap-1 px-3 py-1 bg-[#1E3A8A]/20 text-[#1E3A8A] text-sm rounded-full"
                       >
                         {tag}
                         <button 
@@ -1268,7 +1268,7 @@ function NewsEditorInternal() {
                       type="checkbox"
                       checked={formData.featured}
                       onChange={(e) => setFormData({ ...formData, featured: e.target.checked })}
-                      className="w-5 h-5 rounded border-slate-600 text-[#0074D9] focus:ring-[#0074D9]"
+                      className="w-5 h-5 rounded border-slate-600 text-[#1E3A8A] focus:ring-[#1E3A8A]"
                     />
                     <div>
                       <p className="text-white font-medium">Feature on Homepage</p>
@@ -1281,7 +1281,7 @@ function NewsEditorInternal() {
                       type="checkbox"
                       checked={formData.isPressRelease}
                       onChange={(e) => setFormData({ ...formData, isPressRelease: e.target.checked })}
-                      className="w-5 h-5 rounded border-slate-600 text-[#0074D9] focus:ring-[#0074D9]"
+                      className="w-5 h-5 rounded border-slate-600 text-[#1E3A8A] focus:ring-[#1E3A8A]"
                     />
                     <div>
                       <p className="text-white font-medium">Mark as Press Release</p>

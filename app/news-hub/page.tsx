@@ -40,7 +40,7 @@ export default async function NewsHubPage({
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
-      <div className="bg-gradient-to-br from-[#0074D9] to-[#005CB0] py-24">
+      <div className="bg-gradient-to-br from-[#1E3A8A] to-[#0F172A] py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="font-slogan text-4xl md:text-5xl text-white mb-4">
             NEWS HUB
@@ -61,7 +61,7 @@ export default async function NewsHubPage({
               href={`/news-hub${cat === 'All' ? '' : `?category=${cat}`}`}
               className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors ${
                 category === cat
-                  ? 'bg-[#0074D9] text-white'
+                  ? 'bg-[#1E3A8A] text-white'
                   : 'bg-white text-slate-600 hover:bg-slate-100'
               }`}
             >
@@ -86,12 +86,12 @@ export default async function NewsHubPage({
                         className="object-cover"
                       />
                     ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-[#0074D9] to-[#6B2C91] flex items-center justify-center">
+                      <div className="w-full h-full bg-gradient-to-br from-[#1E3A8A] to-[#D4A017] flex items-center justify-center">
                         <FaNewspaper className="w-12 h-12 text-white/50" />
                       </div>
                     )}
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 rounded-full bg-[#E91D0E] text-white text-xs font-bold">
+                      <span className="px-3 py-1 rounded-full bg-[#DC2626] text-white text-xs font-bold">
                         {post.category}
                       </span>
                     </div>
@@ -107,13 +107,13 @@ export default async function NewsHubPage({
                         year: 'numeric',
                       })}
                     </div>
-                    <h2 className="font-headline text-xl text-[#111111] mb-2 group-hover:text-[#0074D9] transition-colors line-clamp-2">
+                    <h2 className="font-headline text-xl text-[#0F172A] mb-2 group-hover:text-[#1E3A8A] transition-colors line-clamp-2">
                       {post.title}
                     </h2>
                     <p className="text-slate-600 text-sm line-clamp-3">
                       {post.excerpt || post.content.replace(/<[^>]*>/g, '').slice(0, 150)}...
                     </p>
-                    <div className="mt-4 flex items-center gap-2 text-[#0074D9] font-semibold text-sm">
+                    <div className="mt-4 flex items-center gap-2 text-[#1E3A8A] font-semibold text-sm">
                       Read more
                       <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </div>

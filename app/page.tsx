@@ -1041,37 +1041,23 @@ export default function HomePage() {
       <SocialProof />
 
       {/* ==========================================
-          CALL TO ACTION SECTION - Premium Dark with Video Background
+          CALL TO ACTION SECTION - Premium Dark
           ========================================== */}
       <section className="py-16 md:py-24 lg:py-32 bg-[#0F172A] text-white relative overflow-hidden min-h-[600px]">
-        {/* YouTube Video Background */}
-        <div className="absolute inset-0 w-full h-full overflow-hidden">
-          <iframe
-            src="https://www.youtube.com/embed/BqPibiAzqIk?autoplay=1&mute=1&loop=1&playlist=BqPibiAzqIk&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&start=0"
-            title="National Vision Party Campaign Movement"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            className="absolute w-full h-full"
-            style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              width: '100vw',
-              height: '100vh',
-              transform: 'translate(-50%, -50%) scale(1.3)',
-              pointerEvents: 'none',
-            }}
-          />
-        </div>
-        
-        {/* Dark Overlay for readability */}
-        <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]" />
+        {/* Subtle pattern overlay */}
+        <div 
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)`,
+            backgroundSize: '50px 50px',
+          }}
+        />
         
         {/* Gold accent lines */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4A017] to-transparent z-10" />
         
         {/* Gradient overlays for depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/50 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1E3A8A]/20 via-transparent to-[#1E3A8A]/20 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1E3A8A]/30 via-transparent to-[#1E3A8A]/30" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">

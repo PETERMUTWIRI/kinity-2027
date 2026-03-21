@@ -18,11 +18,11 @@ export default function ErrorPage({
   return (
     <div className="min-h-screen bg-slate-50 flex items-center justify-center px-4">
       <div className="max-w-lg w-full text-center">
-        <div className="w-20 h-20 bg-[#E91D0E]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-          <FaExclamationTriangle className="w-10 h-10 text-[#E91D0E]" />
+        <div className="w-20 h-20 bg-[#DC2626]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+          <FaExclamationTriangle className="w-10 h-10 text-[#DC2626]" />
         </div>
         
-        <h1 className="font-headline text-3xl text-[#111111] mb-4">
+        <h1 className="font-headline text-3xl text-[#0F172A] mb-4">
           Something Went Wrong
         </h1>
         
@@ -33,7 +33,7 @@ export default function ErrorPage({
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={reset}
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#0074D9] text-white font-semibold hover:bg-[#005CB0] transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#1E3A8A] text-white font-semibold hover:bg-[#0F172A] transition-colors"
           >
             <FaRedo className="w-4 h-4" />
             Try Again

@@ -28,7 +28,7 @@ function ErrorContent() {
       <div className="w-full max-w-md text-center">
         {/* Logo */}
         <Link href="/" className="inline-flex items-center gap-3 mb-8">
-          <div className="relative w-14 h-14 rounded-xl overflow-hidden shadow-lg ring-2 ring-[#0074D9]/30">
+          <div className="relative w-14 h-14 rounded-xl overflow-hidden shadow-lg ring-2 ring-[#1E3A8A]/30">
             <Image
               src="/isaac_kinity-logo.jpeg"
               alt="National Vision Party"
@@ -37,7 +37,7 @@ function ErrorContent() {
             />
           </div>
           <div className="text-left">
-            <p className="font-slogan text-xl text-[#E91D0E]">National Vision Party</p>
+            <p className="font-slogan text-xl text-[#DC2626]">National Vision Party</p>
             <p className="text-xs text-slate-400">Admin Portal</p>
           </div>
         </Link>
@@ -56,7 +56,7 @@ function ErrorContent() {
           <div className="flex flex-col gap-3">
             <Link
               href="/auth/sign-in"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#0074D9] text-white font-semibold hover:bg-[#005CB0] transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#1E3A8A] text-white font-semibold hover:bg-[#0F172A] transition-colors"
             >
               Try Again
             </Link>
@@ -78,7 +78,7 @@ export default function AuthErrorPage() {
     <Suspense fallback={
       <div className="min-h-screen bg-slate-950 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#0074D9] mx-auto mb-4" />
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1E3A8A] mx-auto mb-4" />
           <p className="text-slate-400">Loading...</p>
         </div>
       </div>
