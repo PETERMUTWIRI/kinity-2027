@@ -213,7 +213,7 @@ export default function HomePage() {
 
         {/* Hero Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 lg:pt-36 pb-2 sm:pb-6 lg:pb-12">
-          <div className="grid lg:grid-cols-2 gap-4 lg:gap-10 items-start lg:items-center">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-start lg:items-center">
             
             {/* Mobile Hero Image - Full Width, Shorter Height */}
             <motion.div
@@ -398,9 +398,9 @@ export default function HomePage() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4, type: "spring", stiffness: 80 }}
-              className="hidden lg:block relative order-1 lg:order-2"
+              className="hidden lg:block relative order-1 lg:order-2 flex justify-center"
             >
-              <div className="relative aspect-[3/4] w-full max-w-sm xl:max-w-md ml-auto">
+              <div className="relative aspect-[3/4] w-full max-w-lg">
                 {/* Animated Glow Effect */}
                 <motion.div 
                   animate={{ 
@@ -415,7 +415,7 @@ export default function HomePage() {
                 <motion.div 
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="relative w-full h-full p-2 rounded-2xl shadow-2xl overflow-hidden"
+                  className="relative w-full h-full p-3 rounded-2xl shadow-2xl overflow-hidden"
                   style={{
                     background: 'linear-gradient(180deg, #000000 0%, #000000 25%, #FFFFFF 25%, #FFFFFF 28%, #DC2626 28%, #DC2626 72%, #FFFFFF 72%, #FFFFFF 75%, #006600 75%, #006600 100%)',
                   }}
@@ -437,7 +437,7 @@ export default function HomePage() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ delay: 1, type: "spring", stiffness: 200, damping: 15 }}
                   whileHover={{ scale: 1.05 }}
-                  className="absolute -bottom-3 -left-3 bg-white rounded-2xl shadow-xl px-4 py-2.5 border-l-4 border-[#D4A017]"
+                  className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl px-5 py-3 border-l-4 border-[#D4A017]"
                 >
                   <div className="flex items-center gap-2.5">
                     <motion.div 
@@ -464,12 +464,12 @@ export default function HomePage() {
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                  className="absolute -inset-6 border-2 border-dashed border-[#D4A017]/30 rounded-3xl pointer-events-none"
+                  className="absolute -inset-4 border-2 border-dashed border-[#D4A017]/30 rounded-3xl pointer-events-none"
                 />
                 <motion.div
                   animate={{ rotate: -360 }}
                   transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                  className="absolute -inset-10 border border-white/10 rounded-[2rem] pointer-events-none"
+                  className="absolute -inset-8 border border-white/10 rounded-[2rem] pointer-events-none"
                 />
               </div>
             </motion.div>
