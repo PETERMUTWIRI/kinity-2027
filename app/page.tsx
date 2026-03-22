@@ -189,7 +189,7 @@ export default function HomePage() {
       {/* ==========================================
           HERO SECTION - Premium Deep Blue with Gold Accents
           ========================================== */}
-      <section className="relative min-h-auto overflow-hidden">
+      <section className="relative min-h-[600px] lg:min-h-[700px] overflow-hidden">
         {/* Base gradient - Deep Navy to Blue */}
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#0F172A] via-[#1E3A8A] to-[#1E3A8A]" />
         
@@ -211,16 +211,16 @@ export default function HomePage() {
         {/* Gradient fade to white at bottom for smooth transition */}
         <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-white via-white/80 to-transparent z-10" />
 
-        {/* Hero Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 lg:pt-36 pb-2 sm:pb-6 lg:pb-12">
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-start lg:items-center">
+        {/* Hero Content - Split Layout: Fixed Left, Full-bleed Right */}
+        <div className="relative z-10 w-full pt-28 sm:pt-32 lg:pt-36 pb-2 sm:pb-6 lg:pb-12">
+          <div className="flex flex-col lg:flex-row lg:items-stretch">
             
             {/* Mobile Hero Image - Full Width, Shorter Height */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
-              className="lg:hidden -mx-4 sm:-mx-6 mb-4"
+              className="lg:hidden px-4 sm:px-6 mb-4"
             >
               {/* Kenyan Flag Frame Container - Full Width Mobile */}
               <div 
@@ -259,8 +259,8 @@ export default function HomePage() {
               </div>
             </motion.div>
 
-            {/* LEFT: Text Content */}
-            <div className="space-y-3 sm:space-y-4 text-center lg:text-left order-2 lg:order-1 lg:pr-4">
+            {/* LEFT: Text Content - Fixed width with original padding */}
+            <div className="w-full lg:w-1/2 px-4 sm:px-6 lg:px-8 xl:px-12 space-y-3 sm:space-y-4 text-center lg:text-left order-2 lg:order-1 lg:pr-8">
 
               {/* Gold accent line above headline */}
               <motion.div
@@ -393,51 +393,45 @@ export default function HomePage() {
               </motion.div>
             </div>
 
-            {/* RIGHT: Dr. Kinity Portrait - Hidden on mobile, shown on lg+ */}
+            {/* RIGHT: Dr. Kinity Portrait - Full bleed to right edge */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4, type: "spring", stiffness: 80 }}
-              className="hidden lg:block relative order-1 lg:order-2 flex justify-center"
+              className="hidden lg:block relative order-1 lg:order-2 w-1/2 min-h-[550px]"
             >
-              <div className="relative aspect-[3/4] w-full max-w-lg">
-                {/* Animated Glow Effect */}
-                <motion.div 
-                  animate={{ 
-                    opacity: [0.4, 0.7, 0.4],
-                    scale: [1, 1.05, 1],
-                  }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -inset-4 bg-gradient-to-br from-[#D4A017]/30 via-white/10 to-transparent rounded-3xl blur-2xl" 
-                />
-                
-                {/* Kenyan Flag Frame Container */}
-                <motion.div 
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className="relative w-full h-full p-3 rounded-2xl shadow-2xl overflow-hidden"
+              {/* Full height image container extending to right edge */}
+              <div className="absolute inset-0 overflow-hidden">
+                {/* Kenyan Flag accent border on left side only */}
+                <div 
+                  className="absolute inset-y-0 left-0 w-2 z-10"
                   style={{
                     background: 'linear-gradient(180deg, #000000 0%, #000000 25%, #FFFFFF 25%, #FFFFFF 28%, #DC2626 28%, #DC2626 72%, #FFFFFF 72%, #FFFFFF 75%, #006600 75%, #006600 100%)',
                   }}
-                >
-                  <div className="relative w-full h-full rounded-xl overflow-hidden bg-[#1E3A8A]/5">
-                    <Image
-                      src="/images/Dr.png"
-                      alt="Dr. Isaac Newton Kinity - Presidential Candidate"
-                      fill
-                      className="object-cover object-top"
-                      priority
-                    />
-                  </div>
-                </motion.div>
+                />
+                
+                {/* Image with object-fit cover to fill space */}
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/images/Dr.png"
+                    alt="Dr. Isaac Newton Kinity - Presidential Candidate"
+                    fill
+                    className="object-cover object-top"
+                    priority
+                    sizes="50vw"
+                  />
+                  {/* Subtle gradient overlay for depth */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#1E3A8A]/30 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/40 via-transparent to-transparent" />
+                </div>
 
-                {/* Floating Badge with gold accent */}
+                {/* Floating Badge - positioned on the image */}
                 <motion.div
                   initial={{ opacity: 0, y: 30, scale: 0.8 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ delay: 1, type: "spring", stiffness: 200, damping: 15 }}
                   whileHover={{ scale: 1.05 }}
-                  className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl px-5 py-3 border-l-4 border-[#D4A017]"
+                  className="absolute bottom-8 left-8 bg-white rounded-2xl shadow-xl px-5 py-3 border-l-4 border-[#D4A017] z-20"
                 >
                   <div className="flex items-center gap-2.5">
                     <motion.div 
@@ -460,17 +454,8 @@ export default function HomePage() {
                   </div>
                 </motion.div>
 
-                {/* Decorative Rings - Gold accent */}
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                  className="absolute -inset-4 border-2 border-dashed border-[#D4A017]/30 rounded-3xl pointer-events-none"
-                />
-                <motion.div
-                  animate={{ rotate: -360 }}
-                  transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                  className="absolute -inset-8 border border-white/10 rounded-[2rem] pointer-events-none"
-                />
+                {/* Decorative corner accent */}
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-[#D4A017]/20 to-transparent pointer-events-none" />
               </div>
             </motion.div>
           </div>
