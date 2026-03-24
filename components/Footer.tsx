@@ -70,6 +70,17 @@ export default function Footer() {
       {/* Dark Navy Background */}
       <div className="absolute inset-0 bg-[#0F172A]" />
       
+      {/* Subtle Kenyan Coat of Arms Watermark */}
+      <div 
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Coat_of_arms_of_Kenya_%28Official%29.svg/1200px-Coat_of_arms_of_Kenya_%28Official%29.svg.png')`,
+          backgroundSize: 'contain',
+          backgroundPosition: 'center 70%',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
+      
       {/* Subtle Kenyan Flag Hint - Bottom Edge */}
       <div className="absolute bottom-0 left-0 right-0 h-1 flex opacity-30">
         <div className="flex-1 bg-black" />
@@ -86,8 +97,8 @@ export default function Footer() {
         }}
       />
 
-      {/* CTA Banner with Countdown - Deep Blue with Gold Accent */}
-      <div className="relative bg-[#1E3A8A] border-b border-[#D4A017]/30">
+      {/* CTA Banner with Countdown - Dark Navy with Gold Accent */}
+      <div className="relative bg-[#0F172A] border-b border-[#D4A017]/30">
         {/* Gold accent line at top */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4A017] to-transparent" />
         
