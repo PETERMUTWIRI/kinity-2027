@@ -27,6 +27,8 @@ import {
   FaUsers,
   FaFlag,
   FaEye,
+  FaGlobe,
+  FaFistRaised,
 } from 'react-icons/fa';
 import NewsTicker from './NewsTicker';
 
@@ -69,7 +71,8 @@ const navItems: NavItem[] = [
     children: [
       { name: 'Join Us', href: '/join-us', description: 'Become a member', icon: FaHandshake },
       { name: 'Donate', href: '/support', description: 'Support our campaign', icon: FaHeart },
-      { name: 'Volunteer', href: '/join-us', description: 'Offer your skills', icon: FaUsers },
+      { name: 'Diaspora', href: '/diaspora', description: 'Kenyans abroad', icon: FaGlobe },
+      { name: 'Youth/GenZ', href: '/youth', description: 'Justice for fallen heroes', icon: FaFistRaised },
       { name: 'Events', href: '/events', description: 'Attend our rallies', icon: FaCalendarAlt },
       { name: 'Contact', href: '/contact', description: 'Get in touch', icon: FaEnvelope },
     ]

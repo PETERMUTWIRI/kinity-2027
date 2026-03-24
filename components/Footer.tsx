@@ -44,7 +44,8 @@ const footerLinks = {
   getInvolved: [
     { name: 'Join Us', href: '/join-us' },
     { name: 'Donate', href: '/support' },
-    { name: 'Volunteer', href: '/join-us' },
+    { name: 'Diaspora', href: '/diaspora' },
+    { name: 'Youth/GenZ', href: '/youth' },
     { name: 'Contact', href: '/contact' },
   ],
   resources: [
