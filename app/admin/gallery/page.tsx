@@ -82,6 +82,16 @@ function GalleryAdminPage() {
   // Delete confirmation
   const [deleteConfirm, setDeleteConfirm] = useState<number | null>(null);
 
+  // Album creation modal
+  const [showAlbumModal, setShowAlbumModal] = useState(false);
+  const [albumForm, setAlbumForm] = useState({
+    title: '',
+    description: '',
+    category: 'Rallies',
+    coverImage: '',
+  });
+  const [creatingAlbum, setCreatingAlbum] = useState(false);
+
   // Fetch data
   const fetchData = useCallback(async () => {
     setLoading(true);
@@ -223,6 +233,30 @@ function GalleryAdminPage() {
     }
   };
 
+  // Create album
+  const handleCreateAlbum = async () => {
+    if (!albumForm.title.trim()) return;
+
+    setCreatingAlbum(true);
+    try {
+      const res = await fetch('/api/gallery/albums', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(albumForm),
+      });
+
+      if (res.ok) {
+        const newAlbum = await res.json();
+        setAlbums([...albums, newAlbum]);
+        setAlbumForm({ title: '', description: '', category: 'Rallies', coverImage: '' });
+        setShowAlbumModal(false);
+      }
+    } catch (err) {
+      console.error('Create album error:', err);
+    }
+    setCreatingAlbum(false);
+  };
+
   // Toggle featured
   const toggleFeatured = async (image: GalleryImage) => {
     const updated = { ...image, featured: !image.featured };
@@ -248,13 +282,22 @@ function GalleryAdminPage() {
             {images.length} images • {albums.length} albums
           </p>
         </div>
-        <button 
-          onClick={() => setShowUploadModal(true)}
-          className="inline-flex items-center gap-2 px-6 py-3 bg-[#1E3A8A] text-white font-semibold rounded-xl hover:bg-[#0F172A] transition-colors"
-        >
-          <FaUpload className="w-4 h-4" />
-          Upload Images
-        </button>
+        <div className="flex gap-3">
+          <button 
+            onClick={() => setShowAlbumModal(true)}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-slate-700 text-white font-semibold rounded-xl hover:bg-slate-600 transition-colors"
+          >
+            <FaFolder className="w-4 h-4" />
+            New Album
+          </button>
+          <button 
+            onClick={() => setShowUploadModal(true)}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#1E3A8A] text-white font-semibold rounded-xl hover:bg-[#0F172A] transition-colors"
+          >
+            <FaUpload className="w-4 h-4" />
+            Upload Images
+          </button>
+        </div>
       </div>
 
       {/* Filters Bar */}
@@ -541,6 +584,121 @@ function GalleryAdminPage() {
           )}
         </div>
       )}
+
+      {/* Album Creation Modal */}
+      <AnimatePresence>
+        {showAlbumModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="bg-slate-900 rounded-2xl max-w-lg w-full"
+            >
+              {/* Header */}
+              <div className="flex items-center justify-between p-6 border-b border-slate-800">
+                <h2 className="text-xl font-bold text-white flex items-center gap-2">
+                  <FaFolder className="text-[#1E3A8A]" />
+                  Create New Album
+                </h2>
+                <button 
+                  onClick={() => setShowAlbumModal(false)}
+                  className="text-slate-400 hover:text-white"
+                  disabled={creatingAlbum}
+                >
+                  <FaTimes />
+                </button>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-2">Album Name *</label>
+                  <input
+                    type="text"
+                    value={albumForm.title}
+                    onChange={(e) => setAlbumForm({...albumForm, title: e.target.value})}
+                    placeholder="e.g., Nairobi Rally 2024"
+                    className="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white"
+                    disabled={creatingAlbum}
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-2">Description</label>
+                  <textarea
+                    value={albumForm.description}
+                    onChange={(e) => setAlbumForm({...albumForm, description: e.target.value})}
+                    placeholder="Brief description of the album..."
+                    rows={3}
+                    className="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white resize-none"
+                    disabled={creatingAlbum}
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-2">Category</label>
+                  <select
+                    value={albumForm.category}
+                    onChange={(e) => setAlbumForm({...albumForm, category: e.target.value})}
+                    className="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white"
+                    disabled={creatingAlbum}
+                  >
+                    {CATEGORIES.filter(c => c !== 'All').map(cat => (
+                      <option key={cat} value={cat}>{cat}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-2">Cover Image URL (optional)</label>
+                  <input
+                    type="text"
+                    value={albumForm.coverImage}
+                    onChange={(e) => setAlbumForm({...albumForm, coverImage: e.target.value})}
+                    placeholder="https://..."
+                    className="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white"
+                    disabled={creatingAlbum}
+                  />
+                </div>
+              </div>
+
+              {/* Footer */}
+              <div className="flex items-center justify-end gap-3 p-6 border-t border-slate-800">
+                <button
+                  onClick={() => setShowAlbumModal(false)}
+                  disabled={creatingAlbum}
+                  className="px-4 py-2 text-slate-400 hover:text-white transition-colors disabled:opacity-50"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={handleCreateAlbum}
+                  disabled={!albumForm.title.trim() || creatingAlbum}
+                  className="flex items-center gap-2 px-6 py-2 bg-[#1E3A8A] text-white rounded-lg font-medium hover:bg-[#0F172A] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {creatingAlbum ? (
+                    <>
+                      <FaSpinner className="w-4 h-4 animate-spin" />
+                      Creating...
+                    </>
+                  ) : (
+                    <>
+                      <FaPlus className="w-4 h-4" />
+                      Create Album
+                    </>
+                  )}
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Upload Modal */}
       <AnimatePresence>
