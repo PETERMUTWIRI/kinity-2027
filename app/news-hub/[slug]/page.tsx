@@ -1,14 +1,13 @@
-// app/news-hub/[slug]/page.tsx - Enterprise News Article Page with Two-Column Layout
+// app/news-hub/[slug]/page.tsx - Professional News Article Page
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { prisma } from '@/lib/prisma';
 import Image from 'next/image';
 import Link from 'next/link';
 import { 
-  FaCalendar, FaUser, FaArrowLeft, FaShare, FaClock, 
-  FaMapMarkerAlt, FaCamera, FaTag, FaFacebook, FaTwitter,
-  FaWhatsapp, FaLinkedin, FaEnvelope, FaBookmark, FaComment,
-  FaPrint, FaCopy, FaChevronLeft, FaChevronRight
+  FaCalendar, FaArrowLeft, FaClock, 
+  FaMapMarkerAlt, FaCamera, FaTag,
+  FaFacebook, FaTwitter, FaWhatsapp, FaLinkedin, FaEnvelope
 } from 'react-icons/fa';
 import CommentSection from '@/components/CommentSection';
 
@@ -120,12 +119,9 @@ async function ArticlesCarousel({ currentId, category }: { currentId: number; ca
   if (articles.length === 0) return null;
 
   return (
-    <div className="mt-16 pt-12 border-t-2 border-slate-200">
+    <div className="mt-16 pt-12 border-t border-slate-200">
       <div className="flex items-center justify-between mb-8">
-        <h3 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
-          More Articles
-          <span className="text-sm font-normal text-slate-500">({articles.length})</span>
-        </h3>
+        <h3 className="text-2xl font-bold text-slate-900">More Articles</h3>
         <Link 
           href="/news-hub"
           className="text-[#1E3A8A] hover:text-[#0F172A] font-medium flex items-center gap-1"
@@ -137,7 +133,7 @@ async function ArticlesCarousel({ currentId, category }: { currentId: number; ca
       
       {/* Horizontal Scroll Carousel */}
       <div className="relative">
-        <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+        <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
           {articles.map((article) => (
             <Link 
               key={article.id} 
@@ -171,9 +167,6 @@ async function ArticlesCarousel({ currentId, category }: { currentId: number; ca
             </Link>
           ))}
         </div>
-        
-        {/* Fade indicators */}
-        <div className="absolute right-0 top-0 bottom-4 w-24 bg-gradient-to-l from-slate-50 to-transparent pointer-events-none" />
       </div>
     </div>
   );
@@ -196,85 +189,104 @@ export default async function NewsArticlePage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* Top Navigation Bar */}
-      <div className="bg-white border-b border-slate-200 sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-14">
+      {/* Navigation Bar */}
+      <nav className="bg-white border-b border-slate-200">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
             <Link 
               href="/news-hub"
               className="inline-flex items-center gap-2 text-slate-600 hover:text-[#1E3A8A] transition-colors text-sm font-medium"
             >
               <FaArrowLeft className="w-4 h-4" />
-              Back to News
+              Back to News Hub
             </Link>
-            <div className="flex items-center gap-4">
-              <span className="text-sm text-slate-500">
-                <FaClock className="inline mr-1" />
-                {post.readingTime || Math.ceil((post.wordCount || 0) / 200) || 3} min read
-              </span>
+            <div className="flex items-center gap-2 text-sm text-slate-500">
+              <FaClock className="w-4 h-4" />
+              {post.readingTime || Math.ceil((post.wordCount || 0) / 200) || 3} min read
             </div>
           </div>
         </div>
-      </div>
+      </nav>
 
-      <article className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* TWO COLUMN LAYOUT: Cover + Meta Left, Title Right */}
-        <div className="grid lg:grid-cols-[400px,1fr] gap-8 mb-8">
-          {/* LEFT COLUMN: Cover Image & Meta */}
-          <div className="space-y-4">
-            {/* Cover Image - Smaller, clearly visible */}
-            {post.cover ? (
-              <div className="relative">
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
-                  <Image
-                    src={post.cover}
-                    alt={post.title}
-                    fill
-                    className="object-cover"
-                    priority
-                  />
+      {/* Main Article */}
+      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+        {/* Article Card */}
+        <article className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+          {/* Hero Image */}
+          {post.cover && (
+            <div className="relative">
+              <div className="aspect-[21/9] md:aspect-[3/1] relative">
+                <Image
+                  src={post.cover}
+                  alt={post.title}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              {/* Caption Overlay */}
+              {(post.coverCaption || post.coverPhotographer) && (
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent px-6 py-4">
+                  <p className="text-white/90 text-sm flex items-center gap-2">
+                    <FaCamera className="w-4 h-4" />
+                    {post.coverCaption}
+                    {post.coverCaption && post.coverPhotographer && ' • '}
+                    {post.coverPhotographer && <span className="text-white/70">Photo: {post.coverPhotographer}</span>}
+                  </p>
                 </div>
-                {/* Caption below image */}
-                {(post.coverCaption || post.coverPhotographer) && (
-                  <div className="mt-3 text-sm text-slate-500 flex items-start gap-2 bg-slate-100 rounded-lg p-3">
-                    <FaCamera className="w-4 h-4 mt-0.5 flex-shrink-0 text-slate-400" />
-                    <span>
-                      {post.coverCaption}
-                      {post.coverCaption && post.coverPhotographer && ' | '}
-                      {post.coverPhotographer && (
-                        <span className="text-slate-400">Photo: {post.coverPhotographer}</span>
-                      )}
-                    </span>
-                  </div>
-                )}
-              </div>
-            ) : (
-              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-[#1E3A8A] to-[#D4A017] flex items-center justify-center">
-                <span className="text-white text-6xl font-bold">{(post.title || 'A').charAt(0)}</span>
-              </div>
+              )}
+            </div>
+          )}
+
+          {/* Article Content */}
+          <div className="p-6 md:p-10 lg:p-12">
+            {/* Meta Header */}
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <span className="px-3 py-1 rounded-full bg-[#DC2626] text-white text-sm font-semibold">
+                {post.category}
+              </span>
+              {post.featured && (
+                <span className="px-3 py-1 rounded-full bg-[#1E3A8A] text-white text-sm font-medium">
+                  Featured
+                </span>
+              )}
+              {post.isPressRelease && (
+                <span className="px-3 py-1 rounded-full bg-amber-500 text-white text-sm font-medium">
+                  Press Release
+                </span>
+              )}
+              <span className="text-slate-500 text-sm ml-auto">
+                {post.publishedAt?.toLocaleDateString('en-KE', {
+                  weekday: 'long',
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric',
+                })}
+              </span>
+            </div>
+
+            {/* Title */}
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+              {post.title}
+            </h1>
+
+            {/* Subtitle */}
+            {post.subtitle && (
+              <h2 className="text-xl md:text-2xl text-slate-600 font-light mb-8">
+                {post.subtitle}
+              </h2>
             )}
 
-            {/* Article Meta Card */}
-            <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5 space-y-4">
-              {/* Category */}
-              <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 rounded-full bg-[#DC2626] text-white text-sm font-semibold">
-                  {post.category}
-                </span>
-                {post.featured && (
-                  <span className="px-3 py-1 rounded-full bg-[#1E3A8A] text-white text-sm font-medium">
-                    Featured
-                  </span>
-                )}
-                {post.isPressRelease && (
-                  <span className="px-3 py-1 rounded-full bg-amber-500 text-white text-sm font-medium">
-                    Press Release
-                  </span>
-                )}
-              </div>
+            {/* Excerpt */}
+            {post.excerpt && (
+              <p className="text-lg text-slate-600 font-light italic border-l-4 border-[#1E3A8A] pl-6 py-3 mb-10 bg-slate-50 rounded-r-lg">
+                {post.excerpt}
+              </p>
+            )}
 
-              {/* Author */}
-              <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
+            {/* Author Bar */}
+            <div className="flex flex-wrap items-center gap-6 py-6 border-y border-slate-100 mb-10">
+              <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#1E3A8A] to-[#D4A017] flex items-center justify-center text-white font-bold text-lg">
                   {(post.author || 'A').charAt(0)}
                 </div>
@@ -285,110 +297,66 @@ export default async function NewsArticlePage({ params }: Props) {
                   )}
                 </div>
               </div>
-
-              {/* Date & Location */}
-              <div className="space-y-2 text-sm text-slate-500 pt-4 border-t border-slate-100">
-                <div className="flex items-center gap-2">
-                  <FaCalendar className="w-4 h-4 text-slate-400" />
-                  {post.publishedAt?.toLocaleDateString('en-KE', {
-                    weekday: 'long',
-                    day: 'numeric',
-                    month: 'long',
-                    year: 'numeric',
-                  })}
-                </div>
+              
+              <div className="flex items-center gap-6 ml-auto text-sm text-slate-500">
                 {(post.location || post.county) && (
                   <div className="flex items-center gap-2">
-                    <FaMapMarkerAlt className="w-4 h-4 text-slate-400" />
+                    <FaMapMarkerAlt className="w-4 h-4" />
                     {[post.location, post.county].filter(Boolean).join(', ')}
                   </div>
                 )}
-              </div>
-
-              {/* Stats */}
-              <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-100">
-                <div className="text-center">
-                  <p className="text-lg font-bold text-slate-900">{post.readingTime || 3}</p>
-                  <p className="text-xs text-slate-500">Min Read</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-lg font-bold text-slate-900">{(post.wordCount || 0).toLocaleString()}</p>
-                  <p className="text-xs text-slate-500">Words</p>
+                <div className="flex items-center gap-2">
+                  <span className="font-medium text-slate-900">{post.readingTime || 3}</span> min read
                 </div>
               </div>
-            </div>
-
-            {/* Share Buttons */}
-            <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5">
-              <h4 className="font-semibold text-slate-900 mb-4 text-sm">Share Article</h4>
-              <ShareButtons title={post.title} url={articleUrl} />
-            </div>
-          </div>
-
-          {/* RIGHT COLUMN: Title & Content */}
-          <div>
-            {/* Title Section */}
-            <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 mb-6">
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 leading-tight">
-                {post.title}
-              </h1>
-
-              {post.subtitle && (
-                <h2 className="text-lg md:text-xl text-slate-600 font-light mb-4">
-                  {post.subtitle}
-                </h2>
-              )}
-
-              {/* Excerpt */}
-              {post.excerpt && (
-                <p className="text-lg text-slate-600 font-light italic border-l-4 border-[#1E3A8A] pl-4 leading-relaxed">
-                  {post.excerpt}
-                </p>
-              )}
             </div>
 
             {/* Article Body */}
-            <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
-              <div 
-                className="prose prose-lg max-w-none prose-headings:text-slate-900 prose-p:text-slate-700 prose-a:text-[#1E3A8A] hover:prose-a:text-[#0F172A] prose-blockquote:border-l-[#1E3A8A] prose-blockquote:bg-slate-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg prose-img:rounded-lg prose-figure:my-8 prose-strong:text-slate-900"
-                dangerouslySetInnerHTML={{ __html: post.content }}
-              />
-
-              {/* Tags */}
-              {post.tags && post.tags.length > 0 && (
-                <div className="mt-8 pt-8 border-t border-slate-200">
-                  <h4 className="text-sm font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                    <FaTag className="w-4 h-4" />
-                    Topics
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {post.tags.map((tag, i) => (
-                      <Link
-                        key={i}
-                        href={`/news-hub?tag=${encodeURIComponent(tag)}`}
-                        className="px-4 py-2 bg-slate-100 text-slate-700 text-sm rounded-full hover:bg-[#1E3A8A] hover:text-white transition-colors"
-                      >
-                        {tag}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Articles Carousel */}
-            <ArticlesCarousel 
-              currentId={post.id} 
-              category={post.category}
+            <div 
+              className="prose prose-lg max-w-none prose-headings:text-slate-900 prose-p:text-slate-700 prose-a:text-[#1E3A8A] hover:prose-a:text-[#0F172A] prose-blockquote:border-l-[#1E3A8A] prose-blockquote:bg-slate-50 prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:italic prose-img:rounded-xl prose-figure:my-8 prose-strong:text-slate-900 prose-li:text-slate-700"
+              dangerouslySetInnerHTML={{ __html: post.content }}
             />
 
-            {/* Comments Section */}
-            <div className="mt-12 bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
-              <CommentSection postId={post.id.toString()} />
+            {/* Tags */}
+            {post.tags && post.tags.length > 0 && (
+              <div className="mt-12 pt-8 border-t border-slate-200">
+                <h4 className="text-sm font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                  <FaTag className="w-4 h-4" />
+                  Related Topics
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {post.tags.map((tag, i) => (
+                    <Link
+                      key={i}
+                      href={`/news-hub?tag=${encodeURIComponent(tag)}`}
+                      className="px-4 py-2 bg-slate-100 text-slate-700 text-sm rounded-full hover:bg-[#1E3A8A] hover:text-white transition-colors"
+                    >
+                      {tag}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Share Section */}
+            <div className="mt-10 pt-8 border-t border-slate-200">
+              <h4 className="text-sm font-semibold text-slate-900 mb-4">Share this article</h4>
+              <ShareButtons title={post.title} url={articleUrl} />
             </div>
           </div>
+        </article>
+
+        {/* More Articles */}
+        <ArticlesCarousel 
+          currentId={post.id} 
+          category={post.category}
+        />
+
+        {/* Comments Section */}
+        <div className="mt-12">
+          <CommentSection postId={post.id.toString()} />
         </div>
-      </article>
+      </main>
     </div>
   );
 }
