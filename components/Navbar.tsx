@@ -28,7 +28,7 @@ import {
   FaFlag,
   FaEye,
 } from 'react-icons/fa';
-import ElectionCountdown from './ElectionCountdown';
+import NewsTicker from './NewsTicker';
 
 // ==========================================
 // National Vision Party - PREMIUM NAVIGATION
@@ -170,7 +170,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="fixed top-0 left-0 right-0 z-50"
       >
-        {/* Top Bar - Deep Navy with Gold Accent */}
+        {/* Top Bar - Deep Navy with Gold Accent & News Ticker */}
         <motion.div
           initial={false}
           animate={{ 
@@ -181,36 +181,31 @@ export default function Navbar() {
           className="overflow-hidden bg-[#0F172A] border-b border-[#D4A017]/30"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between py-2 gap-2 sm:gap-4">
-              {/* Left - Countdown Timer */}
-              <div className="flex-shrink-0">
-                <ElectionCountdown variant="navbar" />
+            <div className="flex items-center justify-between py-2.5 gap-4">
+              {/* Left - Social Icons */}
+              <div className="flex-shrink-0 flex items-center gap-1">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    className="w-8 h-8 rounded-full bg-[#D4A017]/10 hover:bg-[#D4A017]/30 flex items-center justify-center text-[#D4A017] hover:text-white transition-all duration-200"
+                  >
+                    <social.icon className="w-4 h-4" />
+                  </a>
+                ))}
               </div>
               
-              {/* Center - Slogan (Visible on all screens) */}
-              <p className="flex-1 text-center text-white text-xs sm:text-sm font-medium tracking-wide truncate">
-                <span className="font-slogan text-[#D4A017]">KENYA&apos;S HOPE</span>
-                <span className="hidden sm:inline ml-2 text-white/70">— Committed to the Service of Kenyans</span>
-              </p>
+              {/* Center - News Ticker */}
+              <div className="flex-1 flex justify-center">
+                <NewsTicker />
+              </div>
               
-              {/* Right - Social Icons & Date */}
-              <div className="flex-shrink-0 flex items-center gap-4">
-                {/* Social Icons */}
-                <div className="hidden sm:flex items-center gap-1">
-                  {socialLinks.map((social) => (
-                    <a
-                      key={social.label}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={social.label}
-                      className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#D4A017]/20 flex items-center justify-center text-white/80 hover:text-[#D4A017] transition-all duration-200"
-                    >
-                      <social.icon className="w-4 h-4" />
-                    </a>
-                  ))}
-                </div>
-                <span className="text-xs text-white/50 hidden md:block">
+              {/* Right - Date */}
+              <div className="flex-shrink-0 hidden sm:block">
+                <span className="text-xs text-[#D4A017]/70">
                   August 9, 2027
                 </span>
               </div>

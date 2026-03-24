@@ -462,13 +462,13 @@ export default function HomePage() {
         </div>
         
         {/* Bottom spacing for gradient transition */}
-        <div className="relative z-10 h-8 sm:h-12 lg:h-16" />
+        <div className="relative z-10 h-4 sm:h-6 lg:h-8" />
       </section>
 
       {/* ==========================================
           VISION SECTION - Policy Pillars
           ========================================== */}
-      <section id="vision" className="pt-8 pb-16 md:pt-12 md:pb-24 lg:pt-16 lg:pb-32 px-4 sm:px-6 lg:px-8 bg-white relative">
+      <section id="vision" className="py-10 md:py-14 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white relative">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <ScrollReveal>
@@ -615,7 +615,7 @@ export default function HomePage() {
       {/* ==========================================
           ABOUT TEASER SECTION
           ========================================== */}
-      <section className="py-16 md:py-24 lg:py-32 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">
+      <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#1E3A8A]/5 to-transparent pointer-events-none" />
         
@@ -704,7 +704,7 @@ export default function HomePage() {
       {/* ==========================================
           LATEST NEWS SECTION - REAL POSTS
           ========================================== */}
-      <section className="py-16 md:py-24 lg:py-32 bg-white">
+      <section className="py-12 md:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <ScrollReveal>
@@ -805,7 +805,7 @@ export default function HomePage() {
       {/* ==========================================
           MEDIA SHOWCASE SECTION - White to Blue Gradient
           ========================================== */}
-      <section className="py-16 md:py-24 lg:py-32 bg-gradient-to-b from-white via-white via-30% to-[#1E3A8A] relative overflow-hidden">
+      <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-white via-white via-30% to-[#1E3A8A] relative overflow-hidden">
         {/* Background decoration - subtle blue accents on white */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#1E3A8A]/5 rounded-full blur-3xl" />
