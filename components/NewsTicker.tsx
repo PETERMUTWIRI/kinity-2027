@@ -62,10 +62,12 @@ export default function NewsTicker() {
 
   if (posts.length === 0) {
     return (
-      <Link href="/news-hub" className="flex items-center gap-3 text-[#D4A017] hover:text-white transition-colors">
-        <FaNewspaper className="w-4 h-4" />
-        <span className="text-sm font-medium">Visit News Hub</span>
-      </Link>
+      <div className="flex items-center gap-3">
+        <FaNewspaper className="w-4 h-4 text-[#D4A017]" />
+        <Link href="/news-hub" className="text-sm text-white hover:text-[#D4A017] transition-colors">
+          Visit News Hub
+        </Link>
+      </div>
     );
   }
 
@@ -85,7 +87,7 @@ export default function NewsTicker() {
           >
             <Link 
               href={`/news-hub/${posts[currentIndex].slug}`}
-              className="text-sm text-[#D4A017] hover:text-white transition-colors truncate max-w-[180px] sm:max-w-[280px] md:max-w-[380px]"
+              className="text-sm text-white hover:text-[#D4A017] transition-colors truncate max-w-[180px] sm:max-w-[280px] md:max-w-[380px]"
               title={posts[currentIndex].title}
             >
               {posts[currentIndex].title}

@@ -199,12 +199,22 @@ export default function Navbar() {
               </div>
               
               {/* Center - News Ticker */}
-              <div className="flex-1 flex justify-center">
+              <div className="flex-1 flex justify-center items-center gap-4">
                 <NewsTicker />
+                
+                {/* Pulsating NVT NEW Button */}
+                <Link 
+                  href="/news-hub"
+                  className="hidden md:flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4A017] text-white text-xs font-bold relative overflow-hidden group hover:bg-[#E6C200] transition-colors"
+                >
+                  {/* Pulsating effect */}
+                  <span className="absolute inset-0 rounded-full bg-white/30 animate-ping" />
+                  <span className="relative">NVT NEW</span>
+                </Link>
               </div>
               
               {/* Right - Date */}
-              <div className="flex-shrink-0 hidden sm:block">
+              <div className="flex-shrink-0 hidden lg:block">
                 <span className="text-xs text-[#D4A017]/70">
                   August 9, 2027
                 </span>

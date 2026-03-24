@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaCalendar, FaArrowRight, FaNewspaper } from 'react-icons/fa';
+import GalleryCarousel from '@/components/GalleryCarousel';
 
 export const dynamic = 'force-dynamic';
 
@@ -132,6 +133,9 @@ export default async function NewsHubPage({
           </div>
         )}
       </div>
+
+      {/* Gallery Carousel - From the Campaign Trail */}
+      <GalleryCarousel />
     </div>
   );
 }
