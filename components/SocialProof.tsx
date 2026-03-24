@@ -29,13 +29,6 @@ const endorsements = [
   },
 ];
 
-const stats = [
-  { value: "50K+", label: "Registered Volunteers", suffix: "" },
-  { value: "47", label: "Counties Covered", suffix: "" },
-  { value: "200+", label: "Community Events", suffix: "" },
-  { value: "5M+", label: "Social Reach", suffix: "" },
-];
-
 export default function SocialProof() {
   return (
     <section className="py-20 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
@@ -47,36 +40,15 @@ export default function SocialProof() {
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm mb-4">
-              Growing Movement
-            </span>
             <h2 className="font-headline text-4xl md:text-5xl text-[#0F172A] mb-4">
-              Trusted by <span className="text-[#D4A017]">Thousands</span>
+              Voices of <span className="text-[#D4A017]">Support</span>
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] mx-auto rounded-full mb-4" />
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              From grassroots volunteers to industry leaders, Kenyans from all walks of life are joining the movement.
+              Leaders and organizations across Kenya share their perspectives on Dr. Kinity&apos;s vision for our nation.
             </p>
           </div>
         </ScrollReveal>
-
-        {/* Animated Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
-          {stats.map((stat, index) => (
-            <ScrollReveal key={stat.label} delay={index * 0.1}>
-              <motion.div
-                className="text-center p-6 bg-white rounded-2xl shadow-lg border-t-4 border-[#D4A017]"
-                whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="text-4xl md:text-5xl font-bold text-[#1E3A8A] mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-slate-600 font-medium">{stat.label}</div>
-              </motion.div>
-            </ScrollReveal>
-          ))}
-        </div>
 
         {/* Endorsements */}
         <div className="grid md:grid-cols-3 gap-8">

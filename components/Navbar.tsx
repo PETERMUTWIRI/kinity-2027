@@ -212,13 +212,6 @@ export default function Navbar() {
                   <span className="relative">NVT NEW</span>
                 </Link>
               </div>
-              
-              {/* Right - Date */}
-              <div className="flex-shrink-0 hidden lg:block">
-                <span className="text-xs text-[#D4A017]/70">
-                  August 9, 2027
-                </span>
-              </div>
             </div>
           </div>
         </motion.div>
