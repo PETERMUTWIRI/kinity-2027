@@ -120,9 +120,12 @@ export async function GET(req: NextRequest) {
     const where: any = { deletedAt: null };
     if (category && category !== 'All') where.category = category;
 
+    const limit = searchParams.get('limit');
+
     const events = await prisma.event.findMany({
       where,
       orderBy: { startDate: category === 'Past' ? 'desc' : 'asc' },
+      take: limit ? Number(limit) : undefined,
       include: {
         registrations: {
           where: {
@@ -192,8 +195,8 @@ export async function POST(req: NextRequest) {
         category: body.category,
         cover: body.cover || null,
         location: body.location,
-        startDate: new Date(body.startDate),
-        endDate: body.endDate ? new Date(body.endDate) : null,
+        startDate: new Date(normalizeDateTime(body.startDate)),
+        endDate: body.endDate ? new Date(normalizeDateTime(body.endDate)) : null,
         author: body.author || null,
         metaTitle: body.metaTitle || null,
         metaDesc: body.metaDesc || null,
@@ -262,8 +265,8 @@ export async function PUT(req: NextRequest) {
     if (body.category !== undefined) data.category = body.category;
     if (body.cover !== undefined) data.cover = body.cover;
     if (body.location !== undefined) data.location = body.location;
-    if (body.startDate !== undefined) data.startDate = new Date(body.startDate);
-    if (body.endDate !== undefined) data.endDate = body.endDate ? new Date(body.endDate) : null;
+    if (body.startDate !== undefined) data.startDate = new Date(normalizeDateTime(body.startDate));
+    if (body.endDate !== undefined) data.endDate = body.endDate ? new Date(normalizeDateTime(body.endDate)) : null;
     if (body.author !== undefined) data.author = body.author;
     if (body.metaTitle !== undefined) data.metaTitle = body.metaTitle;
     if (body.metaDesc !== undefined) data.metaDesc = body.metaDesc;
@@ -337,3 +340,15 @@ const slugify = (str: string) =>
     .replace(/[^\w\s-]/g, '')
     .replace(/[\s_-]+/g, '-')
     .replace(/^-+|-+$/g, '');
+
+// Normalize datetime-local strings (e.g., "2026-03-27T8:00" -> "2026-03-27T08:00:00")
+const normalizeDateTime = (dt: string): string => {
+  if (!dt) return dt;
+  // Handle formats like "2026-03-27T8:00" or "2026-03-27T08:00"
+  const match = dt.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{1,2}):(\d{2})$/);
+  if (match) {
+    const [, year, month, day, hour, minute] = match;
+    return `${year}-${month}-${day}T${hour.padStart(2, '0')}:${minute}:00`;
+  }
+  return dt;
+};

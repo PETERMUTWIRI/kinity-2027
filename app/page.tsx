@@ -17,6 +17,8 @@ import {
   FaVideo,
   FaCamera,
   FaExternalLinkAlt,
+  FaBullhorn,
+  FaMapMarkerAlt,
 } from 'react-icons/fa';
 import ScrollReveal from '@/components/ScrollReveal';
 import TiltCard from '@/components/TiltCard';
@@ -56,6 +58,20 @@ interface Video {
   youtubeId: string;
   category: string;
   thumbnail: string | null;
+}
+
+interface Event {
+  id: number;
+  title: string;
+  slug: string;
+  description: string | null;
+  category: string;
+  cover: string | null;
+  location: string;
+  county: string | null;
+  venue: string | null;
+  startDate: string;
+  endDate: string | null;
 }
 
 // Hardcoded manifesto pillars for reliability
@@ -107,12 +123,28 @@ export default function HomePage() {
   const [latestPosts, setLatestPosts] = useState<Post[]>([]);
   const [latestImages, setLatestImages] = useState<GalleryImage[]>([]);
   const [latestVideos, setLatestVideos] = useState<Video[]>([]);
+  const [latestEvents, setLatestEvents] = useState<Event[]>([]);
   const [loading, setLoading] = useState(true);
   const [mediaLoading, setMediaLoading] = useState(true);
   const [loadingMoreImages, setLoadingMoreImages] = useState(false);
   const [imagesPage, setImagesPage] = useState(1);
   const [hasMoreImages, setHasMoreImages] = useState(true);
   const [totalImages, setTotalImages] = useState(0);
+
+  // Fetch latest events
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const res = await fetch('/api/events?limit=3');
+        const data = await res.json();
+        const events = Array.isArray(data) ? data : [];
+        setLatestEvents(events.slice(0, 3));
+      } catch (err) {
+        console.error('Error fetching events:', err);
+      }
+    };
+    fetchEvents();
+  }, []);
 
   // Fetch latest posts
   useEffect(() => {
@@ -796,6 +828,107 @@ export default function HomePage() {
                 <FaNewspaper className="w-16 h-16 text-slate-300 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-slate-700 mb-2">No articles yet</h3>
                 <p className="text-slate-500">Check back soon for the latest updates from the campaign.</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* ==========================================
+          UPCOMING EVENTS SECTION
+          ========================================== */}
+      <section className="py-12 md:py-16 lg:py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <ScrollReveal>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+              <div>
+                <span className="inline-block px-4 py-1 rounded-full bg-[#DC2626]/10 text-[#DC2626] border border-[#DC2626]/20 font-semibold text-sm mb-4">
+                  Campaign Trail
+                </span>
+                <h2 className="font-headline text-4xl md:text-5xl text-[#0F172A]">
+                  Upcoming <span className="text-[#DC2626]">Events</span>
+                </h2>
+              </div>
+              <Link
+                href="/events"
+                className="inline-flex items-center gap-2 text-[#1E3A8A] font-semibold hover:text-[#0F172A] transition-colors"
+              >
+                View All Events
+                <FaArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </ScrollReveal>
+
+          {/* Events Grid - Shows 3 Latest Events */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {latestEvents.length > 0 ? (
+              // Real events from API
+              latestEvents.map((event, index) => (
+                <ScrollReveal key={event.id} delay={index * 0.1}>
+                  <Link href={`/events/${event.slug}`} className="group">
+                    <article className="card-premium overflow-hidden h-full bg-white">
+                      {/* Image */}
+                      <div className="relative aspect-video overflow-hidden">
+                        {event.cover ? (
+                          <Image
+                            src={event.cover}
+                            alt={event.title}
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-110"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-gradient-to-br from-[#1E3A8A] to-[#0F172A] flex items-center justify-center">
+                            <FaBullhorn className="w-12 h-12 text-white/50" />
+                          </div>
+                        )}
+                        <div className="absolute top-4 left-4">
+                          <span className="px-3 py-1 rounded-full bg-[#DC2626] text-white text-xs font-bold">
+                            {event.category}
+                          </span>
+                        </div>
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="p-6">
+                        <div className="flex items-center gap-4 text-slate-500 text-sm mb-3">
+                          <span className="flex items-center gap-1">
+                            <FaCalendarAlt className="w-4 h-4 text-[#1E3A8A]" />
+                            {new Date(event.startDate).toLocaleDateString('en-KE', {
+                              day: 'numeric',
+                              month: 'short',
+                              year: 'numeric'
+                            })}
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <FaMapMarkerAlt className="w-4 h-4 text-[#DC2626]" />
+                            {event.county || event.location}
+                          </span>
+                        </div>
+                        <h3 className="font-headline text-xl text-[#0F172A] mb-2 group-hover:text-[#1E3A8A] transition-colors line-clamp-2">
+                          {event.title}
+                        </h3>
+                        {event.venue && (
+                          <p className="text-slate-600 text-sm line-clamp-1 mb-3">{event.venue}</p>
+                        )}
+                        <p className="text-slate-600 text-sm line-clamp-2">
+                          {event.description?.slice(0, 120)}...
+                        </p>
+                        <div className="mt-4 flex items-center gap-2 text-[#1E3A8A] font-semibold text-sm">
+                          View Details
+                          <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </div>
+                      </div>
+                    </article>
+                  </Link>
+                </ScrollReveal>
+              ))
+            ) : (
+              // Fallback if no events
+              <div className="col-span-3 text-center py-12">
+                <FaCalendarAlt className="w-16 h-16 text-slate-300 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-slate-700 mb-2">No upcoming events</h3>
+                <p className="text-slate-500">Check back soon for new campaign events!</p>
               </div>
             )}
           </div>
