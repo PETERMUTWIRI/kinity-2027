@@ -4,6 +4,7 @@ import './globals.css';
 import ConditionalLayout from '../components/ConditionalLayout';
 import PageTransition from '@/components/PageTransition';
 import BackToTop from '@/components/BackToTop';
+import ScrollToTop from '@/components/ScrollToTop';
 
 // ==========================================
 // NATIONAL VISION PARTY - PRESIDENTIAL CAMPAIGN
@@ -260,6 +261,9 @@ export default function RootLayout({
       >
         {/* Clean white background */}
         <div className="fixed inset-0 bg-white pointer-events-none z-0" />
+        
+        {/* Scroll to top on route change */}
+        <ScrollToTop />
         
         {/* Conditional Layout - hides navbar/footer on admin routes */}
         <ConditionalLayout>

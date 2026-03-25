@@ -69,7 +69,15 @@ export default function YouthPage() {
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Hero Section - Honoring the Fallen */}
-      <section className="relative bg-[#0F172A] py-24 lg:py-32 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#0F172A] via-[#1E3A8A] to-[#0F172A] py-24 lg:py-32 overflow-hidden">
+        {/* Subtle pattern overlay */}
+        <div 
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)`,
+            backgroundSize: '40px 40px',
+          }}
+        />
         {/* Candle light effect */}
         <div className="absolute inset-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#D4A017]/10 rounded-full blur-3xl" />
@@ -127,7 +135,7 @@ export default function YouthPage() {
               href={`https://wa.me/?text=${shareMessage}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#DC2626] text-white font-bold hover:bg-[#B91C1C] transition-all duration-300 shadow-lg"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold hover:bg-white/20 transition-all duration-300"
             >
               <FaShareAlt className="w-5 h-5" />
               Share the Pledge
@@ -289,17 +297,28 @@ export default function YouthPage() {
       </section>
 
       {/* Join the Movement */}
-      <section className="py-16 bg-[#DC2626]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FaUsers className="w-16 h-16 text-white/30 mx-auto mb-6" />
+      <section className="py-16 lg:py-24 bg-[#0F172A] relative overflow-hidden">
+        {/* Background pattern */}
+        <div 
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)`,
+            backgroundSize: '40px 40px',
+          }}
+        />
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#D4A017]/20 mb-6">
+            <FaUsers className="w-10 h-10 text-[#D4A017]" />
+          </div>
           
-          <h2 className="font-headline text-3xl md:text-4xl text-white mb-4">
-            The Power is in Your Hands
+          <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl text-white mb-4">
+            The Power is in <span className="text-[#D4A017]">Your Hands</span>
           </h2>
           
-          <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
             You are not &ldquo;the future.&rdquo; You are the NOW. And in 2027, you will outnumber every other voting bloc. 
-            <span className="font-bold text-white">Use that power.</span>
+            <span className="font-bold text-[#D4A017]">Use that power.</span>
           </p>
           
           <div className="grid sm:grid-cols-2 gap-4 max-w-lg mx-auto">
@@ -307,7 +326,7 @@ export default function YouthPage() {
               href={`https://wa.me/254713064026?text=I%20am%20GenZ%20and%20I%20want%20to%20join%20the%20movement`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-[#DC2626] font-bold text-lg hover:bg-slate-100 transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#128C7E] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
               <FaWhatsapp className="w-5 h-5" />
               Join on WhatsApp
@@ -317,16 +336,18 @@ export default function YouthPage() {
               href={`https://wa.me/?text=${shareMessage}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#0F172A] text-white font-bold hover:bg-[#1E3A8A] transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold hover:bg-white/20 transition-all duration-300"
             >
               <FaShareAlt className="w-5 h-5" />
               Share with Squad
             </a>
           </div>
           
-          <p className="text-white/60 text-sm mt-8">
-            WhatsApp: <span className="text-white font-semibold">0713 064 026</span>
-          </p>
+          <div className="mt-8 pt-8 border-t border-white/10">
+            <p className="text-white/50 text-sm">
+              WhatsApp: <span className="text-[#D4A017] font-semibold">0713 064 026</span>
+            </p>
+          </div>
         </div>
       </section>
 
