@@ -69,7 +69,7 @@ export default function HeroDualCarousel() {
   const currentSlide = slides[currentIndex];
 
   return (
-    <div className="relative w-full min-h-[70vh] lg:min-h-[80vh] overflow-hidden">
+    <div className="relative w-full min-h-screen overflow-hidden">
       {/* Background Image with Gradient Overlay */}
       <div className="absolute inset-0">
         <Image
@@ -86,8 +86,8 @@ export default function HeroDualCarousel() {
       </div>
 
       {/* Carousel Content */}
-      <div className="relative z-10 flex items-center justify-center min-h-[70vh] lg:min-h-[80vh] px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto w-full">
+      <div className="relative z-10 flex items-center w-full min-h-screen px-4 sm:px-6 lg:px-8 py-0">
+        <div className="max-w-7xl mx-auto w-full h-full flex items-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
@@ -95,10 +95,10 @@ export default function HeroDualCarousel() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.6, ease: "easeInOut" }}
-              className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center"
+              className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full"
             >
               {/* Left Side - Text Content */}
-              <div className="text-center lg:text-left space-y-6">
+              <div className="text-center lg:text-left space-y-4 sm:space-y-6">
                 {/* Title */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -106,10 +106,10 @@ export default function HeroDualCarousel() {
                   transition={{ delay: 0.2 }}
                   className="space-y-2"
                 >
-                  <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
                     {currentSlide.title}
                   </h1>
-                  <p className="text-lg sm:text-xl lg:text-2xl text-[#D4A017] font-semibold">
+                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#D4A017] font-semibold">
                     {currentSlide.subtitle}
                   </p>
                 </motion.div>
@@ -122,12 +122,12 @@ export default function HeroDualCarousel() {
                   className="max-w-xl mx-auto lg:mx-0"
                 >
                   {currentSlide.type === 'party-centric' ? (
-                    <p className="text-base sm:text-lg text-white/90 leading-relaxed">
+                    <p className="text-sm sm:text-base md:text-lg text-white/90 leading-relaxed">
                       {currentSlide.message}
                     </p>
                   ) : (
-                    <blockquote className="text-base sm:text-lg text-white/95 border-l-4 border-[#D4A017] pl-4 py-4 bg-white/10 backdrop-blur-sm rounded-r-lg">
-                      "{currentSlide.quote}"
+                    <blockquote className="text-sm sm:text-base md:text-lg text-white/95 border-l-4 border-[#D4A017] pl-4 py-4 bg-white/10 backdrop-blur-sm rounded-r-lg">
+                      {currentSlide.quote}
                     </blockquote>
                   )}
                 </motion.div>
@@ -137,28 +137,28 @@ export default function HeroDualCarousel() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
-                  className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+                  className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start pt-2"
                 >
                   <Link
                     href={currentSlide.cta.primary.href}
-                    className="group inline-flex items-center justify-center gap-3 px-6 py-3 bg-[#DC2626] text-white font-semibold rounded-lg hover:bg-[#B91C1C] transition-all duration-300 hover:-translate-y-1 shadow-lg"
+                    className="group inline-flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 bg-[#DC2626] text-white font-semibold text-sm sm:text-base rounded-lg hover:bg-[#B91C1C] transition-all duration-300 hover:-translate-y-1 shadow-lg"
                   >
-                    <currentSlide.cta.primary.icon className="w-5 h-5" />
+                    <currentSlide.cta.primary.icon className="w-4 h-4 sm:w-5 sm:h-5" />
                     {currentSlide.cta.primary.text}
-                    <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <FaArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <Link
                     href={currentSlide.cta.secondary.href}
-                    className="group inline-flex items-center justify-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-300 hover:-translate-y-1"
+                    className="group inline-flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold text-sm sm:text-base rounded-lg hover:bg-white/20 transition-all duration-300 hover:-translate-y-1"
                   >
-                    <currentSlide.cta.secondary.icon className="w-5 h-5" />
+                    <currentSlide.cta.secondary.icon className="w-4 h-4 sm:w-5 sm:h-5" />
                     {currentSlide.cta.secondary.text}
                   </Link>
                 </motion.div>
               </div>
 
               {/* Right Side - Visual Content */}
-              <div className="flex justify-center lg:justify-end">
+              <div className="flex justify-center lg:justify-end h-full items-center">
                 {currentSlide.type === 'candidate-centric' && currentSlide.headshot ? (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -167,7 +167,7 @@ export default function HeroDualCarousel() {
                     className="relative"
                   >
                     {/* Headshot with blended gradient */}
-                    <div className="relative w-64 h-80 sm:w-72 sm:h-96 lg:w-80 lg:h-[28rem] rounded-2xl overflow-hidden shadow-2xl">
+                    <div className="relative w-56 h-96 sm:w-64 sm:h-[500px] lg:w-72 lg:h-[450px] rounded-2xl overflow-hidden shadow-2xl">
                       <Image
                         src={currentSlide.headshot}
                         alt="Dr. Isaac Newton Kinity"
@@ -209,14 +209,16 @@ export default function HeroDualCarousel() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.3 }}
-                    className="relative w-64 h-80 sm:w-72 sm:h-96 lg:w-80 lg:h-[28rem] rounded-2xl bg-gradient-to-br from-[#1E3A8A]/20 to-[#D4A017]/20 backdrop-blur-sm border border-white/20 flex items-center justify-center"
+                    className="flex items-center justify-center"
                   >
-                    <div className="text-center space-y-4 p-6">
-                      <FaFlag className="w-16 h-16 text-[#D4A017] mx-auto" />
-                      <h3 className="text-xl font-bold text-white">Our Vision</h3>
-                      <p className="text-white/80 text-sm">
-                        A united Kenya moving forward together
-                      </p>
+                    <div className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72">
+                      <Image
+                        src="/images/logo.png"
+                        alt="National Vision Party Logo"
+                        fill
+                        className="object-contain drop-shadow-2xl"
+                        priority
+                      />
                     </div>
                   </motion.div>
                 )}
@@ -229,26 +231,26 @@ export default function HeroDualCarousel() {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white hover:bg-white/20 transition-all duration-300 hover:scale-110"
+        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 p-2 sm:p-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white hover:bg-white/20 transition-all duration-300 hover:scale-110"
         aria-label="Previous slide"
       >
-        <FaChevronLeft className="w-5 h-5" />
+        <FaChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white hover:bg-white/20 transition-all duration-300 hover:scale-110"
+        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 p-2 sm:p-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white hover:bg-white/20 transition-all duration-300 hover:scale-110"
         aria-label="Next slide"
       >
-        <FaChevronRight className="w-5 h-5" />
+        <FaChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
       </button>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+      <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2 sm:gap-3">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
               index === currentIndex
                 ? 'bg-white shadow-lg scale-125'
                 : 'bg-white/50 hover:bg-white/70'
@@ -261,7 +263,7 @@ export default function HeroDualCarousel() {
       {/* Auto-play Toggle */}
       <button
         onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-        className="absolute top-6 right-6 z-20 px-3 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white text-sm hover:bg-white/20 transition-all duration-300"
+        className="absolute top-4 sm:top-6 right-4 sm:right-6 z-20 px-2 sm:px-3 py-1 sm:py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white text-xs sm:text-sm hover:bg-white/20 transition-all duration-300"
         aria-label={isAutoPlaying ? 'Pause auto-play' : 'Resume auto-play'}
       >
         {isAutoPlaying ? 'Pause' : 'Play'}
