@@ -86,19 +86,46 @@ export default function HeroDualCarousel() {
       </div>
 
       {/* Carousel Content */}
-      <div className="relative z-10 flex items-center w-full min-h-screen px-4 sm:px-6 lg:px-8 py-0">
-        <div className="max-w-7xl mx-auto w-full h-full flex items-center">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full"
-            >
-              {/* Left Side - Text Content */}
-              <div className="text-center lg:text-left space-y-4 sm:space-y-6">
+      <div className="relative z-10 w-full min-h-screen">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="absolute inset-0 flex items-center w-full h-full"
+          >
+            {/* Left Side - Presidential Portrait (for candidate slides, desktop only) */}
+            {currentSlide.type === 'candidate-centric' && currentSlide.headshot && (
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2 }}
+                className="hidden lg:block absolute left-0 top-0 h-full w-2/5"
+              >
+                {/* Seamless portrait - no borders, no container, no shadow */}
+                <div className="relative w-full h-full">
+                  <Image
+                    src={currentSlide.headshot}
+                    alt="Dr. Isaac Newton Kinity"
+                    fill
+                    className="object-cover object-top"
+                    priority
+                  />
+                  {/* Subtle gradient fade on right edge to blend into content */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#1E3A8A]/40" />
+                  {/* Top blend */}
+                  <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-[#1E3A8A]/50 to-transparent" />
+                  {/* Bottom blend */}
+                  <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#1E3A8A]/50 to-transparent" />
+                </div>
+              </motion.div>
+            )}
+
+            {/* Text Content - Right Side */}
+            <div className={`relative z-10 flex items-center w-full min-h-screen px-4 sm:px-6 lg:px-8 py-0 ${currentSlide.type === 'candidate-centric' ? 'lg:ml-auto lg:w-3/5' : ''}`}>
+              <div className="max-w-2xl w-full h-full flex flex-col justify-center space-y-4 sm:space-y-6">
                 {/* Title */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -119,7 +146,7 @@ export default function HeroDualCarousel() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="max-w-xl mx-auto lg:mx-0"
+                  className="max-w-xl"
                 >
                   {currentSlide.type === 'party-centric' ? (
                     <p className="text-sm sm:text-base md:text-lg text-white/90 leading-relaxed">
@@ -137,11 +164,11 @@ export default function HeroDualCarousel() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
-                  className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start pt-2"
+                  className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2"
                 >
                   <Link
                     href={currentSlide.cta.primary.href}
-                    className="group inline-flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 bg-[#DC2626] text-white font-semibold text-sm sm:text-base rounded-lg hover:bg-[#B91C1C] transition-all duration-300 hover:-translate-y-1 shadow-lg"
+                    className="group inline-flex items-center justify-start gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 bg-[#DC2626] text-white font-semibold text-sm sm:text-base rounded-lg hover:bg-[#B91C1C] transition-all duration-300 hover:-translate-y-1 shadow-lg"
                   >
                     <currentSlide.cta.primary.icon className="w-4 h-4 sm:w-5 sm:h-5" />
                     {currentSlide.cta.primary.text}
@@ -149,83 +176,36 @@ export default function HeroDualCarousel() {
                   </Link>
                   <Link
                     href={currentSlide.cta.secondary.href}
-                    className="group inline-flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold text-sm sm:text-base rounded-lg hover:bg-white/20 transition-all duration-300 hover:-translate-y-1"
+                    className="group inline-flex items-center justify-start gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold text-sm sm:text-base rounded-lg hover:bg-white/20 transition-all duration-300 hover:-translate-y-1"
                   >
                     <currentSlide.cta.secondary.icon className="w-4 h-4 sm:w-5 sm:h-5" />
                     {currentSlide.cta.secondary.text}
                   </Link>
                 </motion.div>
               </div>
+            </div>
 
-              {/* Right Side - Visual Content */}
-              <div className="flex justify-center lg:justify-end h-full items-center">
-                {currentSlide.type === 'candidate-centric' && currentSlide.headshot ? (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.3 }}
-                    className="relative"
-                  >
-                    {/* Headshot with blended gradient */}
-                    <div className="relative w-56 h-96 sm:w-64 sm:h-[500px] lg:w-72 lg:h-[450px] rounded-2xl overflow-hidden shadow-2xl">
-                      <Image
-                        src={currentSlide.headshot}
-                        alt="Dr. Isaac Newton Kinity"
-                        fill
-                        className="object-cover object-top"
-                        priority
-                      />
-                      {/* Blending gradient overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#1E3A8A]/60 via-transparent to-transparent" />
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#1E3A8A]/40 via-transparent to-transparent" />
-                    </div>
-
-                    {/* Floating badge */}
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.8 }}
-                      className="absolute -bottom-4 -right-4 bg-white rounded-xl shadow-xl px-4 py-2 border-l-4 border-[#D4A017]"
-                    >
-                      <div className="flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-full bg-[#1E3A8A] flex items-center justify-center">
-                          <Image
-                            src="/images/kenya-flag.png"
-                            alt="Kenya"
-                            width={12}
-                            height={8}
-                            className="object-cover rounded-sm"
-                          />
-                        </div>
-                        <div>
-                          <p className="text-xs text-slate-600">2027</p>
-                          <p className="text-sm font-bold text-[#1E3A8A]">Candidate</p>
-                        </div>
-                      </div>
-                    </motion.div>
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.3 }}
-                    className="flex items-center justify-center"
-                  >
-                    <div className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72">
-                      <Image
-                        src="/images/logo.png"
-                        alt="National Vision Party Logo"
-                        fill
-                        className="object-contain drop-shadow-2xl"
-                        priority
-                      />
-                    </div>
-                  </motion.div>
-                )}
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
+            {/* Party Logo - Left Side (for party slides) */}
+            {currentSlide.type === 'party-centric' && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3 }}
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-0 opacity-20 sm:opacity-30"
+              >
+                <div className="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-56 lg:h-56">
+                  <Image
+                    src="/images/logo.png"
+                    alt="National Vision Party Logo"
+                    fill
+                    className="object-contain drop-shadow-2xl"
+                    priority
+                  />
+                </div>
+              </motion.div>
+            )}
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       {/* Navigation Arrows */}
