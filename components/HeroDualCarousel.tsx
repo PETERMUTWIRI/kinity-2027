@@ -22,7 +22,7 @@ const slides = [
       primary: { text: 'Our Manifesto', href: '/about/manifesto', icon: FaFlag },
       secondary: { text: 'Our Vision', href: '/about/vision-2027', icon: FaArrowRight }
     },
-    background: '/WhatsApp Image 2026-03-18 at 5.03.43 PM.jpeg'
+    background: '/baner.jpeg'
   },
   {
     id: 'candidate',
@@ -96,13 +96,13 @@ export default function HeroDualCarousel() {
             transition={{ duration: 0.6, ease: "easeInOut" }}
             className="absolute inset-0 flex items-center w-full h-full"
           >
-            {/* Right Side - Presidential Portrait (for candidate slides, desktop only) */}
+            {/* Right Side - Presidential Portrait (all screen sizes) */}
             {currentSlide.type === 'candidate-centric' && currentSlide.headshot && (
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2 }}
-                className="hidden lg:block absolute right-0 top-0 h-full w-2/5"
+                className="absolute right-0 top-20 sm:top-24 lg:top-20 bottom-0 w-1/3 sm:w-2/5 md:w-2/5 lg:w-2/5"
               >
                 {/* Seamless portrait - no borders, no container, no shadow */}
                 <div className="relative w-full h-full">
@@ -124,7 +124,7 @@ export default function HeroDualCarousel() {
             )}
 
             {/* Text Content - Left Side (Candidate) or Centered (Party) */}
-            <div className={`relative z-10 flex items-center w-full min-h-screen px-4 sm:px-6 lg:px-8 py-0 ${currentSlide.type === 'candidate-centric' ? 'lg:w-3/5' : ''}`}>
+            <div className={`relative z-10 flex items-center w-full min-h-screen px-4 sm:px-6 lg:px-8 py-0 ${currentSlide.type === 'candidate-centric' ? 'sm:w-2/3 md:w-3/5 lg:w-3/5' : ''}`}>
               <div className={`w-full h-full flex flex-col justify-center space-y-4 sm:space-y-6 ${currentSlide.type === 'party-centric' ? 'max-w-3xl mx-auto text-center' : 'max-w-2xl'}`}>
                 {/* Title Section */}
                 <motion.div
@@ -144,10 +144,10 @@ export default function HeroDualCarousel() {
                     </>
                   ) : (
                     <>
-                      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
+                      <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
                         {currentSlide.title}
                       </h1>
-                      <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#D4A017] font-semibold">
+                      <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#D4A017] font-semibold">
                         {currentSlide.subtitle}
                       </p>
                     </>
@@ -162,11 +162,11 @@ export default function HeroDualCarousel() {
                   className={currentSlide.type === 'party-centric' ? 'max-w-2xl mx-auto' : 'max-w-xl'}
                 >
                   {currentSlide.type === 'party-centric' ? (
-                    <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed">
+                    <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 leading-relaxed">
                       {currentSlide.message}
                     </p>
                   ) : (
-                    <blockquote className="text-sm sm:text-base md:text-lg text-white/95 border-l-4 border-[#D4A017] pl-4 py-4 bg-white/10 backdrop-blur-sm rounded-r-lg">
+                    <blockquote className="text-xs sm:text-sm md:text-base lg:text-lg text-white/95 border-l-4 border-[#D4A017] pl-4 py-4 bg-white/10 backdrop-blur-sm rounded-r-lg">
                       {currentSlide.quote}
                     </blockquote>
                   )}
@@ -181,14 +181,14 @@ export default function HeroDualCarousel() {
                 >
                   <Link
                     href={currentSlide.cta.primary.href}
-                    className="group inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-2.5 sm:py-3 bg-[#DC2626] text-white font-semibold text-sm sm:text-base rounded-lg hover:bg-[#B91C1C] transition-all duration-300 hover:-translate-y-1 shadow-lg"
+                    className="group inline-flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-8 py-2 sm:py-3 bg-[#DC2626] text-white font-semibold text-xs sm:text-base rounded-lg hover:bg-[#B91C1C] transition-all duration-300 hover:-translate-y-1 shadow-lg"
                   >
-                    <currentSlide.cta.primary.icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <currentSlide.cta.primary.icon className="w-3 h-3 sm:w-5 sm:h-5" />
                     {currentSlide.cta.primary.text}
                   </Link>
                   <Link
                     href={currentSlide.cta.secondary.href}
-                    className="group inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-2.5 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold text-sm sm:text-base rounded-lg hover:bg-white/20 transition-all duration-300 hover:-translate-y-1"
+                    className="group inline-flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-8 py-2 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold text-xs sm:text-base rounded-lg hover:bg-white/20 transition-all duration-300 hover:-translate-y-1"
                   >
                     <currentSlide.cta.secondary.icon className="w-4 h-4 sm:w-5 sm:h-5" />
                     {currentSlide.cta.secondary.text}
@@ -197,25 +197,6 @@ export default function HeroDualCarousel() {
               </div>
             </div>
 
-            {/* Party Logo - Left Side (for party slides) */}
-            {currentSlide.type === 'party-centric' && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3 }}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-0 opacity-20 sm:opacity-30"
-              >
-                <div className="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-56 lg:h-56">
-                  <Image
-                    src="/images/logo.png"
-                    alt="National Vision Party Logo"
-                    fill
-                    className="object-contain drop-shadow-2xl"
-                    priority
-                  />
-                </div>
-              </motion.div>
-            )}
           </motion.div>
         </AnimatePresence>
       </div>
