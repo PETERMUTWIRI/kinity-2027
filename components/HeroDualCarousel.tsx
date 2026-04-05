@@ -94,15 +94,15 @@ export default function HeroDualCarousel() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.6, ease: "easeInOut" }}
-            className="absolute inset-0 flex items-center w-full h-full"
+            className={currentSlide.type === 'candidate-centric' ? 'relative w-full h-full' : 'absolute inset-0 flex items-center w-full h-full'}
           >
-            {/* Right Side - Presidential Portrait (all screen sizes) */}
+            {/* Right Side - Presidential Portrait (absolute on desktop, normal flow on mobile) */}
             {currentSlide.type === 'candidate-centric' && currentSlide.headshot && (
               <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="absolute right-0 top-20 sm:top-24 lg:top-20 bottom-0 w-1/3 sm:w-2/5 md:w-2/5 lg:w-2/5"
+                className="lg:absolute lg:right-0 lg:top-20 lg:bottom-0 w-full lg:w-2/5 h-64 sm:h-80 lg:h-auto"
               >
                 {/* Seamless portrait - no borders, no container, no shadow */}
                 <div className="relative w-full h-full">
@@ -123,8 +123,8 @@ export default function HeroDualCarousel() {
               </motion.div>
             )}
 
-            {/* Text Content - Left Side (Candidate) or Centered (Party) */}
-            <div className={`relative z-10 flex items-center w-full min-h-screen px-4 sm:px-6 lg:px-8 py-0 ${currentSlide.type === 'candidate-centric' ? 'sm:w-2/3 md:w-3/5 lg:w-3/5' : ''}`}>
+            {/* Text Content - Below Portrait (Mobile) or Left Side (Candidate Desktop) or Centered (Party) */}
+            <div className={`relative z-10 w-full px-4 sm:px-6 lg:px-8 py-8 lg:py-0 ${currentSlide.type === 'candidate-centric' ? 'lg:flex lg:items-center lg:min-h-screen lg:w-3/5' : 'flex items-center min-h-screen'}`}>
               <div className={`w-full h-full flex flex-col justify-center space-y-4 sm:space-y-6 ${currentSlide.type === 'party-centric' ? 'max-w-3xl mx-auto text-center' : 'max-w-2xl'}`}>
                 {/* Title Section */}
                 <motion.div
