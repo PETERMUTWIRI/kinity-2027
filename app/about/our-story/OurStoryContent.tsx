@@ -93,12 +93,12 @@ export default function OurStoryContent() {
             <ScrollReveal>
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] rounded-3xl opacity-20 blur-2xl" />
-                <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+                <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl bg-white p-8">
                   <Image
-                    src="/images/president.jpeg"
-                    alt="Dr. Isaac Newton Kinity"
+                    src="/nvp-party-logo.jpeg"
+                    alt="National Vision Party Logo"
                     fill
-                    className="object-cover object-top"
+                    className="object-contain p-6"
                     priority
                   />
                 </div>
@@ -133,8 +133,13 @@ export default function OurStoryContent() {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-16 bg-gradient-to-br from-slate-50 to-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 relative overflow-hidden">
+        {/* Banner background */}
+        <div className="absolute inset-0 bg-[url('/baner.jpeg')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-white/85" />
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0F172A] mb-12">
               Timeline of a <span className="text-[#D4A017]">Movement</span>
