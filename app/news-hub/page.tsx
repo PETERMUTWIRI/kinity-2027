@@ -18,9 +18,10 @@ const categories = ['All', 'News', 'Press Release', 'Event Recap', 'Statement'];
 export default async function NewsHubPage({ 
   searchParams 
 }: { 
-  searchParams: { category?: string } 
+  searchParams: Promise<{ category?: string }> 
 }) {
-  const category = searchParams.category || 'All';
+  const { category: categoryParam } = await searchParams;
+  const category = categoryParam || 'All';
   
   // Safe query with fallback
   let posts: any[] = [];
