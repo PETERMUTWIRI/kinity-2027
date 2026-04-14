@@ -50,8 +50,8 @@ const navItems: NavItem[] = [
     name: 'Our Movement', 
     href: '/about',
     children: [
-      { name: 'Our Story', href: '/about/our-story', description: 'The journey of Dr. Kinity', icon: FaFlag },
-      { name: 'Leadership', href: '/about/leadership', description: 'Meet the team', icon: FaUsers },
+      { name: 'Our Story', href: '/about/our-story', description: 'The origin of our movement', icon: FaFlag },
+      { name: 'Leadership', href: '/about/leadership', description: 'Party structure & officials', icon: FaUsers },
       { name: 'Vision 2027', href: '/about/vision-2027', description: 'Our plan for Kenya', icon: FaEye },
       { name: 'Manifesto', href: '/about/manifesto', description: 'Our commitments', icon: FaNewspaper },
     ]

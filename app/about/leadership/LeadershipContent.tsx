@@ -2,80 +2,48 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaArrowLeft, FaBriefcase, FaHandshake, FaHeart, FaShieldAlt, FaCheckCircle, FaGlobe, FaAward } from 'react-icons/fa';
+import { FaArrowLeft, FaUsers, FaFlag, FaHandshake, FaAward, FaCheckCircle, FaGlobe, FaHeart } from 'react-icons/fa';
 import ScrollReveal from '@/components/ScrollReveal';
 
-const keyAchievements = [
+const partyOrgans = [
   {
-    icon: FaBriefcase,
-    title: '40+ Years',
-    description: 'Of unwavering activism fighting for workers\' rights and good governance since age 20.',
+    title: 'National Executive Committee',
+    description: 'The strategic nerve center of the party, responsible for policy direction, national campaigns, and ensuring the party remains true to its founding principles.',
+    icon: FaFlag,
   },
   {
+    title: 'County Coordinators',
+    description: 'Grassroots architects operating in all 47 counties, translating national vision into local action and building village-by-village momentum.',
+    icon: FaGlobe,
+  },
+  {
+    title: 'Youth League',
+    description: 'The engine of innovation and energy, mobilizing young Kenyans to shape the future they will inherit through active political participation.',
     icon: FaHandshake,
-    title: 'Union Leadership',
-    description: 'Former Secretary-General of Kenya Civil Servants Union, defending public servants.',
   },
   {
+    title: 'Women League',
+    description: 'A powerful voice for gender equity and inclusive leadership, ensuring the party advances policies that uplift women, mothers, and daughters across Kenya.',
     icon: FaHeart,
-    title: 'Survivor',
-    description: 'Survived poisoning and assassination attempts for standing against corruption.',
-  },
-  {
-    icon: FaShieldAlt,
-    title: 'Zero Tolerance',
-    description: 'Pledged to eliminate corruption within 2 years or voluntarily resign.',
   },
 ];
 
-const traits = [
+const leadershipValues = [
   {
-    id: 'integrity',
-    title: 'Integrity',
-    description: 'Uncompromising moral principles',
-    content: 'Dr. Kinity has demonstrated unwavering integrity throughout his 40+ years of public service. Even when his life was in danger, he refused to compromise on his principles. He has consistently spoken truth to power, calling out corruption regardless of who was in office—from the Moi era to the current administration.',
-    highlights: [
-      'Refused to bow to political pressure during the Moi era',
-      'Consistently criticized corruption across all administrations',
-      'Pledged to resign if corruption is not eliminated in 2 years',
-      'Never compromised on workers\' rights and fair treatment',
-    ],
+    title: 'Servant Leadership',
+    content: 'We do not seek power to rule; we seek responsibility to serve. Every official in the National Vision Party is accountable to the people, not the other way around.',
   },
   {
-    id: 'experience',
-    title: 'Experience',
-    description: 'Decades of hands-on leadership',
-    content: 'With over four decades of activism, union leadership, and governance advocacy, Dr. Kinity brings unparalleled experience. He has fought for workers at the grassroots level, represented Kenya at international forums, and survived the darkest periods of political oppression.',
-    highlights: [
-      'Led Kenya Civil Servants Union as Secretary-General',
-      'Advocated at International Anti-Corruption Conferences',
-      'Traveled worldwide promoting good governance for Kenya',
-      'Survived assassination attempts and continued the fight',
-    ],
+    title: 'Grassroots Democracy',
+    content: 'Decisions are made from the ground up. From village meetings to national strategy sessions, the voice of the ordinary Kenyan is the loudest voice in the room.',
   },
   {
-    id: 'vision',
-    title: 'Vision',
-    description: 'Clear roadmap for Kenya\'s future',
-    content: 'Dr. Kinity\'s vision is built on four transformative pillars: Economic Transformation, Zero Corruption, Universal Healthcare, and Education Revolution. This is not empty rhetoric—each pillar has specific, measurable targets and actionable policies to restore Kenya\'s dignity.',
-    highlights: [
-      '40% cost of living reduction within 2 years',
-      'Elimination of corruption or voluntary resignation',
-      'Universal healthcare coverage for all Kenyans',
-      'World-class free education with STEM and digital focus',
-    ],
+    title: 'Zero Tolerance for Corruption',
+    content: 'Our leadership is bound by a sacred contract: serve with integrity or step aside. No exceptions, no excuses, no protection for the well-connected.',
   },
   {
-    id: 'commitment',
-    title: 'Commitment',
-    description: 'Sacrifice for the Kenyan people',
-    content: 'Dr. Kinity\'s commitment to Kenya is not just words—it is written in sacrifice. He has been poisoned, survived brain surgery, lived in exile, and continued fighting for Kenyans for over 40 years. His commitment is to serve or die trying, never to enrich himself.',
-    highlights: [
-      'Poisoned in 1998 for opposing the Moi regime',
-      'Endured brain surgery and partial paralysis',
-      'Lived in exile but never stopped advocating for Kenya',
-      'Called to run by the people, not political machinery',
-    ],
+    title: 'Collective Vision',
+    content: 'While Dr. Kinity carries the flag, the vision belongs to millions of Kenyans who demand a nation built on dignity, prosperity, and justice for all.',
   },
 ];
 
@@ -97,164 +65,141 @@ export default function LeadershipContent() {
       <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm mb-6">
-              Our Candidate
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A] font-semibold text-sm mb-6">
+              Party Leadership
             </span>
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0F172A] mb-6">
-              Dr. Isaac Newton <span className="text-[#D4A017]">Kinity</span>
+              Leadership Built on <span className="text-[#D4A017]">Service</span>
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
             <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] mx-auto rounded-full mb-6" />
             <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-              A proven track record of sacrifice, courage, and unwavering commitment to the Kenyan people. 
-              Four pillars define exceptional leadership for Kenya&apos;s future.
+              The National Vision Party is not a one-man show. It is a disciplined movement of servant-leaders 
+              united by a single mandate: to restore Kenya&apos;s dignity through accountable, people-centered governance.
             </p>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Key Achievements Grid */}
+      {/* Presidential Candidate Card */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-white">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
-            <h2 className="text-3xl font-bold text-center text-[#0F172A] mb-12">
-              Key <span className="text-[#D4A017]">Achievements</span>
-            </h2>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {keyAchievements.map((item, index) => (
-              <ScrollReveal key={index} delay={index * 0.1}>
-                <div className="text-center p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:border-[#D4A017]/50 hover:shadow-md transition-all">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#1E3A8A]/10 flex items-center justify-center">
-                    <item.icon className="w-8 h-8 text-[#1E3A8A]" />
-                  </div>
-                  <h3 className="font-bold text-xl mb-2 text-[#0F172A]">{item.title}</h3>
-                  <p className="text-slate-600 text-sm">{item.description}</p>
+            <div className="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+              <div className="grid lg:grid-cols-2 gap-0">
+                <div className="relative aspect-[4/3] lg:aspect-auto">
+                  <Image
+                    src="/images/president.jpeg"
+                    alt="Dr. Isaac Newton Kinity - Presidential Candidate"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-              </ScrollReveal>
-            ))}
-          </div>
+                <div className="p-8 md:p-12 flex flex-col justify-center">
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm mb-6 w-fit">
+                    <FaAward className="w-4 h-4" />
+                    Flagbearer 2027
+                  </span>
+                  <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
+                    Dr. Isaac Newton <span className="text-[#D4A017]">Kinity</span>
+                  </h2>
+                  <p className="text-slate-600 leading-relaxed mb-6">
+                    Presidential Candidate of the National Vision Party. A veteran governance activist with over 
+                    40 years of sacrifice, poisoned for standing against corruption, and called to leadership by 
+                    the people—not political cartels.
+                  </p>
+                  <div className="space-y-3 mb-8">
+                    {[
+                      '40+ years of activism and union leadership',
+                      'Survived assassination attempts for opposing graft',
+                      'Pledged to eliminate corruption within 2 years or resign',
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-center gap-3">
+                        <FaCheckCircle className="w-5 h-5 text-[#D4A017] flex-shrink-0" />
+                        <span className="text-slate-700">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <Link
+                    href="/about/candidate"
+                    className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#1E3A8A] text-white font-bold hover:bg-[#0F172A] transition-all duration-300 w-fit"
+                  >
+                    Meet the Candidate
+                    <FaArrowLeft className="w-4 h-4 rotate-180" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* Four Pillars of Leadership */}
+      {/* Party Organs */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
-                The Four <span className="text-[#D4A017]">Pillars</span>
+                Party <span className="text-[#D4A017]">Structure</span>
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] mx-auto rounded-full mb-4" />
               <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                These core principles have guided Dr. Kinity throughout his 40+ years of service to Kenya.
+                A nationwide organization designed to put power back where it belongs—in the hands of the people.
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="space-y-16">
-            {traits.map((trait, index) => (
-              <ScrollReveal key={trait.id} delay={index * 0.1}>
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <div className={index % 2 === 1 ? 'md:order-2' : ''}>
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm mb-4">
-                      <FaAward className="w-4 h-4" />
-                      {trait.title}
-                    </div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">{trait.description}</h3>
-                    <p className="text-slate-600 leading-relaxed mb-6">{trait.content}</p>
-                    <ul className="space-y-2">
-                      {trait.highlights.map((highlight, i) => (
-                        <li key={i} className="flex items-center gap-2 text-sm text-slate-600">
-                          <FaCheckCircle className="w-4 h-4 text-[#D4A017] flex-shrink-0" />
-                          {highlight}
-                        </li>
-                      ))}
-                    </ul>
+          <div className="grid md:grid-cols-2 gap-8">
+            {partyOrgans.map((organ, index) => (
+              <ScrollReveal key={organ.title} delay={index * 0.1}>
+                <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:border-[#D4A017]/30 hover:shadow-md transition-all h-full">
+                  <div className="w-14 h-14 rounded-xl bg-[#1E3A8A]/10 flex items-center justify-center mb-5">
+                    <organ.icon className="w-7 h-7 text-[#1E3A8A]" />
                   </div>
-                  <div className={`bg-slate-50 rounded-2xl p-8 ${index % 2 === 1 ? 'md:order-1' : ''}`}>
-                    <div className="grid grid-cols-2 gap-4">
-                      {trait.highlights.map((highlight, i) => (
-                        <div key={i} className="p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                          <div className="w-8 h-8 rounded-full bg-[#1E3A8A]/10 flex items-center justify-center mb-2">
-                            <span className="text-[#1E3A8A] font-bold text-sm">{i + 1}</span>
-                          </div>
-                          <p className="text-xs text-slate-600 leading-tight">{highlight}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  <h3 className="text-xl font-bold text-[#0F172A] mb-3">{organ.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{organ.description}</p>
                 </div>
-                {index < traits.length - 1 && <div className="mt-16 border-b border-slate-200" />}
               </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* International Advocacy Section */}
-      <section className="py-16 bg-[#0F172A] text-white relative overflow-hidden">
+      {/* Leadership Values */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#0F172A] text-white relative overflow-hidden">
         {/* Subtle Kenyan flag hint at bottom */}
         <div className="absolute bottom-0 left-0 right-0 h-1 flex opacity-30">
           <div className="flex-1 bg-black" />
           <div className="flex-1 bg-[#DC2626]" />
           <div className="flex-1 bg-[#006600]" />
         </div>
-        
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <ScrollReveal>
-              <div className="space-y-6">
-                {/* Gold accent line */}
-                <div className="w-16 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] rounded-full" />
-                
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A8A]/20 text-[#D4A017] font-semibold text-sm">
-                  <FaGlobe className="w-4 h-4" />
-                  Global Impact
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold">
-                  International <span className="text-[#D4A017]">Advocacy</span>
-                </h2>
-                <p className="text-white/70 leading-relaxed">
-                  While in exile, Dr. Kinity transformed his personal tragedy into a global mission. 
-                  He traveled to numerous countries, speaking at prestigious institutions and international 
-                  forums to shine a light on Kenya&apos;s governance challenges.
-                </p>
-                <div className="space-y-4">
-                  {[
-                    'Yale University Medical Treatment',
-                    'International Anti-Corruption Conferences',
-                    'Trade Union Advocacy Worldwide',
-                    'Kikimo Foundation Leadership',
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <FaCheckCircle className="w-5 h-5 text-[#D4A017]" />
-                      <span className="text-white/80">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </ScrollReveal>
 
-            <ScrollReveal delay={0.2}>
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] rounded-3xl opacity-20 blur-2xl" />
-                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden">
-                  <Image
-                    src="/images/kinity-connection.jpeg"
-                    alt="Dr. Kinity connecting with people"
-                    fill
-                    className="object-cover"
-                  />
+        <div className="max-w-6xl mx-auto">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                The <span className="text-[#D4A017]">Covenant</span> of Leadership
+              </h2>
+              <p className="text-white/70 max-w-2xl mx-auto">
+                Every leader who wears the NVP badge makes these four commitments to the Kenyan people.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {leadershipValues.map((value, index) => (
+              <ScrollReveal key={value.title} delay={index * 0.1}>
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-[#D4A017]/30 transition-all">
+                  <h3 className="text-xl font-bold text-[#D4A017] mb-3">{value.title}</h3>
+                  <p className="text-white/80 leading-relaxed">{value.content}</p>
                 </div>
-              </div>
-            </ScrollReveal>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>

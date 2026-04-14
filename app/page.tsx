@@ -472,10 +472,10 @@ export default function HomePage() {
                 {/* Key traits */}
                 <div className="flex flex-wrap gap-3 pt-4">
                   {[
-                    { label: 'Integrity', href: '/about#why-dr-kinity' },
-                    { label: 'Experience', href: '/about#why-dr-kinity' },
-                    { label: 'Vision', href: '/about#vision-2027' },
-                    { label: 'Commitment', href: '/about#why-dr-kinity' },
+                    { label: 'Integrity', href: '/about/candidate#integrity' },
+                    { label: 'Experience', href: '/about/candidate#experience' },
+                    { label: 'Vision', href: '/about/candidate#vision' },
+                    { label: 'Commitment', href: '/about/candidate#commitment' },
                   ].map((trait, i) => (
                     <Link
                       key={i}
@@ -489,10 +489,10 @@ export default function HomePage() {
                 </div>
 
                 <Link
-                  href="/about"
+                  href="/about/candidate"
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#1E3A8A] text-white font-bold hover:bg-[#0F172A] transition-all duration-300 hover:shadow-lg hover:shadow-[#1E3A8A]/30"
                 >
-                  Read Full Story
+                  Meet the Candidate
                   <FaArrowRight className="w-4 h-4" />
                 </Link>
               </div>

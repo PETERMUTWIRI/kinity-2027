@@ -2,39 +2,46 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaArrowLeft, FaCalendarAlt, FaMapMarkerAlt, FaHeart, FaGlobe, FaUniversity } from 'react-icons/fa';
+import { FaArrowLeft, FaCalendarAlt, FaMapMarkerAlt, FaHeart, FaGlobe, FaUniversity, FaUsers, FaFlag } from 'react-icons/fa';
 import ScrollReveal from '@/components/ScrollReveal';
 
 const timeline = [
   {
     year: '1980s',
-    title: 'Early Activism Begins',
-    description: 'At age 20, Dr. Kinity began his activism by opposing the dissolution of the Kenya Civil Servants Union by President Daniel arap Moi.',
-    icon: FaCalendarAlt,
+    title: 'The Spark',
+    description: 'What began as one young civil servant\'s defiance against the dissolution of the Kenya Civil Servants Union became the first stand for a Kenya where workers and citizens matter more than political dynasties.',
+    icon: FaFlag,
   },
   {
     year: '1998',
-    title: 'The Poisoning Incident',
-    description: 'On January 7, 1998, Dr. Kinity was poisoned for his outspoken opposition to the regime. This led to brain surgery and partial paralysis.',
+    title: 'The Trial',
+    description: 'On January 7, 1998, the regime attempted to silence the voice of change through poisoning. But every attempt to kill the messenger only seeded a movement that would outlive the oppressors.',
     icon: FaHeart,
     highlight: true,
   },
   {
-    year: '1998-2000s',
-    title: 'Treatment & Exile',
-    description: 'Received extensive treatment at Yale New Haven Hospital in Connecticut. Forced into exile but never stopped advocating for Kenya.',
+    year: '1998–2000s',
+    title: 'The Exile & Global Mission',
+    description: 'While receiving life-saving treatment, the struggle went global. Through the Kikimo Foundation and international anti-corruption forums, the message echoed worldwide: Kenya deserves better.',
     icon: FaUniversity,
   },
   {
-    year: '2000s-2020s',
-    title: 'International Advocacy',
-    description: 'Spoke at International Anti-Corruption Conferences worldwide as Chairperson of the Kikimo Foundation for Corruption and Poverty Eradication.',
+    year: '2000s–2020s',
+    title: 'The Foundation Years',
+    description: 'Decades of advocacy built the ideological bedrock of what would become a national political force—rooted in zero tolerance for corruption, economic justice, and the dignity of every Kenyan.',
     icon: FaGlobe,
   },
   {
     year: '2024',
     title: 'The People\'s Call',
-    description: 'After 2.5 years of appeals from Kenyans across all 47 counties, Dr. Kinity answered the call to run for President in 2027.',
+    description: 'For two and a half years, appeals poured in from all 47 counties. Youth, elders, workers, and farmers spoke with one voice: it is time to turn decades of sacrifice into a vehicle for national transformation.',
+    icon: FaUsers,
+    highlight: true,
+  },
+  {
+    year: '2025–2027',
+    title: 'The Birth of the National Vision Party',
+    description: 'The National Vision Party was forged not in a boardroom, but in the trenches of struggle. A movement by the people, for the people—ready to reclaim Kenya\'s future.',
     icon: FaMapMarkerAlt,
     highlight: true,
   },
@@ -59,22 +66,21 @@ export default function OurStoryContent() {
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A] font-semibold text-sm mb-6">
-              Our Story
+              The NVP Story
             </span>
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0F172A] mb-6">
-              A Journey of <span className="text-[#D4A017]">Sacrifice</span> & Service
+              Born from the <span className="text-[#D4A017]">Struggle</span>
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
             <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] mx-auto rounded-full mb-6" />
             <p className="text-xl text-slate-600 leading-relaxed mb-8">
-              The remarkable story of Dr. Isaac Newton Kinity—a man who has dedicated over 40 years 
-              to fighting for Kenya&apos;s workers and good governance, surviving assassination attempts, 
-              and never backing down from the truth.
+              The National Vision Party was not born in a boardroom. It was forged in the trenches of Kenya&apos;s 
+              fight for justice—decades of sacrifice, exile, and an unbreakable belief that this nation can be great again.
             </p>
           </ScrollReveal>
         </div>
@@ -106,18 +112,18 @@ export default function OurStoryContent() {
                   If entrusted with the presidency, I will eradicate corruption within two years—or 
                   voluntarily resign.&rdquo;
                 </blockquote>
-                <p className="text-slate-500 pl-6">— Dr. Isaac Newton Kinity</p>
+                <p className="text-slate-500 pl-6">— Dr. Isaac Newton Kinity, Presidential Candidate</p>
 
                 <div className="pt-6 space-y-4">
                   <p className="text-slate-600 leading-relaxed">
-                    <strong>Dr. Isaac Newton Kinity</strong> is a veteran governance activist, former 
-                    Secretary-General of the Kenya Civil Servants Union, and counselor with over 40 years 
-                    of unwavering commitment to fighting for workers&apos; rights and good governance in Kenya.
+                    The story of the National Vision Party is inseparable from the story of a young man who, 
+                    at age 20, dared to look power in the eye and say <em>no</em>. When the Moi regime dissolved 
+                    the Kenya Civil Servants Union, Isaac Newton Kinity did not retreat. He stood.
                   </p>
                   <p className="text-slate-600 leading-relaxed">
-                    As Chairperson of the <strong>Kikimo Foundation for Corruption and Poverty Eradication</strong>, 
-                    he has consistently argued that corruption, misuse of state authority, and hostility 
-                    toward independent businesses undermine growth and widen inequality.
+                    That stand evolved into a lifelong mission. Poisoned, exiled, and threatened with death, 
+                    he carried the torch across continents and decades—until the Kenyan people themselves 
+                    transformed his solitary fight into a national movement. The NVP is that movement.
                   </p>
                 </div>
               </div>
@@ -131,7 +137,7 @@ export default function OurStoryContent() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0F172A] mb-12">
-              Timeline of a <span className="text-[#D4A017]">Life of Service</span>
+              Timeline of a <span className="text-[#D4A017]">Movement</span>
             </h2>
           </ScrollReveal>
 

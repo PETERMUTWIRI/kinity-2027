@@ -16,7 +16,7 @@ const sections = [
   {
     id: 'our-story',
     title: 'Our Story',
-    description: 'The remarkable journey of Dr. Isaac Newton Kinity—from a 20-year-old union activist opposing the Moi regime to surviving poisoning and assassination attempts, to becoming Kenya\'s hope for 2027.',
+    description: 'The NVP story—born from decades of struggle. From a young union activist\'s defiance to a nationwide movement ready to reclaim Kenya\'s future through sacrifice and service.',
     icon: FaBookOpen,
     href: '/about/our-story',
     color: '#1E3A8A',
@@ -25,7 +25,7 @@ const sections = [
   {
     id: 'leadership',
     title: 'Leadership',
-    description: 'Meet our presidential candidate. Discover the four pillars that define Dr. Kinity\'s leadership: Integrity, Experience, Vision, and Commitment forged over 40+ years of sacrifice.',
+    description: 'Meet the servant-leaders of the National Vision Party. Explore our party structure, organs, and the presidential candidate leading the charge for a better Kenya.',
     icon: FaUsers,
     href: '/about/leadership',
     color: '#D4A017',
@@ -55,8 +55,12 @@ export default function AboutLanding() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-white">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Banner background */}
+        <div className="absolute inset-0 bg-[url('/baner.jpeg')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-white/85" />
+        <div className="max-w-7xl mx-auto relative z-10">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm mb-6">
