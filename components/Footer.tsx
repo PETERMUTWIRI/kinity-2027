@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { 
   FaFacebook, 
   FaTwitter, 
@@ -21,6 +22,8 @@ import {
   FaImages,
   FaVideo,
   FaTiktok,
+  FaSpinner,
+  FaCheck,
 } from 'react-icons/fa';
 import ElectionCountdown from './ElectionCountdown';
 
@@ -67,6 +70,33 @@ const socialLinks = [
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+    setStatus('loading');
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, name }),
+      });
+      const data = await res.json();
+      setMessage(data.message);
+      setStatus(data.success ? 'success' : 'error');
+      if (data.success) {
+        setEmail('');
+        setName('');
+      }
+    } catch {
+      setStatus('error');
+      setMessage('Something went wrong. Please try again.');
+    }
+  };
 
   return (
     <footer className="relative text-white overflow-hidden">
@@ -192,6 +222,53 @@ export default function Footer() {
                 <FaMapMarkerAlt className="w-5 h-5 text-[#D4A017]" />
                 Nairobi, Kenya
               </div>
+            </div>
+
+            {/* Minimal Newsletter */}
+            <div className="mt-6">
+              <h4 className="font-semibold text-white mb-3 text-sm">Subscribe for Updates</h4>
+              {status === 'success' ? (
+                <div className="flex items-center gap-2 text-green-400 text-sm bg-green-500/10 rounded-lg px-3 py-2">
+                  <FaCheck className="w-4 h-4" />
+                  <span>{message}</span>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-2">
+                  <div className="flex gap-2">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Your email"
+                      required
+                      className="flex-1 min-w-0 px-3 py-2 rounded-lg bg-white/10 border border-white/10 text-white text-sm placeholder:text-white/40 focus:outline-none focus:border-[#D4A017] transition-colors"
+                    />
+                    <button
+                      type="submit"
+                      disabled={status === 'loading'}
+                      className="px-4 py-2 rounded-lg bg-[#DC2626] text-white text-sm font-semibold hover:bg-[#B91C1C] transition-colors disabled:opacity-70 flex items-center gap-2"
+                    >
+                      {status === 'loading' ? (
+                        <>
+                          <FaSpinner className="w-4 h-4 animate-spin" />
+                        </>
+                      ) : (
+                        'Subscribe'
+                      )}
+                    </button>
+                  </div>
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Name (optional)"
+                    className="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/10 text-white text-sm placeholder:text-white/40 focus:outline-none focus:border-[#D4A017] transition-colors"
+                  />
+                  {status === 'error' && (
+                    <p className="text-red-400 text-xs">{message}</p>
+                  )}
+                </form>
+              )}
             </div>
 
             {/* Social Links */}

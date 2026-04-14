@@ -25,8 +25,6 @@ import TiltCard from '@/components/TiltCard';
 import { EconomicIcon, AntiCorruptionIcon, HealthcareIcon, EducationIcon } from '@/components/PillarIcons';
 import SocialProof from '@/components/SocialProof';
 import HeroDualCarousel from '@/components/HeroDualCarousel';
-import NewsletterSignup from '@/components/NewsletterSignup';
-import SocialMediaToolkit from '@/components/SocialMediaToolkit';
 
 // ==========================================
 // NATIONAL VISION PARTY - PREMIUM HOMEPAGE
@@ -228,7 +226,7 @@ export default function HomePage() {
       </section>
 
       {/* ==========================================
-          LIVE FROM THE USA BANNER
+          JOIN THE MOVEMENT BANNER
           ========================================== */}
       <section className="relative bg-gradient-to-r from-[#1E3A8A] via-[#0F172A] to-[#1E3A8A] py-4 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -242,15 +240,15 @@ export default function HomePage() {
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-[#D4A017]"></span>
               </span>
               <p className="text-white font-medium text-sm md:text-base">
-                <span className="text-[#D4A017] font-bold">LIVE FROM THE USA:</span> Dr. Kinity is currently in the United States. 
-                <span className="hidden md:inline"> Follow his latest messages and virtual town halls.</span>
+                <span className="text-[#D4A017] font-bold">JOIN THE MOVEMENT:</span> The National Vision Party is growing across all 47 counties. 
+                <span className="hidden md:inline"> Be part of the change Kenya needs.</span>
               </p>
             </div>
             <Link 
-              href="/videos" 
+              href="/join-us" 
               className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#D4A017] text-[#0F172A] font-bold text-sm hover:bg-[#E6C200] transition-colors whitespace-nowrap"
             >
-              Watch Latest Message
+              Get Involved
               <FaArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -260,8 +258,12 @@ export default function HomePage() {
       {/* ==========================================
           VISION SECTION - Policy Pillars
           ========================================== */}
-      <section id="vision" className="py-10 md:py-14 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white relative">
-        <div className="max-w-7xl mx-auto">
+      <section id="vision" className="py-10 md:py-14 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Kenyan flag background */}
+        <div className="absolute inset-0 bg-[url('/images/kenya-flag.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay for readability */}
+        <div className="absolute inset-0 bg-white/95" />
+        <div className="max-w-7xl mx-auto relative z-10">
           {/* Section Header */}
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
@@ -494,26 +496,30 @@ export default function HomePage() {
       </section>
 
       {/* ==========================================
-          LATEST MESSAGE FROM DR. KINITY
+          LATEST MESSAGE FROM THE MOVEMENT
           ========================================== */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-[#0F172A] via-[#1E3A8A] to-[#0F172A] text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)', backgroundSize: '40px 40px' }} />
-        
+      <section className="py-16 md:py-24 bg-gradient-to-b from-white via-white via-30% to-[#1E3A8A] relative overflow-hidden">
+        {/* Background decoration - subtle blue accents on white */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#1E3A8A]/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/3 left-0 w-[400px] h-[400px] bg-[#D4A017]/5 rounded-full blur-3xl" />
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4A017]/20 text-[#D4A017] border border-[#D4A017]/30 font-semibold text-sm mb-4">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm mb-4">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D4A017] opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D4A017]"></span>
                 </span>
-                Live from the USA
+                Latest Update
               </span>
-              <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl mb-4">
-                Latest <span className="text-[#D4A017]">Message</span>
+              <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl mb-4 text-[#0F172A]">
+                Message to the <span className="text-[#D4A017]">Nation</span>
               </h2>
-              <p className="text-white/70 max-w-2xl mx-auto text-lg">
-                Dr. Kinity is broadcasting directly from the United States. Watch his latest address to the nation and share it with your network.
+              <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+                Watch the latest address to Kenyans and share it with your network. Together we are building a movement for change.
               </p>
             </div>
           </ScrollReveal>
@@ -521,11 +527,11 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-3 gap-8 items-start">
             {/* Main Video */}
             <ScrollReveal className="lg:col-span-2">
-              <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-black">
+              <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border border-slate-200 bg-black">
                 {latestVideos.length > 0 ? (
                   <iframe
                     src={`https://www.youtube.com/embed/${latestVideos[0].youtubeId}?rel=0`}
-                    title="Latest Message from Dr. Kinity"
+                    title="Latest Message to the Nation"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="absolute inset-0 w-full h-full"
@@ -533,7 +539,7 @@ export default function HomePage() {
                 ) : (
                   <iframe
                     src="https://www.youtube.com/embed/BqPibiAzqIk?rel=0"
-                    title="Latest Message from Dr. Kinity"
+                    title="Latest Message to the Nation"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="absolute inset-0 w-full h-full"
@@ -545,8 +551,8 @@ export default function HomePage() {
             {/* Side: More videos + Actions */}
             <div className="space-y-6">
               <ScrollReveal>
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-                  <h3 className="font-bold text-lg mb-4">More Videos</h3>
+                <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-100">
+                  <h3 className="font-bold text-lg mb-4 text-[#0F172A]">More Videos</h3>
                   <div className="space-y-4">
                     {(latestVideos.length > 1 ? latestVideos.slice(1, 4) : []).map((video, index) => (
                       <a
@@ -556,7 +562,7 @@ export default function HomePage() {
                         rel="noopener noreferrer"
                         className="flex gap-3 group"
                       >
-                        <div className="relative w-24 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-white/10">
+                        <div className="relative w-24 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-slate-100">
                           <Image
                             src={video.thumbnail || `https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg`}
                             alt={video.title}
@@ -571,15 +577,15 @@ export default function HomePage() {
                           </div>
                         </div>
                         <div>
-                          <p className="text-sm font-medium line-clamp-2 group-hover:text-[#D4A017] transition-colors">
+                          <p className="text-sm font-medium text-[#0F172A] line-clamp-2 group-hover:text-[#D4A017] transition-colors">
                             {video.title}
                           </p>
-                          <p className="text-xs text-white/50 mt-1">{video.category}</p>
+                          <p className="text-xs text-slate-500 mt-1">{video.category}</p>
                         </div>
                       </a>
                     ))}
                     {latestVideos.length <= 1 && (
-                      <p className="text-white/60 text-sm">More campaign videos coming soon. Subscribe to stay updated.</p>
+                      <p className="text-slate-500 text-sm">More campaign videos coming soon. Subscribe to stay updated.</p>
                     )}
                   </div>
                   <Link
@@ -605,7 +611,7 @@ export default function HomePage() {
 
               <ScrollReveal>
                 <a
-                  href={`https://wa.me/?text=${encodeURIComponent('Watch Dr. Kinity\'s latest message from the USA: https://www.nationalvisionparty.com/videos')}`}
+                  href={`https://wa.me/?text=${encodeURIComponent('Watch the latest message from the National Vision Party: https://www.nationalvisionparty.com/videos')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full text-center py-4 rounded-xl bg-[#25D366] text-white font-bold hover:bg-[#128C7E] transition-colors"
@@ -1042,43 +1048,6 @@ export default function HomePage() {
           SOCIAL PROOF SECTION - Endorsements & Stats
           ========================================== */}
       <SocialProof />
-
-      {/* ==========================================
-          DIGITAL WARRIOR TOOLKIT
-          ========================================== */}
-      <section className="py-16 md:py-24 bg-white px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <ScrollReveal>
-            <div className="text-center mb-10">
-              <span className="inline-block px-4 py-1 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm mb-4">
-                Spread the Word
-              </span>
-              <h2 className="font-headline text-3xl md:text-4xl text-[#0F172A] mb-4">
-                Become a <span className="text-[#D4A017]">Digital Warrior</span>
-              </h2>
-              <p className="text-slate-600 max-w-2xl mx-auto">
-                Dr. Kinity is in the USA, but you can be his voice on the ground. Copy these posts, 
-                share them on your social media, and help us reach every Kenyan.
-              </p>
-            </div>
-          </ScrollReveal>
-          <ScrollReveal>
-            <SocialMediaToolkit />
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ==========================================
-          NEWSLETTER SIGNUP SECTION
-          ========================================== */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-slate-50 to-white px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
-          <NewsletterSignup 
-            title="Stay Connected to the Movement"
-            subtitle="Dr. Kinity is broadcasting live from the USA. Subscribe to never miss a message, rally announcement, or campaign update."
-          />
-        </div>
-      </section>
 
       {/* ==========================================
           CALL TO ACTION SECTION - Premium Dark with Video Background
