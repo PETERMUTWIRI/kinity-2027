@@ -1,14 +1,13 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaArrowRight, FaFlag, FaHandshake, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 // ==========================================
-// DUAL FOCUS HERO CAROUSEL
-// Party-centric & Candidate-centric messaging
+// DUAL FOCUS HERO - Static background, rotating content
 // ==========================================
 
 const slides = [
@@ -22,7 +21,6 @@ const slides = [
       primary: { text: 'Our Manifesto', href: '/about/manifesto', icon: FaFlag },
       secondary: { text: 'Meet Our Candidate', href: '/about/leadership', icon: FaArrowRight }
     },
-    background: '/baner.jpeg'
   },
   {
     id: 'candidate',
@@ -34,8 +32,6 @@ const slides = [
       primary: { text: 'Join the Movement', href: '/join-us', icon: FaHandshake },
       secondary: { text: 'Our Vision', href: '/about/vision-2027', icon: FaArrowRight }
     },
-    background: '/WhatsApp Image 2026-03-18 at 5.03.42 PM (2).jpeg',
-    headshot: '/images/Dr.png'
   }
 ];
 
@@ -55,13 +51,13 @@ export default function HeroDualCarousel() {
     setCurrentIndex(index);
   };
 
-  // Auto-advance every 5 seconds
+  // Auto-advance every 6 seconds
   useEffect(() => {
     if (!isAutoPlaying) return;
 
     const interval = setInterval(() => {
       nextSlide();
-    }, 5000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, [isAutoPlaying, nextSlide]);
@@ -70,62 +66,34 @@ export default function HeroDualCarousel() {
 
   return (
     <div className="relative w-full min-h-screen overflow-hidden">
-      {/* Background Image with Gradient Overlay */}
-      <div className="absolute inset-0">
+      {/* Static Background Image - baner.jpeg only */}
+      <div className="absolute inset-0 bg-[#0F172A]">
         <Image
-          src={currentSlide.background}
-          alt="Kenyan rally background"
+          src="/baner.jpeg"
+          alt="National Vision Party rally"
           fill
-          className="object-cover object-center"
+          className="object-contain object-center"
           priority
         />
-        {/* Navy to white gradient overlay - smooth transition from top to bottom */}
+        {/* Navy to dark gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#1E3A8A]/90 via-[#1E3A8A]/70 to-[#0F172A]/85" />
         {/* Additional overlay for enhanced text clarity */}
         <div className="absolute inset-0 bg-black/40" />
       </div>
 
       {/* Carousel Content */}
-      <div className="relative z-10 w-full min-h-screen pt-20 sm:pt-24 lg:pt-20">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.6, ease: "easeInOut" }}
-            className={currentSlide.type === 'candidate-centric' ? 'relative w-full h-full' : 'absolute inset-0 flex items-center w-full h-full'}
-          >
-            {/* Right Side - Presidential Portrait (absolute on desktop, normal flow on mobile) */}
-            {currentSlide.type === 'candidate-centric' && currentSlide.headshot && (
-              <motion.div
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="lg:absolute lg:right-0 lg:top-20 lg:bottom-0 w-full lg:w-2/5 h-64 sm:h-80 lg:h-auto"
-              >
-                {/* Seamless portrait - no borders, no container, no shadow */}
-                <div className="relative w-full h-full">
-                  <Image
-                    src={currentSlide.headshot}
-                    alt="Dr. Isaac Newton Kinity"
-                    fill
-                    className="object-cover object-top"
-                    priority
-                  />
-                  {/* Subtle gradient fade on left edge to blend into content */}
-                  <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-[#1E3A8A]/40" />
-                  {/* Top blend */}
-                  <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-[#1E3A8A]/50 to-transparent" />
-                  {/* Bottom blend */}
-                  <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#1E3A8A]/50 to-transparent" />
-                </div>
-              </motion.div>
-            )}
-
-            {/* Text Content - Below Portrait (Mobile) or Left Side (Candidate Desktop) or Centered (Party) */}
-            <div className={`relative z-10 w-full px-4 sm:px-6 lg:px-8 py-8 lg:py-0 ${currentSlide.type === 'candidate-centric' ? 'lg:flex lg:items-center lg:min-h-screen lg:w-3/5' : 'flex items-center min-h-screen'}`}>
-              <div className={`w-full h-full flex flex-col justify-center space-y-4 sm:space-y-6 ${currentSlide.type === 'party-centric' ? 'max-w-3xl mx-auto text-center' : 'max-w-2xl'}`}>
+      <div className="relative z-10 w-full min-h-screen flex items-center">
+        <div className="w-full px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-20">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+              className="absolute inset-0 flex items-center w-full h-full"
+            >
+              <div className={`w-full h-full flex flex-col justify-center space-y-4 sm:space-y-6 ${currentSlide.type === 'party-centric' ? 'max-w-3xl mx-auto text-center' : 'max-w-3xl mx-auto text-center'}`}>
                 {/* Title Section */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -159,14 +127,14 @@ export default function HeroDualCarousel() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className={currentSlide.type === 'party-centric' ? 'max-w-2xl mx-auto' : 'max-w-xl'}
+                  className="max-w-2xl mx-auto"
                 >
                   {currentSlide.type === 'party-centric' ? (
                     <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 leading-relaxed">
                       {currentSlide.message}
                     </p>
                   ) : (
-                    <blockquote className="text-xs sm:text-sm md:text-base lg:text-lg text-white/95 border-l-4 border-[#D4A017] pl-4 py-4 bg-white/10 backdrop-blur-sm rounded-r-lg">
+                    <blockquote className="text-xs sm:text-sm md:text-base lg:text-lg text-white/95 border-l-4 border-[#D4A017] pl-4 py-4 bg-white/10 backdrop-blur-sm rounded-r-lg text-left">
                       {currentSlide.quote}
                     </blockquote>
                   )}
@@ -177,7 +145,7 @@ export default function HeroDualCarousel() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
-                  className={`flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 ${currentSlide.type === 'party-centric' ? 'justify-center' : 'justify-start'}`}
+                  className={`flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 justify-center`}
                 >
                   <Link
                     href={currentSlide.cta.primary.href}
@@ -195,10 +163,9 @@ export default function HeroDualCarousel() {
                   </Link>
                 </motion.div>
               </div>
-            </div>
-
-          </motion.div>
-        </AnimatePresence>
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </div>
 
       {/* Navigation Arrows */}
