@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const faqs = [
   {
-    category: 'About Dr. Kinity',
+    category: 'About Our Candidate',
     questions: [
       {
         q: 'Who is Dr. Isaac Newton Kinity?',

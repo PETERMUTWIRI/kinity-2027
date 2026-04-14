@@ -29,6 +29,7 @@ import {
   FaEye,
   FaGlobe,
   FaFistRaised,
+  FaTiktok,
 } from 'react-icons/fa';
 import NewsTicker from './NewsTicker';
 
@@ -46,7 +47,7 @@ interface NavItem {
 const navItems: NavItem[] = [
   { name: 'Home', href: '/' },
   { 
-    name: 'Our Party', 
+    name: 'Our Movement', 
     href: '/about',
     children: [
       { name: 'Our Story', href: '/about/our-story', description: 'The journey of Dr. Kinity', icon: FaFlag },
@@ -85,6 +86,7 @@ const socialLinks = [
   { icon: FaTwitter, href: 'https://twitter.com/NVP_Kenya', label: 'Twitter', color: '#1DA1F2' },
   { icon: FaInstagram, href: 'https://instagram.com/NationalVisionParty', label: 'Instagram', color: '#E4405F' },
   { icon: FaYoutube, href: 'https://youtube.com/@NationalVisionParty', label: 'YouTube', color: '#FF0000' },
+  { icon: FaTiktok, href: 'https://tiktok.com/@NationalVisionParty', label: 'TikTok', color: '#000000' },
 ];
 
 // Search suggestions

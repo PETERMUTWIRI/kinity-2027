@@ -20,7 +20,7 @@ export default function ManifestoPage() {
       <BreadcrumbSchema
         items={[
           { name: 'Home', path: '/' },
-          { name: 'Our Party', path: '/about' },
+          { name: 'Our Movement', path: '/about' },
           { name: 'Manifesto', path: '/about/manifesto' },
         ]}
       />

@@ -20,6 +20,7 @@ import {
   FaNewspaper,
   FaImages,
   FaVideo,
+  FaTiktok,
 } from 'react-icons/fa';
 import ElectionCountdown from './ElectionCountdown';
 
@@ -61,6 +62,7 @@ const socialLinks = [
   { icon: FaTwitter, href: 'https://twitter.com/NVP_Kenya', label: 'Twitter', color: '#1DA1F2' },
   { icon: FaInstagram, href: 'https://instagram.com/NationalVisionParty', label: 'Instagram', color: '#E4405F' },
   { icon: FaYoutube, href: 'https://youtube.com/@NationalVisionParty', label: 'YouTube', color: '#FF0000' },
+  { icon: FaTiktok, href: 'https://tiktok.com/@NationalVisionParty', label: 'TikTok', color: '#000000' },
 ];
 
 export default function Footer() {
@@ -213,11 +215,11 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Our Party Links */}
+          {/* Our Movement Links */}
           <div>
             <h4 className="font-semibold text-white mb-4 flex items-center gap-2">
               <span className="w-1 h-4 bg-[#D4A017] rounded-full" />
-              Our Party
+              Our Movement
             </h4>
             <ul className="space-y-3">
               {footerLinks.ourParty.map((link) => (

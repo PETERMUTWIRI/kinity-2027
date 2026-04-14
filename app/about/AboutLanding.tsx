@@ -25,7 +25,7 @@ const sections = [
   {
     id: 'leadership',
     title: 'Leadership',
-    description: 'Meet the man behind the movement. Discover the four pillars that define Dr. Kinity\'s leadership: Integrity, Experience, Vision, and Commitment forged over 40+ years of sacrifice.',
+    description: 'Meet our presidential candidate. Discover the four pillars that define Dr. Kinity\'s leadership: Integrity, Experience, Vision, and Commitment forged over 40+ years of sacrifice.',
     icon: FaUsers,
     href: '/about/leadership',
     color: '#D4A017',
@@ -38,7 +38,7 @@ const sections = [
     icon: FaEye,
     href: '/about/vision-2027',
     color: '#1E3A8A',
-    image: '/images/president.jpeg',
+    image: '/images/rally.jpeg',
   },
   {
     id: 'manifesto',
@@ -60,16 +60,16 @@ export default function AboutLanding() {
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm mb-6">
-                Our Party
+                Our Movement
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0F172A] mb-6">
                 Building a <span className="text-[#D4A017]">Better Kenya</span>
               </h1>
               <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] mx-auto rounded-full mb-6" />
               <p className="text-lg text-slate-600 leading-relaxed">
-                The National Vision Party is a movement of Kenyans committed to ending corruption, 
-                creating prosperity, and restoring dignity to our nation. Led by Dr. Isaac Newton Kinity, 
-                we represent a new era of leadership—one that puts the people first, always.
+                We are a movement of Kenyans committed to ending corruption, creating prosperity, 
+                and restoring dignity to our nation. Led by Dr. Isaac Newton Kinity, our party represents 
+                a new era of leadership—one that puts the people first, always.
               </p>
             </div>
           </ScrollReveal>

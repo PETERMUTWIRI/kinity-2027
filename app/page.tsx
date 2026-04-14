@@ -25,6 +25,8 @@ import TiltCard from '@/components/TiltCard';
 import { EconomicIcon, AntiCorruptionIcon, HealthcareIcon, EducationIcon } from '@/components/PillarIcons';
 import SocialProof from '@/components/SocialProof';
 import HeroDualCarousel from '@/components/HeroDualCarousel';
+import NewsletterSignup from '@/components/NewsletterSignup';
+import SocialMediaToolkit from '@/components/SocialMediaToolkit';
 
 // ==========================================
 // NATIONAL VISION PARTY - PREMIUM HOMEPAGE
@@ -223,6 +225,36 @@ export default function HomePage() {
           ========================================== */}
       <section className="relative">
         <HeroDualCarousel />
+      </section>
+
+      {/* ==========================================
+          LIVE FROM THE USA BANNER
+          ========================================== */}
+      <section className="relative bg-gradient-to-r from-[#1E3A8A] via-[#0F172A] to-[#1E3A8A] py-4 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)', backgroundSize: '30px 30px' }} />
+        </div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D4A017] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-[#D4A017]"></span>
+              </span>
+              <p className="text-white font-medium text-sm md:text-base">
+                <span className="text-[#D4A017] font-bold">LIVE FROM THE USA:</span> Dr. Kinity is currently in the United States. 
+                <span className="hidden md:inline"> Follow his latest messages and virtual town halls.</span>
+              </p>
+            </div>
+            <Link 
+              href="/videos" 
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#D4A017] text-[#0F172A] font-bold text-sm hover:bg-[#E6C200] transition-colors whitespace-nowrap"
+            >
+              Watch Latest Message
+              <FaArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
       </section>
 
       {/* ==========================================
@@ -457,6 +489,131 @@ export default function HomePage() {
                 </Link>
               </div>
             </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ==========================================
+          LATEST MESSAGE FROM DR. KINITY
+          ========================================== */}
+      <section className="py-16 md:py-24 bg-gradient-to-br from-[#0F172A] via-[#1E3A8A] to-[#0F172A] text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4A017]/20 text-[#D4A017] border border-[#D4A017]/30 font-semibold text-sm mb-4">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D4A017] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D4A017]"></span>
+                </span>
+                Live from the USA
+              </span>
+              <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl mb-4">
+                Latest <span className="text-[#D4A017]">Message</span>
+              </h2>
+              <p className="text-white/70 max-w-2xl mx-auto text-lg">
+                Dr. Kinity is broadcasting directly from the United States. Watch his latest address to the nation and share it with your network.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid lg:grid-cols-3 gap-8 items-start">
+            {/* Main Video */}
+            <ScrollReveal className="lg:col-span-2">
+              <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-black">
+                {latestVideos.length > 0 ? (
+                  <iframe
+                    src={`https://www.youtube.com/embed/${latestVideos[0].youtubeId}?rel=0`}
+                    title="Latest Message from Dr. Kinity"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  />
+                ) : (
+                  <iframe
+                    src="https://www.youtube.com/embed/BqPibiAzqIk?rel=0"
+                    title="Latest Message from Dr. Kinity"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  />
+                )}
+              </div>
+            </ScrollReveal>
+
+            {/* Side: More videos + Actions */}
+            <div className="space-y-6">
+              <ScrollReveal>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                  <h3 className="font-bold text-lg mb-4">More Videos</h3>
+                  <div className="space-y-4">
+                    {(latestVideos.length > 1 ? latestVideos.slice(1, 4) : []).map((video, index) => (
+                      <a
+                        key={video.id}
+                        href={`https://youtube.com/watch?v=${video.youtubeId}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex gap-3 group"
+                      >
+                        <div className="relative w-24 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-white/10">
+                          <Image
+                            src={video.thumbnail || `https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg`}
+                            alt={video.title}
+                            fill
+                            className="object-cover"
+                            unoptimized
+                          />
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="w-6 h-6 bg-[#DC2626]/90 rounded-full flex items-center justify-center">
+                              <FaPlay className="w-2.5 h-2.5 text-white ml-0.5" />
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <p className="text-sm font-medium line-clamp-2 group-hover:text-[#D4A017] transition-colors">
+                            {video.title}
+                          </p>
+                          <p className="text-xs text-white/50 mt-1">{video.category}</p>
+                        </div>
+                      </a>
+                    ))}
+                    {latestVideos.length <= 1 && (
+                      <p className="text-white/60 text-sm">More campaign videos coming soon. Subscribe to stay updated.</p>
+                    )}
+                  </div>
+                  <Link
+                    href="/videos"
+                    className="mt-4 inline-flex items-center gap-2 text-[#D4A017] font-semibold text-sm hover:text-[#E6C200] transition-colors"
+                  >
+                    View All Videos
+                    <FaArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal>
+                <a
+                  href="https://www.youtube.com/channel/UCBoBfckNNdCS7joUqClADbA?sub_confirmation=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center py-4 rounded-xl bg-[#DC2626] text-white font-bold hover:bg-[#B91C1C] transition-colors"
+                >
+                  Subscribe on YouTube
+                </a>
+              </ScrollReveal>
+
+              <ScrollReveal>
+                <a
+                  href={`https://wa.me/?text=${encodeURIComponent('Watch Dr. Kinity\'s latest message from the USA: https://www.nationalvisionparty.com/videos')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center py-4 rounded-xl bg-[#25D366] text-white font-bold hover:bg-[#128C7E] transition-colors"
+                >
+                  Share on WhatsApp
+                </a>
+              </ScrollReveal>
+            </div>
           </div>
         </div>
       </section>
@@ -885,6 +1042,43 @@ export default function HomePage() {
           SOCIAL PROOF SECTION - Endorsements & Stats
           ========================================== */}
       <SocialProof />
+
+      {/* ==========================================
+          DIGITAL WARRIOR TOOLKIT
+          ========================================== */}
+      <section className="py-16 md:py-24 bg-white px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <ScrollReveal>
+            <div className="text-center mb-10">
+              <span className="inline-block px-4 py-1 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm mb-4">
+                Spread the Word
+              </span>
+              <h2 className="font-headline text-3xl md:text-4xl text-[#0F172A] mb-4">
+                Become a <span className="text-[#D4A017]">Digital Warrior</span>
+              </h2>
+              <p className="text-slate-600 max-w-2xl mx-auto">
+                Dr. Kinity is in the USA, but you can be his voice on the ground. Copy these posts, 
+                share them on your social media, and help us reach every Kenyan.
+              </p>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal>
+            <SocialMediaToolkit />
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ==========================================
+          NEWSLETTER SIGNUP SECTION
+          ========================================== */}
+      <section className="py-16 md:py-24 bg-gradient-to-br from-slate-50 to-white px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <NewsletterSignup 
+            title="Stay Connected to the Movement"
+            subtitle="Dr. Kinity is broadcasting live from the USA. Subscribe to never miss a message, rally announcement, or campaign update."
+          />
+        </div>
+      </section>
 
       {/* ==========================================
           CALL TO ACTION SECTION - Premium Dark with Video Background

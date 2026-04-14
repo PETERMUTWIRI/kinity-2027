@@ -6,7 +6,7 @@ import { FaWhatsapp, FaTimes, FaPaperPlane } from 'react-icons/fa';
 import Image from 'next/image';
 
 // TODO: Replace with actual WhatsApp number when available
-const WHATSAPP_NUMBER = '+254700000000'; // Dummy number - replace with real one
+const WHATSAPP_NUMBER = '254713064026'; // Campaign HQ WhatsApp
 const WHATSAPP_MESSAGE = 'Hello! I would like to learn more about the National Vision Party and how I can support Dr. Kinity\'s campaign for 2027.';
 
 export default function WhatsAppChat() {

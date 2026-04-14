@@ -39,7 +39,7 @@ const youthPriorities = [
   {
     icon: FaFistRaised,
     title: 'Zero Corruption',
-    description: 'The old guard stole your future. We will recover what is yours—and jail the thieves.',
+    description: 'The old guard stole your future. The National Vision Party will recover what is yours—and jail the thieves.',
   },
 ];
 
@@ -50,12 +50,12 @@ They called us "keyboard warriors." Then they shot us in the streets.
 
 June 2024. We stood up. Some never came home.
 
-Dr. Isaac Newton Kinity has made a sacred pledge:
+The National Vision Party has made a sacred pledge:
 ✅ Build a national monument for our fallen brothers & sisters
 ✅ Compensate every family that lost a loved one
 ✅ Dismantle the corruption that made them kill us
 
-"I will not be a president who forgets the blood of the youth. I will be a president who honors it." - Dr. Kinity
+"I will not be a president who forgets the blood of the youth. I will be a president who honors it." — Dr. Isaac Newton Kinity, National Vision Party Presidential Candidate
 
 This is not about politics. This is about justice.
 

@@ -496,3 +496,19 @@ model CampaignStat {
   
   @@index([date])
 }
+
+// Newsletter Subscribers - Digital Campaign Engine
+model NewsletterSubscriber {
+  id          String   @id @default(uuid())
+  email       String   @unique @db.VarChar(255)
+  name        String?  @db.VarChar(255)
+  phone       String?  @db.VarChar(50)
+  county      String?  @db.VarChar(100)
+  subscribed  Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([subscribed])
+  @@index([county])
+  @@index([createdAt])
+}

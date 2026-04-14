@@ -3,7 +3,7 @@ import { prisma } from '@/lib/prisma';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaCalendar, FaArrowRight, FaNewspaper } from 'react-icons/fa';
+import { FaCalendar, FaArrowRight, FaNewspaper, FaWhatsapp, FaTwitter, FaFacebook } from 'react-icons/fa';
 import GalleryCarousel from '@/components/GalleryCarousel';
 
 export const dynamic = 'force-dynamic';
@@ -114,9 +114,43 @@ export default async function NewsHubPage({
                     <p className="text-slate-600 text-sm line-clamp-3">
                       {post.excerpt || post.content.replace(/<[^>]*>/g, '').slice(0, 150)}...
                     </p>
-                    <div className="mt-4 flex items-center gap-2 text-[#1E3A8A] font-semibold text-sm">
-                      Read more
-                      <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <div className="mt-4 flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-[#1E3A8A] font-semibold text-sm">
+                        Read more
+                        <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <a
+                          href={`https://wa.me/?text=${encodeURIComponent(post.title + ' - Read more: https://www.nationalvisionparty.com/news-hub/' + post.slug)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="w-8 h-8 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-110 transition-transform"
+                          aria-label="Share on WhatsApp"
+                        >
+                          <FaWhatsapp className="w-4 h-4" />
+                        </a>
+                        <a
+                          href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent('https://www.nationalvisionparty.com/news-hub/' + post.slug)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="w-8 h-8 rounded-full bg-[#1DA1F2] text-white flex items-center justify-center hover:scale-110 transition-transform"
+                          aria-label="Share on Twitter"
+                        >
+                          <FaTwitter className="w-4 h-4" />
+                        </a>
+                        <a
+                          href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://www.nationalvisionparty.com/news-hub/' + post.slug)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="w-8 h-8 rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:scale-110 transition-transform"
+                          aria-label="Share on Facebook"
+                        >
+                          <FaFacebook className="w-4 h-4" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </article>

@@ -16,7 +16,7 @@ import {
 
 export const metadata: Metadata = {
   title: 'Diaspora | National Vision Party',
-  description: 'Kenyans abroad - your voice, your vote, your Kenya matters. Join Dr. Kinity from anywhere in the world.',
+  description: 'Kenyans abroad - your voice, your vote, your Kenya matters. Join the National Vision Party movement from anywhere in the world.',
   openGraph: {
     title: 'Kenyans in Diaspora: The Future is in Your Hands',
     description: 'You left Kenya seeking opportunity. Now help us build the Kenya you always dreamed of.',
@@ -48,7 +48,7 @@ const waysToHelp = [
   },
   {
     title: 'Diaspora Champion',
-    description: 'Organize fellow Kenyans in your city. Host meetups, fundraise, and build the movement locally.',
+    description: 'Organize fellow Kenyans in your city. Host meetups, fundraise, and build the National Vision Party movement locally.',
     icon: FaHandshake,
     action: 'Become Champion',
     link: 'https://wa.me/254713064026?text=I%20want%20to%20be%20a%20Diaspora%20Champion%20in%20[Your%20City]'
@@ -67,7 +67,7 @@ const shareMessage = encodeURIComponent(
 
 You left seeking opportunity. Now help us build the Kenya we always dreamed of.
 
-Dr. Isaac Newton Kinity is not a politician. He is a servant. A man who has pledged to dismantle corruption in 2 years, not 20.
+The National Vision Party is not a collection of politicians. We are servants of the people. Dr. Isaac Newton Kinity has pledged to dismantle corruption in 2 years, not 20.
 
 🗳️ You can vote from abroad
 💰 You can fund change

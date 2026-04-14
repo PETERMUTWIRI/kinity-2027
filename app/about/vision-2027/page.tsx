@@ -20,7 +20,7 @@ export default function VisionPage() {
       <BreadcrumbSchema
         items={[
           { name: 'Home', path: '/' },
-          { name: 'Our Party', path: '/about' },
+          { name: 'Our Movement', path: '/about' },
           { name: 'Vision 2027', path: '/about/vision-2027' },
         ]}
       />

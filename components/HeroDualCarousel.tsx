@@ -15,12 +15,12 @@ const slides = [
   {
     id: 'party',
     type: 'party-centric',
-    subtitle: 'OUR PARTY',
-    title: 'MANIFESTO & VISION',
-    message: 'Our mission is to create a prosperous, just, and equitable nation for all Kenyans.',
+    subtitle: 'NATIONAL VISION PARTY',
+    title: 'KENYA\'S HOPE 2027',
+    message: 'A movement of Kenyans committed to ending corruption and restoring dignity. Led by Dr. Isaac Newton Kinity, we are building a prosperous, just, and equitable nation for all.',
     cta: {
       primary: { text: 'Our Manifesto', href: '/about/manifesto', icon: FaFlag },
-      secondary: { text: 'Our Vision', href: '/about/vision-2027', icon: FaArrowRight }
+      secondary: { text: 'Meet Our Candidate', href: '/about/leadership', icon: FaArrowRight }
     },
     background: '/baner.jpeg'
   },
@@ -28,11 +28,11 @@ const slides = [
     id: 'candidate',
     type: 'candidate-centric',
     title: 'Dr. Isaac Newton Kinity',
-    subtitle: 'Presidential Candidate 2027',
+    subtitle: 'Presidential Candidate 2027 — National Vision Party',
     quote: '"For great heights of prosperity of Kenyan nation and for the happiness, joy, and comfort of the Kenyan people, the demolition of corruption and the rejection of recycling corrupt politicians into leadership positions, should be a mandatory obligation."',
     cta: {
-      primary: { text: 'Support the Candidate', href: '/about', icon: FaHandshake },
-      secondary: { text: 'Learn More', href: '/about', icon: FaArrowRight }
+      primary: { text: 'Join the Movement', href: '/join-us', icon: FaHandshake },
+      secondary: { text: 'Our Vision', href: '/about/vision-2027', icon: FaArrowRight }
     },
     background: '/WhatsApp Image 2026-03-18 at 5.03.42 PM (2).jpeg',
     headshot: '/images/Dr.png'

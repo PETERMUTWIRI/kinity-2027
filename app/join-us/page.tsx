@@ -17,6 +17,7 @@ import {
   FaUser,
   FaCalendarAlt,
   FaChevronDown,
+  FaWhatsapp,
 } from 'react-icons/fa';
 import ScrollReveal from '@/components/ScrollReveal';
 
@@ -258,8 +259,104 @@ export default function JoinUsPage() {
         </div>
       </section>
 
+      {/* County Champions - Digital Ground Game */}
+      <section className="py-20 bg-gradient-to-br from-[#0F172A] via-[#1E3A8A] to-[#0F172A] text-white relative overflow-hidden">
+        {/* Pattern overlay */}
+        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <div className="w-24 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] mx-auto rounded-full mb-6" />
+              <h2 className="font-headline text-3xl md:text-4xl mb-4">
+                County <span className="text-[#D4A017]">Digital Champions</span>
+              </h2>
+              <p className="text-white/80 max-w-2xl mx-auto text-lg">
+                Dr. Kinity is in the USA, but the movement is alive in all 47 counties. 
+                Join your county WhatsApp group and connect with local coordinators organizing 
+                digital rallies, voter education, and grassroots mobilization.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/20">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h3 className="text-2xl font-bold mb-4">Find Your County Team</h3>
+                  <ul className="space-y-3 text-white/90">
+                    <li className="flex items-start gap-3">
+                      <FaCheck className="w-5 h-5 text-[#D4A017] flex-shrink-0 mt-0.5" />
+                      <span>Get real-time updates from your county coordinator</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <FaCheck className="w-5 h-5 text-[#D4A017] flex-shrink-0 mt-0.5" />
+                      <span>Receive shareable posters and campaign materials</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <FaCheck className="w-5 h-5 text-[#D4A017] flex-shrink-0 mt-0.5" />
+                      <span>Join virtual town halls with Dr. Kinity from the USA</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <FaCheck className="w-5 h-5 text-[#D4A017] flex-shrink-0 mt-0.5" />
+                      <span>Organize local meetups and voter registration drives</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <FaCheck className="w-5 h-5 text-[#D4A017] flex-shrink-0 mt-0.5" />
+                      <span>Earn campaign rewards and recognition as a top champion</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="space-y-4">
+                  <div className="bg-white/10 rounded-2xl p-6 border border-white/10">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 rounded-full bg-[#25D366] flex items-center justify-center">
+                        <FaWhatsapp className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-lg">Join via WhatsApp</p>
+                        <p className="text-white/60 text-sm">Message us your county name</p>
+                      </div>
+                    </div>
+                    <a
+                      href="https://wa.me/254713064026?text=Hello%2C%20I%20want%20to%20join%20my%20county%20WhatsApp%20group.%20My%20county%20is%3A%20"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full text-center py-4 rounded-xl bg-[#25D366] text-white font-bold hover:bg-[#128C7E] transition-colors"
+                    >
+                      Connect to My County
+                    </a>
+                  </div>
+                  <div className="bg-white/10 rounded-2xl p-6 border border-white/10">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 rounded-full bg-[#D4A017] flex items-center justify-center">
+                        <FaUsers className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-lg">Become a Coordinator</p>
+                        <p className="text-white/60 text-sm">No coordinator in your county yet?</p>
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => {
+                        const form = document.getElementById('volunteer-form');
+                        form?.scrollIntoView({ behavior: 'smooth' });
+                        setFormData(prev => ({ ...prev, role: 'County Coordinator' }));
+                      }}
+                      className="block w-full text-center py-4 rounded-xl bg-[#D4A017] text-[#0F172A] font-bold hover:bg-[#E6C200] transition-colors"
+                    >
+                      Apply to Lead My County
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Registration Form */}
-      <section className="py-20 bg-white">
+      <section id="volunteer-form" className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-12">

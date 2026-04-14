@@ -3,11 +3,11 @@ import AboutLanding from './AboutLanding';
 import { BreadcrumbSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'Our Party | National Vision Party',
+  title: 'Our Movement | National Vision Party',
   description: 'Learn about the National Vision Party, Dr. Isaac Newton Kinity, and our mission to transform Kenya through integrity, economic development, and service to all Kenyans.',
   keywords: ['National Vision Party', 'Isaac Newton Kinity', 'Kenya', 'political party', 'vision 2027', 'integrity'],
   openGraph: {
-    title: 'Our Party | National Vision Party',
+    title: 'Our Movement | National Vision Party',
     description: 'Learn about the National Vision Party and our mission to transform Kenya.',
     images: [
       {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Our Party | National Vision Party',
+    title: 'Our Movement | National Vision Party',
     description: 'Learn about the National Vision Party and our mission to transform Kenya.',
     images: ['/images/about/party-overview.jpg'],
   },
@@ -35,7 +35,7 @@ export default function AboutPage() {
       <BreadcrumbSchema
         items={[
           { name: 'Home', path: '/' },
-          { name: 'Our Party', path: '/about' },
+          { name: 'Our Movement', path: '/about' },
         ]}
       />
       <AboutLanding />

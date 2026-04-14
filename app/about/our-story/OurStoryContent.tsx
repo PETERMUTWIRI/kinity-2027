@@ -50,7 +50,7 @@ export default function OurStoryContent() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm shadow-md text-slate-600 hover:text-[#1E3A8A] transition-colors"
         >
           <FaArrowLeft className="w-4 h-4" />
-          <span className="hidden sm:inline">Back to Our Party</span>
+          <span className="hidden sm:inline">Back to Our Movement</span>
         </Link>
       </div>
 

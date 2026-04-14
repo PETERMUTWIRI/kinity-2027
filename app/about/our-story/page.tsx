@@ -20,7 +20,7 @@ export default function OurStoryPage() {
       <BreadcrumbSchema
         items={[
           { name: 'Home', path: '/' },
-          { name: 'Our Party', path: '/about' },
+          { name: 'Our Movement', path: '/about' },
           { name: 'Our Story', path: '/about/our-story' },
         ]}
       />

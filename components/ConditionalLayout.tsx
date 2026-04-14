@@ -6,6 +6,7 @@ import Footer from './Footer';
 import NewsTicker from './NewsTicker';
 import WhatsAppChat from './WhatsAppChat';
 import CookieConsent from './CookieConsent';
+import MobileActionBar from './MobileActionBar';
 
 export default function ConditionalLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -19,6 +20,7 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
       {!isAdminRoute && <Footer />}
       {!isAdminRoute && <WhatsAppChat />}
       {!isAdminRoute && <CookieConsent />}
+      {!isAdminRoute && <MobileActionBar />}
     </>
   );
 }
