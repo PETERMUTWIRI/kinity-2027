@@ -11,6 +11,7 @@ const pillars = [
     title: 'Economic Transformation',
     subtitle: 'Creating Jobs & Prosperity for All',
     icon: FaChartLine,
+    image: '/images/vission/economic-transformation.png',
     color: '#1E3A8A',
     stats: [
       { value: '40%', label: 'Cost of Living Reduction' },
@@ -35,6 +36,7 @@ const pillars = [
     title: 'Zero Corruption',
     subtitle: 'Uncompromising Stance Against Graft',
     icon: FaShieldAlt,
+    image: '/images/vission/corruption.png',
     color: '#D4A017',
     stats: [
       { value: '2', label: 'Years to Eliminate Corruption' },
@@ -59,6 +61,7 @@ const pillars = [
     title: 'Universal Healthcare',
     subtitle: 'Quality Healthcare Accessible to All',
     icon: FaHeart,
+    image: '/images/vission/healthcare.png',
     color: '#1E3A8A',
     stats: [
       { value: '100%', label: 'Healthcare Coverage' },
@@ -83,6 +86,7 @@ const pillars = [
     title: 'Education Revolution',
     subtitle: 'World-Class Education for Our Children',
     icon: FaGraduationCap,
+    image: '/images/vission/education.png',
     color: '#D4A017',
     stats: [
       { value: '100%', label: 'Free Primary & Secondary' },
@@ -167,7 +171,15 @@ export default function VisionContent() {
         <div className="max-w-6xl mx-auto space-y-24">
           {pillars.map((pillar, index) => (
             <ScrollReveal key={pillar.id}>
-              <div id={pillar.id} className="scroll-mt-32">
+              <div id={pillar.id} className="scroll-mt-32 relative rounded-3xl overflow-hidden">
+                {/* Background image with 88% white overlay */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                  style={{ backgroundImage: `url('${pillar.image}')` }}
+                />
+                <div className="absolute inset-0 bg-white/88" />
+                
+                <div className="relative z-10 p-6 md:p-10">
                 {/* Header */}
                 <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
                   <div>
@@ -260,6 +272,7 @@ export default function VisionContent() {
 
                 {/* Divider */}
                 {index < pillars.length - 1 && <div className="mt-16 border-b border-slate-200" />}
+                </div>
               </div>
             </ScrollReveal>
           ))}

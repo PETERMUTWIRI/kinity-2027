@@ -82,6 +82,7 @@ const pillars = [
     subtitle: 'Creating jobs and prosperity',
     summary: 'Creating jobs, supporting local businesses, and building a self-reliant economy that works for every Kenyan.',
     Icon: EconomicIcon,
+    image: '/images/vission/economic-transformation.png',
     color: '#1E3A8A',
     featured: true,
   },
@@ -91,6 +92,7 @@ const pillars = [
     subtitle: 'Uncompromising stance against graft',
     summary: 'Uncompromising stance against corruption. Transparent governance and accountability at every level.',
     Icon: AntiCorruptionIcon,
+    image: '/images/vission/corruption.png',
     color: '#D4A017',
     featured: true,
   },
@@ -100,6 +102,7 @@ const pillars = [
     subtitle: 'Quality healthcare accessible to all',
     summary: 'Quality healthcare accessible to all Kenyans. Modern facilities and well-equipped medical professionals.',
     Icon: HealthcareIcon,
+    image: '/images/vission/healthcare.png',
     color: '#1E3A8A',
     featured: true,
   },
@@ -109,6 +112,7 @@ const pillars = [
     subtitle: 'World-class education for our children',
     summary: 'World-class education system that prepares our youth for the challenges and opportunities of tomorrow.',
     Icon: EducationIcon,
+    image: '/images/vission/education.png',
     color: '#D4A017',
     featured: true,
   },
@@ -289,16 +293,15 @@ export default function HomePage() {
                   <Link href={`/about#${pillar.id}`} className="group block h-full">
                     <TiltCard className="h-full" borderColor={pillar.color}>
                       <div className="h-full bg-white rounded-2xl p-5 md:p-6 shadow-md border border-slate-100 group-hover:shadow-xl group-hover:border-[#D4A017]/30 transition-all duration-300">
-                        {/* Icon with gold accent ring */}
+                        {/* Pillar image */}
                         <div className="relative mb-4">
-                          <div 
-                            className="w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
-                            style={{ 
-                              backgroundColor: `${pillar.color}10`,
-                              color: pillar.color 
-                            }}
-                          >
-                            <pillar.Icon className="w-6 h-6 md:w-7 md:h-7" />
+                          <div className="w-full h-32 md:h-36 rounded-xl overflow-hidden">
+                            <Image
+                              src={pillar.image}
+                              alt={pillar.title}
+                              fill
+                              className="object-cover transition-transform duration-300 group-hover:scale-105"
+                            />
                           </div>
                           {/* Subtle gold accent dot */}
                           <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#D4A017] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -335,6 +338,7 @@ export default function HomePage() {
                     title: 'Economic Transformation', 
                     desc: 'Creating jobs, supporting local businesses, and building a self-reliant economy that works for every Kenyan.',
                     color: '#1E3A8A',
+                    image: '/images/vission/economic-transformation.png',
                     Icon: EconomicIcon
                   },
                   { 
@@ -342,6 +346,7 @@ export default function HomePage() {
                     title: 'Zero Corruption', 
                     desc: 'Uncompromising stance against corruption. Transparent governance and accountability at every level.',
                     color: '#D4A017',
+                    image: '/images/vission/corruption.png',
                     Icon: AntiCorruptionIcon
                   },
                   { 
@@ -349,6 +354,7 @@ export default function HomePage() {
                     title: 'Universal Healthcare', 
                     desc: 'Quality healthcare accessible to all Kenyans. Modern facilities and well-equipped medical professionals.',
                     color: '#1E3A8A',
+                    image: '/images/vission/healthcare.png',
                     Icon: HealthcareIcon
                   },
                   { 
@@ -356,6 +362,7 @@ export default function HomePage() {
                     title: 'Education Revolution', 
                     desc: 'World-class education system that prepares our youth for the challenges and opportunities of tomorrow.',
                     color: '#D4A017',
+                    image: '/images/vission/education.png',
                     Icon: EducationIcon
                   },
                 ].map((pillar, index) => (
@@ -363,16 +370,15 @@ export default function HomePage() {
                     <Link href={`/about#${pillar.id}`} className="group block h-full">
                       <TiltCard className="h-full" borderColor={pillar.color}>
                         <div className="h-full bg-white rounded-2xl p-5 md:p-6 shadow-md border border-slate-100 group-hover:shadow-xl group-hover:border-[#D4A017]/30 transition-all duration-300">
-                          {/* Icon with gold accent ring */}
+                          {/* Pillar image */}
                           <div className="relative mb-4">
-                            <div 
-                              className="w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
-                              style={{ 
-                                backgroundColor: `${pillar.color}10`,
-                                color: pillar.color 
-                              }}
-                            >
-                              <pillar.Icon className="w-6 h-6 md:w-7 md:h-7" />
+                            <div className="w-full h-32 md:h-36 rounded-xl overflow-hidden">
+                              <Image
+                                src={pillar.image}
+                                alt={pillar.title}
+                                fill
+                                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                              />
                             </div>
                             {/* Subtle gold accent dot */}
                             <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#D4A017] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

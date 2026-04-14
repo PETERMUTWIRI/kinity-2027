@@ -12,19 +12,19 @@ const endorsements = [
   {
     name: "Kenya Association of Manufacturers",
     role: "Industry Body",
-    quote: "Dr. Kinity's economic transformation plan addresses the real challenges facing Kenyan businesses.",
+    quote: "The National Vision Party's economic transformation plan addresses the real challenges facing Kenyan businesses.",
     logo: "KAM",
   },
   {
     name: "Youth Empowerment Alliance",
     role: "Civil Society",
-    quote: "A leader who truly understands the aspirations of Kenya's youth. His education revolution will change lives.",
+    quote: "A movement that truly understands the aspirations of Kenya's youth. This education revolution will change lives.",
     logo: "YEA",
   },
   {
     name: "Healthcare Workers Union",
     role: "Professional Association",
-    quote: "His universal healthcare vision prioritizes both patients and healthcare professionals.",
+    quote: "The party's universal healthcare vision prioritizes both patients and healthcare professionals.",
     logo: "HWU",
   },
 ];
@@ -45,7 +45,7 @@ export default function SocialProof() {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] mx-auto rounded-full mb-4" />
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Leaders and organizations across Kenya share their perspectives on Dr. Kinity&apos;s vision for our nation.
+              Leaders and organizations across Kenya share their perspectives on the National Vision Party&apos;s vision for our nation.
             </p>
           </div>
         </ScrollReveal>
