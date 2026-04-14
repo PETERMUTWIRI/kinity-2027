@@ -25,7 +25,6 @@ import {
   FaSpinner,
   FaCheck,
 } from 'react-icons/fa';
-import ElectionCountdown from './ElectionCountdown';
 
 // ==========================================
 // NATIONAL VISION PARTY - PREMIUM FOOTER
@@ -129,49 +128,6 @@ export default function Footer() {
           backgroundSize: '40px 40px',
         }}
       />
-
-      {/* CTA Banner with Countdown - Dark Navy with Gold Accent */}
-      <div className="relative bg-[#0F172A] border-b border-[#D4A017]/30">
-        {/* Gold accent line at top */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4A017] to-transparent" />
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            {/* Left - Countdown */}
-            <div className="flex-shrink-0">
-              <ElectionCountdown variant="footer" />
-            </div>
-            
-            {/* Center - CTA Text */}
-            <div className="text-center lg:text-left lg:flex-1">
-              <h3 className="font-slogan text-2xl md:text-3xl mb-2 text-white">
-                READY TO JOIN THE <span className="text-[#D4A017]">MOVEMENT</span>?
-              </h3>
-              <p className="text-white/80 max-w-md mx-auto lg:mx-0">
-                Be part of the change Kenya needs. Volunteer, donate, or spread the word.
-              </p>
-            </div>
-            
-            {/* Right - Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Link
-                href="/join-us"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#DC2626] text-white font-bold hover:bg-[#B91C1C] transition-all duration-300 shadow-lg"
-              >
-                <FaHandshake className="w-5 h-5" />
-                Join Us
-              </Link>
-              <Link
-                href="/support"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-[#1E3A8A] font-bold hover:bg-slate-100 transition-all duration-300"
-              >
-                <FaHeart className="w-5 h-5" />
-                Donate
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Main Footer */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

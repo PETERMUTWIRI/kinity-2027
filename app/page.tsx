@@ -230,36 +230,6 @@ export default function HomePage() {
       </section>
 
       {/* ==========================================
-          JOIN THE MOVEMENT BANNER
-          ========================================== */}
-      <section className="relative bg-gradient-to-r from-[#1E3A8A] via-[#0F172A] to-[#1E3A8A] py-4 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)', backgroundSize: '30px 30px' }} />
-        </div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D4A017] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-[#D4A017]"></span>
-              </span>
-              <p className="text-white font-medium text-sm md:text-base">
-                <span className="text-[#D4A017] font-bold">JOIN THE MOVEMENT:</span> The National Vision Party is growing across all 47 counties. 
-                <span className="hidden md:inline"> Be part of the change Kenya needs.</span>
-              </p>
-            </div>
-            <Link 
-              href="/join-us" 
-              className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#D4A017] text-[#0F172A] font-bold text-sm hover:bg-[#E6C200] transition-colors whitespace-nowrap"
-            >
-              Get Involved
-              <FaArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ==========================================
           VISION SECTION - Policy Pillars
           ========================================== */}
       <section id="vision" className="py-10 md:py-14 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">

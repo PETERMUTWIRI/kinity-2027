@@ -80,9 +80,9 @@ export default function HeroDualCarousel() {
           priority
         />
         {/* Navy to white gradient overlay - smooth transition from top to bottom */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1E3A8A]/85 via-[#2D5A9E]/60 to-white/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1E3A8A]/90 via-[#1E3A8A]/70 to-[#0F172A]/85" />
         {/* Additional overlay for enhanced text clarity */}
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
 
       {/* Carousel Content */}
