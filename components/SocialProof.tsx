@@ -31,10 +31,11 @@ const endorsements = [
 
 export default function SocialProof() {
   return (
-    <section className="py-20 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#1E3A8A]/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#D4A017]/5 rounded-full blur-3xl" />
+    <section className="py-20 relative overflow-hidden">
+      {/* Banner background */}
+      <div className="absolute inset-0 bg-[url('/baner.jpeg')] bg-cover bg-center bg-no-repeat" />
+      {/* White overlay */}
+      <div className="absolute inset-0 bg-white/87" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}

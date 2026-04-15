@@ -111,7 +111,7 @@ const pillars = [
     title: 'Social Protection & Inclusion',
     subtitle: 'Dignity for Widows, Orphans, PWDs & the Elderly',
     icon: FaHandsHelping,
-    image: '/images/kinity-connection.jpeg',
+    image: '/images/vission/social-protection.png',
     color: '#D4A017',
     stats: [
       { value: '100%', label: 'Disability Rights Coverage' },
@@ -136,7 +136,7 @@ const pillars = [
     title: 'Agriculture & Food Security',
     subtitle: 'Farming First, Hunger Never',
     icon: FaSeedling,
-    image: '/images/rally.jpeg',
+    image: '/images/vission/agriculture-food-security.png',
     color: '#1E3A8A',
     stats: [
       { value: '40%', label: 'Cost of Living Cut' },
@@ -161,7 +161,7 @@ const pillars = [
     title: 'Youth & Women Empowerment',
     subtitle: 'Opportunity for Every Kenyan',
     icon: FaUsers,
-    image: '/images/kinity-1.jpeg',
+    image: '/images/vission/youth-and-women-empowerment.png',
     color: '#D4A017',
     stats: [
       { value: '70%', label: 'Youth Unemployment Cut' },
@@ -186,7 +186,7 @@ const pillars = [
     title: 'Security & National Cohesion',
     subtitle: 'Safe Homes, United Nation',
     icon: FaUserShield,
-    image: '/images/kenya.png',
+    image: '/images/vission/national-security-cohesion.png',
     color: '#1E3A8A',
     stats: [
       { value: '100%', label: 'Police Reform' },

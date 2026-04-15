@@ -122,7 +122,7 @@ const pillars = [
     subtitle: 'Dignity for widows, orphans, PWDs & the elderly',
     summary: 'A compassionate society that leaves no one behind. Monthly support, disability rights, and protection for the most vulnerable.',
     Icon: SocialProtectionIcon,
-    image: '/images/kinity-connection.jpeg',
+    image: '/images/vission/social-protection.png',
     color: '#D4A017',
     featured: true,
   },
@@ -132,7 +132,7 @@ const pillars = [
     subtitle: 'Farming first, hunger never',
     summary: 'Empowering farmers with subsidies, modern tools, and fair markets to ensure every Kenyan household has enough food.',
     Icon: AgricultureIcon,
-    image: '/images/rally.jpeg',
+    image: '/images/vission/agriculture-food-security.png',
     color: '#1E3A8A',
     featured: true,
   },
@@ -142,7 +142,7 @@ const pillars = [
     subtitle: 'Opportunity for every Kenyan',
     summary: 'Unlocking potential through affirmative funding, innovation hubs, and leadership opportunities for youth and women.',
     Icon: YouthWomenIcon,
-    image: '/images/kinity-1.jpeg',
+    image: '/images/vission/youth-and-women-empowerment.png',
     color: '#D4A017',
     featured: true,
   },
@@ -152,7 +152,7 @@ const pillars = [
     subtitle: 'Safe homes, united nation',
     summary: 'Reforming security services and fostering national unity so every Kenyan feels safe, protected, and belongs.',
     Icon: SecurityIcon,
-    image: '/images/kenya.png',
+    image: '/images/vission/national-security-cohesion.png',
     color: '#1E3A8A',
     featured: true,
   },
@@ -380,7 +380,7 @@ export default function HomePage() {
                     title: 'Social Protection & Inclusion', 
                     desc: 'A compassionate society that leaves no one behind. Monthly support, disability rights, and protection for the most vulnerable.',
                     color: '#D4A017',
-                    image: '/images/kinity-connection.jpeg',
+                    image: '/images/vission/social-protection.png',
                     Icon: SocialProtectionIcon
                   },
                   { 
@@ -388,7 +388,7 @@ export default function HomePage() {
                     title: 'Agriculture & Food Security', 
                     desc: 'Empowering farmers with subsidies, modern tools, and fair markets to ensure every Kenyan household has enough food.',
                     color: '#1E3A8A',
-                    image: '/images/rally.jpeg',
+                    image: '/images/vission/agriculture-food-security.png',
                     Icon: AgricultureIcon
                   },
                   { 
@@ -396,7 +396,7 @@ export default function HomePage() {
                     title: 'Youth & Women Empowerment', 
                     desc: 'Unlocking potential through affirmative funding, innovation hubs, and leadership opportunities for youth and women.',
                     color: '#D4A017',
-                    image: '/images/kinity-1.jpeg',
+                    image: '/images/vission/youth-and-women-empowerment.png',
                     Icon: YouthWomenIcon
                   },
                   { 
@@ -404,7 +404,7 @@ export default function HomePage() {
                     title: 'Security & National Cohesion', 
                     desc: 'Reforming security services and fostering national unity so every Kenyan feels safe, protected, and belongs.',
                     color: '#1E3A8A',
-                    image: '/images/kenya.png',
+                    image: '/images/vission/national-security-cohesion.png',
                     Icon: SecurityIcon
                   },
                 ].map((pillar, index) => (
