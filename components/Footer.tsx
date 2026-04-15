@@ -168,11 +168,11 @@ export default function Footer() {
                 info@nationalvisionparty.com
               </a>
               <a 
-                href="tel:+254XXXXXXXXX" 
+                href="tel:+12036759354" 
                 className="flex items-center gap-3 text-white/60 hover:text-[#D4A017] transition-colors"
               >
                 <FaPhone className="w-5 h-5 text-[#D4A017]" />
-                +254 XXX XXX XXX
+                +1 (203) 675-9354
               </a>
               <div className="flex items-center gap-3 text-white/60">
                 <FaMapMarkerAlt className="w-5 h-5 text-[#D4A017]" />

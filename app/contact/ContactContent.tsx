@@ -40,41 +40,41 @@ import ScrollReveal from '@/components/ScrollReveal';
 // Campaign Contact Information
 const CAMPAIGN_CONTACTS = {
   emergency: {
-    phone: '+254 700 000 000', // 24/7 Hotline
-    whatsapp: '+254 700 000 001',
+    phone: '+1 (203) 675-9354', // 24/7 Hotline
+    whatsapp: '+1 (203) 675-9354',
     label: 'Emergency Response Team',
     description: 'For urgent incidents, security concerns, and immediate campaign matters',
   },
   general: {
     email: 'info@nationalvisionparty.com',
-    whatsapp: '+254 711 000 000',
-    phone: '+254 711 000 000',
+    whatsapp: '+1 (203) 675-9354',
+    phone: '+1 (203) 675-9354',
     hours: 'Mon - Fri: 8:00 AM - 6:00 PM EAT',
   },
   media: {
     email: 'press@nationalvisionparty.com',
-    whatsapp: '+254 722 000 000',
-    phone: '+254 722 000 000',
+    whatsapp: '+1 (203) 675-9354',
+    phone: '+1 (203) 675-9354',
     label: 'Media Relations',
   },
   volunteer: {
     email: 'volunteer@nationalvisionparty.com',
-    phone: '+254 733 000 000',
+    phone: '+1 (203) 675-9354',
   },
   events: {
     email: 'events@nationalvisionparty.com',
-    phone: '+254 744 000 000',
+    phone: '+1 (203) 675-9354',
   },
   policy: {
     email: 'policy@nationalvisionparty.com',
   },
   donations: {
     email: 'donations@nationalvisionparty.com',
-    phone: '+254 755 000 000',
+    phone: '+1 (203) 675-9354',
   },
   corruption: {
     email: 'integrity@nationalvisionparty.com',
-    whatsapp: '+254 766 000 000',
+    whatsapp: '+1 (203) 675-9354',
     anonymous: true,
     label: 'Anti-Corruption Hotline',
   },
@@ -97,7 +97,7 @@ const OFFICES = [
     address: 'Coming Soon - Mombasa, Kenya',
     type: 'regional',
     hours: 'Mon-Fri: 8AM - 5PM',
-    phone: '+254 700 000 002',
+    phone: '+1 (203) 675-9354',
   },
   {
     name: 'Kisumu Regional Office',
@@ -105,7 +105,7 @@ const OFFICES = [
     address: 'Coming Soon - Kisumu, Kenya',
     type: 'regional',
     hours: 'Mon-Fri: 8AM - 5PM',
-    phone: '+254 700 000 003',
+    phone: '+1 (203) 675-9354',
   },
   {
     name: 'Nakuru Regional Office',
@@ -113,7 +113,7 @@ const OFFICES = [
     address: 'Coming Soon - Nakuru, Kenya',
     type: 'regional',
     hours: 'Mon-Fri: 8AM - 5PM',
-    phone: '+254 700 000 004',
+    phone: '+1 (203) 675-9354',
   },
 ];
 

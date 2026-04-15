@@ -319,7 +319,7 @@ export default function JoinUsPage() {
                       </div>
                     </div>
                     <a
-                      href="https://wa.me/254713064026?text=Hello%2C%20I%20want%20to%20join%20my%20county%20WhatsApp%20group.%20My%20county%20is%3A%20"
+                      href="https://wa.me/12036759354?text=Hello%2C%20I%20want%20to%20join%20my%20county%20WhatsApp%20group.%20My%20county%20is%3A%20"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block w-full text-center py-4 rounded-xl bg-[#25D366] text-white font-bold hover:bg-[#128C7E] transition-colors"

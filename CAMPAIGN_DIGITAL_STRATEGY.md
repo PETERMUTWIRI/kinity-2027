@@ -3,7 +3,7 @@
 
 **Last Updated:** March 2026  
 **Status:** Phase 1 In Progress  
-**WhatsApp Hotline:** 0713 064 026
+**WhatsApp Hotline:** +1 (203) 675-9354
 
 ---
 
@@ -39,7 +39,7 @@ Convert support into donations through seamless, multi-channel payment options.
 ### Content Pages Live
 - [x] `/diaspora` - Kenyans abroad engagement
 - [x] `/youth` - GenZ pledge & justice for fallen heroes
-- [x] Both pages have WhatsApp integration (0713064026)
+- [x] Both pages have WhatsApp integration (+12036759354)
 - [x] Both pages have pre-written share messages
 
 ---
@@ -84,7 +84,7 @@ Convert support into donations through seamless, multi-channel payment options.
   - Donate
 - QR code for quick WhatsApp add
 
-**WhatsApp Number:** 0713064026
+**WhatsApp Number:** +12036759354
 
 ---
 
@@ -285,7 +285,7 @@ const kpiDashboard = {
 
 ## 📞 CONTACT & RESOURCES
 
-**WhatsApp Hotline:** 0713064026  
+**WhatsApp Hotline:** +12036759354  
 **Email:** info@nationalvisionparty.com  
 **Diaspora:** diaspora@nationalvisionparty.com
 

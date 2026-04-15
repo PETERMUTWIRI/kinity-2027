@@ -44,14 +44,14 @@ const waysToHelp = [
     description: 'Use your networks to spread Dr. Kinity\'s message. We provide the content, you provide the voice.',
     icon: FaUsers,
     action: 'Join Network',
-    link: 'https://wa.me/254713064026?text=I%20want%20to%20be%20a%20virtual%20campaigner'
+    link: 'https://wa.me/12036759354?text=I%20want%20to%20be%20a%20virtual%20campaigner'
   },
   {
     title: 'Diaspora Champion',
     description: 'Organize fellow Kenyans in your city. Host meetups, fundraise, and build the National Vision Party movement locally.',
     icon: FaHandshake,
     action: 'Become Champion',
-    link: 'https://wa.me/254713064026?text=I%20want%20to%20be%20a%20Diaspora%20Champion%20in%20[Your%20City]'
+    link: 'https://wa.me/12036759354?text=I%20want%20to%20be%20a%20Diaspora%20Champion%20in%20[Your%20City]'
   },
   {
     title: 'Family Support Fund',
@@ -77,7 +77,7 @@ Your family at home is counting on you.
 
 Join us: https://www.nationalvisionparty.com/diaspora
 
-WhatsApp: 0713064026
+WhatsApp: +1 (203) 675-9354
 
 #KenyasHope2027 #DiasporaPower`
 );
@@ -120,7 +120,7 @@ export default function DiasporaPage() {
               {/* WhatsApp CTA */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a
-                  href={`https://wa.me/254713064026?text=I%20am%20in%20the%20Diaspora%20and%20I%20want%20to%20help%20from%20[Your%20Country]`}
+                  href={`https://wa.me/12036759354?text=I%20am%20in%20the%20Diaspora%20and%20I%20want%20to%20help%20from%20[Your%20Country]`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#128C7E] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
@@ -277,7 +277,7 @@ export default function DiasporaPage() {
                 We will alert you when registration opens in your country, where to go, and what to bring.
               </p>
               <a
-                href={`https://wa.me/254713064026?text=I%20want%20to%20register%20to%20vote%20from%20abroad.%20My%20country%20is:%20`}
+                href={`https://wa.me/12036759354?text=I%20want%20to%20register%20to%20vote%20from%20abroad.%20My%20country%20is:%20`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-[#25D366] text-white font-bold hover:bg-[#128C7E] transition-colors"
@@ -305,7 +305,7 @@ export default function DiasporaPage() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={`https://wa.me/254713064026?text=I%20am%20ready%20to%20join%20the%20movement%20from%20the%20diaspora`}
+              href={`https://wa.me/12036759354?text=I%20am%20ready%20to%20join%20the%20movement%20from%20the%20diaspora`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#DC2626] text-white font-bold text-lg hover:bg-[#B91C1C] transition-all duration-300 shadow-lg"
@@ -327,7 +327,7 @@ export default function DiasporaPage() {
 
           <div className="mt-8 pt-8 border-t border-white/10">
             <p className="text-white/50 text-sm">
-              WhatsApp: <span className="text-[#D4A017]">0713 064 026</span> | Email: diaspora@nationalvisionparty.com
+              WhatsApp: <span className="text-[#D4A017]">+1 (203) 675-9354</span> | Email: diaspora@nationalvisionparty.com
             </p>
           </div>
         </div>

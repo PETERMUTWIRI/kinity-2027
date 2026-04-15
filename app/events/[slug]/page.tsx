@@ -469,7 +469,7 @@ export default async function EventPage({ params }: PageProps) {
                     Add to Calendar
                   </a>
                   <a
-                    href={`https://wa.me/254713064026?text=${encodeURIComponent(`Hi, I'm interested in attending "${event.title}" on ${new Date(event.startDate).toLocaleDateString('en-KE')}. Can you provide more information?`)}`}
+                    href={`https://wa.me/12036759354?text=${encodeURIComponent(`Hi, I'm interested in attending \"${event.title}\" on ${new Date(event.startDate).toLocaleDateString('en-KE')}. Can you provide more information?`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full py-4 text-center rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold transition-all flex items-center justify-center gap-2"
@@ -486,10 +486,10 @@ export default async function EventPage({ params }: PageProps) {
               <h4 className="text-white font-bold mb-2">Need Help?</h4>
               <p className="text-slate-400 text-sm mb-4">Contact our campaign hotline for event information.</p>
               <a 
-                href="tel:+254713064026" 
+                href="tel:+12036759354" 
                 className="text-[#D4A017] font-bold text-lg hover:text-[#E6C200] transition-colors"
               >
-                0713 064 026
+                +1 (203) 675-9354
               </a>
             </div>
           </div>

@@ -65,7 +65,7 @@ The National Vision Party has made a sacred pledge:
 This is not about politics. This is about justice.
 
 🔗 https://www.nationalvisionparty.com/youth
-📱 WhatsApp: 0713064026
+📱 WhatsApp: +1 (203) 675-9354
 
 #GenZPower #JusticeForFallenHeroes #KenyasHope2027`
 );
@@ -74,7 +74,11 @@ export default function YouthPage() {
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Hero Section - Honoring the Fallen */}
-      <section className="relative bg-gradient-to-br from-[#0F172A] via-[#1E3A8A] to-[#0F172A] py-24 lg:py-32 overflow-hidden">
+      <section className="relative py-24 lg:py-32 overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/genz1.png')] bg-cover bg-center bg-no-repeat" />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/80 via-[#0F172A]/70 to-[#0F172A]/90" />
         {/* Subtle pattern overlay */}
         <div 
           className="absolute inset-0 opacity-5"
@@ -127,7 +131,7 @@ export default function YouthPage() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
             <a
-              href={`https://wa.me/254713064026?text=I%20am%20GenZ%20and%20I%20want%20justice%20for%20our%20fallen%20heroes`}
+              href={`https://wa.me/12036759354?text=I%20am%20GenZ%20and%20I%20want%20justice%20for%20our%20fallen%20heroes`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#128C7E] transition-all duration-300 shadow-lg"
@@ -237,8 +241,13 @@ export default function YouthPage() {
       </section>
 
       {/* What GenZ Gets */}
-      <section className="py-16 bg-gradient-to-b from-slate-100 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 relative overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/genz2.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-white/88" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
             <span className="inline-block px-4 py-1 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A] text-sm font-semibold mb-4">
               Your Future, Your Terms
@@ -255,7 +264,7 @@ export default function YouthPage() {
             {youthPriorities.map((priority, index) => (
               <div 
                 key={priority.title}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-t-4 border-[#1E3A8A]"
+                className="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-t-4 border-[#1E3A8A]"
               >
                 <div className="w-14 h-14 rounded-xl bg-[#1E3A8A]/10 flex items-center justify-center mb-6">
                   <priority.icon className="w-7 h-7 text-[#1E3A8A]" />
@@ -302,7 +311,11 @@ export default function YouthPage() {
       </section>
 
       {/* Join the Movement */}
-      <section className="py-16 lg:py-24 bg-[#0F172A] relative overflow-hidden">
+      <section className="py-16 lg:py-24 relative overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/genz3.png')] bg-cover bg-center bg-no-repeat" />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-[#0F172A]/85" />
         {/* Background pattern */}
         <div 
           className="absolute inset-0 opacity-5"
@@ -328,7 +341,7 @@ export default function YouthPage() {
           
           <div className="grid sm:grid-cols-2 gap-4 max-w-lg mx-auto">
             <a
-              href={`https://wa.me/254713064026?text=I%20am%20GenZ%20and%20I%20want%20to%20join%20the%20movement`}
+              href={`https://wa.me/12036759354?text=I%20am%20GenZ%20and%20I%20want%20to%20join%20the%20movement`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#128C7E] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
@@ -350,7 +363,7 @@ export default function YouthPage() {
           
           <div className="mt-8 pt-8 border-t border-white/10">
             <p className="text-white/50 text-sm">
-              WhatsApp: <span className="text-[#D4A017] font-semibold">0713 064 026</span>
+              WhatsApp: <span className="text-[#D4A017] font-semibold">+1 (203) 675-9354</span>
             </p>
           </div>
         </div>

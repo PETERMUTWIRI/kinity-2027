@@ -26,7 +26,7 @@ export default function MobileActionBar() {
   }, []);
 
   const shareMessage = encodeURIComponent(
-    `🇰🇪 Kenya's Hope 2027\n\nDr. Isaac Newton Kinity is running for President. Join the movement!\n\n🌐 https://www.nationalvisionparty.com\n📱 WhatsApp: 0713064026`
+    `🇰🇪 Kenya's Hope 2027\n\nDr. Isaac Newton Kinity is running for President. Join the movement!\n\n🌐 https://www.nationalvisionparty.com\n📱 WhatsApp: +1 (203) 675-9354`
   );
 
   const shareOptions = [
@@ -119,7 +119,7 @@ export default function MobileActionBar() {
       >
         <div className="flex items-center gap-3 max-w-lg mx-auto">
           <a
-            href="https://wa.me/254713064026?text=Hello%2C%20I%20want%20to%20join%20the%20National%20Vision%20Party%20movement"
+            href="https://wa.me/12036759354?text=Hello%2C%20I%20want%20to%20join%20the%20National%20Vision%20Party%20movement"
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-[#25D366] text-white font-bold text-sm hover:bg-[#128C7E] transition-colors"
