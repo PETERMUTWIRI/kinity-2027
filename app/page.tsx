@@ -241,14 +241,14 @@ export default function HomePage() {
           {/* Section Header */}
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="inline-block px-4 py-1 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm mb-4">
+              <span className="kicker-pill mb-4">
                 Our Vision
               </span>
-              <h2 className="font-headline text-4xl md:text-5xl text-[#0F172A] mb-4">
-                Building a <span className="text-[#D4A017]">Better Kenya</span>
+              <h2 className="heading-editorial mb-4">
+                Building a <span className="heading-accent-gold">Better Kenya</span>
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] mx-auto rounded-full mb-4" />
-              <p className="text-lg text-slate-600">
+              <div className="hr-gold-wide mx-auto mb-4" />
+              <p className="hero-subtitle max-w-2xl mx-auto">
                 Four pillars that will transform Kenya into a nation of prosperity, 
                 integrity, and opportunity for all.
               </p>
@@ -278,14 +278,14 @@ export default function HomePage() {
                         </div>
                         
                         {/* Title with subtle gold underline on mobile */}
-                        <h3 className="font-headline text-lg md:text-xl text-[#0F172A] mb-2 group-hover:text-[#1E3A8A] transition-colors">
+                        <h3 className="card-title-blue text-lg md:text-xl mb-2">
                           {pillar.title}
                         </h3>
                         
                         {/* Gold accent line */}
                         <div className="w-10 h-0.5 bg-gradient-to-r from-[#D4A017] to-[#E6C200] rounded-full mb-3 opacity-60 group-hover:w-16 transition-all duration-300" />
                         
-                        <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                        <p className="body-editorial text-sm mb-4">
                           {pillar.summary}
                         </p>
                         
@@ -355,14 +355,14 @@ export default function HomePage() {
                           </div>
                           
                           {/* Title */}
-                          <h3 className="font-headline text-lg md:text-xl text-[#0F172A] mb-2 group-hover:text-[#1E3A8A] transition-colors">
+                          <h3 className="card-title-blue text-lg md:text-xl mb-2">
                             {pillar.title}
                           </h3>
                           
                           {/* Gold accent line */}
                           <div className="w-10 h-0.5 bg-gradient-to-r from-[#D4A017] to-[#E6C200] rounded-full mb-3 opacity-60 group-hover:w-16 transition-all duration-300" />
                           
-                          <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                          <p className="body-editorial text-sm mb-4">
                             {pillar.desc}
                           </p>
                           
@@ -408,7 +408,7 @@ export default function HomePage() {
                 {/* Experience badge */}
                 <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 border-t-4 border-[#D4A017]">
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-[#1E3A8A]">20+</div>
+                    <div className="stat-blue text-4xl block mb-1">20+</div>
                     <div className="text-sm text-slate-600">Years of Service</div>
                   </div>
                 </div>
@@ -418,14 +418,14 @@ export default function HomePage() {
             {/* Content Side */}
             <ScrollReveal direction="right">
               <div className="space-y-6">
-                <span className="inline-block px-4 py-1 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm">
+                <span className="kicker-pill">
                   Meet the Candidate
                 </span>
-                <h2 className="font-headline text-4xl md:text-5xl text-[#0F172A]">
-                  A Leader for <span className="text-[#D4A017]">All Kenyans</span>
+                <h2 className="heading-editorial">
+                  A Leader for <span className="heading-accent-gold">All Kenyans</span>
                 </h2>
-                <div className="w-16 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] rounded-full" />
-                <div className="space-y-4 text-slate-600 text-lg leading-relaxed">
+                <div className="hr-gold-accent" />
+                <div className="space-y-4 body-editorial text-lg">
                   <p>
                     Dr. Isaac Newton Kinity brings decades of experience in public service, 
                     business leadership, and community development. His journey from humble 
@@ -460,7 +460,7 @@ export default function HomePage() {
 
                 <Link
                   href="/about/candidate"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#1E3A8A] text-white font-bold hover:bg-[#0F172A] transition-all duration-300 hover:shadow-lg hover:shadow-[#1E3A8A]/30"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#1E3A8A] text-white font-bold hover:bg-[#0F172A] transition-all duration-300 hover:shadow-lg hover:shadow-[#1E3A8A]/30 hover:-translate-y-0.5"
                 >
                   Meet the Candidate
                   <FaArrowRight className="w-4 h-4" />
@@ -484,17 +484,17 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm mb-4">
+              <span className="kicker-pill mb-4">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D4A017] opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D4A017]"></span>
                 </span>
                 Latest Update
               </span>
-              <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl mb-4 text-[#0F172A]">
-                Message to the <span className="text-[#D4A017]">Nation</span>
+              <h2 className="heading-editorial mb-4">
+                Message to the <span className="heading-accent-gold">Nation</span>
               </h2>
-              <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+              <p className="hero-subtitle max-w-2xl mx-auto">
                 Watch the latest address to Kenyans and share it with your network. Together we are building a movement for change.
               </p>
             </div>
@@ -527,8 +527,8 @@ export default function HomePage() {
             {/* Side: More videos + Actions */}
             <div className="space-y-6">
               <ScrollReveal>
-                <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-100">
-                  <h3 className="font-bold text-lg mb-4 text-[#0F172A]">More Videos</h3>
+                <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-100 card-lift">
+                  <h3 className="card-title mb-4">More Videos</h3>
                   <div className="space-y-4">
                     {(latestVideos.length > 1 ? latestVideos.slice(1, 4) : []).map((video, index) => (
                       <a
@@ -561,7 +561,7 @@ export default function HomePage() {
                       </a>
                     ))}
                     {latestVideos.length <= 1 && (
-                      <p className="text-slate-500 text-sm">More campaign videos coming soon. Subscribe to stay updated.</p>
+                      <p className="body-editorial text-sm">More campaign videos coming soon. Subscribe to stay updated.</p>
                     )}
                   </div>
                   <Link
@@ -579,7 +579,7 @@ export default function HomePage() {
                   href="https://www.youtube.com/channel/UCBoBfckNNdCS7joUqClADbA?sub_confirmation=1"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full text-center py-4 rounded-xl bg-[#DC2626] text-white font-bold hover:bg-[#B91C1C] transition-colors"
+                  className="block w-full text-center py-4 rounded-xl bg-[#DC2626] text-white font-bold hover:bg-[#B91C1C] transition-all duration-300 hover:shadow-lg hover:shadow-red-900/30 hover:-translate-y-0.5"
                 >
                   Subscribe on YouTube
                 </a>
@@ -590,7 +590,7 @@ export default function HomePage() {
                   href={`https://wa.me/?text=${encodeURIComponent('Watch the latest message from the National Vision Party: https://www.nationalvisionparty.com/videos')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full text-center py-4 rounded-xl bg-[#25D366] text-white font-bold hover:bg-[#128C7E] transition-colors"
+                  className="block w-full text-center py-4 rounded-xl bg-[#25D366] text-white font-bold hover:bg-[#128C7E] transition-all duration-300 hover:shadow-lg hover:shadow-green-900/30 hover:-translate-y-0.5"
                 >
                   Share on WhatsApp
                 </a>
@@ -609,11 +609,11 @@ export default function HomePage() {
           <ScrollReveal>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
               <div>
-                <span className="inline-block px-4 py-1 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm mb-4">
+                <span className="kicker-pill mb-4">
                   Latest Updates
                 </span>
-                <h2 className="font-headline text-4xl md:text-5xl text-[#0F172A]">
-                  From the <span className="text-[#D4A017]">News Hub</span>
+                <h2 className="heading-editorial">
+                  From the <span className="heading-accent-gold">News Hub</span>
                 </h2>
               </div>
               <Link
@@ -647,7 +647,7 @@ export default function HomePage() {
               latestPosts.map((post, index) => (
                 <ScrollReveal key={post.id} delay={index * 0.1}>
                   <Link href={`/news-hub/${post.slug}`} className="group">
-                    <article className="card-premium overflow-hidden h-full">
+                    <article className="card-premium overflow-hidden h-full card-lift">
                       {/* Image */}
                       <div className="relative aspect-video overflow-hidden">
                         {post.cover ? (
@@ -678,10 +678,10 @@ export default function HomePage() {
                             year: 'numeric'
                           })}
                         </p>
-                        <h3 className="font-headline text-xl text-[#0F172A] mb-3 group-hover:text-[#1E3A8A] transition-colors line-clamp-2">
+                        <h3 className="card-title-blue mb-3 line-clamp-2">
                           {post.title}
                         </h3>
-                        <p className="text-slate-600 text-sm line-clamp-3">
+                        <p className="body-editorial text-sm line-clamp-3">
                           {post.excerpt || post.content.replace(/<[^>]*>/g, '').slice(0, 150)}...
                         </p>
                       </div>
@@ -693,8 +693,8 @@ export default function HomePage() {
               // Fallback if no posts
               <div className="col-span-3 text-center py-12">
                 <FaNewspaper className="w-16 h-16 text-slate-300 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-slate-700 mb-2">No articles yet</h3>
-                <p className="text-slate-500">Check back soon for the latest updates from the campaign.</p>
+                <h3 className="card-title mb-2">No articles yet</h3>
+                <p className="body-editorial text-sm">Check back soon for the latest updates from the campaign.</p>
               </div>
             )}
           </div>
@@ -710,11 +710,11 @@ export default function HomePage() {
           <ScrollReveal>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
               <div>
-                <span className="inline-block px-4 py-1 rounded-full bg-[#DC2626]/10 text-[#DC2626] border border-[#DC2626]/20 font-semibold text-sm mb-4">
+                <span className="kicker-pill-red mb-4">
                   Campaign Trail
                 </span>
-                <h2 className="font-headline text-4xl md:text-5xl text-[#0F172A]">
-                  Upcoming <span className="text-[#DC2626]">Events</span>
+                <h2 className="heading-editorial">
+                  Upcoming <span className="heading-accent-red">Events</span>
                 </h2>
               </div>
               <Link
@@ -734,7 +734,7 @@ export default function HomePage() {
               latestEvents.map((event, index) => (
                 <ScrollReveal key={event.id} delay={index * 0.1}>
                   <Link href={`/events/${event.slug}`} className="group">
-                    <article className="card-premium overflow-hidden h-full bg-white">
+                    <article className="card-premium overflow-hidden h-full bg-white card-lift">
                       {/* Image */}
                       <div className="relative aspect-video overflow-hidden">
                         {event.cover ? (
@@ -772,13 +772,13 @@ export default function HomePage() {
                             {event.county || event.location}
                           </span>
                         </div>
-                        <h3 className="font-headline text-xl text-[#0F172A] mb-2 group-hover:text-[#1E3A8A] transition-colors line-clamp-2">
+                        <h3 className="card-title-blue mb-2 line-clamp-2">
                           {event.title}
                         </h3>
                         {event.venue && (
-                          <p className="text-slate-600 text-sm line-clamp-1 mb-3">{event.venue}</p>
+                          <p className="body-editorial text-sm line-clamp-1 mb-3">{event.venue}</p>
                         )}
-                        <p className="text-slate-600 text-sm line-clamp-2">
+                        <p className="body-editorial text-sm line-clamp-2">
                           {event.description?.slice(0, 120)}...
                         </p>
                         <div className="mt-4 flex items-center gap-2 text-[#1E3A8A] font-semibold text-sm">
@@ -794,8 +794,8 @@ export default function HomePage() {
               // Fallback if no events
               <div className="col-span-3 text-center py-12">
                 <FaCalendarAlt className="w-16 h-16 text-slate-300 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-slate-700 mb-2">No upcoming events</h3>
-                <p className="text-slate-500">Check back soon for new campaign events!</p>
+                <h3 className="card-title mb-2">No upcoming events</h3>
+                <p className="body-editorial text-sm">Check back soon for new campaign events!</p>
               </div>
             )}
           </div>
@@ -817,11 +817,11 @@ export default function HomePage() {
           <ScrollReveal>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
               <div>
-                <span className="inline-block px-4 py-1 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm mb-4">
+                <span className="kicker-pill mb-4">
                   Media Center
                 </span>
-                <h2 className="font-headline text-4xl md:text-5xl text-[#0F172A]">
-                  Latest <span className="text-[#1E3A8A]">From The Trail</span>
+                <h2 className="heading-editorial">
+                  Latest <span className="heading-accent-blue">From The Trail</span>
                 </h2>
               </div>
               <Link
@@ -890,7 +890,7 @@ export default function HomePage() {
               ) : (
                 <div className="text-center py-12 bg-slate-100 rounded-2xl">
                   <FaImages className="w-12 h-12 text-slate-300 mx-auto mb-3" />
-                  <p className="text-slate-500">No photos available yet</p>
+                  <p className="body-editorial text-sm">No photos available yet</p>
                 </div>
               )}
               
@@ -941,8 +941,10 @@ export default function HomePage() {
             <div className="lg:w-1/4">
               <ScrollReveal>
                 <div className="flex items-center gap-2 mb-4">
-                  <FaVideo className="w-5 h-5 text-[#1E3A8A]" />
-                  <h3 className="text-lg font-semibold text-[#0F172A]">Latest Videos</h3>
+                  <div className="w-10 h-10 rounded-xl bg-[#1E3A8A]/10 flex items-center justify-center">
+                    <FaVideo className="w-5 h-5 text-[#1E3A8A]" />
+                  </div>
+                  <h3 className="card-title">Latest Videos</h3>
                 </div>
               </ScrollReveal>
               
@@ -999,7 +1001,7 @@ export default function HomePage() {
               ) : (
                 <div className="text-center py-12 bg-slate-100 rounded-2xl">
                   <FaVideo className="w-12 h-12 text-slate-300 mx-auto mb-3" />
-                  <p className="text-slate-500">No videos available yet</p>
+                  <p className="body-editorial text-sm">No videos available yet</p>
                 </div>
               )}
 
@@ -1061,13 +1063,13 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <ScrollReveal>
-              {/* Gold accent line */}
-              <div className="w-24 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] mx-auto rounded-full mb-8" />
+              <span className="kicker-gold mb-4 block">Join Us</span>
               
-              <h2 className="font-slogan text-4xl md:text-5xl lg:text-6xl mb-6">
-                BE PART OF THE <span className="text-[#D4A017]">MOVEMENT</span>
+              <h2 className="heading-editorial text-white mb-6">
+                Be Part of the <span className="heading-accent-gold">Movement</span>
               </h2>
-              <p className="text-xl text-white/70 mb-10 max-w-2xl mx-auto">
+              <div className="hr-gold mx-auto mb-8" />
+              <p className="text-xl text-white/70 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
                 Change doesn&apos;t happen from the top down. It starts with dedicated citizens 
                 like you who believe in a better Kenya. Join thousands of supporters across 
                 all 47 counties.
@@ -1081,8 +1083,8 @@ export default function HomePage() {
                   { value: '100K+', label: 'Supporters' },
                 ].map((stat, i) => (
                   <div key={i} className="text-center">
-                    <div className="text-4xl md:text-5xl font-bold text-[#D4A017]">{stat.value}</div>
-                    <div className="text-white/60">{stat.label}</div>
+                    <div className="stat-gold text-4xl md:text-5xl block mb-1">{stat.value}</div>
+                    <div className="text-white/60 text-sm uppercase tracking-wider">{stat.label}</div>
                   </div>
                 ))}
               </div>
