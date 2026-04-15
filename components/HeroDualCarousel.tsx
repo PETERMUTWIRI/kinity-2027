@@ -21,9 +21,9 @@ export default function HeroDualCarousel() {
           className="object-cover object-left sm:object-center"
           priority
         />
-        {/* Strong overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/80 via-[#1E3A8A]/60 to-[#0F172A]/90" />
-        <div className="absolute inset-0 bg-black/30" />
+        {/* White overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white/90" />
+        <div className="absolute inset-0 bg-white/30" />
       </div>
 
       {/* Hero Content */}
@@ -53,7 +53,7 @@ export default function HeroDualCarousel() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#0F172A] leading-tight mb-4"
           >
             KENYA&apos;S HOPE <span className="text-[#D4A017]">2027</span>
           </motion.h1>
@@ -71,7 +71,7 @@ export default function HeroDualCarousel() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto mb-6"
+            className="text-base sm:text-lg md:text-xl text-[#0F172A]/90 leading-relaxed max-w-2xl mx-auto mb-6"
           >
             A movement of Kenyans committed to ending corruption and restoring dignity. 
             Led by Dr. Isaac Newton Kinity, we are building a prosperous, just, and equitable nation for all.
@@ -82,7 +82,7 @@ export default function HeroDualCarousel() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="text-sm sm:text-base md:text-lg text-white/95 italic border-l-4 border-[#D4A017] pl-5 py-3 bg-white/10 backdrop-blur-sm rounded-r-lg max-w-2xl mx-auto mb-8 text-left"
+            className="text-sm sm:text-base md:text-lg text-[#0F172A]/95 italic border-l-4 border-[#D4A017] pl-5 py-3 bg-[#0F172A]/5 backdrop-blur-sm rounded-r-lg max-w-2xl mx-auto mb-8 text-left"
           >
             &ldquo;For great heights of prosperity of Kenyan nation and for the happiness, joy, and comfort of the Kenyan people, the demolition of corruption and the rejection of recycling corrupt politicians into leadership positions, should be a mandatory obligation.&rdquo;
             <span className="block text-[#D4A017] font-semibold mt-2 not-italic">— Dr. Isaac Newton Kinity</span>

@@ -662,7 +662,7 @@ export default function HomePage() {
                   href={`https://wa.me/?text=${encodeURIComponent('Watch the latest message from the National Vision Party: https://www.nationalvisionparty.com/videos')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full text-center py-4 rounded-xl bg-[#25D366] text-white font-bold hover:bg-[#128C7E] transition-all duration-300 hover:shadow-lg hover:shadow-green-900/30 hover:-translate-y-0.5"
+                  className="block w-full text-center py-4 rounded-xl bg-[#D4A017] text-white font-bold hover:bg-[#B45309] transition-all duration-300 hover:shadow-lg hover:shadow-orange-900/30 hover:-translate-y-0.5"
                 >
                   Share on WhatsApp
                 </a>

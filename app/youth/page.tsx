@@ -77,8 +77,8 @@ export default function YouthPage() {
       <section className="relative py-24 lg:py-32 overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0 bg-[url('/images/vission/genz1.png')] bg-cover bg-center bg-no-repeat" />
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/80 via-[#0F172A]/70 to-[#0F172A]/90" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
         {/* Subtle pattern overlay */}
         <div 
           className="absolute inset-0 opacity-5"
@@ -98,33 +98,33 @@ export default function YouthPage() {
             <span className="text-[#DC2626] text-sm font-semibold">A Sacred Pledge</span>
           </div>
           
-          <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
+          <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl text-[#0F172A] mb-6 leading-tight">
             To the Heroes of <span className="text-[#D4A017]">June 2024</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-white/90 mb-6 font-light">
+          <p className="text-xl md:text-2xl text-[#0F172A]/90 mb-6 font-light">
             &ldquo;I will build a monument at Parliament. I will compensate every family. <br className="hidden md:block"/>
             <span className="text-[#D4A017] font-semibold">Your sacrifice will not be forgotten.</span>&rdquo;
           </p>
           
-          <p className="text-white/60 text-lg mb-8">
+          <p className="text-[#0F172A]/60 text-lg mb-8">
             — Dr. Isaac Newton Kinity, pledging to honor GenZ protesters who gave their lives
           </p>
 
           {/* Memorial Card */}
-          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 max-w-2xl mx-auto">
+          <div className="bg-[#0F172A]/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-[#0F172A]/10 max-w-2xl mx-auto">
             <div className="grid grid-cols-3 gap-4 text-center">
               <div>
                 <div className="text-3xl md:text-4xl font-bold text-[#D4A017] mb-1">21+</div>
-                <div className="text-white/60 text-sm">Lives Lost</div>
+                <div className="text-[#0F172A]/60 text-sm">Lives Lost</div>
               </div>
               <div>
                 <div className="text-3xl md:text-4xl font-bold text-[#D4A017] mb-1">∞</div>
-                <div className="text-white/60 text-sm">Memories</div>
+                <div className="text-[#0F172A]/60 text-sm">Memories</div>
               </div>
               <div>
                 <div className="text-3xl md:text-4xl font-bold text-[#D4A017] mb-1">1</div>
-                <div className="text-white/60 text-sm">Promise Kept</div>
+                <div className="text-[#0F172A]/60 text-sm">Promise Kept</div>
               </div>
             </div>
           </div>
@@ -134,7 +134,7 @@ export default function YouthPage() {
               href={`https://wa.me/12036759354?text=I%20am%20GenZ%20and%20I%20want%20justice%20for%20our%20fallen%20heroes`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#128C7E] transition-all duration-300 shadow-lg"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#D4A017] text-white font-bold text-lg hover:bg-[#B45309] transition-all duration-300 shadow-lg"
             >
               <FaWhatsapp className="w-6 h-6" />
               Join GenZ WhatsApp Channel
@@ -144,7 +144,7 @@ export default function YouthPage() {
               href={`https://wa.me/?text=${shareMessage}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold hover:bg-white/20 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#0F172A]/10 backdrop-blur-sm border border-[#0F172A]/30 text-[#0F172A] font-semibold hover:bg-[#0F172A]/20 transition-all duration-300"
             >
               <FaShareAlt className="w-5 h-5" />
               Share the Pledge
@@ -229,7 +229,7 @@ export default function YouthPage() {
                   href={`https://wa.me/?text=${shareMessage}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[#25D366] font-semibold hover:text-[#128C7E] transition-colors"
+                  className="inline-flex items-center gap-2 text-[#D4A017] font-semibold hover:text-[#B45309] transition-colors"
                 >
                   <FaWhatsapp className="w-5 h-5" />
                   Share on WhatsApp
@@ -277,6 +277,61 @@ export default function YouthPage() {
         </div>
       </section>
 
+      {/* Leadership Call - Dr. Kinity Encourages Youth */}
+      <section className="py-16 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-[#1E3A8A] to-[#0F172A] rounded-3xl p-8 md:p-12 text-center md:text-left overflow-hidden relative">
+            {/* Decorative accent */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#D4A017]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+            
+            <div className="relative z-10">
+              <div className="flex flex-col md:flex-row gap-8 items-center">
+                <div className="flex-1">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4A017]/20 border border-[#D4A017]/30 mb-6">
+                    <FaFistRaised className="w-4 h-4 text-[#D4A017]" />
+                    <span className="text-[#D4A017] text-sm font-semibold">A Call to Courage</span>
+                  </div>
+                  
+                  <h2 className="font-headline text-2xl md:text-3xl lg:text-4xl text-white mb-4 leading-tight">
+                    Step Forward. Lead Kenya. <span className="text-[#D4A017]">Your Time Is Now.</span>
+                  </h2>
+                  
+                  <p className="text-white/90 text-lg mb-4 leading-relaxed">
+                    Dr. Kinity sees the fire in this generation. If you have the leadership skills, the vision, and the unshakable solidarity for Kenya, do not let anything hold you back. 
+                  </p>
+                  
+                  <p className="text-white/80 text-lg mb-6 leading-relaxed">
+                    <span className="text-[#D4A017] font-semibold">Campaign money is not a barrier.</span> Courage is. The National Vision Party stands ready to back young leaders who put Kenya first. Whether you are Gen Z or a young professional, you are not just included—you are <span className="font-semibold text-white">essential</span> to the future we are building.
+                  </p>
+                  
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#D4A017] text-[#0F172A] font-bold hover:bg-[#E6C200] transition-colors"
+                    >
+                      Reach Out Today
+                      <FaArrowRight className="w-4 h-4" />
+                    </Link>
+                    <Link
+                      href="/join-us"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold hover:bg-white/20 transition-colors"
+                    >
+                      Join the Movement
+                    </Link>
+                  </div>
+                </div>
+                
+                <div className="hidden md:block flex-shrink-0">
+                  <div className="w-32 h-32 rounded-full bg-[#D4A017]/20 flex items-center justify-center border-4 border-[#D4A017]/30">
+                    <FaUsers className="w-14 h-14 text-[#D4A017]" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Youth Manifesto Quick Link */}
       <section className="py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -314,8 +369,8 @@ export default function YouthPage() {
       <section className="py-16 lg:py-24 relative overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0 bg-[url('/images/vission/genz3.png')] bg-cover bg-center bg-no-repeat" />
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-[#0F172A]/85" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-white/85" />
         {/* Background pattern */}
         <div 
           className="absolute inset-0 opacity-5"
@@ -330,11 +385,11 @@ export default function YouthPage() {
             <FaUsers className="w-10 h-10 text-[#D4A017]" />
           </div>
           
-          <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl text-white mb-4">
+          <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl text-[#0F172A] mb-4">
             The Power is in <span className="text-[#D4A017]">Your Hands</span>
           </h2>
           
-          <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-[#0F172A]/80 text-lg mb-8 max-w-2xl mx-auto">
             You are not &ldquo;the future.&rdquo; You are the NOW. And in 2027, you will outnumber every other voting bloc. 
             <span className="font-bold text-[#D4A017]">Use that power.</span>
           </p>
@@ -344,7 +399,7 @@ export default function YouthPage() {
               href={`https://wa.me/12036759354?text=I%20am%20GenZ%20and%20I%20want%20to%20join%20the%20movement`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#128C7E] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#D4A017] text-white font-bold text-lg hover:bg-[#B45309] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
               <FaWhatsapp className="w-5 h-5" />
               Join on WhatsApp
@@ -354,15 +409,15 @@ export default function YouthPage() {
               href={`https://wa.me/?text=${shareMessage}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold hover:bg-white/20 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#0F172A]/10 backdrop-blur-sm border border-[#0F172A]/30 text-[#0F172A] font-semibold hover:bg-[#0F172A]/20 transition-all duration-300"
             >
               <FaShareAlt className="w-5 h-5" />
               Share with Squad
             </a>
           </div>
           
-          <div className="mt-8 pt-8 border-t border-white/10">
-            <p className="text-white/50 text-sm">
+          <div className="mt-8 pt-8 border-t border-[#0F172A]/10">
+            <p className="text-[#0F172A]/50 text-sm">
               WhatsApp: <span className="text-[#D4A017] font-semibold">+1 (203) 675-9354</span>
             </p>
           </div>

@@ -34,7 +34,7 @@ export default function MobileActionBar() {
       name: 'WhatsApp',
       icon: FaWhatsapp,
       href: `https://wa.me/?text=${shareMessage}`,
-      color: 'bg-[#25D366]',
+      color: 'bg-[#D4A017]',
     },
     {
       name: 'Twitter',
@@ -122,7 +122,7 @@ export default function MobileActionBar() {
             href="https://wa.me/12036759354?text=Hello%2C%20I%20want%20to%20join%20the%20National%20Vision%20Party%20movement"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-[#25D366] text-white font-bold text-sm hover:bg-[#128C7E] transition-colors"
+            className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-[#D4A017] text-white font-bold text-sm hover:bg-[#B45309] transition-colors"
           >
             <FaWhatsapp className="w-5 h-5" />
             Join WhatsApp
