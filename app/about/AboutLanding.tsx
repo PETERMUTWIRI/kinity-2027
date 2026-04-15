@@ -34,7 +34,7 @@ const sections = [
   {
     id: 'vision-2027',
     title: 'Vision 2027',
-    description: 'Four transformative pillars that will restore Kenya\'s dignity: Economic Transformation, Zero Corruption, Universal Healthcare, and Education Revolution.',
+    description: 'Eight transformative pillars that will restore Kenya\'s dignity: Economic Transformation, Zero Corruption, Universal Healthcare, Education Revolution, Social Protection, Agriculture, Youth & Women Empowerment, and Security.',
     icon: FaEye,
     href: '/about/vision-2027',
     color: '#1E3A8A',
@@ -139,7 +139,7 @@ export default function AboutLanding() {
               {[
                 { value: '40+', label: 'Years of Activism', color: '#1E3A8A' },
                 { value: '47', label: 'Counties Reached', color: '#D4A017' },
-                { value: '4', label: 'Key Pillars', color: '#1E3A8A' },
+                { value: '8', label: 'Key Pillars', color: '#1E3A8A' },
                 { value: '50M+', label: 'Kenyans to Serve', color: '#D4A017' },
               ].map((stat, index) => (
                 <div key={index} className="text-center">

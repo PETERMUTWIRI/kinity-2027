@@ -57,12 +57,14 @@ const traits = [
     id: 'vision',
     title: 'Vision',
     description: 'Clear roadmap for Kenya\'s future',
-    content: 'Dr. Kinity\'s vision is built on four transformative pillars: Economic Transformation, Zero Corruption, Universal Healthcare, and Education Revolution. This is not empty rhetoric—each pillar has specific, measurable targets and actionable policies to restore Kenya\'s dignity.',
+    content: 'Dr. Kinity\'s vision is built on eight transformative pillars: Economic Transformation, Zero Corruption, Universal Healthcare, Education Revolution, Social Protection & Inclusion, Agriculture & Food Security, Youth & Women Empowerment, and Security & National Cohesion. This is not empty rhetoric—each pillar has specific, measurable targets and actionable policies to restore Kenya\'s dignity.',
     highlights: [
       '40% cost of living reduction within 2 years',
       'Elimination of corruption or voluntary resignation',
       'Universal healthcare coverage for all Kenyans',
       'World-class free education with STEM and digital focus',
+      'Social protection fund for widows, orphans, and persons with disabilities',
+      'Youth innovation hubs and 50% women representation in leadership',
     ],
   },
   {

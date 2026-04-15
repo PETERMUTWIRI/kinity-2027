@@ -22,7 +22,7 @@ import {
 } from 'react-icons/fa';
 import ScrollReveal from '@/components/ScrollReveal';
 import TiltCard from '@/components/TiltCard';
-import { EconomicIcon, AntiCorruptionIcon, HealthcareIcon, EducationIcon } from '@/components/PillarIcons';
+import { EconomicIcon, AntiCorruptionIcon, HealthcareIcon, EducationIcon, SocialProtectionIcon, AgricultureIcon, YouthWomenIcon, SecurityIcon } from '@/components/PillarIcons';
 import SocialProof from '@/components/SocialProof';
 import HeroDualCarousel from '@/components/HeroDualCarousel';
 
@@ -114,6 +114,46 @@ const pillars = [
     Icon: EducationIcon,
     image: '/images/vission/education.png',
     color: '#D4A017',
+    featured: true,
+  },
+  {
+    id: 'social-protection',
+    title: 'Social Protection & Inclusion',
+    subtitle: 'Dignity for widows, orphans, PWDs & the elderly',
+    summary: 'A compassionate society that leaves no one behind. Monthly support, disability rights, and protection for the most vulnerable.',
+    Icon: SocialProtectionIcon,
+    image: '/images/kinity-connection.jpeg',
+    color: '#D4A017',
+    featured: true,
+  },
+  {
+    id: 'agriculture-food-security',
+    title: 'Agriculture & Food Security',
+    subtitle: 'Farming first, hunger never',
+    summary: 'Empowering farmers with subsidies, modern tools, and fair markets to ensure every Kenyan household has enough food.',
+    Icon: AgricultureIcon,
+    image: '/images/rally.jpeg',
+    color: '#1E3A8A',
+    featured: true,
+  },
+  {
+    id: 'youth-women-empowerment',
+    title: 'Youth & Women Empowerment',
+    subtitle: 'Opportunity for every Kenyan',
+    summary: 'Unlocking potential through affirmative funding, innovation hubs, and leadership opportunities for youth and women.',
+    Icon: YouthWomenIcon,
+    image: '/images/kinity-1.jpeg',
+    color: '#D4A017',
+    featured: true,
+  },
+  {
+    id: 'security-cohesion',
+    title: 'Security & National Cohesion',
+    subtitle: 'Safe homes, united nation',
+    summary: 'Reforming security services and fostering national unity so every Kenyan feels safe, protected, and belongs.',
+    Icon: SecurityIcon,
+    image: '/images/kenya.png',
+    color: '#1E3A8A',
     featured: true,
   },
 ];
@@ -249,7 +289,7 @@ export default function HomePage() {
               </h2>
               <div className="hr-gold-wide mx-auto mb-4" />
               <p className="hero-subtitle max-w-2xl mx-auto">
-                Four pillars that will transform Kenya into a nation of prosperity, 
+                Eight pillars that will transform Kenya into a nation of prosperity, 
                 integrity, and opportunity for all.
               </p>
             </div>
@@ -334,6 +374,38 @@ export default function HomePage() {
                     color: '#D4A017',
                     image: '/images/vission/education.png',
                     Icon: EducationIcon
+                  },
+                  { 
+                    id: 'social-protection',
+                    title: 'Social Protection & Inclusion', 
+                    desc: 'A compassionate society that leaves no one behind. Monthly support, disability rights, and protection for the most vulnerable.',
+                    color: '#D4A017',
+                    image: '/images/kinity-connection.jpeg',
+                    Icon: SocialProtectionIcon
+                  },
+                  { 
+                    id: 'agriculture-food-security',
+                    title: 'Agriculture & Food Security', 
+                    desc: 'Empowering farmers with subsidies, modern tools, and fair markets to ensure every Kenyan household has enough food.',
+                    color: '#1E3A8A',
+                    image: '/images/rally.jpeg',
+                    Icon: AgricultureIcon
+                  },
+                  { 
+                    id: 'youth-women-empowerment',
+                    title: 'Youth & Women Empowerment', 
+                    desc: 'Unlocking potential through affirmative funding, innovation hubs, and leadership opportunities for youth and women.',
+                    color: '#D4A017',
+                    image: '/images/kinity-1.jpeg',
+                    Icon: YouthWomenIcon
+                  },
+                  { 
+                    id: 'security-cohesion',
+                    title: 'Security & National Cohesion', 
+                    desc: 'Reforming security services and fostering national unity so every Kenyan feels safe, protected, and belongs.',
+                    color: '#1E3A8A',
+                    image: '/images/kenya.png',
+                    Icon: SecurityIcon
                   },
                 ].map((pillar, index) => (
                   <ScrollReveal key={index} delay={index * 0.1}>

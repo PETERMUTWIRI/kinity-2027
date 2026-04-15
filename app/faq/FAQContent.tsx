@@ -28,8 +28,8 @@ const faqs = [
     category: 'Vision 2027',
     questions: [
       {
-        q: 'What are the four pillars of Vision 2027?',
-        a: 'The four pillars are: 1) Economic Transformation - cutting cost of living by 40% and creating jobs, 2) Zero Corruption - eliminating graft within 2 years or resigning, 3) Universal Healthcare - quality healthcare for all Kenyans, and 4) Education Revolution - free, world-class education with STEM focus.',
+        q: 'What are the pillars of Vision 2027?',
+        a: 'Vision 2027 rests on eight transformative pillars: 1) Economic Transformation, 2) Zero Corruption, 3) Universal Healthcare, 4) Education Revolution, 5) Social Protection & Inclusion - dignity for widows, orphans, PWDs and the elderly, 6) Agriculture & Food Security - empowering farmers and ending hunger, 7) Youth & Women Empowerment - innovation hubs and affirmative funding, and 8) Security & National Cohesion - police reform and unity beyond tribal lines.',
       },
       {
         q: 'How will he eliminate corruption in 2 years?',

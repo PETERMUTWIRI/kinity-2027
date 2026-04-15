@@ -77,3 +77,45 @@ export function UnityIcon({ className = "w-8 h-8" }: IconProps) {
     </svg>
   );
 }
+
+export function SocialProtectionIcon({ className = "w-8 h-8" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M24 8C24 8 14 16 14 24C14 30 18 34 24 34C30 34 34 30 34 24C34 16 24 8 24 8Z" fill="currentColor" fillOpacity="0.3" stroke="currentColor" strokeWidth="2"/>
+      <path d="M8 28C8 28 12 36 24 40C36 36 40 28 40 28" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+      <path d="M8 28L14 22" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+      <path d="M40 28L34 22" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+export function AgricultureIcon({ className = "w-8 h-8" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M24 44V20" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
+      <path d="M24 20C24 20 16 14 16 8C16 8 24 10 24 20Z" fill="currentColor" fillOpacity="0.4" stroke="currentColor" strokeWidth="2"/>
+      <path d="M24 20C24 20 32 14 32 8C32 8 24 10 24 20Z" fill="currentColor" fillOpacity="0.3" stroke="currentColor" strokeWidth="2"/>
+      <path d="M4 44H44" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+export function YouthWomenIcon({ className = "w-8 h-8" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="24" cy="12" r="6" fill="currentColor" fillOpacity="0.3" stroke="currentColor" strokeWidth="2"/>
+      <path d="M24 20V36" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
+      <path d="M16 28L24 20L32 28" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M12 40C12 34 17 30 24 30C31 30 36 34 36 40" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+export function SecurityIcon({ className = "w-8 h-8" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M24 4L8 12V22C8 34 16 42 24 44C32 42 40 34 40 22V12L24 4Z" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/>
+      <path d="M18 24L22 28L30 18" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}

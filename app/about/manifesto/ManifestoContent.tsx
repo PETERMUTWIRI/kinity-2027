@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { FaArrowLeft, FaFileContract, FaCheckCircle, FaCalendarAlt, FaHandshake } from 'react-icons/fa';
+import { FaArrowLeft, FaFileContract, FaCheckCircle, FaCalendarAlt, FaHandshake, FaHandsHelping, FaSeedling, FaUsers, FaUserShield } from 'react-icons/fa';
 import ScrollReveal from '@/components/ScrollReveal';
 
 const commitments = [
@@ -57,6 +57,58 @@ const commitments = [
       'Establish vocational training centers in every county',
     ],
   },
+  {
+    title: 'Social Protection Pledge',
+    description: 'A compassionate commitment to widows, orphans, persons with disabilities, and the elderly. No Kenyan will be left behind in a Kinity administration.',
+    icon: FaHandsHelping,
+    color: '#D4A017',
+    points: [
+      'Monthly stipends for widows, orphans, and elderly citizens without income',
+      'Free assistive devices and accessibility infrastructure for persons with disabilities',
+      'Mandatory 5% public procurement quota for businesses owned by PWDs',
+      'Specialized healthcare and psychosocial support for vulnerable groups',
+      'Protection of inheritance rights for widows and orphans',
+    ],
+  },
+  {
+    title: 'Agriculture & Food Security Guarantee',
+    description: 'Farming is the backbone of Kenya. We will subsidize inputs, expand irrigation, guarantee fair prices, and ban unnecessary food imports.',
+    icon: FaSeedling,
+    color: '#1E3A8A',
+    points: [
+      'Subsidized fertilizer, seeds, and farming equipment for smallholder farmers',
+      'Nationwide expansion of irrigation schemes to reduce rain dependency',
+      'Government guarantee of minimum farm-gate prices for key produce',
+      'Ban on unnecessary food imports that undercut local farmers',
+      'Climate-smart agriculture training and crop insurance for all farmers',
+    ],
+  },
+  {
+    title: 'Youth & Women Empowerment Commitment',
+    description: 'Unlocking the potential of our youth and women through affirmative funding, innovation hubs, and equal leadership opportunities.',
+    icon: FaUsers,
+    color: '#D4A017',
+    points: [
+      'Youth Innovation Hubs in all 47 counties with free internet and mentorship',
+      'Affirmative Action Fund of KES 1 billion annually for women entrepreneurs',
+      'Mandatory 50% women representation in all public appointments',
+      'Paid internship and apprenticeship programs for all university graduates',
+      'Zero-interest startup loans for youth and women-led businesses',
+    ],
+  },
+  {
+    title: 'Security & National Cohesion Promise',
+    description: 'Every Kenyan deserves to feel safe. We will reform the police, end extrajudicial killings, and build a united nation beyond tribal lines.',
+    icon: FaUserShield,
+    color: '#1E3A8A',
+    points: [
+      'Comprehensive police reform with independent oversight and better welfare',
+      'End to extrajudicial killings and enforced disappearances',
+      'Deployment of community policing units in every ward',
+      'National Cohesion Curriculum in schools and public institutions',
+      'Rapid response units for gender-based violence and child protection',
+    ],
+  },
 ];
 
 const timeline = [
@@ -68,6 +120,9 @@ const timeline = [
       'Freeze unnecessary government spending',
       'Launch universal healthcare registration drive',
       'Begin school infrastructure assessment nationwide',
+      'Launch Social Protection Fund registration for vulnerable households',
+      'Deploy agricultural extension officers to all counties',
+      'Open first 10 Youth Innovation Hubs',
     ],
   },
   {
@@ -78,6 +133,9 @@ const timeline = [
       'Deploy healthcare workers to all counties',
       'Distribute free digital learning devices to schools',
       'Create 250,000 new jobs through infrastructure projects',
+      'Roll out farmer subsidies and minimum price guarantees',
+      'Enact 50% women representation in public appointments',
+      'Establish independent police oversight authority',
     ],
   },
   {
@@ -88,6 +146,9 @@ const timeline = [
       'Universal healthcare fully operational',
       'Free education fully implemented',
       '1 million+ jobs created',
+      'Full social protection coverage for widows, orphans, and elderly',
+      'Achieve 70% reduction in youth unemployment',
+      'Complete police reform and end extrajudicial killings',
     ],
   },
 ];
@@ -136,7 +197,7 @@ export default function ManifestoContent() {
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0F172A] mb-12">
-              Four Key <span className="text-[#D4A017]">Commitments</span>
+              Our Key <span className="text-[#D4A017]">Commitments</span>
             </h2>
           </ScrollReveal>
 

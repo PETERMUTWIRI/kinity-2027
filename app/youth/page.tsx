@@ -41,6 +41,11 @@ const youthPriorities = [
     title: 'Zero Corruption',
     description: 'The old guard stole your future. The National Vision Party will recover what is yours—and jail the thieves.',
   },
+  {
+    icon: FaUsers,
+    title: 'Youth & Women Empowerment',
+    description: 'Innovation hubs in every county, zero-interest startup loans, and 50% women leadership in public appointments.',
+  },
 ];
 
 const shareMessage = encodeURIComponent(

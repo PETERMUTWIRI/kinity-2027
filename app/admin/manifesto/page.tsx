@@ -29,6 +29,30 @@ const manifestoPillars = [
     description: 'World-class education system for our youth.',
     status: 'published',
   },
+  {
+    id: 'social-protection',
+    title: 'Social Protection & Inclusion',
+    description: 'Dignity and support for widows, orphans, PWDs, and the elderly.',
+    status: 'published',
+  },
+  {
+    id: 'agriculture-food-security',
+    title: 'Agriculture & Food Security',
+    description: 'Farmer subsidies, modern tools, and fair markets for food security.',
+    status: 'published',
+  },
+  {
+    id: 'youth-women-empowerment',
+    title: 'Youth & Women Empowerment',
+    description: 'Affirmative funding, innovation hubs, and leadership opportunities.',
+    status: 'published',
+  },
+  {
+    id: 'security-cohesion',
+    title: 'Security & National Cohesion',
+    description: 'Police reform and national unity for a safe, united Kenya.',
+    status: 'published',
+  },
 ];
 
 // ==========================================

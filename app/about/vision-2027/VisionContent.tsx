@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { FaArrowLeft, FaChartLine, FaShieldAlt, FaHeart, FaGraduationCap, FaCheckCircle, FaBalanceScale, FaLandmark } from 'react-icons/fa';
+import { FaArrowLeft, FaChartLine, FaShieldAlt, FaHeart, FaGraduationCap, FaCheckCircle, FaBalanceScale, FaLandmark, FaHandsHelping, FaSeedling, FaUsers, FaUserShield } from 'react-icons/fa';
 import ScrollReveal from '@/components/ScrollReveal';
 
 const pillars = [
@@ -105,6 +105,106 @@ const pillars = [
     ],
     quote: 'Education is the foundation of our nation\'s future. Every child deserves access to world-class education that unlocks their full potential.',
   },
+  {
+    id: 'social-protection',
+    number: '05',
+    title: 'Social Protection & Inclusion',
+    subtitle: 'Dignity for Widows, Orphans, PWDs & the Elderly',
+    icon: FaHandsHelping,
+    image: '/images/kinity-connection.jpeg',
+    color: '#D4A017',
+    stats: [
+      { value: '100%', label: 'Disability Rights Coverage' },
+      { value: '0', label: 'Tolerance for Discrimination' },
+      { value: '50K+', label: 'Widows Supported' },
+    ],
+    problem: 'Kenya\'s most vulnerable citizens—widows, orphans, persons with disabilities, and the elderly—often face systemic neglect, discrimination, and lack of access to basic services and economic opportunities.',
+    solution: 'We will establish a comprehensive Social Protection Fund that guarantees monthly support for widows, orphans, and the elderly, while enforcing disability rights and creating inclusive economic opportunities.',
+    policies: [
+      'Monthly stipends for widows, orphans, and elderly citizens without income',
+      'Free assistive devices and accessibility infrastructure for persons with disabilities',
+      'Mandatory 5% public procurement quota for businesses owned by PWDs',
+      'Specialized healthcare and psychosocial support for vulnerable groups',
+      'Protection of inheritance rights for widows and orphans',
+      'Integration of sign language and braille in all public service delivery',
+    ],
+    quote: 'A nation is judged by how it treats its most vulnerable. Every widow, orphan, and person with disability deserves dignity, care, and opportunity.',
+  },
+  {
+    id: 'agriculture-food-security',
+    number: '06',
+    title: 'Agriculture & Food Security',
+    subtitle: 'Farming First, Hunger Never',
+    icon: FaSeedling,
+    image: '/images/rally.jpeg',
+    color: '#1E3A8A',
+    stats: [
+      { value: '40%', label: 'Cost of Living Cut' },
+      { value: '100%', label: 'Food Self-Sufficiency' },
+      { value: '2M', label: 'Farmers Supported' },
+    ],
+    problem: 'Kenyan farmers struggle with high input costs, unpredictable markets, climate shocks, and unfair competition from cheap imports, leaving millions food insecure.',
+    solution: 'We will prioritize agriculture as the backbone of our economy through subsidized inputs, modern irrigation, guaranteed minimum prices, and strict protection against unnecessary food imports.',
+    policies: [
+      'Subsidized fertilizer, seeds, and farming equipment for smallholder farmers',
+      'Nationwide expansion of irrigation schemes to reduce rain dependency',
+      'Government guarantee of minimum farm-gate prices for maize, milk, and tea',
+      'Ban on unnecessary food imports that undercut local farmers',
+      'Establishment of farmer cooperatives with direct market access',
+      'Climate-smart agriculture training and crop insurance for all farmers',
+    ],
+    quote: 'The farmer feeds the nation. When we uplift our farmers, we eliminate hunger and build a self-reliant Kenya.',
+  },
+  {
+    id: 'youth-women-empowerment',
+    number: '07',
+    title: 'Youth & Women Empowerment',
+    subtitle: 'Opportunity for Every Kenyan',
+    icon: FaUsers,
+    image: '/images/kinity-1.jpeg',
+    color: '#D4A017',
+    stats: [
+      { value: '70%', label: 'Youth Unemployment Cut' },
+      { value: '50%', label: 'Women in Leadership' },
+      { value: '1B', label: 'Affirmative Action Fund' },
+    ],
+    problem: 'Despite comprising the majority of Kenya\'s population, youth and women remain marginalized in economic opportunities, leadership positions, and access to capital, perpetuating inequality.',
+    solution: 'We will create dedicated affirmative action funds, enforce constitutional gender quotas, and establish youth innovation hubs in every county to unlock the full potential of our demographic dividend.',
+    policies: [
+      'Youth Innovation Hubs in all 47 counties with free internet and mentorship',
+      'Affirmative Action Fund of KES 1 billion annually for women entrepreneurs',
+      'Mandatory 50% women representation in all public appointments',
+      'Paid internship and apprenticeship programs for all university graduates',
+      'Zero-interest startup loans for youth and women-led businesses',
+      'Elimination of gender-based violence through specialized courts and shelters',
+    ],
+    quote: 'Our youth and women are not the future—they are the present. When we empower them, we empower the entire nation.',
+  },
+  {
+    id: 'security-cohesion',
+    number: '08',
+    title: 'Security & National Cohesion',
+    subtitle: 'Safe Homes, United Nation',
+    icon: FaUserShield,
+    image: '/images/kenya.png',
+    color: '#1E3A8A',
+    stats: [
+      { value: '100%', label: 'Police Reform' },
+      { value: '47', label: 'Peace Counties' },
+      { value: '0', label: 'Tribal Politics' },
+    ],
+    problem: 'Many Kenyans live in fear due to rising crime, police brutality, and tribal divisions that are often weaponized for political gain, undermining national unity.',
+    solution: 'We will professionalize the police service, end extrajudicial killings, and launch a national cohesion program that celebrates our diversity while uniting us under one Kenyan identity.',
+    policies: [
+      'Comprehensive police reform with independent oversight and better welfare',
+      'End to extrajudicial killings and enforced disappearances',
+      'Deployment of community policing units in every ward',
+      'National Cohesion Curriculum in schools and public institutions',
+      'Fair representation of all communities in security appointments',
+      'Rapid response units for gender-based violence and child protection',
+    ],
+    quote: 'Every Kenyan deserves to feel safe in their home and proud of their identity. Security and unity are the foundation of progress.',
+  },
 ];
 
 export default function VisionContent() {
@@ -139,7 +239,7 @@ export default function VisionContent() {
           <ScrollReveal delay={0.2}>
             <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] mx-auto rounded-full mb-6" />
             <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-              Four transformative pillars that will restore Kenya&apos;s dignity, eliminate corruption, 
+              Eight transformative pillars that will restore Kenya&apos;s dignity, eliminate corruption, 
               and create prosperity for all 50 million+ Kenyans across all 47 counties.
             </p>
           </ScrollReveal>
