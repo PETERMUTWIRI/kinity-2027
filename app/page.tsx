@@ -300,7 +300,7 @@ export default function HomePage() {
             {pillars.length > 0 ? (
               pillars.map((pillar, index) => (
                 <ScrollReveal key={pillar.id} delay={index * 0.1}>
-                  <Link href={`/about#${pillar.id}`} className="group block h-full">
+                  <Link href={`/about/vision-2027#${pillar.id}`} className="group block h-full">
                     <TiltCard className="h-full" borderColor={pillar.color}>
                       <div className="h-full bg-white rounded-2xl p-5 md:p-6 shadow-md border border-slate-100 group-hover:shadow-xl group-hover:border-[#D4A017]/30 transition-all duration-300">
                         {/* Pillar image */}
@@ -409,7 +409,7 @@ export default function HomePage() {
                   },
                 ].map((pillar, index) => (
                   <ScrollReveal key={index} delay={index * 0.1}>
-                    <Link href={`/about#${pillar.id}`} className="group block h-full">
+                    <Link href={`/about/vision-2027#${pillar.id}`} className="group block h-full">
                       <TiltCard className="h-full" borderColor={pillar.color}>
                         <div className="h-full bg-white rounded-2xl p-5 md:p-6 shadow-md border border-slate-100 group-hover:shadow-xl group-hover:border-[#D4A017]/30 transition-all duration-300">
                           {/* Pillar image */}

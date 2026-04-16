@@ -74,8 +74,6 @@ const navItems: NavItem[] = [
       { name: 'Donate', href: '/support', description: 'Support our campaign', icon: FaHeart },
       { name: 'Diaspora', href: '/diaspora', description: 'Kenyans abroad', icon: FaGlobe },
       { name: 'Youth/GenZ', href: '/youth', description: 'Justice for fallen heroes', icon: FaFistRaised },
-      { name: 'Events', href: '/events', description: 'Attend our rallies', icon: FaCalendarAlt },
-      { name: 'Contact', href: '/contact', description: 'Get in touch', icon: FaEnvelope },
     ]
   },
   { name: 'Contact', href: '/contact' },
