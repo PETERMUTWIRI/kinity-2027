@@ -679,27 +679,19 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <ScrollReveal>
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
-              <div>
-                <span className="kicker-pill mb-4">
-                  Latest Updates
-                </span>
-                <h2 className="heading-editorial">
-                  From the <span className="heading-accent-gold">News Hub</span>
-                </h2>
-              </div>
-              <Link
-                href="/news-hub"
-                className="inline-flex items-center gap-2 text-[#1E3A8A] font-semibold hover:text-[#0F172A] transition-colors"
-              >
-                View All News
-                <FaArrowRight className="w-4 h-4" />
-              </Link>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="kicker-pill mb-4">
+                Latest Updates
+              </span>
+              <h2 className="heading-editorial mb-4">
+                From the <span className="heading-accent-gold">News Hub</span>
+              </h2>
+              <div className="hr-gold-wide mx-auto mb-4" />
             </div>
           </ScrollReveal>
 
           {/* News Grid - Shows 3 Actual Posts */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
             {loading ? (
               // Loading skeleton
               <>
@@ -770,6 +762,15 @@ export default function HomePage() {
               </div>
             )}
           </div>
+          <div className="text-center">
+            <Link
+              href="/news-hub"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#1E3A8A] text-white font-semibold hover:bg-[#0F172A] transition-colors"
+            >
+              View All News
+              <FaArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -780,27 +781,19 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <ScrollReveal>
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
-              <div>
-                <span className="kicker-pill-red mb-4">
-                  Campaign Trail
-                </span>
-                <h2 className="heading-editorial">
-                  Upcoming <span className="heading-accent-red">Events</span>
-                </h2>
-              </div>
-              <Link
-                href="/events"
-                className="inline-flex items-center gap-2 text-[#1E3A8A] font-semibold hover:text-[#0F172A] transition-colors"
-              >
-                View All Events
-                <FaArrowRight className="w-4 h-4" />
-              </Link>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="kicker-pill mb-4">
+                Campaign Trail
+              </span>
+              <h2 className="heading-editorial mb-4">
+                Upcoming <span className="heading-accent-gold">Events</span>
+              </h2>
+              <div className="hr-gold-wide mx-auto mb-4" />
             </div>
           </ScrollReveal>
 
           {/* Events Grid - Shows 3 Latest Events */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
             {latestEvents.length > 0 ? (
               // Real events from API
               latestEvents.map((event, index) => (
@@ -871,6 +864,15 @@ export default function HomePage() {
               </div>
             )}
           </div>
+          <div className="text-center">
+            <Link
+              href="/events"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#1E3A8A] text-white font-semibold hover:bg-[#0F172A] transition-colors"
+            >
+              View All Events
+              <FaArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -887,22 +889,14 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Header */}
           <ScrollReveal>
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
-              <div>
-                <span className="kicker-pill mb-4">
-                  Media Center
-                </span>
-                <h2 className="heading-editorial">
-                  Latest <span className="heading-accent-blue">From The Trail</span>
-                </h2>
-              </div>
-              <Link
-                href="/gallery"
-                className="inline-flex items-center gap-2 text-[#1E3A8A] font-semibold hover:text-[#0F172A] transition-colors"
-              >
-                View All Media
-                <FaArrowRight className="w-4 h-4" />
-              </Link>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="kicker-pill mb-4">
+                Media Center
+              </span>
+              <h2 className="heading-editorial mb-4">
+                Latest <span className="heading-accent-gold">From The Trail</span>
+              </h2>
+              <div className="hr-gold-wide mx-auto mb-4" />
             </div>
           </ScrollReveal>
 
@@ -1091,6 +1085,15 @@ export default function HomePage() {
               )}
             </div>
           </div>
+          <div className="text-center mt-8">
+            <Link
+              href="/gallery"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#1E3A8A] text-white font-semibold hover:bg-[#0F172A] transition-colors"
+            >
+              View All Media
+              <FaArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -1137,7 +1140,7 @@ export default function HomePage() {
             <ScrollReveal>
               <span className="kicker-gold mb-4 block">Join Us</span>
               
-              <h2 className="heading-editorial text-white mb-6">
+              <h2 className="heading-editorial !text-white mb-6">
                 Be Part of the <span className="heading-accent-gold">Movement</span>
               </h2>
               <div className="hr-gold mx-auto mb-8" />
