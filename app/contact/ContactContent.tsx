@@ -483,14 +483,15 @@ export default function ContactContent() {
       {/* Office Locations Section */}
       <section className="py-16 lg:py-20 bg-slate-50 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
-          <ScrollReveal className="text-center mb-12">
-            <span className="inline-block px-4 py-1 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A] font-semibold text-sm mb-4">
+          <ScrollReveal className="text-center max-w-3xl mx-auto mb-12">
+            <span className="kicker-pill mb-4">
               <FaBuilding className="w-4 h-4 inline mr-2" />
               Visit Our Offices
             </span>
-            <h2 className="font-headline text-3xl md:text-4xl text-[#0F172A] mb-4">
-              Campaign <span className="text-[#1E3A8A]">Offices</span> Near You
+            <h2 className="heading-editorial mb-4">
+              Campaign <span className="heading-accent-gold">Offices</span> Near You
             </h2>
+            <div className="hr-gold-wide mx-auto mb-4" />
             <p className="text-slate-600 max-w-2xl mx-auto">
               Visit our headquarters or regional offices. Our doors are open to every Kenyan.
             </p>
@@ -579,14 +580,15 @@ export default function ContactContent() {
       {/* Department Contacts */}
       <section className="py-16 lg:py-20 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
-          <ScrollReveal className="text-center mb-12">
-            <span className="inline-block px-4 py-1 rounded-full bg-[#D4A017]/10 text-[#D4A017] font-semibold text-sm mb-4">
+          <ScrollReveal className="text-center max-w-3xl mx-auto mb-12">
+            <span className="kicker-pill mb-4">
               <FaHeadset className="w-4 h-4 inline mr-2" />
               Department Contacts
             </span>
-            <h2 className="font-headline text-3xl md:text-4xl text-[#0F172A] mb-4">
-              Contact the <span className="text-[#D4A017]">Right Team</span>
+            <h2 className="heading-editorial mb-4">
+              Contact the <span className="heading-accent-gold">Right Team</span>
             </h2>
+            <div className="hr-gold-wide mx-auto mb-4" />
             <p className="text-slate-600 max-w-2xl mx-auto">
               Reach out to specific departments for faster, more relevant responses.
             </p>
@@ -631,14 +633,15 @@ export default function ContactContent() {
       {/* County Coordinators Section */}
       <section id="county-coordinators" className="py-16 lg:py-20 bg-slate-50 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
-          <ScrollReveal className="text-center mb-12">
-            <span className="inline-block px-4 py-1 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A] font-semibold text-sm mb-4">
+          <ScrollReveal className="text-center max-w-3xl mx-auto mb-12">
+            <span className="kicker-pill mb-4">
               <FaUserTie className="w-4 h-4 inline mr-2" />
               Local Support
             </span>
-            <h2 className="font-headline text-3xl md:text-4xl text-[#0F172A] mb-4">
-              Find Your <span className="text-[#1E3A8A]">County Coordinator</span>
+            <h2 className="heading-editorial mb-4">
+              Find Your <span className="heading-accent-gold">County Coordinator</span>
             </h2>
+            <div className="hr-gold-wide mx-auto mb-4" />
             <p className="text-slate-600 max-w-2xl mx-auto">
               Connect with campaign coordinators in your county for local events, volunteer opportunities, and updates.
             </p>
@@ -739,8 +742,8 @@ export default function ContactContent() {
                 <FaShieldAlt className="w-4 h-4 inline mr-2" />
                 Zero Tolerance Policy
               </span>
-              <h2 className="font-headline text-3xl md:text-4xl text-[#0F172A] mb-4">
-                Report <span className="text-[#DC2626]">Corruption</span> or Integrity Issues
+              <h2 className="heading-editorial mb-4">
+                Report <span className="heading-accent-gold">Corruption</span> or Integrity Issues
               </h2>
               <p className="text-slate-600 mb-6">
                 Dr. Kinity is committed to a corruption-free campaign and government. 
@@ -943,8 +946,8 @@ export default function ContactContent() {
                 <span className="inline-block px-4 py-1 rounded-full bg-[#DC2626]/10 text-[#DC2626] font-semibold text-sm mb-4">
                   General Inquiry
                 </span>
-                <h2 className="font-headline text-3xl md:text-4xl text-[#0F172A] mb-4">
-                  Send Us a <span className="text-[#1E3A8A]">Message</span>
+                <h2 className="heading-editorial mb-4">
+                  Send Us a <span className="heading-accent-gold">Message</span>
                 </h2>
                 <p className="text-slate-600 mb-8">
                   Have a question or suggestion? Fill out the form and our team will get back to you within 24-48 hours.
@@ -1141,13 +1144,12 @@ export default function ContactContent() {
       {/* FAQ Section */}
       <section className="py-16 lg:py-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
-          <ScrollReveal className="text-center mb-12">
-            <span className="inline-block px-4 py-1 rounded-full bg-[#D4A017]/10 text-[#D4A017] font-semibold text-sm mb-4">
-              FAQ
-            </span>
-            <h2 className="font-headline text-3xl md:text-4xl text-[#0F172A] mb-4">
-              Frequently Asked <span className="text-[#1E3A8A]">Questions</span>
+          <ScrollReveal className="text-center max-w-3xl mx-auto mb-12">
+            <span className="kicker-pill mb-4">FAQ</span>
+            <h2 className="heading-editorial mb-4">
+              Frequently Asked <span className="heading-accent-gold">Questions</span>
             </h2>
+            <div className="hr-gold-wide mx-auto mb-4" />
             <p className="text-slate-600">
               Quick answers to common questions about the campaign.
             </p>

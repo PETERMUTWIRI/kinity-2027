@@ -105,13 +105,13 @@ export default function CandidateContent() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0F172A] mb-6">
-              Dr. Isaac Newton <span className="text-[#D4A017]">Kinity</span>
+            <h1 className="heading-editorial mb-6">
+              Dr. Isaac Newton <span className="heading-accent-gold">Kinity</span>
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] mx-auto rounded-full mb-6" />
+            <div className="hr-gold-wide mx-auto mb-6" />
             <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
               Flagbearer of the National Vision Party. A proven track record of sacrifice, courage, 
               and unwavering commitment to the Kenyan people. Four pillars define exceptional leadership for Kenya&apos;s future.
@@ -124,9 +124,13 @@ export default function CandidateContent() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-white">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
-            <h2 className="text-3xl font-bold text-center text-[#0F172A] mb-12">
-              Key <span className="text-[#D4A017]">Achievements</span>
-            </h2>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="kicker-pill mb-4">Track Record</span>
+              <h2 className="heading-editorial mb-4">
+                Key <span className="heading-accent-gold">Achievements</span>
+              </h2>
+              <div className="hr-gold-wide mx-auto mb-4" />
+            </div>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -149,11 +153,12 @@ export default function CandidateContent() {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
-                The Four <span className="text-[#D4A017]">Pillars</span>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="kicker-pill mb-4">Leadership</span>
+              <h2 className="heading-editorial mb-4">
+                The Four <span className="heading-accent-gold">Pillars</span>
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] mx-auto rounded-full mb-4" />
+              <div className="hr-gold-wide mx-auto mb-4" />
               <p className="text-lg text-slate-600 max-w-2xl mx-auto">
                 These core principles have guided Dr. Kinity throughout his 40+ years of service to Kenya.
               </p>
@@ -220,9 +225,10 @@ export default function CandidateContent() {
                   <FaGlobe className="w-4 h-4" />
                   Global Impact
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold">
-                  International <span className="text-[#D4A017]">Advocacy</span>
+                <h2 className="heading-editorial !text-white mb-4">
+                  International <span className="heading-accent-gold">Advocacy</span>
                 </h2>
+                <div className="hr-gold mx-auto mb-4 lg:mx-0" />
                 <p className="text-white/70 leading-relaxed">
                   While in exile, Dr. Kinity transformed his personal tragedy into a global mission. 
                   He traveled to numerous countries, speaking at prestigious institutions and international 

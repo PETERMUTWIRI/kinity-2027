@@ -130,8 +130,8 @@ export default function FAQContent() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Frequently Asked <span className="text-amber-300">Questions</span>
+            <h1 className="heading-editorial !text-white mb-6">
+              Frequently Asked <span className="heading-accent-gold">Questions</span>
             </h1>
           </ScrollReveal>
 

@@ -71,13 +71,13 @@ export default function OurStoryContent() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0F172A] mb-6">
-              Born from the <span className="text-[#D4A017]">Struggle</span>
+            <h1 className="heading-editorial mb-6">
+              Born from the <span className="heading-accent-gold">Struggle</span>
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] mx-auto rounded-full mb-6" />
+            <div className="hr-gold-wide mx-auto mb-6" />
             <p className="text-xl text-slate-600 leading-relaxed mb-8">
               The National Vision Party was not born in a boardroom. It was forged in the trenches of Kenya&apos;s 
               fight for justice—decades of sacrifice, exile, and an unbreakable belief that this nation can be great again.
@@ -141,9 +141,13 @@ export default function OurStoryContent() {
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0F172A] mb-12">
-              Timeline of a <span className="text-[#D4A017]">Movement</span>
-            </h2>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="kicker-pill mb-4">Our Journey</span>
+              <h2 className="heading-editorial mb-4">
+                Timeline of a <span className="heading-accent-gold">Movement</span>
+              </h2>
+              <div className="hr-gold-wide mx-auto mb-4" />
+            </div>
           </ScrollReveal>
 
           <div className="relative">

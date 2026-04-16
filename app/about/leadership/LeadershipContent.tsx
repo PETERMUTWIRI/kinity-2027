@@ -71,13 +71,13 @@ export default function LeadershipContent() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0F172A] mb-6">
-              Leadership Built on <span className="text-[#D4A017]">Service</span>
+            <h1 className="heading-editorial mb-6">
+              Leadership Built on <span className="heading-accent-gold">Service</span>
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] mx-auto rounded-full mb-6" />
+            <div className="hr-gold-wide mx-auto mb-6" />
             <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
               The National Vision Party is not a one-man show. It is a disciplined movement of servant-leaders 
               united by a single mandate: to restore Kenya&apos;s dignity through accountable, people-centered governance.
@@ -106,7 +106,7 @@ export default function LeadershipContent() {
                     Flagbearer 2027
                   </span>
                   <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
-                    Dr. Isaac Newton <span className="text-[#D4A017]">Kinity</span>
+                    Dr. Isaac Newton <span className="heading-accent-gold">Kinity</span>
                   </h2>
                   <p className="text-slate-600 leading-relaxed mb-6">
                     Presidential Candidate of the National Vision Party. A veteran governance activist with over 
@@ -143,11 +143,12 @@ export default function LeadershipContent() {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
-                Party <span className="text-[#D4A017]">Structure</span>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="kicker-pill mb-4">Party Organization</span>
+              <h2 className="heading-editorial mb-4">
+                Party <span className="heading-accent-gold">Structure</span>
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] mx-auto rounded-full mb-4" />
+              <div className="hr-gold-wide mx-auto mb-4" />
               <p className="text-lg text-slate-600 max-w-2xl mx-auto">
                 A nationwide organization designed to put power back where it belongs—in the hands of the people.
               </p>
@@ -181,10 +182,12 @@ export default function LeadershipContent() {
 
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                The <span className="text-[#D4A017]">Covenant</span> of Leadership
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="kicker-gold mb-4">Our Values</span>
+              <h2 className="heading-editorial !text-white mb-4">
+                The <span className="heading-accent-gold">Covenant</span> of Leadership
               </h2>
+              <div className="hr-gold mx-auto mb-4" />
               <p className="text-white/70 max-w-2xl mx-auto">
                 Every leader who wears the NVP badge makes these four commitments to the Kenyan people.
               </p>

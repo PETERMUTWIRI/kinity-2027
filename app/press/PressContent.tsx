@@ -61,8 +61,8 @@ export default function PressContent() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Press & <span className="text-[#D4A017]">Media</span>
+            <h1 className="heading-editorial !text-white mb-6">
+              Press & <span className="heading-accent-gold">Media</span>
             </h1>
           </ScrollReveal>
 
@@ -79,9 +79,13 @@ export default function PressContent() {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
-            <h2 className="text-3xl font-bold text-center text-[#0F172A] mb-12">
-              Media <span className="text-[#D4A017]">Contact</span>
-            </h2>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="kicker-pill mb-4">Reach Out</span>
+              <h2 className="heading-editorial mb-4">
+                Media <span className="heading-accent-gold">Contact</span>
+              </h2>
+              <div className="hr-gold-wide mx-auto mb-4" />
+            </div>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -174,9 +178,13 @@ export default function PressContent() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-white">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
-            <h2 className="text-3xl font-bold text-center text-[#0F172A] mb-12">
-              Media <span className="text-[#D4A017]">Resources</span>
-            </h2>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="kicker-pill mb-4">Assets</span>
+              <h2 className="heading-editorial mb-4">
+                Media <span className="heading-accent-gold">Resources</span>
+              </h2>
+              <div className="hr-gold-wide mx-auto mb-4" />
+            </div>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -201,9 +209,13 @@ export default function PressContent() {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
-            <h2 className="text-3xl font-bold text-center text-[#0F172A] mb-12">
-              Recent <span className="text-[#D4A017]">Press Releases</span>
-            </h2>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="kicker-pill mb-4">Updates</span>
+              <h2 className="heading-editorial mb-4">
+                Recent <span className="heading-accent-gold">Press Releases</span>
+              </h2>
+              <div className="hr-gold-wide mx-auto mb-4" />
+            </div>
           </ScrollReveal>
 
           <div className="space-y-6">
@@ -249,8 +261,8 @@ export default function PressContent() {
             {/* Gold accent line */}
             <div className="w-24 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] mx-auto rounded-full mb-8" />
             
-            <h2 className="text-3xl font-bold text-white mb-6">
-              Follow the <span className="text-[#D4A017]">Campaign</span>
+            <h2 className="heading-editorial !text-white mb-6">
+              Follow the <span className="heading-accent-gold">Campaign</span>
             </h2>
             <p className="text-white/70 mb-8">
               Stay updated with the latest news, events, and campaign moments across our social media channels.

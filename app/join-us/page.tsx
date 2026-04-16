@@ -180,9 +180,9 @@ export default function JoinUsPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="font-slogan text-4xl md:text-5xl lg:text-6xl text-[#0F172A] mb-6"
+              className="heading-editorial mb-6"
             >
-              Join the <span className="text-[#D4A017]">Movement</span>
+              Join the <span className="heading-accent-gold">Movement</span>
             </motion.h1>
             
             <motion.p
@@ -222,12 +222,12 @@ export default function JoinUsPage() {
       <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="text-center mb-16">
-              {/* Gold accent line */}
-              <div className="w-24 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] mx-auto rounded-full mb-6" />
-              <h2 className="font-headline text-3xl md:text-4xl text-[#0F172A] mb-4">
-                How You Can <span className="text-[#D4A017]">Help</span>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="kicker-pill mb-4">Volunteer</span>
+              <h2 className="heading-editorial mb-4">
+                How You Can <span className="heading-accent-gold">Help</span>
               </h2>
+              <div className="hr-gold-wide mx-auto mb-4" />
               <p className="text-slate-600 max-w-2xl mx-auto">
                 We need passionate individuals in every role. Choose where your skills can make the biggest impact.
               </p>
@@ -266,11 +266,12 @@ export default function JoinUsPage() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <ScrollReveal>
-            <div className="text-center mb-12">
-              <div className="w-24 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] mx-auto rounded-full mb-6" />
-              <h2 className="font-headline text-3xl md:text-4xl mb-4">
-                County <span className="text-[#D4A017]">Digital Champions</span>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="kicker-gold mb-4">Grassroots</span>
+              <h2 className="heading-editorial !text-white mb-4">
+                County <span className="heading-accent-gold">Digital Champions</span>
               </h2>
+              <div className="hr-gold mx-auto mb-4" />
               <p className="text-white/80 max-w-2xl mx-auto text-lg">
                 Dr. Kinity is in the USA, but the movement is alive in all 47 counties. 
                 Join your county WhatsApp group and connect with local coordinators organizing 
@@ -359,12 +360,12 @@ export default function JoinUsPage() {
       <section id="volunteer-form" className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="text-center mb-12">
-              {/* Gold accent line */}
-              <div className="w-24 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] mx-auto rounded-full mb-6" />
-              <h2 className="font-headline text-3xl md:text-4xl text-[#0F172A] mb-4">
-                Sign Up to <span className="text-[#D4A017]">Volunteer</span>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="kicker-pill mb-4">Get Started</span>
+              <h2 className="heading-editorial mb-4">
+                Sign Up to <span className="heading-accent-gold">Volunteer</span>
               </h2>
+              <div className="hr-gold-wide mx-auto mb-4" />
               <p className="text-slate-600">
                 Fill out the form below and our team will contact you with next steps.
               </p>

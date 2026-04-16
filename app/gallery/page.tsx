@@ -40,11 +40,13 @@ export default function GalleryPage() {
     <div className="min-h-screen bg-slate-950">
       {/* Header */}
       <div className="bg-gradient-to-br from-[#1E3A8A] to-[#D4A017] py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="font-slogan text-4xl md:text-5xl text-white mb-4">
-            PHOTO GALLERY
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span className="kicker-gold mb-4">Media Center</span>
+          <h1 className="heading-editorial !text-white mb-4">
+            Photo <span className="heading-accent-gold">Gallery</span>
           </h1>
-          <p className="text-white/80 text-lg max-w-2xl">
+          <div className="hr-white mx-auto mb-4" />
+          <p className="text-white/80 text-lg max-w-2xl mx-auto">
             Explore photos from campaign rallies, events, and moments from across Kenya.
           </p>
         </div>

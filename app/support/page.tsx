@@ -195,9 +195,9 @@ export default function SupportPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="font-slogan text-4xl md:text-5xl lg:text-6xl text-white mb-6"
+              className="heading-editorial !text-white mb-6"
             >
-              Support the <span className="text-[#D4A017]">Campaign</span>
+              Support the <span className="heading-accent-gold">Campaign</span>
             </motion.h1>
             
             <motion.p
@@ -237,10 +237,12 @@ export default function SupportPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="font-headline text-3xl md:text-4xl text-[#1E3A8A] mb-4">
-                Your Donation <span className="text-[#D4A017]">Matters</span>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="kicker-pill mb-4">Impact</span>
+              <h2 className="heading-editorial mb-4">
+                Your Donation <span className="heading-accent-gold">Matters</span>
               </h2>
+              <div className="hr-gold-wide mx-auto mb-4" />
               <p className="text-slate-600 max-w-2xl mx-auto">
                 See exactly how your contribution fuels our campaign for change.
               </p>
@@ -270,8 +272,8 @@ export default function SupportPage() {
             {/* Left: Donation Options */}
             <ScrollReveal>
               <div>
-                <h2 className="font-headline text-3xl text-[#1E3A8A] mb-6">
-                  Choose Your <span className="text-[#D4A017]">Contribution</span>
+                <h2 className="heading-editorial mb-6">
+                  Choose Your <span className="heading-accent-gold">Contribution</span>
                 </h2>
                 
                 {/* Amount Selection */}
@@ -562,10 +564,12 @@ export default function SupportPage() {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="text-center mb-12">
-              <h2 className="font-headline text-3xl text-[#1E3A8A] mb-4">
-                Other Ways to <span className="text-[#D4A017]">Support</span>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="kicker-pill mb-4">Alternatives</span>
+              <h2 className="heading-editorial mb-4">
+                Other Ways to <span className="heading-accent-gold">Support</span>
               </h2>
+              <div className="hr-gold-wide mx-auto mb-4" />
             </div>
           </ScrollReveal>
 

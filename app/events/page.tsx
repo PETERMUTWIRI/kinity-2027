@@ -38,11 +38,13 @@ export default async function EventsPage() {
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
       <div className="bg-gradient-to-br from-[#1E3A8A] to-[#0F172A] py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="font-slogan text-4xl md:text-5xl text-white mb-4">
-            CAMPAIGN EVENTS
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span className="kicker-gold mb-4">Campaign Trail</span>
+          <h1 className="heading-editorial !text-white mb-4">
+            Campaign <span className="heading-accent-gold">Events</span>
           </h1>
-          <p className="text-white/80 text-lg max-w-2xl">
+          <div className="hr-gold mx-auto mb-4" />
+          <p className="text-white/80 text-lg max-w-2xl mx-auto">
             Join us at rallies, town halls, and community meetings across all 47 counties.
           </p>
         </div>
@@ -51,10 +53,16 @@ export default async function EventsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Upcoming Events */}
         <section className="mb-16">
-          <h2 className="font-headline text-2xl text-[#0F172A] mb-8 flex items-center gap-3">
-            <FaBullhorn className="text-[#DC2626]" />
-            Upcoming Events
-          </h2>
+          <div className="text-center max-w-3xl mx-auto mb-8">
+            <span className="kicker-pill mb-4">
+              <FaBullhorn className="w-4 h-4 inline mr-2" />
+              Upcoming
+            </span>
+            <h2 className="heading-editorial mb-4">
+              Upcoming <span className="heading-accent-gold">Events</span>
+            </h2>
+            <div className="hr-gold-wide mx-auto mb-4" />
+          </div>
           
           {upcomingEvents.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -125,7 +133,13 @@ export default async function EventsPage() {
         {/* Past Events */}
         {pastEvents.length > 0 && (
           <section>
-            <h2 className="font-headline text-2xl text-[#0F172A] mb-8">Past Events</h2>
+            <div className="text-center max-w-3xl mx-auto mb-8">
+              <span className="kicker-pill mb-4">Archive</span>
+              <h2 className="heading-editorial mb-4">
+                Past <span className="heading-accent-gold">Events</span>
+              </h2>
+              <div className="hr-gold-wide mx-auto mb-4" />
+            </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {pastEvents.map((event) => (
                 <Link key={event.id} href={`/events/${event.slug}`} className="group">

@@ -252,8 +252,8 @@ export default function YouthPage() {
             <span className="inline-block px-4 py-1 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A] text-sm font-semibold mb-4">
               Your Future, Your Terms
             </span>
-            <h2 className="font-headline text-3xl md:text-4xl text-[#0F172A] mb-4">
-              What GenZ Gets with <span className="text-[#D4A017]">Dr. Kinity</span>
+            <h2 className="heading-editorial mb-4">
+              What GenZ Gets with <span className="heading-accent-gold">Dr. Kinity</span>
             </h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto">
               Not promises. Not handouts. Real change that puts your generation first.
@@ -292,8 +292,8 @@ export default function YouthPage() {
                     <span className="text-[#D4A017] text-sm font-semibold">A Call to Courage</span>
                   </div>
                   
-                  <h2 className="font-headline text-2xl md:text-3xl lg:text-4xl text-white mb-4 leading-tight">
-                    Step Forward. Lead Kenya. <span className="text-[#D4A017]">Your Time Is Now.</span>
+                  <h2 className="heading-editorial !text-white mb-4 leading-tight">
+                    Step Forward. Lead Kenya. <span className="heading-accent-gold">Your Time Is Now.</span>
                   </h2>
                   
                   <p className="text-white/90 text-lg mb-4 leading-relaxed">
@@ -338,8 +338,8 @@ export default function YouthPage() {
           <div className="bg-gradient-to-r from-[#1E3A8A] to-[#0F172A] rounded-3xl p-8 md:p-12 text-center md:text-left">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h3 className="font-headline text-2xl md:text-3xl text-white mb-4">
-                  Read the Full Youth Manifesto
+                <h3 className="heading-editorial !text-white mb-4 text-2xl md:text-3xl">
+                  Read the Full <span className="heading-accent-gold">Youth Manifesto</span>
                 </h3>
                 <p className="text-white/70 mb-6">
                   47 pages of concrete plans for education, employment, digital rights, and climate action. This is your blueprint.
@@ -385,8 +385,8 @@ export default function YouthPage() {
             <FaUsers className="w-10 h-10 text-[#D4A017]" />
           </div>
           
-          <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl text-[#0F172A] mb-4">
-            The Power is in <span className="text-[#D4A017]">Your Hands</span>
+          <h2 className="heading-editorial mb-4">
+            The Power is in <span className="heading-accent-gold">Your Hands</span>
           </h2>
           
           <p className="text-[#0F172A]/80 text-lg mb-8 max-w-2xl mx-auto">

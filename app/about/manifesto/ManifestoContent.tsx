@@ -177,13 +177,13 @@ export default function ManifestoContent() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0F172A] mb-6">
-              Our <span className="text-[#D4A017]">Commitment</span> to Kenya
+            <h1 className="heading-editorial mb-6">
+              Our <span className="heading-accent-gold">Commitment</span> to Kenya
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] mx-auto rounded-full mb-6" />
+            <div className="hr-gold-wide mx-auto mb-6" />
             <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
               Specific, measurable, and actionable policy commitments to transform Kenya into 
               a prosperous, corruption-free nation where every citizen can thrive.
@@ -196,9 +196,13 @@ export default function ManifestoContent() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-white">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0F172A] mb-12">
-              Our Key <span className="text-[#D4A017]">Commitments</span>
-            </h2>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="kicker-pill mb-4">Manifesto</span>
+              <h2 className="heading-editorial mb-4">
+                Our Key <span className="heading-accent-gold">Commitments</span>
+              </h2>
+              <div className="hr-gold-wide mx-auto mb-4" />
+            </div>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -245,9 +249,13 @@ export default function ManifestoContent() {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-[#0F172A] mb-12">
-              Implementation <span className="text-[#D4A017]">Timeline</span>
-            </h2>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="kicker-pill mb-4">Roadmap</span>
+              <h2 className="heading-editorial mb-4">
+                Implementation <span className="heading-accent-gold">Timeline</span>
+              </h2>
+              <div className="hr-gold-wide mx-auto mb-4" />
+            </div>
           </ScrollReveal>
 
           <div className="space-y-8">
@@ -295,8 +303,8 @@ export default function ManifestoContent() {
             <div className="w-24 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] mx-auto rounded-full mb-8" />
             
             <FaFileContract className="w-16 h-16 text-[#D4A017] mx-auto mb-6" />
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              A Promise Written in <span className="text-[#D4A017]">Sacrifice</span>
+            <h2 className="heading-editorial !text-white mb-6">
+              A Promise Written in <span className="heading-accent-gold">Sacrifice</span>
             </h2>
             <blockquote className="text-2xl text-white/80 italic mb-8 max-w-3xl mx-auto">
               &ldquo;These are not empty campaign promises. I have already sacrificed my health, 

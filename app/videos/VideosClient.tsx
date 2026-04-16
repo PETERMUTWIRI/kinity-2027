@@ -77,10 +77,10 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight"
+                className="heading-editorial !text-white"
               >
                 Watch the{' '}
-                <span className="text-[#D4A017]">
+                <span className="heading-accent-gold">
                   Movement
                 </span>
               </motion.h1>
@@ -475,8 +475,8 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
               <div className="w-24 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] mx-auto rounded-full mb-8" />
               
               <FaYoutube className="w-16 h-16 text-[#DC2626] mx-auto mb-6" />
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-                Be Part of the <span className="text-[#D4A017]">Movement</span>
+              <h2 className="heading-editorial !text-white mb-4">
+                Be Part of the <span className="heading-accent-gold">Movement</span>
               </h2>
               <p className="text-white/70 mb-8 max-w-lg mx-auto">
                 Subscribe to our channel for campaign updates, speeches, rallies, and exclusive content. 

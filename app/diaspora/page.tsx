@@ -199,10 +199,12 @@ export default function DiasporaPage() {
       {/* Ways to Help */}
       <section className="py-16 bg-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-headline text-3xl md:text-4xl text-[#0F172A] mb-4">
-              How You Can Help from <span className="text-[#D4A017]">Anywhere</span>
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="kicker-pill mb-4">Get Involved</span>
+            <h2 className="heading-editorial mb-4">
+              How You Can Help from <span className="heading-accent-gold">Anywhere</span>
             </h2>
+            <div className="hr-gold-wide mx-auto mb-4" />
             <p className="text-slate-600 text-lg max-w-2xl mx-auto">
               You don&apos;t need to be in Kenya to be part of this revolution. Here are four ways to make impact:
             </p>
@@ -241,8 +243,8 @@ export default function DiasporaPage() {
                 <FaCalendarAlt className="w-4 h-4 inline mr-2" />
                 August 9, 2027
               </span>
-              <h2 className="font-headline text-3xl md:text-4xl text-[#0F172A] mb-6">
-                Your Vote Counts—<span className="text-[#D4A017]">Even from Abroad</span>
+              <h2 className="heading-editorial mb-6">
+                Your Vote Counts—<span className="heading-accent-gold">Even from Abroad</span>
               </h2>
               <div className="space-y-4 text-slate-600">
                 <p>
@@ -296,8 +298,8 @@ export default function DiasporaPage() {
       {/* Final CTA */}
       <section className="py-16 bg-[#0F172A]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-headline text-3xl md:text-4xl text-white mb-6">
-            The Time for <span className="text-[#D4A017]">Waiting is Over</span>
+          <h2 className="heading-editorial !text-white mb-6">
+            The Time for <span className="heading-accent-gold">Waiting is Over</span>
           </h2>
           <p className="text-white/70 text-lg mb-8 max-w-2xl mx-auto">
             Every generation of Kenyans has hoped for change. We are done hoping. We are building. And we need you—wherever you are.

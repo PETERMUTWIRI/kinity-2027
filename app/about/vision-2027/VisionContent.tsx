@@ -231,13 +231,13 @@ export default function VisionContent() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0F172A] mb-6">
-              Building a <span className="text-[#D4A017]">Better Kenya</span>
+            <h1 className="heading-editorial mb-6">
+              Building a <span className="heading-accent-gold">Better Kenya</span>
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] mx-auto rounded-full mb-6" />
+            <div className="hr-gold-wide mx-auto mb-6" />
             <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
               Eight transformative pillars that will restore Kenya&apos;s dignity, eliminate corruption, 
               and create prosperity for all 50 million+ Kenyans across all 47 counties.
