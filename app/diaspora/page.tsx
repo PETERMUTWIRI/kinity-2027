@@ -162,8 +162,12 @@ export default function DiasporaPage() {
       </section>
 
       {/* Dr. Kinity's Message */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 lg:py-24 relative overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/national-security-cohesion.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border-l-4 border-[#D4A017]">
             <div className="flex items-center gap-4 mb-6">
               <div className="relative w-16 h-16 rounded-full overflow-hidden ring-4 ring-[#D4A017]/20">
@@ -197,8 +201,12 @@ export default function DiasporaPage() {
       </section>
 
       {/* Ways to Help */}
-      <section className="py-16 bg-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 relative overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/genz2.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="kicker-pill mb-4">Get Involved</span>
             <h2 className="heading-editorial mb-4">
@@ -235,8 +243,12 @@ export default function DiasporaPage() {
       </section>
 
       {/* Voting from Abroad */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 lg:py-24 relative overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/genz3.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="inline-block px-4 py-1 rounded-full bg-[#D4A017]/10 text-[#D4A017] text-sm font-semibold mb-4">

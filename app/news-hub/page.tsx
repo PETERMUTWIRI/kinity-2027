@@ -57,9 +57,14 @@ export default async function NewsHubPage({
       </div>
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/economic-transformation.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+        
         {/* Category Filter */}
-        <div className="flex flex-wrap gap-2 mb-8">
+        <div className="flex flex-wrap gap-2 mb-8 relative z-10">
           {categories.map((cat) => (
             <Link
               key={cat}
@@ -77,7 +82,7 @@ export default async function NewsHubPage({
 
         {/* Posts Grid */}
         {posts.length > 0 ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
             {posts.map((post) => (
               <Link key={post.id} href={`/news-hub/${post.slug}`} className="group">
                 <article className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow h-full">
@@ -131,7 +136,7 @@ export default async function NewsHubPage({
             ))}
           </div>
         ) : (
-          <div className="text-center py-16">
+          <div className="text-center py-16 relative z-10">
             <FaNewspaper className="w-16 h-16 text-slate-300 mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-slate-700 mb-2">News Coming Soon</h3>
             <p className="text-slate-500 max-w-md mx-auto">
@@ -142,7 +147,9 @@ export default async function NewsHubPage({
       </div>
 
       {/* Gallery Carousel - From the Campaign Trail */}
-      <GalleryCarousel />
+      <div className="relative z-10">
+        <GalleryCarousel />
+      </div>
     </div>
   );
 }

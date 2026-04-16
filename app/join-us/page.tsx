@@ -219,8 +219,12 @@ export default function JoinUsPage() {
       </section>
 
       {/* Volunteer Roles */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 relative overflow-hidden px-4 sm:px-6 lg:px-8">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/social-protection.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+        <div className="max-w-7xl mx-auto relative z-10">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="kicker-pill mb-4">Volunteer</span>
@@ -357,8 +361,12 @@ export default function JoinUsPage() {
       </section>
 
       {/* Registration Form */}
-      <section id="volunteer-form" className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="volunteer-form" className="py-20 relative overflow-hidden px-4 sm:px-6 lg:px-8">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/youth-and-women-empowerment.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+        <div className="max-w-4xl mx-auto relative z-10">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-12">
               <span className="kicker-pill mb-4">Get Started</span>

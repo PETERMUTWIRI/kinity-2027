@@ -234,8 +234,12 @@ export default function SupportPage() {
       </section>
 
       {/* Impact Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 relative overflow-hidden px-4 sm:px-6 lg:px-8">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/economic-transformation.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+        <div className="max-w-7xl mx-auto relative z-10">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="kicker-pill mb-4">Impact</span>
@@ -266,8 +270,12 @@ export default function SupportPage() {
       </section>
 
       {/* Donation Form */}
-      <section className="py-20 bg-[#F8FAFC]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 relative overflow-hidden px-4 sm:px-6 lg:px-8">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/education.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Left: Donation Options */}
             <ScrollReveal>
@@ -561,8 +569,12 @@ export default function SupportPage() {
       </section>
 
       {/* Bank Transfer Info */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 relative overflow-hidden px-4 sm:px-6 lg:px-8">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/healthcare.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+        <div className="max-w-4xl mx-auto relative z-10">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-12">
               <span className="kicker-pill mb-4">Alternatives</span>

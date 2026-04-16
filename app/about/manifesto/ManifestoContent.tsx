@@ -193,8 +193,12 @@ export default function ManifestoContent() {
       </section>
 
       {/* Key Commitments */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-white">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/economic-transformation.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+        <div className="max-w-6xl mx-auto relative z-10">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-12">
               <span className="kicker-pill mb-4">Manifesto</span>
@@ -246,8 +250,12 @@ export default function ManifestoContent() {
       </section>
 
       {/* Implementation Timeline */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/education.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+        <div className="max-w-4xl mx-auto relative z-10">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-12">
               <span className="kicker-pill mb-4">Roadmap</span>
@@ -288,30 +296,28 @@ export default function ManifestoContent() {
         </div>
       </section>
 
-      {/* The Promise - Keep this section but update colors */}
-      <section className="py-16 bg-[#0F172A] relative overflow-hidden">
-        {/* Subtle Kenyan flag hint at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-1 flex opacity-30">
-          <div className="flex-1 bg-black" />
-          <div className="flex-1 bg-[#DC2626]" />
-          <div className="flex-1 bg-[#006600]" />
-        </div>
+      {/* The Promise */}
+      <section className="py-16 relative overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/corruption.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
         
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <ScrollReveal>
             {/* Gold accent line */}
             <div className="w-24 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] mx-auto rounded-full mb-8" />
             
             <FaFileContract className="w-16 h-16 text-[#D4A017] mx-auto mb-6" />
-            <h2 className="heading-editorial !text-white mb-6">
+            <h2 className="heading-editorial mb-6">
               A Promise Written in <span className="heading-accent-gold">Sacrifice</span>
             </h2>
-            <blockquote className="text-2xl text-white/80 italic mb-8 max-w-3xl mx-auto">
+            <blockquote className="text-2xl text-slate-600 italic mb-8 max-w-3xl mx-auto">
               &ldquo;These are not empty campaign promises. I have already sacrificed my health, 
               faced death, and dedicated 40 years to this cause. I pledge to serve with integrity 
               or resign. This is my commitment to you, the people of Kenya.&rdquo;
             </blockquote>
-            <p className="text-white/60 mb-10">— Dr. Isaac Newton Kinity</p>
+            <p className="text-slate-500 mb-10">— Dr. Isaac Newton Kinity</p>
           </ScrollReveal>
         </div>
       </section>

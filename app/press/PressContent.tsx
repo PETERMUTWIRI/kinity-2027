@@ -76,8 +76,12 @@ export default function PressContent() {
       </section>
 
       {/* Media Contact Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/national-security-cohesion.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+        <div className="max-w-6xl mx-auto relative z-10">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-12">
               <span className="kicker-pill mb-4">Reach Out</span>
@@ -175,8 +179,12 @@ export default function PressContent() {
       </section>
 
       {/* Media Resources */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-white">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/education.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+        <div className="max-w-6xl mx-auto relative z-10">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-12">
               <span className="kicker-pill mb-4">Assets</span>
@@ -206,8 +214,12 @@ export default function PressContent() {
       </section>
 
       {/* Recent Press Releases */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/corruption.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+        <div className="max-w-4xl mx-auto relative z-10">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-12">
               <span className="kicker-pill mb-4">Updates</span>

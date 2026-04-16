@@ -50,9 +50,14 @@ export default async function EventsPage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/genz2.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+        
         {/* Upcoming Events */}
-        <section className="mb-16">
+        <section className="mb-16 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-8">
             <span className="kicker-pill mb-4">
               <FaBullhorn className="w-4 h-4 inline mr-2" />
@@ -132,7 +137,7 @@ export default async function EventsPage() {
 
         {/* Past Events */}
         {pastEvents.length > 0 && (
-          <section>
+          <section className="relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-8">
               <span className="kicker-pill mb-4">Archive</span>
               <h2 className="heading-editorial mb-4">

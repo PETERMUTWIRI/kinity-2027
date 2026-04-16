@@ -481,8 +481,12 @@ export default function ContactContent() {
       </section>
 
       {/* Office Locations Section */}
-      <section className="py-16 lg:py-20 bg-slate-50 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-16 lg:py-20 relative overflow-hidden px-4 sm:px-6">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/economic-transformation.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+        <div className="max-w-7xl mx-auto relative z-10">
           <ScrollReveal className="text-center max-w-3xl mx-auto mb-12">
             <span className="kicker-pill mb-4">
               <FaBuilding className="w-4 h-4 inline mr-2" />
@@ -578,8 +582,12 @@ export default function ContactContent() {
       </section>
 
       {/* Department Contacts */}
-      <section className="py-16 lg:py-20 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-16 lg:py-20 relative overflow-hidden px-4 sm:px-6">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/social-protection.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+        <div className="max-w-7xl mx-auto relative z-10">
           <ScrollReveal className="text-center max-w-3xl mx-auto mb-12">
             <span className="kicker-pill mb-4">
               <FaHeadset className="w-4 h-4 inline mr-2" />
@@ -631,8 +639,12 @@ export default function ContactContent() {
       </section>
 
       {/* County Coordinators Section */}
-      <section id="county-coordinators" className="py-16 lg:py-20 bg-slate-50 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto">
+      <section id="county-coordinators" className="py-16 lg:py-20 relative overflow-hidden px-4 sm:px-6">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/agriculture-food-security.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+        <div className="max-w-7xl mx-auto relative z-10">
           <ScrollReveal className="text-center max-w-3xl mx-auto mb-12">
             <span className="kicker-pill mb-4">
               <FaUserTie className="w-4 h-4 inline mr-2" />
@@ -734,8 +746,12 @@ export default function ContactContent() {
       </section>
 
       {/* Report Corruption Section */}
-      <section id="report-corruption" className="py-16 lg:py-20 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto">
+      <section id="report-corruption" className="py-16 lg:py-20 relative overflow-hidden px-4 sm:px-6">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/corruption.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal>
               <span className="inline-block px-4 py-1 rounded-full bg-[#DC2626]/10 text-[#DC2626] font-semibold text-sm mb-4">
@@ -937,8 +953,12 @@ export default function ContactContent() {
       </section>
 
       {/* Contact Form & Info Section */}
-      <section className="py-16 lg:py-20 bg-slate-50 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-16 lg:py-20 relative overflow-hidden px-4 sm:px-6">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/healthcare.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Left - Contact Info */}
             <div>
@@ -1142,8 +1162,12 @@ export default function ContactContent() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 lg:py-20 px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-16 lg:py-20 relative overflow-hidden px-4 sm:px-6">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/education.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+        <div className="max-w-4xl mx-auto relative z-10">
           <ScrollReveal className="text-center max-w-3xl mx-auto mb-12">
             <span className="kicker-pill mb-4">FAQ</span>
             <h2 className="heading-editorial mb-4">

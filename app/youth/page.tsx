@@ -154,8 +154,12 @@ export default function YouthPage() {
       </section>
 
       {/* Dr. Kinity's Full Statement */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 lg:py-24 relative overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/genz1.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
             {/* Header with image */}
             <div className="bg-gradient-to-r from-[#1E3A8A] to-[#0F172A] p-8 md:p-12">
@@ -278,8 +282,12 @@ export default function YouthPage() {
       </section>
 
       {/* Leadership Call - Dr. Kinity Encourages Youth */}
-      <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 relative overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-[url('/images/vission/genz3.png')] bg-cover bg-center bg-no-repeat" />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="bg-gradient-to-br from-[#1E3A8A] to-[#0F172A] rounded-3xl p-8 md:p-12 text-center md:text-left overflow-hidden relative">
             {/* Decorative accent */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#D4A017]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
