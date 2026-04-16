@@ -35,7 +35,7 @@ export default function SocialProof() {
       {/* Banner background */}
       <div className="absolute inset-0 bg-[url('/baner.jpeg')] bg-cover bg-center bg-no-repeat" />
       {/* White overlay */}
-      <div className="absolute inset-0 bg-white/87" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
