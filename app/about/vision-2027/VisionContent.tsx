@@ -272,12 +272,12 @@ export default function VisionContent() {
           {pillars.map((pillar, index) => (
             <ScrollReveal key={pillar.id}>
               <div id={pillar.id} className="scroll-mt-32 relative rounded-3xl overflow-hidden">
-                {/* Background image with 88% white overlay */}
+                {/* Background image with white gradient overlay */}
                 <div 
                   className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                   style={{ backgroundImage: `url('${pillar.image}')` }}
                 />
-                <div className="absolute inset-0 bg-white/88" />
+                <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
                 
                 <div className="relative z-10 p-6 md:p-10">
                 {/* Header */}
