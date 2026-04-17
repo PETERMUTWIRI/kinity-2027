@@ -41,9 +41,9 @@ export default function GalleryPage() {
       {/* Header */}
       <div className="bg-gradient-to-br from-[#1E3A8A] to-[#1E3A8A] py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="kicker-gold mb-4">Media Center</span>
+          <span className="kicker-gold mb-4 !text-white">Media Center</span>
           <h1 className="heading-editorial !text-white mb-4">
-            Photo <span className="heading-accent-gold">Gallery</span>
+            Photo <span className="heading-accent-gold !text-white">Gallery</span>
           </h1>
           <div className="hr-white mx-auto mb-4" />
           <p className="text-white/80 text-lg max-w-2xl mx-auto">

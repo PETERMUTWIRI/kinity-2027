@@ -1138,12 +1138,12 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <ScrollReveal>
-              <span className="kicker-gold mb-4 block">Join Us</span>
+              <span className="kicker-gold mb-4 block !text-white">Join Us</span>
               
               <h2 className="heading-editorial !text-white mb-6">
-                Be Part of the <span className="heading-accent-gold">Movement</span>
+                Be Part of the <span className="heading-accent-gold !text-white">Movement</span>
               </h2>
-              <div className="hr-gold mx-auto mb-8" />
+              <div className="hr-white mx-auto mb-8" />
               <p className="text-xl text-white/70 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
                 Change doesn&apos;t happen from the top down. It starts with dedicated citizens 
                 like you who believe in a better Kenya. Join thousands of supporters across 
@@ -1158,7 +1158,7 @@ export default function HomePage() {
                   { value: '100K+', label: 'Supporters' },
                 ].map((stat, i) => (
                   <div key={i} className="text-center">
-                    <div className="stat-gold text-4xl md:text-5xl block mb-1">{stat.value}</div>
+                    <div className="stat-gold text-4xl md:text-5xl block mb-1 !text-white">{stat.value}</div>
                     <div className="text-white/60 text-sm uppercase tracking-wider">{stat.label}</div>
                   </div>
                 ))}

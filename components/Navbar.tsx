@@ -603,9 +603,9 @@ export default function Navbar() {
               {/* Contact Info */}
               <div className="px-6 py-4 border-t border-slate-100">
                 <div className="space-y-3">
-                  <a href="tel:+254XXX" className="flex items-center gap-3 text-sm text-slate-600">
+                  <a href="tel:+12036759354" className="flex items-center gap-3 text-sm text-slate-600">
                     <FaPhone className="w-4 h-4 text-[#1E3A8A]" />
-                    +254 XXX XXX XXX
+                    +1 (203) 675-9354
                   </a>
                   <a href="mailto:info@nationalvisionparty.com" className="flex items-center gap-3 text-sm text-slate-600">
                     <FaEnvelope className="w-4 h-4 text-[#1E3A8A]" />
@@ -645,7 +645,7 @@ export default function Navbar() {
                 <p className="text-center text-sm text-white/70">
                   Committed to the Service of Kenyans
                 </p>
-                <p className="text-center text-xs text-[#1E3A8A] mt-1">
+                <p className="text-center text-xs text-white/60 mt-1">
                   © 2025 National Vision Party
                 </p>
               </div>

@@ -56,7 +56,7 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
         />
         
         {/* Gold accent line at top */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#1E3A8A] to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent" />
         
         {/* Hero Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24">
@@ -65,7 +65,7 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-[#1E3A8A]/30 text-[#1E3A8A] text-sm font-medium"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/30 text-white text-sm font-medium"
               >
                 <FaYoutube className="w-4 h-4" />
                 Campaign Media Center
@@ -80,7 +80,7 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
                 className="heading-editorial !text-white"
               >
                 Watch the{' '}
-                <span className="heading-accent-gold">
+                <span className="heading-accent-gold !text-white">
                   Movement
                 </span>
               </motion.h1>
@@ -104,7 +104,7 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
                 initial={{ opacity: 0, scaleX: 0 }}
                 animate={{ opacity: 1, scaleX: 1 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] mx-auto rounded-full"
+                className="w-24 h-1 bg-gradient-to-r from-white/60 to-white/30 mx-auto rounded-full"
               />
             </StaggerItem>
 
@@ -472,11 +472,11 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
           <ScrollReveal>
             <div className="text-center">
               {/* Gold accent line */}
-              <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] mx-auto rounded-full mb-8" />
+              <div className="w-24 h-1 bg-gradient-to-r from-white/60 to-white/30 mx-auto rounded-full mb-8" />
               
               <FaYoutube className="w-16 h-16 text-[#DC2626] mx-auto mb-6" />
               <h2 className="heading-editorial !text-white mb-4">
-                Be Part of the <span className="heading-accent-gold">Movement</span>
+                Be Part of the <span className="heading-accent-gold !text-white">Movement</span>
               </h2>
               <p className="text-white/70 mb-8 max-w-lg mx-auto">
                 Subscribe to our channel for campaign updates, speeches, rallies, and exclusive content. 

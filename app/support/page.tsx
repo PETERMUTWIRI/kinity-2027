@@ -26,15 +26,6 @@ import ScrollReveal from '@/components/ScrollReveal';
 // Multi-payment platform for campaign funding
 // ==========================================
 
-const donationAmounts = [
-  { amount: 100, label: 'KES 100', description: 'Supporter' },
-  { amount: 500, label: 'KES 500', description: 'Patriot' },
-  { amount: 1000, label: 'KES 1,000', description: 'Champion' },
-  { amount: 5000, label: 'KES 5,000', description: 'Defender' },
-  { amount: 10000, label: 'KES 10,000', description: 'Guardian' },
-  { amount: 0, label: 'Custom', description: 'Your Choice' },
-];
-
 const impactCards = [
   {
     amount: 'KES 100',
@@ -59,7 +50,6 @@ const impactCards = [
 ];
 
 export default function SupportPage() {
-  const [selectedAmount, setSelectedAmount] = useState<number | null>(1000);
   const [customAmount, setCustomAmount] = useState('');
   const [paymentMethod, setPaymentMethod] = useState<'mpesa' | 'card' | 'paypal' | 'bank'>('mpesa');
   const [formData, setFormData] = useState({
@@ -86,7 +76,7 @@ export default function SupportPage() {
     
     // TODO: Connect to actual payment API (M-Pesa, Stripe, etc.)
     console.log('Donation:', {
-      amount: selectedAmount === 0 ? customAmount : selectedAmount,
+      amount: customAmount,
       method: paymentMethod,
       ...formData,
     });
@@ -105,17 +95,17 @@ export default function SupportPage() {
         />
         <div className="relative z-10 max-w-2xl mx-auto px-4 py-20 text-center">
           {/* Gold accent line */}
-          <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] mx-auto rounded-full mb-8" />
+          <div className="w-24 h-1 bg-gradient-to-r from-white/60 to-white/30 mx-auto rounded-full mb-8" />
           
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             className="w-20 h-20 rounded-full bg-[#1E3A8A]/20 flex items-center justify-center mx-auto mb-6"
           >
-            <FaCheck className="w-10 h-10 text-[#1E3A8A]" />
+            <FaCheck className="w-10 h-10 text-white" />
           </motion.div>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Thank You for Your <span className="text-[#1E3A8A]">Support!</span>
+            Thank You for Your <span className="text-white">Support!</span>
           </h1>
           <p className="text-white/70 text-lg mb-8">
             Your contribution brings us one step closer to transforming Kenya. 
@@ -124,8 +114,8 @@ export default function SupportPage() {
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/20">
             <div className="flex justify-between mb-4">
               <span className="text-white/60">Amount</span>
-              <span className="text-[#1E3A8A] font-bold">
-                KES {selectedAmount === 0 ? customAmount : selectedAmount?.toLocaleString()}
+              <span className="text-white font-bold">
+                KES {customAmount || '0'}
               </span>
             </div>
             <div className="flex justify-between mb-4">
@@ -146,7 +136,7 @@ export default function SupportPage() {
             </a>
             <a 
               href="/join-us" 
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border-2 border-[#1E3A8A] text-[#1E3A8A] font-semibold hover:bg-[#1E3A8A] hover:text-[#0F172A] transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border-2 border-white text-white font-semibold hover:bg-white hover:text-[#0F172A] transition-colors"
             >
               Join as Volunteer
             </a>
@@ -170,7 +160,7 @@ export default function SupportPage() {
         />
         
         {/* Gold accent line at top */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#1E3A8A] to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
@@ -179,13 +169,13 @@ export default function SupportPage() {
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.6 }}
-              className="w-16 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] mx-auto rounded-full mb-6"
+              className="w-16 h-1 bg-gradient-to-r from-white/60 to-white/30 mx-auto rounded-full mb-6"
             />
             
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-[#1E3A8A]/30 text-[#1E3A8A] font-medium text-sm mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/30 text-white font-medium text-sm mb-6"
             >
               <FaHeart className="w-4 h-4" />
               Fuel the Movement
@@ -217,15 +207,15 @@ export default function SupportPage() {
               className="flex flex-wrap justify-center gap-8 text-center"
             >
               <div>
-                <div className="text-3xl font-bold text-[#1E3A8A]">KES 2.5M+</div>
+                <div className="text-3xl font-bold text-white">KES 2.5M+</div>
                 <div className="text-white/60">Raised</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[#1E3A8A]">1,200+</div>
+                <div className="text-3xl font-bold text-white">1,200+</div>
                 <div className="text-white/60">Donors</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[#1E3A8A]">47</div>
+                <div className="text-3xl font-bold text-white">47</div>
                 <div className="text-white/60">Counties</div>
               </div>
             </motion.div>
@@ -281,34 +271,11 @@ export default function SupportPage() {
             <ScrollReveal>
               <div>
                 <h2 className="heading-editorial mb-6">
-                  Choose Your <span className="heading-accent-gold">Contribution</span>
+                  Your <span className="heading-accent-gold">Contribution</span>
                 </h2>
                 
-                {/* Amount Selection */}
-                <div className="grid grid-cols-3 gap-4 mb-8">
-                  {donationAmounts.map((option) => (
-                    <button
-                      key={option.amount}
-                      onClick={() => setSelectedAmount(option.amount)}
-                      className={`p-4 rounded-xl border-2 transition-all ${
-                        selectedAmount === option.amount
-                          ? 'border-[#1E3A8A] bg-[#1E3A8A]/10'
-                          : 'border-slate-200 bg-white hover:border-[#1E3A8A]/50'
-                      }`}
-                    >
-                      <div className={`font-bold text-lg ${
-                        selectedAmount === option.amount ? 'text-[#1E3A8A]' : 'text-[#1E3A8A]'
-                      }`}>
-                        {option.label}
-                      </div>
-                      <div className="text-xs text-slate-500 mt-1">{option.description}</div>
-                    </button>
-                  ))}
-                </div>
-
                 {/* Custom Amount */}
-                {selectedAmount === 0 && (
-                  <div className="mb-8">
+                <div className="mb-8">
                     <label className="block text-sm font-medium text-[#1E3A8A] mb-2">
                       Enter Custom Amount (KES)
                     </label>
@@ -321,7 +288,6 @@ export default function SupportPage() {
                       placeholder="Enter amount"
                     />
                   </div>
-                )}
 
                 {/* Payment Methods */}
                 <div className="mb-8">
@@ -542,7 +508,7 @@ export default function SupportPage() {
 
                 <button
                   type="submit"
-                  disabled={isSubmitting || (selectedAmount === 0 && !customAmount)}
+                  disabled={isSubmitting || !customAmount}
                   className="w-full py-4 rounded-xl bg-gradient-to-r from-[#1E3A8A] to-[#0F172A] text-white font-bold text-lg hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
@@ -553,7 +519,7 @@ export default function SupportPage() {
                   ) : (
                     <>
                       <FaHeart />
-                      Donate KES {selectedAmount === 0 ? (customAmount || '0') : selectedAmount?.toLocaleString()}
+                      Donate KES {customAmount || '0'}
                     </>
                   )}
                 </button>

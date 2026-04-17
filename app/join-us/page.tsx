@@ -271,11 +271,11 @@ export default function JoinUsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="kicker-gold mb-4">Grassroots</span>
+              <span className="kicker-gold mb-4 !text-white">Grassroots</span>
               <h2 className="heading-editorial !text-white mb-4">
-                County <span className="heading-accent-gold">Digital Champions</span>
+                County <span className="heading-accent-gold !text-white">Digital Champions</span>
               </h2>
-              <div className="hr-gold mx-auto mb-4" />
+              <div className="hr-white mx-auto mb-4" />
               <p className="text-white/80 max-w-2xl mx-auto text-lg">
                 Dr. Kinity is in the USA, but the movement is alive in all 47 counties. 
                 Join your county WhatsApp group and connect with local coordinators organizing 

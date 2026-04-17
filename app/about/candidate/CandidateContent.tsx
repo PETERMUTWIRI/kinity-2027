@@ -227,16 +227,16 @@ export default function CandidateContent() {
             <ScrollReveal>
               <div className="space-y-6">
                 {/* Gold accent line */}
-                <div className="w-16 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] rounded-full" />
+                <div className="w-16 h-1 bg-gradient-to-r from-white/60 to-white/30 rounded-full" />
                 
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A8A]/20 text-[#1E3A8A] font-semibold text-sm">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white font-semibold text-sm">
                   <FaGlobe className="w-4 h-4" />
                   Global Impact
                 </div>
                 <h2 className="heading-editorial !text-white mb-4">
-                  International <span className="heading-accent-gold">Advocacy</span>
+                  International <span className="heading-accent-gold !text-white">Advocacy</span>
                 </h2>
-                <div className="hr-gold mx-auto mb-4 lg:mx-0" />
+                <div className="hr-white mx-auto mb-4 lg:mx-0" />
                 <p className="text-white/70 leading-relaxed">
                   While in exile, Dr. Kinity transformed his personal tragedy into a global mission. 
                   He traveled to numerous countries, speaking at prestigious institutions and international 
@@ -250,7 +250,7 @@ export default function CandidateContent() {
                     'Kikimo Foundation Leadership',
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
-                      <FaCheckCircle className="w-5 h-5 text-[#1E3A8A]" />
+                      <FaCheckCircle className="w-5 h-5 text-white" />
                       <span className="text-white/80">{item}</span>
                     </div>
                   ))}

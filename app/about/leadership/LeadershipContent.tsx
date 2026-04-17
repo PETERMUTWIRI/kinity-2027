@@ -187,11 +187,11 @@ export default function LeadershipContent() {
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="kicker-gold mb-4">Our Values</span>
+              <span className="kicker-gold mb-4 !text-white">Our Values</span>
               <h2 className="heading-editorial !text-white mb-4">
-                The <span className="heading-accent-gold">Covenant</span> of Leadership
+                The <span className="heading-accent-gold !text-white">Covenant</span> of Leadership
               </h2>
-              <div className="hr-gold mx-auto mb-4" />
+              <div className="hr-white mx-auto mb-4" />
               <p className="text-white/70 max-w-2xl mx-auto">
                 Every leader who wears the NVP badge makes these four commitments to the Kenyan people.
               </p>
@@ -202,7 +202,7 @@ export default function LeadershipContent() {
             {leadershipValues.map((value, index) => (
               <ScrollReveal key={value.title} delay={index * 0.1}>
                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-[#1E3A8A]/30 transition-all">
-                  <h3 className="text-xl font-bold text-[#1E3A8A] mb-3">{value.title}</h3>
+                  <h3 className="text-xl font-bold text-white mb-3">{value.title}</h3>
                   <p className="text-white/80 leading-relaxed">{value.content}</p>
                 </div>
               </ScrollReveal>

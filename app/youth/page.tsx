@@ -175,7 +175,7 @@ export default function YouthPage() {
                 <div className="text-center md:text-left">
                   <h2 className="text-white font-bold text-2xl mb-2">Dr. Isaac Newton Kinity</h2>
                   <p className="text-white/70">Presidential Candidate, National Vision Party</p>
-                  <div className="flex items-center gap-2 text-[#1E3A8A] mt-2">
+                  <div className="flex items-center gap-2 text-white mt-2">
                     <FaFistRaised className="w-4 h-4" />
                     <span className="text-sm font-semibold">Solidarity with GenZ</span>
                   </div>
@@ -295,13 +295,13 @@ export default function YouthPage() {
             <div className="relative z-10">
               <div className="flex flex-col md:flex-row gap-8 items-center">
                 <div className="flex-1">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A8A]/20 border border-[#1E3A8A]/30 mb-6">
-                    <FaFistRaised className="w-4 h-4 text-[#1E3A8A]" />
-                    <span className="text-[#1E3A8A] text-sm font-semibold">A Call to Courage</span>
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 border border-white/30 mb-6">
+                    <FaFistRaised className="w-4 h-4 text-white" />
+                    <span className="text-white text-sm font-semibold">A Call to Courage</span>
                   </div>
                   
                   <h2 className="heading-editorial !text-white mb-4 leading-tight">
-                    Step Forward. Lead Kenya. <span className="heading-accent-gold">Your Time Is Now.</span>
+                    Step Forward. Lead Kenya. <span className="heading-accent-gold !text-white">Your Time Is Now.</span>
                   </h2>
                   
                   <p className="text-white/90 text-lg mb-4 leading-relaxed">
@@ -309,13 +309,13 @@ export default function YouthPage() {
                   </p>
                   
                   <p className="text-white/80 text-lg mb-6 leading-relaxed">
-                    <span className="text-[#1E3A8A] font-semibold">Campaign money is not a barrier.</span> Courage is. The National Vision Party stands ready to back young leaders who put Kenya first. Whether you are Gen Z or a young professional, you are not just included—you are <span className="font-semibold text-white">essential</span> to the future we are building.
+                    <span className="text-white font-semibold">Campaign money is not a barrier.</span> Courage is. The National Vision Party stands ready to back young leaders who put Kenya first. Whether you are Gen Z or a young professional, you are not just included—you are <span className="font-semibold text-white">essential</span> to the future we are building.
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Link
                       href="/contact"
-                      className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#1E3A8A] text-[#0F172A] font-bold hover:bg-[#3B82F6] transition-colors"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#1E3A8A] text-white font-bold hover:bg-[#3B82F6] transition-colors"
                     >
                       Reach Out Today
                       <FaArrowRight className="w-4 h-4" />
@@ -330,8 +330,8 @@ export default function YouthPage() {
                 </div>
                 
                 <div className="hidden md:block flex-shrink-0">
-                  <div className="w-32 h-32 rounded-full bg-[#1E3A8A]/20 flex items-center justify-center border-4 border-[#1E3A8A]/30">
-                    <FaUsers className="w-14 h-14 text-[#1E3A8A]" />
+                  <div className="w-32 h-32 rounded-full bg-white/20 flex items-center justify-center border-4 border-white/30">
+                    <FaUsers className="w-14 h-14 text-white" />
                   </div>
                 </div>
               </div>
@@ -347,7 +347,7 @@ export default function YouthPage() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="heading-editorial !text-white mb-4 text-2xl md:text-3xl">
-                  Read the Full <span className="heading-accent-gold">Youth Manifesto</span>
+                  Read the Full <span className="heading-accent-gold !text-white">Youth Manifesto</span>
                 </h3>
                 <p className="text-white/70 mb-6">
                   47 pages of concrete plans for education, employment, digital rights, and climate action. This is your blueprint.

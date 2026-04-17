@@ -33,7 +33,7 @@ export default function NotFound() {
           transition={{ delay: 0.2, duration: 0.5 }}
           className="mb-8"
         >
-          <span className="text-8xl sm:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] via-[#1E3A8A] to-[#DC2626]">
+          <span className="text-8xl sm:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-[#DC2626]">
             404
           </span>
         </motion.div>

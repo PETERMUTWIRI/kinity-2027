@@ -100,13 +100,13 @@ export default function DiasporaPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left - Content */}
             <div className="text-center lg:text-left">
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1E3A8A]/20 text-[#1E3A8A] text-sm font-semibold mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 text-white text-sm font-semibold mb-6">
                 <FaGlobe className="w-4 h-4" />
                 Kenyans Abroad
               </span>
               
               <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
-                You Left Kenya Seeking <span className="text-[#1E3A8A]">Opportunity</span>
+                You Left Kenya Seeking <span className="text-white">Opportunity</span>
               </h1>
               
               <p className="text-xl text-white/80 mb-4">
@@ -300,7 +300,7 @@ export default function DiasporaPage() {
                 Get WhatsApp Alerts
               </a>
               <p className="text-white/50 text-sm text-center mt-4">
-                Or email: <a href="mailto:diaspora@nationalvisionparty.com" className="text-[#1E3A8A] hover:underline">diaspora@nationalvisionparty.com</a>
+                Or email: <a href="mailto:diaspora@nationalvisionparty.com" className="text-white hover:underline">diaspora@nationalvisionparty.com</a>
               </p>
             </div>
           </div>
@@ -311,7 +311,7 @@ export default function DiasporaPage() {
       <section className="py-16 bg-[#0F172A]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="heading-editorial !text-white mb-6">
-            The Time for <span className="heading-accent-gold">Waiting is Over</span>
+            The Time for <span className="heading-accent-gold !text-white">Waiting is Over</span>
           </h2>
           <p className="text-white/70 text-lg mb-8 max-w-2xl mx-auto">
             Every generation of Kenyans has hoped for change. We are done hoping. We are building. And we need you—wherever you are.

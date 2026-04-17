@@ -45,11 +45,11 @@ export default async function NewsHubPage({
       {/* Header */}
       <div className="bg-gradient-to-br from-[#1E3A8A] to-[#0F172A] py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="kicker-gold mb-4">Latest Updates</span>
+          <span className="kicker-gold mb-4 !text-white">Latest Updates</span>
           <h1 className="heading-editorial !text-white mb-4">
-            News <span className="heading-accent-gold">Hub</span>
+            News <span className="heading-accent-gold !text-white">Hub</span>
           </h1>
-          <div className="hr-gold mx-auto mb-4" />
+          <div className="hr-white mx-auto mb-4" />
           <p className="text-white/80 text-lg max-w-2xl mx-auto">
             Stay informed with the latest campaign news, press releases, and event coverage.
           </p>

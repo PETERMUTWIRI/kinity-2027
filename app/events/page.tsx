@@ -39,11 +39,11 @@ export default async function EventsPage() {
       {/* Header */}
       <div className="bg-gradient-to-br from-[#1E3A8A] to-[#0F172A] py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="kicker-gold mb-4">Campaign Trail</span>
+          <span className="kicker-gold mb-4 !text-white">Campaign Trail</span>
           <h1 className="heading-editorial !text-white mb-4">
-            Campaign <span className="heading-accent-gold">Events</span>
+            Campaign <span className="heading-accent-gold !text-white">Events</span>
           </h1>
-          <div className="hr-gold mx-auto mb-4" />
+          <div className="hr-white mx-auto mb-4" />
           <p className="text-white/80 text-lg max-w-2xl mx-auto">
             Join us at rallies, town halls, and community meetings across all 47 counties.
           </p>
