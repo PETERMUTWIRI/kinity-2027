@@ -50,7 +50,7 @@ export default function PressContent() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#1E3A8A] to-[#0F172A]">
         {/* Gold accent line at top */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4A017] to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#1E3A8A] to-transparent" />
         
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
@@ -147,7 +147,7 @@ export default function PressContent() {
             <ScrollReveal delay={0.1}>
               <div className="bg-slate-50 rounded-3xl p-8 border border-slate-100">
                 <h3 className="text-2xl font-bold text-[#0F172A] mb-6 flex items-center gap-3">
-                  <FaCalendarAlt className="text-[#D4A017]" />
+                  <FaCalendarAlt className="text-[#1E3A8A]" />
                   Quick Facts
                 </h3>
                 
@@ -199,8 +199,8 @@ export default function PressContent() {
             {mediaResources.map((resource, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
                 <Link href={resource.link} className="group block">
-                  <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-lg hover:border-[#D4A017]/30 transition-all h-full">
-                    <div className="w-14 h-14 rounded-xl bg-[#1E3A8A]/10 flex items-center justify-center mb-4 group-hover:bg-[#D4A017] transition-colors">
+                  <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-lg hover:border-[#1E3A8A]/30 transition-all h-full">
+                    <div className="w-14 h-14 rounded-xl bg-[#1E3A8A]/10 flex items-center justify-center mb-4 group-hover:bg-[#1E3A8A] transition-colors">
                       <resource.icon className="w-7 h-7 text-[#1E3A8A] group-hover:text-white transition-colors" />
                     </div>
                     <h3 className="font-bold text-[#0F172A] mb-2">{resource.title}</h3>
@@ -259,7 +259,7 @@ export default function PressContent() {
       {/* Social Media */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#0F172A] relative overflow-hidden">
         {/* Gold accent line at top */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4A017] to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#1E3A8A] to-transparent" />
         
         {/* Subtle Kenyan flag hint at bottom */}
         <div className="absolute bottom-0 left-0 right-0 h-1 flex opacity-30">
@@ -271,7 +271,7 @@ export default function PressContent() {
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
             {/* Gold accent line */}
-            <div className="w-24 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] mx-auto rounded-full mb-8" />
+            <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] mx-auto rounded-full mb-8" />
             
             <h2 className="heading-editorial !text-white mb-6">
               Follow the <span className="heading-accent-gold">Campaign</span>
@@ -289,7 +289,7 @@ export default function PressContent() {
               ].map((social) => (
                 <div 
                   key={social.name}
-                  className="px-4 py-2 rounded-full bg-white/10 text-white/80 text-sm hover:bg-[#D4A017] hover:text-white transition-colors cursor-pointer"
+                  className="px-4 py-2 rounded-full bg-white/10 text-white/80 text-sm hover:bg-[#1E3A8A] hover:text-white transition-colors cursor-pointer"
                 >
                   {social.name}: {social.handle}
                 </div>

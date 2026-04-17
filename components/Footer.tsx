@@ -124,7 +124,7 @@ export default function Footer() {
       <div 
         className="absolute inset-0 opacity-5"
         style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)`,
+          backgroundImage: `radial-gradient(circle at 1px 1px, #1E3A8A 1px, transparent 0)`,
           backgroundSize: '40px 40px',
         }}
       />
@@ -137,7 +137,7 @@ export default function Footer() {
             <Link href="/" className="inline-flex items-center gap-4 mb-6 group">
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="relative w-16 h-16 rounded-2xl overflow-hidden shadow-lg ring-2 ring-[#D4A017]/30 group-hover:ring-[#D4A017]/60 transition-all duration-300"
+                className="relative w-16 h-16 rounded-2xl overflow-hidden shadow-lg ring-2 ring-[#1E3A8A]/30 group-hover:ring-[#1E3A8A]/60 transition-all duration-300"
               >
                 <Image
                   src="/nvp-party-logo.jpeg"
@@ -147,10 +147,10 @@ export default function Footer() {
                 />
               </motion.div>
               <div>
-                <span className="font-slogan text-2xl text-white group-hover:text-[#D4A017] transition-colors block">
+                <span className="font-slogan text-2xl text-white group-hover:text-[#1E3A8A] transition-colors block">
                   NATIONAL VISION PARTY
                 </span>
-                <span className="text-sm text-[#D4A017]">Kenya&apos;s Hope 2027</span>
+                <span className="text-sm text-[#1E3A8A]">Kenya&apos;s Hope 2027</span>
               </div>
             </Link>
             <p className="text-white/70 mb-6 max-w-sm leading-relaxed">
@@ -162,20 +162,20 @@ export default function Footer() {
             <div className="space-y-3">
               <a 
                 href="mailto:info@nationalvisionparty.com" 
-                className="flex items-center gap-3 text-white/60 hover:text-[#D4A017] transition-colors"
+                className="flex items-center gap-3 text-white/60 hover:text-[#1E3A8A] transition-colors"
               >
-                <FaEnvelope className="w-5 h-5 text-[#D4A017]" />
+                <FaEnvelope className="w-5 h-5 text-[#1E3A8A]" />
                 info@nationalvisionparty.com
               </a>
               <a 
                 href="tel:+12036759354" 
-                className="flex items-center gap-3 text-white/60 hover:text-[#D4A017] transition-colors"
+                className="flex items-center gap-3 text-white/60 hover:text-[#1E3A8A] transition-colors"
               >
-                <FaPhone className="w-5 h-5 text-[#D4A017]" />
+                <FaPhone className="w-5 h-5 text-[#1E3A8A]" />
                 +1 (203) 675-9354
               </a>
               <div className="flex items-center gap-3 text-white/60">
-                <FaMapMarkerAlt className="w-5 h-5 text-[#D4A017]" />
+                <FaMapMarkerAlt className="w-5 h-5 text-[#1E3A8A]" />
                 Nairobi, Kenya
               </div>
             </div>
@@ -197,7 +197,7 @@ export default function Footer() {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Your email"
                       required
-                      className="flex-1 min-w-0 px-3 py-2 rounded-lg bg-white/10 border border-white/10 text-white text-sm placeholder:text-white/40 focus:outline-none focus:border-[#D4A017] transition-colors"
+                      className="flex-1 min-w-0 px-3 py-2 rounded-lg bg-white/10 border border-white/10 text-white text-sm placeholder:text-white/40 focus:outline-none focus:border-[#1E3A8A] transition-colors"
                     />
                     <button
                       type="submit"
@@ -218,7 +218,7 @@ export default function Footer() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Name (optional)"
-                    className="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/10 text-white text-sm placeholder:text-white/40 focus:outline-none focus:border-[#D4A017] transition-colors"
+                    className="w-full px-3 py-2 rounded-lg bg-white/10 border border-white/10 text-white text-sm placeholder:text-white/40 focus:outline-none focus:border-[#1E3A8A] transition-colors"
                   />
                   {status === 'error' && (
                     <p className="text-red-400 text-xs">{message}</p>
@@ -240,7 +240,7 @@ export default function Footer() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:text-white hover:bg-[#D4A017] transition-all duration-300"
+                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:text-white hover:bg-[#1E3A8A] transition-all duration-300"
                 >
                   <social.icon className="w-5 h-5" />
                 </motion.a>
@@ -251,7 +251,7 @@ export default function Footer() {
           {/* Our Movement Links */}
           <div>
             <h4 className="font-semibold text-white mb-4 flex items-center gap-2">
-              <span className="w-1 h-4 bg-[#D4A017] rounded-full" />
+              <span className="w-1 h-4 bg-[#1E3A8A] rounded-full" />
               Our Movement
             </h4>
             <ul className="space-y-3">
@@ -259,7 +259,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-white/60 hover:text-[#D4A017] transition-colors flex items-center gap-2 group"
+                    className="text-white/60 hover:text-[#1E3A8A] transition-colors flex items-center gap-2 group"
                   >
                     <FaArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     {link.name}
@@ -280,7 +280,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-white/60 hover:text-[#D4A017] transition-colors flex items-center gap-2 group"
+                    className="text-white/60 hover:text-[#1E3A8A] transition-colors flex items-center gap-2 group"
                   >
                     <FaArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     {link.name}
@@ -293,7 +293,7 @@ export default function Footer() {
           {/* Get Involved Links */}
           <div>
             <h4 className="font-semibold text-white mb-4 flex items-center gap-2">
-              <span className="w-1 h-4 bg-[#D4A017] rounded-full" />
+              <span className="w-1 h-4 bg-[#1E3A8A] rounded-full" />
               Get Involved
             </h4>
             <ul className="space-y-3">
@@ -301,7 +301,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-white/60 hover:text-[#D4A017] transition-colors flex items-center gap-2 group"
+                    className="text-white/60 hover:text-[#1E3A8A] transition-colors flex items-center gap-2 group"
                   >
                     <FaArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     {link.name}
@@ -320,7 +320,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-white/60 hover:text-[#D4A017] transition-colors flex items-center gap-2 group"
+                    className="text-white/60 hover:text-[#1E3A8A] transition-colors flex items-center gap-2 group"
                   >
                     <FaArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     {link.name}
@@ -335,7 +335,7 @@ export default function Footer() {
       {/* Bottom Bar - Professional Copyright */}
       <div className="relative border-t border-white/10">
         {/* Gold accent line */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-[#D4A017] to-transparent" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-[#1E3A8A] to-transparent" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
@@ -343,7 +343,7 @@ export default function Footer() {
               &copy; {currentYear} National Vision Party. All rights reserved.
             </p>
             <p className="text-white/40 text-sm flex items-center gap-2">
-              Made with <FaHeart className="w-4 h-4 text-[#D4A017]" /> for Kenya
+              Made with <FaHeart className="w-4 h-4 text-[#1E3A8A]" /> for Kenya
             </p>
           </div>
         </div>

@@ -91,7 +91,7 @@ export default function DiasporaPage() {
         <div 
           className="absolute inset-0 opacity-5"
           style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)`,
+            backgroundImage: `radial-gradient(circle at 1px 1px, #1E3A8A 1px, transparent 0)`,
             backgroundSize: '40px 40px',
           }}
         />
@@ -100,13 +100,13 @@ export default function DiasporaPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left - Content */}
             <div className="text-center lg:text-left">
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4A017]/20 text-[#D4A017] text-sm font-semibold mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1E3A8A]/20 text-[#1E3A8A] text-sm font-semibold mb-6">
                 <FaGlobe className="w-4 h-4" />
                 Kenyans Abroad
               </span>
               
               <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
-                You Left Kenya Seeking <span className="text-[#D4A017]">Opportunity</span>
+                You Left Kenya Seeking <span className="text-[#1E3A8A]">Opportunity</span>
               </h1>
               
               <p className="text-xl text-white/80 mb-4">
@@ -150,7 +150,7 @@ export default function DiasporaPage() {
                   <div className="text-4xl mb-3">{region.icon}</div>
                   <h3 className="text-white font-bold text-lg mb-1">{region.region}</h3>
                   <p className="text-white/60 text-sm mb-2">{region.countries}</p>
-                  <p className="text-[#D4A017] font-semibold">{region.members}</p>
+                  <p className="text-[#1E3A8A] font-semibold">{region.members}</p>
                 </div>
               ))}
             </div>
@@ -168,9 +168,9 @@ export default function DiasporaPage() {
         {/* White overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-white/90" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border-l-4 border-[#D4A017]">
+          <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border-l-4 border-[#1E3A8A]">
             <div className="flex items-center gap-4 mb-6">
-              <div className="relative w-16 h-16 rounded-full overflow-hidden ring-4 ring-[#D4A017]/20">
+              <div className="relative w-16 h-16 rounded-full overflow-hidden ring-4 ring-[#1E3A8A]/20">
                 <Image
                   src="/images/Dr.png"
                   alt="Dr. Isaac Newton Kinity"
@@ -192,7 +192,7 @@ export default function DiasporaPage() {
               I am not asking you to return. I am asking you to help us build a Kenya worth returning to.&rdquo;
             </blockquote>
 
-            <div className="flex items-center gap-2 text-[#D4A017] font-semibold">
+            <div className="flex items-center gap-2 text-[#1E3A8A] font-semibold">
               <FaFlag className="w-5 h-5" />
               <span>Kenya&apos;s Hope 2027</span>
             </div>
@@ -231,7 +231,7 @@ export default function DiasporaPage() {
                 <p className="text-slate-600 text-sm mb-4">{way.description}</p>
                 <Link 
                   href={way.link}
-                  className="inline-flex items-center gap-2 text-[#1E3A8A] font-semibold text-sm hover:text-[#D4A017] transition-colors"
+                  className="inline-flex items-center gap-2 text-[#1E3A8A] font-semibold text-sm hover:text-[#1E3A8A] transition-colors"
                 >
                   {way.action}
                   <FaArrowRight className="w-4 h-4" />
@@ -251,7 +251,7 @@ export default function DiasporaPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="inline-block px-4 py-1 rounded-full bg-[#D4A017]/10 text-[#D4A017] text-sm font-semibold mb-4">
+              <span className="inline-block px-4 py-1 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A] text-sm font-semibold mb-4">
                 <FaCalendarAlt className="w-4 h-4 inline mr-2" />
                 August 9, 2027
               </span>
@@ -269,15 +269,15 @@ export default function DiasporaPage() {
                   <h4 className="font-bold text-[#0F172A] mb-3">Required Documents:</h4>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-[#D4A017]" />
+                      <div className="w-2 h-2 rounded-full bg-[#1E3A8A]" />
                       Valid Kenyan Passport
                     </li>
                     <li className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-[#D4A017]" />
+                      <div className="w-2 h-2 rounded-full bg-[#1E3A8A]" />
                       Proof of residence abroad
                     </li>
                     <li className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-[#D4A017]" />
+                      <div className="w-2 h-2 rounded-full bg-[#1E3A8A]" />
                       Registration with Kenyan Embassy
                     </li>
                   </ul>
@@ -300,7 +300,7 @@ export default function DiasporaPage() {
                 Get WhatsApp Alerts
               </a>
               <p className="text-white/50 text-sm text-center mt-4">
-                Or email: <a href="mailto:diaspora@nationalvisionparty.com" className="text-[#D4A017] hover:underline">diaspora@nationalvisionparty.com</a>
+                Or email: <a href="mailto:diaspora@nationalvisionparty.com" className="text-[#1E3A8A] hover:underline">diaspora@nationalvisionparty.com</a>
               </p>
             </div>
           </div>
@@ -341,7 +341,7 @@ export default function DiasporaPage() {
 
           <div className="mt-8 pt-8 border-t border-white/10">
             <p className="text-white/50 text-sm">
-              WhatsApp: <span className="text-[#D4A017]">+1 (203) 675-9354</span> | Email: diaspora@nationalvisionparty.com
+              WhatsApp: <span className="text-[#1E3A8A]">+1 (203) 675-9354</span> | Email: diaspora@nationalvisionparty.com
             </p>
           </div>
         </div>

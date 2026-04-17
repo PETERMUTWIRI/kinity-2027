@@ -332,7 +332,7 @@ export default function DashboardContent() {
       </div>
 
       {/* Quick Actions */}
-      <div className="mt-8 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] rounded-2xl shadow-lg p-6">
+      <div className="mt-8 bg-gradient-to-r from-[#1E3A8A] to-[#1E3A8A] rounded-2xl shadow-lg p-6">
         <h2 className="text-xl font-bold text-white mb-4">Quick Actions</h2>
         <div className="flex flex-wrap gap-3">
           <QuickActionButton href="/admin/posts/edit" icon={<FaNewspaper />} label="New Post" />

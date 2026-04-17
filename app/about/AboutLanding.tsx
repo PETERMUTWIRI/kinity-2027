@@ -28,7 +28,7 @@ const sections = [
     description: 'Meet the servant-leaders of the National Vision Party. Explore our party structure, organs, and the presidential candidate leading the charge for a better Kenya.',
     icon: FaUsers,
     href: '/about/leadership',
-    color: '#D4A017',
+    color: '#1E3A8A',
     image: '/images/Dr.png',
   },
   {
@@ -46,7 +46,7 @@ const sections = [
     description: 'Our detailed policy commitments to the Kenyan people. Specific, measurable actions to eliminate corruption, create jobs, provide healthcare, and transform education.',
     icon: FaFileAlt,
     href: '/about/manifesto',
-    color: '#D4A017',
+    color: '#1E3A8A',
     image: '/images/kinity-street.jpeg',
   },
 ];
@@ -85,7 +85,7 @@ export default function AboutLanding() {
                 <Link href={section.href} className="group block h-full">
                   <motion.div
                     whileHover={{ y: -8 }}
-                    className="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl hover:border-[#D4A017]/30 transition-all duration-500 h-full flex flex-col card-lift"
+                    className="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl hover:border-[#1E3A8A]/30 transition-all duration-500 h-full flex flex-col card-lift"
                   >
                     {/* Image Section - Full width on top */}
                     <div className="relative aspect-[4/3] overflow-hidden">
@@ -110,7 +110,7 @@ export default function AboutLanding() {
                     {/* Content Section - Below Image */}
                     <div className="p-5 flex flex-col flex-1">
                       {/* Gold accent line */}
-                      <div className="w-8 h-0.5 bg-gradient-to-r from-[#D4A017] to-[#E6C200] rounded-full mb-3 opacity-60 group-hover:w-12 transition-all duration-300" />
+                      <div className="w-8 h-0.5 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] rounded-full mb-3 opacity-60 group-hover:w-12 transition-all duration-300" />
                       
                       <h2 className="card-title-blue mb-2">
                         {section.title}
@@ -118,7 +118,7 @@ export default function AboutLanding() {
                       <p className="body-editorial text-sm mb-4 flex-1">
                         {section.description}
                       </p>
-                      <div className="flex items-center gap-2 font-semibold text-sm text-[#1E3A8A] group-hover:text-[#D4A017] transition-colors">
+                      <div className="flex items-center gap-2 font-semibold text-sm text-[#1E3A8A] group-hover:text-[#1E3A8A] transition-colors">
                         <span>Learn More</span>
                         <FaArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
                       </div>
@@ -142,12 +142,12 @@ export default function AboutLanding() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
                 { value: '40+', label: 'Years of Activism', color: '#1E3A8A' },
-                { value: '47', label: 'Counties Reached', color: '#D4A017' },
+                { value: '47', label: 'Counties Reached', color: '#1E3A8A' },
                 { value: '8', label: 'Key Pillars', color: '#1E3A8A' },
-                { value: '50M+', label: 'Kenyans to Serve', color: '#D4A017' },
+                { value: '50M+', label: 'Kenyans to Serve', color: '#1E3A8A' },
               ].map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className={stat.color === '#D4A017' ? 'stat-gold text-4xl md:text-5xl block mb-2' : 'stat-blue text-4xl md:text-5xl block mb-2'}>
+                  <div className={stat.color === '#1E3A8A' ? 'stat-gold text-4xl md:text-5xl block mb-2' : 'stat-blue text-4xl md:text-5xl block mb-2'}>
                     {stat.value}
                   </div>
                   <div className="text-sm text-slate-600">{stat.label}</div>

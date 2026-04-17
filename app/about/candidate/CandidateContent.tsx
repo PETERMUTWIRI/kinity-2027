@@ -99,7 +99,7 @@ export default function CandidateContent() {
       <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A] border border-[#1E3A8A]/20 font-semibold text-sm mb-6">
               Presidential Candidate
             </span>
           </ScrollReveal>
@@ -140,7 +140,7 @@ export default function CandidateContent() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {keyAchievements.map((item, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
-                <div className="text-center p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:border-[#D4A017]/50 hover:shadow-md transition-all">
+                <div className="text-center p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:border-[#1E3A8A]/50 hover:shadow-md transition-all">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#1E3A8A]/10 flex items-center justify-center">
                     <item.icon className="w-8 h-8 text-[#1E3A8A]" />
                   </div>
@@ -178,7 +178,7 @@ export default function CandidateContent() {
               <ScrollReveal key={trait.id} delay={index * 0.1}>
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                   <div className={index % 2 === 1 ? 'md:order-2' : ''}>
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm mb-4">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A] border border-[#1E3A8A]/20 font-semibold text-sm mb-4">
                       <FaAward className="w-4 h-4" />
                       {trait.title}
                     </div>
@@ -187,7 +187,7 @@ export default function CandidateContent() {
                     <ul className="space-y-2">
                       {trait.highlights.map((highlight, i) => (
                         <li key={i} className="flex items-center gap-2 text-sm text-slate-600">
-                          <FaCheckCircle className="w-4 h-4 text-[#D4A017] flex-shrink-0" />
+                          <FaCheckCircle className="w-4 h-4 text-[#1E3A8A] flex-shrink-0" />
                           {highlight}
                         </li>
                       ))}
@@ -227,9 +227,9 @@ export default function CandidateContent() {
             <ScrollReveal>
               <div className="space-y-6">
                 {/* Gold accent line */}
-                <div className="w-16 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] rounded-full" />
+                <div className="w-16 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] rounded-full" />
                 
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A8A]/20 text-[#D4A017] font-semibold text-sm">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A8A]/20 text-[#1E3A8A] font-semibold text-sm">
                   <FaGlobe className="w-4 h-4" />
                   Global Impact
                 </div>
@@ -250,7 +250,7 @@ export default function CandidateContent() {
                     'Kikimo Foundation Leadership',
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
-                      <FaCheckCircle className="w-5 h-5 text-[#D4A017]" />
+                      <FaCheckCircle className="w-5 h-5 text-[#1E3A8A]" />
                       <span className="text-white/80">{item}</span>
                     </div>
                   ))}
@@ -260,7 +260,7 @@ export default function CandidateContent() {
 
             <ScrollReveal delay={0.2}>
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] rounded-3xl opacity-20 blur-2xl" />
+                <div className="absolute -inset-4 bg-gradient-to-r from-[#1E3A8A] to-[#1E3A8A] rounded-3xl opacity-20 blur-2xl" />
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden">
                   <Image
                     src="/images/kinity-connection.jpeg"

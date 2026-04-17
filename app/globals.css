@@ -12,8 +12,8 @@
   --kinity-blue: #1E3A8A;
   --kinity-blue-dark: #0F172A;
   --kinity-navy: #0F172A;
-  --kinity-gold: #D4A017;
-  --kinity-gold-light: #E6C200;
+  --kinity-gold: #1E3A8A;
+  --kinity-gold-light: #3B82F6;
   --kinity-red: #DC2626;
   --kinity-red-dark: #B91C1C;
   --kinity-white: #FFFFFF;
@@ -88,7 +88,7 @@ body {
     box-shadow: 0 0 5px rgba(30, 58, 138, 0.5);
   }
   50% {
-    box-shadow: 0 0 20px rgba(212, 160, 23, 0.6);
+    box-shadow: 0 0 20px rgba(30, 58, 138, 0.6);
   }
 }
 
@@ -129,7 +129,7 @@ body {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(212, 160, 23, 0.4) 50%,
+    rgba(30, 58, 138, 0.4) 50%,
     transparent 100%
   );
   background-size: 200% 100%;
@@ -147,11 +147,11 @@ body {
 .animate-gold-shimmer {
   background: linear-gradient(
     90deg,
-    #D4A017 0%,
-    #E6C200 25%,
-    #D4A017 50%,
-    #E6C200 75%,
-    #D4A017 100%
+    #1E3A8A 0%,
+    #3B82F6 25%,
+    #1E3A8A 50%,
+    #3B82F6 75%,
+    #1E3A8A 100%
   );
   background-size: 200% auto;
   animation: gold-shimmer 3s linear infinite;
@@ -173,9 +173,9 @@ body {
   @apply font-headline text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight text-[#0F172A];
 }
 
-/* Gold accent for editorial headings */
+/* Blue accent for editorial headings (replaces gold) */
 .heading-accent-gold {
-  @apply font-headline italic font-normal text-[#D4A017];
+  @apply font-headline italic font-normal text-[#1E3A8A];
 }
 
 /* Blue accent for editorial headings */
@@ -195,28 +195,28 @@ body {
 
 /* Kickers (Eyebrow Labels) */
 .kicker {
-  @apply font-body font-semibold text-xs uppercase tracking-[0.25em] text-[#64748B];
+  @apply font-body font-semibold text-xs uppercase tracking-[0.25em] text-[#0F172A];
 }
 
 .kicker-gold {
-  @apply font-body font-semibold text-xs uppercase tracking-[0.25em] text-[#D4A017];
+  @apply font-body font-semibold text-xs uppercase tracking-[0.25em] text-[#0F172A];
 }
 
 .kicker-blue {
-  @apply font-body font-semibold text-xs uppercase tracking-[0.25em] text-[#1E3A8A];
+  @apply font-body font-semibold text-xs uppercase tracking-[0.25em] text-[#0F172A];
 }
 
 .kicker-red {
-  @apply font-body font-semibold text-xs uppercase tracking-[0.25em] text-[#DC2626];
+  @apply font-body font-semibold text-xs uppercase tracking-[0.25em] text-[#0F172A];
 }
 
 /* Kicker pill variant (rounded badge style used on this site) */
 .kicker-pill {
-  @apply inline-flex items-center px-4 py-1 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm;
+  @apply inline-flex items-center px-4 py-1 rounded-full bg-[#1E3A8A]/10 text-[#0F172A] border border-[#1E3A8A]/20 font-semibold text-sm;
 }
 
 .kicker-pill-blue {
-  @apply inline-flex items-center px-4 py-1 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A] border border-[#1E3A8A]/20 font-semibold text-sm;
+  @apply inline-flex items-center px-4 py-1 rounded-full bg-[#1E3A8A]/10 text-[#0F172A] border border-[#1E3A8A]/20 font-semibold text-sm;
 }
 
 .kicker-pill-red {
@@ -243,7 +243,7 @@ body {
 }
 
 .card-title-gold {
-  @apply font-headline font-medium text-xl leading-tight text-[#0F172A] hover:text-[#D4A017] transition-colors;
+  @apply font-headline font-medium text-xl leading-tight text-[#0F172A] hover:text-[#1E3A8A] transition-colors;
 }
 
 .card-title-blue {
@@ -256,7 +256,7 @@ body {
 
 /* Stat numbers */
 .stat-gold {
-  @apply font-headline font-semibold tracking-tight text-[#D4A017];
+  @apply font-headline font-semibold tracking-tight text-[#1E3A8A];
 }
 
 .stat-blue {
@@ -277,7 +277,7 @@ body {
 }
 
 .hr-gold {
-  @apply w-24 h-px bg-gradient-to-r from-transparent via-[#D4A017] to-transparent mx-auto;
+  @apply w-24 h-px bg-gradient-to-r from-transparent via-[#1E3A8A] to-transparent mx-auto;
 }
 
 .hr-blue {
@@ -290,11 +290,11 @@ body {
 
 /* Wide gradient divider variant used across the site */
 .hr-gold-wide {
-  @apply w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] rounded-full;
+  @apply w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] rounded-full;
 }
 
 .hr-gold-accent {
-  @apply w-16 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] rounded-full;
+  @apply w-16 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] rounded-full;
 }
 
 /* Legacy compatibility helpers */
@@ -539,9 +539,9 @@ body {
 
 .badge-gold {
   @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
-  background: rgba(212, 160, 23, 0.15);
+  background: rgba(30, 58, 138, 0.15);
   color: var(--kinity-gold);
-  border: 1px solid rgba(212, 160, 23, 0.3);
+  border: 1px solid rgba(30, 58, 138, 0.3);
 }
 
 .badge-red {

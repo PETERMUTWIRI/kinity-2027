@@ -83,13 +83,13 @@ export default function YouthPage() {
         <div 
           className="absolute inset-0 opacity-5"
           style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)`,
+            backgroundImage: `radial-gradient(circle at 1px 1px, #1E3A8A 1px, transparent 0)`,
             backgroundSize: '40px 40px',
           }}
         />
         {/* Candle light effect */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#D4A017]/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#1E3A8A]/10 rounded-full blur-3xl" />
         </div>
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -99,12 +99,12 @@ export default function YouthPage() {
           </div>
           
           <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl text-[#0F172A] mb-6 leading-tight">
-            To the Heroes of <span className="text-[#D4A017]">June 2024</span>
+            To the Heroes of <span className="text-[#1E3A8A]">June 2024</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-[#0F172A]/90 mb-6 font-light">
             &ldquo;I will build a monument at Parliament. I will compensate every family. <br className="hidden md:block"/>
-            <span className="text-[#D4A017] font-semibold">Your sacrifice will not be forgotten.</span>&rdquo;
+            <span className="text-[#1E3A8A] font-semibold">Your sacrifice will not be forgotten.</span>&rdquo;
           </p>
           
           <p className="text-[#0F172A]/60 text-lg mb-8">
@@ -115,15 +115,15 @@ export default function YouthPage() {
           <div className="bg-[#0F172A]/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-[#0F172A]/10 max-w-2xl mx-auto">
             <div className="grid grid-cols-3 gap-4 text-center">
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-[#D4A017] mb-1">21+</div>
+                <div className="text-3xl md:text-4xl font-bold text-[#1E3A8A] mb-1">21+</div>
                 <div className="text-[#0F172A]/60 text-sm">Lives Lost</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-[#D4A017] mb-1">∞</div>
+                <div className="text-3xl md:text-4xl font-bold text-[#1E3A8A] mb-1">∞</div>
                 <div className="text-[#0F172A]/60 text-sm">Memories</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-[#D4A017] mb-1">1</div>
+                <div className="text-3xl md:text-4xl font-bold text-[#1E3A8A] mb-1">1</div>
                 <div className="text-[#0F172A]/60 text-sm">Promise Kept</div>
               </div>
             </div>
@@ -134,7 +134,7 @@ export default function YouthPage() {
               href={`https://wa.me/12036759354?text=I%20am%20GenZ%20and%20I%20want%20justice%20for%20our%20fallen%20heroes`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#D4A017] text-white font-bold text-lg hover:bg-[#B45309] transition-all duration-300 shadow-lg"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#1E3A8A] text-white font-bold text-lg hover:bg-[#1E40AF] transition-all duration-300 shadow-lg"
             >
               <FaWhatsapp className="w-6 h-6" />
               Join GenZ WhatsApp Channel
@@ -164,7 +164,7 @@ export default function YouthPage() {
             {/* Header with image */}
             <div className="bg-gradient-to-r from-[#1E3A8A] to-[#0F172A] p-8 md:p-12">
               <div className="flex flex-col md:flex-row items-center gap-6">
-                <div className="relative w-24 h-24 rounded-full overflow-hidden ring-4 ring-[#D4A017]">
+                <div className="relative w-24 h-24 rounded-full overflow-hidden ring-4 ring-[#1E3A8A]">
                   <Image
                     src="/images/Dr.png"
                     alt="Dr. Isaac Newton Kinity"
@@ -175,7 +175,7 @@ export default function YouthPage() {
                 <div className="text-center md:text-left">
                   <h2 className="text-white font-bold text-2xl mb-2">Dr. Isaac Newton Kinity</h2>
                   <p className="text-white/70">Presidential Candidate, National Vision Party</p>
-                  <div className="flex items-center gap-2 text-[#D4A017] mt-2">
+                  <div className="flex items-center gap-2 text-[#1E3A8A] mt-2">
                     <FaFistRaised className="w-4 h-4" />
                     <span className="text-sm font-semibold">Solidarity with GenZ</span>
                   </div>
@@ -198,19 +198,19 @@ export default function YouthPage() {
                   They stood against corruption. They stood against a system that steals from the poor to feed the rich. And for that, they paid the ultimate price.
                 </p>
                 
-                <div className="bg-[#D4A017]/10 rounded-xl p-6 my-6 border-l-4 border-[#D4A017]">
+                <div className="bg-[#1E3A8A]/10 rounded-xl p-6 my-6 border-l-4 border-[#1E3A8A]">
                   <p className="font-semibold text-[#0F172A] mb-2">My pledge to you:</p>
                   <ul className="space-y-2 text-slate-600">
                     <li className="flex items-start gap-3">
-                      <FaMonument className="w-5 h-5 text-[#D4A017] mt-1 flex-shrink-0" />
+                      <FaMonument className="w-5 h-5 text-[#1E3A8A] mt-1 flex-shrink-0" />
                       <span>I will construct a <strong>national monument at Parliament</strong> to honor every life lost in the fight for justice</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <FaHandshake className="w-5 h-5 text-[#D4A017] mt-1 flex-shrink-0" />
+                      <FaHandshake className="w-5 h-5 text-[#1E3A8A] mt-1 flex-shrink-0" />
                       <span>I will ensure <strong>every family is compensated</strong> for their immeasurable loss</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <FaFistRaised className="w-5 h-5 text-[#D4A017] mt-1 flex-shrink-0" />
+                      <FaFistRaised className="w-5 h-5 text-[#1E3A8A] mt-1 flex-shrink-0" />
                       <span>I will <strong>dismantle the corruption</strong> that made their sacrifice necessary</span>
                     </li>
                   </ul>
@@ -233,7 +233,7 @@ export default function YouthPage() {
                   href={`https://wa.me/?text=${shareMessage}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[#D4A017] font-semibold hover:text-[#B45309] transition-colors"
+                  className="inline-flex items-center gap-2 text-[#1E3A8A] font-semibold hover:text-[#1E40AF] transition-colors"
                 >
                   <FaWhatsapp className="w-5 h-5" />
                   Share on WhatsApp
@@ -290,14 +290,14 @@ export default function YouthPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="bg-gradient-to-br from-[#1E3A8A] to-[#0F172A] rounded-3xl p-8 md:p-12 text-center md:text-left overflow-hidden relative">
             {/* Decorative accent */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#D4A017]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#1E3A8A]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
             
             <div className="relative z-10">
               <div className="flex flex-col md:flex-row gap-8 items-center">
                 <div className="flex-1">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4A017]/20 border border-[#D4A017]/30 mb-6">
-                    <FaFistRaised className="w-4 h-4 text-[#D4A017]" />
-                    <span className="text-[#D4A017] text-sm font-semibold">A Call to Courage</span>
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A8A]/20 border border-[#1E3A8A]/30 mb-6">
+                    <FaFistRaised className="w-4 h-4 text-[#1E3A8A]" />
+                    <span className="text-[#1E3A8A] text-sm font-semibold">A Call to Courage</span>
                   </div>
                   
                   <h2 className="heading-editorial !text-white mb-4 leading-tight">
@@ -309,13 +309,13 @@ export default function YouthPage() {
                   </p>
                   
                   <p className="text-white/80 text-lg mb-6 leading-relaxed">
-                    <span className="text-[#D4A017] font-semibold">Campaign money is not a barrier.</span> Courage is. The National Vision Party stands ready to back young leaders who put Kenya first. Whether you are Gen Z or a young professional, you are not just included—you are <span className="font-semibold text-white">essential</span> to the future we are building.
+                    <span className="text-[#1E3A8A] font-semibold">Campaign money is not a barrier.</span> Courage is. The National Vision Party stands ready to back young leaders who put Kenya first. Whether you are Gen Z or a young professional, you are not just included—you are <span className="font-semibold text-white">essential</span> to the future we are building.
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Link
                       href="/contact"
-                      className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#D4A017] text-[#0F172A] font-bold hover:bg-[#E6C200] transition-colors"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#1E3A8A] text-[#0F172A] font-bold hover:bg-[#3B82F6] transition-colors"
                     >
                       Reach Out Today
                       <FaArrowRight className="w-4 h-4" />
@@ -330,8 +330,8 @@ export default function YouthPage() {
                 </div>
                 
                 <div className="hidden md:block flex-shrink-0">
-                  <div className="w-32 h-32 rounded-full bg-[#D4A017]/20 flex items-center justify-center border-4 border-[#D4A017]/30">
-                    <FaUsers className="w-14 h-14 text-[#D4A017]" />
+                  <div className="w-32 h-32 rounded-full bg-[#1E3A8A]/20 flex items-center justify-center border-4 border-[#1E3A8A]/30">
+                    <FaUsers className="w-14 h-14 text-[#1E3A8A]" />
                   </div>
                 </div>
               </div>
@@ -354,7 +354,7 @@ export default function YouthPage() {
                 </p>
                 <Link 
                   href="/about/manifesto"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#D4A017] text-white font-bold hover:bg-[#E6C200] transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#1E3A8A] text-white font-bold hover:bg-[#3B82F6] transition-colors"
                 >
                   Download Manifesto
                   <FaArrowRight className="w-4 h-4" />
@@ -363,7 +363,7 @@ export default function YouthPage() {
               <div className="hidden md:flex justify-center">
                 <div className="relative w-48 h-64 bg-white/10 rounded-lg border-2 border-dashed border-white/30 flex items-center justify-center">
                   <div className="text-center">
-                    <FaGraduationCap className="w-12 h-12 text-[#D4A017] mx-auto mb-2" />
+                    <FaGraduationCap className="w-12 h-12 text-[#1E3A8A] mx-auto mb-2" />
                     <span className="text-white/60 text-sm">47 Pages</span>
                   </div>
                 </div>
@@ -383,14 +383,14 @@ export default function YouthPage() {
         <div 
           className="absolute inset-0 opacity-5"
           style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)`,
+            backgroundImage: `radial-gradient(circle at 1px 1px, #1E3A8A 1px, transparent 0)`,
             backgroundSize: '40px 40px',
           }}
         />
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#D4A017]/20 mb-6">
-            <FaUsers className="w-10 h-10 text-[#D4A017]" />
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#1E3A8A]/20 mb-6">
+            <FaUsers className="w-10 h-10 text-[#1E3A8A]" />
           </div>
           
           <h2 className="heading-editorial mb-4">
@@ -399,7 +399,7 @@ export default function YouthPage() {
           
           <p className="text-[#0F172A]/80 text-lg mb-8 max-w-2xl mx-auto">
             You are not &ldquo;the future.&rdquo; You are the NOW. And in 2027, you will outnumber every other voting bloc. 
-            <span className="font-bold text-[#D4A017]">Use that power.</span>
+            <span className="font-bold text-[#1E3A8A]">Use that power.</span>
           </p>
           
           <div className="grid sm:grid-cols-2 gap-4 max-w-lg mx-auto">
@@ -407,7 +407,7 @@ export default function YouthPage() {
               href={`https://wa.me/12036759354?text=I%20am%20GenZ%20and%20I%20want%20to%20join%20the%20movement`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#D4A017] text-white font-bold text-lg hover:bg-[#B45309] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#1E3A8A] text-white font-bold text-lg hover:bg-[#1E40AF] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
               <FaWhatsapp className="w-5 h-5" />
               Join on WhatsApp
@@ -426,7 +426,7 @@ export default function YouthPage() {
           
           <div className="mt-8 pt-8 border-t border-[#0F172A]/10">
             <p className="text-[#0F172A]/50 text-sm">
-              WhatsApp: <span className="text-[#D4A017] font-semibold">+1 (203) 675-9354</span>
+              WhatsApp: <span className="text-[#1E3A8A] font-semibold">+1 (203) 675-9354</span>
             </p>
           </div>
         </div>

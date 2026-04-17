@@ -83,19 +83,19 @@ const config: Config = {
             800: '#1E293B',
             900: '#0F172A', // Dark base
           },
-          // Premium Gold - Excellence, prestige, premium feel
+          // Premium Accent Blue - Excellence, prestige, premium feel
           gold: {
-            DEFAULT: '#D4A017',
-            50: '#FDF9E7',
-            100: '#F9F0C8',
-            200: '#F3E295',
-            300: '#EDD162',
-            400: '#E6C200', // Highlight
-            500: '#D4A017', // Primary gold
-            600: '#B8860B',
-            700: '#966F0D',
-            800: '#7A5C12',
-            900: '#664C14',
+            DEFAULT: '#1E3A8A',
+            50: '#EFF6FF',
+            100: '#DBEAFE',
+            200: '#93C5FD',
+            300: '#60A5FA',
+            400: '#3B82F6', // Highlight
+            500: '#1E3A8A', // Primary blue
+            600: '#1E40AF',
+            700: '#1E3A8A',
+            800: '#1E3A8A',
+            900: '#0F172A',
           },
           // Power Red - Reserved for critical CTAs only
           red: {
@@ -130,17 +130,17 @@ const config: Config = {
         'gradient-kinity': 'linear-gradient(135deg, #1E3A8A 0%, #0F172A 100%)',
         'gradient-hero': 'linear-gradient(180deg, #0F172A 0%, #1E3A8A 50%, #1E3A8A 100%)',
         'gradient-dark': 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
-        'gradient-gold': 'linear-gradient(135deg, #D4A017 0%, #E6C200 100%)',
-        'gradient-shine': 'linear-gradient(90deg, transparent, rgba(212,160,23,0.3), transparent)',
+        'gradient-gold': 'linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%)',
+        'gradient-shine': 'linear-gradient(90deg, transparent, rgba(30,58,138,0.3), transparent)',
       },
       boxShadow: {
         'glow-blue': '0 0 30px rgba(30, 58, 138, 0.4)',
-        'glow-gold': '0 0 30px rgba(212, 160, 23, 0.4)',
+        'glow-gold': '0 0 30px rgba(30, 58, 138, 0.4)',
         'glow-red': '0 0 30px rgba(220, 38, 38, 0.4)',
         'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
         'card-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
         'presidential': '0 10px 40px -10px rgba(30, 58, 138, 0.3)',
-        'gold-border': 'inset 0 2px 0 0 #D4A017',
+        'gold-border': 'inset 0 2px 0 0 #1E3A8A',
       },
       animation: {
         'gradient': 'gradient 8s linear infinite',
@@ -166,7 +166,7 @@ const config: Config = {
         },
         glow: {
           '0%': { boxShadow: '0 0 20px rgba(30, 58, 138, 0.5)' },
-          '100%': { boxShadow: '0 0 40px rgba(212, 160, 23, 0.6)' },
+          '100%': { boxShadow: '0 0 40px rgba(30, 58, 138, 0.6)' },
         },
         slideUp: {
           '0%': { transform: 'translateY(20px)', opacity: '0' },

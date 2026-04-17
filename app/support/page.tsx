@@ -99,23 +99,23 @@ export default function SupportPage() {
         <div 
           className="fixed inset-0 opacity-5 pointer-events-none"
           style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)`,
+            backgroundImage: `radial-gradient(circle at 1px 1px, #1E3A8A 1px, transparent 0)`,
             backgroundSize: '50px 50px',
           }}
         />
         <div className="relative z-10 max-w-2xl mx-auto px-4 py-20 text-center">
           {/* Gold accent line */}
-          <div className="w-24 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] mx-auto rounded-full mb-8" />
+          <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] mx-auto rounded-full mb-8" />
           
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
-            className="w-20 h-20 rounded-full bg-[#D4A017]/20 flex items-center justify-center mx-auto mb-6"
+            className="w-20 h-20 rounded-full bg-[#1E3A8A]/20 flex items-center justify-center mx-auto mb-6"
           >
-            <FaCheck className="w-10 h-10 text-[#D4A017]" />
+            <FaCheck className="w-10 h-10 text-[#1E3A8A]" />
           </motion.div>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Thank You for Your <span className="text-[#D4A017]">Support!</span>
+            Thank You for Your <span className="text-[#1E3A8A]">Support!</span>
           </h1>
           <p className="text-white/70 text-lg mb-8">
             Your contribution brings us one step closer to transforming Kenya. 
@@ -124,7 +124,7 @@ export default function SupportPage() {
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/20">
             <div className="flex justify-between mb-4">
               <span className="text-white/60">Amount</span>
-              <span className="text-[#D4A017] font-bold">
+              <span className="text-[#1E3A8A] font-bold">
                 KES {selectedAmount === 0 ? customAmount : selectedAmount?.toLocaleString()}
               </span>
             </div>
@@ -146,7 +146,7 @@ export default function SupportPage() {
             </a>
             <a 
               href="/join-us" 
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border-2 border-[#D4A017] text-[#D4A017] font-semibold hover:bg-[#D4A017] hover:text-[#0F172A] transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border-2 border-[#1E3A8A] text-[#1E3A8A] font-semibold hover:bg-[#1E3A8A] hover:text-[#0F172A] transition-colors"
             >
               Join as Volunteer
             </a>
@@ -164,13 +164,13 @@ export default function SupportPage() {
         <div 
           className="absolute inset-0 opacity-5"
           style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)`,
+            backgroundImage: `radial-gradient(circle at 1px 1px, #1E3A8A 1px, transparent 0)`,
             backgroundSize: '50px 50px',
           }}
         />
         
         {/* Gold accent line at top */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4A017] to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#1E3A8A] to-transparent" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
@@ -179,13 +179,13 @@ export default function SupportPage() {
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.6 }}
-              className="w-16 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] mx-auto rounded-full mb-6"
+              className="w-16 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] mx-auto rounded-full mb-6"
             />
             
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-[#D4A017]/30 text-[#D4A017] font-medium text-sm mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-[#1E3A8A]/30 text-[#1E3A8A] font-medium text-sm mb-6"
             >
               <FaHeart className="w-4 h-4" />
               Fuel the Movement
@@ -217,15 +217,15 @@ export default function SupportPage() {
               className="flex flex-wrap justify-center gap-8 text-center"
             >
               <div>
-                <div className="text-3xl font-bold text-[#D4A017]">KES 2.5M+</div>
+                <div className="text-3xl font-bold text-[#1E3A8A]">KES 2.5M+</div>
                 <div className="text-white/60">Raised</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[#D4A017]">1,200+</div>
+                <div className="text-3xl font-bold text-[#1E3A8A]">1,200+</div>
                 <div className="text-white/60">Donors</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[#D4A017]">47</div>
+                <div className="text-3xl font-bold text-[#1E3A8A]">47</div>
                 <div className="text-white/60">Counties</div>
               </div>
             </motion.div>
@@ -256,9 +256,9 @@ export default function SupportPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {impactCards.map((card, index) => (
               <ScrollReveal key={card.amount} delay={index * 0.1}>
-                <div className="h-full p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#D4A017]/50 transition-all group">
-                  <div className="w-14 h-14 rounded-xl bg-[#D4A017]/10 flex items-center justify-center mb-4 group-hover:bg-[#D4A017]/20 transition-colors">
-                    <card.icon className="w-7 h-7 text-[#D4A017]" />
+                <div className="h-full p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#1E3A8A]/50 transition-all group">
+                  <div className="w-14 h-14 rounded-xl bg-[#1E3A8A]/10 flex items-center justify-center mb-4 group-hover:bg-[#1E3A8A]/20 transition-colors">
+                    <card.icon className="w-7 h-7 text-[#1E3A8A]" />
                   </div>
                   <div className="text-2xl font-bold text-[#1E3A8A] mb-2">{card.amount}</div>
                   <p className="text-slate-600 text-sm">{card.impact}</p>
@@ -400,16 +400,16 @@ export default function SupportPage() {
                       onClick={() => setPaymentMethod('bank')}
                       className={`p-4 rounded-xl border-2 flex items-center gap-3 transition-all ${
                         paymentMethod === 'bank'
-                          ? 'border-[#D4A017] bg-[#D4A017]/10'
+                          ? 'border-[#1E3A8A] bg-[#1E3A8A]/10'
                           : 'border-slate-200 bg-white hover:border-slate-300'
                       }`}
                     >
-                      <div className="w-10 h-10 rounded-lg bg-[#D4A017] flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-lg bg-[#1E3A8A] flex items-center justify-center">
                         <FaHandHoldingUsd className="w-5 h-5 text-white" />
                       </div>
                       <div className="text-left">
                         <div className={`font-semibold ${
-                          paymentMethod === 'bank' ? 'text-[#D4A017]' : 'text-[#1E3A8A]'
+                          paymentMethod === 'bank' ? 'text-[#1E3A8A]' : 'text-[#1E3A8A]'
                         }`}>
                           Bank
                         </div>
@@ -441,7 +441,7 @@ export default function SupportPage() {
             <ScrollReveal delay={0.2}>
               <form onSubmit={handleDonate} className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
                 <h3 className="text-xl font-semibold text-[#1E3A8A] mb-6 flex items-center gap-2">
-                  <FaReceipt className="text-[#D4A017]" />
+                  <FaReceipt className="text-[#1E3A8A]" />
                   Donor Information
                 </h3>
 
@@ -589,7 +589,7 @@ export default function SupportPage() {
             <ScrollReveal>
               <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
                 <h3 className="text-lg font-semibold text-[#1E3A8A] mb-4 flex items-center gap-2">
-                  <FaHandHoldingUsd className="text-[#D4A017]" />
+                  <FaHandHoldingUsd className="text-[#1E3A8A]" />
                   Bank Transfer
                 </h3>
                 <div className="space-y-3 text-sm">

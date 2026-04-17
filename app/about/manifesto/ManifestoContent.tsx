@@ -48,7 +48,7 @@ const commitments = [
     title: 'Education Revolution Commitment',
     description: 'Restore completely free education for Kenyan children and revolutionize the system with digital learning and world-class standards.',
     icon: FaCalendarAlt,
-    color: '#D4A017',
+    color: '#1E3A8A',
     points: [
       'Restore completely free primary and secondary education',
       'Integrate digital learning tools in all public schools',
@@ -61,7 +61,7 @@ const commitments = [
     title: 'Social Protection Pledge',
     description: 'A compassionate commitment to widows, orphans, persons with disabilities, and the elderly. No Kenyan will be left behind in a Kinity administration.',
     icon: FaHandsHelping,
-    color: '#D4A017',
+    color: '#1E3A8A',
     points: [
       'Monthly stipends for widows, orphans, and elderly citizens without income',
       'Free assistive devices and accessibility infrastructure for persons with disabilities',
@@ -87,7 +87,7 @@ const commitments = [
     title: 'Youth & Women Empowerment Commitment',
     description: 'Unlocking the potential of our youth and women through affirmative funding, innovation hubs, and equal leadership opportunities.',
     icon: FaUsers,
-    color: '#D4A017',
+    color: '#1E3A8A',
     points: [
       'Youth Innovation Hubs in all 47 counties with free internet and mentorship',
       'Affirmative Action Fund of KES 1 billion annually for women entrepreneurs',
@@ -171,7 +171,7 @@ export default function ManifestoContent() {
       <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A] border border-[#1E3A8A]/20 font-semibold text-sm mb-6">
               Manifesto
             </span>
           </ScrollReveal>
@@ -212,7 +212,7 @@ export default function ManifestoContent() {
           <div className="grid md:grid-cols-2 gap-8">
             {commitments.map((commitment, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
-                <div className="bg-white rounded-3xl p-8 shadow-lg border border-slate-100 h-full hover:shadow-xl hover:border-[#D4A017]/30 transition-all duration-300">
+                <div className="bg-white rounded-3xl p-8 shadow-lg border border-slate-100 h-full hover:shadow-xl hover:border-[#1E3A8A]/30 transition-all duration-300">
                   <div 
                     className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
                     style={{ backgroundColor: `${commitment.color}15`, color: commitment.color }}
@@ -221,7 +221,7 @@ export default function ManifestoContent() {
                   </div>
                   
                   {/* Gold accent line */}
-                  <div className="w-10 h-0.5 bg-gradient-to-r from-[#D4A017] to-[#E6C200] rounded-full mb-4 opacity-60" />
+                  <div className="w-10 h-0.5 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] rounded-full mb-4 opacity-60" />
                   
                   <h3 className="text-2xl font-bold text-[#0F172A] mb-4">
                     {commitment.title}
@@ -274,7 +274,7 @@ export default function ManifestoContent() {
                     <span 
                       className="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold"
                       style={{ 
-                        backgroundColor: index === 0 ? '#DC2626' : index === 1 ? '#1E3A8A' : '#D4A017' 
+                        backgroundColor: index === 0 ? '#DC2626' : index === 1 ? '#1E3A8A' : '#1E3A8A' 
                       }}
                     >
                       {index + 1}
@@ -306,9 +306,9 @@ export default function ManifestoContent() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <ScrollReveal>
             {/* Gold accent line */}
-            <div className="w-24 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] mx-auto rounded-full mb-8" />
+            <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] mx-auto rounded-full mb-8" />
             
-            <FaFileContract className="w-16 h-16 text-[#D4A017] mx-auto mb-6" />
+            <FaFileContract className="w-16 h-16 text-[#1E3A8A] mx-auto mb-6" />
             <h2 className="heading-editorial mb-6">
               A Promise Written in <span className="heading-accent-gold">Sacrifice</span>
             </h2>

@@ -93,7 +93,7 @@ const pillars = [
     summary: 'Uncompromising stance against corruption. Transparent governance and accountability at every level.',
     Icon: AntiCorruptionIcon,
     image: '/images/vission/corruption.png',
-    color: '#D4A017',
+    color: '#1E3A8A',
     featured: true,
   },
   {
@@ -113,7 +113,7 @@ const pillars = [
     summary: 'World-class education system that prepares our youth for the challenges and opportunities of tomorrow.',
     Icon: EducationIcon,
     image: '/images/vission/education.png',
-    color: '#D4A017',
+    color: '#1E3A8A',
     featured: true,
   },
   {
@@ -123,7 +123,7 @@ const pillars = [
     summary: 'A compassionate society that leaves no one behind. Monthly support, disability rights, and protection for the most vulnerable.',
     Icon: SocialProtectionIcon,
     image: '/images/vission/social-protection.png',
-    color: '#D4A017',
+    color: '#1E3A8A',
     featured: true,
   },
   {
@@ -143,7 +143,7 @@ const pillars = [
     summary: 'Unlocking potential through affirmative funding, innovation hubs, and leadership opportunities for youth and women.',
     Icon: YouthWomenIcon,
     image: '/images/vission/youth-and-women-empowerment.png',
-    color: '#D4A017',
+    color: '#1E3A8A',
     featured: true,
   },
   {
@@ -302,7 +302,7 @@ export default function HomePage() {
                 <ScrollReveal key={pillar.id} delay={index * 0.1}>
                   <Link href={`/about/vision-2027#${pillar.id}`} className="group block h-full">
                     <TiltCard className="h-full" borderColor={pillar.color}>
-                      <div className="h-full bg-white rounded-2xl p-5 md:p-6 shadow-md border border-slate-100 group-hover:shadow-xl group-hover:border-[#D4A017]/30 transition-all duration-300">
+                      <div className="h-full bg-white rounded-2xl p-5 md:p-6 shadow-md border border-slate-100 group-hover:shadow-xl group-hover:border-[#1E3A8A]/30 transition-all duration-300">
                         {/* Pillar image */}
                         <div className="relative mb-4">
                           <div className="w-full h-32 md:h-36 rounded-xl overflow-hidden">
@@ -314,7 +314,7 @@ export default function HomePage() {
                             />
                           </div>
                           {/* Subtle gold accent dot */}
-                          <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#D4A017] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                          <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#1E3A8A] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         </div>
                         
                         {/* Title with subtle gold underline on mobile */}
@@ -323,14 +323,14 @@ export default function HomePage() {
                         </h3>
                         
                         {/* Gold accent line */}
-                        <div className="w-10 h-0.5 bg-gradient-to-r from-[#D4A017] to-[#E6C200] rounded-full mb-3 opacity-60 group-hover:w-16 transition-all duration-300" />
+                        <div className="w-10 h-0.5 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] rounded-full mb-3 opacity-60 group-hover:w-16 transition-all duration-300" />
                         
                         <p className="body-editorial text-sm mb-4">
                           {pillar.summary}
                         </p>
                         
                         {/* Learn more link */}
-                        <div className="flex items-center gap-2 text-[#1E3A8A] font-semibold text-sm group-hover:text-[#D4A017] transition-colors">
+                        <div className="flex items-center gap-2 text-[#1E3A8A] font-semibold text-sm group-hover:text-[#1E3A8A] transition-colors">
                           <span>Learn more</span>
                           <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </div>
@@ -355,7 +355,7 @@ export default function HomePage() {
                     id: 'zero-corruption',
                     title: 'Zero Corruption', 
                     desc: 'Uncompromising stance against corruption. Transparent governance and accountability at every level.',
-                    color: '#D4A017',
+                    color: '#1E3A8A',
                     image: '/images/vission/corruption.png',
                     Icon: AntiCorruptionIcon
                   },
@@ -371,7 +371,7 @@ export default function HomePage() {
                     id: 'education-revolution',
                     title: 'Education Revolution', 
                     desc: 'World-class education system that prepares our youth for the challenges and opportunities of tomorrow.',
-                    color: '#D4A017',
+                    color: '#1E3A8A',
                     image: '/images/vission/education.png',
                     Icon: EducationIcon
                   },
@@ -379,7 +379,7 @@ export default function HomePage() {
                     id: 'social-protection',
                     title: 'Social Protection & Inclusion', 
                     desc: 'A compassionate society that leaves no one behind. Monthly support, disability rights, and protection for the most vulnerable.',
-                    color: '#D4A017',
+                    color: '#1E3A8A',
                     image: '/images/vission/social-protection.png',
                     Icon: SocialProtectionIcon
                   },
@@ -395,7 +395,7 @@ export default function HomePage() {
                     id: 'youth-women-empowerment',
                     title: 'Youth & Women Empowerment', 
                     desc: 'Unlocking potential through affirmative funding, innovation hubs, and leadership opportunities for youth and women.',
-                    color: '#D4A017',
+                    color: '#1E3A8A',
                     image: '/images/vission/youth-and-women-empowerment.png',
                     Icon: YouthWomenIcon
                   },
@@ -411,7 +411,7 @@ export default function HomePage() {
                   <ScrollReveal key={index} delay={index * 0.1}>
                     <Link href={`/about/vision-2027#${pillar.id}`} className="group block h-full">
                       <TiltCard className="h-full" borderColor={pillar.color}>
-                        <div className="h-full bg-white rounded-2xl p-5 md:p-6 shadow-md border border-slate-100 group-hover:shadow-xl group-hover:border-[#D4A017]/30 transition-all duration-300">
+                        <div className="h-full bg-white rounded-2xl p-5 md:p-6 shadow-md border border-slate-100 group-hover:shadow-xl group-hover:border-[#1E3A8A]/30 transition-all duration-300">
                           {/* Pillar image */}
                           <div className="relative mb-4">
                             <div className="w-full h-32 md:h-36 rounded-xl overflow-hidden">
@@ -423,7 +423,7 @@ export default function HomePage() {
                               />
                             </div>
                             {/* Subtle gold accent dot */}
-                            <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#D4A017] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                            <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#1E3A8A] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                           </div>
                           
                           {/* Title */}
@@ -432,14 +432,14 @@ export default function HomePage() {
                           </h3>
                           
                           {/* Gold accent line */}
-                          <div className="w-10 h-0.5 bg-gradient-to-r from-[#D4A017] to-[#E6C200] rounded-full mb-3 opacity-60 group-hover:w-16 transition-all duration-300" />
+                          <div className="w-10 h-0.5 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] rounded-full mb-3 opacity-60 group-hover:w-16 transition-all duration-300" />
                           
                           <p className="body-editorial text-sm mb-4">
                             {pillar.desc}
                           </p>
                           
                           {/* Learn more link */}
-                          <div className="flex items-center gap-2 text-[#1E3A8A] font-semibold text-sm group-hover:text-[#D4A017] transition-colors">
+                          <div className="flex items-center gap-2 text-[#1E3A8A] font-semibold text-sm group-hover:text-[#1E3A8A] transition-colors">
                             <span>Learn more</span>
                             <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                           </div>
@@ -466,7 +466,7 @@ export default function HomePage() {
             {/* Image Side */}
             <ScrollReveal direction="left">
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] rounded-3xl opacity-20 blur-2xl" />
+                <div className="absolute -inset-4 bg-gradient-to-r from-[#1E3A8A] to-[#1E3A8A] rounded-3xl opacity-20 blur-2xl" />
                 <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                   <Image
                     src="/images/president.jpeg"
@@ -478,7 +478,7 @@ export default function HomePage() {
                 </div>
                 
                 {/* Experience badge */}
-                <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 border-t-4 border-[#D4A017]">
+                <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 border-t-4 border-[#1E3A8A]">
                   <div className="text-center">
                     <div className="stat-blue text-4xl block mb-1">20+</div>
                     <div className="text-sm text-slate-600">Years of Service</div>
@@ -550,7 +550,7 @@ export default function HomePage() {
         {/* Background decoration - subtle blue accents on white */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#1E3A8A]/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/3 left-0 w-[400px] h-[400px] bg-[#D4A017]/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/3 left-0 w-[400px] h-[400px] bg-[#1E3A8A]/5 rounded-full blur-3xl" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -558,8 +558,8 @@ export default function HomePage() {
             <div className="text-center mb-12">
               <span className="kicker-pill mb-4">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D4A017] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D4A017]"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#1E3A8A] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#1E3A8A]"></span>
                 </span>
                 Latest Update
               </span>
@@ -625,7 +625,7 @@ export default function HomePage() {
                           </div>
                         </div>
                         <div>
-                          <p className="text-sm font-medium text-[#0F172A] line-clamp-2 group-hover:text-[#D4A017] transition-colors">
+                          <p className="text-sm font-medium text-[#0F172A] line-clamp-2 group-hover:text-[#1E3A8A] transition-colors">
                             {video.title}
                           </p>
                           <p className="text-xs text-slate-500 mt-1">{video.category}</p>
@@ -638,7 +638,7 @@ export default function HomePage() {
                   </div>
                   <Link
                     href="/videos"
-                    className="mt-4 inline-flex items-center gap-2 text-[#D4A017] font-semibold text-sm hover:text-[#E6C200] transition-colors"
+                    className="mt-4 inline-flex items-center gap-2 text-[#1E3A8A] font-semibold text-sm hover:text-[#3B82F6] transition-colors"
                   >
                     View All Videos
                     <FaArrowRight className="w-4 h-4" />
@@ -662,7 +662,7 @@ export default function HomePage() {
                   href={`https://wa.me/?text=${encodeURIComponent('Watch the latest message from the National Vision Party: https://www.nationalvisionparty.com/videos')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full text-center py-4 rounded-xl bg-[#D4A017] text-white font-bold hover:bg-[#B45309] transition-all duration-300 hover:shadow-lg hover:shadow-orange-900/30 hover:-translate-y-0.5"
+                  className="block w-full text-center py-4 rounded-xl bg-[#1E3A8A] text-white font-bold hover:bg-[#1E40AF] transition-all duration-300 hover:shadow-lg hover:shadow-blue-900/30 hover:-translate-y-0.5"
                 >
                   Share on WhatsApp
                 </a>
@@ -727,7 +727,7 @@ export default function HomePage() {
                           </div>
                         )}
                         <div className="absolute top-4 left-4">
-                          <span className="px-3 py-1 rounded-full bg-[#D4A017] text-white text-xs font-bold">
+                          <span className="px-3 py-1 rounded-full bg-[#1E3A8A] text-white text-xs font-bold">
                             {post.category}
                           </span>
                         </div>
@@ -883,7 +883,7 @@ export default function HomePage() {
         {/* Background decoration - subtle blue accents on white */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#1E3A8A]/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/3 left-0 w-[400px] h-[400px] bg-[#D4A017]/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/3 left-0 w-[400px] h-[400px] bg-[#1E3A8A]/5 rounded-full blur-3xl" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -1050,7 +1050,7 @@ export default function HomePage() {
                         </div>
                         
                         {/* Category badge */}
-                        <div className="absolute top-2 left-2 px-2 py-0.5 bg-[#D4A017] text-white text-xs font-bold rounded">
+                        <div className="absolute top-2 left-2 px-2 py-0.5 bg-[#1E3A8A] text-white text-xs font-bold rounded">
                           {video.category}
                         </div>
                         
@@ -1124,13 +1124,13 @@ export default function HomePage() {
         <div 
           className="absolute inset-0 opacity-5 z-[2]"
           style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)`,
+            backgroundImage: `radial-gradient(circle at 1px 1px, #1E3A8A 1px, transparent 0)`,
             backgroundSize: '50px 50px',
           }}
         />
         
         {/* Gold accent lines */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4A017] to-transparent z-10" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#1E3A8A] to-transparent z-10" />
         
         {/* Gradient overlays for depth */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#1E3A8A]/30 via-transparent to-[#1E3A8A]/30 z-[2]" />

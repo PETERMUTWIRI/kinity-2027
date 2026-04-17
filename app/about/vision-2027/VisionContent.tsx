@@ -37,7 +37,7 @@ const pillars = [
     subtitle: 'Uncompromising Stance Against Graft',
     icon: FaShieldAlt,
     image: '/images/vission/corruption.png',
-    color: '#D4A017',
+    color: '#1E3A8A',
     stats: [
       { value: '2', label: 'Years to Eliminate Corruption' },
       { value: '0', label: 'Tolerance for Graft' },
@@ -87,7 +87,7 @@ const pillars = [
     subtitle: 'World-Class Education for Our Children',
     icon: FaGraduationCap,
     image: '/images/vission/education.png',
-    color: '#D4A017',
+    color: '#1E3A8A',
     stats: [
       { value: '100%', label: 'Free Primary & Secondary' },
       { value: 'STEM', label: 'Curriculum Focus' },
@@ -112,7 +112,7 @@ const pillars = [
     subtitle: 'Dignity for Widows, Orphans, PWDs & the Elderly',
     icon: FaHandsHelping,
     image: '/images/vission/social-protection.png',
-    color: '#D4A017',
+    color: '#1E3A8A',
     stats: [
       { value: '100%', label: 'Disability Rights Coverage' },
       { value: '0', label: 'Tolerance for Discrimination' },
@@ -162,7 +162,7 @@ const pillars = [
     subtitle: 'Opportunity for Every Kenyan',
     icon: FaUsers,
     image: '/images/vission/youth-and-women-empowerment.png',
-    color: '#D4A017',
+    color: '#1E3A8A',
     stats: [
       { value: '70%', label: 'Youth Unemployment Cut' },
       { value: '50%', label: 'Women in Leadership' },
@@ -255,7 +255,7 @@ export default function VisionContent() {
                 <a
                   key={pillar.id}
                   href={`#${pillar.id}`}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-200 text-slate-700 hover:border-[#D4A017] hover:text-[#D4A017] transition-colors text-sm font-medium"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-200 text-slate-700 hover:border-[#1E3A8A] hover:text-[#1E3A8A] transition-colors text-sm font-medium"
                 >
                   <span style={{ color: pillar.color }}>{pillar.number}</span>
                   <span>{pillar.title}</span>
@@ -300,7 +300,7 @@ export default function VisionContent() {
                     <p className="text-xl text-slate-500">{pillar.subtitle}</p>
                     
                     {/* Gold accent line */}
-                    <div className="w-16 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] rounded-full mt-4" />
+                    <div className="w-16 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] rounded-full mt-4" />
                   </div>
                   
                   {/* Stats */}

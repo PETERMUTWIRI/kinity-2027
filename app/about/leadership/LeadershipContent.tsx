@@ -101,7 +101,7 @@ export default function LeadershipContent() {
                   />
                 </div>
                 <div className="p-8 md:p-12 flex flex-col justify-center">
-                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4A017]/10 text-[#D4A017] border border-[#D4A017]/20 font-semibold text-sm mb-6 w-fit">
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A] border border-[#1E3A8A]/20 font-semibold text-sm mb-6 w-fit">
                     <FaAward className="w-4 h-4" />
                     Flagbearer 2027
                   </span>
@@ -120,7 +120,7 @@ export default function LeadershipContent() {
                       'Pledged to eliminate corruption within 2 years or resign',
                     ].map((item, i) => (
                       <div key={i} className="flex items-center gap-3">
-                        <FaCheckCircle className="w-5 h-5 text-[#D4A017] flex-shrink-0" />
+                        <FaCheckCircle className="w-5 h-5 text-[#1E3A8A] flex-shrink-0" />
                         <span className="text-slate-700">{item}</span>
                       </div>
                     ))}
@@ -162,7 +162,7 @@ export default function LeadershipContent() {
           <div className="grid md:grid-cols-2 gap-8">
             {partyOrgans.map((organ, index) => (
               <ScrollReveal key={organ.title} delay={index * 0.1}>
-                <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:border-[#D4A017]/30 hover:shadow-md transition-all h-full">
+                <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:border-[#1E3A8A]/30 hover:shadow-md transition-all h-full">
                   <div className="w-14 h-14 rounded-xl bg-[#1E3A8A]/10 flex items-center justify-center mb-5">
                     <organ.icon className="w-7 h-7 text-[#1E3A8A]" />
                   </div>
@@ -201,8 +201,8 @@ export default function LeadershipContent() {
           <div className="grid md:grid-cols-2 gap-8">
             {leadershipValues.map((value, index) => (
               <ScrollReveal key={value.title} delay={index * 0.1}>
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-[#D4A017]/30 transition-all">
-                  <h3 className="text-xl font-bold text-[#D4A017] mb-3">{value.title}</h3>
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-[#1E3A8A]/30 transition-all">
+                  <h3 className="text-xl font-bold text-[#1E3A8A] mb-3">{value.title}</h3>
                   <p className="text-white/80 leading-relaxed">{value.content}</p>
                 </div>
               </ScrollReveal>

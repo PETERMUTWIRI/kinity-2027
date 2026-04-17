@@ -96,7 +96,7 @@ export default function OurStoryContent() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal>
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] rounded-3xl opacity-20 blur-2xl" />
+                <div className="absolute -inset-4 bg-gradient-to-r from-[#1E3A8A] to-[#1E3A8A] rounded-3xl opacity-20 blur-2xl" />
                 <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl bg-white p-8">
                   <Image
                     src="/nvp-party-logo.jpeg"
@@ -111,7 +111,7 @@ export default function OurStoryContent() {
 
             <ScrollReveal delay={0.2}>
               <div className="space-y-6">
-                <blockquote className="text-2xl md:text-3xl font-medium text-[#0F172A] leading-relaxed border-l-4 border-[#D4A017] pl-6">
+                <blockquote className="text-2xl md:text-3xl font-medium text-[#0F172A] leading-relaxed border-l-4 border-[#1E3A8A] pl-6">
                   &ldquo;I am committed to the service of Kenyans. No recycling of corrupt politicians. 
                   If entrusted with the presidency, I will eradicate corruption within two years—or 
                   voluntarily resign.&rdquo;
@@ -156,7 +156,7 @@ export default function OurStoryContent() {
 
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#1E3A8A] via-[#D4A017] to-[#1E3A8A]" />
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#1E3A8A] via-[#1E3A8A] to-[#1E3A8A]" />
 
             {/* Timeline Items */}
             <div className="space-y-8">
@@ -164,13 +164,13 @@ export default function OurStoryContent() {
                 <ScrollReveal key={index} delay={index * 0.1}>
                   <div className={`relative pl-20 ${item.highlight ? 'scale-105' : ''}`}>
                     {/* Icon */}
-                    <div className={`absolute left-4 w-8 h-8 rounded-full flex items-center justify-center ${item.highlight ? 'bg-[#D4A017]' : 'bg-white border-2 border-[#1E3A8A]'}`}>
+                    <div className={`absolute left-4 w-8 h-8 rounded-full flex items-center justify-center ${item.highlight ? 'bg-[#1E3A8A]' : 'bg-white border-2 border-[#1E3A8A]'}`}>
                       <item.icon className={`w-4 h-4 ${item.highlight ? 'text-white' : 'text-[#1E3A8A]'}`} />
                     </div>
 
                     {/* Content */}
-                    <div className={`p-6 rounded-2xl ${item.highlight ? 'bg-[#D4A017]/5 border border-[#D4A017]/20' : 'bg-white border border-slate-100'}`}>
-                      <span className={`text-sm font-bold ${item.highlight ? 'text-[#D4A017]' : 'text-[#1E3A8A]'}`}>
+                    <div className={`p-6 rounded-2xl ${item.highlight ? 'bg-[#1E3A8A]/5 border border-[#1E3A8A]/20' : 'bg-white border border-slate-100'}`}>
+                      <span className={`text-sm font-bold ${item.highlight ? 'text-[#1E3A8A]' : 'text-[#1E3A8A]'}`}>
                         {item.year}
                       </span>
                       <h3 className="text-xl font-bold text-[#0F172A] mt-1 mb-2">

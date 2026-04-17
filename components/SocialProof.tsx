@@ -42,9 +42,9 @@ export default function SocialProof() {
         <ScrollReveal>
           <div className="text-center mb-16">
             <h2 className="font-headline text-4xl md:text-5xl text-[#0F172A] mb-4">
-              Voices of <span className="text-[#D4A017]">Support</span>
+              Voices of <span className="text-[#1E3A8A]">Support</span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] mx-auto rounded-full mb-4" />
+            <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#1E3A8A] mx-auto rounded-full mb-4" />
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
               Leaders and organizations across Kenya share their perspectives on the National Vision Party&apos;s vision for our nation.
             </p>
@@ -74,7 +74,7 @@ export default function SocialProof() {
 
                 {/* Author */}
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#1E3A8A]/20 to-[#D4A017]/20 flex items-center justify-center border border-[#D4A017]/30">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#1E3A8A]/20 to-[#1E3A8A]/20 flex items-center justify-center border border-[#1E3A8A]/30">
                     <span className="text-[#1E3A8A] font-bold text-sm">{item.logo}</span>
                   </div>
                   <div>
@@ -94,7 +94,7 @@ export default function SocialProof() {
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60">
               {['Nairobi', 'Mombasa', 'Kisumu', 'Nakuru', 'Eldoret'].map((city) => (
                 <div key={city} className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-[#D4A017]" />
+                  <div className="w-2 h-2 rounded-full bg-[#1E3A8A]" />
                   <span className="font-medium text-slate-600">{city} Chapter</span>
                 </div>
               ))}

@@ -181,7 +181,7 @@ export default function Navbar() {
             opacity: isTopBarVisible ? 1 : 0,
           }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="overflow-hidden bg-[#0F172A] border-b border-[#D4A017]/30"
+          className="overflow-hidden bg-[#0F172A] border-b border-[#1E3A8A]/30"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between py-2.5 gap-4">
@@ -194,7 +194,7 @@ export default function Navbar() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="w-8 h-8 rounded-full bg-[#D4A017]/10 hover:bg-[#D4A017]/30 flex items-center justify-center text-[#D4A017] hover:text-white transition-all duration-200"
+                    className="w-8 h-8 rounded-full bg-[#1E3A8A]/10 hover:bg-[#1E3A8A]/30 flex items-center justify-center text-[#1E3A8A] hover:text-white transition-all duration-200"
                   >
                     <social.icon className="w-4 h-4" />
                   </a>
@@ -208,7 +208,7 @@ export default function Navbar() {
                 {/* Pulsating NVT NEW Button */}
                 <Link 
                   href="/news-hub"
-                  className="hidden md:flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4A017] text-white text-xs font-bold relative overflow-hidden group hover:bg-[#E6C200] transition-colors"
+                  className="hidden md:flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1E3A8A] text-white text-xs font-bold relative overflow-hidden group hover:bg-[#3B82F6] transition-colors"
                 >
                   {/* Pulsating effect */}
                   <span className="absolute inset-0 rounded-full bg-white/30 animate-ping" />
@@ -238,7 +238,7 @@ export default function Navbar() {
                 <motion.div 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="relative w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-xl overflow-hidden shadow-md ring-2 ring-[#1E3A8A]/10 group-hover:ring-[#D4A017]/50 transition-all duration-300 flex-shrink-0"
+                  className="relative w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-xl overflow-hidden shadow-md ring-2 ring-[#1E3A8A]/10 group-hover:ring-[#1E3A8A]/50 transition-all duration-300 flex-shrink-0"
                 >
                   <Image
                     src="/nvp-party-logo.jpeg"
@@ -256,7 +256,7 @@ export default function Navbar() {
                     National Vision Party
                   </motion.p>
                   <p className="text-[9px] xs:text-xs text-slate-500 hidden sm:block font-medium tracking-wider uppercase">
-                    <span className="text-[#D4A017]">Kenya&apos;s Hope</span> 2027
+                    <span className="text-[#1E3A8A]">Kenya&apos;s Hope</span> 2027
                   </p>
                 </div>
 
@@ -313,8 +313,8 @@ export default function Navbar() {
                                 className="flex items-start gap-3 px-4 py-3 hover:bg-slate-50 transition-colors group"
                               >
                                 {child.icon && (
-                                  <div className="w-8 h-8 rounded-lg bg-[#1E3A8A]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#D4A017]/20 transition-colors">
-                                    <child.icon className="w-4 h-4 text-[#1E3A8A] group-hover:text-[#D4A017] transition-colors" />
+                                  <div className="w-8 h-8 rounded-lg bg-[#1E3A8A]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#1E3A8A]/20 transition-colors">
+                                    <child.icon className="w-4 h-4 text-[#1E3A8A] group-hover:text-[#1E3A8A] transition-colors" />
                                   </div>
                                 )}
                                 <div>
@@ -495,7 +495,7 @@ export default function Navbar() {
                     </div>
                     <div>
                       <p className="font-slogan text-lg text-[#1E3A8A]">National Vision Party</p>
-                      <p className="text-xs text-[#D4A017]">Kenya&apos;s Hope 2027</p>
+                      <p className="text-xs text-[#1E3A8A]">Kenya&apos;s Hope 2027</p>
                     </div>
                   </Link>
                   <motion.button
@@ -553,7 +553,7 @@ export default function Navbar() {
                             key={child.name}
                             href={child.href}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-slate-600 hover:bg-slate-50 hover:text-[#D4A017] transition-colors"
+                            className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-slate-600 hover:bg-slate-50 hover:text-[#1E3A8A] transition-colors"
                           >
                             {child.icon && <child.icon className="w-4 h-4 text-[#1E3A8A]" />}
                             {child.name}
@@ -632,7 +632,7 @@ export default function Navbar() {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 0.5 + index * 0.05 }}
                       whileHover={{ scale: 1.1, y: -2 }}
-                      className="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#D4A017] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                      className="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#1E3A8A] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
                     >
                       <social.icon className="w-5 h-5" />
                     </motion.a>
@@ -641,11 +641,11 @@ export default function Navbar() {
               </div>
 
               {/* Footer */}
-              <div className="p-6 bg-[#0F172A] border-t border-[#D4A017]/20">
+              <div className="p-6 bg-[#0F172A] border-t border-[#1E3A8A]/20">
                 <p className="text-center text-sm text-white/70">
                   Committed to the Service of Kenyans
                 </p>
-                <p className="text-center text-xs text-[#D4A017] mt-1">
+                <p className="text-center text-xs text-[#1E3A8A] mt-1">
                   © 2025 National Vision Party
                 </p>
               </div>

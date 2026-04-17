@@ -53,9 +53,9 @@ export default function NewsTicker() {
 
   if (loading) {
     return (
-      <div className="flex items-center gap-3 text-[#D4A017]">
+      <div className="flex items-center gap-3 text-[#1E3A8A]">
         <FaNewspaper className="w-4 h-4" />
-        <div className="w-48 h-4 bg-[#D4A017]/20 rounded animate-pulse" />
+        <div className="w-48 h-4 bg-[#1E3A8A]/20 rounded animate-pulse" />
       </div>
     );
   }
@@ -63,8 +63,8 @@ export default function NewsTicker() {
   if (posts.length === 0) {
     return (
       <div className="flex items-center gap-3">
-        <FaNewspaper className="w-4 h-4 text-[#D4A017]" />
-        <Link href="/news-hub" className="text-sm text-white hover:text-[#D4A017] transition-colors">
+        <FaNewspaper className="w-4 h-4 text-[#1E3A8A]" />
+        <Link href="/news-hub" className="text-sm text-white hover:text-[#1E3A8A] transition-colors">
           Visit News Hub
         </Link>
       </div>
@@ -73,7 +73,7 @@ export default function NewsTicker() {
 
   return (
     <div className="flex items-center gap-3">
-      <FaNewspaper className="w-4 h-4 text-[#D4A017] flex-shrink-0" />
+      <FaNewspaper className="w-4 h-4 text-[#1E3A8A] flex-shrink-0" />
       
       <div className="relative overflow-hidden min-w-[200px] sm:min-w-[300px] md:min-w-[400px]">
         <AnimatePresence mode="wait">
@@ -87,7 +87,7 @@ export default function NewsTicker() {
           >
             <Link 
               href={`/news-hub/${posts[currentIndex].slug}`}
-              className="text-sm text-white hover:text-[#D4A017] transition-colors truncate max-w-[180px] sm:max-w-[280px] md:max-w-[380px]"
+              className="text-sm text-white hover:text-[#1E3A8A] transition-colors truncate max-w-[180px] sm:max-w-[280px] md:max-w-[380px]"
               title={posts[currentIndex].title}
             >
               {posts[currentIndex].title}
@@ -100,14 +100,14 @@ export default function NewsTicker() {
       <div className="flex items-center gap-1">
         <button
           onClick={goToPrev}
-          className="w-6 h-6 rounded-full bg-[#D4A017]/20 hover:bg-[#D4A017]/40 flex items-center justify-center text-[#D4A017] transition-colors"
+          className="w-6 h-6 rounded-full bg-[#1E3A8A]/20 hover:bg-[#1E3A8A]/40 flex items-center justify-center text-[#1E3A8A] transition-colors"
           aria-label="Previous news"
         >
           <FaChevronLeft className="w-3 h-3" />
         </button>
         <button
           onClick={goToNext}
-          className="w-6 h-6 rounded-full bg-[#D4A017]/20 hover:bg-[#D4A017]/40 flex items-center justify-center text-[#D4A017] transition-colors"
+          className="w-6 h-6 rounded-full bg-[#1E3A8A]/20 hover:bg-[#1E3A8A]/40 flex items-center justify-center text-[#1E3A8A] transition-colors"
           aria-label="Next news"
         >
           <FaChevronRight className="w-3 h-3" />
@@ -121,7 +121,7 @@ export default function NewsTicker() {
             key={idx}
             onClick={() => setCurrentIndex(idx)}
             className={`w-1.5 h-1.5 rounded-full transition-colors ${
-              idx === currentIndex ? 'bg-[#D4A017]' : 'bg-[#D4A017]/30'
+              idx === currentIndex ? 'bg-[#1E3A8A]' : 'bg-[#1E3A8A]/30'
             }`}
             aria-label={`Go to news ${idx + 1}`}
           />

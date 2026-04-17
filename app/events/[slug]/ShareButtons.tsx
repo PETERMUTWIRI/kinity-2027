@@ -63,7 +63,7 @@ export default function ShareButtons({ event, url }: ShareButtonsProps) {
   return (
     <div className="bg-slate-900 rounded-2xl p-6 border border-slate-800">
       <h3 className="font-headline text-lg text-white mb-4 flex items-center gap-2">
-        <FaShareAlt className="text-[#D4A017]" />
+        <FaShareAlt className="text-[#1E3A8A]" />
         Share This Event
       </h3>
       <div className="grid grid-cols-4 gap-3">

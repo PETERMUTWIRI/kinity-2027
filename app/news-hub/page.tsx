@@ -96,7 +96,7 @@ export default async function NewsHubPage({
                         className="object-cover"
                       />
                     ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-[#1E3A8A] to-[#D4A017] flex items-center justify-center">
+                      <div className="w-full h-full bg-gradient-to-br from-[#1E3A8A] to-[#1E3A8A] flex items-center justify-center">
                         <FaNewspaper className="w-12 h-12 text-white/50" />
                       </div>
                     )}

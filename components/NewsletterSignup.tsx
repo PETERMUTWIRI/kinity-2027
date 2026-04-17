@@ -50,15 +50,15 @@ export default function NewsletterSignup({
   const isCompact = variant === 'compact';
 
   return (
-    <div className={`rounded-3xl p-8 md:p-12 ${isDark ? 'bg-[#0F172A] text-white' : 'bg-white text-[#0F172A]'} shadow-xl border ${isDark ? 'border-[#D4A017]/30' : 'border-slate-100'}`}>
+    <div className={`rounded-3xl p-8 md:p-12 ${isDark ? 'bg-[#0F172A] text-white' : 'bg-white text-[#0F172A]'} shadow-xl border ${isDark ? 'border-[#1E3A8A]/30' : 'border-slate-100'}`}>
       <div className="max-w-2xl mx-auto text-center">
         <motion.div
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
           viewport={{ once: true }}
-          className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 ${isDark ? 'bg-[#D4A017]/20' : 'bg-[#D4A017]/10'}`}
+          className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 ${isDark ? 'bg-[#1E3A8A]/20' : 'bg-[#1E3A8A]/10'}`}
         >
-          <FaEnvelope className="w-8 h-8 text-[#D4A017]" />
+          <FaEnvelope className="w-8 h-8 text-[#1E3A8A]" />
         </motion.div>
         
         <h3 className={`font-headline font-bold mb-3 ${isCompact ? 'text-2xl' : 'text-3xl md:text-4xl'}`}>
@@ -94,7 +94,7 @@ export default function NewsletterSignup({
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Your name (optional)"
-                  className={`w-full px-5 py-4 rounded-xl border-2 focus:outline-none focus:border-[#D4A017] transition-colors ${isDark ? 'bg-white/5 border-white/10 text-white placeholder:text-white/40' : 'bg-slate-50 border-slate-200 text-[#0F172A]'}`}
+                  className={`w-full px-5 py-4 rounded-xl border-2 focus:outline-none focus:border-[#1E3A8A] transition-colors ${isDark ? 'bg-white/5 border-white/10 text-white placeholder:text-white/40' : 'bg-slate-50 border-slate-200 text-[#0F172A]'}`}
                 />
                 <input
                   type="email"
@@ -102,14 +102,14 @@ export default function NewsletterSignup({
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
                   required
-                  className={`w-full px-5 py-4 rounded-xl border-2 focus:outline-none focus:border-[#D4A017] transition-colors ${isDark ? 'bg-white/5 border-white/10 text-white placeholder:text-white/40' : 'bg-slate-50 border-slate-200 text-[#0F172A]'}`}
+                  className={`w-full px-5 py-4 rounded-xl border-2 focus:outline-none focus:border-[#1E3A8A] transition-colors ${isDark ? 'bg-white/5 border-white/10 text-white placeholder:text-white/40' : 'bg-slate-50 border-slate-200 text-[#0F172A]'}`}
                 />
                 <input
                   type="text"
                   value={county}
                   onChange={(e) => setCounty(e.target.value)}
                   placeholder="Your county (optional)"
-                  className={`w-full px-5 py-4 rounded-xl border-2 focus:outline-none focus:border-[#D4A017] transition-colors ${isDark ? 'bg-white/5 border-white/10 text-white placeholder:text-white/40' : 'bg-slate-50 border-slate-200 text-[#0F172A]'}`}
+                  className={`w-full px-5 py-4 rounded-xl border-2 focus:outline-none focus:border-[#1E3A8A] transition-colors ${isDark ? 'bg-white/5 border-white/10 text-white placeholder:text-white/40' : 'bg-slate-50 border-slate-200 text-[#0F172A]'}`}
                 />
               </div>
               

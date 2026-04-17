@@ -117,7 +117,7 @@ function EventCard({ event }: { event: any }) {
   
   return (
     <Link href={`/events/${event.slug}`} className="group">
-      <article className={`bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 hover:border-[#D4A017]/50 transition-all hover:shadow-xl hover:shadow-[#D4A017]/10 ${isPast ? 'opacity-70' : ''}`}>
+      <article className={`bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 hover:border-[#1E3A8A]/50 transition-all hover:shadow-xl hover:shadow-[#1E3A8A]/10 ${isPast ? 'opacity-70' : ''}`}>
         <div className="relative aspect-video overflow-hidden">
           {event.cover ? (
             <Image
@@ -152,7 +152,7 @@ function EventCard({ event }: { event: any }) {
               {event.county || event.location}
             </span>
           </div>
-          <h4 className="font-headline text-lg text-white group-hover:text-[#D4A017] transition-colors line-clamp-2">
+          <h4 className="font-headline text-lg text-white group-hover:text-[#1E3A8A] transition-colors line-clamp-2">
             {event.title}
           </h4>
         </div>
@@ -172,7 +172,7 @@ async function ExploreMoreEvents({ currentSlug }: { currentSlug: string }) {
     <section className="mt-20 pt-16 border-t border-slate-800">
       <div className="text-center mb-12">
         <h2 className="font-headline text-3xl md:text-4xl text-white mb-4">
-          Explore More <span className="text-[#D4A017]">Events</span>
+          Explore More <span className="text-[#1E3A8A]">Events</span>
         </h2>
         <p className="text-slate-400 max-w-2xl mx-auto">
           Join Dr. Isaac Newton Kinity at rallies, town halls, and community meetings across Kenya.
@@ -304,7 +304,7 @@ export default async function EventPage({ params }: PageProps) {
                 sizes="(max-width: 1280px) 100vw, 1024px"
               />
             ) : (
-              <div className="w-full h-full bg-gradient-to-br from-[#1E3A8A] via-[#0F172A] to-[#D4A017] flex items-center justify-center">
+              <div className="w-full h-full bg-gradient-to-br from-[#1E3A8A] via-[#0F172A] to-[#1E3A8A] flex items-center justify-center">
                 <div className="text-center p-8">
                   <FaBullhorn className="w-20 h-20 text-white/30 mx-auto mb-4" />
                   <h1 className="font-headline text-3xl md:text-5xl text-white">{event.title}</h1>
@@ -352,7 +352,7 @@ export default async function EventPage({ params }: PageProps) {
                   })}</span>
                 </div>
                 <div className="flex items-center gap-2 bg-slate-900 px-4 py-2 rounded-full border border-slate-800">
-                  <FaMapMarkerAlt className="w-4 h-4 text-[#D4A017]" />
+                  <FaMapMarkerAlt className="w-4 h-4 text-[#1E3A8A]" />
                   <span>{event.county || event.location}</span>
                 </div>
               </div>
@@ -361,7 +361,7 @@ export default async function EventPage({ params }: PageProps) {
             {/* Description */}
             {event.description ? (
               <div 
-                className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-p:text-slate-300 prose-a:text-[#D4A017] hover:prose-a:text-[#E6C200]"
+                className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-p:text-slate-300 prose-a:text-[#1E3A8A] hover:prose-a:text-[#3B82F6]"
                 dangerouslySetInnerHTML={{ __html: event.description }}
               />
             ) : (
@@ -370,7 +370,7 @@ export default async function EventPage({ params }: PageProps) {
 
             {/* Open to All Banner */}
             {!isPast && (
-              <div className="mt-10 p-6 bg-gradient-to-r from-[#1E3A8A]/20 to-[#D4A017]/20 border border-[#1E3A8A]/30 rounded-2xl">
+              <div className="mt-10 p-6 bg-gradient-to-r from-[#1E3A8A]/20 to-[#1E3A8A]/20 border border-[#1E3A8A]/30 rounded-2xl">
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#1E3A8A] to-[#0F172A] flex items-center justify-center flex-shrink-0">
                     <FaUsers className="w-7 h-7 text-white" />
@@ -431,8 +431,8 @@ export default async function EventPage({ params }: PageProps) {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#D4A017]/20 flex items-center justify-center flex-shrink-0">
-                    <FaMapMarkerAlt className="w-5 h-5 text-[#D4A017]" />
+                  <div className="w-10 h-10 rounded-lg bg-[#1E3A8A]/20 flex items-center justify-center flex-shrink-0">
+                    <FaMapMarkerAlt className="w-5 h-5 text-[#1E3A8A]" />
                   </div>
                   <div>
                     <p className="text-slate-400 text-sm">Venue</p>
@@ -487,7 +487,7 @@ export default async function EventPage({ params }: PageProps) {
               <p className="text-slate-400 text-sm mb-4">Contact our campaign hotline for event information.</p>
               <a 
                 href="tel:+12036759354" 
-                className="text-[#D4A017] font-bold text-lg hover:text-[#E6C200] transition-colors"
+                className="text-[#1E3A8A] font-bold text-lg hover:text-[#3B82F6] transition-colors"
               >
                 +1 (203) 675-9354
               </a>

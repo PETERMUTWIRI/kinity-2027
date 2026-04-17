@@ -50,13 +50,13 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
         <div 
           className="absolute inset-0 opacity-5"
           style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)`,
+            backgroundImage: `radial-gradient(circle at 1px 1px, #1E3A8A 1px, transparent 0)`,
             backgroundSize: '50px 50px',
           }}
         />
         
         {/* Gold accent line at top */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4A017] to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#1E3A8A] to-transparent" />
         
         {/* Hero Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24">
@@ -65,7 +65,7 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-[#D4A017]/30 text-[#D4A017] text-sm font-medium"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-[#1E3A8A]/30 text-[#1E3A8A] text-sm font-medium"
               >
                 <FaYoutube className="w-4 h-4" />
                 Campaign Media Center
@@ -104,7 +104,7 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
                 initial={{ opacity: 0, scaleX: 0 }}
                 animate={{ opacity: 1, scaleX: 1 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="w-24 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] mx-auto rounded-full"
+                className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] mx-auto rounded-full"
               />
             </StaggerItem>
 
@@ -147,7 +147,7 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
                   { value: '5K+', label: 'Subscribers' },
                 ].map((stat) => (
                   <div key={stat.label} className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-[#D4A017]">{stat.value}</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-[#1E3A8A]">{stat.value}</div>
                     <div className="text-sm text-white/60">{stat.label}</div>
                   </div>
                 ))}
@@ -170,7 +170,7 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
               transition={{ duration: 1.5, repeat: Infinity }}
               className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center pt-2"
             >
-              <div className="w-1 h-2 bg-gradient-to-b from-[#D4A017] to-[#E6C200] rounded-full" />
+              <div className="w-1 h-2 bg-gradient-to-b from-[#1E3A8A] to-[#3B82F6] rounded-full" />
             </motion.div>
           </div>
         </motion.div>
@@ -182,8 +182,8 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
           <div className="max-w-7xl mx-auto">
             <ScrollReveal>
               <div className="flex items-center gap-3 mb-8">
-                <span className="w-8 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] rounded-full" />
-                <span className="text-[#D4A017] font-semibold uppercase tracking-wider text-sm">Featured</span>
+                <span className="w-8 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] rounded-full" />
+                <span className="text-[#1E3A8A] font-semibold uppercase tracking-wider text-sm">Featured</span>
               </div>
             </ScrollReveal>
 
@@ -194,7 +194,7 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
                 whileHover={{ scale: 1.005 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="absolute -inset-1 bg-gradient-to-r from-[#1E3A8A] to-[#D4A017] rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-500" />
+                <div className="absolute -inset-1 bg-gradient-to-r from-[#1E3A8A] to-[#1E3A8A] rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-500" />
                 <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100">
                   <div className="grid lg:grid-cols-2">
                     {/* Video Thumbnail */}
@@ -221,7 +221,7 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
 
                     {/* Content Side */}
                     <div className="p-8 lg:p-12 flex flex-col justify-center">
-                      <span className="inline-block px-3 py-1 rounded-full bg-[#D4A017]/10 text-[#D4A017] text-sm font-medium mb-4 w-fit border border-[#D4A017]/20">
+                      <span className="inline-block px-3 py-1 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A] text-sm font-medium mb-4 w-fit border border-[#1E3A8A]/20">
                         {featuredVideo.category}
                       </span>
                       
@@ -304,7 +304,7 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
                         whileHover={{ y: -8 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <div className="relative h-full bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl hover:border-[#D4A017]/30 transition-all duration-500">
+                        <div className="relative h-full bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl hover:border-[#1E3A8A]/30 transition-all duration-500">
                           {/* Thumbnail */}
                           <div className="relative aspect-video overflow-hidden">
                             <Image
@@ -398,7 +398,7 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
               {/* Close Button */}
               <button
                 onClick={() => setSelectedVideo(null)}
-                className="absolute -top-12 right-0 text-white hover:text-[#D4A017] transition-colors p-2 z-10"
+                className="absolute -top-12 right-0 text-white hover:text-[#1E3A8A] transition-colors p-2 z-10"
                 aria-label="Close video"
               >
                 <FaXmark className="text-3xl" />
@@ -425,7 +425,7 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
                   href={`https://www.youtube.com/watch?v=${selectedVideo.youtubeId}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[#D4A017] hover:text-[#E6C200] transition-colors"
+                  className="inline-flex items-center gap-2 text-[#1E3A8A] hover:text-[#3B82F6] transition-colors"
                 >
                   <FaYoutube className="w-5 h-5" />
                   Watch on YouTube
@@ -460,19 +460,19 @@ export default function VideosClient({ initialVideos }: VideosClientProps) {
         <div 
           className="absolute inset-0 opacity-5 z-[2]"
           style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, #D4A017 1px, transparent 0)`,
+            backgroundImage: `radial-gradient(circle at 1px 1px, #1E3A8A 1px, transparent 0)`,
             backgroundSize: '50px 50px',
           }}
         />
         
         {/* Gold accent line at top */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4A017] to-transparent z-10" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#1E3A8A] to-transparent z-10" />
         
         <div className="max-w-4xl mx-auto relative z-[5]">
           <ScrollReveal>
             <div className="text-center">
               {/* Gold accent line */}
-              <div className="w-24 h-1 bg-gradient-to-r from-[#D4A017] to-[#E6C200] mx-auto rounded-full mb-8" />
+              <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] mx-auto rounded-full mb-8" />
               
               <FaYoutube className="w-16 h-16 text-[#DC2626] mx-auto mb-6" />
               <h2 className="heading-editorial !text-white mb-4">

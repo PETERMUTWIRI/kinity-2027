@@ -39,11 +39,11 @@ export default function HeroDualCarousel() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4A017]/20 border border-[#D4A017]/40 text-[#D4A017] font-semibold text-sm mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A8A]/20 border border-[#1E3A8A]/40 text-[#1E3A8A] font-semibold text-sm mb-6"
           >
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D4A017] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D4A017]"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#1E3A8A] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#1E3A8A]"></span>
             </span>
             NATIONAL VISION PARTY
           </motion.div>
@@ -55,7 +55,7 @@ export default function HeroDualCarousel() {
             transition={{ delay: 0.3 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#0F172A] leading-tight mb-4"
           >
-            KENYA&apos;S HOPE <span className="text-[#D4A017]">2027</span>
+            KENYA&apos;S HOPE <span className="text-[#1E3A8A]">2027</span>
           </motion.h1>
 
           {/* Gold accent line */}
@@ -63,7 +63,7 @@ export default function HeroDualCarousel() {
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="w-24 h-1 bg-gradient-to-r from-transparent via-[#D4A017] to-transparent mx-auto rounded-full mb-6"
+            className="w-24 h-1 bg-gradient-to-r from-transparent via-[#1E3A8A] to-transparent mx-auto rounded-full mb-6"
           />
 
           {/* Message */}
@@ -82,10 +82,10 @@ export default function HeroDualCarousel() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="text-sm sm:text-base md:text-lg text-[#0F172A]/95 italic border-l-4 border-[#D4A017] pl-5 py-3 bg-[#0F172A]/5 backdrop-blur-sm rounded-r-lg max-w-2xl mx-auto mb-8 text-left"
+            className="text-sm sm:text-base md:text-lg text-[#0F172A]/95 italic border-l-4 border-[#1E3A8A] pl-5 py-3 bg-[#0F172A]/5 backdrop-blur-sm rounded-r-lg max-w-2xl mx-auto mb-8 text-left"
           >
             &ldquo;For great heights of prosperity of Kenyan nation and for the happiness, joy, and comfort of the Kenyan people, the demolition of corruption and the rejection of recycling corrupt politicians into leadership positions, should be a mandatory obligation.&rdquo;
-            <span className="block text-[#D4A017] font-semibold mt-2 not-italic">— Dr. Isaac Newton Kinity</span>
+            <span className="block text-[#1E3A8A] font-semibold mt-2 not-italic">— Dr. Isaac Newton Kinity</span>
           </motion.blockquote>
 
           {/* CTA Buttons */}
@@ -104,7 +104,7 @@ export default function HeroDualCarousel() {
             </Link>
             <Link
               href="/about/manifesto"
-              className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 bg-[#D4A017] text-[#0F172A] font-bold text-sm sm:text-base rounded-xl hover:bg-[#E6C200] transition-all duration-300 hover:-translate-y-1 shadow-lg"
+              className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 bg-[#1E3A8A] text-[#0F172A] font-bold text-sm sm:text-base rounded-xl hover:bg-[#3B82F6] transition-all duration-300 hover:-translate-y-1 shadow-lg"
             >
               <FaFlag className="w-4 h-4 sm:w-5 sm:h-5" />
               Our Manifesto

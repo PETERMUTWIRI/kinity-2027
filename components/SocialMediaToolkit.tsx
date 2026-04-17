@@ -72,7 +72,7 @@ export default function SocialMediaToolkit() {
       {/* Header */}
       <div className="bg-gradient-to-r from-[#1E3A8A] to-[#0F172A] p-6 md:p-8">
         <div className="flex items-center gap-3 mb-2">
-          <div className="w-10 h-10 rounded-xl bg-[#D4A017] flex items-center justify-center">
+          <div className="w-10 h-10 rounded-xl bg-[#1E3A8A] flex items-center justify-center">
             <FaShareAlt className="w-5 h-5 text-white" />
           </div>
           <h3 className="text-xl md:text-2xl font-bold text-white">Digital Warrior Toolkit</h3>
@@ -90,7 +90,7 @@ export default function SocialMediaToolkit() {
             onClick={() => setActiveTab(tab.id)}
             className={`flex-1 flex items-center justify-center gap-2 py-4 text-sm font-semibold transition-colors ${
               activeTab === tab.id
-                ? 'text-[#1E3A8A] border-b-2 border-[#D4A017] bg-slate-50'
+                ? 'text-[#1E3A8A] border-b-2 border-[#1E3A8A] bg-slate-50'
                 : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'
             }`}
           >
@@ -113,14 +113,14 @@ export default function SocialMediaToolkit() {
             {captions[activeTab].map((caption, index) => (
               <div
                 key={index}
-                className="relative group bg-slate-50 rounded-2xl p-5 border border-slate-200 hover:border-[#D4A017]/50 transition-colors"
+                className="relative group bg-slate-50 rounded-2xl p-5 border border-slate-200 hover:border-[#1E3A8A]/50 transition-colors"
               >
                 <p className="text-slate-700 text-sm leading-relaxed whitespace-pre-line pr-12">
                   {caption}
                 </p>
                 <button
                   onClick={() => handleCopy(caption, index)}
-                  className="absolute top-4 right-4 p-2 rounded-lg bg-white border border-slate-200 text-slate-500 hover:text-[#1E3A8A] hover:border-[#D4A017] transition-all"
+                  className="absolute top-4 right-4 p-2 rounded-lg bg-white border border-slate-200 text-slate-500 hover:text-[#1E3A8A] hover:border-[#1E3A8A] transition-all"
                   aria-label="Copy caption"
                 >
                   {copiedIndex === index ? (

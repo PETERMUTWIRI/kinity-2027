@@ -143,7 +143,7 @@ const DEPARTMENTS: DepartmentContact[] = [
     description: 'Press inquiries, interview requests, and media partnerships',
     email: CAMPAIGN_CONTACTS.media.email,
     phone: CAMPAIGN_CONTACTS.media.phone,
-    color: 'from-[#D4A017] to-[#4a1f66]',
+    color: 'from-[#1E3A8A] to-[#4a1f66]',
   },
   {
     icon: FaCalendarAlt,
@@ -151,14 +151,14 @@ const DEPARTMENTS: DepartmentContact[] = [
     description: 'Host an event, request a town hall, or rally coordination',
     email: CAMPAIGN_CONTACTS.events.email,
     phone: CAMPAIGN_CONTACTS.events.phone,
-    color: 'from-[#1E3A8A] to-[#D4A017]',
+    color: 'from-[#1E3A8A] to-[#1E3A8A]',
   },
   {
     icon: FaCommentDots,
     title: 'Policy & Issues',
     description: 'Share policy suggestions, report community issues, or policy questions',
     email: CAMPAIGN_CONTACTS.policy.email,
-    color: 'from-[#D4A017] to-[#1E3A8A]',
+    color: 'from-[#1E3A8A] to-[#1E3A8A]',
   },
   {
     icon: FaDonate,
@@ -173,7 +173,7 @@ const DEPARTMENTS: DepartmentContact[] = [
     title: 'Security & Safety',
     description: 'Security concerns, incident reports, and safety coordination',
     phone: CAMPAIGN_CONTACTS.emergency.phone,
-    color: 'from-[#DC2626] to-[#D4A017]',
+    color: 'from-[#DC2626] to-[#1E3A8A]',
     urgent: true,
   },
 ];
@@ -330,7 +330,7 @@ export default function ContactContent() {
   return (
     <div className="relative min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative pt-24 sm:pt-28 lg:pt-32 pb-16 lg:pb-20 bg-gradient-to-br from-[#1E3A8A] to-[#D4A017]">
+      <section className="relative pt-24 sm:pt-28 lg:pt-32 pb-16 lg:pb-20 bg-gradient-to-br from-[#1E3A8A] to-[#1E3A8A]">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full opacity-5" style={{backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}} />
           <div className="absolute top-1/4 -left-20 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
@@ -424,8 +424,8 @@ export default function ContactContent() {
                 description: 'For interview requests, press materials, and media inquiries.',
                 action: 'Contact Press',
                 href: `mailto:${CAMPAIGN_CONTACTS.media.email}`,
-                color: 'from-[#D4A017] to-[#4a1f66]',
-                iconBg: 'bg-[#D4A017]',
+                color: 'from-[#1E3A8A] to-[#4a1f66]',
+                iconBg: 'bg-[#1E3A8A]',
                 external: true,
               },
               {
@@ -434,8 +434,8 @@ export default function ContactContent() {
                 description: 'Connect with local coordinators for events and opportunities near you.',
                 action: 'Find Coordinator',
                 href: '#county-coordinators',
-                color: 'from-[#1E3A8A] to-[#D4A017]',
-                iconBg: 'bg-gradient-to-br from-[#1E3A8A] to-[#D4A017]',
+                color: 'from-[#1E3A8A] to-[#1E3A8A]',
+                iconBg: 'bg-gradient-to-br from-[#1E3A8A] to-[#1E3A8A]',
               },
               {
                 icon: FaShieldAlt,
@@ -557,7 +557,7 @@ export default function ContactContent() {
 
             {/* Map Placeholder / Visual */}
             <ScrollReveal delay={0.2}>
-              <div className="h-full min-h-[400px] bg-gradient-to-br from-[#1E3A8A]/5 to-[#D4A017]/5 rounded-2xl border-2 border-dashed border-slate-300 flex flex-col items-center justify-center p-8 text-center">
+              <div className="h-full min-h-[400px] bg-gradient-to-br from-[#1E3A8A]/5 to-[#1E3A8A]/5 rounded-2xl border-2 border-dashed border-slate-300 flex flex-col items-center justify-center p-8 text-center">
                 <div className="w-20 h-20 rounded-full bg-[#1E3A8A]/10 flex items-center justify-center mb-4">
                   <FaMapMarkedAlt className="w-10 h-10 text-[#1E3A8A]" />
                 </div>
@@ -690,7 +690,7 @@ export default function ContactContent() {
                   className="mt-6 p-6 bg-white rounded-2xl border border-slate-200 shadow-lg"
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#1E3A8A] to-[#D4A017] flex items-center justify-center">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#1E3A8A] to-[#1E3A8A] flex items-center justify-center">
                       <FaUserTie className="w-7 h-7 text-white" />
                     </div>
                     <div>
@@ -702,7 +702,7 @@ export default function ContactContent() {
                   <div className="space-y-3">
                     <div className="flex items-center gap-3 text-slate-600">
                       <div className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center">
-                        <FaUsers className="w-5 h-5 text-[#D4A017]" />
+                        <FaUsers className="w-5 h-5 text-[#1E3A8A]" />
                       </div>
                       <span>Coordinator contact coming soon</span>
                     </div>
@@ -922,7 +922,7 @@ export default function ContactContent() {
       </section>
 
       {/* Social Media Section */}
-      <section className="py-16 lg:py-20 bg-gradient-to-br from-[#1E3A8A] to-[#D4A017] px-4 sm:px-6">
+      <section className="py-16 lg:py-20 bg-gradient-to-br from-[#1E3A8A] to-[#1E3A8A] px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
             <h2 className="font-slogan text-3xl md:text-4xl text-white mb-4">

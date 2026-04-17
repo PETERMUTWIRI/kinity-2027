@@ -40,7 +40,7 @@ export default function HeroCanvas() {
       const gradient = ctx.createLinearGradient(-100, -120, 100, 120);
       gradient.addColorStop(0, 'rgba(30, 58, 138, 0.12)');
       gradient.addColorStop(0.5, 'rgba(15, 23, 42, 0.08)');
-      gradient.addColorStop(1, 'rgba(212, 160, 23, 0.06)');
+      gradient.addColorStop(1, 'rgba(30, 58, 138, 0.06)');
 
       // Main shield shape
       ctx.beginPath();
@@ -72,7 +72,7 @@ export default function HeroCanvas() {
       ctx.beginPath();
       ctx.moveTo(0, -100);
       ctx.lineTo(0, 120);
-      ctx.strokeStyle = 'rgba(212, 160, 23, 0.25)';
+      ctx.strokeStyle = 'rgba(30, 58, 138, 0.25)';
       ctx.lineWidth = 4;
       ctx.stroke();
 
@@ -117,7 +117,7 @@ export default function HeroCanvas() {
       ctx.lineTo(8, -100);
       ctx.moveTo(-6, -80);
       ctx.lineTo(6, -80);
-      ctx.strokeStyle = 'rgba(212, 160, 23, 0.35)';
+      ctx.strokeStyle = 'rgba(30, 58, 138, 0.35)';
       ctx.lineWidth = 2;
       ctx.stroke();
 
@@ -146,7 +146,7 @@ export default function HeroCanvas() {
         const gradient = ctx.createLinearGradient(0, baseY - 50, canvas.width, baseY + 50);
         gradient.addColorStop(0, 'rgba(30, 58, 138, 0)');
         gradient.addColorStop(0.3, `rgba(30, 58, 138, ${0.04 + i * 0.01})`);
-        gradient.addColorStop(0.7, `rgba(212, 160, 23, ${0.03 + i * 0.01})`);
+        gradient.addColorStop(0.7, `rgba(30, 58, 138, ${0.03 + i * 0.01})`);
         gradient.addColorStop(1, 'rgba(30, 58, 138, 0)');
         
         ctx.strokeStyle = gradient;

@@ -148,7 +148,7 @@ async function ArticlesCarousel({ currentId, category }: { currentId: number; ca
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-[#1E3A8A] to-[#D4A017] flex items-center justify-center">
+                  <div className="w-full h-full bg-gradient-to-br from-[#1E3A8A] to-[#1E3A8A] flex items-center justify-center">
                     <span className="text-white font-bold text-lg">{article.category}</span>
                   </div>
                 )}
@@ -287,7 +287,7 @@ export default async function NewsArticlePage({ params }: Props) {
             {/* Author Bar */}
             <div className="flex flex-wrap items-center gap-6 py-6 border-y border-slate-100 mb-10">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#1E3A8A] to-[#D4A017] flex items-center justify-center text-white font-bold text-lg">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#1E3A8A] to-[#1E3A8A] flex items-center justify-center text-white font-bold text-lg">
                   {(post.author || 'A').charAt(0)}
                 </div>
                 <div>
