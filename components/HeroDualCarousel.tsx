@@ -18,7 +18,7 @@ export default function HeroDualCarousel() {
 
       <div className="relative z-10 flex flex-col lg:flex-row min-h-screen">
         {/* LEFT SIDE — Content */}
-        <div className="w-full lg:w-[55%] flex items-center px-4 sm:px-6 lg:px-12 xl:px-20 pt-24 pb-12 lg:py-0">
+        <div className="w-full lg:w-[55%] flex items-center px-4 sm:px-6 lg:px-12 xl:px-20 pt-24 pb-12 lg:pt-36 lg:pb-12">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
