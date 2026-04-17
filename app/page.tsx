@@ -175,14 +175,19 @@ export default function HomePage() {
   const [hasMoreImages, setHasMoreImages] = useState(true);
   const [totalImages, setTotalImages] = useState(0);
 
-  // Fetch latest events
+  // Fetch latest events — filter out past events, show only upcoming
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const res = await fetch('/api/events?limit=3');
+        const res = await fetch('/api/events?limit=10');
         const data = await res.json();
         const events = Array.isArray(data) ? data : [];
-        setLatestEvents(events.slice(0, 3));
+        const now = new Date();
+        const upcoming = events
+          .filter((event: Event) => new Date(event.startDate) >= now)
+          .sort((a: Event, b: Event) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime())
+          .slice(0, 3);
+        setLatestEvents(upcoming);
       } catch (err) {
         console.error('Error fetching events:', err);
       }
