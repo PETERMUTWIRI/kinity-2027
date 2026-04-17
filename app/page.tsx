@@ -1103,50 +1103,33 @@ export default function HomePage() {
       <SocialProof />
 
       {/* ==========================================
-          CALL TO ACTION SECTION - Premium Dark with Video Background
+          CALL TO ACTION SECTION - Premium Dark CTA
           ========================================== */}
-      <section className="py-16 md:py-24 lg:py-32 bg-[#0F172A] text-white relative overflow-hidden min-h-[600px]">
-        {/* YouTube Video Background */}
-        <div className="absolute inset-0 z-0">
-          <iframe
-            src="https://www.youtube.com/embed/BqPibiAzqIk?autoplay=1&mute=1&loop=1&playlist=BqPibiAzqIk&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
-            title="Campaign Background Video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            className="absolute w-[150%] h-[150%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-            style={{ pointerEvents: 'none' }}
-          />
-        </div>
-        
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-[#0F172A]/70 z-[1]" />
-        
+      <section className="py-16 md:py-24 lg:py-32 bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0F172A] text-white relative overflow-hidden">
         {/* Subtle pattern overlay */}
-        <div 
-          className="absolute inset-0 opacity-5 z-[2]"
+        <div
+          className="absolute inset-0 opacity-5"
           style={{
             backgroundImage: `radial-gradient(circle at 1px 1px, #1E3A8A 1px, transparent 0)`,
             backgroundSize: '50px 50px',
           }}
         />
-        
-        {/* Gold accent lines */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#1E3A8A] to-transparent z-10" />
-        
-        {/* Gradient overlays for depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1E3A8A]/30 via-transparent to-[#1E3A8A]/30 z-[2]" />
+
+        {/* Accent lines */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#1E3A8A] to-transparent" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <ScrollReveal>
               <span className="kicker-gold mb-4 block !text-white">Join Us</span>
-              
+
               <h2 className="heading-editorial !text-white mb-6">
                 Be Part of the <span className="heading-accent-gold !text-white">Movement</span>
               </h2>
               <div className="hr-white mx-auto mb-8" />
               <p className="text-xl text-white/70 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-                Change doesn&apos;t happen from the top down. It starts with dedicated citizens 
-                like you who believe in a better Kenya. Join thousands of supporters across 
+                Change doesn&apos;t happen from the top down. It starts with dedicated citizens
+                like you who believe in a better Kenya. Join thousands of supporters across
                 all 47 counties.
               </p>
 
