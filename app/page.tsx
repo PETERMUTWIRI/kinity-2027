@@ -158,6 +158,70 @@ const pillars = [
   },
 ];
 
+// Board of Directors summary data
+const boardMembers = [
+  {
+    id: 'chairperson',
+    name: 'Dr. Isaac Newton Kinity',
+    role: 'Party Leader & Chairperson',
+    initials: 'IK',
+    bio: 'Founder and visionary leader with over 20 years of public service experience.',
+  },
+  {
+    id: 'deputy-chair',
+    name: 'James Mwangi',
+    role: 'Deputy Chairperson',
+    initials: 'JM',
+    bio: 'Strategic advisor focused on grassroots mobilization and county coordination.',
+  },
+  {
+    id: 'secretary',
+    name: 'Grace Achieng',
+    role: 'Secretary General',
+    initials: 'GA',
+    bio: 'Governance expert ensuring transparent operations and policy implementation.',
+  },
+  {
+    id: 'treasurer',
+    name: 'Peter Ochieng',
+    role: 'Treasurer',
+    initials: 'PO',
+    bio: 'Financial steward overseeing campaign resources and fiscal accountability.',
+  },
+];
+
+// Staff summary data
+const staffMembers = [
+  {
+    id: 'campaign-manager',
+    name: 'Mary Wambui',
+    role: 'Campaign Manager',
+    initials: 'MW',
+    bio: 'Leading nationwide campaign logistics and event coordination across all 47 counties.',
+  },
+  {
+    id: 'communications',
+    name: 'David Kiprotich',
+    role: 'Communications Director',
+    initials: 'DK',
+    bio: 'Managing media relations, digital strategy, and public messaging.',
+  },
+  {
+    id: 'operations',
+    name: 'Lucy Njeri',
+    role: 'Operations Manager',
+    initials: 'LN',
+    bio: 'Ensuring smooth day-to-day running of party headquarters and field offices.',
+  },
+  {
+    id: 'volunteer-coord',
+    name: 'John Kamau',
+    role: 'Volunteer Coordinator',
+    initials: 'JK',
+    bio: 'Mobilizing and training thousands of volunteers for campaign activities.',
+  },
+];
+
 // Fallback data
 const upcomingEvents: any[] = [];
 
@@ -544,6 +608,102 @@ export default function HomePage() {
                 </Link>
               </div>
             </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ==========================================
+          BOARD OF DIRECTORS SUMMARY
+          ========================================== */}
+      <section className="py-12 md:py-16 lg:py-20 bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="kicker-pill mb-4">
+                Governance
+              </span>
+              <h2 className="heading-editorial mb-4">
+                Board of <span className="heading-accent-gold">Directors</span>
+              </h2>
+              <div className="hr-gold-wide mx-auto mb-4" />
+              <p className="hero-subtitle max-w-2xl mx-auto">
+                Experienced leaders guiding the party&apos;s strategic direction with integrity, transparency, and vision.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {boardMembers.map((member, index) => (
+              <ScrollReveal key={member.id} delay={index * 0.1}>
+                <div className="h-full bg-white rounded-2xl p-6 shadow-md border border-slate-100 hover:shadow-xl hover:border-[#1E3A8A]/30 transition-all duration-300 text-center group">
+                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#1E3A8A] to-[#3B82F6] flex items-center justify-center text-white text-xl font-bold shadow-lg group-hover:scale-105 transition-transform duration-300">
+                    {member.initials}
+                  </div>
+                  <h3 className="card-title-blue text-lg mb-1">{member.name}</h3>
+                  <p className="text-sm text-[#1E3A8A] font-semibold mb-3 uppercase tracking-wide">{member.role}</p>
+                  <div className="w-10 h-0.5 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] rounded-full mx-auto mb-3 opacity-60" />
+                  <p className="body-editorial text-sm">{member.bio}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              href="/about/leadership"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#1E3A8A] text-white font-semibold hover:bg-[#0F172A] transition-colors"
+            >
+              View Full Leadership
+              <FaArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ==========================================
+          STAFF SUMMARY
+          ========================================== */}
+      <section className="py-12 md:py-16 lg:py-20 bg-slate-50 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="kicker-pill mb-4">
+                The Team
+              </span>
+              <h2 className="heading-editorial mb-4">
+                Campaign <span className="heading-accent-gold">Staff</span>
+              </h2>
+              <div className="hr-gold-wide mx-auto mb-4" />
+              <p className="hero-subtitle max-w-2xl mx-auto">
+                Dedicated professionals working tirelessly to deliver change and serve the people of Kenya.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {staffMembers.map((member, index) => (
+              <ScrollReveal key={member.id} delay={index * 0.1}>
+                <div className="h-full bg-white rounded-2xl p-6 shadow-md border border-slate-100 hover:shadow-xl hover:border-[#1E3A8A]/30 transition-all duration-300 text-center group">
+                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#0F172A] to-[#1E3A8A] flex items-center justify-center text-white text-xl font-bold shadow-lg group-hover:scale-105 transition-transform duration-300">
+                    {member.initials}
+                  </div>
+                  <h3 className="card-title-blue text-lg mb-1">{member.name}</h3>
+                  <p className="text-sm text-[#1E3A8A] font-semibold mb-3 uppercase tracking-wide">{member.role}</p>
+                  <div className="w-10 h-0.5 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] rounded-full mx-auto mb-3 opacity-60" />
+                  <p className="body-editorial text-sm">{member.bio}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              href="/join-us"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#1E3A8A] text-white font-semibold hover:bg-[#0F172A] transition-colors"
+            >
+              Join the Team
+              <FaArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>
