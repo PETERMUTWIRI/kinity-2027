@@ -158,37 +158,7 @@ const pillars = [
   },
 ];
 
-// Board of Directors summary data
-const boardMembers = [
-  {
-    id: 'chairperson',
-    name: 'Dr. Isaac Newton Kinity',
-    role: 'Party Leader & Chairperson',
-    initials: 'IK',
-    bio: 'Founder and visionary leader with over 20 years of public service experience.',
-  },
-  {
-    id: 'deputy-chair',
-    name: 'James Mwangi',
-    role: 'Deputy Chairperson',
-    initials: 'JM',
-    bio: 'Strategic advisor focused on grassroots mobilization and county coordination.',
-  },
-  {
-    id: 'secretary',
-    name: 'Grace Achieng',
-    role: 'Secretary General',
-    initials: 'GA',
-    bio: 'Governance expert ensuring transparent operations and policy implementation.',
-  },
-  {
-    id: 'treasurer',
-    name: 'Peter Ochieng',
-    role: 'Treasurer',
-    initials: 'PO',
-    bio: 'Financial steward overseeing campaign resources and fiscal accountability.',
-  },
-];
+import { boardMembers } from '@/lib/board';
 
 // Staff summary data
 const staffMembers = [
@@ -635,15 +605,28 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {boardMembers.map((member, index) => (
               <ScrollReveal key={member.id} delay={index * 0.1}>
-                <div className="h-full bg-white rounded-2xl p-6 shadow-md border border-slate-100 hover:shadow-xl hover:border-[#1E3A8A]/30 transition-all duration-300 text-center group">
-                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#1E3A8A] to-[#3B82F6] flex items-center justify-center text-white text-xl font-bold shadow-lg group-hover:scale-105 transition-transform duration-300">
-                    {member.initials}
+                <Link href={`/about/leadership/${member.slug}`} className="group block h-full">
+                  <div className="h-full bg-white rounded-2xl p-6 shadow-md border border-slate-100 hover:shadow-xl hover:border-[#1E3A8A]/30 transition-all duration-300 text-center group">
+                    {member.image ? (
+                      <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden shadow-lg group-hover:scale-105 transition-transform duration-300 relative">
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    ) : (
+                      <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#1E3A8A] to-[#3B82F6] flex items-center justify-center text-white text-xl font-bold shadow-lg group-hover:scale-105 transition-transform duration-300">
+                        {member.initials}
+                      </div>
+                    )}
+                    <h3 className="card-title-blue text-lg mb-1">{member.name}</h3>
+                    <p className="text-sm text-[#1E3A8A] font-semibold mb-3 uppercase tracking-wide">{member.role}</p>
+                    <div className="w-10 h-0.5 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] rounded-full mx-auto mb-3 opacity-60" />
+                    <p className="body-editorial text-sm">{member.bio}</p>
                   </div>
-                  <h3 className="card-title-blue text-lg mb-1">{member.name}</h3>
-                  <p className="text-sm text-[#1E3A8A] font-semibold mb-3 uppercase tracking-wide">{member.role}</p>
-                  <div className="w-10 h-0.5 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] rounded-full mx-auto mb-3 opacity-60" />
-                  <p className="body-editorial text-sm">{member.bio}</p>
-                </div>
+                </Link>
               </ScrollReveal>
             ))}
           </div>
