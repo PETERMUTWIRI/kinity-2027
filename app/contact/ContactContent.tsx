@@ -321,7 +321,7 @@ export default function ContactContent() {
   };
 
   const socialLinks = [
-    { icon: FaFacebook, href: 'https://facebook.com/NationalVisionParty', label: 'Facebook', color: 'hover:bg-blue-600', followers: '50K+' },
+    { icon: FaFacebook, href: 'https://facebook.com/Ukombozi', label: 'Facebook', color: 'hover:bg-blue-600', followers: '50K+' },
     { icon: FaTwitter, href: 'https://twitter.com/NVP_Kenya', label: 'Twitter', color: 'hover:bg-sky-500', followers: '35K+' },
     { icon: FaInstagram, href: 'https://instagram.com/NationalVisionParty', label: 'Instagram', color: 'hover:bg-pink-600', followers: '45K+' },
     { icon: FaYoutube, href: 'https://youtube.com/@NationalVisionParty', label: 'YouTube', color: 'hover:bg-red-600', followers: '20K+' },

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Videos | Dr. Isaac Newton Kinity',
     description: 'Watch campaign videos, speeches, rallies, and interviews from the 2027 presidential campaign.',
     type: 'video.other',
-    url: 'https://www.nationalvisionparty.com/videos',
+    url: 'https://www.ukombozi.com/videos',
     images: [
       {
         url: '/isaac_kinity-logo.jpeg',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: 'Watch campaign videos, speeches, and rallies from the 2027 presidential campaign.',
   },
   alternates: {
-    canonical: 'https://www.nationalvisionparty.com/videos',
+    canonical: 'https://www.ukombozi.com/videos',
   },
 };
 

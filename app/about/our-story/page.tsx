@@ -3,11 +3,11 @@ import OurStoryContent from './OurStoryContent';
 import { BreadcrumbSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'The NVP Story | National Vision Party',
-  description: 'The National Vision Party was born from decades of struggle—from a young union activist\'s defiance to a nationwide movement ready to reclaim Kenya\'s future.',
-  keywords: ['National Vision Party', 'NVP history', 'Kenya politics', 'Moi era', 'activism', 'movement', 'party origin'],
+  title: 'The Ukombozi Story | UKOMBOZI party',
+  description: 'The UKOMBOZI party was born from decades of struggle—from a young union activist\'s defiance to a nationwide movement ready to reclaim Kenya\'s future.',
+  keywords: ['UKOMBOZI party', 'Ukombozi history', 'Kenya politics', 'Moi era', 'activism', 'movement', 'party origin'],
   openGraph: {
-    title: 'The NVP Story | National Vision Party',
+    title: 'The Ukombozi Story | UKOMBOZI party',
     description: 'Born from decades of sacrifice and struggle, a movement by the people, for the people.',
     images: [{ url: '/images/president.jpeg', width: 1200, height: 630 }],
   },

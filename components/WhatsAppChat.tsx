@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 // TODO: Replace with actual WhatsApp number when available
 const WHATSAPP_NUMBER = '12036759354'; // Campaign HQ WhatsApp
-const WHATSAPP_MESSAGE = 'Hello! I would like to learn more about the National Vision Party and how I can support Dr. Kinity\'s campaign for 2027.';
+const WHATSAPP_MESSAGE = 'Hello! I would like to learn more about UKOMBOZI party and how I can support Dr. Kinity\'s campaign for 2027.';
 
 export default function WhatsAppChat() {
   const [isOpen, setIsOpen] = useState(false);
@@ -151,7 +151,7 @@ export default function WhatsAppChat() {
                   </div>
                   <div className="bg-white rounded-2xl rounded-tl-sm p-3 shadow-sm max-w-[80%]">
                     <p className="text-sm text-slate-700">
-                      Hello! Welcome to National Vision Party. How can we help you today? 🇰🇪
+                      Hello! Welcome to UKOMBOZI party. How can we help you today? 🇰🇪
                     </p>
                     <span className="text-[10px] text-slate-400 mt-1 block">
                       {new Date().toLocaleTimeString('en-KE', { hour: '2-digit', minute: '2-digit' })}

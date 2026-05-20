@@ -34,7 +34,7 @@ import {
 import NewsTicker from './NewsTicker';
 
 // ==========================================
-// National Vision Party - PREMIUM NAVIGATION
+// UKOMBOZI Party - PREMIUM NAVIGATION
 // Authoritative, presidential design system
 // ==========================================
 
@@ -80,11 +80,11 @@ const navItems: NavItem[] = [
 ];
 
 const socialLinks = [
-  { icon: FaFacebook, href: 'https://facebook.com/NationalVisionParty', label: 'Facebook', color: '#1877F2' },
-  { icon: FaTwitter, href: 'https://twitter.com/NVP_Kenya', label: 'Twitter', color: '#1DA1F2' },
-  { icon: FaInstagram, href: 'https://instagram.com/NationalVisionParty', label: 'Instagram', color: '#E4405F' },
-  { icon: FaYoutube, href: 'https://youtube.com/@NationalVisionParty', label: 'YouTube', color: '#FF0000' },
-  { icon: FaTiktok, href: 'https://tiktok.com/@NationalVisionParty', label: 'TikTok', color: '#000000' },
+  { icon: FaFacebook, href: 'https://facebook.com/Ukombozi', label: 'Facebook', color: '#1877F2' },
+  { icon: FaTwitter, href: 'https://twitter.com/Ukombozi', label: 'Twitter', color: '#1DA1F2' },
+  { icon: FaInstagram, href: 'https://instagram.com/Ukombozi', label: 'Instagram', color: '#E4405F' },
+  { icon: FaYoutube, href: 'https://youtube.com/@Ukombozi', label: 'YouTube', color: '#FF0000' },
+  { icon: FaTiktok, href: 'https://tiktok.com/@Ukombozi', label: 'TikTok', color: '#000000' },
 ];
 
 // Search suggestions
@@ -242,7 +242,7 @@ export default function Navbar() {
                 >
                   <Image
                     src="/nvp-party-logo.jpeg"
-                    alt="National Vision Party Logo"
+                    alt="UKOMBOZI party Logo"
                     fill
                     className="object-cover"
                     priority
@@ -253,7 +253,7 @@ export default function Navbar() {
                     className="font-headline text-[11px] xs:text-sm sm:text-base lg:text-xl leading-tight text-[#1E3A8A] group-hover:text-[#0F172A] transition-colors duration-300 whitespace-nowrap tracking-wide"
                     style={{ fontWeight: 800 }}
                   >
-                    National Vision Party
+                    UKOMBOZI party
                   </motion.p>
                   <p className="text-[9px] xs:text-xs text-slate-500 hidden sm:block font-medium tracking-wider uppercase">
                     <span className="text-[#1E3A8A]">Kenya&apos;s Hope</span> 2027
@@ -488,13 +488,13 @@ export default function Navbar() {
                     <div className="relative w-12 h-12 rounded-xl overflow-hidden shadow-md">
                       <Image
                         src="/nvp-party-logo.jpeg"
-                        alt="National Vision Party Logo"
+                        alt="UKOMBOZI party Logo"
                         fill
                         className="object-cover"
                       />
                     </div>
                     <div>
-                      <p className="font-slogan text-lg text-[#1E3A8A]">National Vision Party</p>
+                      <p className="font-slogan text-lg text-[#1E3A8A]">UKOMBOZI party</p>
                       <p className="text-xs text-[#1E3A8A]">Kenya&apos;s Hope 2027</p>
                     </div>
                   </Link>
@@ -607,9 +607,9 @@ export default function Navbar() {
                     <FaPhone className="w-4 h-4 text-[#1E3A8A]" />
                     +1 (203) 675-9354
                   </a>
-                  <a href="mailto:info@nationalvisionparty.com" className="flex items-center gap-3 text-sm text-slate-600">
+                  <a href="mailto:info@ukombozi.com" className="flex items-center gap-3 text-sm text-slate-600">
                     <FaEnvelope className="w-4 h-4 text-[#1E3A8A]" />
-                    info@nationalvisionparty.com
+                    info@ukombozi.com
                   </a>
                   <div className="flex items-center gap-3 text-sm text-slate-600">
                     <FaMapMarkerAlt className="w-4 h-4 text-[#1E3A8A]" />
@@ -646,7 +646,7 @@ export default function Navbar() {
                   Committed to the Service of Kenyans
                 </p>
                 <p className="text-center text-xs text-white/60 mt-1">
-                  © 2025 National Vision Party
+                  © 2025 UKOMBOZI party
                 </p>
               </div>
             </motion.div>

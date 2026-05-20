@@ -561,7 +561,7 @@ export default function SupportPage() {
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between">
                     <span className="text-slate-500">Account Name:</span>
-                    <span className="text-[#1E3A8A] font-mono">National Vision Party</span>
+                    <span className="text-[#1E3A8A] font-mono">UKOMBOZI party</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-500">Bank:</span>
@@ -577,7 +577,7 @@ export default function SupportPage() {
                   </div>
                 </div>
                 <p className="text-xs text-slate-400 mt-4">
-                  For international transfers. Email receipt to donations@nationalvisionparty.com
+                  For international transfers. Email receipt to donations@ukombozi.com
                 </p>
               </div>
             </ScrollReveal>

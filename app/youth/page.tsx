@@ -16,7 +16,7 @@ import {
 } from 'react-icons/fa';
 
 export const metadata: Metadata = {
-  title: 'GenZ & Youth | National Vision Party',
+  title: 'GenZ & Youth | UKOMBOZI party',
   description: 'Dr. Kinity honors the fallen heroes of 2024. Your voice matters. Your future is not for sale.',
   openGraph: {
     title: 'To GenZ: Your Sacrifice Will Not Be in Vain',
@@ -39,7 +39,7 @@ const youthPriorities = [
   {
     icon: FaFistRaised,
     title: 'Zero Corruption',
-    description: 'The old guard stole your future. The National Vision Party will recover what is yours—and jail the thieves.',
+    description: 'The old guard stole your future. The UKOMBOZI party will recover what is yours—and jail the thieves.',
   },
   {
     icon: FaUsers,
@@ -55,12 +55,12 @@ They called us "keyboard warriors." Then they shot us in the streets.
 
 June 2024. We stood up. Some never came home.
 
-The National Vision Party has made a sacred pledge:
+The UKOMBOZI party has made a sacred pledge:
 ✅ Build a national monument for our fallen brothers & sisters
 ✅ Compensate every family that lost a loved one
 ✅ Dismantle the corruption that made them kill us
 
-"I will not be a president who forgets the blood of the youth. I will be a president who honors it." — Dr. Isaac Newton Kinity, National Vision Party Presidential Candidate
+"I will not be a president who forgets the blood of the youth. I will be a president who honors it." — Dr. Isaac Newton Kinity, UKOMBOZI party Presidential Candidate
 
 This is not about politics. This is about justice.
 
@@ -174,7 +174,7 @@ export default function YouthPage() {
                 </div>
                 <div className="text-center md:text-left">
                   <h2 className="text-white font-bold text-2xl mb-2">Dr. Isaac Newton Kinity</h2>
-                  <p className="text-white/70">Presidential Candidate, National Vision Party</p>
+                  <p className="text-white/70">Presidential Candidate, UKOMBOZI party</p>
                   <div className="flex items-center gap-2 text-white mt-2">
                     <FaFistRaised className="w-4 h-4" />
                     <span className="text-sm font-semibold">Solidarity with GenZ</span>
@@ -309,7 +309,7 @@ export default function YouthPage() {
                   </p>
                   
                   <p className="text-white/80 text-lg mb-6 leading-relaxed">
-                    <span className="text-white font-semibold">Campaign money is not a barrier.</span> Courage is. The National Vision Party stands ready to back young leaders who put Kenya first. Whether you are Gen Z or a young professional, you are not just included—you are <span className="font-semibold text-white">essential</span> to the future we are building.
+                    <span className="text-white font-semibold">Campaign money is not a barrier.</span> Courage is. The UKOMBOZI party stands ready to back young leaders who put Kenya first. Whether you are Gen Z or a young professional, you are not just included—you are <span className="font-semibold text-white">essential</span> to the future we are building.
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4">

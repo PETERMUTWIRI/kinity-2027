@@ -7,7 +7,7 @@ import BackToTop from '@/components/BackToTop';
 import ScrollToTop from '@/components/ScrollToTop';
 
 // ==========================================
-// NATIONAL VISION PARTY - PRESIDENTIAL CAMPAIGN
+// UKOMBOZI party - PRESIDENTIAL CAMPAIGN
 // Root Layout with SEO Optimization
 // ==========================================
 
@@ -41,21 +41,21 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   // Core title template - Shows in browser tab with favicon
   title: {
-    default: "National Vision Party",
-    template: "%s | National Vision Party",
+    default: "UKOMBOZI party",
+    template: "%s | UKOMBOZI party",
   },
   
   // Application name for installed PWA
-  applicationName: "National Vision Party",
+  applicationName: "UKOMBOZI party",
   
   // Primary description
-  description: "National Vision Party - Kenya's Hope 2027. Empowering communities and transforming lives through service and dedication.",
+  description: "UKOMBOZI party - Kenya's Hope 2027. Empowering communities and transforming lives through service and dedication.",
   
   // Keywords for search engines
   keywords: [
     'Isaac Newton Kinity',
     'Dr Kinity',
-    'National Vision Party',
+    'UKOMBOZI party',
     'Kenya President 2027',
     'Kenya\'s Hope',
     'Kenyan Politics',
@@ -69,9 +69,9 @@ export const metadata: Metadata = {
   ],
   
   // Authors and ownership
-  authors: [{ name: "National Vision Party" }],
-  creator: "National Vision Party",
-  publisher: "National Vision Party",
+  authors: [{ name: "UKOMBOZI party" }],
+  creator: "UKOMBOZI party",
+  publisher: "UKOMBOZI party",
   
   // Format detection
   formatDetection: {

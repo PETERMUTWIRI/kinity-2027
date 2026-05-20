@@ -36,7 +36,7 @@ export default function HeroDualCarousel() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#1E3A8A] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#1E3A8A]"></span>
               </span>
-              NATIONAL VISION PARTY
+              UKOMBOZI PARTY
             </motion.div>
 
             {/* Main Title */}

@@ -3,8 +3,8 @@ import CandidateContent from './CandidateContent';
 import { BreadcrumbSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'Presidential Candidate | National Vision Party',
-  description: 'Meet Dr. Isaac Newton Kinity, flagbearer of the National Vision Party, and discover the four pillars of his leadership: Integrity, Experience, Vision, and Commitment forged over 40+ years of sacrifice.',
+  title: 'Presidential Candidate | UKOMBOZI party',
+  description: 'Meet Dr. Isaac Newton Kinity, flagbearer of the UKOMBOZI party, and discover the four pillars of his leadership: Integrity, Experience, Vision, and Commitment forged over 40+ years of sacrifice.',
   keywords: ['Isaac Newton Kinity', 'presidential candidate', 'NVP', 'leadership', 'integrity', 'experience', 'vision', 'commitment'],
   openGraph: {
     title: 'Presidential Candidate | Dr. Isaac Newton Kinity',

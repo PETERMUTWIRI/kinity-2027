@@ -17,7 +17,7 @@ Dr. Isaac Newton Kinity has pledged to dismantle corruption within 2 years—or 
 
 This is not politics. This is a movement for our children's future.
 
-🌐 https://www.nationalvisionparty.com
+🌐 https://www.ukombozi.com
 📱 WhatsApp: +1 (203) 675-9354
 
 #KenyasHope2027`,
@@ -28,24 +28,24 @@ The same politicians who have recycled through government for decades have broug
 
 Dr. Kinity is different. He survived poisoning and assassination attempts for standing with Kenyans.
 
-Join the movement: https://www.nationalvisionparty.com`,
+Join the movement: https://www.ukombozi.com`,
 
     `💚💛❤️ *47 Counties. One Dream.*
 
-The National Vision Party is building a Kenya where every citizen thrives—not just the politically connected.
+The UKOMBOZI party is building a Kenya where every citizen thrives—not just the politically connected.
 
 Dr. Kinity is in the USA, but his heart is with Kenya. Follow his latest messages and virtual town halls.
 
-👉 https://www.nationalvisionparty.com/videos`,
+👉 https://www.ukombozi.com/videos`,
   ],
   twitter: [
-    `🇰🇪 Kenya's Hope 2027. Dr. Isaac Newton Kinity: "Eliminate corruption in 2 years or resign." That's accountability. That's leadership. Join the movement → https://www.nationalvisionparty.com #KenyasHope2027`,
-    `The old guard recycled themselves for decades. Dr. Kinity survived poisoning for speaking truth to power. Now he's running for President. This is our moment. 🗳️ https://www.nationalvisionparty.com`,
-    `Economic transformation. Zero corruption. Universal healthcare. Education revolution. These aren't slogans—they're promises. Dr. Kinity's Vision 2027 → https://www.nationalvisionparty.com/about/vision-2027`,
+    `🇰🇪 Kenya's Hope 2027. Dr. Isaac Newton Kinity: "Eliminate corruption in 2 years or resign." That's accountability. That's leadership. Join the movement → https://www.ukombozi.com #KenyasHope2027`,
+    `The old guard recycled themselves for decades. Dr. Kinity survived poisoning for speaking truth to power. Now he's running for President. This is our moment. 🗳️ https://www.ukombozi.com`,
+    `Economic transformation. Zero corruption. Universal healthcare. Education revolution. These aren't slogans—they're promises. Dr. Kinity's Vision 2027 → https://www.ukombozi.com/about/vision-2027`,
   ],
   facebook: [
-    `🇰🇪 Kenya's Hope 2027 🇰🇪\n\nI believe in a Kenya where corruption is history, where our youth have jobs, where healthcare is a right, and where education is world-class.\n\nDr. Isaac Newton Kinity has dedicated 40+ years to this fight. Now he needs our support.\n\nJoin the National Vision Party movement today:\n🌐 https://www.nationalvisionparty.com\n📱 WhatsApp: +1 (203) 675-9354\n\n#KenyasHope2027 #DrKinity2027`,
-    `The difference between Dr. Kinity and career politicians?\n\nHe has already sacrificed his health and safety for Kenya. He has pledged to resign if he fails to eliminate corruption in 2 years.\n\nThat is the kind of servant leadership Kenya needs.\n\nLearn more: https://www.nationalvisionparty.com`,
+    `🇰🇪 Kenya's Hope 2027 🇰🇪\n\nI believe in a Kenya where corruption is history, where our youth have jobs, where healthcare is a right, and where education is world-class.\n\nDr. Isaac Newton Kinity has dedicated 40+ years to this fight. Now he needs our support.\n\nJoin the UKOMBOZI party movement today:\n🌐 https://www.ukombozi.com\n📱 WhatsApp: +1 (203) 675-9354\n\n#KenyasHope2027 #DrKinity2027`,
+    `The difference between Dr. Kinity and career politicians?\n\nHe has already sacrificed his health and safety for Kenya. He has pledged to resign if he fails to eliminate corruption in 2 years.\n\nThat is the kind of servant leadership Kenya needs.\n\nLearn more: https://www.ukombozi.com`,
   ],
 };
 

@@ -17,7 +17,7 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: 'https://www.nationalvisionparty.com/sitemap.xml',
-    host: 'https://www.nationalvisionparty.com',
+    sitemap: 'https://www.ukombozi.com/sitemap.xml',
+    host: 'https://www.ukombozi.com',
   };
 }

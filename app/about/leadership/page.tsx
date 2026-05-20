@@ -3,11 +3,11 @@ import LeadershipContent from './LeadershipContent';
 import { BreadcrumbSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'Leadership | National Vision Party',
-  description: 'Meet the leadership of the National Vision Party—a movement of servant-leaders committed to restoring Kenya\'s dignity through accountable, people-centered governance.',
-  keywords: ['National Vision Party', 'leadership', 'party structure', 'servant leadership', 'Kenya', 'NVP'],
+  title: 'Leadership | UKOMBOZI party',
+  description: 'Meet the leadership of the UKOMBOZI party—a movement of servant-leaders committed to restoring Kenya\'s dignity through accountable, people-centered governance.',
+  keywords: ['UKOMBOZI party', 'leadership', 'party structure', 'servant leadership', 'Kenya', 'Ukombozi'],
   openGraph: {
-    title: 'Leadership | National Vision Party',
+    title: 'Leadership | UKOMBOZI party',
     description: 'A movement of servant-leaders committed to restoring Kenya\'s dignity.',
     images: [{ url: '/images/president.jpeg', width: 1200, height: 630 }],
   },

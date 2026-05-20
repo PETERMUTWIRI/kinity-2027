@@ -27,7 +27,7 @@ import {
 } from 'react-icons/fa';
 
 // ==========================================
-// NATIONAL VISION PARTY - PREMIUM FOOTER
+// UKOMBOZI party - PREMIUM FOOTER
 // Authoritative dark navy with gold accents
 // ==========================================
 
@@ -60,11 +60,11 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: FaFacebook, href: 'https://facebook.com/NationalVisionParty', label: 'Facebook', color: '#1877F2' },
-  { icon: FaTwitter, href: 'https://twitter.com/NVP_Kenya', label: 'Twitter', color: '#1DA1F2' },
-  { icon: FaInstagram, href: 'https://instagram.com/NationalVisionParty', label: 'Instagram', color: '#E4405F' },
-  { icon: FaYoutube, href: 'https://youtube.com/@NationalVisionParty', label: 'YouTube', color: '#FF0000' },
-  { icon: FaTiktok, href: 'https://tiktok.com/@NationalVisionParty', label: 'TikTok', color: '#000000' },
+  { icon: FaFacebook, href: 'https://facebook.com/Ukombozi', label: 'Facebook', color: '#1877F2' },
+  { icon: FaTwitter, href: 'https://twitter.com/Ukombozi', label: 'Twitter', color: '#1DA1F2' },
+  { icon: FaInstagram, href: 'https://instagram.com/Ukombozi', label: 'Instagram', color: '#E4405F' },
+  { icon: FaYoutube, href: 'https://youtube.com/@Ukombozi', label: 'YouTube', color: '#FF0000' },
+  { icon: FaTiktok, href: 'https://tiktok.com/@Ukombozi', label: 'TikTok', color: '#000000' },
 ];
 
 export default function Footer() {
@@ -141,14 +141,14 @@ export default function Footer() {
               >
                 <Image
                   src="/nvp-party-logo.jpeg"
-                  alt="National Vision Party"
+                  alt="UKOMBOZI party"
                   fill
                   className="object-cover"
                 />
               </motion.div>
               <div>
                 <span className="font-slogan text-2xl text-white group-hover:text-[#1E3A8A] transition-colors block">
-                  NATIONAL VISION PARTY
+                  UKOMBOZI party
                 </span>
                 <span className="text-sm text-[#1E3A8A]">Kenya&apos;s Hope 2027</span>
               </div>
@@ -161,11 +161,11 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="space-y-3">
               <a 
-                href="mailto:info@nationalvisionparty.com" 
+                href="mailto:info@ukombozi.com" 
                 className="flex items-center gap-3 text-white/60 hover:text-[#1E3A8A] transition-colors"
               >
                 <FaEnvelope className="w-5 h-5 text-[#1E3A8A]" />
-                info@nationalvisionparty.com
+                info@ukombozi.com
               </a>
               <a 
                 href="tel:+12036759354" 
@@ -340,7 +340,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-white/50 text-sm text-center md:text-left">
-              &copy; {currentYear} National Vision Party. All rights reserved.
+              &copy; {currentYear} UKOMBOZI party. All rights reserved.
             </p>
             <p className="text-white/40 text-sm flex items-center gap-2">
               Made with <FaHeart className="w-4 h-4 text-[#1E3A8A]" /> for Kenya

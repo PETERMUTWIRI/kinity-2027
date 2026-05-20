@@ -4,11 +4,11 @@ import { BreadcrumbSchema } from '@/components/SchemaMarkup';
 
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | National Vision Party',
-  description: 'Learn how the National Vision Party collects, uses, and protects your personal information. Our commitment to your privacy and data security.',
+  title: 'Privacy Policy | UKOMBOZI party',
+  description: 'Learn how the UKOMBOZI party collects, uses, and protects your personal information. Our commitment to your privacy and data security.',
   keywords: ['privacy policy', 'data protection', 'GDPR', 'personal information', 'cookies', 'political campaign'],
   alternates: {
-    canonical: 'https://www.nationalvisionparty.com/privacy',
+    canonical: 'https://www.ukombozi.com/privacy',
   },
   robots: {
     index: true,
@@ -43,7 +43,7 @@ export default function PrivacyPolicyPage() {
             <div className="prose prose-lg max-w-none text-brand-text/80">
               
               <p className="text-xl text-brand-text/70 mb-8">
-                The National Vision Party is committed to protecting your privacy. This Privacy Policy explains 
+                The UKOMBOZI party is committed to protecting your privacy. This Privacy Policy explains 
                 how we collect, use, and safeguard your personal information when you visit our 
                 website, make donations, sign up to volunteer, or register for events.
               </p>
@@ -142,7 +142,7 @@ export default function PrivacyPolicyPage() {
                 <li>Request a copy of your data in a portable format</li>
               </ul>
               <p className="mb-4">
-                To exercise these rights, please contact us at <a href="mailto:info@nationalvisionparty.com" className="text-brand-dark hover:underline">info@nationalvisionparty.com</a>.
+                To exercise these rights, please contact us at <a href="mailto:info@ukombozi.com" className="text-brand-dark hover:underline">info@ukombozi.com</a>.
               </p>
 
               <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">7. Data Retention</h2>
@@ -173,9 +173,9 @@ export default function PrivacyPolicyPage() {
                 practices, please contact us:
               </p>
               <div className="bg-white rounded-xl p-6 mt-4 shadow-sm">
-                <p className="mb-1"><strong>National Vision Party</strong></p>
-                <p className="mb-1">Email: <a href="mailto:info@nationalvisionparty.com" className="text-brand-dark hover:underline">info@nationalvisionparty.com</a></p>
-                <p>General Inquiries: <a href="mailto:info@nationalvisionparty.com" className="text-brand-dark hover:underline">info@nationalvisionparty.com</a></p>
+                <p className="mb-1"><strong>UKOMBOZI party</strong></p>
+                <p className="mb-1">Email: <a href="mailto:info@ukombozi.com" className="text-brand-dark hover:underline">info@ukombozi.com</a></p>
+                <p>General Inquiries: <a href="mailto:info@ukombozi.com" className="text-brand-dark hover:underline">info@ukombozi.com</a></p>
               </div>
 
             </div>

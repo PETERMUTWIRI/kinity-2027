@@ -15,8 +15,8 @@ import {
 } from 'react-icons/fa';
 
 export const metadata: Metadata = {
-  title: 'Diaspora | National Vision Party',
-  description: 'Kenyans abroad - your voice, your vote, your Kenya matters. Join the National Vision Party movement from anywhere in the world.',
+  title: 'Diaspora | UKOMBOZI party',
+  description: 'Kenyans abroad - your voice, your vote, your Kenya matters. Join the UKOMBOZI party movement from anywhere in the world.',
   openGraph: {
     title: 'Kenyans in Diaspora: The Future is in Your Hands',
     description: 'You left Kenya seeking opportunity. Now help us build the Kenya you always dreamed of.',
@@ -48,7 +48,7 @@ const waysToHelp = [
   },
   {
     title: 'Diaspora Champion',
-    description: 'Organize fellow Kenyans in your city. Host meetups, fundraise, and build the National Vision Party movement locally.',
+    description: 'Organize fellow Kenyans in your city. Host meetups, fundraise, and build the UKOMBOZI party movement locally.',
     icon: FaHandshake,
     action: 'Become Champion',
     link: 'https://wa.me/12036759354?text=I%20want%20to%20be%20a%20Diaspora%20Champion%20in%20[Your%20City]'
@@ -180,7 +180,7 @@ export default function DiasporaPage() {
               </div>
               <div>
                 <h3 className="font-bold text-[#0F172A] text-lg">A Message from Dr. Kinity</h3>
-                <p className="text-slate-500 text-sm">Presidential Candidate, National Vision Party</p>
+                <p className="text-slate-500 text-sm">Presidential Candidate, UKOMBOZI party</p>
               </div>
             </div>
             
@@ -300,7 +300,7 @@ export default function DiasporaPage() {
                 Get WhatsApp Alerts
               </a>
               <p className="text-white/50 text-sm text-center mt-4">
-                Or email: <a href="mailto:diaspora@nationalvisionparty.com" className="text-white hover:underline">diaspora@nationalvisionparty.com</a>
+                Or email: <a href="mailto:diaspora@ukombozi.com" className="text-white hover:underline">diaspora@ukombozi.com</a>
               </p>
             </div>
           </div>
@@ -341,7 +341,7 @@ export default function DiasporaPage() {
 
           <div className="mt-8 pt-8 border-t border-white/10">
             <p className="text-white/50 text-sm">
-              WhatsApp: <span className="text-[#1E3A8A]">+1 (203) 675-9354</span> | Email: diaspora@nationalvisionparty.com
+              WhatsApp: <span className="text-[#1E3A8A]">+1 (203) 675-9354</span> | Email: diaspora@ukombozi.com
             </p>
           </div>
         </div>

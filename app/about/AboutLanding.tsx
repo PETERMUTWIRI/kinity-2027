@@ -25,7 +25,7 @@ const sections = [
   {
     id: 'leadership',
     title: 'Leadership',
-    description: 'Meet the servant-leaders of the National Vision Party. Explore our party structure, organs, and the presidential candidate leading the charge for a better Kenya.',
+    description: 'Meet the servant-leaders of the UKOMBOZI party. Explore our party structure, organs, and the presidential candidate leading the charge for a better Kenya.',
     icon: FaUsers,
     href: '/about/leadership',
     color: '#1E3A8A',

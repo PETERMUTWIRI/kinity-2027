@@ -8,7 +8,7 @@ interface PostShareButtonsProps {
 }
 
 export default function PostShareButtons({ title, slug }: PostShareButtonsProps) {
-  const url = `https://www.nationalvisionparty.com/news-hub/${slug}`;
+  const url = `https://www.ukombozi.com/news-hub/${slug}`;
   
   return (
     <div className="flex items-center gap-2">

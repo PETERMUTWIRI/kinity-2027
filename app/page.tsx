@@ -27,7 +27,7 @@ import SocialProof from '@/components/SocialProof';
 import HeroDualCarousel from '@/components/HeroDualCarousel';
 
 // ==========================================
-// NATIONAL VISION PARTY - PREMIUM HOMEPAGE
+// UKOMBOZI party - PREMIUM HOMEPAGE
 // Kenya's Hope 2027 - Authoritative Design
 // ==========================================
 
@@ -664,7 +664,7 @@ export default function HomePage() {
 
               <ScrollReveal>
                 <a
-                  href={`https://wa.me/?text=${encodeURIComponent('Watch the latest message from the National Vision Party: https://www.nationalvisionparty.com/videos')}`}
+                  href={`https://wa.me/?text=${encodeURIComponent('Watch the latest message from the UKOMBOZI party: https://www.ukombozi.com/videos')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full text-center py-4 rounded-xl bg-[#1E3A8A] text-white font-bold hover:bg-[#1E40AF] transition-all duration-300 hover:shadow-lg hover:shadow-blue-900/30 hover:-translate-y-0.5"

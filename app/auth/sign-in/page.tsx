@@ -18,10 +18,10 @@ export default function SignInPage() {
           <div className="text-center mb-8">
             <Link href="/" className="inline-flex items-center gap-3">
               <div className="relative w-14 h-14 rounded-xl overflow-hidden shadow-lg ring-2 ring-[#1E3A8A]/30">
-                <Image src="/isaac_kinity-logo.jpeg" alt="National Vision Party" fill className="object-cover" />
+                <Image src="/isaac_kinity-logo.jpeg" alt="UKOMBOZI party" fill className="object-cover" />
               </div>
               <div className="text-left">
-                <p className="font-slogan text-xl text-[#DC2626]">National Vision Party</p>
+                <p className="font-slogan text-xl text-[#DC2626]">UKOMBOZI party</p>
                 <p className="text-xs text-slate-400">Admin Portal</p>
               </div>
             </Link>

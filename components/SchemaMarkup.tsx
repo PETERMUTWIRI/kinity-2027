@@ -15,7 +15,7 @@ export function BreadcrumbSchema({ items }: { items: BreadcrumbItem[] }) {
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: `${process.env.NEXT_PUBLIC_APP_URL || 'https://www.nationalvisionparty.com'}${item.path}`,
+      item: `${process.env.NEXT_PUBLIC_APP_URL || 'https://www.ukombozi.com'}${item.path}`,
     })),
   };
 
@@ -32,9 +32,9 @@ export function MusicGroupSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'National Vision Party',
+    name: 'UKOMBOZI party',
     description: 'Empowering communities through education, health, and sustainable development',
-    url: process.env.NEXT_PUBLIC_APP_URL || 'https://www.nationalvisionparty.com',
+    url: process.env.NEXT_PUBLIC_APP_URL || 'https://www.ukombozi.com',
   };
 
   return (
@@ -50,11 +50,11 @@ export function WebSiteSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'National Vision Party',
-    url: process.env.NEXT_PUBLIC_APP_URL || 'https://www.nationalvisionparty.com',
+    name: 'UKOMBOZI party',
+    url: process.env.NEXT_PUBLIC_APP_URL || 'https://www.ukombozi.com',
     potentialAction: {
       '@type': 'SearchAction',
-      target: `${process.env.NEXT_PUBLIC_APP_URL || 'https://www.nationalvisionparty.com'}/search?q={search_term_string}`,
+      target: `${process.env.NEXT_PUBLIC_APP_URL || 'https://www.ukombozi.com'}/search?q={search_term_string}`,
       'query-input': 'required name=search_term_string',
     },
   };

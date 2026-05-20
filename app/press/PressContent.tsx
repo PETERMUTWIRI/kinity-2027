@@ -12,7 +12,7 @@ const pressReleases = [
   },
   {
     date: 'February 2025',
-    title: 'National Vision Party Unveils Vision 2027 Manifesto',
+    title: 'UKOMBOZI party Unveils Vision 2027 Manifesto',
     excerpt: 'Comprehensive policy document outlines plans for economic transformation, zero corruption, universal healthcare, and education revolution.',
   },
 ];
@@ -39,7 +39,7 @@ const mediaResources = [
   {
     icon: FaDownload,
     title: 'Logo & Brand Assets',
-    description: 'Official NVP logos and campaign branding.',
+    description: 'Official UKOMBOZI logos and campaign branding.',
     link: '#',
   },
 ];
@@ -69,7 +69,7 @@ export default function PressContent() {
           <ScrollReveal delay={0.2}>
             <p className="text-xl text-white/80 leading-relaxed max-w-3xl mx-auto">
               Resources for journalists, media professionals, and content creators covering 
-              the National Vision Party and Dr. Isaac Newton Kinity&apos;s 2027 presidential campaign.
+              the UKOMBOZI party and Dr. Isaac Newton Kinity&apos;s 2027 presidential campaign.
             </p>
           </ScrollReveal>
         </div>

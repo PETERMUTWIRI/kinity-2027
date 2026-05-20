@@ -184,7 +184,7 @@ export default async function NewsArticlePage({ params }: Props) {
   }
 
   // Get full URL for sharing
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.nationalvisionparty.com';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.ukombozi.com';
   const articleUrl = `${baseUrl}/news-hub/${post.slug}`;
 
   return (
