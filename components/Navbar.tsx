@@ -253,7 +253,7 @@ export default function Navbar() {
                     className="font-headline text-[11px] xs:text-sm sm:text-base lg:text-xl leading-tight text-[#1E3A8A] group-hover:text-[#0F172A] transition-colors duration-300 whitespace-nowrap tracking-wide"
                     style={{ fontWeight: 800 }}
                   >
-                    UKOMBOZI party
+                    UKOMBOZI PARTY
                   </motion.p>
                   <p className="text-[9px] xs:text-xs text-slate-500 hidden sm:block font-medium tracking-wider uppercase">
                     <span className="text-[#1E3A8A]">Kenya&apos;s Hope</span> 2027
@@ -494,7 +494,7 @@ export default function Navbar() {
                       />
                     </div>
                     <div>
-                      <p className="font-slogan text-lg text-[#1E3A8A]">UKOMBOZI party</p>
+                      <p className="font-slogan text-lg text-[#1E3A8A]">UKOMBOZI PARTY</p>
                       <p className="text-xs text-[#1E3A8A]">Kenya&apos;s Hope 2027</p>
                     </div>
                   </Link>
@@ -646,7 +646,7 @@ export default function Navbar() {
                   Committed to the Service of Kenyans
                 </p>
                 <p className="text-center text-xs text-white/60 mt-1">
-                  © 2025 UKOMBOZI party
+                  © 2025 UKOMBOZI PARTY
                 </p>
               </div>
             </motion.div>
