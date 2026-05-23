@@ -140,7 +140,7 @@ export default function Footer() {
                 className="relative w-16 h-16 rounded-2xl overflow-hidden shadow-lg ring-2 ring-[#1E3A8A]/30 group-hover:ring-[#1E3A8A]/60 transition-all duration-300"
               >
                 <Image
-                  src="/nvp-party-logo.jpeg"
+                  src="/Ukombozi-logo.jpg"
                   alt="UKOMBOZI party"
                   fill
                   className="object-cover"

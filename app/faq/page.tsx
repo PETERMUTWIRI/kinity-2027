@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'FAQ | National Vision Party',
     description: 'Find answers to commonly asked questions about our campaign.',
-    images: [{ url: '/nvp-party-logo.jpeg', width: 1200, height: 630 }],
+    images: [{ url: '/Ukombozi-logo.jpg', width: 1200, height: 630 }],
   },
   alternates: { canonical: '/faq' },
 };

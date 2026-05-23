@@ -241,7 +241,7 @@ export default function Navbar() {
                   className="relative w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-xl overflow-hidden shadow-md ring-2 ring-[#1E3A8A]/10 group-hover:ring-[#1E3A8A]/50 transition-all duration-300 flex-shrink-0"
                 >
                   <Image
-                    src="/nvp-party-logo.jpeg"
+                    src="/Ukombozi-logo.jpg"
                     alt="UKOMBOZI party Logo"
                     fill
                     className="object-cover"
@@ -487,7 +487,7 @@ export default function Navbar() {
                   <Link href="/" className="flex items-center gap-3" onClick={() => setIsMobileMenuOpen(false)}>
                     <div className="relative w-12 h-12 rounded-xl overflow-hidden shadow-md">
                       <Image
-                        src="/nvp-party-logo.jpeg"
+                        src="/Ukombozi-logo.jpg"
                         alt="UKOMBOZI party Logo"
                         fill
                         className="object-cover"

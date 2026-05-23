@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description: 'Connect with Dr. Isaac Newton Kinity for volunteering, campaign events, or media inquiries. Join us in shaping Kenya\'s future.',
     images: [
       {
-        url: '/isaac_kinity-logo.jpeg',
+        url: '/Ukombozi-logo.jpg',
         width: 1200,
         height: 630,
         alt: 'Contact Dr. Isaac Newton Kinity',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Contact Dr. Isaac Newton Kinity | 2027 Presidential Campaign',
     description: 'Connect with Dr. Isaac Newton Kinity for volunteering, campaign events, or media inquiries.',
-    images: ['/isaac_kinity-logo.jpeg'],
+    images: ['/Ukombozi-logo.jpg'],
   },
   alternates: {
     canonical: '/contact',

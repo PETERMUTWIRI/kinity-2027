@@ -30,7 +30,7 @@ function ErrorContent() {
         <Link href="/" className="inline-flex items-center gap-3 mb-8">
           <div className="relative w-14 h-14 rounded-xl overflow-hidden shadow-lg ring-2 ring-[#1E3A8A]/30">
             <Image
-              src="/isaac_kinity-logo.jpeg"
+              src="/Ukombozi-logo.jpg"
               alt="UKOMBOZI party"
               fill
               className="object-cover"

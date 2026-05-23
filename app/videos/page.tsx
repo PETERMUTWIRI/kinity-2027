@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: 'https://www.ukombozi.com/videos',
     images: [
       {
-        url: '/isaac_kinity-logo.jpeg',
+        url: '/Ukombozi-logo.jpg',
         width: 1200,
         height: 630,
         alt: 'Dr. Isaac Newton Kinity Campaign Videos',

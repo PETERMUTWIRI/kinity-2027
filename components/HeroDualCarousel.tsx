@@ -18,19 +18,19 @@ export default function HeroDualCarousel() {
 
       <div className="relative z-10 flex flex-col lg:flex-row min-h-screen">
         {/* LEFT SIDE — Content */}
-        <div className="w-full lg:w-[55%] flex items-center px-4 sm:px-6 lg:px-12 xl:px-20 pt-24 pb-12 lg:pt-36 lg:pb-12">
+        <div className="w-full lg:w-[55%] flex items-center justify-center px-4 sm:px-6 lg:px-12 xl:px-20 pt-24 pb-12 lg:pt-36 lg:pb-12">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="w-full max-w-xl"
+            className="w-full max-w-xl text-center"
           >
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A8A]/10 border border-[#1E3A8A]/20 text-[#1E3A8A] font-semibold text-sm mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A8A]/10 border border-[#1E3A8A]/20 text-[#1E3A8A] font-semibold text-sm mb-6 justify-center mx-auto"
             >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#1E3A8A] opacity-75"></span>
@@ -54,7 +54,7 @@ export default function HeroDualCarousel() {
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] rounded-full mb-6 origin-left"
+              className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6] rounded-full mb-6 mx-auto"
             />
 
             {/* Message */}
@@ -86,7 +86,7 @@ export default function HeroDualCarousel() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
             >
               <Link
                 href="/join-us"

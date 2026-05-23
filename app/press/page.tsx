@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Press | UKOMBOZI party',
     description: 'Media resources and press contact for the 2027 presidential campaign.',
-    images: [{ url: '/nvp-party-logo.jpeg', width: 1200, height: 630 }],
+    images: [{ url: '/Ukombozi-logo.jpg', width: 1200, height: 630 }],
   },
   alternates: { canonical: '/press' },
 };

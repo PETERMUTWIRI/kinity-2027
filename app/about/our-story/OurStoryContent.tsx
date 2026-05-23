@@ -99,7 +99,7 @@ export default function OurStoryContent() {
                 <div className="absolute -inset-4 bg-gradient-to-r from-[#1E3A8A] to-[#1E3A8A] rounded-3xl opacity-20 blur-2xl" />
                 <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl bg-white p-8">
                   <Image
-                    src="/nvp-party-logo.jpeg"
+                    src="/Ukombozi-logo.jpg"
                     alt="UKOMBOZI party Logo"
                     fill
                     className="object-contain p-6"
