@@ -25,19 +25,7 @@ export default function HeroDualCarousel() {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="w-full max-w-xl text-center"
           >
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A8A]/10 border border-[#1E3A8A]/20 text-[#1E3A8A] font-semibold text-sm mb-6 justify-center mx-auto"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#1E3A8A] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#1E3A8A]"></span>
-              </span>
-              UKOMBOZI LIBERATION PARTY
-            </motion.div>
+            {/* Badge removed: title shown on navbar only */}
 
             {/* Main Title */}
             <motion.h1
