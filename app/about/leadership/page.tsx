@@ -3,11 +3,11 @@ import LeadershipContent from './LeadershipContent';
 import { BreadcrumbSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'Leadership | UKOMBOZI party',
-  description: 'Meet the leadership of the UKOMBOZI party—a movement of servant-leaders committed to restoring Kenya\'s dignity through accountable, people-centered governance.',
-  keywords: ['UKOMBOZI party', 'leadership', 'party structure', 'servant leadership', 'Kenya', 'Ukombozi'],
+  title: 'Leadership | UKOMBOZI LIBERATION PARTY',
+  description: 'Meet the leadership of the UKOMBOZI LIBERATION PARTY—a movement of servant-leaders committed to restoring Kenya\'s dignity through accountable, people-centered governance.',
+  keywords: ['UKOMBOZI LIBERATION PARTY', 'leadership', 'party structure', 'servant leadership', 'Kenya', 'Ukombozi'],
   openGraph: {
-    title: 'Leadership | UKOMBOZI party',
+    title: 'Leadership | UKOMBOZI LIBERATION PARTY',
     description: 'A movement of servant-leaders committed to restoring Kenya\'s dignity.',
     images: [{ url: '/images/president.jpeg', width: 1200, height: 630 }],
   },

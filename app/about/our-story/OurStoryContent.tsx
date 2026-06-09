@@ -40,8 +40,8 @@ const timeline = [
   },
   {
     year: '2025–2027',
-    title: 'The Birth of the UKOMBOZI party',
-    description: 'The UKOMBOZI party was forged not in a boardroom, but in the trenches of struggle. A movement by the people, for the people—ready to reclaim Kenya\'s future.',
+    title: 'The Birth of the UKOMBOZI LIBERATION PARTY',
+    description: 'The UKOMBOZI LIBERATION PARTY was forged not in a boardroom, but in the trenches of struggle. A movement by the people, for the people—ready to reclaim Kenya\'s future.',
     icon: FaMapMarkerAlt,
     highlight: true,
   },
@@ -100,7 +100,7 @@ export default function OurStoryContent() {
                 <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl bg-white p-8">
                   <Image
                     src="/Ukombozi-logo.jpg"
-                    alt="UKOMBOZI party Logo"
+                    alt="UKOMBOZI LIBERATION PARTY Logo"
                     fill
                     className="object-contain p-6"
                     priority
@@ -120,7 +120,7 @@ export default function OurStoryContent() {
 
                 <div className="pt-6 space-y-4">
                   <p className="text-slate-600 leading-relaxed">
-                    The story of the UKOMBOZI party is inseparable from the story of a young man who, 
+                    The story of the UKOMBOZI LIBERATION PARTY is inseparable from the story of a young man who, 
                     at age 20, dared to look power in the eye and say <em>no</em>. When the Moi regime dissolved 
                     the Kenya Civil Servants Union, Isaac Newton Kinity did not retreat. He stood.
                   </p>

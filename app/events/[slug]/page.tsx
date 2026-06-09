@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   });
 
   if (!event) {
-    return { title: 'Event Not Found | UKOMBOZI party' };
+    return { title: 'Event Not Found | UKOMBOZI LIBERATION PARTY' };
   }
 
   const description = event.description?.slice(0, 160) || 'Join us for this campaign event with Dr. Isaac Newton Kinity.';
@@ -38,8 +38,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${event.title} | Campaign Event`,
     description,
-    keywords: ['Dr Isaac Newton Kinity', 'campaign event', 'Kenya 2027', 'UKOMBOZI party', event.category, event.location],
-    authors: [{ name: 'UKOMBOZI party' }],
+    keywords: ['Dr Isaac Newton Kinity', 'campaign event', 'Kenya 2027', 'UKOMBOZI LIBERATION PARTY', event.category, event.location],
+    authors: [{ name: 'UKOMBOZI LIBERATION PARTY' }],
     alternates: {
       canonical: canonicalUrl,
     },
@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: event.title,
       description,
       url: canonicalUrl,
-      siteName: 'UKOMBOZI party',
+      siteName: 'UKOMBOZI LIBERATION PARTY',
       images: event.cover ? [
         {
           url: event.cover,
@@ -257,7 +257,7 @@ export default async function EventPage({ params }: PageProps) {
     },
     organizer: {
       '@type': 'Organization',
-      name: 'UKOMBOZI party',
+      name: 'UKOMBOZI LIBERATION PARTY',
       url: 'https://ukombozi.com',
     },
     performer: {

@@ -7,7 +7,7 @@ import GalleryContent from './GalleryContent';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Photo Gallery | UKOMBOZI party',
+  title: 'Photo Gallery | UKOMBOZI LIBERATION PARTY',
   description: 'Photos from campaign rallies, events, and moments from across Kenya.',
 };
 

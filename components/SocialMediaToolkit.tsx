@@ -32,7 +32,7 @@ Join the movement: https://www.ukombozi.com`,
 
     `💚💛❤️ *47 Counties. One Dream.*
 
-The UKOMBOZI party is building a Kenya where every citizen thrives—not just the politically connected.
+The UKOMBOZI LIBERATION PARTY is building a Kenya where every citizen thrives—not just the politically connected.
 
 Dr. Kinity is in the USA, but his heart is with Kenya. Follow his latest messages and virtual town halls.
 
@@ -44,7 +44,7 @@ Dr. Kinity is in the USA, but his heart is with Kenya. Follow his latest message
     `Economic transformation. Zero corruption. Universal healthcare. Education revolution. These aren't slogans—they're promises. Dr. Kinity's Vision 2027 → https://www.ukombozi.com/about/vision-2027`,
   ],
   facebook: [
-    `🇰🇪 Kenya's Hope 2027 🇰🇪\n\nI believe in a Kenya where corruption is history, where our youth have jobs, where healthcare is a right, and where education is world-class.\n\nDr. Isaac Newton Kinity has dedicated 40+ years to this fight. Now he needs our support.\n\nJoin the UKOMBOZI party movement today:\n🌐 https://www.ukombozi.com\n📱 WhatsApp: +1 (203) 675-9354\n\n#KenyasHope2027 #DrKinity2027`,
+    `🇰🇪 Kenya's Hope 2027 🇰🇪\n\nI believe in a Kenya where corruption is history, where our youth have jobs, where healthcare is a right, and where education is world-class.\n\nDr. Isaac Newton Kinity has dedicated 40+ years to this fight. Now he needs our support.\n\nJoin the UKOMBOZI LIBERATION PARTY movement today:\n🌐 https://www.ukombozi.com\n📱 WhatsApp: +1 (203) 675-9354\n\n#KenyasHope2027 #DrKinity2027`,
     `The difference between Dr. Kinity and career politicians?\n\nHe has already sacrificed his health and safety for Kenya. He has pledged to resign if he fails to eliminate corruption in 2 years.\n\nThat is the kind of servant leadership Kenya needs.\n\nLearn more: https://www.ukombozi.com`,
   ],
 };

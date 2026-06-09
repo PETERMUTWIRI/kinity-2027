@@ -3,11 +3,11 @@ import ManifestoContent from './ManifestoContent';
 import { BreadcrumbSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'Manifesto | UKOMBOZI party',
+  title: 'Manifesto | UKOMBOZI LIBERATION PARTY',
   description: 'Our detailed policy commitments to the Kenyan people. Specific, measurable actions to eliminate corruption, create jobs, provide healthcare, and transform education.',
   keywords: ['manifesto', 'policy', 'commitments', 'Kenya 2027', 'election', 'pledges'],
   openGraph: {
-    title: 'Manifesto | UKOMBOZI party',
+    title: 'Manifesto | UKOMBOZI LIBERATION PARTY',
     description: 'Detailed policy commitments for a transformed Kenya.',
     images: [{ url: '/images/kinity-1.jpeg', width: 1200, height: 630 }],
   },

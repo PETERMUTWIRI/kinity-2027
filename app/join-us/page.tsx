@@ -558,7 +558,7 @@ export default function JoinUsPage() {
                     className="w-5 h-5 rounded border-slate-600 bg-white text-[#1E3A8A] focus:ring-[#1E3A8A] mt-0.5"
                   />
                   <span className="text-slate-600 text-sm">
-                    I agree to volunteer my time and effort to support the UKOMBOZI party campaign. 
+                    I agree to volunteer my time and effort to support the UKOMBOZI LIBERATION PARTY campaign. 
                     I understand that this is a voluntary position and I commit to representing the 
                     campaign with integrity and respect. *
                   </span>

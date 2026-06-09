@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Media resources, press releases, and contact information for journalists covering the National Vision Party and Dr. Isaac Newton Kinity\'s 2027 presidential campaign.',
   keywords: ['press', 'media', 'press kit', 'journalists', 'interviews', 'Kenya', 'campaign'],
   openGraph: {
-    title: 'Press | UKOMBOZI party',
+    title: 'Press | UKOMBOZI LIBERATION PARTY',
     description: 'Media resources and press contact for the 2027 presidential campaign.',
     images: [{ url: '/Ukombozi-logo.jpg', width: 1200, height: 630 }],
   },

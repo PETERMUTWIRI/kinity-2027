@@ -27,7 +27,7 @@ import {
 } from 'react-icons/fa';
 
 // ==========================================
-// UKOMBOZI party - PREMIUM FOOTER
+// UKOMBOZI LIBERATION PARTY - PREMIUM FOOTER
 // Authoritative dark navy with gold accents
 // ==========================================
 
@@ -141,14 +141,14 @@ export default function Footer() {
               >
                 <Image
                   src="/Ukombozi-logo.jpg"
-                  alt="UKOMBOZI party"
+                  alt="UKOMBOZI LIBERATION PARTY"
                   fill
                   className="object-cover"
                 />
               </motion.div>
               <div>
                 <span className="font-slogan text-2xl text-white group-hover:text-[#1E3A8A] transition-colors block">
-                  UKOMBOZI party
+                  UKOMBOZI LIBERATION PARTY
                 </span>
                 <span className="text-sm text-[#1E3A8A]">Kenya&apos;s Hope 2027</span>
               </div>
@@ -340,7 +340,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-white/50 text-sm text-center md:text-left">
-              &copy; {currentYear} UKOMBOZI party. All rights reserved.
+              &copy; {currentYear} UKOMBOZI LIBERATION PARTY. All rights reserved.
             </p>
             <p className="text-white/40 text-sm flex items-center gap-2">
               Made with <FaHeart className="w-4 h-4 text-[#1E3A8A]" /> for Kenya

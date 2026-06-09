@@ -8,7 +8,7 @@ import { FaCalendarAlt, FaMapMarkerAlt, FaArrowRight, FaBullhorn } from 'react-i
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Events | UKOMBOZI party',
+  title: 'Events | UKOMBOZI LIBERATION PARTY',
   description: 'Join Dr. Isaac Newton Kinity at upcoming rallies, town halls, and campaign events across Kenya.',
 };
 

@@ -32,7 +32,7 @@ export function MusicGroupSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'UKOMBOZI party',
+    name: 'UKOMBOZI LIBERATION PARTY',
     description: 'Empowering communities through education, health, and sustainable development',
     url: process.env.NEXT_PUBLIC_APP_URL || 'https://www.ukombozi.com',
   };
@@ -50,7 +50,7 @@ export function WebSiteSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'UKOMBOZI party',
+    name: 'UKOMBOZI LIBERATION PARTY',
     url: process.env.NEXT_PUBLIC_APP_URL || 'https://www.ukombozi.com',
     potentialAction: {
       '@type': 'SearchAction',

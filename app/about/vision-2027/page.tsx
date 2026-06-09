@@ -3,11 +3,11 @@ import VisionContent from './VisionContent';
 import { BreadcrumbSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'Vision 2027 | UKOMBOZI party',
+  title: 'Vision 2027 | UKOMBOZI LIBERATION PARTY',
   description: 'Eight transformative pillars that will restore Kenya\'s dignity: Economic Transformation, Zero Corruption, Universal Healthcare, Education Revolution, Social Protection, Agriculture, Youth & Women Empowerment, and Security.',
   keywords: ['Vision 2027', 'economic transformation', 'zero corruption', 'healthcare', 'education', 'Kenya'],
   openGraph: {
-    title: 'Vision 2027 | UKOMBOZI party',
+    title: 'Vision 2027 | UKOMBOZI LIBERATION PARTY',
     description: 'Eight pillars to transform Kenya into a prosperous, corruption-free nation.',
     images: [{ url: '/images/rally.jpeg', width: 1200, height: 630 }],
   },

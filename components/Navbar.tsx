@@ -34,7 +34,7 @@ import {
 import NewsTicker from './NewsTicker';
 
 // ==========================================
-// UKOMBOZI Party - PREMIUM NAVIGATION
+// UKOMBOZI LIBERATION PARTY - PREMIUM NAVIGATION
 // Authoritative, presidential design system
 // ==========================================
 
@@ -242,7 +242,7 @@ export default function Navbar() {
                 >
                   <Image
                     src="/Ukombozi-logo.jpg"
-                    alt="UKOMBOZI party Logo"
+                    alt="UKOMBOZI LIBERATION PARTY Logo"
                     fill
                     className="object-cover"
                     priority
@@ -253,7 +253,7 @@ export default function Navbar() {
                     className="font-headline text-[11px] xs:text-sm sm:text-base lg:text-xl leading-tight text-[#1E3A8A] group-hover:text-[#0F172A] transition-colors duration-300 whitespace-nowrap tracking-wide"
                     style={{ fontWeight: 800 }}
                   >
-                    UKOMBOZI PARTY
+                    UKOMBOZI LIBERATION PARTY
                   </motion.p>
                   <p className="text-[9px] xs:text-xs text-slate-500 hidden sm:block font-medium tracking-wider uppercase">
                     <span className="text-[#1E3A8A]">Kenya&apos;s Hope</span> 2027
@@ -488,13 +488,13 @@ export default function Navbar() {
                     <div className="relative w-12 h-12 rounded-xl overflow-hidden shadow-md">
                       <Image
                         src="/Ukombozi-logo.jpg"
-                        alt="UKOMBOZI party Logo"
+                        alt="UKOMBOZI LIBERATION PARTY Logo"
                         fill
                         className="object-cover"
                       />
                     </div>
                     <div>
-                      <p className="font-slogan text-lg text-[#1E3A8A]">UKOMBOZI PARTY</p>
+                      <p className="font-slogan text-lg text-[#1E3A8A]">UKOMBOZI LIBERATION PARTY</p>
                       <p className="text-xs text-[#1E3A8A]">Kenya&apos;s Hope 2027</p>
                     </div>
                   </Link>
@@ -646,7 +646,7 @@ export default function Navbar() {
                   Committed to the Service of Kenyans
                 </p>
                 <p className="text-center text-xs text-white/60 mt-1">
-                  © 2025 UKOMBOZI PARTY
+                  © 2025 UKOMBOZI LIBERATION PARTY
                 </p>
               </div>
             </motion.div>

@@ -7,7 +7,7 @@ import BackToTop from '@/components/BackToTop';
 import ScrollToTop from '@/components/ScrollToTop';
 
 // ==========================================
-// UKOMBOZI party - PRESIDENTIAL CAMPAIGN
+// UKOMBOZI LIBERATION PARTY - PRESIDENTIAL CAMPAIGN
 // Root Layout with SEO Optimization
 // ==========================================
 
@@ -41,21 +41,21 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   // Core title template - Shows in browser tab with favicon
   title: {
-    default: "UKOMBOZI party",
-    template: "%s | UKOMBOZI party",
+    default: "UKOMBOZI LIBERATION PARTY",
+    template: "%s | UKOMBOZI LIBERATION PARTY",
   },
   
   // Application name for installed PWA
-  applicationName: "UKOMBOZI party",
+  applicationName: "UKOMBOZI LIBERATION PARTY",
   
   // Primary description
-  description: "UKOMBOZI party - Kenya's Hope 2027. Empowering communities and transforming lives through service and dedication.",
+  description: "UKOMBOZI LIBERATION PARTY - Kenya's Hope 2027. Empowering communities and transforming lives through service and dedication.",
   
   // Keywords for search engines
   keywords: [
     'Isaac Newton Kinity',
     'Dr Kinity',
-    'UKOMBOZI party',
+    'UKOMBOZI LIBERATION PARTY',
     'Kenya President 2027',
     'Kenya\'s Hope',
     'Kenyan Politics',
@@ -69,9 +69,9 @@ export const metadata: Metadata = {
   ],
   
   // Authors and ownership
-  authors: [{ name: "UKOMBOZI party" }],
-  creator: "UKOMBOZI party",
-  publisher: "UKOMBOZI party",
+  authors: [{ name: "UKOMBOZI LIBERATION PARTY" }],
+  creator: "UKOMBOZI LIBERATION PARTY",
+  publisher: "UKOMBOZI LIBERATION PARTY",
   
   // Format detection
   formatDetection: {
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   
-  // Icons - Using UKOMBOZI Party Logo (Ukombozi-logo.jpg)
+  // Icons - Using UKOMBOZI LIBERATION PARTY Logo (Ukombozi-logo.jpg)
   icons: {
     icon: [
       { url: '/Ukombozi-logo.jpg', sizes: '32x32', type: 'image/jpeg' },
