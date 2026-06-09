@@ -5,19 +5,15 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { 
   FaHeart, 
-  FaHandHoldingUsd, 
   FaMobileAlt, 
   FaCreditCard, 
-  FaPaypal,
   FaCheck,
-  FaArrowRight,
   FaLock,
   FaShieldAlt,
   FaGlobe,
   FaUsers,
   FaFlag,
   FaReceipt,
-  FaHandshake,
 } from 'react-icons/fa';
 import ScrollReveal from '@/components/ScrollReveal';
 
@@ -51,7 +47,7 @@ const impactCards = [
 
 export default function SupportPage() {
   const [customAmount, setCustomAmount] = useState('');
-  const [paymentMethod, setPaymentMethod] = useState<'mpesa' | 'card' | 'paypal' | 'bank'>('mpesa');
+  const [paymentMethod, setPaymentMethod] = useState<'zelle' | 'cashup'>('zelle');
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -74,7 +70,7 @@ export default function SupportPage() {
     setIsSubmitting(false);
     setIsSuccess(true);
     
-    // TODO: Connect to actual payment API (M-Pesa, Stripe, etc.)
+    // TODO: Connect to actual payment API (Zelle, CashUp, Stripe, etc.)
     console.log('Donation:', {
       amount: customAmount,
       method: paymentMethod,
@@ -297,31 +293,9 @@ export default function SupportPage() {
                   <div className="grid grid-cols-2 gap-4">
                     <button
                       type="button"
-                      onClick={() => setPaymentMethod('mpesa')}
+                      onClick={() => setPaymentMethod('zelle')}
                       className={`p-4 rounded-xl border-2 flex items-center gap-3 transition-all ${
-                        paymentMethod === 'mpesa'
-                          ? 'border-[#00A650] bg-[#00A650]/10'
-                          : 'border-slate-200 bg-white hover:border-slate-300'
-                      }`}
-                    >
-                      <div className="w-10 h-10 rounded-lg bg-[#00A650] flex items-center justify-center">
-                        <FaMobileAlt className="w-5 h-5 text-white" />
-                      </div>
-                      <div className="text-left">
-                        <div className={`font-semibold ${
-                          paymentMethod === 'mpesa' ? 'text-[#00A650]' : 'text-[#1E3A8A]'
-                        }`}>
-                          M-Pesa
-                        </div>
-                        <div className="text-xs text-slate-500">Mobile Money</div>
-                      </div>
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={() => setPaymentMethod('card')}
-                      className={`p-4 rounded-xl border-2 flex items-center gap-3 transition-all ${
-                        paymentMethod === 'card'
+                        paymentMethod === 'zelle'
                           ? 'border-[#1E3A8A] bg-[#1E3A8A]/10'
                           : 'border-slate-200 bg-white hover:border-slate-300'
                       }`}
@@ -331,55 +305,33 @@ export default function SupportPage() {
                       </div>
                       <div className="text-left">
                         <div className={`font-semibold ${
-                          paymentMethod === 'card' ? 'text-[#1E3A8A]' : 'text-[#1E3A8A]'
+                          paymentMethod === 'zelle' ? 'text-[#1E3A8A]' : 'text-[#1E3A8A]'
                         }`}>
-                          Card
+                          Zelle
                         </div>
-                        <div className="text-xs text-slate-500">Visa / Mastercard</div>
+                        <div className="text-xs text-slate-500">Send to phone number</div>
                       </div>
                     </button>
 
                     <button
                       type="button"
-                      onClick={() => setPaymentMethod('paypal')}
+                      onClick={() => setPaymentMethod('cashup')}
                       className={`p-4 rounded-xl border-2 flex items-center gap-3 transition-all ${
-                        paymentMethod === 'paypal'
-                          ? 'border-[#003087] bg-[#003087]/10'
+                        paymentMethod === 'cashup'
+                          ? 'border-[#00A650] bg-[#00A650]/10'
                           : 'border-slate-200 bg-white hover:border-slate-300'
                       }`}
                     >
-                      <div className="w-10 h-10 rounded-lg bg-[#003087] flex items-center justify-center">
-                        <FaPaypal className="w-5 h-5 text-white" />
+                      <div className="w-10 h-10 rounded-lg bg-[#00A650] flex items-center justify-center">
+                        <FaMobileAlt className="w-5 h-5 text-white" />
                       </div>
                       <div className="text-left">
                         <div className={`font-semibold ${
-                          paymentMethod === 'paypal' ? 'text-[#003087]' : 'text-[#1E3A8A]'
+                          paymentMethod === 'cashup' ? 'text-[#00A650]' : 'text-[#1E3A8A]'
                         }`}>
-                          PayPal
+                          CashUp
                         </div>
-                        <div className="text-xs text-slate-500">International</div>
-                      </div>
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={() => setPaymentMethod('bank')}
-                      className={`p-4 rounded-xl border-2 flex items-center gap-3 transition-all ${
-                        paymentMethod === 'bank'
-                          ? 'border-[#1E3A8A] bg-[#1E3A8A]/10'
-                          : 'border-slate-200 bg-white hover:border-slate-300'
-                      }`}
-                    >
-                      <div className="w-10 h-10 rounded-lg bg-[#1E3A8A] flex items-center justify-center">
-                        <FaHandHoldingUsd className="w-5 h-5 text-white" />
-                      </div>
-                      <div className="text-left">
-                        <div className={`font-semibold ${
-                          paymentMethod === 'bank' ? 'text-[#1E3A8A]' : 'text-[#1E3A8A]'
-                        }`}>
-                          Bank
-                        </div>
-                        <div className="text-xs text-slate-500">Wire Transfer</div>
+                        <div className="text-xs text-slate-500">Quick wallet transfer</div>
                       </div>
                     </button>
                   </div>
@@ -450,21 +402,18 @@ export default function SupportPage() {
 
                 <div className="mb-6">
                   <label className="block text-sm font-medium text-[#1E3A8A] mb-2">
-                    Phone Number {paymentMethod === 'mpesa' && '*'}
+                    Phone Number
                   </label>
                   <input
                     type="tel"
-                    required={paymentMethod === 'mpesa'}
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-[#1E3A8A] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1E3A8A] focus:border-transparent"
-                    placeholder="+254 XXX XXX XXX"
+                    placeholder="+1 (203) 675-9354"
                   />
-                  {paymentMethod === 'mpesa' && (
-                    <p className="text-xs text-slate-500 mt-1">
-                      Enter the M-Pesa number you&apos;ll use to complete payment
-                    </p>
-                  )}
+                  <p className="text-xs text-slate-500 mt-1">
+                    Use +1 (203) 675-9354 for Zelle or CashUp. Reference 98 KIN.
+                  </p>
                 </div>
 
                 <div className="mb-6">
@@ -534,7 +483,7 @@ export default function SupportPage() {
         </div>
       </section>
 
-      {/* Bank Transfer Info */}
+      {/* Zelle and CashUp Details */}
       <section className="py-20 relative overflow-hidden px-4 sm:px-6 lg:px-8">
         {/* Background image */}
         <div className="absolute inset-0 bg-[url('/images/vission/healthcare.png')] bg-cover bg-center bg-no-repeat" />
@@ -543,11 +492,14 @@ export default function SupportPage() {
         <div className="max-w-4xl mx-auto relative z-10">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="kicker-pill mb-4">Alternatives</span>
+              <span className="kicker-pill mb-4">Payment Details</span>
               <h2 className="heading-editorial mb-4">
-                Other Ways to <span className="heading-accent-gold">Support</span>
+                Use <span className="heading-accent-gold">Zelle</span> or <span className="heading-accent-gold">CashUp</span>
               </h2>
               <div className="hr-gold-wide mx-auto mb-4" />
+              <p className="text-slate-600 max-w-2xl mx-auto">
+                For now, please send support directly via Zelle or CashUp to the campaign phone number below.
+              </p>
             </div>
           </ScrollReveal>
 
@@ -555,29 +507,25 @@ export default function SupportPage() {
             <ScrollReveal>
               <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
                 <h3 className="text-lg font-semibold text-[#1E3A8A] mb-4 flex items-center gap-2">
-                  <FaHandHoldingUsd className="text-[#1E3A8A]" />
-                  Bank Transfer
+                  <FaMobileAlt className="text-[#00A650]" />
+                  Campaign Wallet
                 </h3>
-                <div className="space-y-3 text-sm">
+                <div className="space-y-3 text-sm text-slate-700">
                   <div className="flex justify-between">
-                    <span className="text-slate-500">Account Name:</span>
-                    <span className="text-[#1E3A8A] font-mono">UKOMBOZI LIBERATION PARTY</span>
+                    <span className="text-slate-500">Phone Number</span>
+                    <span className="text-[#1E3A8A] font-mono">+1 (203) 675-9354</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-500">Bank:</span>
-                    <span className="text-[#1E3A8A]">KCB Bank Kenya</span>
+                    <span className="text-slate-500">Reference</span>
+                    <span className="text-[#1E3A8A] font-mono">98 KIN</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-500">Account Number:</span>
-                    <span className="text-[#1E3A8A] font-mono">1234567890</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-slate-500">Swift Code:</span>
-                    <span className="text-[#1E3A8A] font-mono">KCBLKENX</span>
+                    <span className="text-slate-500">Accepts</span>
+                    <span className="text-[#1E3A8A]">Zelle / CashUp</span>
                   </div>
                 </div>
                 <p className="text-xs text-slate-400 mt-4">
-                  For international transfers. Email receipt to donations@ukombozi.com
+                  PayPal support is coming soon. For now, use Zelle or CashUp with the campaign reference above.
                 </p>
               </div>
             </ScrollReveal>
@@ -586,27 +534,20 @@ export default function SupportPage() {
               <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
                 <h3 className="text-lg font-semibold text-[#1E3A8A] mb-4 flex items-center gap-2">
                   <FaGlobe className="text-[#1E3A8A]" />
-                  International Support
+                  Quick Instructions
                 </h3>
-                <p className="text-slate-600 text-sm mb-4">
-                  Kenyans in the diaspora can support the campaign through:
-                </p>
-                <ul className="space-y-2 text-sm text-slate-700">
-                  <li className="flex items-center gap-2">
-                    <FaCheck className="w-4 h-4 text-green-600" />
-                    PayPal (USD, EUR, GBP)
+                <ul className="space-y-3 text-sm text-slate-700">
+                  <li className="flex items-start gap-2">
+                    <FaCheck className="w-4 h-4 text-green-600 mt-1" />
+                    Send the full amount to +1 (203) 675-9354 using Zelle or CashUp.
                   </li>
-                  <li className="flex items-center gap-2">
-                    <FaCheck className="w-4 h-4 text-green-600" />
-                    Credit/Debit Cards
+                  <li className="flex items-start gap-2">
+                    <FaCheck className="w-4 h-4 text-green-600 mt-1" />
+                    Use reference <span className="font-semibold">98 KIN</span> so your donation is credited correctly.
                   </li>
-                  <li className="flex items-center gap-2">
-                    <FaCheck className="w-4 h-4 text-green-600" />
-                    International Wire Transfer
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <FaCheck className="w-4 h-4 text-green-600" />
-                    WorldRemit / Wise
+                  <li className="flex items-start gap-2">
+                    <FaCheck className="w-4 h-4 text-green-600 mt-1" />
+                    Keep the transfer confirmation screenshot for your records.
                   </li>
                 </ul>
               </div>
@@ -614,7 +555,6 @@ export default function SupportPage() {
           </div>
         </div>
       </section>
-
 
     </div>
   );
