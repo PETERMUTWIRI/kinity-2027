@@ -138,7 +138,7 @@ export default function FAQContent() {
           <ScrollReveal delay={0.2}>
             <p className="text-xl text-white/80 leading-relaxed max-w-3xl mx-auto">
               Find answers to commonly asked questions about Dr. Isaac Newton Kinity, 
-              the National Vision Party, and our vision for Kenya 2027.
+              the JENGAKENYA, and our vision for Kenya 2027.
             </p>
           </ScrollReveal>
         </div>

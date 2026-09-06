@@ -16,7 +16,7 @@ const sections = [
   {
     id: 'our-story',
     title: 'Our Story',
-    description: 'The NVP story—born from decades of struggle. From a young union activist\'s defiance to a nationwide movement ready to reclaim Kenya\'s future through sacrifice and service.',
+    description: 'The JENGAKENYA story—born from decades of struggle. From a young union activist\'s defiance to a nationwide movement ready to reclaim Kenya\'s future through sacrifice and service.',
     icon: FaBookOpen,
     href: '/about/our-story',
     color: '#1E3A8A',
@@ -25,7 +25,7 @@ const sections = [
   {
     id: 'leadership',
     title: 'Leadership',
-    description: 'Meet the servant-leaders of the UKOMBOZI LIBERATION PARTY. Explore our party structure, organs, and the presidential candidate leading the charge for a better Kenya.',
+    description: 'Meet the servant-leaders of the JENGAKENYA. Explore our party structure, organs, and the presidential candidate leading the charge for a better Kenya.',
     icon: FaUsers,
     href: '/about/leadership',
     color: '#1E3A8A',

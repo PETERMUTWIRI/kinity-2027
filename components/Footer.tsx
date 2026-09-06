@@ -27,7 +27,7 @@ import {
 } from 'react-icons/fa';
 
 // ==========================================
-// UKOMBOZI LIBERATION PARTY - PREMIUM FOOTER
+// JENGAKENYA - PREMIUM FOOTER
 // Authoritative dark navy with gold accents
 // ==========================================
 
@@ -60,11 +60,11 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: FaFacebook, href: 'https://facebook.com/Ukombozi', label: 'Facebook', color: '#1877F2' },
-  { icon: FaTwitter, href: 'https://twitter.com/Ukombozi', label: 'Twitter', color: '#1DA1F2' },
-  { icon: FaInstagram, href: 'https://instagram.com/Ukombozi', label: 'Instagram', color: '#E4405F' },
-  { icon: FaYoutube, href: 'https://youtube.com/@Ukombozi', label: 'YouTube', color: '#FF0000' },
-  { icon: FaTiktok, href: 'https://tiktok.com/@Ukombozi', label: 'TikTok', color: '#000000' },
+  { icon: FaFacebook, href: 'https://facebook.com/Jengakenya', label: 'Facebook', color: '#1877F2' },
+  { icon: FaTwitter, href: 'https://twitter.com/Jengakenya', label: 'Twitter', color: '#1DA1F2' },
+  { icon: FaInstagram, href: 'https://instagram.com/Jengakenya', label: 'Instagram', color: '#E4405F' },
+  { icon: FaYoutube, href: 'https://youtube.com/@Jengakenya', label: 'YouTube', color: '#FF0000' },
+  { icon: FaTiktok, href: 'https://tiktok.com/@Jengakenya', label: 'TikTok', color: '#000000' },
 ];
 
 export default function Footer() {
@@ -140,15 +140,15 @@ export default function Footer() {
                 className="relative w-16 h-16 rounded-2xl overflow-hidden shadow-lg ring-2 ring-[#1E3A8A]/30 group-hover:ring-[#1E3A8A]/60 transition-all duration-300"
               >
                 <Image
-                  src="/Ukombozi-logo.jpg"
-                  alt="UKOMBOZI LIBERATION PARTY"
+                  src="/Jengakenya-logo.jpg"
+                  alt="JENGAKENYA"
                   fill
                   className="object-cover"
                 />
               </motion.div>
               <div>
                 <span className="font-slogan text-2xl text-white group-hover:text-[#1E3A8A] transition-colors block">
-                  UKOMBOZI LIBERATION PARTY
+                  JENGAKENYA
                 </span>
                 <span className="text-sm text-[#1E3A8A]">Kenya&apos;s Hope 2027</span>
               </div>
@@ -161,11 +161,11 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="space-y-3">
               <a 
-                href="mailto:info@ukombozi.com" 
+                href="mailto:info@jengakenya.com" 
                 className="flex items-center gap-3 text-white/60 hover:text-[#1E3A8A] transition-colors"
               >
                 <FaEnvelope className="w-5 h-5 text-[#1E3A8A]" />
-                info@ukombozi.com
+                info@jengakenya.com
               </a>
               <a 
                 href="tel:+12036759354" 
@@ -340,7 +340,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-white/50 text-sm text-center md:text-left">
-              &copy; {currentYear} UKOMBOZI LIBERATION PARTY. All rights reserved.
+              &copy; {currentYear} JENGAKENYA. All rights reserved.
             </p>
             <p className="text-white/40 text-sm flex items-center gap-2">
               Made with <FaHeart className="w-4 h-4 text-[#1E3A8A]" /> for Kenya

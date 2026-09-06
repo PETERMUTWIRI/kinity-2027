@@ -100,7 +100,7 @@ export default function NotFound() {
           <p className="text-slate-500 text-sm italic">
             &ldquo;Together, we can build a better future for all Kenyans.&rdquo;
           </p>
-          <p className="text-slate-600 text-xs mt-2">— National Vision Party</p>
+          <p className="text-slate-600 text-xs mt-2">— JENGAKENYA</p>
         </motion.div>
       </motion.div>
     </div>

@@ -1,4 +1,4 @@
-# National Vision Party - Digital Campaign Strategy
+# JENGAKENYA - Digital Campaign Strategy
 ## Implementation Roadmap
 
 **Last Updated:** March 2026  
@@ -61,7 +61,7 @@ Convert support into donations through seamless, multi-channel payment options.
 // - Dr. Kinity photo
 // - Article title/quote
 // - Campaign branding
-// - "NationalVisionParty.com" watermark
+// - "Jengakenya.com" watermark
 ```
 
 **Impact:** Professional-looking shares that drive clicks back to site.
@@ -286,8 +286,8 @@ const kpiDashboard = {
 ## 📞 CONTACT & RESOURCES
 
 **WhatsApp Hotline:** +12036759354  
-**Email:** info@nationalvisionparty.com  
-**Diaspora:** diaspora@nationalvisionparty.com
+**Email:** info@jengakenya.com  
+**Diaspora:** diaspora@jengakenya.com
 
 **Key URLs:**
 - `/diaspora` - Kenyans abroad

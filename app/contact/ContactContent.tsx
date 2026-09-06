@@ -46,34 +46,34 @@ const CAMPAIGN_CONTACTS = {
     description: 'For urgent incidents, security concerns, and immediate campaign matters',
   },
   general: {
-    email: 'info@nationalvisionparty.com',
+    email: 'info@jengakenya.com',
     whatsapp: '+1 (203) 675-9354',
     phone: '+1 (203) 675-9354',
     hours: 'Mon - Fri: 8:00 AM - 6:00 PM EAT',
   },
   media: {
-    email: 'press@nationalvisionparty.com',
+    email: 'press@jengakenya.com',
     whatsapp: '+1 (203) 675-9354',
     phone: '+1 (203) 675-9354',
     label: 'Media Relations',
   },
   volunteer: {
-    email: 'volunteer@nationalvisionparty.com',
+    email: 'volunteer@jengakenya.com',
     phone: '+1 (203) 675-9354',
   },
   events: {
-    email: 'events@nationalvisionparty.com',
+    email: 'events@jengakenya.com',
     phone: '+1 (203) 675-9354',
   },
   policy: {
-    email: 'policy@nationalvisionparty.com',
+    email: 'policy@jengakenya.com',
   },
   donations: {
-    email: 'donations@nationalvisionparty.com',
+    email: 'donations@jengakenya.com',
     phone: '+1 (203) 675-9354',
   },
   corruption: {
-    email: 'integrity@nationalvisionparty.com',
+    email: 'integrity@jengakenya.com',
     whatsapp: '+1 (203) 675-9354',
     anonymous: true,
     label: 'Anti-Corruption Hotline',
@@ -321,10 +321,10 @@ export default function ContactContent() {
   };
 
   const socialLinks = [
-    { icon: FaFacebook, href: 'https://facebook.com/Ukombozi', label: 'Facebook', color: 'hover:bg-blue-600', followers: '50K+' },
-    { icon: FaTwitter, href: 'https://twitter.com/NVP_Kenya', label: 'Twitter', color: 'hover:bg-sky-500', followers: '35K+' },
-    { icon: FaInstagram, href: 'https://instagram.com/NationalVisionParty', label: 'Instagram', color: 'hover:bg-pink-600', followers: '45K+' },
-    { icon: FaYoutube, href: 'https://youtube.com/@NationalVisionParty', label: 'YouTube', color: 'hover:bg-red-600', followers: '20K+' },
+    { icon: FaFacebook, href: 'https://facebook.com/Jengakenya', label: 'Facebook', color: 'hover:bg-blue-600', followers: '50K+' },
+    { icon: FaTwitter, href: 'https://twitter.com/JengaKenya', label: 'Twitter', color: 'hover:bg-sky-500', followers: '35K+' },
+    { icon: FaInstagram, href: 'https://instagram.com/Jengakenya', label: 'Instagram', color: 'hover:bg-pink-600', followers: '45K+' },
+    { icon: FaYoutube, href: 'https://youtube.com/@Jengakenya', label: 'YouTube', color: 'hover:bg-red-600', followers: '20K+' },
   ];
 
   return (
@@ -710,7 +710,7 @@ export default function ContactContent() {
                       <div className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center">
                         <FaEnvelope className="w-5 h-5 text-[#1E3A8A]" />
                       </div>
-                      <span>{selectedCounty.toLowerCase().replace(/\s+/g, '.')}@nationalvisionparty.com</span>
+                      <span>{selectedCounty.toLowerCase().replace(/\s+/g, '.')}@jengakenya.com</span>
                     </div>
                     <div className="flex items-center gap-3 text-slate-600">
                       <div className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center">

@@ -12,7 +12,7 @@ const pressReleases = [
   },
   {
     date: 'February 2025',
-    title: 'UKOMBOZI LIBERATION PARTY Unveils Vision 2027 Manifesto',
+    title: 'JENGAKENYA Unveils Vision 2027 Manifesto',
     excerpt: 'Comprehensive policy document outlines plans for economic transformation, zero corruption, universal healthcare, and education revolution.',
   },
 ];
@@ -39,7 +39,7 @@ const mediaResources = [
   {
     icon: FaDownload,
     title: 'Logo & Brand Assets',
-    description: 'Official UKOMBOZI logos and campaign branding.',
+    description: 'Official JENGAKENYA logos and campaign branding.',
     link: '#',
   },
 ];
@@ -69,7 +69,7 @@ export default function PressContent() {
           <ScrollReveal delay={0.2}>
             <p className="text-xl text-white/80 leading-relaxed max-w-3xl mx-auto">
               Resources for journalists, media professionals, and content creators covering 
-              the UKOMBOZI LIBERATION PARTY and Dr. Isaac Newton Kinity&apos;s 2027 presidential campaign.
+              the JENGAKENYA and Dr. Isaac Newton Kinity&apos;s 2027 presidential campaign.
             </p>
           </ScrollReveal>
         </div>
@@ -108,8 +108,8 @@ export default function PressContent() {
                     </div>
                     <div>
                       <p className="font-semibold text-[#0F172A]">Email</p>
-                      <a href="mailto:press@nationalvisionparty.com" className="text-[#1E3A8A] hover:underline">
-                        press@nationalvisionparty.com
+                      <a href="mailto:press@jengakenya.com" className="text-[#1E3A8A] hover:underline">
+                        press@jengakenya.com
                       </a>
                     </div>
                   </div>
@@ -159,7 +159,7 @@ export default function PressContent() {
                   
                   <div className="p-4 bg-white rounded-xl">
                     <p className="text-sm text-slate-500 mb-1">Party</p>
-                    <p className="font-semibold text-[#0F172A]">National Vision Party (NVP)</p>
+                    <p className="font-semibold text-[#0F172A]">JENGAKENYA</p>
                   </div>
                   
                   <div className="p-4 bg-white rounded-xl">
@@ -282,10 +282,10 @@ export default function PressContent() {
             
             <div className="flex flex-wrap justify-center gap-4">
               {[
-                { name: 'Twitter', handle: '@NVP_Kenya' },
-                { name: 'Facebook', handle: '@NationalVisionParty' },
-                { name: 'Instagram', handle: '@NationalVisionParty' },
-                { name: 'YouTube', handle: '@NationalVisionParty' },
+                { name: 'Twitter', handle: '@JengaKenya' },
+                { name: 'Facebook', handle: '@Jengakenya' },
+                { name: 'Instagram', handle: '@Jengakenya' },
+                { name: 'YouTube', handle: '@Jengakenya' },
               ].map((social) => (
                 <div 
                   key={social.name}

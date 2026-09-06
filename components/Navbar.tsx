@@ -34,7 +34,7 @@ import {
 import NewsTicker from './NewsTicker';
 
 // ==========================================
-// UKOMBOZI LIBERATION PARTY - PREMIUM NAVIGATION
+// JENGAKENYA - PREMIUM NAVIGATION
 // Authoritative, presidential design system
 // ==========================================
 
@@ -80,11 +80,11 @@ const navItems: NavItem[] = [
 ];
 
 const socialLinks = [
-  { icon: FaFacebook, href: 'https://facebook.com/Ukombozi', label: 'Facebook', color: '#1877F2' },
-  { icon: FaTwitter, href: 'https://twitter.com/Ukombozi', label: 'Twitter', color: '#1DA1F2' },
-  { icon: FaInstagram, href: 'https://instagram.com/Ukombozi', label: 'Instagram', color: '#E4405F' },
-  { icon: FaYoutube, href: 'https://youtube.com/@Ukombozi', label: 'YouTube', color: '#FF0000' },
-  { icon: FaTiktok, href: 'https://tiktok.com/@Ukombozi', label: 'TikTok', color: '#000000' },
+  { icon: FaFacebook, href: 'https://facebook.com/Jengakenya', label: 'Facebook', color: '#1877F2' },
+  { icon: FaTwitter, href: 'https://twitter.com/Jengakenya', label: 'Twitter', color: '#1DA1F2' },
+  { icon: FaInstagram, href: 'https://instagram.com/Jengakenya', label: 'Instagram', color: '#E4405F' },
+  { icon: FaYoutube, href: 'https://youtube.com/@Jengakenya', label: 'YouTube', color: '#FF0000' },
+  { icon: FaTiktok, href: 'https://tiktok.com/@Jengakenya', label: 'TikTok', color: '#000000' },
 ];
 
 // Search suggestions
@@ -241,8 +241,8 @@ export default function Navbar() {
                   className="relative w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-xl overflow-hidden shadow-md ring-2 ring-[#1E3A8A]/10 group-hover:ring-[#1E3A8A]/50 transition-all duration-300 flex-shrink-0"
                 >
                   <Image
-                    src="/Ukombozi-logo.jpg"
-                    alt="UKOMBOZI LIBERATION PARTY Logo"
+                    src="/Jengakenya-logo.jpg"
+                    alt="JENGAKENYA Logo"
                     fill
                     className="object-cover"
                     priority
@@ -253,7 +253,7 @@ export default function Navbar() {
                     className="font-headline text-[11px] xs:text-sm sm:text-base lg:text-xl leading-tight text-[#1E3A8A] group-hover:text-[#0F172A] transition-colors duration-300 whitespace-nowrap tracking-wide"
                     style={{ fontWeight: 800 }}
                   >
-                    UKOMBOZI LIBERATION PARTY
+                    JENGAKENYA
                   </motion.p>
                   <p className="text-[9px] xs:text-xs text-slate-500 hidden sm:block font-medium tracking-wider uppercase">
                     <span className="text-[#1E3A8A]">Kenya&apos;s Hope</span> 2027
@@ -487,14 +487,14 @@ export default function Navbar() {
                   <Link href="/" className="flex items-center gap-3" onClick={() => setIsMobileMenuOpen(false)}>
                     <div className="relative w-12 h-12 rounded-xl overflow-hidden shadow-md">
                       <Image
-                        src="/Ukombozi-logo.jpg"
-                        alt="UKOMBOZI LIBERATION PARTY Logo"
+                        src="/Jengakenya-logo.jpg"
+                        alt="JENGAKENYA Logo"
                         fill
                         className="object-cover"
                       />
                     </div>
                     <div>
-                      <p className="font-slogan text-lg text-[#1E3A8A]">UKOMBOZI LIBERATION PARTY</p>
+                      <p className="font-slogan text-lg text-[#1E3A8A]">JENGAKENYA</p>
                       <p className="text-xs text-[#1E3A8A]">Kenya&apos;s Hope 2027</p>
                     </div>
                   </Link>
@@ -607,9 +607,9 @@ export default function Navbar() {
                     <FaPhone className="w-4 h-4 text-[#1E3A8A]" />
                     +1 (203) 675-9354
                   </a>
-                  <a href="mailto:info@ukombozi.com" className="flex items-center gap-3 text-sm text-slate-600">
+                  <a href="mailto:info@jengakenya.com" className="flex items-center gap-3 text-sm text-slate-600">
                     <FaEnvelope className="w-4 h-4 text-[#1E3A8A]" />
-                    info@ukombozi.com
+                    info@jengakenya.com
                   </a>
                   <div className="flex items-center gap-3 text-sm text-slate-600">
                     <FaMapMarkerAlt className="w-4 h-4 text-[#1E3A8A]" />
@@ -646,7 +646,7 @@ export default function Navbar() {
                   Committed to the Service of Kenyans
                 </p>
                 <p className="text-center text-xs text-white/60 mt-1">
-                  © 2025 UKOMBOZI LIBERATION PARTY
+                  © 2025 JENGAKENYA
                 </p>
               </div>
             </motion.div>

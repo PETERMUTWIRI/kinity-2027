@@ -14,10 +14,10 @@ export const metadata: Metadata = {
     title: 'Videos | Dr. Isaac Newton Kinity',
     description: 'Watch campaign videos, speeches, rallies, and interviews from the 2027 presidential campaign.',
     type: 'video.other',
-    url: 'https://www.ukombozi.com/videos',
+    url: 'https://www.jengakenya.com/videos',
     images: [
       {
-        url: '/Ukombozi-logo.jpg',
+        url: '/Jengakenya-logo.jpg',
         width: 1200,
         height: 630,
         alt: 'Dr. Isaac Newton Kinity Campaign Videos',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: 'Watch campaign videos, speeches, and rallies from the 2027 presidential campaign.',
   },
   alternates: {
-    canonical: 'https://www.ukombozi.com/videos',
+    canonical: 'https://www.jengakenya.com/videos',
   },
 };
 

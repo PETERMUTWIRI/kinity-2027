@@ -4,8 +4,8 @@ import { BreadcrumbSchema } from '@/components/SchemaMarkup';
 
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | National Vision Party',
-  description: 'Read the Terms of Service for using the National Vision Party website. Guidelines for donations, event registrations, and volunteer participation.',
+  title: 'Terms of Service | JENGAKENYA',
+  description: 'Read the Terms of Service for using the JENGAKENYA website. Guidelines for donations, event registrations, and volunteer participation.',
   keywords: ['terms of service', 'terms and conditions', 'user agreement', 'legal', 'political campaign'],
   alternates: {
     canonical: '/terms',
@@ -43,14 +43,14 @@ export default function TermsOfServicePage() {
             <div className="prose prose-lg max-w-none text-brand-text/80">
               
               <p className="text-xl text-brand-text/70 mb-8">
-                Welcome to National Vision Party. By accessing or using our website, 
+                Welcome to JENGAKENYA. By accessing or using our website, 
                 you agree to be bound by these Terms of Service. Please read them carefully 
                 before using our services.
               </p>
 
               <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">1. Introduction</h2>
               <p className="mb-4">
-                These Terms of Service govern your use of the National Vision Party website and all 
+                These Terms of Service govern your use of the JENGAKENYA website and all 
                 related services, including volunteer signups, event registrations, 
                 donation processing, and community engagement features. By accessing or using our website, 
                 you agree to comply with these terms.
@@ -58,7 +58,7 @@ export default function TermsOfServicePage() {
 
               <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">2. Use of Website</h2>
               <p className="mb-4">
-                National Vision Party provides a platform for supporters to:
+                JENGAKENYA provides a platform for supporters to:
               </p>
               <ul className="list-disc pl-6 mb-6 space-y-2">
                 <li>Learn about campaign policies, events, and news updates</li>
@@ -74,7 +74,7 @@ export default function TermsOfServicePage() {
 
               <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">3. Event Registrations</h2>
               <p className="mb-4">
-                When registering for events through National Vision Party:
+                When registering for events through JENGAKENYA:
               </p>
               <ul className="list-disc pl-6 mb-6 space-y-2">
                 <li>Event registrations are processed securely through our systems</li>
@@ -88,7 +88,7 @@ export default function TermsOfServicePage() {
               <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">4. Intellectual Property</h2>
               <p className="mb-4">
                 All content on this website, including but not limited to text, images, videos, 
-                logos, campaign materials, and design elements, is the exclusive property of National Vision Party or its 
+                logos, campaign materials, and design elements, is the exclusive property of JENGAKENYA or its 
                 licensors and is protected by copyright, trademark, and other intellectual property laws.
               </p>
               <p className="mb-4">
@@ -115,7 +115,7 @@ export default function TermsOfServicePage() {
                 By submitting content to our website (including comments, volunteer applications, and messages):
               </p>
               <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li>You grant National Vision Party a non-exclusive, royalty-free license to use, display, 
+                <li>You grant JENGAKENYA a non-exclusive, royalty-free license to use, display, 
                     and share your content</li>
                 <li>You confirm that your content does not infringe on any third-party rights</li>
                 <li>We reserve the right to remove any content that violates these terms or is 
@@ -141,7 +141,7 @@ export default function TermsOfServicePage() {
 
               <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">8. Limitation of Liability</h2>
               <p className="mb-4">
-                To the fullest extent permitted by law, National Vision Party shall not be liable for any 
+                To the fullest extent permitted by law, JENGAKENYA shall not be liable for any 
                 indirect, incidental, special, consequential, or punitive damages arising out of 
                 or relating to your use of the website, even if we have been advised of the 
                 possibility of such damages.
@@ -159,9 +159,9 @@ export default function TermsOfServicePage() {
                 If you have any questions about these Terms of Service, please contact us:
               </p>
               <div className="bg-white rounded-xl p-6 mt-4 shadow-sm">
-                <p className="mb-1"><strong>National Vision Party</strong></p>
-                <p className="mb-1">Email: <a href="mailto:info@nationalvisionparty.com" className="text-brand-dark hover:underline">info@nationalvisionparty.com</a></p>
-                <p className="mb-1">General Inquiries: <a href="mailto:info@nationalvisionparty.com" className="text-brand-dark hover:underline">info@nationalvisionparty.com</a></p>
+                <p className="mb-1"><strong>JENGAKENYA</strong></p>
+                <p className="mb-1">Email: <a href="mailto:info@jengakenya.com" className="text-brand-dark hover:underline">info@jengakenya.com</a></p>
+                <p className="mb-1">General Inquiries: <a href="mailto:info@jengakenya.com" className="text-brand-dark hover:underline">info@jengakenya.com</a></p>
               </div>
 
               <p className="mt-8 text-sm text-brand-text/50">

@@ -10,7 +10,7 @@ import PostShareButtons from '@/components/PostShareButtons';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'News Hub | UKOMBOZI LIBERATION PARTY',
+  title: 'News Hub | JENGAKENYA',
   description: 'Latest news, press releases, and campaign updates from Dr. Isaac Newton Kinity.',
 };
 

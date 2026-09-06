@@ -12,7 +12,7 @@ const endorsements = [
   {
     name: "Kenya Association of Manufacturers",
     role: "Industry Body",
-    quote: "The UKOMBOZI LIBERATION PARTY's economic transformation plan addresses the real challenges facing Kenyan businesses.",
+    quote: "The JENGAKENYA's economic transformation plan addresses the real challenges facing Kenyan businesses.",
     logo: "KAM",
   },
   {
@@ -46,7 +46,7 @@ export default function SocialProof() {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-[#1E3A8A] to-[#1E3A8A] mx-auto rounded-full mb-4" />
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Leaders and organizations across Kenya share their perspectives on the UKOMBOZI LIBERATION PARTY&apos;s vision for our nation.
+              Leaders and organizations across Kenya share their perspectives on the JENGAKENYA&apos;s vision for our nation.
             </p>
           </div>
         </ScrollReveal>

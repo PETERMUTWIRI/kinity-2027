@@ -6,7 +6,7 @@ import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 
 // ==========================================
-// AUTH ERROR PAGE - UKOMBOZI LIBERATION PARTY
+// AUTH ERROR PAGE - JENGAKENYA
 // ==========================================
 
 function ErrorContent() {
@@ -30,14 +30,14 @@ function ErrorContent() {
         <Link href="/" className="inline-flex items-center gap-3 mb-8">
           <div className="relative w-14 h-14 rounded-xl overflow-hidden shadow-lg ring-2 ring-[#1E3A8A]/30">
             <Image
-              src="/Ukombozi-logo.jpg"
-              alt="UKOMBOZI LIBERATION PARTY"
+              src="/Jengakenya-logo.jpg"
+              alt="JENGAKENYA"
               fill
               className="object-cover"
             />
           </div>
           <div className="text-left">
-            <p className="font-slogan text-xl text-[#DC2626]">UKOMBOZI LIBERATION PARTY</p>
+            <p className="font-slogan text-xl text-[#DC2626]">JENGAKENYA</p>
             <p className="text-xs text-slate-400">Admin Portal</p>
           </div>
         </Link>

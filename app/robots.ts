@@ -17,7 +17,7 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: 'https://www.ukombozi.com/sitemap.xml',
-    host: 'https://www.ukombozi.com',
+    sitemap: 'https://www.jengakenya.com/sitemap.xml',
+    host: 'https://www.jengakenya.com',
   };
 }

@@ -1,4 +1,4 @@
-// Utility functions for National Vision Party
+// Utility functions for JENGAKENYA
 
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";

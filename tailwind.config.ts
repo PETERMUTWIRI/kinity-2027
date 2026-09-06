@@ -53,7 +53,7 @@ const config: Config = {
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         
-        // NATIONAL VISION PARTY BRAND COLORS - Premium Political Palette
+        // JENGAKENYA BRAND COLORS - Premium Political Palette
         kinity: {
           // Primary Deep Blue - Authority, trust, presidential dignity
           blue: {

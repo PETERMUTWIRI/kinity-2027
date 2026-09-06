@@ -31,7 +31,7 @@ const partyOrgans = [
 const leadershipValues = [
   {
     title: 'Servant Leadership',
-    content: 'We do not seek power to rule; we seek responsibility to serve. Every official in the UKOMBOZI LIBERATION PARTY is accountable to the people, not the other way around.',
+    content: 'We do not seek power to rule; we seek responsibility to serve. Every official in the JENGAKENYA is accountable to the people, not the other way around.',
   },
   {
     title: 'Grassroots Democracy',
@@ -79,7 +79,7 @@ export default function LeadershipContent() {
           <ScrollReveal delay={0.2}>
             <div className="hr-gold-wide mx-auto mb-6" />
             <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-              The UKOMBOZI LIBERATION PARTY is not a one-man show. It is a disciplined movement of servant-leaders 
+              The JENGAKENYA is not a one-man show. It is a disciplined movement of servant-leaders 
               united by a single mandate: to restore Kenya&apos;s dignity through accountable, people-centered governance.
             </p>
           </ScrollReveal>
@@ -109,7 +109,7 @@ export default function LeadershipContent() {
                     Dr. Isaac Newton <span className="heading-accent-gold">Kinity</span>
                   </h2>
                   <p className="text-slate-600 leading-relaxed mb-6">
-                    Presidential Candidate of the UKOMBOZI LIBERATION PARTY. A veteran governance activist with over 
+                    Presidential Candidate of the JENGAKENYA. A veteran governance activist with over 
                     40 years of sacrifice, poisoned for standing against corruption, and called to leadership by 
                     the people—not political cartels.
                   </p>
@@ -193,7 +193,7 @@ export default function LeadershipContent() {
               </h2>
               <div className="hr-white mx-auto mb-4" />
               <p className="text-white/70 max-w-2xl mx-auto">
-                Every leader who wears the NVP badge makes these four commitments to the Kenyan people.
+                Every leader who serves Kenya makes these four commitments to the Kenyan people.
               </p>
             </div>
           </ScrollReveal>

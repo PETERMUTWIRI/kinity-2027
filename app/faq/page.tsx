@@ -3,13 +3,13 @@ import FAQContent from './FAQContent';
 import { BreadcrumbSchema } from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'FAQ | National Vision Party',
-  description: 'Frequently asked questions about Dr. Isaac Newton Kinity, the National Vision Party, and our vision for Kenya 2027.',
-  keywords: ['FAQ', 'questions', 'Kenya 2027', 'Dr. Kinity', 'National Vision Party', 'policies'],
+  title: 'FAQ | JENGAKENYA',
+  description: 'Frequently asked questions about Dr. Isaac Newton Kinity, the JENGAKENYA, and our vision for Kenya 2027.',
+  keywords: ['FAQ', 'questions', 'Kenya 2027', 'Dr. Kinity', 'JENGAKENYA', 'policies'],
   openGraph: {
-    title: 'FAQ | National Vision Party',
+    title: 'FAQ | JENGAKENYA',
     description: 'Find answers to commonly asked questions about our campaign.',
-    images: [{ url: '/Ukombozi-logo.jpg', width: 1200, height: 630 }],
+    images: [{ url: '/Jengakenya-logo.jpg', width: 1200, height: 630 }],
   },
   alternates: { canonical: '/faq' },
 };

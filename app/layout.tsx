@@ -7,7 +7,7 @@ import BackToTop from '@/components/BackToTop';
 import ScrollToTop from '@/components/ScrollToTop';
 
 // ==========================================
-// UKOMBOZI LIBERATION PARTY - PRESIDENTIAL CAMPAIGN
+// JENGAKENYA - PRESIDENTIAL CAMPAIGN
 // Root Layout with SEO Optimization
 // ==========================================
 
@@ -41,21 +41,21 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   // Core title template - Shows in browser tab with favicon
   title: {
-    default: "UKOMBOZI LIBERATION PARTY",
-    template: "%s | UKOMBOZI LIBERATION PARTY",
+    default: "JENGAKENYA",
+    template: "%s | JENGAKENYA",
   },
   
   // Application name for installed PWA
-  applicationName: "UKOMBOZI LIBERATION PARTY",
+  applicationName: "JENGAKENYA",
   
   // Primary description
-  description: "UKOMBOZI LIBERATION PARTY - Kenya's Hope 2027. Empowering communities and transforming lives through service and dedication.",
+  description: "JENGAKENYA - Kenya's Hope 2027. Empowering communities and transforming lives through service and dedication.",
   
   // Keywords for search engines
   keywords: [
     'Isaac Newton Kinity',
     'Dr Kinity',
-    'UKOMBOZI LIBERATION PARTY',
+    'JENGAKENYA',
     'Kenya President 2027',
     'Kenya\'s Hope',
     'Kenyan Politics',
@@ -69,9 +69,9 @@ export const metadata: Metadata = {
   ],
   
   // Authors and ownership
-  authors: [{ name: "UKOMBOZI LIBERATION PARTY" }],
-  creator: "UKOMBOZI LIBERATION PARTY",
-  publisher: "UKOMBOZI LIBERATION PARTY",
+  authors: [{ name: "JENGAKENYA" }],
+  creator: "JENGAKENYA",
+  publisher: "JENGAKENYA",
   
   // Format detection
   formatDetection: {
@@ -81,39 +81,39 @@ export const metadata: Metadata = {
   },
   
   // Canonical URL base
-  metadataBase: new URL('https://www.nationalvisionparty.com'),
+  metadataBase: new URL('https://www.jengakenya.com'),
   
   // Alternates
   alternates: {
     canonical: '/',
   },
   
-  // Icons - Using UKOMBOZI LIBERATION PARTY Logo (Ukombozi-logo.jpg)
+  // Icons - Using JENGAKENYA Logo (Jengakenya-logo.jpg)
   icons: {
     icon: [
-      { url: '/Ukombozi-logo.jpg', sizes: '32x32', type: 'image/jpeg' },
-      { url: '/Ukombozi-logo.jpg', sizes: '16x16', type: 'image/jpeg' },
+      { url: '/Jengakenya-logo.jpg', sizes: '32x32', type: 'image/jpeg' },
+      { url: '/Jengakenya-logo.jpg', sizes: '16x16', type: 'image/jpeg' },
     ],
-    shortcut: '/Ukombozi-logo.jpg',
+    shortcut: '/Jengakenya-logo.jpg',
     apple: [
-      { url: '/Ukombozi-logo.jpg', sizes: '180x180', type: 'image/jpeg' },
+      { url: '/Jengakenya-logo.jpg', sizes: '180x180', type: 'image/jpeg' },
     ],
     other: [
-      { rel: 'apple-touch-icon-precomposed', url: '/Ukombozi-logo.jpg' },
+      { rel: 'apple-touch-icon-precomposed', url: '/Jengakenya-logo.jpg' },
     ],
   },
   
   // Open Graph - Social sharing
   openGraph: {
-    title: "National Vision Party | Kenya's Hope 2027",
-    description: "Join the movement for a better Kenya. National Vision Party - Committed to the service of Kenyans. Kenya's Hope 2027.",
-    url: 'https://www.nationalvisionparty.com',
-    siteName: "National Vision Party 2027",
+    title: "JENGAKENYA | Kenya's Hope 2027",
+    description: "Join the movement for a better Kenya. JENGAKENYA - Committed to the service of Kenyans. Kenya's Hope 2027.",
+    url: 'https://www.jengakenya.com',
+    siteName: "JENGAKENYA 2027",
     locale: 'en_KE',
     type: 'website',
     images: [
       {
-        url: '/Ukombozi-logo.jpg',
+        url: '/Jengakenya-logo.jpg',
         width: 1200,
         height: 630,
         alt: 'Dr. Isaac Newton Kinity - Kenya\'s Hope 2027',
@@ -124,11 +124,11 @@ export const metadata: Metadata = {
   // Twitter Cards
   twitter: {
     card: 'summary_large_image',
-    title: "National Vision Party | Kenya's Hope 2027",
-    description: "Join the movement for a better Kenya. National Vision Party - Committed to the service of Kenyans.",
-    images: ['/Ukombozi-logo.jpg'],
-    creator: '@NVP_Kenya',
-    site: '@NVP_Kenya',
+    title: "JENGAKENYA | Kenya's Hope 2027",
+    description: "Join the movement for a better Kenya. JENGAKENYA - Committed to the service of Kenyans.",
+    images: ['/Jengakenya-logo.jpg'],
+    creator: '@JengaKenya',
+    site: '@JengaKenya',
   },
   
   // Robots
@@ -155,9 +155,9 @@ export const metadata: Metadata = {
   // Additional metadata
   other: {
     'og:country-name': 'Kenya',
-    'og:email': 'info@nationalvisionparty.com',
+    'og:email': 'info@jengakenya.com',
     'og:phone_number': '+254 XXX XXX XXX',
-    'political-party': "National Vision Party",
+    'political-party': "JENGAKENYA",
     'campaign-slogan': "Kenya's Hope",
     'election-year': '2027',
   },
@@ -209,24 +209,24 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Person',
-              name: 'Dr. Isaac Newton Kinity - National Vision Party',
+              name: 'Dr. Isaac Newton Kinity - JENGAKENYA',
               alternateName: 'Kinity',
               description: "Presidential Candidate Kenya 2027. Committed to the service of Kenyans.",
-              url: 'https://www.nationalvisionparty.com',
-              image: 'https://www.nationalvisionparty.com/dr-kinity-profile.jpg',
+              url: 'https://www.jengakenya.com',
+              image: 'https://www.jengakenya.com/dr-kinity-profile.jpg',
               jobTitle: 'Presidential Candidate',
               worksFor: {
                 '@type': 'Organization',
-                name: "National Vision Party",
+                name: "JENGAKENYA",
               },
               address: {
                 '@type': 'PostalAddress',
                 addressCountry: 'KE',
               },
               sameAs: [
-                'https://twitter.com/NVP_Kenya',
-                'https://facebook.com/NationalVisionParty',
-                'https://instagram.com/NationalVisionParty',
+                'https://twitter.com/JengaKenya',
+                'https://facebook.com/Jengakenya',
+                'https://instagram.com/Jengakenya',
               ],
             }),
           }}
@@ -239,17 +239,17 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
-              name: "National Vision Party",
+              name: "JENGAKENYA",
               alternateName: "Kenya's Hope",
-              url: 'https://www.nationalvisionparty.com',
-              logo: 'https://www.nationalvisionparty.com/logo.png',
+              url: 'https://www.jengakenya.com',
+              logo: 'https://www.jengakenya.com/logo.png',
               description: "Official campaign organization for Dr. Isaac Newton Kinity's 2027 presidential bid.",
               foundingDate: '2024',
               politicalParty: 'Independent',
               slogan: "Kenya's Hope - Committed to the Service of Kenyans",
               sameAs: [
-                'https://twitter.com/NVP_Kenya',
-                'https://facebook.com/NationalVisionParty',
+                'https://twitter.com/JengaKenya',
+                'https://facebook.com/Jengakenya',
               ],
             }),
           }}

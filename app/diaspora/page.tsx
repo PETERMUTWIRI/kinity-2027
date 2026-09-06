@@ -15,8 +15,8 @@ import {
 } from 'react-icons/fa';
 
 export const metadata: Metadata = {
-  title: 'Diaspora | UKOMBOZI LIBERATION PARTY',
-  description: 'Kenyans abroad - your voice, your vote, your Kenya matters. Join the UKOMBOZI LIBERATION PARTY movement from anywhere in the world.',
+  title: 'Diaspora | JENGAKENYA',
+  description: 'Kenyans abroad - your voice, your vote, your Kenya matters. Join the JENGAKENYA movement from anywhere in the world.',
   openGraph: {
     title: 'Kenyans in Diaspora: The Future is in Your Hands',
     description: 'You left Kenya seeking opportunity. Now help us build the Kenya you always dreamed of.',
@@ -48,7 +48,7 @@ const waysToHelp = [
   },
   {
     title: 'Diaspora Champion',
-    description: 'Organize fellow Kenyans in your city. Host meetups, fundraise, and build the UKOMBOZI LIBERATION PARTY movement locally.',
+    description: 'Organize fellow Kenyans in your city. Host meetups, fundraise, and build the JENGAKENYA movement locally.',
     icon: FaHandshake,
     action: 'Become Champion',
     link: 'https://wa.me/12036759354?text=I%20want%20to%20be%20a%20Diaspora%20Champion%20in%20[Your%20City]'
@@ -67,7 +67,7 @@ const shareMessage = encodeURIComponent(
 
 You left seeking opportunity. Now help us build the Kenya we always dreamed of.
 
-The National Vision Party is not a collection of politicians. We are servants of the people. Dr. Isaac Newton Kinity has pledged to dismantle corruption in 2 years, not 20.
+The JENGAKENYA is not a collection of politicians. We are servants of the people. Dr. Isaac Newton Kinity has pledged to dismantle corruption in 2 years, not 20.
 
 🗳️ You can vote from abroad
 💰 You can fund change
@@ -75,7 +75,7 @@ The National Vision Party is not a collection of politicians. We are servants of
 
 Your family at home is counting on you.
 
-Join us: https://www.nationalvisionparty.com/diaspora
+Join us: https://www.jengakenya.com/diaspora
 
 WhatsApp: +1 (203) 675-9354
 
@@ -180,7 +180,7 @@ export default function DiasporaPage() {
               </div>
               <div>
                 <h3 className="font-bold text-[#0F172A] text-lg">A Message from Dr. Kinity</h3>
-                <p className="text-slate-500 text-sm">Presidential Candidate, UKOMBOZI LIBERATION PARTY</p>
+                <p className="text-slate-500 text-sm">Presidential Candidate, JENGAKENYA</p>
               </div>
             </div>
             
@@ -300,7 +300,7 @@ export default function DiasporaPage() {
                 Get WhatsApp Alerts
               </a>
               <p className="text-white/50 text-sm text-center mt-4">
-                Or email: <a href="mailto:diaspora@ukombozi.com" className="text-white hover:underline">diaspora@ukombozi.com</a>
+                Or email: <a href="mailto:diaspora@jengakenya.com" className="text-white hover:underline">diaspora@jengakenya.com</a>
               </p>
             </div>
           </div>
@@ -341,7 +341,7 @@ export default function DiasporaPage() {
 
           <div className="mt-8 pt-8 border-t border-white/10">
             <p className="text-white/50 text-sm">
-              WhatsApp: <span className="text-[#1E3A8A]">+1 (203) 675-9354</span> | Email: diaspora@ukombozi.com
+              WhatsApp: <span className="text-[#1E3A8A]">+1 (203) 675-9354</span> | Email: diaspora@jengakenya.com
             </p>
           </div>
         </div>

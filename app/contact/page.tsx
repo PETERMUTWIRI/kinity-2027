@@ -5,13 +5,13 @@ import { BreadcrumbSchema } from '@/components/SchemaMarkup';
 export const metadata: Metadata = {
   title: 'Contact | Dr. Isaac Newton Kinity',
   description: 'Get in touch with Dr. Isaac Newton Kinity for volunteering, campaign events, media inquiries, or general questions. Join the 2027 presidential campaign for a better Kenya.',
-  keywords: ['UKOMBOZI LIBERATION PARTY', 'Dr. Isaac Newton Kinity', 'contact', 'Kenya 2027', 'presidential campaign', 'volunteer', 'political events', 'media contact'],
+  keywords: ['JENGAKENYA', 'Dr. Isaac Newton Kinity', 'contact', 'Kenya 2027', 'presidential campaign', 'volunteer', 'political events', 'media contact'],
   openGraph: {
     title: 'Contact Dr. Isaac Newton Kinity | 2027 Presidential Campaign',
     description: 'Connect with Dr. Isaac Newton Kinity for volunteering, campaign events, or media inquiries. Join us in shaping Kenya\'s future.',
     images: [
       {
-        url: '/Ukombozi-logo.jpg',
+        url: '/Jengakenya-logo.jpg',
         width: 1200,
         height: 630,
         alt: 'Contact Dr. Isaac Newton Kinity',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Contact Dr. Isaac Newton Kinity | 2027 Presidential Campaign',
     description: 'Connect with Dr. Isaac Newton Kinity for volunteering, campaign events, or media inquiries.',
-    images: ['/Ukombozi-logo.jpg'],
+    images: ['/Jengakenya-logo.jpg'],
   },
   alternates: {
     canonical: '/contact',

@@ -40,8 +40,8 @@ const timeline = [
   },
   {
     year: '2025–2027',
-    title: 'The Birth of the UKOMBOZI LIBERATION PARTY',
-    description: 'The UKOMBOZI LIBERATION PARTY was forged not in a boardroom, but in the trenches of struggle. A movement by the people, for the people—ready to reclaim Kenya\'s future.',
+    title: 'The Birth of the JENGAKENYA',
+    description: 'The JENGAKENYA was forged not in a boardroom, but in the trenches of struggle. A movement by the people, for the people—ready to reclaim Kenya\'s future.',
     icon: FaMapMarkerAlt,
     highlight: true,
   },
@@ -66,7 +66,7 @@ export default function OurStoryContent() {
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A] font-semibold text-sm mb-6">
-              The NVP Story
+              The JENGAKENYA Story
             </span>
           </ScrollReveal>
 
@@ -79,7 +79,7 @@ export default function OurStoryContent() {
           <ScrollReveal delay={0.2}>
             <div className="hr-gold-wide mx-auto mb-6" />
             <p className="text-xl text-slate-600 leading-relaxed mb-8">
-              The National Vision Party was not born in a boardroom. It was forged in the trenches of Kenya&apos;s 
+              The JENGAKENYA was not born in a boardroom. It was forged in the trenches of Kenya&apos;s 
               fight for justice—decades of sacrifice, exile, and an unbreakable belief that this nation can be great again.
             </p>
           </ScrollReveal>
@@ -99,8 +99,8 @@ export default function OurStoryContent() {
                 <div className="absolute -inset-4 bg-gradient-to-r from-[#1E3A8A] to-[#1E3A8A] rounded-3xl opacity-20 blur-2xl" />
                 <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl bg-white p-8">
                   <Image
-                    src="/Ukombozi-logo.jpg"
-                    alt="UKOMBOZI LIBERATION PARTY Logo"
+                    src="/Jengakenya-logo.jpg"
+                    alt="JENGAKENYA Logo"
                     fill
                     className="object-contain p-6"
                     priority
@@ -120,14 +120,14 @@ export default function OurStoryContent() {
 
                 <div className="pt-6 space-y-4">
                   <p className="text-slate-600 leading-relaxed">
-                    The story of the UKOMBOZI LIBERATION PARTY is inseparable from the story of a young man who, 
+                    The story of the JENGAKENYA is inseparable from the story of a young man who, 
                     at age 20, dared to look power in the eye and say <em>no</em>. When the Moi regime dissolved 
                     the Kenya Civil Servants Union, Isaac Newton Kinity did not retreat. He stood.
                   </p>
                   <p className="text-slate-600 leading-relaxed">
                     That stand evolved into a lifelong mission. Poisoned, exiled, and threatened with death, 
                     he carried the torch across continents and decades—until the Kenyan people themselves 
-                    transformed his solitary fight into a national movement. The NVP is that movement.
+                    transformed his solitary fight into a national movement. Kenya is that movement.
                   </p>
                 </div>
               </div>

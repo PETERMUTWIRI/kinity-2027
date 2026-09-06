@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 // TODO: Replace with actual WhatsApp number when available
 const WHATSAPP_NUMBER = '12036759354'; // Campaign HQ WhatsApp
-const WHATSAPP_MESSAGE = 'Hello! I would like to learn more about UKOMBOZI LIBERATION PARTY and how I can support Dr. Kinity\'s campaign for 2027.';
+const WHATSAPP_MESSAGE = 'Hello! I would like to learn more about JENGAKENYA and how I can support Dr. Kinity\'s campaign for 2027.';
 
 export default function WhatsAppChat() {
   const [isOpen, setIsOpen] = useState(false);
@@ -131,7 +131,7 @@ export default function WhatsAppChat() {
                   <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 rounded-full border-2 border-white" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-semibold text-white">NVP Support</h3>
+                  <h3 className="font-semibold text-white">JENGAKENYA Support</h3>
                   <p className="text-white/80 text-xs">Typically replies in minutes</p>
                 </div>
               </div>
@@ -143,7 +143,7 @@ export default function WhatsAppChat() {
                   <div className="w-8 h-8 rounded-full overflow-hidden flex-shrink-0">
                     <Image
                       src="/images/president.jpeg"
-                      alt="NVP"
+                      alt="Kenya"
                       width={32}
                       height={32}
                       className="object-cover w-full h-full"
@@ -151,7 +151,7 @@ export default function WhatsAppChat() {
                   </div>
                   <div className="bg-white rounded-2xl rounded-tl-sm p-3 shadow-sm max-w-[80%]">
                     <p className="text-sm text-slate-700">
-                      Hello! Welcome to UKOMBOZI LIBERATION PARTY. How can we help you today? 🇰🇪
+                      Hello! Welcome to JENGAKENYA. How can we help you today? 🇰🇪
                     </p>
                     <span className="text-[10px] text-slate-400 mt-1 block">
                       {new Date().toLocaleTimeString('en-KE', { hour: '2-digit', minute: '2-digit' })}

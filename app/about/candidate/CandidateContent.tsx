@@ -113,7 +113,7 @@ export default function CandidateContent() {
           <ScrollReveal delay={0.2}>
             <div className="hr-gold-wide mx-auto mb-6" />
             <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-              Flagbearer of the UKOMBOZI LIBERATION PARTY. A proven track record of sacrifice, courage, 
+              Flagbearer of the JENGAKENYA. A proven track record of sacrifice, courage, 
               and unwavering commitment to the Kenyan people. Four pillars define exceptional leadership for Kenya&apos;s future.
             </p>
           </ScrollReveal>

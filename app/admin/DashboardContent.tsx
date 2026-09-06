@@ -1,4 +1,4 @@
-// app/admin/DashboardContent.tsx - NATIONAL VISION PARTY DASHBOARD
+// app/admin/DashboardContent.tsx - JENGAKENYA DASHBOARD
 'use client';
 
 import useSWR from 'swr';

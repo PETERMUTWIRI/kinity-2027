@@ -29,17 +29,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   });
 
   if (!event) {
-    return { title: 'Event Not Found | UKOMBOZI LIBERATION PARTY' };
+    return { title: 'Event Not Found | JENGAKENYA' };
   }
 
   const description = event.description?.slice(0, 160) || 'Join us for this campaign event with Dr. Isaac Newton Kinity.';
-  const canonicalUrl = `https://ukombozi.com/events/${event.slug}`;
+  const canonicalUrl = `https://jengakenya.com/events/${event.slug}`;
 
   return {
     title: `${event.title} | Campaign Event`,
     description,
-    keywords: ['Dr Isaac Newton Kinity', 'campaign event', 'Kenya 2027', 'UKOMBOZI LIBERATION PARTY', event.category, event.location],
-    authors: [{ name: 'UKOMBOZI LIBERATION PARTY' }],
+    keywords: ['Dr Isaac Newton Kinity', 'campaign event', 'Kenya 2027', 'JENGAKENYA', event.category, event.location],
+    authors: [{ name: 'JENGAKENYA' }],
     alternates: {
       canonical: canonicalUrl,
     },
@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: event.title,
       description,
       url: canonicalUrl,
-      siteName: 'UKOMBOZI LIBERATION PARTY',
+      siteName: 'JENGAKENYA',
       images: event.cover ? [
         {
           url: event.cover,
@@ -233,7 +233,7 @@ export default async function EventPage({ params }: PageProps) {
   }
 
   const isPast = new Date(event.startDate) < new Date();
-  const canonicalUrl = `https://ukombozi.com/events/${event.slug}`;
+  const canonicalUrl = `https://jengakenya.com/events/${event.slug}`;
 
   // Structured data for SEO
   const jsonLd = {
@@ -257,13 +257,13 @@ export default async function EventPage({ params }: PageProps) {
     },
     organizer: {
       '@type': 'Organization',
-      name: 'UKOMBOZI LIBERATION PARTY',
-      url: 'https://ukombozi.com',
+      name: 'JENGAKENYA',
+      url: 'https://jengakenya.com',
     },
     performer: {
       '@type': 'Person',
       name: 'Dr. Isaac Newton Kinity',
-      url: 'https://ukombozi.com/about',
+      url: 'https://jengakenya.com/about',
     },
   };
 
